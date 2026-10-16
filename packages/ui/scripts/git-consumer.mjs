@@ -73,6 +73,23 @@ function remoteArtifact() {
   return { spec: `github:lucxu495/luc-ui#${tag}`, commit: null, label: `github:lucxu495/luc-ui#${tag}` };
 }
 
+/**
+ * The commit a remote tag points at, straight from the remote.
+ *
+ * The point of the check below is that a *tag* resolves to an immutable commit,
+ * so the assertion is not "the lockfile has a sha in it" but "the lockfile has
+ * the sha the tag actually points at". A tag that had been moved after the
+ * install would fail here.
+ */
+async function remoteTagCommit() {
+  const { stdout } = await run("git", ["ls-remote", "https://github.com/lucxu495/luc-ui", `refs/tags/${tag}`], {
+    maxBuffer: 1024 * 1024,
+  });
+  const sha = stdout.trim().split(/\s+/)[0];
+  if (!/^[0-9a-f]{40}$/.test(sha)) throw new Error(`could not resolve refs/tags/${tag} on the remote`);
+  return sha;
+}
+
 try {
   const artifact = remote ? remoteArtifact() : await localArtifact();
   const fixture = path.join(temporary, "consumer");
@@ -135,13 +152,28 @@ try {
   console.log(`  build scripts pnpm skipped: ${ignored}`);
   if (ignored.includes("@luc/ui")) throw new Error("@luc/ui was listed as needing a build script");
 
+  /*
+   * How pnpm records a git dependency, and why both shapes are accepted:
+   * a `git+file:` URL pins `resolution: {commit, repo, type}`, while a GitHub
+   * one pins `tarball: https://codeload.github.com/…/tar.gz/<sha>` with
+   * `gitHosted: true` and an `integrity` hash — the same immutability, a
+   * different shape. Either way a 40-character commit must be present, and it
+   * must be the commit the tag points at.
+   */
   const lock = await readFile(path.join(fixture, "pnpm-lock.yaml"), "utf8");
-  const pinned = lock.match(/resolution: \{commit: ([0-9a-f]{40})/)?.[1] ?? null;
-  console.log(`  lockfile pins ${pinned ?? "(no commit recorded)"}`);
+  const pinned =
+    lock.match(/resolution: \{commit: ([0-9a-f]{40})/)?.[1] ??
+    lock.match(/codeload\.github\.com\/[^"'\s]*?\/tar\.gz\/([0-9a-f]{40})/)?.[1] ??
+    null;
+  const integrity = lock.match(/integrity: (sha512-[A-Za-z0-9+/=]+)/)?.[1] ?? "(none)";
+  console.log(`  lockfile pins commit ${pinned ?? "(none recorded)"}`);
+  console.log(`  lockfile integrity ${integrity.slice(0, 32)}…`);
   if (!pinned) throw new Error("a git install recorded no commit in the lockfile");
-  if (artifact.commit && pinned !== artifact.commit) {
-    throw new Error(`the lockfile pinned ${pinned} but the artifact is ${artifact.commit}`);
+  const expected = artifact.commit ?? (await remoteTagCommit());
+  if (pinned !== expected) {
+    throw new Error(`the lockfile pinned ${pinned} but the ref points at ${expected}`);
   }
+  console.log(`  the ref still points at ${expected}`);
 
   reportInstalledPackage("git consumer", await verifyInstalledPackage(fixture, { expectNoInstallScripts: true }));
   if (keep) console.log(`  fixture kept at ${fixture}`);
