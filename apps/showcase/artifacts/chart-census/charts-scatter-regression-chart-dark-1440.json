@@ -1,0 +1,59 @@
+{
+  "route": "/charts/scatter-regression-chart",
+  "url": "http://127.0.0.1:3000/charts/scatter-regression-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 1319
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 340,
+    "bitmapW": 860,
+    "bitmapH": 340
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.1044,
+    "bounds": {
+      "minX": 10,
+      "minY": 0,
+      "maxX": 858,
+      "maxY": 330
+    }
+  },
+  "renderer": {
+    "texts": 16,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 1,
+    "marksTotal": 45,
+    "marks": {
+      "line": 14,
+      "tspan": 16,
+      "path": 8,
+      "ec-polygon": 2,
+      "ec-polyline": 3,
+      "ec-line": 2
+    },
+    "shortest": 5
+  },
+  "screenshot": "artifacts/chart-census/charts-scatter-regression-chart-dark-1440.png"
+}

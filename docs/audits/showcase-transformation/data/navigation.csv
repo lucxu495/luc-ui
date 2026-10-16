@@ -1,0 +1,20 @@
+group_id,group_title,source,consumer_areas
+start-here,Start here,lib/navigation.ts:startGroup,"home, docs"
+explore,Explore,lib/navigation.ts:exploreGroup,explore
+explore-use-cases,By use case,lib/navigation.ts (derived: USE_CASES),explore
+explore-art-directions,By art direction,lib/navigation.ts (derived: ART_DIRECTIONS),explore
+components,Components (families),lib/docs/generated/nav.ts (derived),components
+charts,Charts (families),lib/docs/generated/nav.ts (derived),charts
+motion,Motion (families),lib/docs/generated/nav.ts (derived),motion
+visuals,Visuals,lib/navigation.ts:visualsGroup,visuals
+studios,Studios,lib/navigation.ts:studiosGroup,studios
+build-with-it,Build with it,lib/navigation.ts:buildWithGroup,build
+experiences,Experiences,lib/navigation.ts:experiencesGroup,build
+patterns,Patterns,lib/navigation.ts:patternsGroup,build
+foundations,Foundations,lib/navigation.ts:foundationsGroup,docs
+application,Application,lib/navigation.ts:applicationGroup,docs
+forms,Forms,lib/navigation.ts:formsGuideGroup,docs
+data,Data display,lib/navigation.ts:dataGuideGroup,docs
+date-time,Date and time,lib/navigation.ts:dateTimeGuideGroup,docs
+integrations,Integrations,lib/navigation.ts:integrationsGroup,docs
+experiments,Experiments,lib/navigation.ts:experimentsGroup,docs

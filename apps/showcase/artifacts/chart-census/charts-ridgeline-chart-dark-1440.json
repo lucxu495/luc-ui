@@ -1,0 +1,57 @@
+{
+  "route": "/charts/ridgeline-chart",
+  "url": "http://127.0.0.1:3000/charts/ridgeline-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 1299
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 340,
+    "bitmapW": 860,
+    "bitmapH": 340
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.6743,
+    "bounds": {
+      "minX": 12,
+      "minY": 16,
+      "maxX": 836,
+      "maxY": 328
+    }
+  },
+  "renderer": {
+    "texts": 5,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 16,
+    "marks": {
+      "line": 5,
+      "tspan": 5,
+      "ec-polygon": 3,
+      "ec-polyline": 3
+    },
+    "shortest": 15
+  },
+  "screenshot": "artifacts/chart-census/charts-ridgeline-chart-dark-1440.png"
+}

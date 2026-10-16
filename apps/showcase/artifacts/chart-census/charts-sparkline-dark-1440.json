@@ -1,0 +1,39 @@
+{
+  "route": "/charts/sparkline",
+  "url": "http://127.0.0.1:3000/charts/sparkline",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 377
+  },
+  "canvas": null,
+  "svg": {
+    "cssW": 834,
+    "cssH": 40,
+    "nodes": 2
+  },
+  "paths": 3,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": null,
+  "renderer": {
+    "texts": 0,
+    "dropped": null,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": null,
+    "marks": null,
+    "shortest": null
+  },
+  "screenshot": "artifacts/chart-census/charts-sparkline-dark-1440.png"
+}

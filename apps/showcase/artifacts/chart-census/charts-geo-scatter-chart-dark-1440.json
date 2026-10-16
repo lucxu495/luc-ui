@@ -1,0 +1,57 @@
+{
+  "route": "/charts/geo-scatter-chart",
+  "url": "http://127.0.0.1:3000/charts/geo-scatter-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 629
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 340,
+    "bitmapW": 860,
+    "bitmapH": 340
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.4641,
+    "bounds": {
+      "minX": 24,
+      "minY": 20,
+      "maxX": 654,
+      "maxY": 318
+    }
+  },
+  "renderer": {
+    "texts": 0,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 32,
+    "marks": {
+      "compound": 24,
+      "path": 5,
+      "rect": 1,
+      "polygon": 2
+    },
+    "shortest": null
+  },
+  "screenshot": "artifacts/chart-census/charts-geo-scatter-chart-dark-1440.png"
+}

@@ -1,0 +1,57 @@
+{
+  "route": "/charts/ternary-chart",
+  "url": "http://127.0.0.1:3000/charts/ternary-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 768
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 360,
+    "bitmapW": 860,
+    "bitmapH": 360
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.0279,
+    "bounds": {
+      "minX": 54,
+      "minY": 36,
+      "maxX": 806,
+      "maxY": 310
+    }
+  },
+  "renderer": {
+    "texts": 6,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 40,
+    "marks": {
+      "polygon": 1,
+      "polyline": 27,
+      "path": 6,
+      "tspan": 6
+    },
+    "shortest": 7
+  },
+  "screenshot": "artifacts/chart-census/charts-ternary-chart-dark-1440.png"
+}

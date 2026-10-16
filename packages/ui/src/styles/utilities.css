@@ -1,0 +1,359 @@
+/* =============================================================================
+ * LUC UI — house utilities
+ * A small, fixed vocabulary. These exist so components never re-invent the
+ * transition/focus pitch. Prefixed with `luc-` to avoid colliding with app
+ * utilities in consuming products.
+ * ========================================================================== */
+
+/* The single transition used by ~90% of interactive surfaces. */
+@utility luc-transition {
+  transition-property: color, background-color, border-color, box-shadow, opacity, transform, filter;
+  transition-duration: var(--motion-fast);
+  transition-timing-function: var(--ease-standard);
+}
+
+@utility luc-transition-slow {
+  transition-property: color, background-color, border-color, box-shadow, opacity, transform, filter;
+  transition-duration: var(--motion-normal);
+  transition-timing-function: var(--ease-standard);
+}
+
+/* Focus treatment for controls that can afford an outer ring. */
+@utility luc-focus {
+  &:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+}
+
+/* Focus treatment for controls clipped by `overflow: hidden`. */
+@utility luc-focus-inset {
+  &:focus-visible {
+    outline: none;
+    box-shadow: var(--glow-focus);
+  }
+}
+
+/*
+ * Minimum hit area (WCAG 2.2 AA, SC 2.5.8).
+ *
+ * A 16 px dismiss glyph inside a 24 px chip is the right *visual* size — a
+ * larger cross fights the label beside it — but 16 px is below the minimum
+ * target, and a chip row has no spacing to spare, so the "undersized target
+ * with sufficient spacing" exception does not apply. This utility grows the
+ * interactive area to 24×24 with a centred pseudo-element: the pixels stay as
+ * designed, the pointer and touch target does not.
+ *
+ * Use it where the control is intentionally small. Where the control can
+ * simply be bigger, make it bigger.
+ */
+@utility luc-hit {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max(100%, 24px);
+    height: max(100%, 24px);
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Numbers, dates and identifiers must not shift when they change. */
+@utility luc-numeric {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "cv05" 1;
+  letter-spacing: 0;
+}
+
+/*
+ * Tactile press. V1.2 gives it a short spring: the control compresses under the
+ * finger and settles, rather than snapping to a smaller size. The `animation`
+ * only runs while `:active`, so it can never loop or fire on hover — and the
+ * global reduced-motion clamp collapses it to the instant end state, which is
+ * exactly the V1.1 behaviour.
+ */
+@utility luc-press {
+  &:active:not(:disabled):not([aria-disabled="true"]) {
+    animation: luc-press-spring var(--motion-normal) var(--ease-overshoot);
+    transform: translateY(var(--spatial-sink)) scale(var(--spatial-press-scale));
+  }
+}
+
+/* Hover lift for a control that should answer the pointer. */
+@utility luc-lift {
+  @media (prefers-reduced-motion: no-preference) {
+    &:hover:not(:disabled):not([aria-disabled="true"]) {
+      transform: translateY(calc(-1 * var(--spatial-lift)));
+    }
+    &:active:not(:disabled):not([aria-disabled="true"]) {
+      transform: translateY(var(--spatial-sink)) scale(var(--spatial-press-scale));
+    }
+  }
+}
+
+/*
+ * ---------------------------------------------------------------------------
+ * Spatial language (V4.0)
+ *
+ * The four rungs of the depth ladder, as classes. A component picks a rung by
+ * intent — a resting surface, the same surface answering a pointer, a sunken
+ * well, or a detached float — instead of choosing a shadow value. Because the
+ * rung is a *token*, a theme, a personality and `data-space` all move together.
+ * ------------------------------------------------------------------------ */
+
+/* The resting surface of an interactive layer (a card, a control, a row). */
+@utility luc-rest {
+  box-shadow: var(--elevation-rest);
+}
+
+/* The same layer, answered: it has risen to meet the pointer. */
+@utility luc-hover {
+  box-shadow: var(--elevation-hover);
+}
+
+/* Sunken: a well the content sits *inside* rather than on top of. */
+@utility luc-well {
+  box-shadow: var(--well-shadow);
+}
+
+/* Detached: a surface floating above the page (menus, popovers, tooltips). */
+@utility luc-float {
+  box-shadow: var(--layer-2-shadow);
+}
+
+/* Higher still: a modal or an edge-anchored sheet. */
+@utility luc-float-high {
+  box-shadow: var(--layer-3-shadow);
+}
+
+/*
+ * A layer that has just been promoted carries its origin with it: the offset
+ * vanishes into the shadow rather than the surface simply appearing. It is
+ * `transform`-only and one-shot, so the reduced-motion clamp lands on the end
+ * state instead of leaving the surface half-raised.
+ */
+@utility luc-settle {
+  animation: luc-layer-rise var(--motion-normal) var(--ease-enter);
+}
+
+/*
+ * Signature fill sweep.
+ *
+ * A single soft highlight crosses a *filled* control once, on hover. It is the
+ * one expressive gesture the Button family owns: it answers the pointer, it
+ * never loops, it never fires on scroll, and the global reduced-motion clamp
+ * (`base.css`) collapses it to nothing. The gradient is white at low alpha over
+ * the variant's own colour, so it reads on every palette instead of tinting.
+ *
+ * The element must be `relative` and is made `overflow: hidden` here — the
+ * focus ring is an `outline`, which is painted outside the box and is therefore
+ * unaffected.
+ */
+@utility luc-sheen {
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    background: linear-gradient(
+      105deg,
+      transparent 32%,
+      color-mix(in oklab, oklch(1 0 0) 26%, transparent) 48%,
+      transparent 64%
+    );
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    &:hover:not(:disabled):not([aria-disabled="true"])::after {
+      animation: luc-sheen 620ms var(--ease-standard);
+    }
+  }
+}
+
+/*
+ * Indeterminate spinner. Pair with `data-motion-essential` so the global
+ * reduced-motion clamp does not freeze it — a stopped spinner reads as a bug.
+ * Under reduced motion the travel becomes a slow opacity pulse.
+ */
+@utility luc-spinner {
+  animation: luc-spin 0.9s linear infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation-name: luc-pulse-soft;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+/* Hairline that survives fractional device pixel ratios. */
+@utility luc-hairline-t {
+  box-shadow: inset 0 1px 0 0 var(--line-subtle);
+}
+
+@utility luc-hairline-b {
+  box-shadow: inset 0 -1px 0 0 var(--line-subtle);
+}
+
+/* ---------------------------------------------------------------------------
+ * V2.0 — signature interaction layer.
+ *
+ * These are the *motion* halves of the primitives in `src/motion`. The
+ * components decide when the class is applied (never on mount, never on hover
+ * unless the interaction says so); the utility owns the shape of the movement,
+ * so a caller can retime it with `animationDuration` without inventing an
+ * animation of their own.
+ * ------------------------------------------------------------------------ */
+
+/* Press ink. Sized and positioned inline by `RippleLayer`. */
+@utility luc-ripple {
+  animation-name: luc-ripple;
+  animation-timing-function: var(--ease-enter);
+  animation-fill-mode: forwards;
+  will-change: transform, opacity;
+}
+
+@utility luc-aurora-drift {
+  animation-name: luc-aurora-drift;
+  animation-timing-function: var(--ease-standard);
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+@utility luc-beam-travel {
+  animation-name: luc-beam-travel;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@utility luc-marquee-x {
+  animation-name: luc-marquee-x;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+@utility luc-marquee-y {
+  animation-name: luc-marquee-y;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+@utility luc-marquee-reverse {
+  animation-direction: reverse;
+}
+
+/* Reading aid: the strip holds still while a pointer rests on it. */
+@utility luc-marquee-pause {
+  &:hover [data-slot="marquee-copy"] {
+    animation-play-state: paused;
+  }
+}
+
+/*
+ * The spotlight that follows a *filled* control's pointer. The two custom
+ * properties are written by `usePointerGlow`; without them the layer renders
+ * nothing, so a static surface pays one empty gradient.
+ */
+@utility luc-cursor-light {
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -5;
+    pointer-events: none;
+    opacity: var(--luc-glow-opacity, 0);
+    transition: opacity var(--motion-fast) var(--ease-standard);
+    background: radial-gradient(
+      120px circle at var(--luc-px, 50%) var(--luc-py, 50%),
+      color-mix(in oklab, currentColor 22%, transparent),
+      transparent 68%
+    );
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Spatial material, geometry and continuity (V3.0)
+ * ------------------------------------------------------------------------- */
+
+/*
+ * The glass tier. A translucent surface needs three things to read as a
+ * material rather than a faded card: the surface itself (a thinned
+ * `--surface-overlay`, so a palette or personality still applies), a hairline
+ * that catches light on the top edge, and one soft shadow that separates it
+ * from whatever sits behind. `backdrop-filter` is used only here, and every
+ * surface that carries text also sets `--glass-surface-strong` so contrast
+ * never depends on what happens to be underneath.
+ */
+@utility luc-glass {
+  background-color: var(--glass-surface);
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 1px 0 0 var(--glass-highlight), var(--layer-shadow);
+  backdrop-filter: blur(14px) saturate(1.35);
+  -webkit-backdrop-filter: blur(14px) saturate(1.35);
+}
+
+@utility luc-glass-strong {
+  background-color: var(--glass-surface-strong);
+}
+
+/*
+ * Geometry. Rotation is a CSS animation on purpose: it runs on the compositor,
+ * it never wakes React, and the global reduced-motion clamp collapses a
+ * 0°→360° loop to its end state — which is the start state, so a frozen orbit
+ * is still a correctly arranged orbit rather than a broken one.
+ */
+@utility luc-orbit-spin {
+  animation-name: luc-orbit-spin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+@utility luc-orbit-counter {
+  animation-name: luc-orbit-counter;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+@utility luc-orbit-dashed {
+  border-style: dashed;
+}
+
+/*
+ * A turning ring is a moving target, and a moving target is a defect the moment
+ * a seat on it is a real control. Resting a pointer on the ring — or moving
+ * focus into one of its seats — stops the loop, so the chip can be read and hit
+ * without chasing it. The counter-rotation stops with it, so the label never
+ * ends up parked at an angle.
+ */
+@utility luc-orbit-rest {
+  &:hover,
+  &:focus-within {
+    animation-play-state: paused;
+  }
+
+  &:hover [data-slot="orbit-counter"],
+  &:focus-within [data-slot="orbit-counter"] {
+    animation-play-state: paused;
+  }
+}
+
+/* A layer inside a `ParallaxScene`. Depth comes from the inherited custom
+ * properties, so React never re-renders while the pointer moves. */
+@utility luc-layer {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* The travelling packet along a `SelectionBeam`. */
+@utility luc-beam-dash {
+  animation-name: luc-beam-dash;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}

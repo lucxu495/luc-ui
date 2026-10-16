@@ -1,0 +1,56 @@
+{
+  "route": "/charts/pie-chart",
+  "url": "http://127.0.0.1:3000/charts/pie-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 711
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 320,
+    "bitmapW": 860,
+    "bitmapH": 320
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.1094,
+    "bounds": {
+      "minX": 250,
+      "minY": 26,
+      "maxX": 610,
+      "maxY": 304
+    }
+  },
+  "renderer": {
+    "texts": 7,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 17,
+    "marks": {
+      "tspan": 7,
+      "polyline": 5,
+      "sector": 5
+    },
+    "shortest": 24
+  },
+  "screenshot": "artifacts/chart-census/charts-pie-chart-dark-1440.png"
+}

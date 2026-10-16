@@ -1,0 +1,159 @@
+{
+  "./alert": {
+    "category": "Feedback",
+    "showcase": "/components/alert"
+  },
+  "./app-shell": {
+    "category": "Application",
+    "use": "Landmarks, sidebar and injected navigation.",
+    "avoid": "Do not import a router into the library.",
+    "showcase": "/application/navigation",
+    "a11y": "Landmarks, skip link and current navigation are built in."
+  },
+  "./calendar": {
+    "category": "Date and time",
+    "showcase": "/date-time/calendar"
+  },
+  "./charts": {
+    "category": "Visualization",
+    "use": "Prepared series, generic chart composition and synchronization.",
+    "avoid": "Do not calculate indicators or import engine internals.",
+    "showcase": "/charts/sync",
+    "a11y": "Provide a ChartDataTable alternate for canvas content."
+  },
+  "./components/button": {
+    "category": "Actions",
+    "use": "Actions and native button behavior; use buttonVariants for links.",
+    "avoid": "Do not use Button as a polymorphic link or assume asChild exists.",
+    "showcase": "/components/buttons",
+    "a11y": "Native button; loading reports aria-busy."
+  },
+  "./components/combobox": {
+    "category": "Selection",
+    "showcase": "/components/combobox"
+  },
+  "./components/command": {
+    "category": "Commands",
+    "showcase": "/components/command"
+  },
+  "./components/input": {
+    "category": "Inputs",
+    "use": "Text input with shared control chrome and Field integration.",
+    "avoid": "Textarea and SearchInput are root exports, not this subpath.",
+    "showcase": "/components/inputs",
+    "a11y": "Pair with Field or provide an accessible name."
+  },
+  "./components/select": {
+    "category": "Selection",
+    "use": "Choose one known form value.",
+    "avoid": "Do not use for navigation or an action menu.",
+    "showcase": "/components/select",
+    "a11y": "Name the trigger via Field or aria-label."
+  },
+  "./components/sheet": {
+    "category": "Overlays",
+    "showcase": "/components/sheet"
+  },
+  "./components/toast": {
+    "category": "Feedback",
+    "showcase": "/components/toast"
+  },
+  "./context-menu": {
+    "category": "Menus",
+    "showcase": "/components/menus"
+  },
+  "./data": {
+    "category": "Data",
+    "showcase": "/data/metrics"
+  },
+  "./data-table": {
+    "category": "Data",
+    "use": "Semantic tables with controlled sorting, filtering and pagination.",
+    "avoid": "Not an editable grid or financial calculation engine.",
+    "showcase": "/data/table",
+    "a11y": "Native table, headers and labelled controls."
+  },
+  "./date-picker": {
+    "category": "Date and time",
+    "showcase": "/date-time/date-picker"
+  },
+  "./datetime": {
+    "category": "Date and time",
+    "showcase": "/date-time/time"
+  },
+  "./dropdown-menu": {
+    "category": "Menus",
+    "showcase": "/components/menus"
+  },
+  "./empty-state": {
+    "category": "Feedback",
+    "showcase": "/components/empty-state"
+  },
+  "./experiences": {
+    "category": "Experiences",
+    "use": "Page-level assemblies: profile hero, social links, career timeline, project showcase, publication list, reading shelf, now section.",
+    "avoid": "Do not import a router, a data source or a chart engine; these are presentational and take their content as props.",
+    "showcase": "/experiences/personal/career",
+    "a11y": "Landmarks, ordered lists, labelled links and progress meters are built in; pass localized strings for the empty and filter labels."
+  },
+  "./financial-chart": {
+    "category": "Visualization",
+    "use": "Prepared OHLC and financial time series.",
+    "avoid": "Do not treat provider widgets as a source for prepared series.",
+    "showcase": "/charts/financial",
+    "a11y": "Use a semantic data alternate and preserve attribution."
+  },
+  "./forms": {
+    "category": "Forms",
+    "showcase": "/forms"
+  },
+  "./forms/react-hook-form": {
+    "category": "Forms",
+    "showcase": "/forms/validation"
+  },
+  "./hooks": {
+    "category": "Utility",
+    "showcase": "/application"
+  },
+  "./layout": {
+    "category": "Layout",
+    "showcase": "/foundations/spacing"
+  },
+  "./motion": {
+    "category": "Motion",
+    "use": "Opt-in interaction effects under the motion intensity contract.",
+    "avoid": "Do not animate every resting surface.",
+    "showcase": "/motion/kinetic",
+    "a11y": "Respect reduced motion and preserve visible resting content."
+  },
+  "./providers": {
+    "category": "Foundation",
+    "showcase": "/foundations/colors"
+  },
+  "./slider": {
+    "category": "Selection",
+    "showcase": "/components/slider"
+  },
+  "./tradingview": {
+    "category": "Provider integration",
+    "use": "Typed TradingView widget wrappers.",
+    "avoid": "Do not scrape or recolor provider internals.",
+    "showcase": "/integrations/tradingview",
+    "a11y": "Provider iframe and shadow content are outside LUC's a11y boundary."
+  },
+  "./url-state": {
+    "category": "Application",
+    "showcase": "/application/url-state"
+  },
+  "./utils": {
+    "category": "Utility",
+    "showcase": "/application"
+  },
+  "./workspace": {
+    "category": "Application",
+    "use": "Resizable panes and inspector layouts.",
+    "avoid": "Not arbitrary docking or drag-and-drop dashboard layout.",
+    "showcase": "/application/workspace",
+    "a11y": "Resize separators expose keyboard and ARIA behavior."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-10-16T09:25:13.747Z",
+  "baseUrl": "http://127.0.0.1:3000",
+  "mode": "all",
+  "routes": 34,
+  "clicked": 258,
+  "declaredBusy": 0,
+  "openedDetails": 0,
+  "durationMs": 184135,
+  "findings": [],
+  "benignFindings": [
+    {
+      "route": "/patterns/research-workspace",
+      "slug": "patterns-research-workspace",
+      "name": "Reset pane sizes",
+      "index": 15,
+      "role": "button",
+      "slot": "icon-button",
+      "section": null,
+      "note": "no observable change, no sibling to compare",
+      "reason": "a restore-to-default with nothing to restore"
+    }
+  ]
+}

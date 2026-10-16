@@ -1,0 +1,73 @@
+{
+  "tolerance": 0.08,
+  "entries": {
+    "app-shell": {
+      "raw": 30365,
+      "gzip": 8953
+    },
+    "barrel": {
+      "raw": 14848,
+      "gzip": 4703
+    },
+    "button-only": {
+      "raw": 11129,
+      "gzip": 3734
+    },
+    "charts": {
+      "raw": 71233,
+      "gzip": 21554
+    },
+    "charts-financial": {
+      "raw": 54696,
+      "gzip": 16299
+    },
+    "charts-statistical": {
+      "raw": 55794,
+      "gzip": 16573
+    },
+    "components-v4": {
+      "raw": 17972,
+      "gzip": 5529
+    },
+    "data-table-only": {
+      "raw": 21747,
+      "gzip": 6642
+    },
+    "date-picker": {
+      "raw": 29312,
+      "gzip": 8608
+    },
+    "experiences": {
+      "raw": 24860,
+      "gzip": 5882
+    },
+    "financial-engine": {
+      "raw": 37768,
+      "gzip": 11724
+    },
+    "forms-core": {
+      "raw": 14573,
+      "gzip": 4348
+    },
+    "menus": {
+      "raw": 2959,
+      "gzip": 1221
+    },
+    "motion-spatial": {
+      "raw": 6206,
+      "gzip": 2227
+    },
+    "slider": {
+      "raw": 6614,
+      "gzip": 2511
+    },
+    "surfaces": {
+      "raw": 4654,
+      "gzip": 1598
+    },
+    "tradingview": {
+      "raw": 53353,
+      "gzip": 14104
+    }
+  }
+}

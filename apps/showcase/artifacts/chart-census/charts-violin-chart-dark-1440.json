@@ -1,0 +1,57 @@
+{
+  "route": "/charts/violin-chart",
+  "url": "http://127.0.0.1:3000/charts/violin-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 1422
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 320,
+    "bitmapW": 860,
+    "bitmapH": 320
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.0319,
+    "bounds": {
+      "minX": 12,
+      "minY": 0,
+      "maxX": 848,
+      "maxY": 318
+    }
+  },
+  "renderer": {
+    "texts": 10,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 23,
+    "marks": {
+      "line": 8,
+      "tspan": 10,
+      "polygon": 3,
+      "path": 2
+    },
+    "shortest": 25
+  },
+  "screenshot": "artifacts/chart-census/charts-violin-chart-dark-1440.png"
+}

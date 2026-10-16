@@ -1,0 +1,57 @@
+{
+  "route": "/charts/bump-chart",
+  "url": "http://127.0.0.1:3000/charts/bump-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 687
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 320,
+    "bitmapW": 860,
+    "bitmapH": 320
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.0432,
+    "bounds": {
+      "minX": 12,
+      "minY": 14,
+      "maxX": 830,
+      "maxY": 312
+    }
+  },
+  "renderer": {
+    "texts": 9,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 1,
+    "marksTotal": 33,
+    "marks": {
+      "line": 5,
+      "tspan": 9,
+      "ec-polyline": 4,
+      "path": 15
+    },
+    "shortest": 5
+  },
+  "screenshot": "artifacts/chart-review/after/charts-bump-chart-dark-1440.png"
+}

@@ -1,0 +1,57 @@
+{
+  "route": "/charts/line-chart",
+  "url": "http://127.0.0.1:3000/charts/line-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 1139
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 320,
+    "bitmapW": 860,
+    "bitmapH": 320
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.0499,
+    "bounds": {
+      "minX": 28,
+      "minY": 16,
+      "maxX": 852,
+      "maxY": 316
+    }
+  },
+  "renderer": {
+    "texts": 14,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 32,
+    "marks": {
+      "line": 8,
+      "tspan": 14,
+      "ec-polyline": 2,
+      "path": 8
+    },
+    "shortest": 22
+  },
+  "screenshot": "artifacts/chart-census/charts-line-chart-dark-1440.png"
+}

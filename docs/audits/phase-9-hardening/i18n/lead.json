@@ -1,0 +1,23 @@
+{
+  "agent": "lead",
+  "surface": "Phase 9 Hardening — Live Demo chrome and fixtures",
+  "sentences": [
+    { "en": "Live preview", "zh": "实时预览" },
+    { "en": "Close, eight sessions", "zh": "收盘价，八个交易日" },
+    { "en": "The exact rows behind the chart.", "zh": "图表背后的精确数据行。" },
+    { "en": "Close price per session", "zh": "每个交易日的收盘价" },
+    { "en": "Six prepared research runs with performance and metadata columns.", "zh": "六条准备好的研究记录，含表现与元数据列。" },
+    { "en": "Four slides", "zh": "四张幻灯片" },
+    { "en": "Six slides", "zh": "六张幻灯片" },
+    { "en": "Five slides", "zh": "五张幻灯片" },
+    { "en": "Nine slides", "zh": "九张幻灯片" },
+    { "en": "Two slides", "zh": "两张幻灯片" },
+    { "en": "The dataset", "zh": "数据集" },
+    { "en": "Next steps", "zh": "下一步" },
+    { "en": "Shown inside a real table, which is the only context the component renders in.", "zh": "放在真实表格里展示——这是该组件唯一能渲染的上下文。" },
+    { "en": "The rows behind a surface, one control away, without pushing the page down.", "zh": "数据行就在一层浮面之后，一个控件即可打开，且不会把页面撑长。" },
+    { "en": "The list is controlled: it reports the complete new order and the caller owns it.", "zh": "该列表是受控的：它回报完整的新顺序，状态由调用方持有。" },
+    { "en": "Two panes, one value: the selected ids on the right are the whole state.", "zh": "两个面板，一个值：右侧被选中的 id 就是全部状态。" },
+    { "en": "One paragraph set in the four voices: heading, body, numeric and code.", "zh": "一段文字，四种声线：标题、正文、数字与代码。" }
+  ]
+}

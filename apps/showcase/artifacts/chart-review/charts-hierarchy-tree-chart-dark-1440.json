@@ -1,0 +1,42 @@
+{
+  "route": "/charts/hierarchy-tree-chart",
+  "url": "http://127.0.0.1:3000/charts/hierarchy-tree-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 953
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 320,
+    "bitmapW": 860,
+    "bitmapH": 320
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.0258,
+    "bounds": {
+      "minX": 0,
+      "minY": 44,
+      "maxX": 858,
+      "maxY": 274
+    }
+  },
+  "screenshot": "artifacts/chart-review/charts-hierarchy-tree-chart-dark-1440.png"
+}

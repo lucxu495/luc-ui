@@ -1,0 +1,55 @@
+{
+  "agent": "lead",
+  "surface": "Phase 9 documentation chrome: page parts, search, playground shell, homepage metadata",
+  "since": "2026-10-09",
+  "sentences": [
+    { "en": "Modified", "zh": "已修改" },
+    { "en": "Reset to defaults", "zh": "恢复默认值" },
+    { "en": "Preview theme", "zh": "预览主题" },
+    { "en": "Light", "zh": "浅色" },
+    { "en": "Dark", "zh": "深色" },
+    { "en": "Preview width", "zh": "预览宽度" },
+    { "en": "Full", "zh": "全宽" },
+    { "en": "Not controllable here", "zh": "无法在这里调节" },
+    { "en": "Copy for an AI agent", "zh": "复制给 AI 智能体" },
+    {
+      "en": "A specification an agent can act on: the import, the setup, the chosen props, the data contract and the accessibility expectation.",
+      "zh": "一份智能体可以直接照做的说明：导入方式、外围环境、所选 props、数据契约与无障碍预期。"
+    },
+    { "en": "Leading icon", "zh": "前导图标" },
+    { "en": "Full width", "zh": "占满宽度" },
+    { "en": "Tactile press", "zh": "触感按压" },
+    { "en": "Personal sites", "zh": "个人站点" },
+    { "en": "Search components and charts", "zh": "搜索组件与图表" },
+    { "en": "matches", "zh": "条匹配" },
+    { "en": "Search results", "zh": "搜索结果" },
+    {
+      "en": "No components match that. Try an export name such as Button or LineChart.",
+      "zh": "没有匹配的组件。可以试试 Button、LineChart 这样的导出名。"
+    },
+    {
+      "en": "Search the whole catalogue, including charts.",
+      "zh": "搜索整个目录，包括图表。"
+    },
+    { "en": "Generated from the public API", "zh": "由公开 API 生成" },
+    { "en": "Documented on its family page", "zh": "记录在其所属家族的页面上" },
+    {
+      "en": "This page documents a provider or a composed surface. Its exports come from the package entry point.",
+      "zh": "这一页记录的是一个 provider 或组合式表面，它的导出来自包的入口路径。"
+    },
+    {
+      "en": "Values the compiler reads from the declaration.",
+      "zh": "以下取值均由编译器从类型声明中读出。"
+    },
+    { "en": "This export takes no props of its own.", "zh": "这个导出本身不接受任何 props。" },
+    {
+      "en": "A specification an agent can act on: the import path, the setup around it, and the accessibility and styling expectations that are easy to get wrong.",
+      "zh": "一份智能体可以直接照做的说明：导入路径、外围环境，以及最容易被做错的无障碍与样式预期。"
+    },
+    { "en": "LUC UI — one page per component", "zh": "LUC UI — 每个组件一页" },
+    {
+      "en": "A React and TypeScript design system: tokens, accessible components, spatial motion, data display and charts — documented one component at a time, in English and Simplified Chinese.",
+      "zh": "一套 React 与 TypeScript 设计系统：设计令牌、可访问的组件、空间动效、数据展示与图表——逐个组件地写成文档，中英双语。"
+    }
+  ]
+}

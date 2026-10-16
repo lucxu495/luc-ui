@@ -1,0 +1,19 @@
+/* =============================================================================
+ * LUC UI — style entry point.
+ *
+ * Consumer usage (Tailwind CSS v4 app):
+ *   @import "tailwindcss";
+ *   @import "@luc/ui/styles.css";
+ * ========================================================================== */
+
+@import "../tokens/tokens.css";
+@import "./base.css";
+@import "./utilities.css";
+@import "./charts.css";
+@import "./toast.css";
+
+/* Dark mode is class driven so the provider, the OS, and tests all agree. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* The package styles itself; scan our own source for utility usage. */
+@source "../../src";

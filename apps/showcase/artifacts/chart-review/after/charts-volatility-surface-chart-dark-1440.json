@@ -1,0 +1,57 @@
+{
+  "route": "/charts/volatility-surface-chart",
+  "url": "http://127.0.0.1:3000/charts/volatility-surface-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 788
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 380,
+    "bitmapW": 860,
+    "bitmapH": 380
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.2661,
+    "bounds": {
+      "minX": 10,
+      "minY": 12,
+      "maxX": 666,
+      "maxY": 378
+    }
+  },
+  "renderer": {
+    "texts": 13,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 71,
+    "marks": {
+      "polygon": 25,
+      "polyline": 13,
+      "tspan": 13,
+      "circle": 20
+    },
+    "shortest": 26
+  },
+  "screenshot": "artifacts/chart-review/after/charts-volatility-surface-chart-dark-1440.png"
+}

@@ -1,0 +1,55 @@
+{
+  "route": "/charts/regime-strip",
+  "url": "http://127.0.0.1:3000/charts/regime-strip",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 610
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 120,
+    "bitmapW": 860,
+    "bitmapH": 120
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.1557,
+    "bounds": {
+      "minX": 8,
+      "minY": 10,
+      "maxX": 846,
+      "maxY": 116
+    }
+  },
+  "renderer": {
+    "texts": 12,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 18,
+    "marks": {
+      "tspan": 12,
+      "rect": 6
+    },
+    "shortest": 16
+  },
+  "screenshot": "artifacts/chart-census/charts-regime-strip-dark-1440.png"
+}

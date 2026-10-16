@@ -1,0 +1,56 @@
+{
+  "route": "/charts/polar-rose-chart",
+  "url": "http://127.0.0.1:3000/charts/polar-rose-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 772
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 340,
+    "bitmapW": 860,
+    "bitmapH": 340
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.1128,
+    "bounds": {
+      "minX": 232,
+      "minY": 26,
+      "maxX": 616,
+      "maxY": 320
+    }
+  },
+  "renderer": {
+    "texts": 8,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 24,
+    "marks": {
+      "polyline": 8,
+      "sector": 8,
+      "tspan": 8
+    },
+    "shortest": 7
+  },
+  "screenshot": "artifacts/chart-census/charts-polar-rose-chart-dark-1440.png"
+}

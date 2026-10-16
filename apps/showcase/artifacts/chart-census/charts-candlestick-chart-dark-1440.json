@@ -1,0 +1,57 @@
+{
+  "route": "/charts/candlestick-chart",
+  "url": "http://127.0.0.1:3000/charts/candlestick-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 789
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 340,
+    "bitmapW": 860,
+    "bitmapH": 340
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.0918,
+    "bounds": {
+      "minX": 32,
+      "minY": 18,
+      "maxX": 840,
+      "maxY": 326
+    }
+  },
+  "renderer": {
+    "texts": 13,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 27,
+    "marks": {
+      "line": 5,
+      "tspan": 13,
+      "normalCandlestickBox": 8,
+      "ec-polyline": 1
+    },
+    "shortest": 27
+  },
+  "screenshot": "artifacts/chart-census/charts-candlestick-chart-dark-1440.png"
+}

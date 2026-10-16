@@ -1,0 +1,50 @@
+{
+  "/components/field-parts": {
+    "nodes": 7,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 7
+    },
+    "examples": [
+      "*",
+      "*",
+      "+"
+    ]
+  },
+  "/components/file-upload": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/sections": {
+    "nodes": 10,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 10
+    },
+    "examples": [
+      "1",
+      "2",
+      "3"
+    ]
+  },
+  "/components/transfer-list": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  }
+}

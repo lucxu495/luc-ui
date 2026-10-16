@@ -1,0 +1,57 @@
+{
+  "route": "/charts/gauge-chart",
+  "url": "http://127.0.0.1:3000/charts/gauge-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 628
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 220,
+    "bitmapW": 860,
+    "bitmapH": 220
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.0406,
+    "bounds": {
+      "minX": 338,
+      "minY": 36,
+      "maxX": 522,
+      "maxY": 218
+    }
+  },
+  "renderer": {
+    "texts": 2,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 7,
+    "marks": {
+      "sector": 3,
+      "tspan": 2,
+      "rect": 1,
+      "sausage": 1
+    },
+    "shortest": 54
+  },
+  "screenshot": "artifacts/chart-census/charts-gauge-chart-dark-1440.png"
+}

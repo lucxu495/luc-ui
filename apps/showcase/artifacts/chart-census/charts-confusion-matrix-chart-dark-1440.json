@@ -1,0 +1,56 @@
+{
+  "route": "/charts/confusion-matrix-chart",
+  "url": "http://127.0.0.1:3000/charts/confusion-matrix-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 568
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 320,
+    "bitmapW": 860,
+    "bitmapH": 320
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.0083,
+    "bounds": {
+      "minX": 12,
+      "minY": 54,
+      "maxX": 848,
+      "maxY": 308
+    }
+  },
+  "renderer": {
+    "texts": 15,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 26,
+    "marks": {
+      "line": 2,
+      "tspan": 15,
+      "rect": 9
+    },
+    "shortest": 5
+  },
+  "screenshot": "artifacts/chart-census/charts-confusion-matrix-chart-dark-1440.png"
+}

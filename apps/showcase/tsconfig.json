@@ -1,0 +1,32 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "declaration": false,
+    "declarationMap": false,
+    "allowJs": true,
+    "incremental": true,
+    "plugins": [{ "name": "next" }],
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  /*
+   * `tests/**` is excluded from `tsc` because the Showcase has no test runner of
+   * its own: its unit tests execute under the library's Vitest, which has its
+   * own module graph. The tests import `vitest` explicitly (no ambient globals),
+   * so a reader can see where `describe` comes from. The trade-off is stated in
+   * the phase audit: those files are executed but not type-checked by `tsc`.
+   */
+  /*
+   * The hyphenated session directories are excluded for the same reason ESLint
+   * ignores them (CONCURRENCY-001, docs/DEV_MODE.md §7): the `**` and `.ts`
+   * include below would otherwise pull Turbopack's generated dev types into
+   * `pnpm typecheck`, where framework output would decide whether this project
+   * is well typed. The default session's own types are included deliberately —
+   * Next's route types live there — which is why this pattern carries the
+   * hyphen rather than matching every output directory.
+   */
+  "exclude": ["node_modules", "scripts/**/*.mjs", "tests/**", ".next-*/**"]
+}

@@ -1,0 +1,42 @@
+{
+  "route": "/charts/calendar-heatmap",
+  "url": "http://127.0.0.1:3000/charts/calendar-heatmap",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 772
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 300,
+    "bitmapW": 860,
+    "bitmapH": 300
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.211,
+    "bounds": {
+      "minX": 34,
+      "minY": 36,
+      "maxX": 842,
+      "maxY": 292
+    }
+  },
+  "screenshot": "artifacts/chart-review/charts-calendar-heatmap-dark-1440.png"
+}

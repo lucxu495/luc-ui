@@ -1,0 +1,56 @@
+{
+  "route": "/charts/feature-importance-chart",
+  "url": "http://127.0.0.1:3000/charts/feature-importance-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 728
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 320,
+    "bitmapW": 860,
+    "bitmapH": 320
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.0129,
+    "bounds": {
+      "minX": 12,
+      "minY": 36,
+      "maxX": 832,
+      "maxY": 310
+    }
+  },
+  "renderer": {
+    "texts": 11,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 39,
+    "marks": {
+      "line": 23,
+      "tspan": 11,
+      "rect": 5
+    },
+    "shortest": 24
+  },
+  "screenshot": "artifacts/chart-census/charts-feature-importance-chart-dark-1440.png"
+}

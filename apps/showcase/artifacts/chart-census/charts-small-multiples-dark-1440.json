@@ -1,0 +1,39 @@
+{
+  "route": "/charts/small-multiples",
+  "url": "http://127.0.0.1:3000/charts/small-multiples",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 506
+  },
+  "canvas": null,
+  "svg": {
+    "cssW": 398,
+    "cssH": 48,
+    "nodes": 2
+  },
+  "paths": 10,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": null,
+  "renderer": {
+    "texts": 0,
+    "dropped": null,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": null,
+    "marks": null,
+    "shortest": null
+  },
+  "screenshot": "artifacts/chart-census/charts-small-multiples-dark-1440.png"
+}

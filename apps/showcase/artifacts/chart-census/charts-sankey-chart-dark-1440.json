@@ -1,0 +1,56 @@
+{
+  "route": "/charts/sankey-chart",
+  "url": "http://127.0.0.1:3000/charts/sankey-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 992
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 380,
+    "bitmapW": 860,
+    "bitmapH": 380
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.4148,
+    "bounds": {
+      "minX": 4,
+      "minY": 12,
+      "maxX": 748,
+      "maxY": 366
+    }
+  },
+  "renderer": {
+    "texts": 7,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 22,
+    "marks": {
+      "path": 8,
+      "rect": 7,
+      "tspan": 7
+    },
+    "shortest": 22
+  },
+  "screenshot": "artifacts/chart-census/charts-sankey-chart-dark-1440.png"
+}

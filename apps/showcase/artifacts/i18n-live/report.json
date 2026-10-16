@@ -1,0 +1,78 @@
+[
+  {
+    "slug": "components-field-parts",
+    "path": "/components/field-parts",
+    "leaked": [],
+    "leakedContext": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 7,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 7
+      },
+      "examples": [
+        "*",
+        "*",
+        "+"
+      ]
+    }
+  },
+  {
+    "slug": "components-file-upload",
+    "path": "/components/file-upload",
+    "leaked": [],
+    "leakedContext": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-sections",
+    "path": "/components/sections",
+    "leaked": [],
+    "leakedContext": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 10,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 10
+      },
+      "examples": [
+        "1",
+        "2",
+        "3"
+      ]
+    }
+  },
+  {
+    "slug": "components-transfer-list",
+    "path": "/components/transfer-list",
+    "leaked": [],
+    "leakedContext": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  }
+]

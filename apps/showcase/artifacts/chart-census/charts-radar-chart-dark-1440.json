@@ -1,0 +1,58 @@
+{
+  "route": "/charts/radar-chart",
+  "url": "http://127.0.0.1:3000/charts/radar-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 769
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 340,
+    "bitmapW": 860,
+    "bitmapH": 340
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.0933,
+    "bounds": {
+      "minX": 238,
+      "minY": 16,
+      "maxX": 600,
+      "maxY": 310
+    }
+  },
+  "renderer": {
+    "texts": 5,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 15,
+    "marks": {
+      "path": 1,
+      "line": 5,
+      "tspan": 5,
+      "polyline": 2,
+      "polygon": 2
+    },
+    "shortest": 25
+  },
+  "screenshot": "artifacts/chart-census/charts-radar-chart-dark-1440.png"
+}

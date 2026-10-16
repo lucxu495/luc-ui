@@ -1,0 +1,57 @@
+{
+  "route": "/charts/quadrant-scatter-chart",
+  "url": "http://127.0.0.1:3000/charts/quadrant-scatter-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 853
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 340,
+    "bitmapW": 860,
+    "bitmapH": 340
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.0346,
+    "bounds": {
+      "minX": 10,
+      "minY": 0,
+      "maxX": 858,
+      "maxY": 330
+    }
+  },
+  "renderer": {
+    "texts": 20,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 1,
+    "marksTotal": 48,
+    "marks": {
+      "line": 14,
+      "tspan": 20,
+      "path": 12,
+      "ec-line": 2
+    },
+    "shortest": 5
+  },
+  "screenshot": "artifacts/chart-census/charts-quadrant-scatter-chart-dark-1440.png"
+}

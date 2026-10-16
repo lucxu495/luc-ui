@@ -1,0 +1,11 @@
+{
+  "agent": "lead",
+  "surface": "Phase 9.5 — layout, full preview and overlay chrome",
+  "sentences": [
+    { "en": "Preview", "zh": "预览" },
+    { "en": "Full preview", "zh": "全宽预览" },
+    { "en": "Exit full preview", "zh": "退出全宽预览" },
+    { "en": "Full-width preview — {product}", "zh": "全宽预览 — {product}" }
+    ,{ "en": "From the consumer smoke test: each scenario is bundled with every third-party module external, so the numbers describe LUC UI's own graph rather than React's. The figures are a snapshot taken on {date}; re-run the command to reproduce them on your machine.", "zh": "数据来自消费端冒烟测试：每个场景都会把全部第三方模块视为外部依赖打包，因此这些数字描述的是 LUC UI 自身的依赖图，而不是 React 的。表中数据为 {date} 的快照；在本机重新运行该命令即可复现。" }
+  ]
+}

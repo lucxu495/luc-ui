@@ -1,0 +1,69 @@
+@import "tailwindcss";
+@import "@luc/ui/styles.css";
+
+/*
+ * The design system styles itself. Tailwind must also scan the package source
+ * so utilities used *inside* components are emitted.
+ */
+@source "../../../packages/ui/src";
+@source "../components";
+@source "../app";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /*
+     * A page whose height changes must not resize itself.
+     *
+     * Interacting with a Playground can cross the viewport-height threshold in
+     * either direction, and a classic overlay scrollbar then appears or
+     * disappears — which moves every centred element on the page by its width.
+     * That is the "the page jumped" in the report. Reserving the gutter
+     * permanently costs nothing visible and removes the class of defect
+     * entirely, rather than chasing each page that can cross the threshold.
+     */
+    scrollbar-gutter: stable;
+  }
+
+  /* Showcase-only: keep long token tables readable. */
+  .luc-table-scroll {
+    scrollbar-gutter: stable;
+  }
+
+  /*
+   * Layout intents.
+   *
+   * A documentation site is not one width. A paragraph, a props table, a
+   * fourteen-series time chart and a whole simulated website each want a
+   * different amount of horizontal space, and forcing all four through one
+   * `max-width` is how a page ends up either unreadably wide or visibly
+   * empty. These are the Showcase's own tokens, deliberately not `@luc/ui`'s:
+   * a *consumer* of the library picks its own measure, and the library's
+   * `Container` keeps offering `content`, `prose` and `full` unchanged.
+   *
+   * The numbers are the useful range of a design system's documentation on a
+   * modern desktop. `docs` is sized so that at 1920px the reader gets the whole
+   * column the shell can give — the sidebar, the outline rail and the gutters
+   * have already been subtracted by the time it applies — while a 4K display
+   * still lands on a deliberate measure rather than a 2300px-wide table row.
+   */
+  :root {
+    /* Long-form prose: a comfortable line length, and nothing else. */
+    --layout-reading-max: 44rem;
+    /* Component, chart and motion documentation: preview, controls, tables. */
+    --layout-docs-max: 104rem;
+    /* Chart galleries and professional Studios: as wide as the shell allows. */
+    --layout-wide-max: 120rem;
+    /* A single small control, staged rather than stretched. */
+    --layout-compact-max: 56rem;
+    /*
+     * How wide a simulated website is allowed to be.
+     *
+     * An experience is a whole product, so its container is the one place a
+     * page's width is a *design* decision rather than a reading decision. The
+     * stage raises this when it expands to the viewport, which is what makes
+     * "Full preview" show something different from the frame in the docs.
+     */
+    --experience-max: 88rem;
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "route": "/charts/theme-river-chart",
+  "url": "http://127.0.0.1:3000/charts/theme-river-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 870
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 360,
+    "bitmapW": 860,
+    "bitmapH": 360
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.552,
+    "bounds": {
+      "minX": 12,
+      "minY": 72,
+      "maxX": 844,
+      "maxY": 352
+    }
+  },
+  "renderer": {
+    "texts": 10,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 24,
+    "marks": {
+      "line": 11,
+      "tspan": 10,
+      "ec-polygon": 3
+    },
+    "shortest": 17
+  },
+  "screenshot": "artifacts/chart-census/charts-theme-river-chart-dark-1440.png"
+}

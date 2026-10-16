@@ -1,0 +1,56 @@
+{
+  "route": "/charts/parallel-coordinates-chart",
+  "url": "http://127.0.0.1:3000/charts/parallel-coordinates-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 996
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 340,
+    "bitmapW": 860,
+    "bitmapH": 340
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.0602,
+    "bounds": {
+      "minX": 0,
+      "minY": 0,
+      "maxX": 858,
+      "maxY": 328
+    }
+  },
+  "renderer": {
+    "texts": 31,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 4,
+    "marksTotal": 68,
+    "marks": {
+      "polyline": 6,
+      "line": 31,
+      "tspan": 31
+    },
+    "shortest": 23
+  },
+  "screenshot": "artifacts/chart-census/charts-parallel-coordinates-chart-dark-1440.png"
+}

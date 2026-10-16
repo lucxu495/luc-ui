@@ -1,0 +1,37 @@
+{
+  "route": "/charts/gantt-chart",
+  "url": "http://127.0.0.1:3000/charts/gantt-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 650
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 300,
+    "bitmapW": 860,
+    "bitmapH": 300
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.0186,
+    "bounds": {
+      "minX": 12,
+      "minY": 12,
+      "maxX": 834,
+      "maxY": 290
+    }
+  },
+  "screenshot": "artifacts/chart-review/charts-gantt-chart-dark-1440.png"
+}

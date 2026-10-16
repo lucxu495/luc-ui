@@ -1,0 +1,423 @@
+{
+  "baseUrl": "http://127.0.0.1:3000",
+  "generatedAt": "2026-10-14T09:53:58.539Z",
+  "mode": "providers",
+  "providerMode": "live",
+  "workers": 2,
+  "routes": 10,
+  "selectedRoutes": [
+    "tradingview-overview",
+    "tradingview-charts",
+    "tradingview-watchlists",
+    "tradingview-tickers",
+    "tradingview-heatmaps",
+    "tradingview-screeners",
+    "tradingview-symbol-details",
+    "tradingview-news-calendars",
+    "tradingview-themes",
+    "tradingview-patterns"
+  ],
+  "screenshots": [
+    "screenshots/tradingview-overview-dark-desktop.png",
+    "screenshots/tradingview-tradingview-overview-dark-missing-web-component.png",
+    "screenshots/tradingview-tradingview-overview-dark-missing-iframe.png",
+    "screenshots/tradingview-charts-dark-desktop.png",
+    "screenshots/tradingview-tradingview-overview-dark-broker-rating.png",
+    "screenshots/tradingview-tradingview-charts-dark-advanced-chart.png",
+    "screenshots/tradingview-tradingview-charts-dark-mini-chart.png",
+    "screenshots/tradingview-tradingview-charts-dark-symbol-overview.png",
+    "screenshots/tradingview-tradingview-charts-dark-seasonal-chart.png",
+    "screenshots/tradingview-overview-light-desktop.png",
+    "screenshots/tradingview-tradingview-overview-light-missing-web-component.png",
+    "screenshots/tradingview-tradingview-overview-light-missing-iframe.png",
+    "screenshots/tradingview-tradingview-overview-light-broker-rating.png",
+    "screenshots/tradingview-charts-light-desktop.png",
+    "screenshots/tradingview-tradingview-charts-light-advanced-chart.png",
+    "screenshots/tradingview-tradingview-charts-light-mini-chart.png",
+    "screenshots/tradingview-tradingview-charts-light-symbol-overview.png",
+    "screenshots/tradingview-tradingview-charts-light-seasonal-chart.png",
+    "screenshots/tradingview-overview-dark-mobile.png",
+    "screenshots/tradingview-charts-dark-mobile.png",
+    "screenshots/tradingview-watchlists-dark-desktop.png",
+    "screenshots/tradingview-tickers-dark-desktop.png",
+    "screenshots/tradingview-tradingview-watchlists-dark-market-summary.png",
+    "screenshots/tradingview-tradingview-tickers-dark-ticker-tape.png",
+    "screenshots/tradingview-tradingview-watchlists-dark-market-overview.png",
+    "screenshots/tradingview-tradingview-tickers-dark-tickers.png",
+    "screenshots/tradingview-tradingview-watchlists-dark-market-data.png",
+    "screenshots/tradingview-tradingview-tickers-dark-single-ticker.png",
+    "screenshots/tradingview-tradingview-tickers-dark-ticker-tag.png",
+    "screenshots/tradingview-tradingview-watchlists-dark-world-market-summary.png",
+    "screenshots/tradingview-tickers-dark-mobile.png",
+    "screenshots/tradingview-heatmaps-dark-desktop.png",
+    "screenshots/tradingview-tradingview-heatmaps-dark-stock-heatmap.png",
+    "screenshots/tradingview-tradingview-heatmaps-dark-crypto-heatmap.png",
+    "screenshots/tradingview-tradingview-heatmaps-dark-etf-heatmap.png",
+    "screenshots/tradingview-tradingview-heatmaps-dark-forex-table.png",
+    "screenshots/tradingview-screeners-dark-desktop.png",
+    "screenshots/tradingview-tradingview-screeners-dark-screener.png",
+    "screenshots/tradingview-tradingview-screeners-dark-crypto-mkt-screener.png",
+    "screenshots/tradingview-heatmaps-light-desktop.png",
+    "screenshots/tradingview-tradingview-heatmaps-light-stock-heatmap.png",
+    "screenshots/tradingview-tradingview-heatmaps-light-crypto-heatmap.png",
+    "screenshots/tradingview-tradingview-heatmaps-light-etf-heatmap.png",
+    "screenshots/tradingview-tradingview-heatmaps-light-forex-table.png",
+    "screenshots/tradingview-symbol-details-dark-desktop.png",
+    "screenshots/tradingview-tradingview-symbol-details-dark-symbol-info.png",
+    "screenshots/tradingview-tradingview-symbol-details-dark-technical-analysis.png",
+    "screenshots/tradingview-tradingview-symbol-details-dark-fundamental-data.png",
+    "screenshots/tradingview-tradingview-symbol-details-dark-company-profile.png",
+    "screenshots/tradingview-news-calendars-dark-desktop.png",
+    "screenshots/tradingview-tradingview-news-calendars-dark-top-stories.png",
+    "screenshots/tradingview-tradingview-news-calendars-dark-economic-calendar.png",
+    "screenshots/tradingview-tradingview-news-calendars-dark-economic-map.png",
+    "screenshots/tradingview-symbol-details-dark-mobile.png",
+    "screenshots/tradingview-themes-dark-desktop.png",
+    "screenshots/tradingview-tradingview-themes-dark-mini-chart.png",
+    "screenshots/tradingview-tradingview-themes-dark-market-data.png",
+    "screenshots/tradingview-tradingview-themes-dark-advanced-chart.png",
+    "screenshots/tradingview-tradingview-themes-dark-ticker-tape.png",
+    "screenshots/tradingview-patterns-dark-desktop.png",
+    "screenshots/tradingview-tradingview-patterns-dark-advanced-chart.png",
+    "screenshots/tradingview-tradingview-patterns-dark-single-ticker.png",
+    "screenshots/tradingview-tradingview-patterns-dark-technical-analysis.png",
+    "screenshots/tradingview-tradingview-patterns-dark-symbol-info.png",
+    "screenshots/tradingview-tradingview-patterns-dark-top-stories.png",
+    "screenshots/tradingview-themes-light-desktop.png",
+    "screenshots/tradingview-tradingview-patterns-dark-crypto-heatmap.png",
+    "screenshots/tradingview-tradingview-themes-light-mini-chart.png",
+    "screenshots/tradingview-tradingview-patterns-dark-crypto-mkt-screener.png",
+    "screenshots/tradingview-tradingview-themes-light-market-data.png",
+    "screenshots/tradingview-tradingview-patterns-dark-world-market-summary.png",
+    "screenshots/tradingview-tradingview-themes-light-advanced-chart.png",
+    "screenshots/tradingview-tradingview-themes-light-ticker-tape.png",
+    "screenshots/tradingview-tradingview-patterns-dark-economic-map.png",
+    "screenshots/tradingview-tradingview-patterns-dark-economic-calendar.png",
+    "screenshots/tradingview-tradingview-patterns-dark-market-overview.png",
+    "screenshots/tradingview-patterns-dark-mobile.png",
+    "screenshots/tradingview-charts-settled-dark.png",
+    "screenshots/tradingview-failure-states-dark.png"
+  ],
+  "screenshotsCount": 79,
+  "durations": {
+    "totalMs": 59900,
+    "phases": [
+      {
+        "name": "routes",
+        "durationMs": 35667
+      },
+      {
+        "name": "behaviour:providers",
+        "durationMs": 23967
+      },
+      {
+        "name": "behaviour",
+        "durationMs": 23967
+      }
+    ],
+    "routes": [
+      {
+        "slug": "tradingview-overview",
+        "path": "/integrations/tradingview",
+        "provider": true,
+        "totalMs": 11719,
+        "navigationMs": 111,
+        "readinessMs": 680,
+        "providerWaitMs": 8,
+        "axeMs": 4158.071084,
+        "screenshotMs": 552.8911249999996,
+        "mobileMs": 4586,
+        "variants": [
+          "dark-desktop",
+          "light-desktop",
+          "dark-mobile"
+        ]
+      },
+      {
+        "slug": "tradingview-charts",
+        "path": "/integrations/tradingview/charts",
+        "provider": true,
+        "totalMs": 12084,
+        "navigationMs": 100,
+        "readinessMs": 680,
+        "providerWaitMs": 43,
+        "axeMs": 2502.6969999999988,
+        "screenshotMs": 785.8845409999999,
+        "mobileMs": 3133,
+        "variants": [
+          "dark-desktop",
+          "light-desktop",
+          "dark-mobile"
+        ]
+      },
+      {
+        "slug": "tradingview-watchlists",
+        "path": "/integrations/tradingview/watchlists",
+        "provider": true,
+        "totalMs": 4558,
+        "navigationMs": 576,
+        "readinessMs": 900,
+        "providerWaitMs": 23,
+        "axeMs": 891.6733330000006,
+        "screenshotMs": 328.14479200000096,
+        "mobileMs": 0,
+        "variants": [
+          "dark-desktop"
+        ]
+      },
+      {
+        "slug": "tradingview-tickers",
+        "path": "/integrations/tradingview/tickers",
+        "provider": true,
+        "totalMs": 6480,
+        "navigationMs": 157,
+        "readinessMs": 994,
+        "providerWaitMs": 67,
+        "axeMs": 1601.3630840000023,
+        "screenshotMs": 310.22233400000005,
+        "mobileMs": 2394,
+        "variants": [
+          "dark-desktop",
+          "dark-mobile"
+        ]
+      },
+      {
+        "slug": "tradingview-heatmaps",
+        "path": "/integrations/tradingview/heatmaps",
+        "provider": true,
+        "totalMs": 6998,
+        "navigationMs": 187,
+        "readinessMs": 660,
+        "providerWaitMs": 6,
+        "axeMs": 1338.0401659999989,
+        "screenshotMs": 735.5281250000044,
+        "mobileMs": 0,
+        "variants": [
+          "dark-desktop",
+          "light-desktop"
+        ]
+      },
+      {
+        "slug": "tradingview-screeners",
+        "path": "/integrations/tradingview/screeners",
+        "provider": true,
+        "totalMs": 3624,
+        "navigationMs": 173,
+        "readinessMs": 704,
+        "providerWaitMs": 9,
+        "axeMs": 614.965791999999,
+        "screenshotMs": 282.58133299999827,
+        "mobileMs": 0,
+        "variants": [
+          "dark-desktop"
+        ]
+      },
+      {
+        "slug": "tradingview-symbol-details",
+        "path": "/integrations/tradingview/symbol-details",
+        "provider": true,
+        "totalMs": 5273,
+        "navigationMs": 132,
+        "readinessMs": 621,
+        "providerWaitMs": 270,
+        "axeMs": 1100.4874999999993,
+        "screenshotMs": 148.76787500000137,
+        "mobileMs": 1853,
+        "variants": [
+          "dark-desktop",
+          "dark-mobile"
+        ]
+      },
+      {
+        "slug": "tradingview-news-calendars",
+        "path": "/integrations/tradingview/news-calendars",
+        "provider": true,
+        "totalMs": 3243,
+        "navigationMs": 58,
+        "readinessMs": 509,
+        "providerWaitMs": 1,
+        "axeMs": 646.9117499999993,
+        "screenshotMs": 223.3581660000018,
+        "mobileMs": 0,
+        "variants": [
+          "dark-desktop"
+        ]
+      },
+      {
+        "slug": "tradingview-themes",
+        "path": "/integrations/tradingview/themes",
+        "provider": true,
+        "totalMs": 5897,
+        "navigationMs": 77,
+        "readinessMs": 510,
+        "providerWaitMs": 4,
+        "axeMs": 1406.6270419999964,
+        "screenshotMs": 421.5421669999996,
+        "mobileMs": 0,
+        "variants": [
+          "dark-desktop",
+          "light-desktop"
+        ]
+      },
+      {
+        "slug": "tradingview-patterns",
+        "path": "/integrations/tradingview/patterns",
+        "provider": true,
+        "totalMs": 8205,
+        "navigationMs": 56,
+        "readinessMs": 591,
+        "providerWaitMs": 4,
+        "axeMs": 1517.4436260000039,
+        "screenshotMs": 321.625165999998,
+        "mobileMs": 3072,
+        "variants": [
+          "dark-desktop",
+          "dark-mobile"
+        ]
+      }
+    ]
+  },
+  "counters": {
+    "navigationTimeouts": 0,
+    "readinessTimeouts": 0,
+    "providerTimeouts": 0,
+    "providerReady": 147,
+    "providerErrors": 8,
+    "consoleErrors": 0,
+    "pageErrors": 0,
+    "failedRequests": 0,
+    "themeMisses": 0,
+    "axeScans": 19,
+    "axeErrors": 0
+  },
+  "behaviour": [
+    {
+      "check": "provider widgets register and render their own format",
+      "pass": true,
+      "detail": "{\"widgets\":4,\"undefinedTags\":[],\"iframes\":5,\"parked\":0,\"skeletons\":0,\"boxes\":8,\"ready\":8,\"errored\":0,\"pending\":0,\"attribution\":4,\"containers\":4}"
+    },
+    {
+      "check": "every iframe widget renders the provider's attribution block",
+      "pass": true,
+      "detail": "3/3 containers attributed"
+    },
+    {
+      "check": "a theme flip does not stack a second iframe",
+      "pass": true,
+      "detail": "3→3 containers, 4→4 iframes"
+    },
+    {
+      "check": "repeated theme flips do not accumulate provider widgets",
+      "pass": true,
+      "detail": "parked during=0 after=0, containers=3 (baseline 3)"
+    },
+    {
+      "check": "an unreachable provider degrades to a retryable error state",
+      "pass": true,
+      "detail": "3 alerts, 2 retries, 3 after retry (no duplicates)"
+    },
+    {
+      "check": "provider requests are deferred until the widget is in view",
+      "pass": true,
+      "detail": "43 request(s) before scrolling, 51 after"
+    }
+  ],
+  "axe": [
+    {
+      "slug": "tradingview-overview-light",
+      "durationMs": 1420,
+      "violations": []
+    },
+    {
+      "slug": "tradingview-charts-light",
+      "durationMs": 1094,
+      "violations": []
+    },
+    {
+      "slug": "tradingview-overview-mobile",
+      "durationMs": 1626,
+      "violations": []
+    },
+    {
+      "slug": "tradingview-charts-mobile",
+      "durationMs": 668,
+      "violations": []
+    },
+    {
+      "slug": "tradingview-tickers-mobile",
+      "durationMs": 815,
+      "violations": []
+    },
+    {
+      "slug": "tradingview-heatmaps-light",
+      "durationMs": 605,
+      "violations": []
+    },
+    {
+      "slug": "tradingview-symbol-details-mobile",
+      "durationMs": 416,
+      "violations": []
+    },
+    {
+      "slug": "tradingview-themes-light",
+      "durationMs": 752,
+      "violations": []
+    },
+    {
+      "slug": "tradingview-patterns-mobile",
+      "durationMs": 733,
+      "violations": []
+    },
+    {
+      "slug": "tradingview-overview",
+      "durationMs": 1112,
+      "violations": []
+    },
+    {
+      "slug": "tradingview-charts",
+      "durationMs": 741,
+      "violations": []
+    },
+    {
+      "slug": "tradingview-watchlists",
+      "durationMs": 892,
+      "violations": []
+    },
+    {
+      "slug": "tradingview-tickers",
+      "durationMs": 787,
+      "violations": []
+    },
+    {
+      "slug": "tradingview-heatmaps",
+      "durationMs": 733,
+      "violations": []
+    },
+    {
+      "slug": "tradingview-screeners",
+      "durationMs": 615,
+      "violations": []
+    },
+    {
+      "slug": "tradingview-symbol-details",
+      "durationMs": 685,
+      "violations": []
+    },
+    {
+      "slug": "tradingview-news-calendars",
+      "durationMs": 647,
+      "violations": []
+    },
+    {
+      "slug": "tradingview-themes",
+      "durationMs": 655,
+      "violations": []
+    },
+    {
+      "slug": "tradingview-patterns",
+      "durationMs": 785,
+      "violations": []
+    }
+  ],
+  "problems": []
+}

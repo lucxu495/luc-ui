@@ -1,0 +1,671 @@
+/* =============================================================================
+ * LUC UI — Base layer
+ * Minimal, token-driven. Everything here is a house rule, not a reset dump.
+ * ========================================================================== */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    border-color: var(--line-default);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    scrollbar-gutter: stable;
+  }
+
+  body {
+    background-color: var(--surface-canvas);
+    color: var(--fg-primary);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    letter-spacing: var(--text-body--letter-spacing);
+    font-synthesis-weight: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--accent-default) 30%, transparent);
+    color: var(--fg-primary);
+  }
+
+  /* Interactive text stays quiet at rest; the system owns the underline. */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* One focus language for the whole system. */
+  :focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+    border-radius: inherit;
+  }
+
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Numeric contexts must not jitter. */
+  code,
+  kbd,
+  samp,
+  pre,
+  [data-numeric] {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1, "cv05" 1;
+  }
+
+  /* Scrollbars — present, not loud. */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--line-strong) transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--line-strong);
+    border-radius: 9999px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: color-mix(in oklab, var(--fg-disabled) 70%, transparent);
+    background-clip: content-box;
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+
+  /* Motion is an enhancement. Reduce it at the root, universally. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+
+    /*
+     * Functional indicators must keep meaning: a frozen spinner reads as a
+     * bug. These opt back in to a slow pulse (never travel/rotation) and are
+     * the only exception to the clamp.
+     */
+    [data-motion-essential] {
+      animation-duration: 1.6s !important;
+      animation-iteration-count: infinite !important;
+    }
+  }
+
+  /*
+   * The review override. `MotionControl` in the Showcase sets
+   * `data-motion="reduced"` on <html> so a reviewer can inspect the reduced
+   * path without changing their OS settings. It must clamp exactly what the
+   * media query clamps — a JS-only override would leave every CSS transition
+   * running and quietly invalidate the review.
+   */
+  [data-motion="reduced"] *,
+  [data-motion="reduced"] *::before,
+  [data-motion="reduced"] *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-motion="reduced"] [data-motion-essential] {
+    animation-duration: 1.6s !important;
+    animation-iteration-count: infinite !important;
+  }
+}
+
+
+@keyframes luc-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/*
+ * The Button's signature hover sweep. It starts and ends fully outside the box
+ * and invisible, so the animation cannot leave a stray highlight behind when it
+ * is clamped to ~0ms by reduced motion.
+ */
+@keyframes luc-sheen {
+  0% {
+    opacity: 0;
+    transform: translateX(-130%);
+  }
+  35% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(130%);
+  }
+}
+
+@keyframes luc-pulse-soft {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes luc-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * V2.0 — signature interaction layer (PressRipple, AuroraSurface, BeamFlow,
+ * Marquee). Every one of these is compositor-only (`transform`/`opacity`),
+ * one-shot or slow, and collapses cleanly under the reduced-motion clamp.
+ * ------------------------------------------------------------------------ */
+
+/*
+ * Press ink. The ring is sized to the surface and scaled from 0.16, so it
+ * always reads as originating from the finger rather than from the box.
+ */
+@keyframes luc-ripple {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.16);
+  }
+  18% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/*
+ * Aurora drift. It returns to its origin at 100%, so a single clamped
+ * iteration (reduced motion) ends in the undisturbed composition instead of
+ * leaving a field stranded off-canvas.
+ */
+@keyframes luc-aurora-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(7%, -6%, 0) scale(1.14);
+  }
+  66% {
+    transform: translate3d(-6%, 7%, 0) scale(0.93);
+  }
+}
+
+/* One packet crossing a BeamFlow path. `pathLength=100` makes it seamless. */
+@keyframes luc-beam-travel {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* A seamless loop: each copy travels exactly its own width. */
+@keyframes luc-marquee-x {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes luc-marquee-y {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes luc-indeterminate {
+  from {
+    transform: translateX(-110%);
+  }
+  to {
+    transform: translateX(320%);
+  }
+}
+
+/*
+ * `@property` is what makes animating a custom property interpolate instead of
+ * snapping. Without it the BorderGlow sweep would jump straight to 360deg.
+ * Supported in all current evergreen engines; where it is missing, the ring
+ * simply renders in its static (non-travelling) form.
+ */
+@property --glow-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes luc-glow-rotate {
+  to {
+    --glow-angle: 360deg;
+  }
+}
+
+/*
+ * V1.2 — border trail.
+ *
+ * The segment is a dash on a rect with `pathLength=100`, so shifting the offset
+ * by one full dash period (100) is a seamless loop at any size or radius.
+ */
+@keyframes luc-border-trail {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* A slow, low-contrast ambient swell. Never used for data. */
+@keyframes luc-ambient-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.08);
+  }
+}
+
+/* The interactive research grid drifts by exactly one cell per loop. */
+@keyframes luc-grid-drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: var(--grid-cell) var(--grid-cell);
+  }
+}
+
+@keyframes luc-sheen {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* Press compression with a spring settle. Runs only while `:active`. */
+@keyframes luc-press-spring {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  40% {
+    transform: translateY(0.5px) scale(0.962);
+  }
+  100% {
+    transform: translateY(0.5px) scale(0.986);
+  }
+}
+
+@keyframes luc-enter-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*
+ * Disclosure height. Radix Collapsible publishes the measured content height
+ * as a custom property, so the animation is an exact height rather than a
+ * guessed max-height.
+ */
+@keyframes luc-collapsible-in {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--radix-collapsible-content-height);
+    opacity: 1;
+  }
+}
+
+@keyframes luc-collapsible-out {
+  from {
+    height: var(--radix-collapsible-content-height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+/* Overlay entrance/exit — direction aware, short, never bouncy. */
+@keyframes luc-overlay-in {
+  from {
+    opacity: 0;
+    transform: translateY(2px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes luc-overlay-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(1px) scale(0.99);
+  }
+}
+
+/*
+ * Small anchored surfaces — popover, menu, select list, combobox list.
+ *
+ * A menu is *attached* to something, so it should read as unfolding from its
+ * anchor rather than fading in as a floating rectangle: a slightly larger scale
+ * than a dialog gets, plus 4px of travel, on the enter curve. Dialogs keep
+ * `luc-overlay-in`, because a large surface that scales visibly looks like a
+ * resize rather than an entrance.
+ */
+@keyframes luc-anchored-in {
+  from {
+    opacity: 0;
+    transform: translateY(calc(var(--luc-anchor-shift, 4px) * -1)) scale(0.962);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes luc-anchored-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(calc(var(--luc-anchor-shift, 4px) * -0.5)) scale(0.98);
+  }
+}
+
+@keyframes luc-tip-in-top {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes luc-tip-in-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes luc-tip-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes luc-tip-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(-3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes luc-scrim-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes luc-scrim-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/*
+ * Sheet travel. Straight lines only — a research panel should arrive with
+ * intent, not with a spring. Reduced motion collapses these to an instant
+ * appearance through the global clamp.
+ */
+@keyframes luc-sheet-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes luc-sheet-out-right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes luc-sheet-in-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes luc-sheet-out-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes luc-sheet-in-top {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes luc-sheet-out-top {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes luc-sheet-in-bottom {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes luc-sheet-out-bottom {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * V3.0 — spatial geometry, continuity and spatial data flow
+ * ------------------------------------------------------------------------- */
+
+/*
+ * One full turn, and its exact inverse. A node inside an orbiting ring carries
+ * both classes at the same duration, so the label stays upright while the ring
+ * carries it around. Because the pair is 0°→360° and 0°→-360°, the reduced-motion
+ * clamp (which jumps to the end frame) lands on an identical arrangement.
+ */
+@keyframes luc-orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes luc-orbit-counter {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* The packet on a `SelectionBeam`: a short dash travelling the whole path. */
+@keyframes luc-beam-dash {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* A newly promoted card entering the front of a `CardStack`. */
+@keyframes luc-layer-rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/*
+ * Disclosure (V4.0) — Accordion and Collapsible panels.
+ *
+ * Radix measures the panel and writes its height onto the content element as
+ * `--radix-accordion-content-height` (or `--radix-collapsible-content-height`),
+ * which is the only way to animate to `height: auto` without JavaScript
+ * measuring on every frame. The clamp under reduced motion lands on the end
+ * state, so a panel is simply open or closed — never half-open.
+ */
+@keyframes luc-accordion-down {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+}
+
+@keyframes luc-accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes luc-collapsible-down {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--radix-collapsible-content-height);
+    opacity: 1;
+  }
+}
+
+@keyframes luc-collapsible-up {
+  from {
+    height: var(--radix-collapsible-content-height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}

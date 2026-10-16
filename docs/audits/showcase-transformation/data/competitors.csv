@@ -1,0 +1,13 @@
+site,dimension,observation,evidence
+reactbits,sidebar,226-link mega sidebar incl. every component,competitors.json
+reactbits,detail,Preview/Code container tabs; 73 code elements; Props + Related components,competitors.json
+reactbits,mobile,no horizontal overflow; sidebar hidden,competitors.json
+shadcn,detail,variant-per-section (Default/Outline/Secondary) each with specimen+code; 20 copy affordances,competitors.json
+shadcn,install,Command/Manual + pnpm/npm/yarn/bun tabs,competitors.json
+motion-primitives,detail,6 named examples each with its own Preview/Code toggle; 35-row aside,competitors.json
+magicui,detail,Installation -> Examples -> Usage -> Props; Preview/Code + CLI/Manual tabs,competitors.json
+aceternity,detail,CLI/Manual tabs; Props + data-shape table; 163-link aside dominated by templates,competitors.json
+mantine,detail,Documentation/Props/Styles API tabs; 146 code elements; 122-row sidebar,competitors.json
+radix-themes,detail,"page-local rail of 9 section rows (API Reference, Size, Variant, Color, Radius)",competitors.json
+echarts,detail,addressable example ids (?c=line-simple); Edit Code / Full Code / Option Preview,competitors.json
+21st,catalog,384-link visual marketplace index; little code in initial DOM,competitors.json

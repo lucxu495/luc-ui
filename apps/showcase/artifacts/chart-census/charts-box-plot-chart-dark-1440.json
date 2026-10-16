@@ -1,0 +1,57 @@
+{
+  "route": "/charts/box-plot-chart",
+  "url": "http://127.0.0.1:3000/charts/box-plot-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 670
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 320,
+    "bitmapW": 860,
+    "bitmapH": 320
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.1067,
+    "bounds": {
+      "minX": 6,
+      "minY": 18,
+      "maxX": 842,
+      "maxY": 314
+    }
+  },
+  "renderer": {
+    "texts": 11,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 25,
+    "marks": {
+      "line": 9,
+      "tspan": 11,
+      "boxplotBoxPath": 3,
+      "path": 2
+    },
+    "shortest": 26
+  },
+  "screenshot": "artifacts/chart-census/charts-box-plot-chart-dark-1440.png"
+}

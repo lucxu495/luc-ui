@@ -1,0 +1,57 @@
+{
+  "route": "/charts/range-band-chart",
+  "url": "http://127.0.0.1:3000/charts/range-band-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 752
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 320,
+    "bitmapW": 860,
+    "bitmapH": 320
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.2967,
+    "bounds": {
+      "minX": 10,
+      "minY": 20,
+      "maxX": 842,
+      "maxY": 314
+    }
+  },
+  "renderer": {
+    "texts": 20,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 32,
+    "marks": {
+      "line": 7,
+      "tspan": 20,
+      "ec-polygon": 2,
+      "ec-polyline": 3
+    },
+    "shortest": 24
+  },
+  "screenshot": "artifacts/chart-census/charts-range-band-chart-dark-1440.png"
+}

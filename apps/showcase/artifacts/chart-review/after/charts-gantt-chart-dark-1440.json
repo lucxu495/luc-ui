@@ -1,0 +1,56 @@
+{
+  "route": "/charts/gantt-chart",
+  "url": "http://127.0.0.1:3000/charts/gantt-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 650
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 300,
+    "bitmapW": 860,
+    "bitmapH": 300
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.0814,
+    "bounds": {
+      "minX": 12,
+      "minY": 12,
+      "maxX": 838,
+      "maxY": 290
+    }
+  },
+  "renderer": {
+    "texts": 15,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 28,
+    "marks": {
+      "line": 6,
+      "tspan": 15,
+      "rect": 7
+    },
+    "shortest": 27
+  },
+  "screenshot": "artifacts/chart-review/after/charts-gantt-chart-dark-1440.png"
+}

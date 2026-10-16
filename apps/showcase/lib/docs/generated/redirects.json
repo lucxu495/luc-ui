@@ -1,0 +1,142 @@
+[
+  {
+    "source": "/components/app-shell",
+    "destination": "/application/navigation",
+    "permanent": true
+  },
+  {
+    "source": "/components/badge",
+    "destination": "/components/badges",
+    "permanent": true
+  },
+  {
+    "source": "/components/button",
+    "destination": "/components/buttons",
+    "permanent": true
+  },
+  {
+    "source": "/components/calendar",
+    "destination": "/date-time/calendar",
+    "permanent": true
+  },
+  {
+    "source": "/components/card",
+    "destination": "/components/cards",
+    "permanent": true
+  },
+  {
+    "source": "/components/context-menu",
+    "destination": "/components/menus",
+    "permanent": true
+  },
+  {
+    "source": "/components/data-table",
+    "destination": "/data/table",
+    "permanent": true
+  },
+  {
+    "source": "/components/date-picker",
+    "destination": "/date-time/date-picker",
+    "permanent": true
+  },
+  {
+    "source": "/components/dropdown-menu",
+    "destination": "/components/menus",
+    "permanent": true
+  },
+  {
+    "source": "/components/field",
+    "destination": "/components/field-parts",
+    "permanent": true
+  },
+  {
+    "source": "/components/file-input",
+    "destination": "/components/file-upload",
+    "permanent": true
+  },
+  {
+    "source": "/components/form",
+    "destination": "/forms",
+    "permanent": true
+  },
+  {
+    "source": "/components/input",
+    "destination": "/components/inputs",
+    "permanent": true
+  },
+  {
+    "source": "/components/kanban-board",
+    "destination": "/components/board",
+    "permanent": true
+  },
+  {
+    "source": "/components/metric",
+    "destination": "/data/metrics",
+    "permanent": true
+  },
+  {
+    "source": "/components/notification-center",
+    "destination": "/components/notifications",
+    "permanent": true
+  },
+  {
+    "source": "/components/number-input",
+    "destination": "/components/number",
+    "permanent": true
+  },
+  {
+    "source": "/components/otp-input",
+    "destination": "/components/otp",
+    "permanent": true
+  },
+  {
+    "source": "/components/outline-drawer",
+    "destination": "/application/outline-drawer",
+    "permanent": true
+  },
+  {
+    "source": "/components/password-input",
+    "destination": "/components/password",
+    "permanent": true
+  },
+  {
+    "source": "/components/status-badge",
+    "destination": "/data/statuses",
+    "permanent": true
+  },
+  {
+    "source": "/components/tag-input",
+    "destination": "/components/tags",
+    "permanent": true
+  },
+  {
+    "source": "/components/time-picker",
+    "destination": "/date-time/time",
+    "permanent": true
+  },
+  {
+    "source": "/components/url-state",
+    "destination": "/application/url-state",
+    "permanent": true
+  },
+  {
+    "source": "/components/virtual-data-table",
+    "destination": "/data/table-virtualized",
+    "permanent": true
+  },
+  {
+    "source": "/components/workspace",
+    "destination": "/application/workspace",
+    "permanent": true
+  },
+  {
+    "source": "/motion/kinetic-headline",
+    "destination": "/motion/kinetic",
+    "permanent": true
+  },
+  {
+    "source": "/motion/spotlight-surface",
+    "destination": "/motion/spotlight",
+    "permanent": true
+  }
+]

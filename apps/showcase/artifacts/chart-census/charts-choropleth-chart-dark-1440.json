@@ -1,0 +1,58 @@
+{
+  "route": "/charts/choropleth-chart",
+  "url": "http://127.0.0.1:3000/charts/choropleth-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 707
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 340,
+    "bitmapW": 860,
+    "bitmapH": 340
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.3881,
+    "bounds": {
+      "minX": 24,
+      "minY": 34,
+      "maxX": 634,
+      "maxY": 314
+    }
+  },
+  "renderer": {
+    "texts": 2,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 30,
+    "marks": {
+      "compound": 24,
+      "rect": 1,
+      "polygon": 2,
+      "path": 1,
+      "tspan": 2
+    },
+    "shortest": 23
+  },
+  "screenshot": "artifacts/chart-census/charts-choropleth-chart-dark-1440.png"
+}

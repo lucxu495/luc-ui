@@ -1,0 +1,924 @@
+{
+  "baseUrl": "http://127.0.0.1:3000",
+  "generatedAt": "2026-10-14T09:59:00.179Z",
+  "mode": "behaviour",
+  "providerMode": "stub",
+  "workers": 1,
+  "routes": 0,
+  "selectedRoutes": [],
+  "screenshots": [
+    "screenshots/home-phase9-dark-desktop.png",
+    "screenshots/components-rating-dark-desktop.png",
+    "screenshots/components-button-examples-dark-desktop.png",
+    "screenshots/blocks-dark-desktop.png",
+    "screenshots/components-rating-dark-mobile.png",
+    "screenshots/dialog-open-dark-desktop.png",
+    "screenshots/overlay-popover-dark-desktop.png",
+    "screenshots/overlay-tooltip-dark-desktop.png",
+    "screenshots/select-open-dark-desktop.png",
+    "screenshots/combobox-open-dark-desktop.png",
+    "screenshots/sheet-bottom-dark-desktop.png",
+    "screenshots/toast-stack-dark-desktop.png",
+    "screenshots/command-menu-dark-desktop.png",
+    "screenshots/components-menus-open-dark-desktop.png",
+    "screenshots/components-context-menu-dark-desktop.png",
+    "screenshots/components-empty-state-filtered-dark-desktop.png",
+    "screenshots/nested-overlay-sheet-select-dark-desktop.png",
+    "screenshots/bug-combobox-alignment-dark.png",
+    "screenshots/bug-combobox-alignment-light.png",
+    "screenshots/datatable-filtered-dark-desktop.png",
+    "screenshots/datatable-selection-dark-desktop.png",
+    "screenshots/datatable-columns-dark-desktop.png",
+    "screenshots/datatable-virtualized-scroll-dark-desktop.png",
+    "screenshots/chart-table-view-dark-desktop.png",
+    "screenshots/forms-validation-errors-dark-desktop.png",
+    "screenshots/date-picker-open-dark-desktop.png",
+    "screenshots/time-picker-open-dark-desktop.png",
+    "screenshots/date-range-presets-dark-desktop.png",
+    "screenshots/table-date-filter-dark-desktop.png",
+    "screenshots/otp-filled-dark-desktop.png",
+    "screenshots/charts-fullscreen-dark-desktop.png",
+    "screenshots/charts-sync-hover-dark-desktop.png",
+    "screenshots/synchronised-tooltip-dark-desktop.png",
+    "screenshots/synchronised-tooltip-light-desktop.png",
+    "screenshots/bug-boxplot-resting-dark.png",
+    "screenshots/bug-boxplot-resting-light.png",
+    "screenshots/bug-correlation-10x10-values.png",
+    "screenshots/bug-correlation-dense-always.png",
+    "screenshots/bug-correlation-light.png",
+    "screenshots/application-shell-collapsed-dark-desktop.png",
+    "screenshots/workspace-inspector-collapsed-dark-desktop.png",
+    "screenshots/workspace-focus-mode-dark-desktop.png",
+    "screenshots/zoom-200-application-dark-desktop.png",
+    "screenshots/home-nav-open-dark-mobile.png",
+    "screenshots/research-workspace-keyboard-cursor-dark-desktop.png",
+    "screenshots/research-workspace-dark-desktop.png",
+    "screenshots/research-workspace-pinned-dark-desktop.png",
+    "screenshots/research-workspace-share-dark-desktop.png",
+    "screenshots/foundations-motion-reduced-dark-desktop.png",
+    "screenshots/motion-border-glow-reduced-dark-desktop.png",
+    "screenshots/motion-spatial-orbit-dark-desktop.png",
+    "screenshots/motion-spatial-deck-dark-desktop.png",
+    "screenshots/motion-spatial-data-dark-desktop.png",
+    "screenshots/motion-spatial-reduced-dark-desktop.png",
+    "screenshots/tradingview-charts-settled-dark.png",
+    "screenshots/tradingview-failure-states-dark.png",
+    "screenshots/components-accordion-dark-desktop.png",
+    "screenshots/components-tree-view-keyboard-dark-desktop.png",
+    "screenshots/components-carousel-dark-desktop.png",
+    "screenshots/components-board-keyboard-dark-desktop.png",
+    "screenshots/components-ai-live-dark-desktop.png",
+    "screenshots/components-pagination-dark-desktop.png",
+    "screenshots/experiences-marketing-submitted-dark-desktop.png",
+    "screenshots/experiences-saas-invited-dark-desktop.png",
+    "screenshots/experiences-publishing-index-dark-desktop.png",
+    "screenshots/experiences-community-dark-desktop.png",
+    "screenshots/experiences-career-dark-desktop.png",
+    "screenshots/experiences-academic-filtered-dark-desktop.png",
+    "screenshots/experiences-portfolio-dark-desktop.png",
+    "screenshots/experiences-garden-empty-dark-desktop.png",
+    "screenshots/experiences-ai-streamed-dark-desktop.png",
+    "screenshots/experiences-science-bins-dark-desktop.png",
+    "screenshots/experiences-finance-range-dark-desktop.png",
+    "screenshots/experiences-commerce-checkout-dark-desktop.png",
+    "screenshots/experiences-education-scored-dark-desktop.png",
+    "screenshots/experiences-media-dark-desktop.png",
+    "screenshots/experiences-productivity-moved-dark-desktop.png",
+    "screenshots/experiences-forum-report-dark-desktop.png"
+  ],
+  "screenshotsCount": 78,
+  "durations": {
+    "totalMs": 222134,
+    "phases": [
+      {
+        "name": "behaviour:docs",
+        "durationMs": 13705
+      },
+      {
+        "name": "behaviour:html",
+        "durationMs": 7350
+      },
+      {
+        "name": "behaviour:primitives",
+        "durationMs": 23221
+      },
+      {
+        "name": "behaviour:data",
+        "durationMs": 5826
+      },
+      {
+        "name": "behaviour:forms",
+        "durationMs": 14389
+      },
+      {
+        "name": "behaviour:charts",
+        "durationMs": 11033
+      },
+      {
+        "name": "behaviour:application",
+        "durationMs": 9242
+      },
+      {
+        "name": "behaviour:navigation",
+        "durationMs": 9535
+      },
+      {
+        "name": "behaviour:motion",
+        "durationMs": 2137
+      },
+      {
+        "name": "behaviour:spatial",
+        "durationMs": 6512
+      },
+      {
+        "name": "behaviour:providers",
+        "durationMs": 10665
+      },
+      {
+        "name": "behaviour:components",
+        "durationMs": 17689
+      },
+      {
+        "name": "behaviour:experiences",
+        "durationMs": 31235
+      },
+      {
+        "name": "behaviour:geometry",
+        "durationMs": 59296
+      },
+      {
+        "name": "behaviour",
+        "durationMs": 221837
+      }
+    ],
+    "routes": []
+  },
+  "counters": {
+    "navigationTimeouts": 0,
+    "readinessTimeouts": 0,
+    "providerTimeouts": 0,
+    "providerReady": 23,
+    "providerErrors": 2,
+    "consoleErrors": 0,
+    "pageErrors": 0,
+    "failedRequests": 0,
+    "themeMisses": 0,
+    "axeScans": 0,
+    "axeErrors": 0
+  },
+  "behaviour": [
+    {
+      "check": "the homepage states what the library is in one h1",
+      "pass": true,
+      "detail": "1 h1 · Precision meets expression."
+    },
+    {
+      "check": "the homepage shows an install command",
+      "pass": true,
+      "detail": "Two ways to install it, one of them real The package is built, packed and instal"
+    },
+    {
+      "check": "the homepage labels the registry command as not yet published",
+      "pass": true,
+      "detail": "badge missing"
+    },
+    {
+      "check": "every link on the homepage resolves",
+      "pass": true,
+      "detail": "16 links checked"
+    },
+    {
+      "check": "a component id URL redirects to its real page",
+      "pass": true,
+      "detail": "308 → /components/buttons"
+    },
+    {
+      "check": "a generated component page has its own route and heading",
+      "pass": true,
+      "detail": "Rating"
+    },
+    {
+      "check": "a component page documents props from the compiler",
+      "pass": true,
+      "detail": "1 props table(s)"
+    },
+    {
+      "check": "a component page carries its import line and no install boilerplate",
+      "pass": true,
+      "detail": "0 import line(s), 1 copy control(s); install boilerplate absent"
+    },
+    {
+      "check": "a component page keeps an agent brief out of the reading path",
+      "pass": true,
+      "detail": "none rendered"
+    },
+    {
+      "check": "an ordinary component page leads with a disclosed, copyable example",
+      "pass": true,
+      "detail": "<Button variant=\"primary\">Run backtest</Button>; 1 copy control(s)"
+    },
+    {
+      "check": "an ordinary component page carries no Playground",
+      "pass": true,
+      "detail": "none"
+    },
+    {
+      "check": "generated pages render a live specimen with matching code",
+      "pass": true,
+      "detail": "6 pages checked"
+    },
+    {
+      "check": "a demo island hydrates and works from the keyboard",
+      "pass": true,
+      "detail": "9 rows, closed on Escape: true"
+    },
+    {
+      "check": "a chart Playground is built from the page's own fixture",
+      "pass": true,
+      "detail": "  state=\"ready\" />"
+    },
+    {
+      "check": "changing a chart control moves the code and the drawing",
+      "pass": true,
+      "detail": "code changed; height 320 → 340px"
+    },
+    {
+      "check": "component search finds a chart by name",
+      "pass": true,
+      "detail": "ViolinChart /charts/violin-chart"
+    },
+    {
+      "check": "component search says so when nothing matches",
+      "pass": true,
+      "detail": "empty state shown"
+    },
+    {
+      "check": "Escape clears the search",
+      "pass": true
+    },
+    {
+      "check": "a chart has its own page",
+      "pass": true,
+      "detail": "ViolinChart"
+    },
+    {
+      "check": "a chart page states the data contract",
+      "pass": true,
+      "detail": "LUC UI Charts Statistical ViolinChart STATISTICAL GENERATED FROM THE PUBLIC API "
+    },
+    {
+      "check": "the /docs route serves a page",
+      "pass": true,
+      "detail": "200"
+    },
+    {
+      "check": "the /docs/installation route serves a page",
+      "pass": true,
+      "detail": "200"
+    },
+    {
+      "check": "the /docs/theming route serves a page",
+      "pass": true,
+      "detail": "200"
+    },
+    {
+      "check": "the /docs/reference route serves a page",
+      "pass": true,
+      "detail": "200"
+    },
+    {
+      "check": "the /blocks route serves a page",
+      "pass": true,
+      "detail": "200"
+    },
+    {
+      "check": "the /templates route serves a page",
+      "pass": true,
+      "detail": "200"
+    },
+    {
+      "check": "the templates page does not offer a download it cannot honour",
+      "pass": true,
+      "detail": "honest statement present"
+    },
+    {
+      "check": "the blocks gallery renders real previews",
+      "pass": true,
+      "detail": "12 block headings"
+    },
+    {
+      "check": "the /studios/charts studio answers",
+      "pass": true,
+      "detail": "200"
+    },
+    {
+      "check": "the /studios/motion studio answers",
+      "pass": true,
+      "detail": "200"
+    },
+    {
+      "check": "the /studios/themes studio answers",
+      "pass": true,
+      "detail": "200"
+    },
+    {
+      "check": "the /studios/composer studio answers",
+      "pass": true,
+      "detail": "200"
+    },
+    {
+      "check": "a component page does not overflow a 390 px viewport",
+      "pass": true,
+      "detail": "0px of horizontal overflow"
+    },
+    {
+      "check": "the Chinese locale serves a translated component page",
+      "pass": true,
+      "detail": "200, CJK present"
+    },
+    {
+      "check": "server HTML has no invalid element nesting",
+      "pass": true,
+      "detail": "206 routes checked"
+    },
+    {
+      "check": "the sidebar marks exactly one current page",
+      "pass": true,
+      "detail": "1 aria-current, 1 lit row(s)"
+    },
+    {
+      "check": "tabs switch",
+      "pass": true
+    },
+    {
+      "check": "checkbox toggles",
+      "pass": true,
+      "detail": "checked -> unchecked"
+    },
+    {
+      "check": "switch toggles",
+      "pass": true,
+      "detail": "checked -> unchecked"
+    },
+    {
+      "check": "dialog opens and closes on Escape",
+      "pass": true
+    },
+    {
+      "check": "popover opens",
+      "pass": true
+    },
+    {
+      "check": "tooltip opens on hover",
+      "pass": true
+    },
+    {
+      "check": "select opens and commits with the keyboard",
+      "pass": true
+    },
+    {
+      "check": "combobox filters and selects with the keyboard",
+      "pass": true,
+      "detail": "1 option(s), value \"Ethereum\""
+    },
+    {
+      "check": "sheet opens and closes on Escape",
+      "pass": true,
+      "detail": "opened: true, closed: true"
+    },
+    {
+      "check": "toasts stack with the LUC surface",
+      "pass": true,
+      "detail": "4 toast(s)"
+    },
+    {
+      "check": "command palette opens on the hotkey and runs a table action",
+      "pass": true,
+      "detail": "1 revealed column(s)"
+    },
+    {
+      "check": "slider steps with the arrow keys",
+      "pass": true,
+      "detail": "0.72 -> 0.73"
+    },
+    {
+      "check": "RangeSlider exposes two named thumbs",
+      "pass": true,
+      "detail": "19 thumbs on the page"
+    },
+    {
+      "check": "dropdown menu opens, lists rows and closes on Escape",
+      "pass": true,
+      "detail": "5 items"
+    },
+    {
+      "check": "context menu opens on right click",
+      "pass": true
+    },
+    {
+      "check": "alert live roles are opt-in, not default",
+      "pass": true,
+      "detail": "2 of 11 alerts carry a role; 1 live status"
+    },
+    {
+      "check": "dismissing an alert is owned by the consumer",
+      "pass": true
+    },
+    {
+      "check": "empty state renders and the filtered state clears",
+      "pass": true,
+      "detail": "7 empty states"
+    },
+    {
+      "check": "a Select inside a Sheet stacks above it, and Escape closes one layer",
+      "pass": true,
+      "detail": "sheet=1, listbox=1, listbox closed=true, sheet still open=true"
+    },
+    {
+      "check": "search adornment is slot-sized and optically centred",
+      "pass": true,
+      "detail": "14 fields; [{\"size\":14,\"offset\":0,\"gap\":9},{\"size\":16,\"offset\":0,\"gap\":11},{\"size\":16,\"offset\":0,\"gap\":11},{\"size\":16,\"offset\":0,\"gap\":11}]"
+    },
+    {
+      "check": "data table sorts, filters and selects",
+      "pass": true,
+      "detail": "sort none -> ascending, 66 rows after filter"
+    },
+    {
+      "check": "column visibility menu adds a column",
+      "pass": true,
+      "detail": "1 Trades header(s)"
+    },
+    {
+      "check": "virtualised table mounts a window instead of every row",
+      "pass": true,
+      "detail": "39 row(s) in the DOM"
+    },
+    {
+      "check": "chart exposes an accessible data table",
+      "pass": true,
+      "detail": "11 row(s)"
+    },
+    {
+      "check": "form validation renders a summary and inline messages",
+      "pass": true,
+      "detail": "3 inline message(s)"
+    },
+    {
+      "check": "error summary returns focus to the field",
+      "pass": true
+    },
+    {
+      "check": "async field validation reports a result",
+      "pass": true
+    },
+    {
+      "check": "date picker opens a calendar grid",
+      "pass": true,
+      "detail": "1 grid(s)"
+    },
+    {
+      "check": "time picker steps its minute column",
+      "pass": true,
+      "detail": "4 options for a 15-minute step"
+    },
+    {
+      "check": "range preset writes both ends",
+      "pass": true,
+      "detail": "1 match(es)"
+    },
+    {
+      "check": "sheet form opens and closes on Escape",
+      "pass": true
+    },
+    {
+      "check": "date range filters the table",
+      "pass": true,
+      "detail": "12 row(s) after the preset"
+    },
+    {
+      "check": "number stepper is operable",
+      "pass": true
+    },
+    {
+      "check": "otp accepts a full code",
+      "pass": true,
+      "detail": "value: 123456"
+    },
+    {
+      "check": "file input renders selected and rejected files",
+      "pass": true
+    },
+    {
+      "check": "tag input commits a value",
+      "pass": true
+    },
+    {
+      "check": "chart engine paints a canvas",
+      "pass": true
+    },
+    {
+      "check": "chart tooltip appears on hover",
+      "pass": true,
+      "detail": "tooltip present after 32ms"
+    },
+    {
+      "check": "chart legend toggles a series",
+      "pass": true,
+      "detail": "true -> false"
+    },
+    {
+      "check": "chart range selector switches",
+      "pass": true
+    },
+    {
+      "check": "chart fullscreen opens and closes on Escape",
+      "pass": true
+    },
+    {
+      "check": "cross-engine crosshair synchronises",
+      "pass": true,
+      "detail": "4 synced tooltip(s), first after 8ms"
+    },
+    {
+      "check": "synchronised ECharts tooltip is opaque",
+      "pass": true,
+      "detail": "2 tooltip(s), bg lab(13.6516 -0.664771 -4.7464)"
+    },
+    {
+      "check": "tooltip readability does not depend on backdrop blur",
+      "pass": true,
+      "detail": "backdrop-filter: none"
+    },
+    {
+      "check": "synchronised ECharts tooltip is opaque in light theme",
+      "pass": true,
+      "detail": "bg lab(100 0 0)"
+    },
+    {
+      "check": "box plot draws every mark at rest and survives a theme flip",
+      "pass": true,
+      "detail": "dark 12310 (260ms, settled), light 12250, after flip 12310 mark px"
+    },
+    {
+      "check": "correlation labels follow the auto/always/never policy",
+      "pass": true,
+      "detail": "10×10 14837 (257ms, settled), dense auto 1280, always 42030, never 1280"
+    },
+    {
+      "check": "app shell rail collapses and re-expands",
+      "pass": true,
+      "detail": "expanded -> collapsed"
+    },
+    {
+      "check": "bounded demo shells render in a fixed box",
+      "pass": true,
+      "detail": "2 bounded shell(s)"
+    },
+    {
+      "check": "workspace separator resizes by keyboard",
+      "pass": true,
+      "detail": "69.726 -> 64.726"
+    },
+    {
+      "check": "inspector collapses to zero and restores its size",
+      "pass": true,
+      "detail": "0px -> 302px"
+    },
+    {
+      "check": "workspace focus mode enters and exits",
+      "pass": true
+    },
+    {
+      "check": "key routes reflow at 720px (approx. 200% zoom) without a page scrollbar",
+      "pass": true,
+      "detail": "7 routes checked"
+    },
+    {
+      "check": "mobile navigation opens",
+      "pass": true
+    },
+    {
+      "check": "arrow keys pin a chart timestamp without a pointer",
+      "pass": true,
+      "detail": "2026-09-24"
+    },
+    {
+      "check": "Escape clears the keyboard cursor",
+      "pass": true
+    },
+    {
+      "check": "range chip writes date-only state to the URL",
+      "pass": true,
+      "detail": "from=2026-06-28"
+    },
+    {
+      "check": "reload restores the shared view",
+      "pass": true,
+      "detail": "from=2026-06-28&series=close,sma50"
+    },
+    {
+      "check": "an invalid view URL falls back safely",
+      "pass": true
+    },
+    {
+      "check": "clicking the chart pins a cursor into the URL",
+      "pass": true,
+      "detail": "2026-03-04"
+    },
+    {
+      "check": "Escape unpins the inspection",
+      "pass": true
+    },
+    {
+      "check": "browser Back and Forward move between shared views",
+      "pass": true,
+      "detail": "back=true forward=true"
+    },
+    {
+      "check": "share view confirms with a toast",
+      "pass": true
+    },
+    {
+      "check": "prefers-reduced-motion respected",
+      "pass": true
+    },
+    {
+      "check": "ParallaxScene publishes pointer depth as custom properties",
+      "pass": true,
+      "detail": "on x=-6.565px y=-5.471px"
+    },
+    {
+      "check": "pointer movement writes the scene, not the React tree",
+      "pass": true,
+      "detail": "252 scene style writes, 0 writes elsewhere"
+    },
+    {
+      "check": "OrbitField rests while the pointer is on it",
+      "pass": true,
+      "detail": "ring=paused counter=paused"
+    },
+    {
+      "check": "OrbitField seat is a button and updates the hub",
+      "pass": true,
+      "detail": "APAC 412 +6.4% → EMEA 356 -1.8% (aria-pressed=true)"
+    },
+    {
+      "check": "ExpandableSurface expands in place, Escape closes it and focus returns",
+      "pass": true,
+      "detail": "open=true focusIn=expandable-surface-content closed=true focusBack=expandable-surface-trigger"
+    },
+    {
+      "check": "KineticHeadline swaps real text and exposes one accessible string",
+      "pass": true,
+      "detail": "Built for dense interfaces → Alive on every interaction"
+    },
+    {
+      "check": "CardStack steps from the keyboard and its composable controls",
+      "pass": true,
+      "detail": "0→1, End=2, next disabled=true, control=1, inert=2"
+    },
+    {
+      "check": "SelectionBeam re-anchors when the selected row changes",
+      "pass": true,
+      "detail": "M 633 1332.609375 C 827.04 1… → M 633 841.796875 C 827.04 84… (hub: AMERICAS 508 +3.1%)"
+    },
+    {
+      "check": "Reduced motion keeps the arrangement and drops the pointer effect",
+      "pass": true,
+      "detail": "data-parallax=off, deck layers=3"
+    },
+    {
+      "check": "provider widgets register and render their own format",
+      "pass": true,
+      "detail": "{\"widgets\":4,\"undefinedTags\":[],\"iframes\":4,\"parked\":0,\"skeletons\":0,\"boxes\":8,\"ready\":8,\"errored\":0,\"pending\":0,\"attribution\":4,\"containers\":4}"
+    },
+    {
+      "check": "every iframe widget renders the provider's attribution block",
+      "pass": true,
+      "detail": "3/3 containers attributed"
+    },
+    {
+      "check": "a theme flip does not stack a second iframe",
+      "pass": true,
+      "detail": "3→3 containers, 3→3 iframes"
+    },
+    {
+      "check": "repeated theme flips do not accumulate provider widgets",
+      "pass": true,
+      "detail": "parked during=3 after=0, containers=3 (baseline 3)"
+    },
+    {
+      "check": "an unreachable provider degrades to a retryable error state",
+      "pass": true,
+      "detail": "3 alerts, 2 retries, 3 after retry (no duplicates)"
+    },
+    {
+      "check": "provider requests are deferred until the widget is in view",
+      "pass": true,
+      "detail": "1 request(s) before scrolling, 4 after"
+    },
+    {
+      "check": "accordion toggles by pointer and by keyboard",
+      "pass": true,
+      "detail": "true→false→true, region=true"
+    },
+    {
+      "check": "tree view moves with arrows and keeps exactly one tab stop",
+      "pass": true,
+      "detail": "Rates7 → Crypto4, tabStops=1, expanded false → true"
+    },
+    {
+      "check": "gallery opens a lightbox, Escape closes it and returns focus",
+      "pass": true,
+      "detail": "open=1 role=dialog closed=true focusBack=true"
+    },
+    {
+      "check": "image compare divider moves from the keyboard",
+      "pass": true,
+      "detail": "50 → 52"
+    },
+    {
+      "check": "carousel advances through its own control",
+      "pass": true,
+      "detail": "Go to slide 1 → Go to slide 2"
+    },
+    {
+      "check": "sortable list reorders from the keyboard",
+      "pass": true,
+      "detail": "pressed=true, \"\" → \"Ingest dropped at position 2 of 5.\""
+    },
+    {
+      "check": "notification centre lists items, clears the unread count and closes",
+      "pass": true,
+      "detail": "items=3, \"Notifications, 2 unread\" → \"Notifications\""
+    },
+    {
+      "check": "colour picker slider and value field stay in sync",
+      "pass": true,
+      "detail": "hue 224→226, value \"Accent colour: #3b6ef5\" → \"Accent colour: #3b66f5\""
+    },
+    {
+      "check": "transfer list moves a selected field between the two lists",
+      "pass": true,
+      "detail": "2 → 3 selected"
+    },
+    {
+      "check": "the AI answer streams on mount and the composer submits",
+      "pass": true,
+      "detail": "stream 86 → 117 → 318 chars, composer cleared=true, body=\"ASSISTANT 09:41 The 20-day realised volatility is 18.4%, aga\""
+    },
+    {
+      "check": "rating steps with the arrow keys",
+      "pass": true,
+      "detail": "4 of 5 → 5 of 5"
+    },
+    {
+      "check": "pagination moves the current-page marker",
+      "pass": true,
+      "detail": "4 → 5"
+    },
+    {
+      "check": "marketing: billing period changes the price, the FAQ opens, the form validates then succeeds",
+      "pass": true,
+      "detail": "price $24→$19, faq false→true, empty=1, malformed=1, success=1"
+    },
+    {
+      "check": "SaaS console: role filter, search empty state, clear, and an invite that adds a row",
+      "pass": true,
+      "detail": "rows 12 → filter 4 → empty=1 → restored 12 → invited 13"
+    },
+    {
+      "check": "publishing: topic filter narrows the index, an article opens, related pieces appear, back returns",
+      "pass": true,
+      "detail": "articles 6 → filtered 1, opened=1, related=1, back=1"
+    },
+    {
+      "check": "community: a two-word post is refused, a real one appears, a reaction counts, delete is confirmed and cancellable",
+      "pass": true,
+      "detail": "refused=1, posts 3 → 4, reaction 0→1, confirm=1, cancelled=true"
+    },
+    {
+      "check": "career: a project opens in place, closes again, and the timeline carries a machine-readable period",
+      "pass": true,
+      "detail": "open=1 (aria-expanded=true), closed=0, dateTime=2023"
+    },
+    {
+      "check": "academic: year and topic facets narrow the bibliography and the live count follows",
+      "pass": true,
+      "detail": "6 of 6 → 2 of 6 → 1 of 6 → 6 of 6"
+    },
+    {
+      "check": "portfolio: the sleeve gallery opens a viewer, steps with the arrow key and closes on Escape",
+      "pass": true,
+      "detail": "open=1, stepped=true, closed=true"
+    },
+    {
+      "check": "garden: the kind selector filters, an impossible combination explains itself, and the shelf exposes progress",
+      "pass": true,
+      "detail": "notes 6 → photos 1 → empty=1 → restored 6, meters=2"
+    },
+    {
+      "check": "AI workspace: a prepared answer streams to completion with its tool calls attached",
+      "pass": true,
+      "detail": "streaming true → false, body 48 → 248 chars, tool timelines=1"
+    },
+    {
+      "check": "research bench: the bin slider changes the parameter and repaints the histogram",
+      "pass": true,
+      "detail": "bins 24→30, canvas bytes 114768→115844"
+    },
+    {
+      "check": "quant desk: selecting a row changes the inspector and the range control keeps every figure",
+      "pass": true,
+      "detail": "inspector \"BTCUSD\" → \"SOLUSD\", canvases 3 → 3"
+    },
+    {
+      "check": "commerce: a variant changes the price and the three-step checkout can go back",
+      "pass": true,
+      "detail": "price $148→$196, steps delivered=1 payment=1 back=1"
+    },
+    {
+      "check": "education: marking a lesson moves the progress and the check scores and explains every answer",
+      "pass": true,
+      "detail": "progress 0→33, score shown=1, explanation=1"
+    },
+    {
+      "check": "creator studio: an edit survives switching assets and the keyboard reorders the reel",
+      "pass": true,
+      "detail": "title persisted=\"Harbour, 06:10 — regraded\", first shot \"Current first shot: Harbour, 06:10 — regraded\" → \"Current first shot: Crossing, wide\""
+    },
+    {
+      "check": "productivity: a card moves by keyboard, the move is announced, and selection enables the bulk action",
+      "pass": true,
+      "detail": "progress=25, announced=1, bulk enabled=true"
+    },
+    {
+      "check": "forum: a thread opens, a reply is appended, and the report dialog is escapable",
+      "pass": true,
+      "detail": "thread=1, replies 2 → 3, report=1, cancelled=true"
+    },
+    {
+      "check": "no route scrolls horizontally at any of the six review widths",
+      "pass": true,
+      "detail": "54 route/viewport pairs measured"
+    },
+    {
+      "check": "the layout measure uses the viewport: charts wide, small controls composed",
+      "pass": true,
+      "detail": "line-chart 1920: container 1664 / main 1664; line-chart 2560: container 1920; line-chart 1440: demo 912; badges 1920: container 896"
+    },
+    {
+      "check": "motion Playground: controls change the preview without moving the page",
+      "pass": true,
+      "detail": "worst movement 0px (none), 0 overflowed step(s), preview text followed the control; 3 control(s) driven"
+    },
+    {
+      "check": "Sheet exits from the edge it entered, in all four directions",
+      "pass": true,
+      "detail": "top: exit=luc-sheet-out-top state=closed box=0,-84 1440×352 residual=0 | right: exit=luc-sheet-out-right state=closed box=1092,0 416×900 residual=0 | bottom: exit=luc-sheet-out-bottom state=closed box=0,632 1440×352 residual=0 | left: exit=luc-sheet-out-left state=closed box=-77,0 320×900 residual=0"
+    },
+    {
+      "check": "experience Full preview reaches the viewport, exits with Escape, and returns focus",
+      "pass": true,
+      "detail": "host 1598 → 1920 (fixed) → 1598; focus returned=true; lock released=true"
+    },
+    {
+      "check": "Navigation page: the tree scrolls, nothing spills, and the columns are not an equal split",
+      "pass": true,
+      "detail": "columns 352 / 540; tree 263/263 scrollable=false; spills=none"
+    },
+    {
+      "check": "each overlay family opens inside the viewport and closes without residue, lock or lost focus",
+      "pass": true,
+      "detail": "dialog: ok (residue 0/0, pointerEvents=auto, focus=true) | alert dialog: ok (residue 0/0, pointerEvents=auto, focus=true) | popover: ok (residue 0/0, pointerEvents=auto, focus=true) | dropdown menu: ok (residue 0/0, pointerEvents=auto, focus=true) | context menu: ok (residue 0/0, pointerEvents=auto, focus=true)"
+    },
+    {
+      "check": "closing a Sheet returns focus to the control that opened it",
+      "pass": true,
+      "detail": "focus is on \"right\" (body=false)"
+    },
+    {
+      "check": "Chart geometry: real marks, real labels, and no two labels sharing pixels",
+      "pass": true,
+      "detail": "gantt-chart: marks=28 texts=15 overlaps=0 | scatter-matrix-chart: marks=142 texts=22 overlaps=0 | vector-field-chart: marks=44 texts=14 overlaps=0 | chord-chart: marks=20 texts=4 overlaps=0 | hierarchy-tree-chart: marks=29 texts=10 overlaps=0 | sunburst-chart: marks=17 texts=8 overlaps=0 | surface3-dchart: marks=59 texts=12 overlaps=0 | volatility-surface-chart: marks=71 texts=13 overlaps=0 | bullet-chart: marks=36 texts=13 overlaps=0 | calendar-heatmap: marks=400 texts=21 overlaps=0"
+    },
+    {
+      "check": "Global header: the nav appears exactly where it fits, and nothing spills the viewport",
+      "pass": true,
+      "detail": "390×844/ nav=off doc=390/390 | 390×844/charts/line-chart nav=off doc=390/390 | 768×1024/ nav=off doc=768/768 | 768×1024/charts/line-chart nav=off doc=768/768 | 1440×900/ nav=on doc=1440/1440 | 1440×900/charts/line-chart nav=on doc=1440/1440 | 1920×1080/ nav=on doc=1920/1920 | 1920×1080/charts/line-chart nav=on doc=1920/1920 | 2560×1440/ nav=on doc=2560/2560 | 2560×1440/charts/line-chart nav=on doc=2560/2560"
+    },
+    {
+      "check": "Global header: every area panel opens, stays in the viewport, and Escape closes it with focus back on the trigger",
+      "pass": true,
+      "detail": "Components: links=35 box=736×447@176 closed=true focus=true | Charts: links=9 box=736×364@176 closed=true focus=true | Visuals: links=6 box=736×265@176 closed=true focus=true | More: links=7 box=736×217@176 closed=true focus=true"
+    },
+    {
+      "check": "Sidebar: the current area's groups only, and never another area's",
+      "pass": true,
+      "detail": "/charts/line-chart: 1 group(s) [Charts] present=true absent=true | /components/buttons: 4 group(s) [Design foundations, UI components, Motion and interaction, Integrations] present=true absent=true | /foundations/typography: 4 group(s) [Design foundations, UI components, Motion and interaction, Integrations] present=true absent=true | /date-time/calendar: 4 group(s) [Design foundations, UI components, Motion and interaction, Integrations] present=true absent=true | /visuals: 1 group(s) [Visuals] present=true absent=true | /patterns/research-workspace: 2 group(s) [Patterns, Build] present=true absent=true"
+    }
+  ],
+  "axe": [],
+  "problems": []
+}

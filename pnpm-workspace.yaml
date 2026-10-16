@@ -1,0 +1,23 @@
+# LUC UI workspace.
+#
+# This repository is the pnpm workspace root. The root `package.json`
+# (`luc-ui-workspace`) carries the shared devDependencies and the scripts that
+# forward into the members; `apps/showcase` and the packages under `packages/`
+# are the members themselves.
+#
+# It was extracted from the `luc-quant` monorepo, where this directory was one
+# package group of a repository-wide workspace (see docs/WORKSPACE_GUIDE.md).
+# The member globs are the only thing that changed: `luc-ui/` and `luc-web` are
+# no longer part of this workspace.
+packages:
+  - "apps/*"
+  - "packages/*"
+
+minimumReleaseAge: 0
+
+# Postinstall scripts we explicitly allow. Everything else stays unbuilt.
+allowBuilds:
+  "@tailwindcss/oxide": true
+  esbuild: true
+  sharp: true
+  unrs-resolver: true

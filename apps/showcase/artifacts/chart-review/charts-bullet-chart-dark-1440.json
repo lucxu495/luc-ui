@@ -1,0 +1,42 @@
+{
+  "route": "/charts/bullet-chart",
+  "url": "http://127.0.0.1:3000/charts/bullet-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 647
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 280,
+    "bitmapW": 860,
+    "bitmapH": 280
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.1136,
+    "bounds": {
+      "minX": 12,
+      "minY": 14,
+      "maxX": 818,
+      "maxY": 272
+    }
+  },
+  "screenshot": "artifacts/chart-review/charts-bullet-chart-dark-1440.png"
+}

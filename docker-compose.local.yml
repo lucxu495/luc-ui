@@ -1,0 +1,32 @@
+# LUC UI Showcase — LOCAL preview override.
+#
+# This file does not replace `docker-compose.yml`; it is layered on top of it so
+# there is exactly one build definition (the Dockerfile, the build context and
+# the production command all come from the base file). The production service is
+# untouched and still runs with plain `docker compose up -d`.
+#
+#   docker compose -p luc-ui-standalone-local -f docker-compose.yml -f docker-compose.local.yml up -d --build
+#
+# Three things differ from the production stack, and only three:
+#
+#  1. **Its own identity.** A separate Compose project name
+#     (`luc-ui-standalone-local`), a separate container name and therefore its
+#     own bridge network (`luc-ui-standalone-local_default`). It cannot collide
+#     with, or attach to, the review service or its network.
+#  2. **A Docker-assigned host port.** `127.0.0.1::3000` publishes the container
+#     port 3000 on an ephemeral loopback port chosen by Docker, so a preview
+#     never fights another project for a fixed number and never needs a service
+#     to be stopped. The real port is whatever Docker reports:
+#       docker compose -p luc-ui-standalone-local -f docker-compose.yml -f docker-compose.local.yml port showcase 3000
+#     `!override` replaces the base `ports` list instead of appending to it, so
+#     port 3000 is *not* also published.
+#  3. **No hosting beyond loopback.** The host address stays `127.0.0.1`; nothing
+#     is bound on 0.0.0.0 and nothing is published outward.
+#
+# It adds no networks, no volumes, no env files and no secrets: the Showcase
+# renders in-repo fixtures and reads nothing from another project.
+services:
+  showcase:
+    container_name: luc-ui-showcase-standalone-local
+    ports: !override
+      - "127.0.0.1::3000"

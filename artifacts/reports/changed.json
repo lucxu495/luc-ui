@@ -1,0 +1,265 @@
+{
+  "baseUrl": "http://127.0.0.1:3000",
+  "generatedAt": "2026-10-16T13:13:28.060Z",
+  "mode": "changed",
+  "providerMode": "stub",
+  "workers": 2,
+  "routes": 7,
+  "selectedRoutes": [
+    "home",
+    "explore",
+    "explore-browse",
+    "components-overview",
+    "motion-kinetic",
+    "charts-overview",
+    "docs"
+  ],
+  "screenshots": [
+    "screenshots/home-dark-desktop.png",
+    "screenshots/explore-dark-desktop.png",
+    "screenshots/home-light-desktop.png",
+    "screenshots/explore-light-desktop.png",
+    "screenshots/home-dark-mobile.png",
+    "screenshots/explore-dark-mobile.png",
+    "screenshots/explore-browse-dark-desktop.png",
+    "screenshots/components-overview-dark-desktop.png",
+    "screenshots/explore-browse-dark-mobile.png",
+    "screenshots/components-overview-light-desktop.png",
+    "screenshots/motion-kinetic-dark-desktop.png",
+    "screenshots/charts-overview-dark-desktop.png",
+    "screenshots/charts-overview-light-desktop.png",
+    "screenshots/motion-kinetic-light-desktop.png",
+    "screenshots/charts-overview-dark-mobile.png",
+    "screenshots/motion-kinetic-dark-mobile.png",
+    "screenshots/docs-dark-desktop.png"
+  ],
+  "screenshotsCount": 17,
+  "durations": {
+    "totalMs": 22683,
+    "phases": [
+      {
+        "name": "routes",
+        "durationMs": 22358
+      }
+    ],
+    "routes": [
+      {
+        "slug": "home",
+        "path": "/",
+        "provider": false,
+        "totalMs": 7512,
+        "navigationMs": 419,
+        "readinessMs": 919,
+        "providerWaitMs": 0,
+        "axeMs": 2854.1212080000005,
+        "screenshotMs": 664.8905839999998,
+        "mobileMs": 2005,
+        "variants": [
+          "dark-desktop",
+          "light-desktop",
+          "dark-mobile"
+        ]
+      },
+      {
+        "slug": "explore",
+        "path": "/explore",
+        "provider": false,
+        "totalMs": 8689,
+        "navigationMs": 443,
+        "readinessMs": 894,
+        "providerWaitMs": 0,
+        "axeMs": 3935.2082090000004,
+        "screenshotMs": 752.6700839999999,
+        "mobileMs": 2190,
+        "variants": [
+          "dark-desktop",
+          "light-desktop",
+          "dark-mobile"
+        ]
+      },
+      {
+        "slug": "explore-browse",
+        "path": "/explore/browse",
+        "provider": false,
+        "totalMs": 6110,
+        "navigationMs": 214,
+        "readinessMs": 913,
+        "providerWaitMs": 0,
+        "axeMs": 2879.2840830000005,
+        "screenshotMs": 282.67233399999895,
+        "mobileMs": 2339,
+        "variants": [
+          "dark-desktop",
+          "dark-mobile"
+        ]
+      },
+      {
+        "slug": "components-overview",
+        "path": "/components",
+        "provider": false,
+        "totalMs": 6108,
+        "navigationMs": 250,
+        "readinessMs": 574,
+        "providerWaitMs": 0,
+        "axeMs": 2988.1224569999995,
+        "screenshotMs": 1059.2010420000006,
+        "mobileMs": 0,
+        "variants": [
+          "dark-desktop",
+          "light-desktop"
+        ]
+      },
+      {
+        "slug": "motion-kinetic",
+        "path": "/motion/kinetic",
+        "provider": false,
+        "totalMs": 7970,
+        "navigationMs": 454,
+        "readinessMs": 858,
+        "providerWaitMs": 0,
+        "axeMs": 3444.692084000002,
+        "screenshotMs": 758.0371669999986,
+        "mobileMs": 1952,
+        "variants": [
+          "dark-desktop",
+          "light-desktop",
+          "dark-mobile"
+        ]
+      },
+      {
+        "slug": "charts-overview",
+        "path": "/charts",
+        "provider": false,
+        "totalMs": 5705,
+        "navigationMs": 112,
+        "readinessMs": 538,
+        "providerWaitMs": 0,
+        "axeMs": 2342.1252499999973,
+        "screenshotMs": 459.2103329999991,
+        "mobileMs": 1703,
+        "variants": [
+          "dark-desktop",
+          "light-desktop",
+          "dark-mobile"
+        ]
+      },
+      {
+        "slug": "docs",
+        "path": "/docs",
+        "provider": false,
+        "totalMs": 1856,
+        "navigationMs": 222,
+        "readinessMs": 595,
+        "providerWaitMs": 0,
+        "axeMs": 415.5470000000023,
+        "screenshotMs": 79.43708400000105,
+        "mobileMs": 0,
+        "variants": [
+          "dark-desktop"
+        ]
+      }
+    ]
+  },
+  "counters": {
+    "navigationTimeouts": 0,
+    "readinessTimeouts": 0,
+    "providerTimeouts": 0,
+    "providerReady": 0,
+    "providerErrors": 0,
+    "consoleErrors": 0,
+    "pageErrors": 0,
+    "failedRequests": 0,
+    "themeMisses": 0,
+    "axeScans": 17,
+    "axeErrors": 0
+  },
+  "behaviour": [],
+  "axe": [
+    {
+      "slug": "home-light",
+      "durationMs": 915,
+      "violations": []
+    },
+    {
+      "slug": "explore-light",
+      "durationMs": 1212,
+      "violations": []
+    },
+    {
+      "slug": "home-mobile",
+      "durationMs": 608,
+      "violations": []
+    },
+    {
+      "slug": "explore-mobile",
+      "durationMs": 1092,
+      "violations": []
+    },
+    {
+      "slug": "explore-browse-mobile",
+      "durationMs": 1183,
+      "violations": []
+    },
+    {
+      "slug": "components-overview-light",
+      "durationMs": 1501,
+      "violations": []
+    },
+    {
+      "slug": "charts-overview-light",
+      "durationMs": 778,
+      "violations": []
+    },
+    {
+      "slug": "motion-kinetic-light",
+      "durationMs": 1110,
+      "violations": []
+    },
+    {
+      "slug": "charts-overview-mobile",
+      "durationMs": 604,
+      "violations": []
+    },
+    {
+      "slug": "motion-kinetic-mobile",
+      "durationMs": 981,
+      "violations": []
+    },
+    {
+      "slug": "home",
+      "durationMs": 1330,
+      "violations": []
+    },
+    {
+      "slug": "explore",
+      "durationMs": 1632,
+      "violations": []
+    },
+    {
+      "slug": "explore-browse",
+      "durationMs": 1696,
+      "violations": []
+    },
+    {
+      "slug": "components-overview",
+      "durationMs": 1487,
+      "violations": []
+    },
+    {
+      "slug": "motion-kinetic",
+      "durationMs": 1353,
+      "violations": []
+    },
+    {
+      "slug": "charts-overview",
+      "durationMs": 960,
+      "violations": []
+    },
+    {
+      "slug": "docs",
+      "durationMs": 416,
+      "violations": []
+    }
+  ],
+  "problems": []
+}

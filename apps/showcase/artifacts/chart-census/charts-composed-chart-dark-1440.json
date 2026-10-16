@@ -1,0 +1,58 @@
+{
+  "route": "/charts/composed-chart",
+  "url": "http://127.0.0.1:3000/charts/composed-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 1200
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 340,
+    "bitmapW": 860,
+    "bitmapH": 340
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.134,
+    "bounds": {
+      "minX": 20,
+      "minY": 12,
+      "maxX": 830,
+      "maxY": 336
+    }
+  },
+  "renderer": {
+    "texts": 20,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 45,
+    "marks": {
+      "line": 8,
+      "tspan": 20,
+      "rect": 8,
+      "ec-polyline": 1,
+      "path": 8
+    },
+    "shortest": 22
+  },
+  "screenshot": "artifacts/chart-census/charts-composed-chart-dark-1440.png"
+}

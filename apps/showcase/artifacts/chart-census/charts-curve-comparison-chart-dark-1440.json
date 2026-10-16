@@ -1,0 +1,57 @@
+{
+  "route": "/charts/curve-comparison-chart",
+  "url": "http://127.0.0.1:3000/charts/curve-comparison-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 789
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 320,
+    "bitmapW": 860,
+    "bitmapH": 320
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.0379,
+    "bounds": {
+      "minX": 4,
+      "minY": 2,
+      "maxX": 840,
+      "maxY": 316
+    }
+  },
+  "renderer": {
+    "texts": 15,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 36,
+    "marks": {
+      "line": 9,
+      "tspan": 15,
+      "ec-polyline": 2,
+      "path": 10
+    },
+    "shortest": 7
+  },
+  "screenshot": "artifacts/chart-census/charts-curve-comparison-chart-dark-1440.png"
+}

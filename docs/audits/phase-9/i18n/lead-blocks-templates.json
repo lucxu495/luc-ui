@@ -1,0 +1,129 @@
+{
+  "agent": "lead",
+  "surface": "Blocks gallery, Templates page and the Block specimens",
+  "since": "2026-10-09",
+  "sentences": [
+    { "en": "Ship the interface, not the design review", "zh": "交付界面，而不是设计评审" },
+    {
+      "en": "A section that states one claim, proves it in the subhead and offers exactly one next step.",
+      "zh": "一个只讲一个主张的区块：副标题给出证据，并且只给一个下一步。"
+    },
+    { "en": "Tokens first", "zh": "先有令牌" },
+    { "en": "Every value is a named role, in both themes.", "zh": "两套主题下，每个取值都是一个有名有姓的角色。" },
+    { "en": "Keyboard honest", "zh": "键盘行为不打折" },
+    { "en": "Focus, roving tabindex and announcements ship with the primitive.", "zh": "焦点、轮转 tabindex 与朗读提示都随基础组件一起交付。" },
+    { "en": "Server safe", "zh": "服务端安全" },
+    { "en": "No component reaches for the window during render.", "zh": "渲染期间没有任何组件去碰 window。" },
+    { "en": "Deploys this week", "zh": "本周发版次数" },
+    { "en": "Open incidents", "zh": "未解决故障" },
+    { "en": "Everything in this documentation.", "zh": "这套文档里的全部内容。" },
+    { "en": "Not built, not sold, not promised.", "zh": "尚未构建、尚未售卖，也不做任何承诺。" },
+    { "en": "Backend engineer, mostly databases", "zh": "后端工程师，主要和数据库打交道" },
+    {
+      "en": "I work on query planning and storage layout, and I write about both.",
+      "zh": "我做查询规划与存储布局，也把这两件事写下来。"
+    },
+    {
+      "en": "Query planning, storage layout, and the parts of a database nobody demos.",
+      "zh": "查询规划、存储布局，以及数据库里没人会在演示里展示的那些部分。"
+    },
+    {
+      "en": "Compaction, replication and an unhealthy amount of benchmarking.",
+      "zh": "合并、复制，以及多到不太健康的基准测试。"
+    },
+    { "en": "Measuring compaction cost honestly", "zh": "诚实地度量合并成本" },
+    { "en": "A planner for small data", "zh": "面向小数据量的查询规划器" },
+    { "en": "Database Internals", "zh": "《Database Internals》" },
+    { "en": "Deploy finished", "zh": "发版完成" },
+    { "en": "Incident resolved", "zh": "故障已解决" },
+    { "en": "Elevated p95 on the read path", "zh": "读路径 p95 升高" },
+    { "en": "Review requested", "zh": "收到评审请求" },
+    { "en": "Compaction cost model", "zh": "合并成本模型" },
+    { "en": "Deployments", "zh": "发版记录" },
+    {
+      "en": "A section header with one action, which is all most console pages need.",
+      "zh": "只带一个操作的分区标题——大多数控制台页面需要的也就这些。"
+    },
+    {
+      "en": "Whole-page starters built from LUC UI components and Blocks: personal sites, a marketing page, a product console and a research workspace.",
+      "zh": "用 LUC UI 组件与区块搭起的整页起点：个人站点、营销页面、产品控制台与研究工作台。"
+    },
+    {
+      "en": "Editorial hero, a timeline with a real open end, work that expands in place, and a print action.",
+      "zh": "编辑风格首屏、带真实开放终点的时间线、原地展开的作品，以及一个打印动作。"
+    },
+    {
+      "en": "Publications with year, kind and topic facets derived from the entries — and no invented citation counts.",
+      "zh": "论文列表按年份、类型与主题生成筛选条件，全部由条目推导；绝不编造引用次数。"
+    },
+    {
+      "en": "A gallery-led grid where the chosen project grows into a detail region.",
+      "zh": "以画廊为主的网格，被选中的作品会就地展开成详情区域。"
+    },
+    { "en": "Journal and garden", "zh": "日志与数字花园" },
+    {
+      "en": "Notes in date order, a reading shelf grouped by status, and a /now block that carries its date.",
+      "zh": "按日期排列的笔记、按状态分组的书架，以及自带日期的 /now 区块。"
+    },
+    { "en": "Marketing page", "zh": "营销页面" },
+    {
+      "en": "Hero, capability narrative, proof, pricing that follows the billing period, and a validating lead form.",
+      "zh": "首屏、能力叙事、可信度证明、随计费周期变化的定价，以及先校验再提交的线索表单。"
+    },
+    {
+      "en": "Shell, toolbar, a table that is the product, a dialog that adds a row, and a settings sheet.",
+      "zh": "外壳、工具栏、作为产品本体的表格、真的会新增一行的对话框，以及设置抽屉。"
+    },
+    {
+      "en": "An index with search and topic filters, a comfortable reading view and a share control.",
+      "zh": "带搜索与主题筛选的索引、舒适的阅读视图，以及分享控件。"
+    },
+    { "en": "Research workspace", "zh": "研究工作台" },
+    {
+      "en": "The flagship composition: shell, resizable panes, a chart with an inspector, a table, URL state and toasts.",
+      "zh": "旗舰级组合：外壳、可调整的分栏、带检查面板的图表、表格、URL 状态与提示消息。"
+    },
+    { "en": "No download", "zh": "不提供下载" },
+    {
+      "en": "There is no archive to download, and this page will not offer one until a packaged starter contains every file, token and asset it needs — a download that does not build is worse than no download.",
+      "zh": "这里没有可下载的压缩包，在打包好的启动模板包含全部所需文件、令牌与资源之前，本页也不会提供下载——一个构建不起来的下载比没有下载更糟。"
+    },
+    { "en": "Reference pages", "zh": "参考页面" },
+    {
+      "en": "Every entry below is a working route. What a reader supplies is stated, because a template that hides its data contract is a template nobody can use.",
+      "zh": "下面每一条都是可运行的路由。需要读者自己提供的部分都写明了——隐藏数据契约的模板，没有人能用起来。"
+    },
+    { "en": "Open the page", "zh": "打开页面" },
+    { "en": "Copying a template", "zh": "如何复制一个模板" },
+    {
+      "en": "The honest workflow today: read the page, take the composition, bring your own data.",
+      "zh": "今天真正可行的流程：读页面、取组合方式、换上你自己的数据。"
+    },
+    {
+      "en": "1. Open the reference page and copy the composition you want — the structure is plain JSX over public exports.",
+      "zh": "1. 打开参考页面，复制你需要的组合方式——结构就是基于公开导出的普通 JSX。"
+    },
+    {
+      "en": "2. Replace the local fixtures with your data. Every template keeps its data in a small module beside the page, which is what makes that a mechanical edit.",
+      "zh": "2. 把本地固定数据换成你自己的数据。每个模板都把数据放在页面旁边的一个小模块里，所以这只是一次机械替换。"
+    },
+    {
+      "en": "3. Install the library and import the styles once at your app root — see the installation page for the commands that work today.",
+      "zh": "3. 安装这个库，并在应用根部引入一次样式——今天可用的命令见安装页面。"
+    },
+    { "en": "Blocks", "zh": "区块" },
+    { "en": "Build with it", "zh": "用它来搭" },
+    { "en": "You supply", "zh": "你需要提供" },
+    {
+      "en": "Reusable page sections assembled from LUC UI components — a hero, a pricing band, a career timeline, a metrics strip.",
+      "zh": "用 LUC UI 组件拼出的可复用页面区块：首屏、定价带、职业时间线、指标条。"
+    },
+    { "en": "Filter", "zh": "筛选" },
+    {
+      "en": "Blocks are grouped by the kind of page they belong to: marketing, personal, product.",
+      "zh": "区块按所属页面类型分组：营销、个人、产品。"
+    },
+    { "en": "All", "zh": "全部" },
+    { "en": "Every Block in the gallery, in reading order.", "zh": "画廊里的全部区块，按阅读顺序排列。" }
+  ]
+}

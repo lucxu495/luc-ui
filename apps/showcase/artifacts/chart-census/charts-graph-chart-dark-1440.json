@@ -1,0 +1,56 @@
+{
+  "route": "/charts/graph-chart",
+  "url": "http://127.0.0.1:3000/charts/graph-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 972
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 380,
+    "bitmapW": 860,
+    "bitmapH": 380
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.011,
+    "bounds": {
+      "minX": 336,
+      "minY": 110,
+      "maxX": 540,
+      "maxY": 286
+    }
+  },
+  "renderer": {
+    "texts": 6,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 18,
+    "marks": {
+      "ec-line": 6,
+      "path": 6,
+      "tspan": 6
+    },
+    "shortest": 18
+  },
+  "screenshot": "artifacts/chart-census/charts-graph-chart-dark-1440.png"
+}

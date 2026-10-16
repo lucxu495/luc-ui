@@ -1,0 +1,56 @@
+{
+  "route": "/charts/dumbbell-chart",
+  "url": "http://127.0.0.1:3000/charts/dumbbell-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 667
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 300,
+    "bitmapW": 860,
+    "bitmapH": 300
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.0204,
+    "bounds": {
+      "minX": 12,
+      "minY": 14,
+      "maxX": 832,
+      "maxY": 290
+    }
+  },
+  "renderer": {
+    "texts": 10,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 29,
+    "marks": {
+      "line": 11,
+      "tspan": 10,
+      "path": 8
+    },
+    "shortest": 17
+  },
+  "screenshot": "artifacts/chart-census/charts-dumbbell-chart-dark-1440.png"
+}

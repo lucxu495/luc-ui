@@ -1,0 +1,50 @@
+# Build context hygiene for the Showcase review image.
+#
+# The image compiles `apps/showcase` and the two workspace packages it imports
+# as source, so everything the compiler does not read is excluded here. This
+# replaces the monorepo's root `.dockerignore`, which filtered a much larger
+# whole-repository context.
+.git
+.DS_Store
+
+# Installs and build output — the image installs and builds its own.
+node_modules
+**/node_modules
+.next
+**/.next
+**/.next-*
+dist
+**/dist
+**/*.tsbuildinfo
+out
+
+# Test / QA output.
+coverage
+test-results
+playwright-report
+.playwright
+
+# Review evidence. `artifacts/baselines/` and `apps/showcase/artifacts/` are
+# committed, but neither is an input to `next build`; `qa-server.mjs` does not
+# hash them, so omitting them cannot make a cached image stale.
+#
+# These are anchored deliberately — an unanchored `artifacts` (or `**/artifacts`)
+# also matches `packages/ui/src/artifacts/`, which is implementation code and not
+# review evidence. Only the two QA output roots are named.
+/artifacts
+/apps/showcase/artifacts
+
+# The staged git release tree. It is build output (`pnpm --filter @luc/ui
+# release:build`) and the image compiles the Showcase from source.
+/release
+
+*.log
+tmp
+
+# Local env files hold credentials and must never be baked into an image layer.
+# The review server reads nothing from `.env*`; a stray local file is still
+# never shipped.
+.env
+**/.env
+.env.*
+**/.env.*

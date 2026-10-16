@@ -1,0 +1,57 @@
+{
+  "route": "/charts/factor-exposure-chart",
+  "url": "http://127.0.0.1:3000/charts/factor-exposure-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 708
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 320,
+    "bitmapW": 860,
+    "bitmapH": 320
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.0757,
+    "bounds": {
+      "minX": 12,
+      "minY": 14,
+      "maxX": 836,
+      "maxY": 310
+    }
+  },
+  "renderer": {
+    "texts": 14,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 30,
+    "marks": {
+      "line": 9,
+      "tspan": 14,
+      "rect": 6,
+      "ec-line": 1
+    },
+    "shortest": 24
+  },
+  "screenshot": "artifacts/chart-census/charts-factor-exposure-chart-dark-1440.png"
+}

@@ -1,0 +1,47 @@
+{
+  "agent": "lead",
+  "surface": "homepage install section and resource cards",
+  "since": "2026-10-09",
+  "sentences": [
+    {
+      "en": "Each surface has one job: learn the rules, find a component, read a chart, assemble a page, or see a whole product built from the library.",
+      "zh": "每个入口只做一件事：了解规则、找到一个组件、读懂一张图、拼出一个页面，或看一整个用这套库搭起来的产品。"
+    },
+    {
+      "en": "Configure a chart, a motion feel or a theme against the real props, then copy the code.",
+      "zh": "对照真实的 props 去调一张图、一种动效手感或一套主题，然后复制代码。"
+    },
+    {
+      "en": "Page sections assembled from components: a hero, a pricing band, a feed, a timeline.",
+      "zh": "由组件拼出的页面区块：首屏、定价带、信息流、时间线。"
+    },
+    {
+      "en": "Whole-page starters — a personal site, a marketing page, a product console.",
+      "zh": "整页起点：个人站点、营销页面、产品控制台。"
+    },
+    {
+      "en": "Career, academic, portfolio and digital-garden references, built from the same primitives.",
+      "zh": "职业、学术、作品集与数字花园四种参考页面，都建立在同一批原语之上。"
+    },
+    {
+      "en": "Two ways to install it, one of them real",
+      "zh": "两种安装方式，其中一种现在就能用"
+    },
+    {
+      "en": "The package is built, packed and installed by an external consumer fixture on every release gate — but it is not published to a registry, so only the tarball path resolves today.",
+      "zh": "每次发布门禁都会构建、打包，并由一个外部消费者夹具真实安装这个包——但它还没有发布到任何 registry，所以今天只有 tarball 这条路能走通。"
+    },
+    { "en": "Works today", "zh": "现在可用" },
+    { "en": "Not published yet", "zh": "尚未发布" },
+    {
+      "en": "The library is distributed as source inside its pnpm workspace, and as a packed tarball that is installed and built in an external consumer fixture. This is what works today.",
+      "zh": "这个库以源码形式存在于它的 pnpm workspace 中，也可以打成 tarball，并在外部的消费者夹具里真实安装、构建。这是今天可用的方式。"
+    },
+    {
+      "en": "Intended publication usage. The package is built and packed, but no release has been published to a registry yet, so these commands do not resolve today.",
+      "zh": "这是将来发布后的用法。包已经可以构建和打包，但还没有任何版本发布到 registry，因此这些命令今天还无法执行。"
+    },
+    { "en": "Copy command", "zh": "复制命令" },
+    { "en": "Requires", "zh": "运行环境要求" }
+  ]
+}

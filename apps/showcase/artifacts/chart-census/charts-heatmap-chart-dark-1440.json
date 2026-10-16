@@ -1,0 +1,57 @@
+{
+  "route": "/charts/heatmap-chart",
+  "url": "http://127.0.0.1:3000/charts/heatmap-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 749
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 320,
+    "bitmapW": 860,
+    "bitmapH": 320
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.004,
+    "bounds": {
+      "minX": 12,
+      "minY": 32,
+      "maxX": 780,
+      "maxY": 260
+    }
+  },
+  "renderer": {
+    "texts": 36,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 64,
+    "marks": {
+      "tspan": 36,
+      "rect": 25,
+      "polygon": 2,
+      "path": 1
+    },
+    "shortest": 7
+  },
+  "screenshot": "artifacts/chart-census/charts-heatmap-chart-dark-1440.png"
+}

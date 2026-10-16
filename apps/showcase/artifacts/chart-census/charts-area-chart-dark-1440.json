@@ -1,0 +1,58 @@
+{
+  "route": "/charts/area-chart",
+  "url": "http://127.0.0.1:3000/charts/area-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 792
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 320,
+    "bitmapW": 860,
+    "bitmapH": 320
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.5357,
+    "bounds": {
+      "minX": 6,
+      "minY": 16,
+      "maxX": 838,
+      "maxY": 316
+    }
+  },
+  "renderer": {
+    "texts": 15,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 33,
+    "marks": {
+      "line": 8,
+      "tspan": 15,
+      "ec-polygon": 1,
+      "ec-polyline": 1,
+      "path": 8
+    },
+    "shortest": 28
+  },
+  "screenshot": "artifacts/chart-census/charts-area-chart-dark-1440.png"
+}

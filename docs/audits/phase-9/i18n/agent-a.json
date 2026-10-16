@@ -1,0 +1,106 @@
+{
+  "agent": "agent-a",
+  "surface": "homepage (/)",
+  "since": "2026-10-09",
+  "sources": [
+    "apps/showcase/components/home/hero-section.tsx",
+    "apps/showcase/components/home/product-story-section.tsx",
+    "apps/showcase/components/home/resources-section.tsx"
+  ],
+  "merge": {
+    "target": "apps/showcase/lib/i18n/prose.zh.ts",
+    "shape": "One `\"<english sentence>\": \"<chinese rendering>\",` line per pair, inside `export const proseZh`.",
+    "note": "Every key below is exactly what `node apps/showcase/scripts/i18n-pending.mjs` reports for the three source files, so a straight insert takes the Showcase back to zero pending sentences. 'Data table' is not a mistake: it is the `title` of a resource card, and a `title` in a documentation data array is prose by this repository's own definition (`scripts/i18n-prose.mjs`)."
+  },
+  "sentences": [
+    { "en": "Bilingual by default", "zh": "默认双语" },
+    { "en": "Every LUC interface", "zh": "每一个 LUC 界面" },
+    { "en": "starts from one system.", "zh": "都始于同一套系统。" },
+    {
+      "en": "A React and TypeScript design system: three token layers, accessible components, spatial motion, data display and charts — documented one component at a time.",
+      "zh": "一套 React 与 TypeScript 设计系统：三层令牌、可访问的组件、空间动效、数据展示与图表——并且逐个组件地写成文档。"
+    },
+    { "en": "Browse the components", "zh": "浏览组件" },
+    { "en": "Explore the charts", "zh": "探索图表" },
+    { "en": "Read the foundations", "zh": "阅读基础规则" },
+    { "en": "Component page", "zh": "组件页面" },
+    { "en": "One page per component", "zh": "每个组件一页" },
+    { "en": "Specimen", "zh": "示例" },
+    {
+      "en": "The action vocabulary: six intents, three sizes and one focus ring.",
+      "zh": "动作词汇表：六种意图、三档尺寸、一个焦点环。"
+    },
+    {
+      "en": "Tone, dot and size for status that never leans on colour alone.",
+      "zh": "用色调、圆点与尺寸表达状态，从不只依赖颜色。"
+    },
+    {
+      "en": "A surface with intent: canvas, outline, raised or sunken.",
+      "zh": "有意图的表面：画布、描边、抬升、下沉。"
+    },
+    { "en": "What this system believes", "zh": "这套系统相信什么" },
+    {
+      "en": "Four rules decide every component in the library — and every page that documents it.",
+      "zh": "四条规则决定了库里的每个组件，也决定了记录它们的每个页面。"
+    },
+    { "en": "Tokens come before components", "zh": "先有令牌，再有组件" },
+    {
+      "en": "Three layers — core, semantic and utility — so a component never names a colour or a size directly.",
+      "zh": "核心、语义、工具三层令牌，组件从不直接写死颜色或尺寸。"
+    },
+    { "en": "Dark mode is the reference", "zh": "深色模式是参考" },
+    {
+      "en": "The dark theme is designed first; the light theme is an independent design, never an inversion.",
+      "zh": "深色主题先被设计；浅色主题是独立的设计，而不是把深色反过来。"
+    },
+    { "en": "The interface never computes", "zh": "界面从不计算" },
+    {
+      "en": "Charts and tables render values the caller prepared; indicators, factors and backtests stay in the data layer.",
+      "zh": "图表与表格只渲染调用方准备好的数值；指标、因子与回测留在数据层。"
+    },
+    { "en": "Documentation stays honest", "zh": "文档保持诚实" },
+    {
+      "en": "Where a component cannot express something, its page says so instead of quietly faking the result.",
+      "zh": "组件表达不了的地方，页面会直说，而不是悄悄伪造一个结果。"
+    },
+    { "en": "How to read a component page", "zh": "如何阅读组件页面" },
+    {
+      "en": "Each page opens with what the component is for, then a live example, the real import path, the API from the generated catalog and what it does not do.",
+      "zh": "每个页面先讲清组件的用途，接着是可运行的示例、真实的导入路径、来自生成目录的 API，以及它做不到的事。"
+    },
+    { "en": "Where to go next", "zh": "接下来去哪里" },
+    {
+      "en": "Seven surfaces, each with a job: learn the rules, find a component, read a chart, or see a whole product built from the library.",
+      "zh": "七个入口，各有其职：学习规则、查找组件、读懂图表，或者看一个完全由这套库搭出来的产品。"
+    },
+    {
+      "en": "The token layers, colour, type, spacing and elevation rules behind every component.",
+      "zh": "每个组件背后的令牌层级、颜色、字体、间距与高度规则。"
+    },
+    {
+      "en": "Every public primitive and composite, one honest page at a time.",
+      "zh": "每个公开的基础组件与组合组件，一页只讲清一个。"
+    },
+    {
+      "en": "The chart catalogue, and the contracts that keep chart engines out of your data layer.",
+      "zh": "图表目录，以及把图表引擎挡在数据层之外的契约。"
+    },
+    {
+      "en": "Spatial and expressive motion primitives, with reduced-motion behaviour built in.",
+      "zh": "空间与表现力动效原语，内建 reduced-motion 行为。"
+    },
+    {
+      "en": "Sixteen reference products assembled only from public components.",
+      "zh": "十六个只用公开组件搭起来的参考产品。"
+    },
+    { "en": "Data table", "zh": "数据表格" },
+    {
+      "en": "Sorting, filtering, selection and virtualisation for datasets that are actually large.",
+      "zh": "面向真正大型数据集的排序、过滤、选择与虚拟滚动。"
+    },
+    {
+      "en": "Third-party surfaces wrapped behind a LUC contract, starting with TradingView.",
+      "zh": "用 LUC 契约包裹第三方界面，从 TradingView 开始。"
+    }
+  ]
+}

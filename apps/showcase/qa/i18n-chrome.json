@@ -1,0 +1,50 @@
+{
+  "note": "Reviewed English chrome on the Chinese pages. Each entry is a label a human looked at and accepted, with the reason. A label that is not here fails `qa/i18n-live.mjs`. `--update` re-pins the list and blanks the reasons, which is the point at which a reviewer owes one.",
+  "routes": {
+    "/components/accordion": {
+      "Ingestionok": "the specimen's own pipeline stages: a Badge reading `ok` beside an `Ingestion` trigger, concatenated by textContent. The trigger labels are sample data, like a chart's series names.",
+      "Serving": "the second pipeline stage in the same specimen."
+    },
+    "/components/board": {
+      "Backlog": "a kanban column in the board's own fixture, alongside its cards (`Volatility surface 3D`, `Chord diagram`). Column names are the sample data of a board.",
+      "Doing": "the second kanban column.",
+      "Done": "the third kanban column. The dictionary does carry `Done` → 已完成 for a status, but this is the fixture's column name and it travels with `Backlog` and `Doing`."
+    },
+    "/components/overlay": {
+      "Popover": "an identity translation: the dictionary maps `Popover` → `Popover` on purpose, because the term is the same in both languages, like `API`. Reporting it is a false positive of the shape rule, not a missing string."
+    },
+    "/experiences/general/publishing": {
+      "Architecture": "a topic chip on a sample article. The seven chips are the publication's taxonomy — fixture data, like a post's author.",
+      "Databases": "a topic chip.",
+      "Field notes": "a topic chip.",
+      "Observability": "a topic chip.",
+      "Practice": "a topic chip.",
+      "Reliability": "a topic chip.",
+      "Teams": "a topic chip."
+    },
+    "/experiences/personal/academic": {
+      "Dr. Rita Silva": "a person's name. A name is not translated; the page declares the profile is illustrative in the frame's own header."
+    },
+    "/experiences/personal/career": {
+      "Ada Okonkwo": "a person's name, as above."
+    },
+    "/experiences/personal/portfolio": {
+      "The expressive one": "the portfolio specimen's own hero headline — sample copy inside the simulated site, not documentation chrome."
+    },
+    "/experiences/vertical/ai": {
+      "Copilot desk": "the product name of the simulated product."
+    },
+    "/experiences/vertical/commerce": {
+      "Northlight desk lamp": "the product name of the simulated catalogue item."
+    },
+    "/experiences/vertical/forum": {
+      "Signal": "the name of the simulated community."
+    },
+    "/patterns/research-workspace": {
+      "Momentum study — BTC-USD": "the prepared dataset's own title, passed to the chart as data."
+    },
+    "/studios/motion": {
+      "Read the data, not the volumeRead the data, not the volume": "a TextReveal specimen's text, reported twice because the component renders a visible copy and a screen-reader copy. It is the demo's own sentence."
+    }
+  }
+}

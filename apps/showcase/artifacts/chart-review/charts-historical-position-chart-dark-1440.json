@@ -1,0 +1,29 @@
+{
+  "route": "/charts/historical-position-chart",
+  "url": "http://127.0.0.1:3000/charts/historical-position-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 304
+  },
+  "canvas": null,
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": null,
+  "screenshot": "artifacts/chart-review/charts-historical-position-chart-dark-1440.png"
+}

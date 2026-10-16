@@ -1,0 +1,55 @@
+{
+  "route": "/charts/sunburst-chart",
+  "url": "http://127.0.0.1:3000/charts/sunburst-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 874
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 340,
+    "bitmapW": 860,
+    "bitmapH": 340
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.1495,
+    "bounds": {
+      "minX": 306,
+      "minY": 46,
+      "maxX": 552,
+      "maxY": 292
+    }
+  },
+  "renderer": {
+    "texts": 8,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 17,
+    "marks": {
+      "sector": 9,
+      "tspan": 8
+    },
+    "shortest": 17.3
+  },
+  "screenshot": "artifacts/chart-census/charts-sunburst-chart-dark-1440.png"
+}

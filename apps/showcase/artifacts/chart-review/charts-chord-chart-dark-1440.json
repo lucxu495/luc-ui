@@ -1,0 +1,42 @@
+{
+  "route": "/charts/chord-chart",
+  "url": "http://127.0.0.1:3000/charts/chord-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 628
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 380,
+    "bitmapW": 860,
+    "bitmapH": 380
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.1578,
+    "bounds": {
+      "minX": 214,
+      "minY": 12,
+      "maxX": 610,
+      "maxY": 362
+    }
+  },
+  "screenshot": "artifacts/chart-review/charts-chord-chart-dark-1440.png"
+}

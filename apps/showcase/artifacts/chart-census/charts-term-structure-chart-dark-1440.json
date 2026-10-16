@@ -1,0 +1,57 @@
+{
+  "route": "/charts/term-structure-chart",
+  "url": "http://127.0.0.1:3000/charts/term-structure-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 854
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 320,
+    "bitmapW": 860,
+    "bitmapH": 320
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.0319,
+    "bounds": {
+      "minX": 6,
+      "minY": 2,
+      "maxX": 840,
+      "maxY": 316
+    }
+  },
+  "renderer": {
+    "texts": 11,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 31,
+    "marks": {
+      "line": 6,
+      "tspan": 11,
+      "ec-polyline": 2,
+      "path": 12
+    },
+    "shortest": 13
+  },
+  "screenshot": "artifacts/chart-census/charts-term-structure-chart-dark-1440.png"
+}

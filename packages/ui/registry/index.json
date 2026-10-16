@@ -1,0 +1,61 @@
+{
+  "generatedFrom": [
+    "packages/ui/src (import closure)",
+    "packages/ui/package.json"
+  ],
+  "items": [
+    {
+      "name": "luc-utils",
+      "title": "LUC shared utilities",
+      "description": "The class-name merge and the media/reduced-motion hooks every LUC component is built on.",
+      "files": 3,
+      "dependencies": [
+        "clsx@2.1.1",
+        "react@^19.0.0",
+        "tailwind-merge@3.7.0"
+      ],
+      "registryDependencies": []
+    },
+    {
+      "name": "luc-badge",
+      "title": "Badge",
+      "description": "A short label for a state, a count or a category, with the Tag variant.",
+      "files": 1,
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "clsx@2.1.1",
+        "tailwind-merge@3.7.0"
+      ],
+      "registryDependencies": [
+        "luc-utils"
+      ]
+    },
+    {
+      "name": "luc-spinner",
+      "title": "Spinner",
+      "description": "An indeterminate wait that stops moving when the user asks for less motion.",
+      "files": 1,
+      "dependencies": [
+        "clsx@2.1.1",
+        "react@^19.0.0",
+        "tailwind-merge@3.7.0"
+      ],
+      "registryDependencies": [
+        "luc-utils"
+      ]
+    },
+    {
+      "name": "luc-skeleton",
+      "title": "Skeleton",
+      "description": "A placeholder that reserves the shape of what is loading.",
+      "files": 1,
+      "dependencies": [
+        "clsx@2.1.1",
+        "tailwind-merge@3.7.0"
+      ],
+      "registryDependencies": [
+        "luc-utils"
+      ]
+    }
+  ]
+}

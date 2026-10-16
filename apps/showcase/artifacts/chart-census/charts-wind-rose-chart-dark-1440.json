@@ -1,0 +1,58 @@
+{
+  "route": "/charts/wind-rose-chart",
+  "url": "http://127.0.0.1:3000/charts/wind-rose-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 670
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 340,
+    "bitmapW": 860,
+    "bitmapH": 340
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.0802,
+    "bounds": {
+      "minX": 280,
+      "minY": 36,
+      "maxX": 574,
+      "maxY": 316
+    }
+  },
+  "renderer": {
+    "texts": 16,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 52,
+    "marks": {
+      "path": 2,
+      "tspan": 16,
+      "line": 9,
+      "ring": 1,
+      "sector": 24
+    },
+    "shortest": 7
+  },
+  "screenshot": "artifacts/chart-census/charts-wind-rose-chart-dark-1440.png"
+}

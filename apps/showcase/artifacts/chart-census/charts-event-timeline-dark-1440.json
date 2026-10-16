@@ -1,0 +1,56 @@
+{
+  "route": "/charts/event-timeline",
+  "url": "http://127.0.0.1:3000/charts/event-timeline",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 648
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 260,
+    "bitmapW": 860,
+    "bitmapH": 260
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.0159,
+    "bounds": {
+      "minX": 2,
+      "minY": 10,
+      "maxX": 850,
+      "maxY": 256
+    }
+  },
+  "renderer": {
+    "texts": 9,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 21,
+    "marks": {
+      "tspan": 9,
+      "path": 6,
+      "ec-line": 6
+    },
+    "shortest": 16
+  },
+  "screenshot": "artifacts/chart-census/charts-event-timeline-dark-1440.png"
+}

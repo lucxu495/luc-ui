@@ -1,0 +1,40 @@
+# LUC UI Showcase — private visual-review service.
+#
+# Runs the production Next.js Showcase (Foundation V1.0) in Docker for human
+# review through an SSH tunnel:
+#
+#   server:  docker compose up -d --build          # from this repository root
+#   mac:     ssh -L 3000:localhost:3000 luc@<SERVER_IP>
+#   browser: http://localhost:3000
+#
+# The port is published on 127.0.0.1 ONLY. It is never exposed on 0.0.0.0, no
+# firewall port is opened and there is no public DNS entry. The stack has no
+# shared networks or volumes and reads nothing from another project.
+#
+# The project name, image and container name are this repository's own.
+#
+# Until 2026-10-16 they were derived from `luc-quant`'s `luc-ui/` directory —
+# project `luc-ui`, image `luc-ui/showcase:1.0.0`, container `luc-ui-showcase`.
+# A copy of that stack in a second repository collides with it on all three:
+# Compose would derive the same project name (and therefore the same default
+# network, `luc-ui_default`), and Docker refuses to create a second container
+# with a name that is already in use. The `-standalone` suffix removes the
+# ambiguity while both repositories exist.
+name: luc-ui-standalone
+services:
+  showcase:
+    build:
+      # The pnpm workspace root is this repository's root.
+      context: .
+      dockerfile: Dockerfile
+    image: luc-ui-standalone/showcase:1.0.0
+    container_name: luc-ui-showcase-standalone
+    restart: unless-stopped
+    ports:
+      # Loopback-only host binding. Override the host port with
+      # LUC_UI_SHOWCASE_PORT if 3000 is already taken on the server.
+      - "127.0.0.1:${LUC_UI_SHOWCASE_PORT:-3000}:3000"
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      HOSTNAME: "0.0.0.0"

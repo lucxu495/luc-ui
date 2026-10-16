@@ -1,0 +1,108 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "luc-ui",
+  "homepage": "https://luc-ui.invalid",
+  "items": [
+    {
+      "name": "luc-utils",
+      "type": "registry:ui",
+      "title": "LUC shared utilities",
+      "description": "The class-name merge and the media/reduced-motion hooks every LUC component is built on.",
+      "dependencies": [
+        "clsx@2.1.1",
+        "react@^19.0.0",
+        "tailwind-merge@3.7.0"
+      ],
+      "registryDependencies": [],
+      "cssVars": {},
+      "styles": {
+        "@luc/ui/styles.css": {}
+      },
+      "files": [
+        {
+          "path": "components/luc-ui/utils/cn.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "components/luc-ui/hooks/use-reduced-motion.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "components/luc-ui/hooks/use-media-query.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "luc-badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "A short label for a state, a count or a category, with the Tag variant.",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "clsx@2.1.1",
+        "tailwind-merge@3.7.0"
+      ],
+      "registryDependencies": [
+        "luc-utils"
+      ],
+      "cssVars": {},
+      "styles": {
+        "@luc/ui/styles.css": {}
+      },
+      "files": [
+        {
+          "path": "components/luc-ui/components/badge.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "luc-spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "An indeterminate wait that stops moving when the user asks for less motion.",
+      "dependencies": [
+        "clsx@2.1.1",
+        "react@^19.0.0",
+        "tailwind-merge@3.7.0"
+      ],
+      "registryDependencies": [
+        "luc-utils"
+      ],
+      "cssVars": {},
+      "styles": {
+        "@luc/ui/styles.css": {}
+      },
+      "files": [
+        {
+          "path": "components/luc-ui/components/spinner.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "luc-skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "A placeholder that reserves the shape of what is loading.",
+      "dependencies": [
+        "clsx@2.1.1",
+        "tailwind-merge@3.7.0"
+      ],
+      "registryDependencies": [
+        "luc-utils"
+      ],
+      "cssVars": {},
+      "styles": {
+        "@luc/ui/styles.css": {}
+      },
+      "files": [
+        {
+          "path": "components/luc-ui/components/skeleton.tsx",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "route": "/charts/pnl-attribution-chart",
+  "url": "http://127.0.0.1:3000/charts/pnl-attribution-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 687
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 340,
+    "bitmapW": 860,
+    "bitmapH": 340
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.1322,
+    "bounds": {
+      "minX": 12,
+      "minY": 16,
+      "maxX": 844,
+      "maxY": 334
+    }
+  },
+  "renderer": {
+    "texts": 12,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 37,
+    "marks": {
+      "line": 7,
+      "tspan": 12,
+      "rect": 18
+    },
+    "shortest": 20
+  },
+  "screenshot": "artifacts/chart-census/charts-pnl-attribution-chart-dark-1440.png"
+}

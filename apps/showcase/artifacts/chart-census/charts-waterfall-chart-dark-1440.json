@@ -1,0 +1,57 @@
+{
+  "route": "/charts/waterfall-chart",
+  "url": "http://127.0.0.1:3000/charts/waterfall-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 728
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 340,
+    "bitmapW": 860,
+    "bitmapH": 340
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.0917,
+    "bounds": {
+      "minX": 6,
+      "minY": 20,
+      "maxX": 842,
+      "maxY": 334
+    }
+  },
+  "renderer": {
+    "texts": 11,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 34,
+    "marks": {
+      "line": 6,
+      "tspan": 11,
+      "rect": 12,
+      "ec-line": 5
+    },
+    "shortest": 7
+  },
+  "screenshot": "artifacts/chart-census/charts-waterfall-chart-dark-1440.png"
+}

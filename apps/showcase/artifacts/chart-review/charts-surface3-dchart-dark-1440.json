@@ -1,0 +1,42 @@
+{
+  "route": "/charts/surface3-dchart",
+  "url": "http://127.0.0.1:3000/charts/surface3-dchart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 812
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 380,
+    "bitmapW": 860,
+    "bitmapH": 380
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.2831,
+    "bounds": {
+      "minX": 210,
+      "minY": 30,
+      "maxX": 648,
+      "maxY": 378
+    }
+  },
+  "screenshot": "artifacts/chart-review/charts-surface3-dchart-dark-1440.png"
+}

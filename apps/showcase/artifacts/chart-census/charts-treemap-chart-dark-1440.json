@@ -1,0 +1,55 @@
+{
+  "route": "/charts/treemap-chart",
+  "url": "http://127.0.0.1:3000/charts/treemap-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 891
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 340,
+    "bitmapW": 860,
+    "bitmapH": 340
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.9674,
+    "bounds": {
+      "minX": 4,
+      "minY": 4,
+      "maxX": 854,
+      "maxY": 334
+    }
+  },
+  "renderer": {
+    "texts": 7,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 24,
+    "marks": {
+      "rect": 17,
+      "tspan": 7
+    },
+    "shortest": 15
+  },
+  "screenshot": "artifacts/chart-census/charts-treemap-chart-dark-1440.png"
+}

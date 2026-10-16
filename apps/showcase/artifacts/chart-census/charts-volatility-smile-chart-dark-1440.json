@@ -1,0 +1,57 @@
+{
+  "route": "/charts/volatility-smile-chart",
+  "url": "http://127.0.0.1:3000/charts/volatility-smile-chart",
+  "viewport": {
+    "width": 1440,
+    "theme": "dark",
+    "lang": "en"
+  },
+  "stage": {
+    "w": 902,
+    "h": 1034
+  },
+  "canvas": {
+    "cssW": 860,
+    "cssH": 340,
+    "bitmapW": 860,
+    "bitmapH": 340
+  },
+  "svg": {
+    "cssW": 16,
+    "cssH": 16,
+    "nodes": 1
+  },
+  "paths": 2,
+  "labels": [],
+  "labelCount": 0,
+  "labelOverlaps": [],
+  "overlapCount": 0,
+  "smallestLabelPx": null,
+  "clippedLabels": 0,
+  "overflowX": 0,
+  "ink": {
+    "inkRatio": 0.0529,
+    "bounds": {
+      "minX": 12,
+      "minY": 18,
+      "maxX": 834,
+      "maxY": 324
+    }
+  },
+  "renderer": {
+    "texts": 13,
+    "dropped": 0,
+    "overlaps": 0,
+    "worstOverlaps": [],
+    "outside": 0,
+    "marksTotal": 38,
+    "marks": {
+      "line": 13,
+      "tspan": 13,
+      "ec-polyline": 2,
+      "path": 10
+    },
+    "shortest": 14
+  },
+  "screenshot": "artifacts/chart-census/charts-volatility-smile-chart-dark-1440.png"
+}

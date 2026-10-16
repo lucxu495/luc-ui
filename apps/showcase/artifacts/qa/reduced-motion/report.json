@@ -1,0 +1,158 @@
+[
+  {
+    "slug": "components-menus",
+    "path": "/components/menus",
+    "reduced": {
+      "moving": 0,
+      "animations": 0,
+      "hidden": 0,
+      "settled": true,
+      "settleMs": 0,
+      "overlay": {
+        "opened": true,
+        "chars": 67
+      },
+      "entryAnimations": {
+        "reduce": [],
+        "normal": [
+          "luc-anchored-in"
+        ]
+      }
+    },
+    "normal": {
+      "moving": 0,
+      "animations": 0,
+      "geometryChanges": 0
+    }
+  },
+  {
+    "slug": "dialog",
+    "path": "/components/dialog",
+    "reduced": {
+      "moving": 0,
+      "animations": 0,
+      "hidden": 0,
+      "settled": true,
+      "settleMs": 0,
+      "overlay": {
+        "opened": true,
+        "chars": 271
+      },
+      "entryAnimations": {
+        "reduce": [],
+        "normal": [
+          "luc-overlay-in"
+        ]
+      }
+    },
+    "normal": {
+      "moving": 0,
+      "animations": 0,
+      "geometryChanges": 0
+    }
+  },
+  {
+    "slug": "components-sheet",
+    "path": "/components/sheet",
+    "reduced": {
+      "moving": 0,
+      "animations": 0,
+      "hidden": 0,
+      "settled": true,
+      "settleMs": 0,
+      "overlay": {
+        "opened": true,
+        "chars": 1320
+      },
+      "entryAnimations": {
+        "reduce": [],
+        "normal": [
+          "luc-sheet-in-right"
+        ]
+      }
+    },
+    "normal": {
+      "moving": 0,
+      "animations": 0,
+      "geometryChanges": 0
+    }
+  },
+  {
+    "slug": "components-command",
+    "path": "/components/command",
+    "reduced": {
+      "moving": 0,
+      "animations": 0,
+      "hidden": 0,
+      "settled": true,
+      "settleMs": 0,
+      "overlay": {
+        "opened": true,
+        "chars": 256
+      },
+      "entryAnimations": {
+        "reduce": [],
+        "normal": [
+          "luc-overlay-in"
+        ]
+      }
+    },
+    "normal": {
+      "moving": 0,
+      "animations": 0,
+      "geometryChanges": 0
+    }
+  },
+  {
+    "slug": "components-alert-dialog",
+    "path": "/components/alert-dialog",
+    "reduced": {
+      "moving": 0,
+      "animations": 0,
+      "hidden": 0,
+      "settled": true,
+      "settleMs": 0,
+      "overlay": {
+        "opened": true,
+        "chars": 126
+      },
+      "entryAnimations": {
+        "reduce": [],
+        "normal": [
+          "luc-overlay-in"
+        ]
+      }
+    },
+    "normal": {
+      "moving": 0,
+      "animations": 0,
+      "geometryChanges": 0
+    }
+  },
+  {
+    "slug": "components-popover",
+    "path": "/components/popover",
+    "reduced": {
+      "moving": 0,
+      "animations": 0,
+      "hidden": 0,
+      "settled": true,
+      "settleMs": 0,
+      "overlay": {
+        "opened": true,
+        "chars": 38
+      },
+      "entryAnimations": {
+        "reduce": [],
+        "normal": [
+          "luc-anchored-in"
+        ]
+      }
+    },
+    "normal": {
+      "moving": 0,
+      "animations": 0,
+      "geometryChanges": 0
+    }
+  }
+]

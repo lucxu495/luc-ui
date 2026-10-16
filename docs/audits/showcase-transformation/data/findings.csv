@@ -1,0 +1,23 @@
+id,label,finding,area,evidence_ref,detail,action_items
+F-01,OBSERVED,326 routes crawled; 324 HTTP 200; 2 HTTP 500,routes,01_CURRENT_STATE.md §4.3,"/components/native-select, /components/project-showcase","CMP-001, QA-001"
+F-02,OBSERVED,Right rail harvests demo h2/h3 (up to 55 entries; mangled duplicate slug),navigation,01_CURRENT_STATE.md §5.1 N1,page-outline.tsx scans main,"IA-001, UX-004"
+F-03,OBSERVED,8 chart family routes are unreachable orphans,navigation,01_CURRENT_STATE.md §4.4,0 inbound links each,"LEG-001, LEG-002"
+F-04,OBSERVED,Chart detail pages place the live plot 1570/1852 px down with 165/227 words before it,presentation,01_CURRENT_STATE.md §6.1,component pages do this correctly (410-435 px),"UX-001, CHT-001"
+F-05,OBSERVED,Duplicate DOM ids metrics/tables on /visuals/elements,visuals,01_CURRENT_STATE.md §5.1 N2,,IA-002
+F-06,OBSERVED,Visuals sidebar duplication reported earlier is absent in the current source,visuals,01_CURRENT_STATE.md §3,4 destinations only,(no action; discrepancy recorded)
+F-07,OBSERVED,Card Stack interactions work on /motion/card-stack and /motion/spatial,motion,01_CURRENT_STATE.md §7.3,"buttons, keys, drag, inert, live region",MOT-001
+F-08,OBSERVED,"No unexpected cross-page navigation from demo clicks (6 pages, 3 points on accordion)",navigation,01_CURRENT_STATE.md §7.3,,"MOT-001, IA-001"
+F-09,OBSERVED,Registry 223 entries; charts 81 (79 public); visuals 45 elements / 7 families / 6 styles,inventory,01_CURRENT_STATE.md §7.1,chart verifier script output,(baseline)
+F-10,OBSERVED,"78 playground adapters wired; no reset, no viewport toggle, no invalid-combination guard",workbench,01_CURRENT_STATE.md §8,,"WB-001, WB-002, WB-004"
+F-11,OBSERVED,Reachability concentrated: /explore/browse emits ~200 internal links,navigation,01_CURRENT_STATE.md §4.5,,IA-006
+F-12,OBSERVED,.context chart counts stale (says 78 public/1 engine; source says 79 public/0 engine),documentation,01_CURRENT_STATE.md §7.1,,LEG-004
+F-13,OBSERVED,No rel=prev/next pager on doc entry pages; footer is a version strip,presentation,01_CURRENT_STATE.md §5,,UX-005
+F-14,OBSERVED,Motion gallery links 8 routes while 35 motion entries exist,navigation,01_CURRENT_STATE.md §7.1,,"MOT-002, MOT-004"
+F-15,OBSERVED,Five /visuals resource pages (2028-3424 words) reachable only from /visuals/docs,visuals,"01_CURRENT_STATE.md §4.5, §9",,IA-004
+F-16,OBSERVED,Product copy carries phase labels (MOTION - V3.0) and QA assertions (45 OF 45 ...),documentation,03_SHOWCASE_DESIGN_SPEC.md §9.3,,DOC-001
+F-17,OBSERVED,"/docs/reference is 12787 px, 1180 words, 27 h3, no demo",documentation,01_CURRENT_STATE.md §6.2,,DOC-002
+F-18,OBSERVED,No workbench/specimen on Visuals pages by design; style+size switching only,visuals,01_CURRENT_STATE.md §8,lib/visuals/workbench.ts comment,VIS-001
+F-19,UNVERIFIED,Slider pointer/track click behaviour (locator resolved to the 14x14 thumb),workbench,01_CURRENT_STATE.md §7.3,keyboard works,(no item; needs a corrected probe)
+F-20,UNVERIFIED,MagnifyDock exposes no data-slot on /motion/spatial,motion,01_CURRENT_STATE.md §7.3,,(no item)
+F-21,INFERRED,The 'tests pass but product broken' loop is explained by implementation-fact assertions vs journey facts,quality,05_QUALITY_GATE.md §2.2,,QA-002
+F-22,REPORTED,User's Card Stack malfunction,motion,01_CURRENT_STATE.md §7.3,not reproduced on audited build,MOT-001
