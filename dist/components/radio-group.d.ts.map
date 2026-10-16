@@ -1,0 +1,1 @@
+{"version":3,"file":"radio-group.d.ts","names":["RadioGroup","RadixRadioGroup"],"sources":["../../src/components/radio-group.tsx"],"mappings":";;cAMaA,8BAAU,0BAAAC,WAAA,kCAAA,cAAA;iBAEN,mBACP,KAAK,MAAM,6BAA6BA,WAAgB;EAChE,QAAQ,MAAM;EACd,cAAc,MAAM;EACpB;;wBAKc,QAAQ,WAAW,OAAO,aAAa,IAAI,UAAU,YAAY,SAAS,6BAAU,IAAA"}

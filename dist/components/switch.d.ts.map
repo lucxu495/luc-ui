@@ -1,0 +1,1 @@
+{"version":3,"file":"switch.d.ts","names":["RadixSwitch","Switch"],"sources":["../../src/components/switch.tsx"],"mappings":";;iBAMiB,oBAAoB,MAAM,6BAA6BA,OAAY;EAClF,QAAQ,MAAM;EACd,cAAc,MAAM;EACpB;;iBAacC,WAAS,WAAW,OAAO,aAAa,MAAa,IAAI,aAAa,SAAS,8BAAW,IAAA"}

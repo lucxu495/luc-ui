@@ -1,0 +1,1 @@
+{"version":3,"file":"hover-card.d.ts","names":["HoverCard","RadixHoverCard"],"sources":["../../src/components/hover-card.tsx"],"mappings":";;;;;;;;;;;;;;;cAmBaA,6BAAS,GAAAC,UAAA;qBACT,kCAAgB,0BAAAA,UAAA,wCAAA,cAAA;qBAChB,iCAAe,GAAAA,UAAA;iBAEX,8BACP,MAAM,6BAA6BA,UAAe;EAC1D;;wBAKc,mBACd,WACA,OACA,OACA,eACG,SACF,wCAAqB,IAAA"}

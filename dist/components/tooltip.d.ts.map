@@ -1,0 +1,1 @@
+{"version":3,"file":"tooltip.d.ts","names":["RadixTooltip","Tooltip"],"sources":["../../src/components/tooltip.tsx"],"mappings":";;qBAKa,iCAAe,GAAAA,QAAA;iBAEX,qBAAqB,KAAK,MAAM,6BAA6BA,QAAa;EACzF,SAAS,MAAM;EACf,UAAU,MAAM;;EAEhB;EACA;EACA;EACA;EACA;;EAEA,OAAO,MAAM;;iBAQCC,YACd,SACA,UACA,OACA,MACA,OACA,YACA,WACA,SACG,SACF,+BAAY,IAAA"}

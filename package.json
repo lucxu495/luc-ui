@@ -1,0 +1,218 @@
+{
+  "name": "@luc/ui",
+  "version": "1.0.0",
+  "private": false,
+  "description": "LUC UI — the shared visual and interaction system for LUC products.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucxu495/luc-ui.git",
+    "directory": "packages/ui"
+  },
+  "homepage": "https://github.com/lucxu495/luc-ui#readme",
+  "bugs": {
+    "url": "https://github.com/lucxu495/luc-ui/issues"
+  },
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./styles.css": "./dist/styles/index.css",
+    "./tokens.css": "./dist/tokens/tokens.css",
+    "./app-shell": {
+      "types": "./dist/app-shell.d.ts",
+      "default": "./dist/app-shell.js"
+    },
+    "./workspace": {
+      "types": "./dist/workspace.d.ts",
+      "default": "./dist/workspace.js"
+    },
+    "./url-state": {
+      "types": "./dist/url-state.d.ts",
+      "default": "./dist/url-state.js"
+    },
+    "./charts": {
+      "types": "./dist/charts.d.ts",
+      "default": "./dist/charts.js"
+    },
+    "./experiences": {
+      "types": "./dist/experiences.d.ts",
+      "default": "./dist/experiences.js"
+    },
+    "./tradingview": {
+      "types": "./dist/tradingview.d.ts",
+      "default": "./dist/tradingview.js"
+    },
+    "./financial-chart": {
+      "types": "./dist/financial-chart.d.ts",
+      "default": "./dist/financial-chart.js"
+    },
+    "./data-table": {
+      "types": "./dist/data-table.d.ts",
+      "default": "./dist/data-table.js"
+    },
+    "./data": {
+      "types": "./dist/data.d.ts",
+      "default": "./dist/data.js"
+    },
+    "./forms": {
+      "types": "./dist/forms.d.ts",
+      "default": "./dist/forms.js"
+    },
+    "./forms/react-hook-form": {
+      "types": "./dist/forms/react-hook-form.d.ts",
+      "default": "./dist/forms/react-hook-form.js"
+    },
+    "./datetime": {
+      "types": "./dist/datetime.d.ts",
+      "default": "./dist/datetime.js"
+    },
+    "./date-picker": {
+      "types": "./dist/date-picker.d.ts",
+      "default": "./dist/date-picker.js"
+    },
+    "./calendar": {
+      "types": "./dist/calendar.d.ts",
+      "default": "./dist/calendar.js"
+    },
+    "./slider": {
+      "types": "./dist/slider.d.ts",
+      "default": "./dist/slider.js"
+    },
+    "./dropdown-menu": {
+      "types": "./dist/dropdown-menu.d.ts",
+      "default": "./dist/dropdown-menu.js"
+    },
+    "./context-menu": {
+      "types": "./dist/context-menu.d.ts",
+      "default": "./dist/context-menu.js"
+    },
+    "./alert": {
+      "types": "./dist/alert.d.ts",
+      "default": "./dist/alert.js"
+    },
+    "./empty-state": {
+      "types": "./dist/empty-state.d.ts",
+      "default": "./dist/empty-state.js"
+    },
+    "./typography": {
+      "types": "./dist/typography.d.ts",
+      "default": "./dist/typography.js"
+    },
+    "./components/button": {
+      "types": "./dist/components/button.d.ts",
+      "default": "./dist/components/button.js"
+    },
+    "./components/badge": {
+      "types": "./dist/components/badge.d.ts",
+      "default": "./dist/components/badge.js"
+    },
+    "./components/card": {
+      "types": "./dist/components/card.d.ts",
+      "default": "./dist/components/card.js"
+    },
+    "./components/command": {
+      "types": "./dist/components/command.d.ts",
+      "default": "./dist/components/command.js"
+    },
+    "./components/combobox": {
+      "types": "./dist/components/combobox.d.ts",
+      "default": "./dist/components/combobox.js"
+    },
+    "./components/dialog": {
+      "types": "./dist/components/dialog.d.ts",
+      "default": "./dist/components/dialog.js"
+    },
+    "./components/input": {
+      "types": "./dist/components/input.d.ts",
+      "default": "./dist/components/input.js"
+    },
+    "./components/select": {
+      "types": "./dist/components/select.d.ts",
+      "default": "./dist/components/select.js"
+    },
+    "./components/sheet": {
+      "types": "./dist/components/sheet.d.ts",
+      "default": "./dist/components/sheet.js"
+    },
+    "./components/tabs": {
+      "types": "./dist/components/tabs.d.ts",
+      "default": "./dist/components/tabs.js"
+    },
+    "./components/textarea": {
+      "types": "./dist/components/textarea.d.ts",
+      "default": "./dist/components/textarea.js"
+    },
+    "./components/timeline": {
+      "types": "./dist/components/timeline.d.ts",
+      "default": "./dist/components/timeline.js"
+    },
+    "./components/toast": {
+      "types": "./dist/components/toast.d.ts",
+      "default": "./dist/components/toast.js"
+    },
+    "./layout": {
+      "types": "./dist/layout.d.ts",
+      "default": "./dist/layout.js"
+    },
+    "./motion": {
+      "types": "./dist/motion.d.ts",
+      "default": "./dist/motion.js"
+    },
+    "./hooks": {
+      "types": "./dist/hooks.d.ts",
+      "default": "./dist/hooks.js"
+    },
+    "./providers": {
+      "types": "./dist/providers.d.ts",
+      "default": "./dist/providers.js"
+    },
+    "./utils": {
+      "types": "./dist/utils.d.ts",
+      "default": "./dist/utils.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.0.0"
+  },
+  "dependencies": {
+    "@internationalized/date": "3.12.4",
+    "@remixicon/react": "4.9.0",
+    "@tanstack/react-table": "9.2.4",
+    "@tanstack/react-virtual": "3.14.13",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "cmdk": "1.1.1",
+    "downshift": "9.4.0",
+    "echarts": "6.1.0",
+    "input-otp": "1.5.0",
+    "lightweight-charts": "5.2.1",
+    "motion": "13.4.4",
+    "radix-ui": "1.6.7",
+    "react-aria-components": "1.21.1",
+    "react-resizable-panels": "4.13.3",
+    "sonner": "2.0.8",
+    "tailwind-merge": "3.7.0"
+  },
+  "peerDependenciesMeta": {
+    "react-hook-form": {
+      "optional": true
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts"
+}

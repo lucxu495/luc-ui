@@ -1,0 +1,1 @@
+{"version":3,"file":"scroll-area.d.ts","names":["RadixScrollArea","ScrollArea"],"sources":["../../src/components/scroll-area.tsx"],"mappings":";;;;;;;;;;;;;;;;qBAoBa,gCAAc,0BAAAA,WAAA,kCAAA,cAAA;iBAEV,wBAAwB,MAAM,6BAA6BA,WAAgB;;EAE1F;;EAEA;;EAEA;;EAEA;EACA,WAAW,MAAM;;iBAGHC,eACd,WACA,mBACA,MACA,eACA,QACA,aACG,SACF,kCAAe,IAAA"}

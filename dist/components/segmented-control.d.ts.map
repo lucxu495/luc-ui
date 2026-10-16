@@ -1,0 +1,1 @@
+{"version":3,"file":"segmented-control.d.ts","names":["RadixToggleGroup"],"sources":["../../src/components/segmented-control.tsx"],"mappings":";;iBASiB,8BACP,KAAKA,YAAiB;;EAE9B;EACA;EACA,MAAM,MAAM,IAAI;;wBAaF,mBACd,WACA,MACA,MACA,OACA,cACA,eACA,KACA,aACG,SACF,wCAAqB,IAAA;iBAgDP,2BACP,MAAM,6BAA6BA,YAAiB;EAC5D,cAAc,MAAM;EACpB;;wBAGc,gBACd,WACA,UACA,aACA,OACA,SACG,SACF,qCAAkB,IAAA"}
