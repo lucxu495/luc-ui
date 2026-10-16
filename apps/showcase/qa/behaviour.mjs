@@ -1591,7 +1591,17 @@ async function groupProviders(ctx) {
      * The released widget is parked for a bounded grace period, so a single flip
      * briefly holds one extra container. What must never happen is accumulation:
      * flip repeatedly and the lot has to stay bounded and then empty itself.
+     *
+     * The bound is relative to the lot *as this scenario finds it*, not to zero.
+     * The scenario above flipped the theme once, and that flip's container is
+     * routinely still inside the grace window when these four start — a full
+     * sweep measured five parked here with a fixed bound of four, while the two
+     * assertions that describe accumulation (`after` drains to zero, containers
+     * never exceed the baseline) held. Counting from the observed start keeps
+     * the property "each flip parks at most one container" and drops the hidden
+     * assumption that nothing was parked before the loop.
      */
+    const parkedBeforeFlips = (await providerState(page)).parked;
     for (let flip = 0; flip < 4; flip += 1) {
       await ctx.applyTheme(page, flip % 2 === 0 ? "dark" : "light", recorder, "tradingview-heatmaps");
       await page.waitForTimeout(live ? 900 : 260);
@@ -1603,11 +1613,14 @@ async function groupProviders(ctx) {
       check: "repeated theme flips do not accumulate provider widgets",
       pass:
         // Bounded by the grace window, never by the run length: four flips in
-        // ~1s may park a few containers, but the lot must drain to nothing.
-        duringRapidFlips.parked <= 4 &&
+        // ~1s may park one container each, on top of whatever the previous
+        // scenario left draining, but the lot must drain to nothing.
+        duringRapidFlips.parked <= parkedBeforeFlips + 4 &&
         afterRapidFlips.parked === 0 &&
         afterRapidFlips.containers <= heatmapState.containers,
-      detail: `parked during=${duringRapidFlips.parked} after=${afterRapidFlips.parked}, containers=${afterRapidFlips.containers} (baseline ${heatmapState.containers})`,
+      detail:
+        `parked ${parkedBeforeFlips}→${duringRapidFlips.parked}→${afterRapidFlips.parked} ` +
+        `(4 flips), containers=${afterRapidFlips.containers} (baseline ${heatmapState.containers})`,
     });
     await ctx.applyTheme(page, "dark", recorder, "tradingview-heatmaps");
     await page.waitForTimeout(live ? 500 : 200);
