@@ -69,11 +69,11 @@ export async function generateMetadata({
   const { component } = await params;
   const entry = docEntries.find((candidate) => candidate.route === `/components/${component}`);
   if (entry) {
-    return { title: `${entry.title} — LUC UI`, description: entry.summary };
+    return { title: `${entry.title} — Luc UI`, description: entry.summary };
   }
   const family = familiesInGroup("components").find((candidate) => candidate.id === component);
   if (family) {
-    return { title: `${family.title} — LUC UI`, description: family.summary };
+    return { title: `${family.title} — Luc UI`, description: family.summary };
   }
   return {};
 }

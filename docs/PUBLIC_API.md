@@ -1,4 +1,4 @@
-# LUC UI V1 — public API
+# Luc UI V1 — public API
 
 The declared package export map defines importable paths. The generated
 [component catalog](./COMPONENT_CATALOG.md) lists every current public symbol,
@@ -85,7 +85,7 @@ so a plain `@luc/ui` import can never bring provider hosts into a bundle.
 | Level | Meaning |
 | --- | --- |
 | **Stable** | Declared public paths and exported symbols in the generated catalog, subject to `VERSIONING.md`. Breaking changes require a major version. |
-| **Third-party integration** | The TradingView wrappers. LUC's own props and registry are stable; TradingView may change a widget's behaviour or attributes without notice, and the audit trail lives in `docs/research/v0.6-tradingview-policy-audit.md`. |
+| **Third-party integration** | The TradingView wrappers. Luc UI's own props and registry are stable; TradingView may change a widget's behaviour or attributes without notice, and the audit trail lives in `docs/research/v0.6-tradingview-policy-audit.md`. |
 | **Not a public path** | Direct imports of `components/menu-shared`, `charts/core/*`, `charts/adapters/*`, `integrations/tradingview/core/*`, the Showcase app, or any `src/` file. Some helpers defined in those files are deliberately re-exported by public barrels; import them through the declared path in the catalog. |
 
 There is no `experimental` namespace at V1. If a capability is not ready to

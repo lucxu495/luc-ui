@@ -1,7 +1,7 @@
-# LUC UI — date & time guide
+# Luc UI — date & time guide
 
 Dates are where UI systems quietly break: a day shifts across a time zone, a
-"date" becomes a timestamp, a report for 1 January covers 31 December. LUC UI
+"date" becomes a timestamp, a report for 1 January covers 31 December. Luc UI
 removes that class of bug by keeping four *different kinds of value* different —
 in the types, in the components and in the public API.
 
@@ -37,7 +37,7 @@ return `null` instead of guessing.
 
 ## 3. Timezone policy
 
-LUC UI has no timezone policy. It has a rule about where the decision is made.
+Luc UI has no timezone policy. It has a rule about where the decision is made.
 
 - **Date-only controls** have no time zone and never need one.
 - **Time-only controls** have no date and never imply one.

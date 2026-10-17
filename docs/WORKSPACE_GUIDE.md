@@ -1,4 +1,4 @@
-# LUC UI — Workspace guide
+# Luc UI — Workspace guide
 
 A structured, resizable application layout for data-heavy screens. **Not** a
 drag-and-drop dashboard: panes exist because the code says they exist, and the

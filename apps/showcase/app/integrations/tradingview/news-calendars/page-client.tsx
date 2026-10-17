@@ -34,7 +34,7 @@ export default function TradingViewNewsCalendarsPage({ api }: { api?: ReactNode 
 
       <Section
         title={tcs("Economic Calendar")}
-        description={tcs("Named for the provider on purpose: this is not LUC's Calendar component, and the two must never be confused.")}
+        description={tcs("Named for the provider on purpose: this is not Luc UI's Calendar component, and the two must never be confused.")}
       >
         <TradingViewTile definition={tradingViewWidgetById("economic-calendar")!} useCase={tcs("All importance levels, worldwide.")}>
           <TradingViewEconomicCalendar height={620} />
@@ -63,7 +63,7 @@ export default function TradingViewNewsCalendarsPage({ api }: { api?: ReactNode 
 
       <Section title={tcs("Reuse note")} description={tcs("These four widgets are the cheapest way to give a research page macro context.")}>
         <Text variant="caption" tone="muted" as="p">
-          {tcs("They are also the ones most likely to be reused across products: none of them depends on LUC's own data, and none of them needs a backend to be useful.")}</Text>
+          {tcs("They are also the ones most likely to be reused across products: none of them depends on Luc UI's own data, and none of them needs a backend to be useful.")}</Text>
       </Section>
 
       <IntegrationNotes entryId="tradingview-news-calendars" />

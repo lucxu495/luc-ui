@@ -1,4 +1,4 @@
-# LUC UI V1 — public API audit
+# Luc UI V1 — public API audit
 
 The purpose of this document is to *measure* the public surface, not to praise
 it. Every claim below comes from reading `packages/ui/src` and the export map in

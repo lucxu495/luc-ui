@@ -14,7 +14,7 @@ import { MotionStudio } from "@/components/studios/motion-studio";
 import { getServerCopy } from "@/lib/i18n/server";
 
 export const metadata: Metadata = {
-  title: "Motion Studio — LUC UI",
+  title: "Motion Studio — Luc UI",
   description: "Tune the motion primitives against the intensity register they actually read.",
 };
 

@@ -47,7 +47,7 @@ function previewForFamily(familyId: string) {
 }
 
 export const metadata: Metadata = {
-  title: "Components — LUC UI",
+  title: "Components — Luc UI",
   description:
     "Every documented component, grouped by the job it does, with the family and the page each one lives on.",
 };

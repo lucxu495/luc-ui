@@ -3,7 +3,7 @@
 /*
  * The three geographic demos.
  *
- * All of them need a base map, and LUC UI ships none on purpose: boundary data
+ * All of them need a base map, and Luc UI ships none on purpose: boundary data
  * is large, licensed, and carries a political point of view. Registering a map
  * is therefore an explicit step the consumer takes — and the honest demo is one
  * that takes it, in an effect, and then draws. The geometry is the Showcase's

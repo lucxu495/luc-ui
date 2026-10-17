@@ -25,7 +25,7 @@ import { localizeHref } from "@/lib/i18n/config";
 export const metadata: Metadata = {
   title: "Templates",
   description:
-    "Whole-page starters built from LUC UI components and Blocks: personal sites, a marketing page, a product console and a research workspace.",
+    "Whole-page starters built from Luc UI components and Blocks: personal sites, a marketing page, a product console and a research workspace.",
 };
 
 

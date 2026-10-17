@@ -32,7 +32,7 @@ import { RiAddLine, RiCheckLine, RiHeart3Line, RiLoopRightLine, RiSparklingLine 
 /**
  * Four products, one component set.
  *
- * These vignettes exist to answer a specific doubt: is LUC UI a financial
+ * These vignettes exist to answer a specific doubt: is Luc UI a financial
  * dashboard library that happens to have buttons, or a general one that is
  * unusually good at data? Each card below is built only from the public API, and
  * each one is scoped to its own palette and type voice — the wrapper sets two

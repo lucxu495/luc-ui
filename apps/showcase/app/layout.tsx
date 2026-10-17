@@ -15,7 +15,7 @@ import "./globals.css";
 
 /*
  * Self-hosted open-source fonts (SIL OFL 1.1). Bundled, not fetched from a
- * third-party CDN at runtime — LUC UI stays portable and offline-safe.
+ * third-party CDN at runtime — Luc UI stays portable and offline-safe.
  * Subsets are declared per `unicode-range`, so only used scripts download.
  */
 import "@fontsource-variable/inter";
@@ -24,11 +24,34 @@ import "@fontsource-variable/jetbrains-mono";
 
 export const metadata: Metadata = {
   title: {
-    default: "LUC UI — design system",
-    template: "%s · LUC UI",
+    default: "Luc UI — design system",
+    template: "%s · Luc UI",
   },
   description:
-    "LUC UI is the shared visual and interaction system for LUC products: tokens, components, motion and data UI.",
+    "Luc UI is an open-source React and TypeScript design system: accessible components, tokens, motion and charts.",
+  icons: {
+    icon: [
+      {
+        url: "/brand/luc-ui-logo-light-32.png",
+        type: "image/png",
+        sizes: "32x32",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/brand/luc-ui-logo-dark-32.png",
+        type: "image/png",
+        sizes: "32x32",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
+    apple: [
+      {
+        url: "/brand/luc-ui-apple-touch-180.png",
+        type: "image/png",
+        sizes: "180x180",
+      },
+    ],
+  },
 };
 
 export const viewport: Viewport = {

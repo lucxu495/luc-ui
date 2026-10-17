@@ -17,7 +17,7 @@ import {
 } from "./tokens";
 import type { TradingViewStatus, TradingViewTheme, TradingViewThemeProp } from "./types";
 
-/** The theme a widget should render in, resolved from LUC's theme. */
+/** The theme a widget should render in, resolved from Luc UI's theme. */
 export function useTradingViewTheme(theme: TradingViewThemeProp = "auto"): TradingViewTheme {
   const luc = useOptionalTheme();
   const resolved = luc?.resolvedTheme ?? "dark";

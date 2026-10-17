@@ -48,7 +48,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { motion } = await params;
   const entry = docEntries.find((candidate) => candidate.route === `/motion/${motion}`);
-  return entry ? { title: `${entry.title} — LUC UI`, description: entry.summary } : {};
+  return entry ? { title: `${entry.title} — Luc UI`, description: entry.summary } : {};
 }
 
 export default async function MotionPage({ params }: { params: Promise<{ motion: string }> }) {

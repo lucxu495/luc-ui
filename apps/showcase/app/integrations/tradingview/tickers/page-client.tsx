@@ -24,7 +24,7 @@ export default function TradingViewTickersPage({ api }: { api?: ReactNode }) {
       <PageHeader
         eyebrow={tcs("Integrations · TradingView · Tickers")}
         title="Quotes in a strip, a chip or a card"
-        lead="Four ticker widgets for four different shapes of space. All four are Web Components, so they inherit LUC's colours and font through the provider's documented token bridge."
+        lead="Four ticker widgets for four different shapes of space. All four are Web Components, so they inherit Luc UI's colours and font through the provider's documented token bridge."
       />
 
       <Section

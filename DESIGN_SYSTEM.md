@@ -1,4 +1,4 @@
-# LUC UI — design system
+# Luc UI — design system
 
 The rules. If something is not here, it is not part of the system yet.
 Every rule is written so it can be checked in code review or in a screenshot.
@@ -681,7 +681,7 @@ Full contract in `docs/TRADINGVIEW_GUIDE.md`; provider policy audit in
 `docs/research/v0.6-tradingview-policy-audit.md`.
 
 1. **The provider is named.** TradingView widgets are provider data, presented in
-   LUC's layout. LUC never claims the data, and never hides or covers provider
+   Luc UI's layout. LUC never claims the data, and never hides or covers provider
    attribution. Nothing is placed over a widget box.
 2. **Two depths, kept apart.** Web Components are themed through the provider's
    published custom properties and a `theme` attribute. iframe widgets take only

@@ -72,7 +72,7 @@ const startGroup: NavGroup = {
     {
       title: "Documentation",
       href: "/docs",
-      description: "What LUC UI is, and how to find the thing you need.",
+      description: "What Luc UI is, and how to find the thing you need.",
     },
     {
       title: "Installation",
@@ -453,7 +453,7 @@ const foundationsGroup: NavGroup = {
   id: "foundations",
   title: "Foundations",
   items: [
-    { title: "Overview", href: "/foundations", description: "The principles behind LUC UI." },
+    { title: "Overview", href: "/foundations", description: "The principles behind Luc UI." },
     {
       title: "Colors",
       href: "/foundations/colors",

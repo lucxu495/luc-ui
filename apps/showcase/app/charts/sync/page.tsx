@@ -32,7 +32,7 @@ export default function SyncPage() {
       <PageHeader
         eyebrow={tcs("Charts · Interaction")}
         title="Synchronised research stack"
-        lead="Three charts, two different engines, one crosshair and one visible range. Synchronisation is LUC's, not the engine's: the bus carries a normalised timestamp and window, so ECharts and Lightweight Charts follow each other without either knowing the other exists."
+        lead="Three charts, two different engines, one crosshair and one visible range. Synchronisation is Luc UI's, not the engine's: the bus carries a normalised timestamp and window, so ECharts and Lightweight Charts follow each other without either knowing the other exists."
       />
 
       <Section

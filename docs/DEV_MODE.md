@@ -148,7 +148,7 @@ Raw-response evidence and the full transcript are in
 
 ## 7. Two development sessions at once (CONCURRENCY-001)
 
-LUC UI has two development tracks that run at the same time — the shared platform
+Luc UI has two development tracks that run at the same time — the shared platform
 and the Visuals library — and until 2026-10-13 both of them used `next dev` with
 the one output directory `apps/showcase/.next`. That directory is not a build
 artifact they share politely; it is one Turbopack cache, one `static/chunks`
@@ -285,7 +285,7 @@ with each session's cache size, lock state, pid and port, plus any stray server
 whose working directory is this app:
 
 ```
-LUC UI — dev cache guard
+Luc UI — dev cache guard
   free space: 59.08 GiB
   dev cache : 3.09 GiB across 2 session(s)
     .next         3.09 GiB  running (pid 41423, port 3300)  (apps/showcase/.next)

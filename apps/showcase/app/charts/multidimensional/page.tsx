@@ -105,7 +105,7 @@ export default function MultidimensionalChartsPage() {
           render={({ height }) => (
             <HierarchyTreeChart
               height={height}
-              ariaLabel={tcs("Package tree of the LUC UI workspace")}
+              ariaLabel={tcs("Package tree of the Luc UI workspace")}
               root={hierarchyRoot}
               orientation="left-right"
               format={{ kind: "integer" }}

@@ -88,7 +88,7 @@ export function DesignLab({ treatment }: { treatment: Treatment }) {
       <div data-testid="design-lab" data-treatment={treatment} className={`${styles.lab} ${copy.className}`}>
         <header className={styles.pageHeader}>
           <div>
-            <p className={styles.eyebrow}>{tcs("LUC UI / DESIGN LAB / 01")}</p>
+            <p className={styles.eyebrow}>{tcs("Luc UI / DESIGN LAB / 01")}</p>
             <h1 className={styles.title}>{tcs(copy.label)}</h1>
             <p className={styles.premise}>{tcs(copy.premise)}</p>
           </div>

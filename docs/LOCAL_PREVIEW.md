@@ -1,4 +1,4 @@
-# LUC UI Showcase — local Docker preview
+# Luc UI Showcase — local Docker preview
 
 A loopback-only production build of the Showcase on your own Mac, so the current
 state of the tree can be reviewed in a browser at any time.

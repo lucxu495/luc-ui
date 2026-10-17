@@ -708,7 +708,7 @@ export const TRADINGVIEW_CATEGORIES: readonly {
   { id: "screeners", label: "Screeners", description: "Filterable market tables with provider columns and presets." },
   { id: "symbol-details", label: "Symbol details", description: "Facts, ratings, fundamentals and company profile for one instrument." },
   { id: "news", label: "News", description: "The provider's news timeline. Content stays provider-owned." },
-  { id: "calendars", label: "Calendars", description: "Macro event calendars — distinct from LUC's own Calendar component." },
+  { id: "calendars", label: "Calendars", description: "Macro event calendars — distinct from Luc UI's own Calendar component." },
   { id: "brokers", label: "Brokers", description: "Broker partner rating and review embeds." },
   { id: "economics", label: "Economics", description: "Macro indicators on a world map." },
 ];

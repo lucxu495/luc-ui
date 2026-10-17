@@ -114,7 +114,7 @@ const AREAS: Record<NavAreaId, NavArea> = {
     tier: "secondary",
     label: "Home",
     href: "/",
-    description: "What LUC UI is, what it contains and where to start.",
+    description: "What Luc UI is, what it contains and where to start.",
     prefixes: [],
     /* The front door shows the way in; the site map is rendered beside it. */
     sidebar: ["start-here"],

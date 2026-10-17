@@ -441,7 +441,7 @@ export function MeridianSite() {
       </section>
 
       <footer className="flex flex-wrap items-center justify-between gap-4 border-t border-line-subtle px-6 py-6 text-caption text-fg-muted lg:px-10">
-        <span>Meridian — {tcs("a fictional product, for demonstrating LUC UI")}</span>
+        <span>Meridian — {tcs("a fictional product, for demonstrating Luc UI")}</span>
         <span className="luc-numeric">1429</span>
       </footer>
     </div>

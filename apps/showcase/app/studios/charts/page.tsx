@@ -15,7 +15,7 @@ import { ChartStudio } from "@/components/studios/chart-studio";
 import { getServerCopy } from "@/lib/i18n/server";
 
 export const metadata: Metadata = {
-  title: "Chart Studio — LUC UI",
+  title: "Chart Studio — Luc UI",
   description: "Draw your own data through a real chart, then copy the code that drew it.",
 };
 

@@ -137,7 +137,7 @@ export default async function ThemesPage() {
               ))}
             </ul>
             <Text variant="caption" tone="muted">
-              {tcs("A palette that repainted “negative” green would break every product built on LUC UI. That is why the status set has no palette override at all — the token file simply does not offer one.")}</Text>
+              {tcs("A palette that repainted “negative” green would break every product built on Luc UI. That is why the status set has no palette override at all — the token file simply does not offer one.")}</Text>
           </Panel>
         </div>
       </Section>

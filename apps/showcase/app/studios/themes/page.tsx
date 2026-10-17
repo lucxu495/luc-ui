@@ -13,7 +13,7 @@ import { ThemeStudio } from "@/components/studios/theme-studio";
 import { getServerCopy } from "@/lib/i18n/server";
 
 export const metadata: Metadata = {
-  title: "Theme Studio — LUC UI",
+  title: "Theme Studio — Luc UI",
   description: "Four attributes, a live preview and the exact line to copy.",
 };
 

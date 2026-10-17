@@ -210,7 +210,7 @@ export const proseZh: Record<string, string> = {
   "Optional, and only used for the setup sketch.": "可选，仅用于那份接入草图。",
   "Engineering team size": "工程团队规模",
   "No sales sequence. One reply from an engineer.": "没有销售话术流程。只有一位工程师的一次回复。",
-  "a fictional product, for demonstrating LUC UI": "一个虚构产品，用于演示 LUC UI",
+  "a fictional product, for demonstrating Luc UI": "一个虚构产品，用于演示 Luc UI",
   "An index, a reading view and a share control": "索引、阅读视图与分享控件",
   "Search and topic filters over a six-article index, a reading view set in the editorial serif at a comfortable measure, related pieces chosen from shared topics, and a share control that copies the address the reader is actually on.": "在六篇文章的索引上做搜索与主题筛选，使用编辑衬线体、行宽舒适的阅读视图，按共同主题挑选的相关文章，以及复制读者当前地址的分享控件。",
   "The quiet cost of a queue": "队列的沉默代价",
@@ -715,7 +715,7 @@ export const proseZh: Record<string, string> = {
   "Subtotal": "小计",
   "Add to basket": "加入购物车",
   "Checkout": "结算",
-  "Order placed. This demonstration stops here — there is no payment provider and no card field anywhere in LUC UI.": "订单已提交。演示到此为止——LUC UI 里没有任何支付服务商，也没有任何卡号输入框。",
+  "Order placed. This demonstration stops here — there is no payment provider and no card field anywhere in Luc UI.": "订单已提交。演示到此为止——Luc UI 里没有任何支付服务商，也没有任何卡号输入框。",
   "Your basket holds {count} item(s) totalling ${total}. Delivery is calculated on the next step.": "你的购物车里有 {count} 件，合计 ${total}。运费在下一步计算。",
   "Email for the receipt": "接收收据的邮箱",
   "Used once, for this order.": "只用于这一笔订单。",
@@ -1142,8 +1142,8 @@ export const proseZh: Record<string, string> = {
     "预设覆盖常见窗口；日历覆盖其余情况。两者写入的都是同两个日历日期。",
   "No prepared rows fall inside this window.": "这个窗口内没有任何已备好的行。",
   "What the chart is given": "图表拿到的是什么",
-  "Prepared rows in, prepared rows drawn. LUC UI never thins, resamples or derives a series — if a window is too dense to draw honestly, the data layer decides what to send.":
-    "传进去的是已备好的行，画出来的也是已备好的行。LUC UI 从不抽稀、重采样或推导序列——如果某个窗口的数据密到无法诚实绘制，由数据层决定送什么。",
+  "Prepared rows in, prepared rows drawn. Luc UI never thins, resamples or derives a series — if a window is too dense to draw honestly, the data layer decides what to send.":
+    "传进去的是已备好的行，画出来的也是已备好的行。Luc UI 从不抽稀、重采样或推导序列——如果某个窗口的数据密到无法诚实绘制，由数据层决定送什么。",
   "That is also why a date filter here is cheap: changing the window does not change any financial semantics, it only changes which of the caller's rows are passed to the engine.":
     "这也正是这里的日期筛选很轻的原因：换窗口不改变任何金融语义，只改变调用方的哪些行被送进引擎。",
 
@@ -1487,7 +1487,7 @@ export const proseZh: Record<string, string> = {
     "国家层面的股票表现，可以是地图，也可以是列表。",
   "Map view.": "地图视图。",
   "List view, sorted by performance.": "列表视图，按表现排序。",
-  "Sector attributes are JSON on the element, exactly as the provider's own snippet writes them. LUC's typed props serialise to that form, so a pasted provider snippet and a LUC component produce the same markup.":
+  "Sector attributes are JSON on the element, exactly as the provider's own snippet writes them. Luc UI's typed props serialise to that form, so a pasted provider snippet and a LUC component produce the same markup.":
     "板块属性以 JSON 写在元素上，与提供商自家代码片段写出的形式完全一致。LUC 的类型化 props 会序列化成同一个形式，因此粘贴来的官方片段与 LUC 组件产生的标记完全相同。",
 
   /* --------------------------------------------- integrations/tradingview · tickers */
@@ -1519,13 +1519,13 @@ export const proseZh: Record<string, string> = {
   "Web Component: tokens": "Web Component：令牌",
   "One mapping, applied by every Web Component wrapper.":
     "一份映射，由每个 Web Component 包装组件统一应用。",
-  "Follows LUC's surface, text and font tokens.": "跟随 LUC 的表面、文字与字体令牌。",
+  "Follows Luc UI's surface, text and font tokens.": "跟随 LUC 的表面、文字与字体令牌。",
   "Same bridge, a denser widget.": "同一座桥，更密集的挂件。",
   "Only tokens with a clear semantic counterpart are mapped. The provider keeps its own market-status chips and its up/down area fills, and LUC does not guess at internal selectors: the shadow root is closed, and":
     "只映射有明确语义对应的令牌。提供商自己的市场状态小标签与涨跌面积填充保持原样，LUC 也不去猜内部选择器：shadow root 是关闭的，并且",
   "is used only where a widget documents one.": "只在该挂件明确说明存在时才使用。",
   "iframe: provider configuration": "iframe：提供商配置",
-  "The chart below is the same widget in a separate document. It matches the theme; it does not inherit LUC's colours.":
+  "The chart below is the same widget in a separate document. It matches the theme; it does not inherit Luc UI's colours.":
     "下面的图表是同一个挂件，但位于独立文档中。它会跟随主题，但不会继承 LUC 的颜色。",
   "Provider theme, LUC surface colours passed through the provider's own keys.":
     "提供商主题，LUC 的表面颜色通过提供商自己的键传入。",
@@ -1663,7 +1663,7 @@ export const proseZh: Record<string, string> = {
   "follows one instrument instead of all markets. LUC does not parse, store or re-render the stories.":
     "只跟踪一个标的，而不是全部市场。LUC 不解析、不存储、也不重新渲染这些新闻。",
   "Economic Calendar": "经济日历",
-  "Named for the provider on purpose: this is not LUC's Calendar component, and the two must never be confused.":
+  "Named for the provider on purpose: this is not Luc UI's Calendar component, and the two must never be confused.":
     "刻意以提供商命名：这不是 LUC 的 Calendar 组件，两者绝不能混淆。",
   "All importance levels, worldwide.": "全球范围，所有重要性等级。",
   "High-importance events for the US, EU and UK.": "美国、欧盟与英国的高重要性事件。",
@@ -1674,7 +1674,7 @@ export const proseZh: Record<string, string> = {
   "Reuse note": "复用说明",
   "These four widgets are the cheapest way to give a research page macro context.":
     "这四个挂件是给研究页补上宏观背景最省力的方式。",
-  "They are also the ones most likely to be reused across products: none of them depends on LUC's own data, and none of them needs a backend to be useful.":
+  "They are also the ones most likely to be reused across products: none of them depends on Luc UI's own data, and none of them needs a backend to be useful.":
     "它们也是最容易被跨产品复用的：没有一个依赖 LUC 自己的数据，也没有一个需要后端才有用。",
 
   /* ------------------------------------------- integrations/tradingview · heatmaps */
@@ -1689,7 +1689,7 @@ export const proseZh: Record<string, string> = {
   "ETF Heatmap": "ETF 热力图",
   "US ETFs grouped by asset class.": "美国 ETF，按资产类别分组。",
   "Forex Table": "外汇表",
-  "A Web Component — the one heatmap family that is not an iframe, so it inherits LUC's tokens.":
+  "A Web Component — the one heatmap family that is not an iframe, so it inherits Luc UI's tokens.":
     "一个 Web Component——热力图家族中唯一不是 iframe 的，因此它继承 LUC 的令牌。",
   "Cross rates.": "交叉汇率。",
   "Daily change, heat-coloured.": "当日涨跌，热力着色。",
@@ -1704,7 +1704,7 @@ export const proseZh: Record<string, string> = {
   "preset=\"analysis\" — drawing tools, details and date ranges on the":
     "preset=\"analysis\"——绘图工具、详情与日期区间在",
   "Mini Chart": "迷你图表",
-  "The card-sized chart. Web Component format, so it follows LUC's tokens directly.":
+  "The card-sized chart. Web Component format, so it follows Luc UI's tokens directly.":
     "卡片大小的图表。Web Component 格式，因此直接跟随 LUC 的令牌。",
   "drops the header for a pure sparkline;": "去掉头部，变成纯粹的迷你走势；",
   "switches between area, line and baseline.": "在面积、折线与基准线之间切换。",
@@ -1748,8 +1748,8 @@ export const proseZh: Record<string, string> = {
     "品牌与含义之间的那条界线，正是色板层之所以很小的原因。",
   "Changes with the palette": "随色板变化",
   "Never changes with the palette": "永不随色板变化",
-  "A palette that repainted “negative” green would break every product built on LUC UI. That is why the status set has no palette override at all — the token file simply does not offer one.":
-    "一套会把「负值」重新涂成绿色的色板，会毁掉每一个基于 LUC UI 的产品。这就是状态色整套都没有色板覆盖的原因——令牌文件根本不提供这个入口。",
+  "A palette that repainted “negative” green would break every product built on Luc UI. That is why the status set has no palette override at all — the token file simply does not offer one.":
+    "一套会把「负值」重新涂成绿色的色板，会毁掉每一个基于 Luc UI 的产品。这就是状态色整套都没有色板覆盖的原因——令牌文件根本不提供这个入口。",
   "Contrast is measured, not assumed": "对比度是量出来的，不是假定的",
   "Two pairs can break when an accent moves: the label on a filled accent control, and accent text on the default surface. Both are computed from the declared oklch values in unit tests, then re-measured in the browser by axe.":
     "强调色移动时，有两对配色可能失效：实心强调控件上的标签，以及默认表面上的强调色文字。两者都在单元测试里由声明的 oklch 值算出，并随后在浏览器里由 axe 重新测量。",
@@ -1907,8 +1907,8 @@ export const proseZh: Record<string, string> = {
     "动效按档位分配预算。第 3 档在仪表盘里没有位置。",
   "Motion tiers": "动效档位",
   "Reduced motion": "减弱动效",
-  "Every animation in LUC UI has a stated fallback. Use the “Motion auto / Reduced” control in the top bar to review both paths live.":
-    "LUC UI 里每个动画都有明确写出的降级方案。用顶栏的「动效自动 / 减弱」控件，现场对照两条路径。",
+  "Every animation in Luc UI has a stated fallback. Use the “Motion auto / Reduced” control in the top bar to review both paths live.":
+    "Luc UI 里每个动画都有明确写出的降级方案。用顶栏的「动效自动 / 减弱」控件，现场对照两条路径。",
   "A traveling highlight stops traveling but still marks the element. A number ticker jumps to its value. A dialog fades. Nothing that carries meaning is deleted.":
     "行进中的高光不再行进，但依然标记该元素。数字滚动直接跳到目标值。对话框淡入淡出。任何承载含义的东西都不会被删掉。",
   "How it is implemented": "如何实现",
@@ -1943,8 +1943,8 @@ export const proseZh: Record<string, string> = {
   /* -------------------------------------------------------------- foundations/colors */
   "Foundations": "基础",
   "Surfaces": "表面",
-  "Depth in LUC UI is a luminance step plus a hairline, not a big drop shadow. Surfaces form an ordered stack.":
-    "LUC UI 的深度来自一次明度跃迁加一条极细的描边，而不是一个大投影。表面构成一个有序的堆栈。",
+  "Depth in Luc UI is a luminance step plus a hairline, not a big drop shadow. Surfaces form an ordered stack.":
+    "Luc UI 的深度来自一次明度跃迁加一条极细的描边，而不是一个大投影。表面构成一个有序的堆栈。",
   "Text": "文字",
   "Four text levels keep hierarchy predictable. Anything below 4.5:1 against its surface is only ever used for decorative microcopy.":
     "四个文字层级让层级关系可预测。与其所在表面对比度低于 4.5:1 的文字，只用于装饰性微文案。",
@@ -2093,7 +2093,7 @@ export const proseZh: Record<string, string> = {
   "At least four characters.": "至少四个字符。",
 
   /* ------------------------------------------------- experiments/design-lab (index) */
-  "LUC UI / experiment 01": "LUC UI / 实验 01",
+  "Luc UI / experiment 01": "Luc UI / 实验 01",
   "Three treatments of the same prepared observations and the same table-to-chart-to-inspector interaction. Use the Showcase theme and motion controls to compare states.":
     "同一批已备好的观测值、同一套「表格→图表→检查器」交互，三种处理方式。用 Showcase 的主题与动效控件对比不同状态。",
   "Promoted recipe: linked data selection": "已提升的配方：联动的数据选择",
@@ -2114,7 +2114,7 @@ export const proseZh: Record<string, string> = {
   "Reference": "参考基准",
   "Date": "日期",
   "Channel": "通道",
-  "LUC UI / DESIGN LAB / 01": "LUC UI / 设计实验室 / 01",
+  "Luc UI / DESIGN LAB / 01": "Luc UI / 设计实验室 / 01",
   "Milliseconds · lower is shorter": "毫秒 · 越低越快",
   "Where does the response depart from its reference?": "响应在哪里偏离了参考基准？",
   "Two rises appear in the prepared sequence. Select any observation to inspect its exact value and context.":
@@ -3144,7 +3144,7 @@ export const proseZh: Record<string, string> = {
   /* -------------------------------------------------------- charts/multidimensional */
   "Scatterplot matrix": "散点矩阵",
   "Pairwise relationships between four portfolio measures": "四个投资组合度量之间的两两关系",
-  "Package tree of the LUC UI workspace": "LUC UI 工作区的包树",
+  "Package tree of the Luc UI workspace": "Luc UI 工作区的包树",
   "Geographic scatter": "地理散点",
 
   /* ------------------------------------------------------------------ charts/matrix */
@@ -3507,8 +3507,8 @@ export const proseZh: Record<string, string> = {
   "Declarations ship beside the code, client directives are preserved for React Server Components, and React stays a peer dependency.":
     "类型声明与代码一起发布，client 指令为 React Server Components 保留，React 始终是 peer dependency。",
   "Measured": "实测数据",
-  "From the consumer smoke test: each scenario is bundled with every third-party module external, so the numbers describe LUC UI's own graph rather than React's.":
-    "来自调用方冒烟测试：每个场景打包时把所有第三方模块都设为 external，因此这些数字描述的是 LUC UI 自己的依赖图，而不是 React 的。",
+  "From the consumer smoke test: each scenario is bundled with every third-party module external, so the numbers describe Luc UI's own graph rather than React's.":
+    "来自调用方冒烟测试：每个场景打包时把所有第三方模块都设为 external，因此这些数字描述的是 Luc UI 自己的依赖图，而不是 React 的。",
   "The assertions are the contract: a button-only bundle that contains an engine or the date library fails the test. Chart engines stay dynamically imported, so they never sit on a page that does not draw one.":
     "这些断言就是契约：一个只用了按钮的包若包含图表引擎或日期库，测试就会失败。图表引擎始终是动态导入，因此它们不会出现在一张不画图的页面上。",
   "Validation": "校验",
@@ -3932,8 +3932,8 @@ export const proseZh: Record<string, string> = {
     "光环保持点亮但强度降低。绝不比焦点更亮。",
   "Travel stops. The ring still appears on hover as a static gradient.":
     "巡回停止。悬停时仍然出现一圈静态渐变光环。",
-  "LUC UI is the shared visual and interaction system for LUC products: tokens, components, motion and data UI.":
-    "LUC UI 是 LUC 各产品共用的视觉与交互系统：令牌、组件、动效与数据界面。",
+  "Luc UI is a React and TypeScript design system for product interfaces: tokens, components, motion and data UI.":
+    "Luc UI 是面向产品界面的 React 与 TypeScript 设计系统：令牌、组件、动效与数据界面。",
   "One hero statement per view": "每个视图只有一句主标题",
   "Card and panel titles": "卡片与面板标题",
   "Controls and dense rows": "控件与密集行",
@@ -4128,8 +4128,8 @@ export const proseZh: Record<string, string> = {
     "减弱动效下入场动画为 0，更新过渡也绝不超过动效预算。",
   "Heatmap and long series use the engine's progressive path rather than a single blocking draw.":
     "热力图与长序列使用引擎的渐进式渲染路径，而不是一次性阻塞绘制。",
-  "LUC UI does not silently drop points. If a series needs decimating, the data layer does it.":
-    "LUC UI 不会悄悄丢掉数据点。如果某个序列需要抽稀，那是数据层的事。",
+  "Luc UI does not silently drop points. If a series needs decimating, the data layer does it.":
+    "Luc UI 不会悄悄丢掉数据点。如果某个序列需要抽稀，那是数据层的事。",
   "Line, area, bands, thresholds, events.": "折线、面积、区间带、阈值、事件。",
   "Bars, grouping, stacking, waterfall.": "柱体、分组、堆叠、瀑布。",
   "Histogram and box plot.": "直方图与箱线图。",
@@ -4153,7 +4153,7 @@ export const proseZh: Record<string, string> = {
     "标准的行情呈现：报价、K 线、筛选器、热力图、资讯、日历。",
   "Do not use when the data must be yours, or when you need cross-engine sync or your own annotations.":
     "当数据必须归你自己所有，或你需要跨引擎同步、自定义标注时，不要用它。",
-  "Your candles, overlays, panes and indicators, with LUC's theme, tooltips and accessible table fallback.":
+  "Your candles, overlays, panes and indicators, with Luc UI's theme, tooltips and accessible table fallback.":
     "你自己的 K 线、叠加指标、窗格与指标，配上 LUC 的主题、tooltip 与可访问的表格回退。",
   "Do not use to re-implement a generic market chart the provider already hosts well.":
     "不要用它去重造一个提供商已经托管得很好的通用行情图。",
@@ -4417,7 +4417,7 @@ export const proseZh: Record<string, string> = {
     "单个标的的事实、评级、基本面与公司简介。",
   "The provider's news timeline. Content stays provider-owned.":
     "提供商的新闻时间线。内容始终归提供商所有。",
-  "Macro event calendars — distinct from LUC's own Calendar component.":
+  "Macro event calendars — distinct from Luc UI's own Calendar component.":
     "宏观事件日历——与 LUC 自己的 Calendar 组件是两回事。",
   "Broker partner rating and review embeds.": "合作经纪商的评分与评价嵌入。",
   "Macro indicators on a world map.": "世界地图上的宏观指标。",
@@ -4647,7 +4647,7 @@ export const proseZh: Record<string, string> = {
   "The values are prepared by the caller: this component draws the points it is given and computes no statistic of its own, so units, scaling and any summary have to be settled before the data reaches it.": "取值由调用方准备：这个组件只绘制收到的数据点，本身不计算任何统计量，因此单位、量纲和任何汇总都必须在数据进入组件之前确定。",
   "This page has no live example yet, and it does not pretend to have one: the API below is read from the published package, and the worked examples live with the component's family.": "本页暂时没有实时示例，也不会假装有：下面的 API 直接读取自已发布的代码包，完整示例随该组件所属家族提供。",
   "A chart is a picture of data, so it needs a name that states what it shows, and the numbers must exist as text somewhere on the page — in a table or a written summary — because a drawing is not readable by a screen reader and cannot be copied.": "图表是数据的图像，因此需要一个说明它在展示什么的名称；同时数字必须以文本形式出现在页面上——放在表格或文字小结里——因为图形无法被屏幕阅读器读取，也无法被复制。",
-  "Theming — LUC UI": "主题 — LUC UI",
+  "Theming — Luc UI": "主题 — Luc UI",
   "Theme, brand palette, type voice and personality as document attributes.": "主题、品牌配色、字体语气与视觉人格，都是文档元素上的属性。",
   "dark or light — the reference is dark.": "深色或浅色——深色是基准。",
   "The brand palette the accent tokens resolve against.": "强调色令牌所依据的品牌配色。",
@@ -4662,7 +4662,7 @@ export const proseZh: Record<string, string> = {
   "The palette, type face and personality registries live in the Showcase's appearance module, and the foundations pages render them so you can judge them next to real components.": "配色、字体与视觉人格的注册表位于 Showcase 的外观模块，基础页面会把它们渲染出来，方便你在真实组件旁边逐一判断。",
   "Motion and reduced motion": "动效与减弱动效",
   "Every primitive reads the reduced-motion preference. If you compose your own animation, honour it too: the Showcase's motion control exists so the difference can be seen rather than argued about.": "每个基础组件都会读取「减弱动效」偏好。如果你自己编排动画，也请遵循它：Showcase 里的动效开关就是为了让差别可见，而不是停留在争论上。",
-  "API reference — LUC UI": "API 索引 — LUC UI",
+  "API reference — Luc UI": "API 索引 — Luc UI",
   "Every documented entry, grouped by family, with the exports it documents.": "所有已收录条目，按家族分组，并列出各自记录的导出。",
   "API reference": "API 索引",
   "Every documented entry in one place, grouped the way the sidebar groups it. Component names, import paths and export names are identifiers and stay in English.": "所有已收录条目集中在此，分组方式与侧边栏一致。组件名、导入路径与导出名都是标识符，保持英文。",
@@ -4670,10 +4670,10 @@ export const proseZh: Record<string, string> = {
   "Entry": "条目",
   "Import": "导入",
   "Exports": "导出",
-  "Get started — LUC UI": "快速开始 — LUC UI",
-  "What LUC UI is, how to find the component you need, and how the documentation states its own coverage.": "LUC UI 是什么、如何找到需要的组件，以及这套文档如何说明自身的覆盖范围。",
+  "Get started — Luc UI": "快速开始 — Luc UI",
+  "What Luc UI is, how to find the component you need, and how the documentation states its own coverage.": "Luc UI 是什么、如何找到需要的组件，以及这套文档如何说明自身的覆盖范围。",
   "Get started": "快速开始",
-  "LUC UI is a React and TypeScript design system: tokens, accessible primitives, spatial motion, data display and charts, documented one component at a time.": "LUC UI 是一个 React 与 TypeScript 设计系统：令牌、无障碍基础组件、空间动效、数据展示与图表，按组件逐个撰写文档。",
+  "Luc UI is a React and TypeScript design system: tokens, accessible primitives, spatial motion, data display and charts, documented one component at a time.": "Luc UI 是一个 React 与 TypeScript 设计系统：令牌、无障碍基础组件、空间动效、数据展示与图表，按组件逐个撰写文档。",
   "Start here": "从这里开始",
   "The four documentation surfaces": "四个文档板块",
   "{count} entries": "{count} 个条目",
@@ -4686,14 +4686,14 @@ export const proseZh: Record<string, string> = {
   "Listed on a family page": "列于家族页",
   "{families} families, {entries} documented entries.": "{families} 个家族，共 {entries} 个已收录条目。",
   "Installation": "安装",
-  "Installation — LUC UI": "安装 — LUC UI",
+  "Installation — Luc UI": "安装 — Luc UI",
   "Install @luc/ui, import its styles and mount one provider.": "安装 @luc/ui，引入样式，并挂载一个 Provider。",
   "One stylesheet, one provider, and a component imported from its own subpath. Nothing here is a guess: the commands come from the same module the component pages use.": "一份样式表、一个 Provider，组件从各自的子路径导入。这里没有猜测：所有命令都来自组件页面所用的同一个模块。",
   "The three setup steps": "三个安装步骤",
   "Requirements": "环境要求",
   "Components are imported from their own subpath, which is what keeps a chart engine out of a bundle that only needed a button.": "组件从各自的子路径导入，这样只需要一个按钮的打包产物就不会把图表引擎一起带进去。",
   "Documentation": "文档",
-  "Components — LUC UI": "组件 — LUC UI",
+  "Components — Luc UI": "组件 — Luc UI",
   "Every documented component, grouped by the job it does, with the family and the page each one lives on.": "所有已收录组件，按用途分组，并标明各自所属的家族与页面。",
   "Every documented component, grouped by the job it does. Search for a name, or open a family and read it in context.": "所有已收录组件，按用途分组。搜索组件名，或打开一个家族在上下文中阅读。",
   "{count} entries across {families} families.": "{families} 个家族，共 {count} 个条目。",
@@ -4745,7 +4745,7 @@ export const proseZh: Record<string, string> = {
   "Query planning, storage layout, and the parts of a database nobody demos.": "查询规划、存储布局，以及数据库里没人愿意演示的那些部分。",
   "Reference pages": "参考页",
   "Research workspace": "研究工作台",
-  "Reusable page sections assembled from LUC UI components — a hero, a pricing band, a career timeline, a metrics strip.": "用 LUC UI 组件拼成的可复用页面区块——首屏、定价带、职业时间线、指标条。",
+  "Reusable page sections assembled from Luc UI components — a hero, a pricing band, a career timeline, a metrics strip.": "用 Luc UI 组件拼成的可复用页面区块——首屏、定价带、职业时间线、指标条。",
   "Review requested": "待评审",
   "Server safe": "服务端安全",
   "Shell, toolbar, a table that is the product, a dialog that adds a row, and a settings sheet.": "外壳、工具栏、一张就是产品本身的表格、一个真的会新增一行的对话框，以及设置抽屉。",
@@ -4754,7 +4754,7 @@ export const proseZh: Record<string, string> = {
   "The honest workflow today: read the page, take the composition, bring your own data.": "今天最诚实的工作方式：读页面、拿走版面组合、带上你自己的数据。",
   "There is no archive to download, and this page will not offer one until a packaged starter contains every file, token and asset it needs — a download that does not build is worse than no download.": "现在还没有可下载的压缩包；在打包好的起步项目包含它需要的每一个文件、令牌与资源之前，这个页面也不会提供下载——一个跑不起来的下载比没有下载更糟。",
   "Tokens first": "令牌优先",
-  "Whole-page starters built from LUC UI components and Blocks: personal sites, a marketing page, a product console and a research workspace.": "用 LUC UI 组件与区块搭成的整页起步项目：个人网站、营销页、产品控制台和研究工作台。",
+  "Whole-page starters built from Luc UI components and Blocks: personal sites, a marketing page, a product console and a research workspace.": "用 Luc UI 组件与区块搭成的整页起步项目：个人网站、营销页、产品控制台和研究工作台。",
   "You supply": "由你提供",
 
   /* ------------------------------------------- 文档页组成的 Playground 区块 */
@@ -4770,7 +4770,7 @@ export const proseZh: Record<string, string> = {
   "Blocks, rendered by the real components in the order you set.": "区块由真实组件按你设定的顺序渲染。",
   "Change the headline": "更换标题",
   "Chart Studio": "图表工作室",
-  "Chart Studio — LUC UI": "图表工作室 — LUC UI",
+  "Chart Studio — Luc UI": "图表工作室 — Luc UI",
   "Copy the attributes": "复制这些属性",
   "Copy the chart": "复制这段图表代码",
   "Copy the motion": "复制这段动效代码",
@@ -4788,7 +4788,7 @@ export const proseZh: Record<string, string> = {
   "Height": "高度",
   "Intensity scales the system's motion physics; the primitive reads the reduced-motion preference and changes state instantly when it is set.": "强度会整体缩放系统的动效物理；原语会读取「减少动态效果」偏好，在该偏好开启时直接切换状态。",
   "Motion Studio": "动效工作室",
-  "Motion Studio — LUC UI": "动效工作室 — LUC UI",
+  "Motion Studio — Luc UI": "动效工作室 — Luc UI",
   "Move down": "下移",
   "Move up": "上移",
   "No Blocks left. Add one, or start again from the archetype.": "已经没有区块了。添加一个，或从原型重新开始。",
@@ -4811,14 +4811,14 @@ export const proseZh: Record<string, string> = {
   "Studios": "工作室",
   "Swap": "替换",
   "Template Composer": "模板编排器",
-  "Template Composer — LUC UI": "模板编排器 — LUC UI",
+  "Template Composer — Luc UI": "模板编排器 — Luc UI",
   "That dataset was refused": "这份数据集被拒绝了",
   "The configuration": "这份配置",
   "The page, in order": "页面，按顺序",
   "The same components, one attribute set": "同一批组件，一组属性",
   "The value axis is formatted from the unit you declared. A chart renders what it is given and never converts a unit.": "数值轴按你声明的单位格式化。图表只渲染传给它的值，从不做单位换算。",
   "Theme Studio": "主题工作室",
-  "Theme Studio — LUC UI": "主题工作室 — LUC UI",
+  "Theme Studio — Luc UI": "主题工作室 — Luc UI",
   "This subtree carries the four attributes. Nothing below was styled for the preview — it is the public API.": "这个子树带着那四个属性。下面的东西没有为预览做过任何特殊样式——它就是公开 API。",
   "Tune the motion primitives against the intensity register they actually read.": "拿动效原语对照它真正读取的强度档位来调。",
   "Tune the real props of a motion primitive against the intensity register it reads, and see the difference rather than argue about it.": "用动效原语真实的 props 对照它读取的强度档位来调，直接看到差别，而不是争论差别。",
@@ -5057,7 +5057,7 @@ export const proseZh: Record<string, string> = {
   "The highlight is one element that moves between items, so the selection reads as a single object.": "高亮是一个在各项之间移动的元素，选中因此被读作同一个对象。",
   "The interaction states are the surface's, so a card does not re-implement hover, focus and selection.": "交互状态由表面统一提供，卡片因此无需各自重做悬停、聚焦与选中。",
   "The label is always visible, the glyph is decorative, and the handle distinguishes two accounts on one service.": "标签始终可见，图形只是装饰，而账号名用来区分同一服务上的两个账号。",
-  "The line and the band are supplied endpoints and widths: LUC UI draws a fit, it never computes one.": "直线与带宽的端点、宽度都由调用方给出：LUC UI 只绘制拟合，绝不计算拟合。",
+  "The line and the band are supplied endpoints and widths: Luc UI draws a fit, it never computes one.": "直线与带宽的端点、宽度都由调用方给出：Luc UI 只绘制拟合，绝不计算拟合。",
   "The packet's position is the progress: `state` freezes it without removing the path.": "光点的位置就是进度：`state` 可以让它停住，但不会把路径去掉。",
   "The page's `h1` is the name, the lead is two sentences, and the facts are a definition list rather than a row of chips.": "页面的 `h1` 是人名，导语两句，事实项用定义列表呈现，而不是一排标签。",
   "The panel grows out of the card it was opened from, so the reader keeps their place.": "面板从被点开的卡片中展开，读者因此不会丢失位置。",
@@ -5096,7 +5096,7 @@ export const proseZh: Record<string, string> = {
 
 
   /* ---- lead ---- */
-  "From the consumer smoke test: each scenario is bundled with every third-party module external, so the numbers describe LUC UI's own graph rather than React's. The figures are a snapshot taken on {date}; re-run the command to reproduce them on your machine.": "数据来自消费端冒烟测试：每个场景都会把全部第三方模块视为外部依赖打包，因此这些数字描述的是 LUC UI 自身的依赖图，而不是 React 的。表中数据为 {date} 的快照；在本机重新运行该命令即可复现。",
+  "From the consumer smoke test: each scenario is bundled with every third-party module external, so the numbers describe Luc UI's own graph rather than React's. The figures are a snapshot taken on {date}; re-run the command to reproduce them on your machine.": "数据来自消费端冒烟测试：每个场景都会把全部第三方模块视为外部依赖打包，因此这些数字描述的是 Luc UI 自身的依赖图，而不是 React 的。表中数据为 {date} 的快照；在本机重新运行该命令即可复现。",
 
 
   /* ---- showcase-10a ---- */
@@ -5125,16 +5125,16 @@ export const proseZh: Record<string, string> = {
   "Design study": "设计研究",
   "Design study — not installable": "设计研究，尚未可供安装",
   "Every LUC interface starts from one system: tokens, accessible components, spatial motion, professional charts and whole reference products — documented one page at a time.": "每一个 LUC 界面都从同一套系统出发：令牌、可访问组件、空间动效、专业图表，以及完整的产品范例；逐页文档化。",
-  "Every capability in LUC UI — components, charts, motion, blocks, experiences, studios and visual studies — browsable by name, by use case and by art direction.": "LUC UI 的全部能力——组件、图表、动效、区块、产品范例、工作室与视觉研究——都可按名称、用例或艺术方向浏览。",
-  "Every component, chart, motion component, block, template, studio, pattern and visual study in LUC UI, filterable by kind, use case and art direction.": "LUC UI 中的每个组件、图表、动效组件、区块、模板、工作室、模式与视觉研究，可按类型、用例和艺术方向筛选。",
+  "Every capability in Luc UI — components, charts, motion, blocks, experiences, studios and visual studies — browsable by name, by use case and by art direction.": "Luc UI 的全部能力——组件、图表、动效、区块、产品范例、工作室与视觉研究——都可按名称、用例或艺术方向浏览。",
+  "Every component, chart, motion component, block, template, studio, pattern and visual study in Luc UI, filterable by kind, use case and art direction.": "Luc UI 中的每个组件、图表、动效组件、区块、模板、工作室、模式与视觉研究，可按类型、用例和艺术方向筛选。",
   "Every effect has a duration, an easing and an off switch.": "每个效果都有时长、缓动和关闭开关。",
   "Featured": "精选",
   "Find the right thing": "找到需要的东西",
   "Flat": "平坦",
   "Geometry": "几何",
-  "LUC UI is a catalog, and a catalog is only useful if you can enter it from where you already are: by name, by what you are building, or by how it should look.": "LUC UI 是一份目录，而目录只有能让你从当前位置进入才有用：按名字、按你要构建的东西，或按它应该长成的样子。",
-  "LUC UI v1.0 lives inside the LUC Quant monorepo. No public repository has been created, no release has been published to a registry, and there is no paid tier — every component, chart and studio on this site is free and open. The installation page says exactly which commands work today.": "LUC UI v1.0 目前位于 LUC Quant 单体仓库之内。尚未创建公开仓库，尚未向任何包注册表发布版本，也没有付费层级——本站的每个组件、图表和工作室都免费开放。安装页面会明确说明今天真正可用的命令。",
-  "LUC UI — precision meets expression": "LUC UI — 精确与表现力相遇",
+  "Luc UI is a catalog, and a catalog is only useful if you can enter it from where you already are: by name, by what you are building, or by how it should look.": "Luc UI 是一份目录，而目录只有能让你从当前位置进入才有用：按名字、按你要构建的东西，或按它应该长成的样子。",
+  "Luc UI is public on GitHub. Version 1.0.0 installs from an immutable Git tag; registry publication is still pending, and there is no paid tier. The installation guide shows the exact commands that work today.": "Luc UI 已在 GitHub 公开。1.0.0 版本从不可变的 Git tag 安装；包注册表发布仍在等待中，项目没有付费层级。安装指南会列出当前真正可用的命令。",
+  "Luc UI — precision meets expression": "Luc UI — 精确与表现力相遇",
   "Layered": "分层",
   "Monthly retention": "月度留存",
   "Motion answers a pointer. Nothing moves on its own.": "动效回应指针，没有任何东西会自己动起来。",
@@ -5252,7 +5252,7 @@ export const proseZh: Record<string, string> = {
   "Type in motion, surfaces that answer a pointer, spatial depth and presence.": "运动中的文字、回应指针的表面、空间深度与存在感。",
   "Virtualised table": "虚拟滚动表格",
   "Visual elements": "视觉元素",
-  "What LUC UI is, what it contains and where to start.": "LUC UI 是什么、包含什么，以及从哪里开始。",
+  "What Luc UI is, what it contains and where to start.": "Luc UI 是什么、包含什么，以及从哪里开始。",
   "Work shown at scale: galleries, comparison, captions and case-study narrative.": "把作品放在大尺度上展示：画廊、对比、图注与案例叙事。",
   "Workspaces that configure the real components: charts, motion, theme and page composition.": "直接配置真实组件的工作室：图表、动效、主题与页面编排。",
   "Flush-left display at a tight track, a measured deck, and a mono line for authorship and date.": "左对齐的展示字、紧凑字距、经过度量的引言，以及一行等宽字体的署名与日期。",
@@ -6316,7 +6316,7 @@ export const proseZh: Record<string, string> = {
   "A long list scrolls": "长列表会滚动",
   "A venue is required for this run": "本次运行必须选择一个交易所",
   "Every message has one home: a field rule reports under its field, a failed submit fills the summary — which appears only after an attempt, never while the form is still being filled in — and a rejected save is a form-level message. Nothing here validates with a toast.": "每条消息都只有一个去处：字段规则报在字段下方；提交失败填充错误汇总——它只在尝试提交之后出现，绝不在读者还在填表时出现；保存被拒绝则是表单级消息。这里没有任何校验用 toast 提示。",
-  "Field messages come from the form engine; the summary is LUC's, and a plain form renders it by passing its own errors array.": "字段消息来自表单引擎；错误汇总是 LUC 提供的，普通表单传入自己的 errors 数组即可渲染它。",
+  "Field messages come from the form engine; the summary is Luc UI's, and a plain form renders it by passing its own errors array.": "字段消息来自表单引擎；错误汇总是 LUC 提供的，普通表单传入自己的 errors 数组即可渲染它。",
   "Format money with a currency symbol you typed — `currency` is the prop, and it drives the prefix and the grouping.": "自己手写货币符号来格式化金额——`currency` 就是这个属性，前缀与分组都由它决定。",
   "Give `step` the granularity the value really has: it snaps typed input onto the grid and it is what the steppers move by.": "`step` 要给出这个取值真正的粒度：它把键入的内容吸附到网格上，也正是步进按钮的步长。",
   "Leave `scale` off `PercentageInput`: a percentage without a declared scale is the ambiguous 0.12 the component exists to prevent.": "给 `PercentageInput` 省略 `scale`：没有声明量纲的百分比，正是这个组件要消灭的「含义不明的 0.12」。",
@@ -7785,7 +7785,7 @@ export const proseZh: Record<string, string> = {
   "The same partner module with its provider reviews surfaced.": "同一合作券商模块，并展示其 Provider 评论。",
   "Use one symbol throughout a detail page and give each provider surface its own bounded section.": "详情页统一使用一个品种，并给每个 Provider 表面独立的有界区块。",
   "Name the provider in the surrounding copy when a rating or fundamental statement is part of a research narrative.": "当评级或基本面陈述进入研究叙事时，在周边文案中明确写出 Provider。",
-  "Do not present a provider technical rating as LUC's own recommendation.": "不要把 Provider 的技术评级说成 LUC 的建议。",
+  "Do not present a provider technical rating as Luc UI's own recommendation.": "不要把 Provider 的技术评级说成 LUC 的建议。",
   "Do not hard-code a broker slug into a generic template; it is a provider identity, not a label.": "不要把券商 slug 硬编码进通用模板；它是 Provider 身份，不是标签。",
   "Top stories uses `feedMode` plus `symbol` or `market`; a symbol feed with an invalid symbol refuses rather than falling back. The calendar uses comma-separated `importanceFilter` and `countryFilter` strings; the map uses the closed `region` and `metric` unions.": "Top stories 使用 `feedMode` 加 `symbol` 或 `market`；品种流若品种无效会拒绝，而不是回退。日历使用逗号分隔的 `importanceFilter` 与 `countryFilter`；地图使用封闭的 `region` 与 `metric` 联合类型。",
   "Top stories and the economic calendar are iframe widgets; the economic map is a Web Component. Each loads its provider content after hydration and needs an explicit height.": "Top stories 与经济日历是 iframe 组件；经济地图是 Web Component。它们都在水合后加载 Provider 内容，并需要明确高度。",
@@ -7795,9 +7795,9 @@ export const proseZh: Record<string, string> = {
   "One macro indicator on the provider's world map.": "Provider 世界地图上的一个宏观指标。",
   "Use these as context around a price chart, never as the only recording of an event that matters to the product.": "把这些内容作为价格图周边的语境，不要作为产品关键事件的唯一记录。",
   "State the provider and the selected country or importance filter next to the calendar.": "在日历旁注明 Provider 以及所选国家或重要性筛选。",
-  "Do not confuse this economic calendar with LUC's own `Calendar` date component.": "不要把经济日历与 LUC 自己的 `Calendar` 日期组件混淆。",
+  "Do not confuse this economic calendar with Luc UI's own `Calendar` date component.": "不要把经济日历与 LUC 自己的 `Calendar` 日期组件混淆。",
   "Do not translate provider event copy or claim that LUC filtered the underlying feed.": "不要翻译 Provider 的事件文案，也不要声称是 LUC 筛选了底层数据流。",
-  "`theme=\"auto\"` follows LUC's resolved theme. `inheritTheme` controls the Web Component CSS-variable bridge, while iframe widgets accept only the provider's theme and surface colours; `transparent` is honoured only where the provider publishes it.": "`theme=\"auto\"` 跟随 LUC 解析后的主题。`inheritTheme` 控制 Web Component 的 CSS 变量桥；iframe 组件只接受 Provider 的主题与表面颜色，`transparent` 仅在 Provider 公布该能力时生效。",
+  "`theme=\"auto\"` follows Luc UI's resolved theme. `inheritTheme` controls the Web Component CSS-variable bridge, while iframe widgets accept only the provider's theme and surface colours; `transparent` is honoured only where the provider publishes it.": "`theme=\"auto\"` 跟随 LUC 解析后的主题。`inheritTheme` 控制 Web Component 的 CSS 变量桥；iframe 组件只接受 Provider 的主题与表面颜色，`transparent` 仅在 Provider 公布该能力时生效。",
   "A LUC theme change updates Web Component attributes immediately. Iframe widgets are re-created with the new provider configuration, and the wrapper removes the previous embed before creating the replacement.": "LUC 主题变化会立即更新 Web Component 属性。iframe 组件会以新的 Provider 配置重建，包装器会先移除旧嵌入再创建替代项。",
   "The iframe document is a provider boundary: axis labels, crosshairs, toolbars and dialogs stay TradingView's. LUC does not reach into a closed shadow root or invent selectors to restyle provider internals.": "iframe 文档是 Provider 边界：轴标签、十字线、工具栏与对话框仍属 TradingView。LUC 不会深入封闭 shadow root，也不会编造选择器重设 Provider 内部样式。",
   "A Web Component follows the LUC theme through the supported token bridge.": "Web Component 通过受支持的 token 桥跟随 LUC 主题。",
@@ -7807,7 +7807,7 @@ export const proseZh: Record<string, string> = {
   "Check both light and dark states around the widget because the surrounding card and the provider document are separate surfaces.": "检查组件周边的明暗两种状态，因为周围卡片与 Provider 文档是两个独立表面。",
   "Do not promise full LUC theming for an iframe or attempt to style provider internals through arbitrary CSS.": "不要承诺 iframe 能获得完整 LUC 主题，也不要尝试用任意 CSS 改写 Provider 内部。",
   "Do not default to transparency for dense market data; an opaque provider surface is usually more readable.": "密集行情数据不要默认透明；不透明的 Provider 表面通常更易读。",
-  "Use one application-level symbol value, cap the number of provider embeds per page, and put layout in LUC's grid or cards. The widgets do not share a provider store or selected-symbol event.": "使用一个应用级品种值，限制每页 Provider 嵌入数量，并把布局放在 LUC 的网格或卡片中。组件之间没有共享 Provider store 或选中品种事件。",
+  "Use one application-level symbol value, cap the number of provider embeds per page, and put layout in Luc UI's grid or cards. The widgets do not share a provider store or selected-symbol event.": "使用一个应用级品种值，限制每页 Provider 嵌入数量，并把布局放在 LUC 的网格或卡片中。组件之间没有共享 Provider store 或选中品种事件。",
   "The page must be a Client Component. Keep the symbol stable during hydration, give every provider surface a bounded height, and expect each widget to load its own provider module independently.": "页面必须是 Client Component。水合期间保持品种稳定，给每个 Provider 表面有界高度，并预期每个组件独立加载自己的 Provider 模块。",
   "Every widget on a composed page depends on TradingView's network and data. The pattern is a layout composition, not a data integration: LUC receives no quotes, news or chart series from these wrappers.": "组合页上的每个组件都依赖 TradingView 的网络与数据。这个模式是布局组合，不是数据集成：LUC 从这些包装器拿不到报价、新闻或图表序列。",
   "A complete instrument page: React owns the selected symbol, while each provider widget owns its own content.": "一个完整品种页：React 管理选中品种，每个 Provider 组件管理自己的内容。",
@@ -7819,6 +7819,40 @@ export const proseZh: Record<string, string> = {
   "Watchlists and market data": "观察列表与行情数据",
   "Symbol details": "品种详情",
   "News and calendars": "新闻与日历",
+
+  /* ---- open-source installation and release branding ---- */
+  "Install from a Git tag or a vetted tarball": "从 Git tag 或经过验证的 tarball 安装",
+  "The package is not published on npm. The public Git tag installs the built package directly; the release tarball is the offline, checksum-pinned alternative.": "这个包尚未发布到 npm。公开 Git tag 会直接安装构建后的包；release tarball 是离线、可用校验和固定的替代方式。",
+  "Luc UI is an open-source React and TypeScript design system: accessible components, tokens, motion and charts.": "Luc UI 是一个开源 React 与 TypeScript 设计系统：包含无障碍组件、令牌、动效与图表。",
+  "Install the built package from its public Git tag, set up Tailwind v4, then mount one provider. The Vite and Next.js recipes below are both verified in clean consumer projects.": "从公开 Git tag 安装构建后的包，配置 Tailwind v4，再挂载一个 Provider。下面的 Vite 与 Next.js 步骤都已在干净消费项目中验证。",
+  "Core setup": "核心设置",
+  "React + Vite": "React + Vite 项目",
+  "Install Tailwind v4": "安装 Tailwind v4",
+  "The Luc UI stylesheet is Tailwind CSS v4 source, so the consumer compiles it with the Vite plugin.": "Luc UI 样式表是 Tailwind CSS v4 源码，因此消费项目需要用 Vite 插件编译它。",
+  "Render a component": "渲染组件",
+  "Import from the public package entry and wrap the application in LucProvider.": "从公开包入口导入组件，并用 LucProvider 包裹应用。",
+  "Next.js App Router": "Next.js App Router 项目",
+  "Install the PostCSS adapter": "安装 PostCSS 适配器",
+  "Next.js compiles the same Tailwind v4 stylesheet through its PostCSS pipeline.": "Next.js 通过 PostCSS 管线编译同一份 Tailwind v4 样式表。",
+  "Root layout": "根布局",
+  "Import global CSS once, run the theme init script before paint, and keep LucProvider as the client boundary.": "只导入一次全局 CSS，在首次绘制前运行主题初始化脚本，并让 LucProvider 作为客户端边界。",
+  "Charts receive data you prepared. The component supplies a height; use a client boundary in Next.js.": "图表接收由你准备好的数据。组件负责高度；在 Next.js 中使用客户端边界。",
+  "TradingView": "TradingView",
+  "Provider widget": "Provider 组件",
+  "The TradingView subpath loads a third-party provider widget. Market data and attribution belong to TradingView, not Luc UI.": "TradingView 子路径会加载第三方 Provider 组件。行情数据与署名属于 TradingView，而不是 Luc UI。",
+  "Troubleshooting": "故障排查",
+  "If utilities are missing, confirm Tailwind v4 is configured and @luc/ui/styles.css is imported after @import \"tailwindcss\".": "如果缺少工具类，请确认已配置 Tailwind v4，并且在 @import \"tailwindcss\" 之后导入 @luc/ui/styles.css。",
+  "If an import fails, use a documented package subpath; do not import from src or dist.": "如果导入失败，请使用文档中列出的包子路径；不要从 src 或 dist 导入。",
+  "If a chart has no width, give it a width-bearing parent; a chart needs a layout box even when height is set.": "如果图表没有宽度，请给它一个能提供宽度的父容器；即使设置了高度，图表仍然需要布局盒。",
+  "If a TradingView widget is unavailable, check the wrapper fallback and the network boundary before changing the page.": "如果 TradingView 组件不可用，请先检查包装器的回退状态与网络边界，再修改页面。",
+  "The public install is the built package at the immutable v1.0.0 Git tag. It needs no install script, and the lockfile records the resolved commit.": "公开安装方式是位于不可变 v1.0.0 Git tag 上的构建后包。它不需要安装脚本，lockfile 会记录解析到的 commit。",
+  "Use the release tarball for offline or checksum-pinned installs. This repository's consumer gate installs both this artifact and the public Git tag with plain npm.": "需要离线或固定校验和安装时使用 release tarball。本仓库的消费端门禁会用普通 npm 同时验证该产物和公开 Git tag。",
+  "One provider supplies the resolved theme, the locale and the motion default to every component below it. In Next.js, put the returned init script in the document head before hydration.": "一个 Provider 会向下提供解析后的主题、区域设置与默认动效。在 Next.js 中，请把返回的初始化脚本放在文档 head 中、水合之前。",
+  "Git tag": "Git 标签",
+  "Packed tarball": "打包后的 tarball",
+  "Add the built package from the public Git tag with whichever package manager the project already uses.": "使用项目已有的包管理器，从公开 Git tag 添加构建后的包。",
+  "Install the packed release artifact; keep its checksum with the vendored file.": "安装打包后的 release 产物，并把校验和与随仓库保存的文件放在一起。",
+  "The stylesheet is Tailwind CSS v4 and ships the tokens plus component styles. Import Tailwind first, then the package stylesheet, once at the application root.": "样式表基于 Tailwind CSS v4，包含令牌与组件样式。在应用根部先导入 Tailwind，再导入包样式表，且只导入一次。",
 
 /* ---- end of dictionary ---- */
 };

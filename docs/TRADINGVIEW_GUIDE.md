@@ -1,4 +1,4 @@
-# LUC UI — TradingView integration guide
+# Luc UI — TradingView integration guide
 
 `@luc/ui/tradingview` embeds **TradingView's own market widgets** as LUC-shaped
 React components. It is an integration layer, not a chart library: the data, the
@@ -33,7 +33,7 @@ visible instead of pretending both are equally themeable.
 | Official format | `<script type="module" src="…/w/{locale}/tv-<widget>.js">` plus a custom element | `<script src="…/embed-widget-<widget>.js">` with a JSON configuration |
 | Shadow DOM | closed | a separate document |
 | LUC theming | `theme` attribute + the provider's published CSS custom properties (mapped from LUC tokens) + documented `::part()` | the provider's own configuration keys only (`colorTheme`, `backgroundColor`, `gridColor`, `isTransparent`) |
-| Style isolation | the widget inherits LUC's font and colours | the widget looks like TradingView, in the page's theme |
+| Style isolation | the widget inherits Luc UI's font and colours | the widget looks like TradingView, in the page's theme |
 | Examples | Mini Chart, Market Data, Ticker Tape, Technical Analysis, Forex Table | Advanced Chart, Screener, Stock Heatmap, Top Stories, Economic Calendar |
 
 The registry records the classification for every widget; the Showcase's
@@ -47,7 +47,7 @@ import { TradingViewAdvancedChart, TradingViewMiniChart, TradingViewTickerTape }
 // A full provider chart (iframe)
 <TradingViewAdvancedChart symbol="BINANCE:BTCUSDT" preset="standard" height={560} />
 
-// A card-sized chart (Web Component, follows LUC's tokens)
+// A card-sized chart (Web Component, follows Luc UI's tokens)
 <TradingViewMiniChart symbol="NASDAQ:AAPL" height={180} />
 
 // A strip above a page
@@ -115,7 +115,7 @@ change the script URL, the element, or the attribution — see §7.
 ## 6. Theming
 
 ```tsx
-// Web Components: LUC's semantic tokens mapped onto the provider's public
+// Web Components: Luc UI's semantic tokens mapped onto the provider's public
 // custom properties, plus an explicit theme attribute.
 <TradingViewMiniChart symbol="NASDAQ:AAPL" />
 

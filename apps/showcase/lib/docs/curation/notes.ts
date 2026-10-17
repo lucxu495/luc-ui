@@ -3037,7 +3037,7 @@ export const INTEGRATION_NOTES: Record<string, IntegrationNote> = {
         "Name the provider in the surrounding copy when a rating or fundamental statement is part of a research narrative.",
       ],
       avoid: [
-        "Do not present a provider technical rating as LUC's own recommendation.",
+        "Do not present a provider technical rating as Luc UI's own recommendation.",
         "Do not hard-code a broker slug into a generic template; it is a provider identity, not a label.",
       ],
     },
@@ -3072,7 +3072,7 @@ export const INTEGRATION_NOTES: Record<string, IntegrationNote> = {
         "State the provider and the selected country or importance filter next to the calendar.",
       ],
       avoid: [
-        "Do not confuse this economic calendar with LUC's own `Calendar` date component.",
+        "Do not confuse this economic calendar with Luc UI's own `Calendar` date component.",
         "Do not translate provider event copy or claim that LUC filtered the underlying feed.",
       ],
     },
@@ -3105,7 +3105,7 @@ export const INTEGRATION_NOTES: Record<string, IntegrationNote> = {
       },
     ],
     configuration:
-      "`theme=\"auto\"` follows LUC's resolved theme. `inheritTheme` controls the Web Component CSS-variable bridge, while iframe widgets accept only the provider's theme and surface colours; `transparent` is honoured only where the provider publishes it.",
+      "`theme=\"auto\"` follows Luc UI's resolved theme. `inheritTheme` controls the Web Component CSS-variable bridge, while iframe widgets accept only the provider's theme and surface colours; `transparent` is honoured only where the provider publishes it.",
     lifecycle:
       "A LUC theme change updates Web Component attributes immediately. Iframe widgets are re-created with the new provider configuration, and the wrapper removes the previous embed before creating the replacement.",
     limitations:
@@ -3158,7 +3158,7 @@ export function InstrumentPage({ symbol }: { symbol: string }) {
       },
     ],
     configuration:
-      "Use one application-level symbol value, cap the number of provider embeds per page, and put layout in LUC's grid or cards. The widgets do not share a provider store or selected-symbol event.",
+      "Use one application-level symbol value, cap the number of provider embeds per page, and put layout in Luc UI's grid or cards. The widgets do not share a provider store or selected-symbol event.",
     lifecycle:
       "The page must be a Client Component. Keep the symbol stable during hydration, give every provider surface a bounded height, and expect each widget to load its own provider module independently.",
     limitations:

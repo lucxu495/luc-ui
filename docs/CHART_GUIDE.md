@@ -1,7 +1,7 @@
-# LUC UI — chart guide
+# Luc UI — chart guide
 
 V0.2 ships the chart system: two engines, one experience. The engines draw
-pixels; LUC UI owns everything the reader perceives.
+pixels; Luc UI owns everything the reader perceives.
 
 ## 1. The split
 
@@ -302,7 +302,7 @@ the bin and which is the count. A bin's tooltip always prints the axis unit (the
 caller formats the edges through `xFormat`) and its count. A `share` on a bin
 (a served `frequency`) is printed as **Share**; without one the tooltip shows no
 share at all, because a percentage derived inside the chart would be a statistic
-LUC UI is not entitled to invent.
+Luc UI is not entitled to invent.
 
 ### The tooltip surface (fixed in V0.3)
 
@@ -404,7 +404,7 @@ each event's own label at its marker while the history is short enough to read
 (at most twelve rows **and** no pile-up: the tightest pair must have room for its
 own label — see `MIN_LABEL_GAP_SHARE`), and falls back to markers-only — the
 tooltip then carries the name, date and category — once labels would collide
-into texture. The label is always the caller's string; LUC UI has no idea what a
+into texture. The label is always the caller's string; Luc UI has no idea what a
 halving is.
 
 `range` gives the plate the same lookback control every other historical chart
@@ -495,7 +495,7 @@ To add a chart token: add it to `:root` **and** `.dark`, bridge it in
   Fullscreen is a dialog with a title, a description and Escape.
 - Reduced motion removes chart entrance animation and range transitions; the
   crosshair and hover feedback stay immediate.
-- **Honest limitation**: a canvas chart is not screen-reader readable. LUC UI does
+- **Honest limitation**: a canvas chart is not screen-reader readable. Luc UI does
   not pretend otherwise, and a data-table fallback is not part of V0.2. Supply a
   `ariaDescription`, and give the reader the prepared numbers somewhere real.
 
@@ -529,7 +529,7 @@ To add a chart token: add it to `:root` **and** `.dark`, bridge it in
 - 10,000-point series are the tested ceiling; the Showcase's performance page
   renders one with and without caller-side decimation and deliberately publishes
   no timing claims.
-- LUC UI never decimates silently. If a series needs thinning, the data layer
+- Luc UI never decimates silently. If a series needs thinning, the data layer
   thins it.
 
 ## 17. Export

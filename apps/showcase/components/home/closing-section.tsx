@@ -4,9 +4,9 @@
  * A homepage that ends with a card grid ends by listing; this one ends by saying
  * what the project is and where it currently stands. The standing is stated
  * plainly because it is a fact a visitor would otherwise have to discover: the
- * library is developed inside a private monorepo, published to no registry, and
- * carries no paid tier. Saying so is more useful than a badge claiming a star
- * count.
+ * library is public on GitHub, installable from an immutable Git tag, not yet
+ * published to a package registry, and carries no paid tier. Saying so is more
+ * useful than a badge claiming a star count.
  */
 
 import Link from "next/link";
@@ -26,7 +26,7 @@ export async function HomeClosing() {
       </p>
       <Text variant="caption" tone="muted" className="max-w-[70ch]">
         {tcs(
-          "LUC UI v1.0 lives inside the LUC Quant monorepo. No public repository has been created, no release has been published to a registry, and there is no paid tier — every component, chart and studio on this site is free and open. The installation page says exactly which commands work today.",
+          "Luc UI is public on GitHub. Version 1.0.0 installs from an immutable Git tag; registry publication is still pending, and there is no paid tier. The installation guide shows the exact commands that work today.",
         )}
       </Text>
       <Inline gap="sm" wrap>

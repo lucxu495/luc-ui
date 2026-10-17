@@ -53,7 +53,7 @@ export default async function ShadowPage() {
       <PageHeader
         eyebrow={tcs("Foundations")}
         title="Shadow"
-        lead="Shadows are supporting actors. In dark mode they mostly reinforce layering; the real depth cue is the surface luminance step. Nothing in LUC UI uses a large generic drop shadow."
+        lead="Shadows are supporting actors. In dark mode they mostly reinforce layering; the real depth cue is the surface luminance step. Nothing in Luc UI uses a large generic drop shadow."
       />
 
       <Section title={tcs("Levels")}>

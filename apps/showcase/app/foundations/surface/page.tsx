@@ -14,7 +14,7 @@ export default async function SurfacePage() {
       <PageHeader
         eyebrow={tcs("Foundations")}
         title="Surface"
-        lead="Depth in LUC UI is a luminance step plus a hairline. The stack is ordered, and components occupy a defined level rather than picking a grey at random."
+        lead="Depth in Luc UI is a luminance step plus a hairline. The stack is ordered, and components occupy a defined level rather than picking a grey at random."
       />
 
       <Section

@@ -227,7 +227,7 @@ export function PlaygroundShell({ spec, entry, contract }: PlaygroundShellProps)
              * explain. `overflow-clip-margin` keeps the focus ring and a modest
              * glow alive at the edge, which is what a plain `hidden` would eat.
              *
-             * Overlays are unaffected: LUC's popovers, dropdowns and dialogs
+             * Overlays are unaffected: Luc UI's popovers, dropdowns and dialogs
              * render into a portal at the document root, so they were never
              * inside this box to begin with.
              *

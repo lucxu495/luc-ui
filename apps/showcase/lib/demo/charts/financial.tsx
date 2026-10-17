@@ -5,7 +5,7 @@
  * something to someone: a candle has to satisfy `low ≤ min(open, close) ≤
  * max(open, close) ≤ high`, a drawdown is never positive, a rate is declared in
  * percent rather than passed as a ratio, and a "frontier" or a "fit" is
- * supplied by the caller because LUC UI solves no optimisation and fits no
+ * supplied by the caller because Luc UI solves no optimisation and fits no
  * line. Every fixture below is small, deterministic, and labelled as synthetic
  * where it is.
  */

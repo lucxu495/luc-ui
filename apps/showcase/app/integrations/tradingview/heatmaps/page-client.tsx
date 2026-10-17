@@ -47,7 +47,7 @@ export default function TradingViewHeatmapsPage({ api }: { api?: ReactNode }) {
 
       <Section
         title={tcs("Forex Table")}
-        description={tcs("A Web Component — the one heatmap family that is not an iframe, so it inherits LUC's tokens.")}
+        description={tcs("A Web Component — the one heatmap family that is not an iframe, so it inherits Luc UI's tokens.")}
       >
         <div className="grid gap-4 lg:grid-cols-2">
           <TradingViewTile definition={tradingViewWidgetById("forex-table")!} useCase={tcs("Cross rates.")}>

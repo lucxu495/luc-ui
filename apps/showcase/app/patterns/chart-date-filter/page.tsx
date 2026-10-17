@@ -124,7 +124,7 @@ export default function ChartDateFilterPatternPage() {
 
       <Section
         title={tcs("What the chart is given")}
-        description={tcs("Prepared rows in, prepared rows drawn. LUC UI never thins, resamples or derives a series — if a window is too dense to draw honestly, the data layer decides what to send.")}
+        description={tcs("Prepared rows in, prepared rows drawn. Luc UI never thins, resamples or derives a series — if a window is too dense to draw honestly, the data layer decides what to send.")}
       >
         <Text variant="body" tone="secondary" className="max-w-[70ch]">
           {tcs("That is also why a date filter here is cheap: changing the window does not change any financial semantics, it only changes which of the caller's rows are passed to the engine.")}</Text>

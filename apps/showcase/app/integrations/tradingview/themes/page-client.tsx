@@ -30,7 +30,7 @@ export default function TradingViewThemesPage({ api }: { api?: ReactNode }) {
       <PageHeader
         eyebrow={tcs("Integrations · TradingView · Themes")}
         title="Two depths of theming"
-        lead="Web Components take LUC's tokens through the provider's published CSS custom properties. iframe widgets take the provider's own theme configuration and nothing else. Switch the theme and watch which parts move."
+        lead="Web Components take Luc UI's tokens through the provider's published CSS custom properties. iframe widgets take the provider's own theme configuration and nothing else. Switch the theme and watch which parts move."
         actions={
           <Switch
             checked={resolvedTheme === "dark"}
@@ -46,7 +46,7 @@ export default function TradingViewThemesPage({ api }: { api?: ReactNode }) {
         title={tcs("Web Component: tokens")}
         description={tcs("One mapping, applied by every Web Component wrapper.")}
       >
-        <TradingViewTile definition={tradingViewWidgetById("mini-chart")!} useCase={tcs("Follows LUC's surface, text and font tokens.")}>
+        <TradingViewTile definition={tradingViewWidgetById("mini-chart")!} useCase={tcs("Follows Luc UI's surface, text and font tokens.")}>
           <TradingViewMiniChart symbol="NASDAQ:AAPL" height={180} />
         </TradingViewTile>
         <TradingViewTile definition={tradingViewWidgetById("market-data")!} useCase={tcs("Same bridge, a denser widget.")}>
@@ -60,7 +60,7 @@ export default function TradingViewThemesPage({ api }: { api?: ReactNode }) {
 
       <Section
         title={tcs("iframe: provider configuration")}
-        description={tcs("The chart below is the same widget in a separate document. It matches the theme; it does not inherit LUC's colours.")}
+        description={tcs("The chart below is the same widget in a separate document. It matches the theme; it does not inherit Luc UI's colours.")}
       >
         <TradingViewTile definition={tradingViewWidgetById("advanced-chart")!} useCase={tcs("Provider theme, LUC surface colours passed through the provider's own keys.")}>
           <TradingViewAdvancedChart symbol="BINANCE:BTCUSDT" preset="minimal" height={420} />

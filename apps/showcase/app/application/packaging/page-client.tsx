@@ -105,7 +105,7 @@ import { useI18n } from "@/lib/i18n/provider";
       <Section
         title={tcs("Measured")}
         description={tcs(
-          "From the consumer smoke test: each scenario is bundled with every third-party module external, so the numbers describe LUC UI's own graph rather than React's. The figures are a snapshot taken on {date}; re-run the command to reproduce them on your machine.",
+          "From the consumer smoke test: each scenario is bundled with every third-party module external, so the numbers describe Luc UI's own graph rather than React's. The figures are a snapshot taken on {date}; re-run the command to reproduce them on your machine.",
         ).replace("{date}", MEASURED_ON)}
         actions={
           <Badge size="sm" tone="neutral">

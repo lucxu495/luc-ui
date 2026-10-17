@@ -66,7 +66,7 @@ export default async function FoundationsPage() {
       <PageHeader
         eyebrow={tcs("Foundations")}
         title="The system behind the components"
-        lead="LUC UI is a small set of rules applied consistently. These pages are the contract: if something is not here, it is not part of the system yet."
+        lead="Luc UI is a small set of rules applied consistently. These pages are the contract: if something is not here, it is not part of the system yet."
       />
 
       <Section title={tcs("Principles")} description={tcs("Six rules that decide most design arguments before they start.")}>

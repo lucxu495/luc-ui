@@ -12,7 +12,7 @@ export default async function DesignLabIndex() {
   const { tcs, href } = await getServerCopy();
   return (
     <AppShellContent width="content" className="min-h-screen px-4 py-8 sm:px-8">
-      <p className="text-micro font-semibold uppercase tracking-widest text-fg-muted">{tcs("LUC UI / experiment 01")}</p>
+      <p className="text-micro font-semibold uppercase tracking-widest text-fg-muted">{tcs("Luc UI / experiment 01")}</p>
       <h1 className="mt-3 font-display text-display-sm font-semibold text-fg-primary">{tcs("Design Lab")}</h1>
       <p className="mt-3 max-w-2xl text-body text-fg-secondary">{tcs("Three treatments of the same prepared observations and the same table-to-chart-to-inspector interaction. Use the Showcase theme and motion controls to compare states.")}</p>
       <div className="mt-8 grid gap-3 md:grid-cols-3">

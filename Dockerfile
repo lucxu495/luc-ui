@@ -60,6 +60,7 @@ WORKDIR /app
 # under `apps/showcase/`.
 COPY --from=builder --chown=node:node /app/apps/showcase/.next/standalone ./
 COPY --from=builder --chown=node:node /app/apps/showcase/.next/static ./apps/showcase/.next/static
+COPY --from=builder --chown=node:node /app/apps/showcase/public ./apps/showcase/public
 USER node
 EXPOSE 3000
 # Renders a statically prerendered page: proves the HTTP server and the built

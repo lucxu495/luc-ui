@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { ChartDataTable } from "./chart-data-table";
 
 const ROWS = [
-  // Percentages arrive already scaled, per LUC's "never convert units" rule.
+  // Percentages arrive already scaled, per Luc UI's "never convert units" rule.
   { time: Date.UTC(2026, 0, 3), close: 101_250.5, rv30: 42 },
   { time: Date.UTC(2026, 0, 2), close: 99_800.25, rv30: 38 },
 ];

@@ -10,7 +10,7 @@ import { formatMonthName, formatMonthYear } from "./format";
 /*
  * LUC MonthPicker and YearPicker.
  *
- * React Aria ships a day grid, not a month grid, so these two are LUC's own —
+ * React Aria ships a day grid, not a month grid, so these two are Luc UI's own —
  * built as an ARIA grid with roving focus, which is enough behaviour to be
  * honest about and small enough to read. The same components power the calendar
  * header's month/year jump, so a user never has to page through 120 months.

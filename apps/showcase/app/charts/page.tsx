@@ -90,7 +90,7 @@ export default function ChartsOverviewPage() {
       <PageHeader
         eyebrow={tcs("Charts")}
         title="Chart system"
-        lead="Two engines behind one experience: Apache ECharts for analytical shapes, TradingView Lightweight Charts for financial panes. The rendering is infrastructure — tooltips, legends, ranges, annotations, synchronisation and fullscreen come from LUC UI."
+        lead="Two engines behind one experience: Apache ECharts for analytical shapes, TradingView Lightweight Charts for financial panes. The rendering is infrastructure — tooltips, legends, ranges, annotations, synchronisation and fullscreen come from Luc UI."
       />
 
       <Section

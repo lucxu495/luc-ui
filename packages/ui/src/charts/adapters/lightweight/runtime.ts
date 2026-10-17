@@ -22,7 +22,7 @@ export function loadLightweightCharts(): Promise<LightweightModule> {
   return loading;
 }
 
-/** Chart engines take seconds; LUC's canonical time unit is milliseconds. */
+/** Chart engines take seconds; Luc UI's canonical time unit is milliseconds. */
 export function toChartTime(ms: number): LightweightCharts.UTCTimestamp {
   return Math.floor(ms / 1000) as LightweightCharts.UTCTimestamp;
 }

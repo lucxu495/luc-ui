@@ -20252,7 +20252,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "regression",
      "optional": true,
      "type": "RegressionLine | undefined",
-     "description": "Pre-computed fit. LUC UI never regresses — the analytics layer does.",
+     "description": "Pre-computed fit. Luc UI never regresses — the analytics layer does.",
      "inherited": false
     },
     {
@@ -25130,7 +25130,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "config",
      "optional": true,
      "type": "TradingViewRawConfig | undefined",
-     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "description": "Advanced: extra provider configuration, merged under Luc UI's own keys. Cannot change the script URL, the element, or attribution.",
      "inherited": false
     },
     {
@@ -25336,7 +25336,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "config",
      "optional": true,
      "type": "TradingViewRawConfig | undefined",
-     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "description": "Advanced: extra provider configuration, merged under Luc UI's own keys. Cannot change the script URL, the element, or attribution.",
      "inherited": false
     },
     {
@@ -25488,7 +25488,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "config",
      "optional": true,
      "type": "TradingViewRawConfig | undefined",
-     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "description": "Advanced: extra provider configuration, merged under Luc UI's own keys. Cannot change the script URL, the element, or attribution.",
      "inherited": false
     },
     {
@@ -25640,7 +25640,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "config",
      "optional": true,
      "type": "TradingViewRawConfig | undefined",
-     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "description": "Advanced: extra provider configuration, merged under Luc UI's own keys. Cannot change the script URL, the element, or attribution.",
      "inherited": false
     },
     {
@@ -25806,7 +25806,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "config",
      "optional": true,
      "type": "TradingViewRawConfig | undefined",
-     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "description": "Advanced: extra provider configuration, merged under Luc UI's own keys. Cannot change the script URL, the element, or attribution.",
      "inherited": false
     },
     {
@@ -25960,7 +25960,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "config",
      "optional": true,
      "type": "TradingViewRawConfig | undefined",
-     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "description": "Advanced: extra provider configuration, merged under Luc UI's own keys. Cannot change the script URL, the element, or attribution.",
      "inherited": false
     },
     {
@@ -26108,7 +26108,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "config",
      "optional": true,
      "type": "TradingViewRawConfig | undefined",
-     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "description": "Advanced: extra provider configuration, merged under Luc UI's own keys. Cannot change the script URL, the element, or attribution.",
      "inherited": false
     },
     {
@@ -26255,7 +26255,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "config",
      "optional": true,
      "type": "TradingViewRawConfig | undefined",
-     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "description": "Advanced: extra provider configuration, merged under Luc UI's own keys. Cannot change the script URL, the element, or attribution.",
      "inherited": false
     },
     {
@@ -26411,7 +26411,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "config",
      "optional": true,
      "type": "TradingViewRawConfig | undefined",
-     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "description": "Advanced: extra provider configuration, merged under Luc UI's own keys. Cannot change the script URL, the element, or attribution.",
      "inherited": false
     },
     {
@@ -26548,7 +26548,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "config",
      "optional": true,
      "type": "TradingViewRawConfig | undefined",
-     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "description": "Advanced: extra provider configuration, merged under Luc UI's own keys. Cannot change the script URL, the element, or attribution.",
      "inherited": false
     },
     {
@@ -26677,7 +26677,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "config",
      "optional": true,
      "type": "TradingViewRawConfig | undefined",
-     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "description": "Advanced: extra provider configuration, merged under Luc UI's own keys. Cannot change the script URL, the element, or attribution.",
      "inherited": false
     },
     {
@@ -26827,7 +26827,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "config",
      "optional": true,
      "type": "TradingViewRawConfig | undefined",
-     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "description": "Advanced: extra provider configuration, merged under Luc UI's own keys. Cannot change the script URL, the element, or attribution.",
      "inherited": false
     },
     {
@@ -26962,7 +26962,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "config",
      "optional": true,
      "type": "TradingViewRawConfig | undefined",
-     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "description": "Advanced: extra provider configuration, merged under Luc UI's own keys. Cannot change the script URL, the element, or attribution.",
      "inherited": false
     },
     {
@@ -27100,7 +27100,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "config",
      "optional": true,
      "type": "TradingViewRawConfig | undefined",
-     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "description": "Advanced: extra provider configuration, merged under Luc UI's own keys. Cannot change the script URL, the element, or attribution.",
      "inherited": false
     },
     {
@@ -27222,7 +27222,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "config",
      "optional": true,
      "type": "TradingViewRawConfig | undefined",
-     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "description": "Advanced: extra provider configuration, merged under Luc UI's own keys. Cannot change the script URL, the element, or attribution.",
      "inherited": false
     },
     {
@@ -27344,7 +27344,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "config",
      "optional": true,
      "type": "TradingViewRawConfig | undefined",
-     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "description": "Advanced: extra provider configuration, merged under Luc UI's own keys. Cannot change the script URL, the element, or attribution.",
      "inherited": false
     },
     {
@@ -27460,7 +27460,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "config",
      "optional": true,
      "type": "TradingViewRawConfig | undefined",
-     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "description": "Advanced: extra provider configuration, merged under Luc UI's own keys. Cannot change the script URL, the element, or attribution.",
      "inherited": false
     },
     {
@@ -27625,7 +27625,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "config",
      "optional": true,
      "type": "TradingViewRawConfig | undefined",
-     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "description": "Advanced: extra provider configuration, merged under Luc UI's own keys. Cannot change the script URL, the element, or attribution.",
      "inherited": false
     },
     {
@@ -27753,7 +27753,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "config",
      "optional": true,
      "type": "TradingViewRawConfig | undefined",
-     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "description": "Advanced: extra provider configuration, merged under Luc UI's own keys. Cannot change the script URL, the element, or attribution.",
      "inherited": false
     },
     {
@@ -27884,7 +27884,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "config",
      "optional": true,
      "type": "TradingViewRawConfig | undefined",
-     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "description": "Advanced: extra provider configuration, merged under Luc UI's own keys. Cannot change the script URL, the element, or attribution.",
      "inherited": false
     },
     {
@@ -28012,7 +28012,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "config",
      "optional": true,
      "type": "TradingViewRawConfig | undefined",
-     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "description": "Advanced: extra provider configuration, merged under Luc UI's own keys. Cannot change the script URL, the element, or attribution.",
      "inherited": false
     },
     {
@@ -28190,7 +28190,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "config",
      "optional": true,
      "type": "TradingViewRawConfig | undefined",
-     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "description": "Advanced: extra provider configuration, merged under Luc UI's own keys. Cannot change the script URL, the element, or attribution.",
      "inherited": false
     },
     {
@@ -28337,7 +28337,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "config",
      "optional": true,
      "type": "TradingViewRawConfig | undefined",
-     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "description": "Advanced: extra provider configuration, merged under Luc UI's own keys. Cannot change the script URL, the element, or attribution.",
      "inherited": false
     },
     {
@@ -28517,7 +28517,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "config",
      "optional": true,
      "type": "TradingViewRawConfig | undefined",
-     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "description": "Advanced: extra provider configuration, merged under Luc UI's own keys. Cannot change the script URL, the element, or attribution.",
      "inherited": false
     },
     {
@@ -28683,7 +28683,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "config",
      "optional": true,
      "type": "TradingViewRawConfig | undefined",
-     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "description": "Advanced: extra provider configuration, merged under Luc UI's own keys. Cannot change the script URL, the element, or attribution.",
      "inherited": false
     },
     {
@@ -28843,7 +28843,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "config",
      "optional": true,
      "type": "TradingViewRawConfig | undefined",
-     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "description": "Advanced: extra provider configuration, merged under Luc UI's own keys. Cannot change the script URL, the element, or attribution.",
      "inherited": false
     },
     {
@@ -29015,7 +29015,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "config",
      "optional": true,
      "type": "TradingViewRawConfig | undefined",
-     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "description": "Advanced: extra provider configuration, merged under Luc UI's own keys. Cannot change the script URL, the element, or attribution.",
      "inherited": false
     },
     {

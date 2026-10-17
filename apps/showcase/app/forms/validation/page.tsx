@@ -247,7 +247,7 @@ export default function FormValidationPage() {
         </Text>
         <Text variant="caption" tone="muted" as="p" className="max-w-[68ch]">
           {tcs(
-            "Field messages come from the form engine; the summary is LUC's, and a plain form renders it by passing its own errors array.",
+            "Field messages come from the form engine; the summary is Luc UI's, and a plain form renders it by passing its own errors array.",
           )}
         </Text>
       </section>

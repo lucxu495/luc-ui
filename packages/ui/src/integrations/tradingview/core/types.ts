@@ -173,7 +173,7 @@ export interface TradingViewWidgetBaseProps {
    */
   timeoutMs?: number;
   /**
-   * Advanced: extra provider configuration, merged under LUC's own keys.
+   * Advanced: extra provider configuration, merged under Luc UI's own keys.
    * Cannot change the script URL, the element, or attribution.
    */
   config?: TradingViewRawConfig;

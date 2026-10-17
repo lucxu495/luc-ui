@@ -17,7 +17,7 @@ import { PageHeader } from "@/components/docs/page-header";
 import { getServerCopy } from "@/lib/i18n/server";
 
 export const metadata: Metadata = {
-  title: "Theming — LUC UI",
+  title: "Theming — Luc UI",
   description: "Theme, brand palette, type voice and personality as document attributes.",
 };
 

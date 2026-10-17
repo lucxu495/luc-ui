@@ -20,7 +20,7 @@ export default async function ColorsPage() {
 
       <Section
         title={tcs("Surfaces")}
-        description={tcs("Depth in LUC UI is a luminance step plus a hairline, not a big drop shadow. Surfaces form an ordered stack.")}
+        description={tcs("Depth in Luc UI is a luminance step plus a hairline, not a big drop shadow. Surfaces form an ordered stack.")}
       >
         <SwatchGrid
           items={[

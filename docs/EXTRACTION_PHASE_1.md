@@ -155,7 +155,7 @@ satisfy.
   commits nothing.
 * `apps/showcase` is the shared surface: `/visuals/**` (11 routes, plus
   `lib/visuals/**`, `components/visuals/**` and 26 files importing
-  `@luc/visuals`) belongs to Visuals, while everything else belongs to LUC UI.
+  `@luc/visuals`) belongs to Visuals, while everything else belongs to Luc UI.
   The split line is the `@luc/visuals` import graph, not the directory tree.
 * Consumers already exist outside this repository and outside `luc-quant`'s
   workspace: `luc-render` and `luc-network/desktop-v1` depend on `@luc/ui`

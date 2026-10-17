@@ -37,7 +37,7 @@ import {
  */
 
 export const metadata: Metadata = {
-  title: "LUC UI — precision meets expression",
+  title: "Luc UI — precision meets expression",
   description:
     "A React and TypeScript design system: tokens, accessible components, spatial motion, professional charts and sixteen reference products — documented one page at a time, in English and Simplified Chinese.",
 };

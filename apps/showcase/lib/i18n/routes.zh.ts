@@ -84,13 +84,13 @@ export const routesZh: Record<string, RouteCopy> = {
     lead: "带活跃度的话题列表、回复可计分的帖子、回复输入器，以及会显示被举报内容、且可以取消的举报流程。",
   },
   "/": {
-    title: "LUC UI — 默认即美，设计即表达",
+    title: "Luc UI — 默认即美，设计即表达",
   },
 
   /* ---------------------------------------------------------------- 基础 */
   "/foundations": {
     title: "组件背后的系统",
-    lead: "LUC UI 是一小组被一致执行的规则。这些页面就是契约：这里没有的东西，就还不属于这套系统。",
+    lead: "Luc UI 是一小组被一致执行的规则。这些页面就是契约：这里没有的东西，就还不属于这套系统。",
   },
   "/foundations/colors": {
     title: "颜色",
@@ -110,11 +110,11 @@ export const routesZh: Record<string, RouteCopy> = {
   },
   "/foundations/surface": {
     title: "表面",
-    lead: "LUC UI 的深度来自一次明度跃迁加一条极细的描边。层级是有序的，组件占据明确的层级，而不是随手挑一个灰色。",
+    lead: "Luc UI 的深度来自一次明度跃迁加一条极细的描边。层级是有序的，组件占据明确的层级，而不是随手挑一个灰色。",
   },
   "/foundations/shadow": {
     title: "阴影",
-    lead: "阴影是配角。在深色模式下它主要用于强化分层，真正的深度线索是表面明度差。LUC UI 中没有任何地方使用大而通用的投影。",
+    lead: "阴影是配角。在深色模式下它主要用于强化分层，真正的深度线索是表面明度差。Luc UI 中没有任何地方使用大而通用的投影。",
   },
   "/foundations/glow": {
     title: "辉光",
@@ -139,7 +139,7 @@ export const routesZh: Record<string, RouteCopy> = {
 
   /* ---------------------------------------------------------------- 组件 */
   "/components": {
-    title: "LUC UI 提供什么",
+    title: "Luc UI 提供什么",
     lead: "公开组件家族的全景图。每一项都链接到对应的文档页，而它们全都是从 @luc/ui 真实导出的——这一页没有任何组件是重新实现的。",
   },
   "/components/buttons": {
@@ -269,7 +269,7 @@ export const routesZh: Record<string, RouteCopy> = {
   /* ---------------------------------------------------------------- 表单 */
   "/forms": {
     title: "表单",
-    lead: "LUC UI 不接管表单状态——React Hook Form、TanStack Form 或一个 reducer 都能用。它负责的是每个产品都要重写的那部分：统一的字段结构、统一的提交生命周期、统一的错误汇总，以及与系统其余部分一致的输入控件。",
+    lead: "Luc UI 不接管表单状态——React Hook Form、TanStack Form 或一个 reducer 都能用。它负责的是每个产品都要重写的那部分：统一的字段结构、统一的提交生命周期、统一的错误汇总，以及与系统其余部分一致的输入控件。",
   },
   "/forms/validation": {
     title: "校验",
@@ -349,7 +349,7 @@ export const routesZh: Record<string, RouteCopy> = {
   /* ---------------------------------------------------------------- 动效 */
   "/motion": {
     title: "动效与创意效果",
-    lead: "LUC UI 的动效词汇表。每一项都是公开原语，都有减弱动效路径，而且每一项都能在页面上现场触发、重复与对比。",
+    lead: "Luc UI 的动效词汇表。每一项都是公开原语，都有减弱动效路径，而且每一项都能在页面上现场触发、重复与对比。",
   },
   "/motion/signature": {
     title: "标志性动效",
@@ -373,7 +373,7 @@ export const routesZh: Record<string, RouteCopy> = {
   },
   "/motion/shimmer": {
     title: "微光",
-    lead: "一次轻柔的高光从表面掠过。这是 LUC UI 的加载语言——一个承载形状的骨架屏，而不是只会说“等等”的转圈。",
+    lead: "一次轻柔的高光从表面掠过。这是 Luc UI 的加载语言——一个承载形状的骨架屏，而不是只会说“等等”的转圈。",
   },
   "/motion/number-ticker": {
     title: "数字滚动",
@@ -387,11 +387,11 @@ export const routesZh: Record<string, RouteCopy> = {
   /* ---------------------------------------------------------------- 图表 */
   "/charts": {
     title: "图表系统",
-    lead: "一个是渲染层，两种引擎：分析图形用 Apache ECharts，金融分栏用 TradingView Lightweight Charts。渲染只是基础设施——提示、图例、区间、标注、同步与全屏都由 LUC UI 提供。",
+    lead: "一个是渲染层，两种引擎：分析图形用 Apache ECharts，金融分栏用 TradingView Lightweight Charts。渲染只是基础设施——提示、图例、区间、标注、同步与全屏都由 Luc UI 提供。",
   },
   "/charts/architecture": {
     title: "图表系统如何组成",
-    lead: "两种引擎，一种体验。渲染引擎属于基础设施：它们只画像素；而读者真正感知的一切——提示、图例、区间、标注、同步、全屏——都由 LUC UI 负责。",
+    lead: "两种引擎，一种体验。渲染引擎属于基础设施：它们只画像素；而读者真正感知的一切——提示、图例、区间、标注、同步、全屏——都由 Luc UI 负责。",
   },
   "/charts/timeseries": {
     title: "折线与面积",
@@ -403,7 +403,7 @@ export const routesZh: Record<string, RouteCopy> = {
   },
   "/charts/distribution": {
     title: "样本的形状",
-    lead: "直方图与箱线图回答不同的问题：直方图展示形状，箱线图同时比较多个样本。两者都只接收准备好的数值——LUC UI 从不分箱，也从不判定什么是离群点。",
+    lead: "直方图与箱线图回答不同的问题：直方图展示形状，箱线图同时比较多个样本。两者都只接收准备好的数值——Luc UI 从不分箱，也从不判定什么是离群点。",
   },
   "/charts/statistical": {
     title: "统计图",
@@ -427,7 +427,7 @@ export const routesZh: Record<string, RouteCopy> = {
   },
   "/charts/catalog": {
     title: "图表目录",
-    lead: "LUC UI 能画的每一种图表，以及诚实的状态标注。别名与单纯外观变体不计入不同图表类型。",
+    lead: "Luc UI 能画的每一种图表，以及诚实的状态标注。别名与单纯外观变体不计入不同图表类型。",
   },
   "/charts/relationship": {
     title: "散点与气泡",
@@ -492,7 +492,7 @@ export const routesZh: Record<string, RouteCopy> = {
   },
   "/patterns/industries": {
     title: "跨行业",
-    lead: "LUC UI 成长于密集的分析场景，这一点体现在它的表格、图表与工作区中。但它不只属于这个领域。下面每个小品都由相同的公开组件搭建——只有色板与字体声线不同。",
+    lead: "Luc UI 成长于密集的分析场景，这一点体现在它的表格、图表与工作区中。但它不只属于这个领域。下面每个小品都由相同的公开组件搭建——只有色板与字体声线不同。",
   },
   "/patterns/table-filters": {
     title: "带筛选的表格",
@@ -638,7 +638,7 @@ export const routesZh: Record<string, RouteCopy> = {
   /* -------------------------------------------------- 文档（Phase 9） */
   "/docs": {
     title: "快速开始",
-    lead: "LUC UI 是一个 React 与 TypeScript 设计系统：令牌、无障碍原语、空间动效、数据展示与图表，一个组件一个组件地写文档。",
+    lead: "Luc UI 是一个 React 与 TypeScript 设计系统：令牌、无障碍原语、空间动效、数据展示与图表，一个组件一个组件地写文档。",
   },
   "/docs/installation": {
     title: "安装",
@@ -682,7 +682,7 @@ export const routesZh: Record<string, RouteCopy> = {
   /* ------------------------------------- 浏览与视觉层（Phase 10A） */
   "/explore": {
     title: "找到需要的东西",
-    lead: "LUC UI 是一份目录，而目录只有能让你从当前位置进入才有用：按名字、按你要构建的东西，或按它应该长成的样子。最上面是目录的真实规模，接着是为初次到访挑选的条目，最后是两条浏览轴线。",
+    lead: "Luc UI 是一份目录，而目录只有能让你从当前位置进入才有用：按名字、按你要构建的东西，或按它应该长成的样子。最上面是目录的真实规模，接着是为初次到访挑选的条目，最后是两条浏览轴线。",
   },
   "/explore/browse": {
     title: "全部能力",

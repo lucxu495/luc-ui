@@ -66,7 +66,7 @@ export function FormsOverviewPage({ apiSection }: { apiSection?: ReactNode }) {
       <PageHeader
         eyebrow={tcs("Forms")}
         title="Forms"
-        lead="LUC UI does not own form state — React Hook Form, TanStack Form or a reducer all work. It owns the part every product otherwise rebuilds: one field anatomy, one submit lifecycle, one error summary, and inputs that agree with the rest of the system."
+        lead="Luc UI does not own form state — React Hook Form, TanStack Form or a reducer all work. It owns the part every product otherwise rebuilds: one field anatomy, one submit lifecycle, one error summary, and inputs that agree with the rest of the system."
       />
 
       <ImportLine line={'import { Form, FormActions, FormSection, SubmitButton } from "@luc/ui/forms";'} />

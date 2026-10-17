@@ -18,9 +18,9 @@ import { docGroups, familiesInGroup, registryStats } from "@/lib/docs/registry";
 import { getServerCopy } from "@/lib/i18n/server";
 
 export const metadata: Metadata = {
-  title: "Get started — LUC UI",
+  title: "Get started — Luc UI",
   description:
-    "What LUC UI is, how to find the component you need, and how the documentation states its own coverage.",
+    "What Luc UI is, how to find the component you need, and how the documentation states its own coverage.",
 };
 
 const START_HERE = [
@@ -44,7 +44,7 @@ export default async function DocsIndexPage() {
         eyebrow={tcs("Documentation")}
         title={tcs("Get started")}
         lead={tcs(
-          "LUC UI is a React and TypeScript design system: tokens, accessible primitives, spatial motion, data display and charts, documented one component at a time.",
+          "Luc UI is a React and TypeScript design system: tokens, accessible primitives, spatial motion, data display and charts, documented one component at a time.",
         )}
       />
 

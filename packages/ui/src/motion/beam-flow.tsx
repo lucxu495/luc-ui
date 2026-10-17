@@ -38,7 +38,7 @@ const stateStroke: Record<BeamState, string> = {
 /*
  * Catmull-Rom to cubic Bezier.
  *
- * Hand-rolled rather than pulled from a 40 kB path library: the whole of LUC's
+ * Hand-rolled rather than pulled from a 40 kB path library: the whole of Luc UI's
  * connector vocabulary is "a line that goes round corners softly", and a
  * dependency is a promise to keep it alive. Endpoints are mirrored so the path
  * starts and ends tangent to the two outer segments instead of kinking.

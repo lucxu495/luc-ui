@@ -40,7 +40,7 @@ const capabilityCounts: Record<string, number> = {
 export const metadata: Metadata = {
   title: "Explore",
   description:
-    "Every capability in LUC UI — components, charts, motion, blocks, experiences, studios and visual studies — browsable by name, by use case and by art direction.",
+    "Every capability in Luc UI — components, charts, motion, blocks, experiences, studios and visual studies — browsable by name, by use case and by art direction.",
 };
 
 /**
@@ -63,7 +63,7 @@ export default async function ExplorePage() {
         eyebrow={tcs("Explore")}
         title={tcs("Find the right thing")}
         lead={tcs(
-          "LUC UI is a catalog, and a catalog is only useful if you can enter it from where you already are: by name, by what you are building, or by how it should look.",
+          "Luc UI is a catalog, and a catalog is only useful if you can enter it from where you already are: by name, by what you are building, or by how it should look.",
         )}
       />
 

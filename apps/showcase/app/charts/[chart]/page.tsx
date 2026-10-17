@@ -43,7 +43,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { chart } = await params;
   const entry = docEntries.find((candidate) => candidate.route === `/charts/${chart}`);
-  return entry ? { title: `${entry.title} — LUC UI`, description: entry.summary } : {};
+  return entry ? { title: `${entry.title} — Luc UI`, description: entry.summary } : {};
 }
 
 export default async function ChartPage({ params }: { params: Promise<{ chart: string }> }) {

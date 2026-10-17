@@ -54,7 +54,7 @@ export interface UseCase {
 /**
  * One of the six art directions.
  *
- * The four `knobs` are the point: an art direction in LUC UI is a *combination
+ * The four `knobs` are the point: an art direction in Luc UI is a *combination
  * of the token layer's own attributes* plus a composition discipline — never a
  * new palette. Setting them on a subtree is the documented mechanism
  * (`tokens.css`), so a study can pin a direction without changing the page.

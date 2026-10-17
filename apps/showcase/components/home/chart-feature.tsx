@@ -4,7 +4,7 @@
  * The homepage's charting section.
  *
  * Two jobs: show a real chart, and state the library's actual contract about
- * data — which is the more unusual of the two. LUC UI never computes an
+ * data — which is the more unusual of the two. Luc UI never computes an
  * indicator, never infers a unit and never connects a gap it was not told to
  * connect; the caller prepares rows and declares formats.
  *

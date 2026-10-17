@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { TRADINGVIEW_TOKEN_BRIDGE, resolveTradingViewTheme, tradingViewTokenStyle } from "./theme";
 
 describe("the TradingView theme bridge", () => {
-  it("resolves auto from LUC's theme and honours an explicit override", () => {
+  it("resolves auto from Luc UI's theme and honours an explicit override", () => {
     expect(resolveTradingViewTheme("auto", "dark")).toBe("dark");
     expect(resolveTradingViewTheme("auto", "light")).toBe("light");
     expect(resolveTradingViewTheme("light", "dark")).toBe("light");

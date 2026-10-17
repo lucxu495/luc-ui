@@ -18,7 +18,7 @@ import { useI18n } from "@/lib/i18n/provider";
 const PROJECTS: readonly Project[] = [
   {
     id: "luc",
-    title: "LUC UI",
+    title: "Luc UI",
     summary: "A component library with a charting surface.",
     tags: ["react", "charts"],
     status: "Active",

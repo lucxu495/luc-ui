@@ -85,7 +85,7 @@ export default function TradingViewWatchlistsPage({ api }: { api?: ReactNode }) 
           </TradingViewTile>
         </div>
         <Text variant="caption" tone="muted" as="p">
-          {tcs("Sector attributes are JSON on the element, exactly as the provider's own snippet writes them. LUC's typed props serialise to that form, so a pasted provider snippet and a LUC component produce the same markup.")}{" "}
+          {tcs("Sector attributes are JSON on the element, exactly as the provider's own snippet writes them. Luc UI's typed props serialise to that form, so a pasted provider snippet and a LUC component produce the same markup.")}{" "}
           <Code>{'symbol-sectors="[…]"'}</Code>
         </Text>
       </Section>

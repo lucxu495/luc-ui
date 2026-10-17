@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import {
@@ -538,10 +539,22 @@ function Brand({ className, hideOnRail = false }: { className?: string; hideOnRa
         className,
       )}
     >
-      <span aria-hidden="true" className="relative grid size-7 shrink-0 place-items-center">
-        <span className="absolute inset-0 rounded-[7px] border border-line-accent bg-accent-soft" />
-        <span className="relative block size-2.5 rounded-[3px] bg-accent-default shadow-[0_0_10px_-1px_var(--accent-default)]" />
-      </span>
+      <Image
+        src="/brand/luc-ui-logo-light-64.png"
+        alt=""
+        aria-hidden="true"
+        width={28}
+        height={28}
+        className="size-7 shrink-0 dark:hidden"
+      />
+      <Image
+        src="/brand/luc-ui-logo-dark-64.png"
+        alt=""
+        aria-hidden="true"
+        width={28}
+        height={28}
+        className="hidden size-7 shrink-0 dark:block"
+      />
       <span
         className={cn(
           "flex min-w-0 flex-col leading-none",
@@ -549,7 +562,7 @@ function Brand({ className, hideOnRail = false }: { className?: string; hideOnRa
         )}
       >
         <span className="font-display text-[15px] font-semibold tracking-[-0.02em] text-fg-primary">
-          LUC UI
+          Luc UI
         </span>
         <span className="mt-0.5 text-micro text-fg-muted uppercase">{t("nav.designSystem")}</span>
       </span>

@@ -1,4 +1,4 @@
-# LUC UI — interaction matrix
+# Luc UI — interaction matrix
 
 The canonical motion contract, component family by component family.
 

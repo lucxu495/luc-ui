@@ -17,6 +17,7 @@
  */
 
 import Link from "next/link";
+import Image from "next/image";
 import {
   Badge,
   Button,
@@ -55,8 +56,24 @@ export async function HomeHero() {
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-end">
         <div className="flex min-w-0 flex-col gap-6">
           <Inline gap="sm" align="center" wrap>
+            <Image
+              src="/brand/luc-ui-logo-light-64.png"
+              alt=""
+              aria-hidden="true"
+              width={28}
+              height={28}
+              className="size-7 dark:hidden"
+            />
+            <Image
+              src="/brand/luc-ui-logo-dark-64.png"
+              alt=""
+              aria-hidden="true"
+              width={28}
+              height={28}
+              className="hidden size-7 dark:block"
+            />
             <Badge tone="accent" dot size="sm">
-              LUC UI
+              Luc UI
             </Badge>
             <Text variant="micro" tone="muted" as="span">
               {tcs("React · TypeScript · English and Simplified Chinese")}

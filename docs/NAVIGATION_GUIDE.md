@@ -1,4 +1,4 @@
-# LUC UI — Navigation guide
+# Luc UI — Navigation guide
 
 ## One model, three surfaces
 

@@ -74,7 +74,7 @@ const uiEn: Record<string, string> = {
   "shell.routes": "{count} routes",
   "shell.theme": "{theme} theme",
   "shell.appearance": "{palette} palette · {typeface} type",
-  "shell.version": "LUC UI v1.0",
+  "shell.version": "Luc UI v1.0",
   "shell.tokens": "tokens · components · charts",
   "shell.status": "Shell status",
   "shell.language": "Language",
@@ -186,7 +186,7 @@ const uiZh: Record<string, string> = {
   "shell.routes": "{count} 个路由",
   "shell.theme": "{theme} 主题",
   "shell.appearance": "{palette} 色板 · {typeface} 字体",
-  "shell.version": "LUC UI v1.0",
+  "shell.version": "Luc UI v1.0",
   "shell.tokens": "令牌 · 组件 · 图表",
   "shell.status": "外壳状态",
   "shell.language": "语言",
@@ -484,7 +484,7 @@ const navZh: Record<string, string> = {
   Sizing: "尺寸",
 
   /* Item and group descriptions — the sidebar's second line. */
-  "The principles behind LUC UI.": "LUC UI 背后的原则。",
+  "The principles behind Luc UI.": "Luc UI 背后的原则。",
   "Semantic surfaces, text and accents.": "语义化表面、文字与强调色。",
   "Roles, scale and numeric text.": "字体角色、字号阶梯与数字文本。",
   "The 4pt rhythm and density modes.": "4pt 节奏与密度模式。",
@@ -718,8 +718,8 @@ const navZh: Record<string, string> = {
    * Wording follows the same voice as the sentences above: a description says
    * what the destination is for, in the register the docs themselves use.
    */
-  "What LUC UI is, and how to find the thing you need.":
-    "LUC UI 是什么，以及如何找到你需要的部分。",
+  "What Luc UI is, and how to find the thing you need.":
+    "Luc UI 是什么，以及如何找到你需要的部分。",
   "Install, import the styles, install the provider.": "安装、引入样式、挂载 Provider。",
   "Palettes, type voices, personality and depth.": "配色、字体声线、视觉人格与层次。",
   "Every public export, grouped by family and generated from the package.":
@@ -835,7 +835,7 @@ const navZh: Record<string, string> = {
     "先提出清楚的问题与可读的结论，再引出证据。",
   "Select an observation to link its row, chart cursor and context.":
     "选中一条观测，把它的行、图表游标与上下文关联起来。",
-  "What LUC UI is, what it contains and where to start.": "LUC UI 是什么、包含什么，以及从哪里开始。",
+  "What Luc UI is, what it contains and where to start.": "Luc UI 是什么、包含什么，以及从哪里开始。",
   "Find the right thing by name, use case or art direction.":
     "按名字、用例或艺术方向，找到需要的内容。",
   "Every public component, by the job it does.":
@@ -1222,7 +1222,7 @@ const contentEn: Record<string, string> = {
 
   /* ------------------------------------------------ Phase 4 · charts */
   "charts.catalog.lead":
-    "Every chart LUC UI can draw, with an honest status. Public means a typed component exists in @luc/ui/charts today; engine means the renderer supports it but LUC has not wrapped it; planned and blocked are not shipped, and the reason is stated. No aliases and no cosmetic variants are counted as distinct types.",
+    "Every chart Luc UI can draw, with an honest status. Public means a typed component exists in @luc/ui/charts today; engine means the renderer supports it but Luc UI has not wrapped it; planned and blocked are not shipped, and the reason is stated. No aliases and no cosmetic variants are counted as distinct types.",
   "charts.catalog.status.title": "How to read this",
   "charts.catalog.status.lead":
     "Four statuses, and the counts below are the current truth rather than a target.",
@@ -1889,7 +1889,7 @@ const contentZh: Record<string, string> = {
 
   /* ------------------------------------------------ Phase 4 · 图表 */
   "charts.catalog.lead":
-    "LUC UI 能画的每一种图表，以及诚实的状态标注。public 表示今天就能在 @luc/ui/charts 里导入带类型的组件；engine 表示渲染引擎支持但 LUC 尚未封装；planned 与 blocked 尚未交付，并写明原因。别名与单纯外观变体不计入不同图表类型。",
+    "Luc UI 能画的每一种图表，以及诚实的状态标注。public 表示今天就能在 @luc/ui/charts 里导入带类型的组件；engine 表示渲染引擎支持但 Luc UI 尚未封装；planned 与 blocked 尚未交付，并写明原因。别名与单纯外观变体不计入不同图表类型。",
   "charts.catalog.status.title": "如何阅读本页",
   "charts.catalog.status.lead": "四种状态，下面的数字是当前事实，而不是目标。",
   "charts.catalog.status.public.note": "有类型、有测试、有 Showcase 示例的公开组件。",

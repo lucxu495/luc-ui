@@ -33,7 +33,7 @@ export function DocsBreadcrumbs() {
   const groupId = entry?.group ?? family?.group;
   const group = groupId ? navGroupMeta.find((candidate) => candidate.id === groupId) : undefined;
 
-  const items: TrailItem[] = [{ label: "LUC UI", href: href("/") }];
+  const items: TrailItem[] = [{ label: "Luc UI", href: href("/") }];
   if (group) items.push({ label: tn(group.title), href: href(group.route) });
   /* The family is only a distinct step when the current page is not the family
    * landing itself; on a landing page the trail would otherwise say the same
@@ -54,7 +54,7 @@ export function DocsBreadcrumbs() {
    * documentation page is in the registry — an overview, a guide, a studio.
    * Those used to render nothing at all because the trail lived in a route
    * layout that only wrapped three groups; now that it belongs to `DocPage`,
-   * the guard is what keeps a lone "LUC UI" crumb from appearing above a
+   * the guard is what keeps a lone "Luc UI" crumb from appearing above a
    * heading that already says the same thing.
    */
   if (items.length < 2) return null;

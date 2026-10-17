@@ -25,7 +25,7 @@ import { localizeHref } from "@/lib/i18n/config";
 export const metadata: Metadata = {
   title: "Blocks",
   description:
-    "Reusable page sections assembled from LUC UI components — a hero, a pricing band, a career timeline, a metrics strip.",
+    "Reusable page sections assembled from Luc UI components — a hero, a pricing band, a career timeline, a metrics strip.",
 };
 
 export default async function BlocksPage({

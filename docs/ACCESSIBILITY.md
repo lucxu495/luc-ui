@@ -1,4 +1,4 @@
-# LUC UI — accessibility
+# Luc UI — accessibility
 
 Accessibility is part of how a component is built, not a pass at the end. This
 document is written as acceptance criteria so it can be tested, not admired.
@@ -291,7 +291,7 @@ sweep excludes exactly that:
 | `.tradingview-widget-container` (the provider's own wrapper) | TradingView | **no** | The iframe it creates is a separate document injected by the provider, and the copyright block's colours are set by the provider's embed script with `!important`. |
 
 Measured, on the provider's own attribution block: `.blue-text` (`#2962FF`) on
-LUC's dark raised surface (`#181B20`) is ~2.6:1, and `.trademark` (`#B2B5BE`) on
+Luc UI's dark raised surface (`#181B20`) is ~2.6:1, and `.trademark` (`#B2B5BE`) on
 the light surface is ~4.0:1 — both below AA. The provider sets those colours with
 `!important`, and they fail against TradingView's own dark background too, so this
 is a provider-owned limitation rather than something LUC can fix without breaking
@@ -355,7 +355,7 @@ the Showcase uses a specific label at each call site.
 ### Updated known gaps
 
 - The TradingView iframe interior and the canvas interiors of the chart engines
-  remain outside LUC's audit; both boundaries are documented above and in
+  remain outside Luc UI's audit; both boundaries are documented above and in
   `TRADINGVIEW_GUIDE.md`.
 - The workspace has no pointer-resize affordance below 64rem because the panes
   stack; that is a layout decision, not a missing keyboard path.

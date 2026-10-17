@@ -14,7 +14,7 @@ import { ComposerStudio } from "@/components/studios/composer-studio";
 import { getServerCopy } from "@/lib/i18n/server";
 
 export const metadata: Metadata = {
-  title: "Template Composer — LUC UI",
+  title: "Template Composer — Luc UI",
   description: "Arrange real Blocks into a page plan and copy the arrangement.",
 };
 

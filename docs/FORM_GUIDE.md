@@ -1,8 +1,8 @@
-# LUC UI — form guide
+# Luc UI — form guide
 
-How to build a form in LUC UI without turning it into a framework.
+How to build a form in Luc UI without turning it into a framework.
 
-The short version: **LUC UI does not own form state.** It owns the parts every
+The short version: **Luc UI does not own form state.** It owns the parts every
 product would otherwise rebuild — one field anatomy, one submit lifecycle, one
 error summary, one place for messages — and leaves values, validation and
 submission to whatever the product already uses.

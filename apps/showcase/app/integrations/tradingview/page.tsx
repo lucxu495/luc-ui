@@ -41,7 +41,7 @@ const LANES = [
     lane: "LUC FinancialChart",
     data: "Your prepared OHLC",
     engine: "Lightweight Charts",
-    use: "Your candles, overlays, panes and indicators, with LUC's theme, tooltips and accessible table fallback.",
+    use: "Your candles, overlays, panes and indicators, with Luc UI's theme, tooltips and accessible table fallback.",
     avoid: "Do not use to re-implement a generic market chart the provider already hosts well.",
   },
   {
@@ -66,7 +66,7 @@ export default function TradingViewOverviewPage() {
       <PageHeader
         eyebrow={tcs("Integrations · TradingView")}
         title="Provider market data, LUC-shaped"
-        lead="TradingView embeds cover the market views a product should not rebuild: standard charts, quotes, screeners, heatmaps, news and macro calendars. They complement LUC's own chart engines rather than replacing them, and they stay provider data — LUC never reads a widget to get a number."
+        lead="TradingView embeds cover the market views a product should not rebuild: standard charts, quotes, screeners, heatmaps, news and macro calendars. They complement Luc UI's own chart engines rather than replacing them, and they stay provider data — LUC never reads a widget to get a number."
       />
 
       <Section

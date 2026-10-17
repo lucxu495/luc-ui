@@ -1,6 +1,6 @@
-# LUC UI — source policy
+# Luc UI — source policy
 
-How LUC UI treats other people's work.
+How Luc UI treats other people's work.
 
 ## The three-step rule
 
@@ -8,7 +8,7 @@ How LUC UI treats other people's work.
    projects as it takes to understand a pattern properly.
 2. **Depend narrowly.** Add a runtime dependency only when it removes a class of
    bug we would otherwise own forever (see `research/dependency-decisions.md`).
-3. **Own the language.** Whatever we ship must read as LUC UI. If a component
+3. **Own the language.** Whatever we ship must read as Luc UI. If a component
    looks like its upstream, it is not finished.
 
 ## Before copying any source
@@ -136,7 +136,7 @@ verification command for each.
 | `bvaughn/react-resizable-panels` v4 | resizable panes, separators, keyboard resize | MIT | **dependency** (Workspace) |
 | `47ng/nuqs` v2 | Next App Router URL plumbing | MIT | **Showcase-only adapter**; never a `@luc/ui` dependency |
 | `rolldown/tsdown` + `publint` + `@arethetypeswrong/cli` | package build and validation | MIT | **dev-only** |
-| `shadcn-ui/lint` | agent-facing design-system rules | MIT | **not adopted at V1.0** — still 0.2.x with a hand-written contract per component; LUC's two native rules cover the failure modes with no dependency (see the V1.0 note below) |
+| `shadcn-ui/lint` | agent-facing design-system rules | MIT | **not adopted at V1.0** — still 0.2.x with a hand-written contract per component; Luc UI's two native rules cover the failure modes with no dependency (see the V1.0 note below) |
 
 ## V1.0 — no new sources, one rule kept deliberately
 

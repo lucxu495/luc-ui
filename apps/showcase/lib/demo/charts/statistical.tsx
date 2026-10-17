@@ -394,6 +394,6 @@ export const chartStatisticalDemos: readonly DemoSpec[] = [
       ariaLabel: "Fit with confidence band",
     },
     render: (props) => <ScatterRegressionChart {...props} />,
-    note: "The line and the band are supplied endpoints and widths: LUC UI draws a fit, it never computes one.",
+    note: "The line and the band are supplied endpoints and widths: Luc UI draws a fit, it never computes one.",
   }),
 ];

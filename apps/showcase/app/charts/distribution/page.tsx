@@ -17,7 +17,7 @@ export default function DistributionPage() {
       <PageHeader
         eyebrow={tcs("Charts · Distribution")}
         title="Shape of a sample"
-        lead="Histograms and box plots answer different questions: the histogram shows the shape, the box plot compares many samples at once. Both take prepared values — LUC UI never bins, and never decides what an outlier is."
+        lead="Histograms and box plots answer different questions: the histogram shows the shape, the box plot compares many samples at once. Both take prepared values — Luc UI never bins, and never decides what an outlier is."
       />
 
       <Section

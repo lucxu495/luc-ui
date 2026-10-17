@@ -1,4 +1,4 @@
-# LUC UI — Components V2
+# Luc UI — Components V2
 
 The authoritative specification for the component library's **taxonomy, API
 conventions and documentation UX**. Where this document and a page disagree, the
@@ -9,7 +9,7 @@ It exists because the library is large and does not yet read like one product:
 in a full-width playground, and installation instructions repeated on every
 detail page. Ant Design is the reference for *taxonomy and documentation UX* —
 what goes where, how much a page says, what an example owes the reader — not for
-visual identity, source or copy. LUC's own tokens, materials and motion stay exactly
+visual identity, source or copy. Luc UI's own tokens, materials and motion stay exactly
 as they are.
 
 ## 1. What was measured, and where
@@ -77,7 +77,7 @@ a Divider has no `loading`.
 
 ## 4. Ant Design → LUC coverage
 
-Read from LUC's real exports, not from filenames. `COMPLETE` means the capability
+Read from Luc UI's real exports, not from filenames. `COMPLETE` means the capability
 exists publicly with a documented page; `RENAMED` means LUC ships it under a
 different name (the mapping is the point); `PARTIAL` means something real is
 missing; `MISSING` means there is no public equivalent; `N/A` means the capability
@@ -176,7 +176,7 @@ Both rows are marked with a decision rather than a gap, because "Ant Design has
 one and LUC does not" is not a reason to add a component:
 
 - **Cascader is deliberately not built.** What it offers is a hierarchical choice
-  rendered as columns of options, whose value is the path. LUC's product surface
+  rendered as columns of options, whose value is the path. Luc UI's product surface
   has no such control: the hierarchical chooser it actually needed is a `TreeView`
   inside a `Popover` — one value, one tree, keyboard support that the platform
   already defines — and a column chooser is a second interaction model to

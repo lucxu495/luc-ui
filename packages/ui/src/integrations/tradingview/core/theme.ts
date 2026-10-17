@@ -24,7 +24,7 @@ import type { TradingViewTheme } from "./types";
  *
  * Only tokens with a clear semantic counterpart are mapped. TradingView's
  * market-status chips and its positive/negative *areas* are left alone: the
- * provider keeps its own design there, and LUC's up/down axis is expressed
+ * provider keeps its own design there, and Luc UI's up/down axis is expressed
  * through `--chart-positive` / `--chart-negative` only.
  */
 export const TRADINGVIEW_TOKEN_BRIDGE: Readonly<Record<string, string>> = {
@@ -103,7 +103,7 @@ export function tradingViewTokenStyle(options: TradingViewTokenStyleOptions): CS
   return Object.keys(style).length > 0 ? (style as CSSProperties) : undefined;
 }
 
-/** Resolve the provider theme from LUC's resolved theme. */
+/** Resolve the provider theme from Luc UI's resolved theme. */
 export function resolveTradingViewTheme(
   theme: "dark" | "light" | "auto",
   lucTheme: "dark" | "light",

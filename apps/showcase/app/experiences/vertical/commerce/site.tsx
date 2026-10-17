@@ -175,7 +175,7 @@ export function NorthlightStore() {
           {placed ? (
             <p className="rounded-sm border border-line-subtle bg-surface-sunken p-3 text-caption text-fg-secondary">
               {tcs(
-                "Order placed. This demonstration stops here — there is no payment provider and no card field anywhere in LUC UI.",
+                "Order placed. This demonstration stops here — there is no payment provider and no card field anywhere in Luc UI.",
               )}
             </p>
           ) : (

@@ -106,7 +106,7 @@ export default function ChartArchitecturePage() {
       <PageHeader
         eyebrow={tcs("Charts · Architecture")}
         title="How the chart system is put together"
-        lead="Two engines, one experience. The rendering engines are infrastructure: they draw pixels, and everything the reader actually perceives — tooltips, legends, ranges, annotations, synchronisation, fullscreen — is owned by LUC UI."
+        lead="Two engines, one experience. The rendering engines are infrastructure: they draw pixels, and everything the reader actually perceives — tooltips, legends, ranges, annotations, synchronisation, fullscreen — is owned by Luc UI."
       />
 
       <Section title={tcs("Layers")} description={tcs("Nothing above the adapter layer knows which engine is drawing.")}>

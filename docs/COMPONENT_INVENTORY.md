@@ -1,4 +1,4 @@
-# LUC UI — component inventory (V1.0)
+# Luc UI — component inventory (V1.0)
 
 Historical V1.0 family inventory and gap rationale. **This document is not a
 source of truth for what the package exports, and its numbers are illustrative.**
@@ -266,7 +266,7 @@ suite and the package gates at the freeze.
 
 ### V1.0 conclusion
 
-LUC UI V1.0 is ready to be the foundation of the first real product consumer.
+Luc UI V1.0 is ready to be the foundation of the first real product consumer.
 The evidence is in `docs/V1_API_AUDIT.md`, `docs/V1_TOKEN_AUDIT.md`, the test
 suite, the package gates and the browser QA report — not in a score.
 

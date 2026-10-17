@@ -1,13 +1,13 @@
 # Static rendering and capture
 
-LUC UI is an interactive React library. It is also the optional visual layer of
+Luc UI is an interactive React library. It is also the optional visual layer of
 `luc-render`, which turns a document into a PNG, a WebP or a PDF — and those two
 roles want different things from the same component. This is the contract
 between them.
 
 It is written for whoever writes that capture host. Everything here is a public
 prop or a public export; there is no capture-only mode and no renderer
-dependency inside LUC UI.
+dependency inside Luc UI.
 
 ## 1. The three things a capture changes
 
@@ -121,10 +121,10 @@ visibly soft.
 
 ## 7. Fonts and images are the host's job
 
-LUC UI resolves `--font-sans` and `--font-mono` from the document. A capture
+Luc UI resolves `--font-sans` and `--font-mono` from the document. A capture
 that has not loaded the fonts it declares measures and paints different text
 than the browser would; wait for `document.fonts.ready` before capturing.
-Images referenced by a document model are the host's to materialise — LUC UI
+Images referenced by a document model are the host's to materialise — Luc UI
 never fetches anything.
 
 ## 8. What is not covered
@@ -135,6 +135,6 @@ never fetches anything.
   annotations are part of the chart.
 * **A declared static fallback per component.** A chart still needs a client
   bundle to hydrate. `luc-render` ships its own dependency-free SVG fallback for
-  the no-JavaScript path; LUC UI does not promise that every component can
+  the no-JavaScript path; Luc UI does not promise that every component can
   render without one, and a component that measures the DOM at mount time will
   need its own static path before it can be used print-only.

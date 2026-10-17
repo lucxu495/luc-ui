@@ -1,4 +1,4 @@
-# LUC UI — App shell guide
+# Luc UI — App shell guide
 
 The application frame. This is the document to read before writing anything that
 looks like "a sidebar and a topbar".

@@ -38,7 +38,7 @@ export default function ShimmerPage() {
       <PageHeader
         eyebrow={tcs("Motion")}
         title="Shimmer"
-        lead="One soft highlight sweeping across a surface. It is the loading language of LUC UI — a skeleton that carries shape, not a spinner that only says “wait”."
+        lead="One soft highlight sweeping across a surface. It is the loading language of Luc UI — a skeleton that carries shape, not a spinner that only says “wait”."
       />
 
       <Section title={tcs("Playground")} description={tcs("A single band, moving on the standard curve. Nothing else on the surface animates.")}>

@@ -83,7 +83,7 @@ const SHELL_CODE = [
   `  topbar={`,
   `    <AppShellTopbar>`,
   `      <AppShellMobileTrigger />`,
-  `      <Breadcrumbs items={[{ label: "LUC UI", href: "/" }, { label: "Overview" }]} />`,
+  `      <Breadcrumbs items={[{ label: "Luc UI", href: "/" }, { label: "Overview" }]} />`,
   `    </AppShellTopbar>`,
   `  }`,
   `  statusBar={<AppShellStatusBar>Updated 12:04 UTC</AppShellStatusBar>}`,

@@ -24,7 +24,7 @@ export default function TradingViewSymbolDetailsPage({ api }: { api?: ReactNode 
       <PageHeader
         eyebrow={tcs("Integrations · TradingView · Symbol details")}
         title="One instrument, four depths"
-        lead="Facts, provider-computed ratings, fundamentals and the company profile. LUC computes none of these values and stores none of them — they are TradingView's data, shown in LUC's layout."
+        lead="Facts, provider-computed ratings, fundamentals and the company profile. LUC computes none of these values and stores none of them — they are TradingView's data, shown in Luc UI's layout."
       />
 
       <Section title={tcs("Symbol Info")} description={tcs("Price, ranges, market cap and valuation ratios.")}>

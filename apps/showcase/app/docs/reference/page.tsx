@@ -21,7 +21,7 @@ import { docGroups, docEntries, entriesInFamily, familiesInGroup } from "@/lib/d
 import { getServerCopy } from "@/lib/i18n/server";
 
 export const metadata: Metadata = {
-  title: "API reference — LUC UI",
+  title: "API reference — Luc UI",
   description: "Every documented entry, grouped by family, with the exports it documents.",
 };
 

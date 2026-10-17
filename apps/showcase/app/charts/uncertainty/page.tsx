@@ -36,7 +36,7 @@ const BAND = marketSeries({ days: 420 }).map((row) => {
 
 /**
  * The V1.1 research vocabulary: uncertainty bands, prepared fits, categorical
- * time strips and event studies. Every value on this page is *prepared* — LUC UI
+ * time strips and event studies. Every value on this page is *prepared* — Luc UI
  * never simulates, regresses or bins.
  */
 export default function UncertaintyPage() {

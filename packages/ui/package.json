@@ -2,7 +2,7 @@
   "name": "@luc/ui",
   "version": "1.0.0",
   "private": false,
-  "description": "LUC UI \u2014 the shared visual and interaction system for LUC products.",
+  "description": "Luc UI \u2014 an accessible React and TypeScript design system for product interfaces.",
   "license": "MIT",
   "repository": {
     "type": "git",

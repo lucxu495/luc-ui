@@ -1,4 +1,4 @@
-# LUC UI — URL state guide
+# Luc UI — URL state guide
 
 ## The rule
 

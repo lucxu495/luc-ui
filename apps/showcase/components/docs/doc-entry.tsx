@@ -339,13 +339,11 @@ export function PropsTable({ symbol, tcs }: { symbol: ApiSymbol; tcs: Translate 
 /**
  * Installation.
  *
- * Both distribution modes are shown, and the one that does not work today says
- * so. A reader who copies the registry command and gets a 404 has been lied to
- * by a documentation page, which is the specific failure this section exists to
- * prevent.
+ * Both verified distribution modes are shown: the public Git tag and the packed
+ * release artifact. The registry is not offered because it does not resolve yet.
  */
 export function InstallSection({ entry, tcs }: { entry: DocEntry; tcs: Translate }) {
-  const modes: DistributionMode[] = ["source", "package"];
+  const modes: DistributionMode[] = ["git", "tarball"];
   const symbols = entry.exports.slice(0, 4);
   const usage = `import { ${symbols.join(", ")} } from "${entry.importPath}";`;
 
@@ -395,7 +393,7 @@ export function InstallSection({ entry, tcs }: { entry: DocEntry; tcs: Translate
             </li>
           ))}
         </ul>
-        {setupSnippets("source").map((snippet) => (
+        {setupSnippets("git").map((snippet) => (
           <div key={snippet.title} className="flex flex-col gap-1.5">
             <Text variant="caption" tone="muted" as="p">
               {tcs(snippet.title)} — {tcs(snippet.description)}

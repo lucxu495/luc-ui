@@ -55,7 +55,7 @@ export interface RegressionBand {
 
 export interface ScatterRegressionChartProps extends RelationshipCommonProps {
   points: readonly Observation[];
-  /** Pre-computed fit. LUC UI never regresses — the analytics layer does. */
+  /** Pre-computed fit. Luc UI never regresses — the analytics layer does. */
   regression?: RegressionLine;
   band?: RegressionBand;
   /** Draw x = 0 and y = 0 guides (default: true when the extent crosses zero). */

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
    * renders metadata, so a new sentence here would be a translation nobody reads.
    */
   description:
-    "Every component, chart, motion component, block, template, studio, pattern and visual study in LUC UI, filterable by kind, use case and art direction.",
+    "Every component, chart, motion component, block, template, studio, pattern and visual study in Luc UI, filterable by kind, use case and art direction.",
 };
 
 export default async function ExploreBrowseAlias({

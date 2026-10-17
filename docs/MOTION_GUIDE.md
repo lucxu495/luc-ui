@@ -1,6 +1,6 @@
-# LUC UI — motion guide
+# Luc UI — motion guide
 
-Motion in LUC UI answers a question the user already has: *did that work?*
+Motion in Luc UI answers a question the user already has: *did that work?*
 It is never the product.
 
 ## Vocabulary

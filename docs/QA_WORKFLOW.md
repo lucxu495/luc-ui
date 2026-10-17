@@ -1,6 +1,6 @@
-# LUC UI — QA and verification workflow
+# Luc UI — QA and verification workflow
 
-This document is the contract for how LUC UI is verified. It exists because the
+This document is the contract for how Luc UI is verified. It exists because the
 original QA suite grew to 91 routes, 132 axe scans and 71 behaviour checks and then
 took **25–58 minutes per run**, almost none of which was spent testing anything
 new. The current tiers keep the same coverage and finish a full milestone sweep
@@ -118,7 +118,7 @@ The contract now is:
    QA fails loudly instead of screenshotting an unhydrated page.
 3. `document.fonts.ready`.
 4. `data-luc-tv-status="idle|loading|ready|error"` on every TradingView wrapper
-   — LUC's own lifecycle attribute, not the provider's markup. **And only after
+   — Luc UI's own lifecycle attribute, not the provider's markup. **And only after
    the widget has been scrolled into view**, because that is what starts the lazy
    load.
 5. A short, bounded settle (≈200–300 ms) for layout.
@@ -142,7 +142,7 @@ Two different questions, two different tiers:
 
 | Question | Tier | How |
 | --- | --- | --- |
-| Does LUC's wrapper behave correctly? | `qa:full` (default) | `page.route` intercepts the two official hosts and answers with a minimal substitute: a module that registers exactly the custom element the request names, and an embed script that appends one iframe into the widget slot. The real loader, the real lifecycle and the real `data-luc-tv-status` attribute all still run. |
+| Does Luc UI's wrapper behave correctly? | `qa:full` (default) | `page.route` intercepts the two official hosts and answers with a minimal substitute: a module that registers exactly the custom element the request names, and an embed script that appends one iframe into the widget slot. The real loader, the real lifecycle and the real `data-luc-tv-status` attribute all still run. |
 | Does the real TradingView integration work? | `qa:providers` | No interception. The real provider scripts load in a real browser: a route sweep over all ten provider routes, plus the wrapper-contract behaviour group. Measured ~46 s + ~20 s. |
 
 The stub is not a mock of LUC. It replaces *the provider's bytes* and nothing
@@ -258,7 +258,7 @@ pnpm qa:rebuild        # force a rebuild
 5. Run `qa:full` once, at milestone completion, not per change.
 6. If a build exceeds its bound, stop and read the error; do not retry blindly.
 7. Read `qa-report.json` timings before theorising about a slowdown.
-8. LUC UI is V1-frozen: add a component only for a proven product need.
+8. Luc UI is V1-frozen: add a component only for a proven product need.
 
 ### Verification by change type
 

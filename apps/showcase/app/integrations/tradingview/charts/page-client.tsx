@@ -22,7 +22,7 @@ export default function TradingViewChartsPage({ api }: { api?: ReactNode }) {
       <PageHeader
         eyebrow={tcs("Integrations · TradingView · Charts")}
         title="Provider charts"
-        lead="Four chart widgets, from a sparkline in a card to the full TradingView terminal. Use them when a standard market chart is enough — LUC's own engines take over the moment the data, the overlays or the interaction has to be yours."
+        lead="Four chart widgets, from a sparkline in a card to the full TradingView terminal. Use them when a standard market chart is enough — Luc UI's own engines take over the moment the data, the overlays or the interaction has to be yours."
       />
 
       <Section
@@ -55,7 +55,7 @@ export default function TradingViewChartsPage({ api }: { api?: ReactNode }) {
 
       <Section
         title={tcs("Mini Chart")}
-        description={tcs("The card-sized chart. Web Component format, so it follows LUC's tokens directly.")}
+        description={tcs("The card-sized chart. Web Component format, so it follows Luc UI's tokens directly.")}
       >
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {([

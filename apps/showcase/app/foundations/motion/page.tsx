@@ -136,7 +136,7 @@ export default function MotionPage() {
 
       <Section
         title={tcs("Reduced motion")}
-        description={tcs("Every animation in LUC UI has a stated fallback. Use the “Motion auto / Reduced” control in the top bar to review both paths live.")}
+        description={tcs("Every animation in Luc UI has a stated fallback. Use the “Motion auto / Reduced” control in the top bar to review both paths live.")}
       >
         <div className="grid gap-4 lg:grid-cols-2">
           <Card variant="outline" className="gap-3 p-4">

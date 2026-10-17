@@ -170,7 +170,7 @@ export function DemoShell({
       topbar={
         <AppShellTopbar>
           {mobileTrigger ? <AppShellMobileTrigger /> : null}
-          <Breadcrumbs items={[{ label: "LUC UI", href: href("/") }, ...resolvedBreadcrumbs]} />
+          <Breadcrumbs items={[{ label: "Luc UI", href: href("/") }, ...resolvedBreadcrumbs]} />
           <span className="ml-auto text-caption text-fg-muted">{title}</span>
         </AppShellTopbar>
       }

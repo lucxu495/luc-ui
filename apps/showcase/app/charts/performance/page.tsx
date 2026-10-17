@@ -144,7 +144,7 @@ export default function PerformancePage() {
             },
             {
               title: tcs("Decimation is the caller's call"),
-              copy: "LUC UI does not silently drop points. If a series needs decimating, the data layer does it.",
+              copy: "Luc UI does not silently drop points. If a series needs decimating, the data layer does it.",
             },
           ].map((item) => (
             <Card key={item.title} variant="outline" className="gap-1.5 p-4">

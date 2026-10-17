@@ -28,7 +28,7 @@ export default async function IndustriesPage() {
       <PageHeader
         eyebrow={tcs("Patterns")}
         title="Cross-industry"
-        lead="LUC UI grew up on dense analytics, and that shows in its tables, charts and workspaces. It is not only for them. Each vignette below is built from the same public components — only the palette and the type voice change."
+        lead="Luc UI grew up on dense analytics, and that shows in its tables, charts and workspaces. It is not only for them. Each vignette below is built from the same public components — only the palette and the type voice change."
       />
 
       <Section

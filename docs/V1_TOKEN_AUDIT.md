@@ -1,11 +1,11 @@
-# LUC UI V1 — token audit and freeze
+# Luc UI V1 — token audit and freeze
 
 Everything here was measured against `packages/ui/src/tokens/tokens.css` at the
 V1 freeze (566 lines before this round, 5 more after). Counts are declarations,
 not unique values; a token appearing in both themes is counted once per block
 because that is how it is maintained.
 
-The token layer is the only place in LUC UI where a raw colour may appear, and
+The token layer is the only place in Luc UI where a raw colour may appear, and
 that rule is enforced by `luc/no-raw-color-literals` (see `SOURCE_POLICY.md`).
 
 ## 1. The layers
