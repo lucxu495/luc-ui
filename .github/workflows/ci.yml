@@ -8,13 +8,18 @@
 #            command — `pnpm verify` — because re-listing its steps here would
 #            be a second pipeline to keep in sync with the first.
 #
-#   browser  OPTIONAL (environment-dependent). It builds the Showcase image and
+#   consumer MANDATORY. It creates clean Vite and Next.js projects outside this
+#            workspace, installs the packed artifact with plain npm, builds both
+#            for production and loads them in Chromium.
+#
+#   browser  ADVISORY for ordinary pull requests (environment-dependent). It
+#            builds the Showcase image and
 #            runs the browser tiers, including the Linux visual baselines that a
 #            macOS developer cannot diff (ADR-036). Docker-in-CI and a 10-minute
 #            browser sweep are real infrastructure, so the job is allowed to
 #            fail without blocking a merge — but it is not skipped silently: its
-#            result is visible on the run, and the README says which checks it
-#            owns.
+#            result is visible on the run, and a release is not approved until
+#            the release checklist has a successful browser run.
 #
 # Not here, on purpose: no publish, no tag, no release and no deploy. The
 # package is distributed from a git tag cut by hand (docs/RELEASES.md).
@@ -61,8 +66,43 @@ jobs:
       - name: Verify
         run: pnpm verify
 
+  consumer:
+    name: clean consumer apps (Vite + Next.js)
+    runs-on: ubuntu-latest
+    needs: verify
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Install Chromium for consumer checks
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Install, build and load the packed package
+        run: pnpm test:consumers
+
+      - name: Upload consumer evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: consumer-evidence
+          path: artifacts/consumers
+          retention-days: 14
+          if-no-files-found: ignore
+
   browser:
-    name: browser QA and Linux visual baselines (optional)
+    name: browser QA and Linux visual baselines (advisory for PRs)
     runs-on: ubuntu-latest
     needs: verify
     # Environment-dependent, so it does not block a merge. It still reports.
@@ -92,24 +132,19 @@ jobs:
       - name: Build and start the Showcase
         run: |
           docker compose config > /dev/null
-          docker compose up -d --build
-          for attempt in $(seq 1 40); do
-            status=$(docker inspect luc-ui-showcase-standalone --format '{{.State.Health.Status}}')
-            echo "health: $status"
-            [ "$status" = "healthy" ] && exit 0
-            sleep 3
-          done
-          docker compose logs --tail=80 showcase
-          exit 1
+          node scripts/qa-server.mjs --ensure-only
 
-      # Route health + behaviour + axe at desktop and 390 px. The target-size
+      # Route health + axe + behaviour at desktop and 390 px. The target-size
       # probe is separate because axe does not evaluate that rule in the
-      # touch-emulated mobile context — see qa/target-size.mjs.
+      # touch-emulated mobile context — see qa/target-size.mjs. Brand assets
+      # are checked in the browser because a filename test cannot prove which
+      # variant is painted after hydration.
       - name: Browser QA
         run: |
           export LUC_QA_BASE_URL=http://127.0.0.1:5300
-          pnpm qa:behaviour
+          pnpm qa:full
           node apps/showcase/qa/target-size.mjs
+          node apps/showcase/qa/brand-assets.mjs
 
       # Linux baselines only. On macOS this suite skips with a reason instead of
       # writing a snapshot (ADR-036); on the Linux runner it asserts.
