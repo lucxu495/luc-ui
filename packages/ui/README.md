@@ -1,6 +1,6 @@
 # @luc/ui
 
-LUC UI is a reusable React 19 component, chart and application UI package. It is
+Luc UI is a reusable React 19 component, chart and application UI package. It is
 published from this repository as a git tag — not from a registry:
 
 ```bash

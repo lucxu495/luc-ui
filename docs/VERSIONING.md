@@ -46,7 +46,7 @@ requires consumer work.
 
 The `@luc/ui/tradingview` entry is versioned with the package, but the widgets
 themselves are owned by TradingView and can change without notice — attribute
-names, minimum sizes, theming surface. LUC's half of the contract (typed props,
+names, minimum sizes, theming surface. Luc UI's half of the contract (typed props,
 the registry, the loader allow-list, the theme bridge) follows SemVer; the
 provider's half does not. `docs/research/v0.6-tradingview-policy-audit.md`
 records what was verified, and `docs/TRADINGVIEW_GUIDE.md` documents the

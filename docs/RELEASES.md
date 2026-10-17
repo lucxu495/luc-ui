@@ -4,6 +4,11 @@
 points at a commit whose root is the built package. This document is the
 contract: what a release is, how to make one, and what a consumer can rely on.
 
+Current public state: package `1.0.0`, tag `v1.0.0`, commit
+`1ea6cd7b7dad96d9b60daf4654ade2721a0ab5e0`. The tag is immutable. See
+[OPEN_SOURCE_RELEASE_CHECKLIST.md](./OPEN_SOURCE_RELEASE_CHECKLIST.md) before
+cutting a successor.
+
 ```bash
 pnpm add @luc/ui@github:lucxu495/luc-ui#v1.0.0
 ```

@@ -3,9 +3,8 @@
  *
  * Documentation for a library that is not yet on a registry has one specific
  * way to be dishonest: print `npm install @luc/ui` and let the reader discover
- * the 404. So the two distribution modes are shown side by side — the workspace
- * and tarball path that works today, and the registry command that does not
- * yet — and the second one says so in the badge and in the sentence above it.
+ * the 404. So the two real install paths are shown side by side — the public
+ * Git tag and the packed release artifact.
  * The commands come from `lib/docs/install.ts`, the same module every component
  * page uses, so a page cannot drift from the front door.
  *
@@ -30,13 +29,13 @@ export async function HomeInstall() {
   return (
     <Section
       data-testid="home-install"
-      title={tcs("Two ways to install it, one of them real")}
+      title={tcs("Install from a Git tag or a vetted tarball")}
       description={tcs(
-        "The package is built, packed and installed by an external consumer fixture on every release gate — but it is not published to a registry, so only the tarball path resolves today.",
+        "The package is not published on npm. The public Git tag installs the built package directly; the release tarball is the offline, checksum-pinned alternative.",
       )}
     >
       <div className="grid gap-4 lg:grid-cols-2">
-        {(["source", "package"] as const).map((mode) => {
+        {(["git", "tarball"] as const).map((mode) => {
           const info = DISTRIBUTION_MODES[mode];
           return (
             <Card key={mode} variant="outline" className="gap-3 p-4">
@@ -45,9 +44,7 @@ export async function HomeInstall() {
                   {info.label}
                 </Heading>
                 <Badge tone={info.available ? "positive" : "warning"} size="sm" dot>
-                  {info.available
-                    ? tcs("Works today")
-                    : tcs("Not published yet")}
+                  {info.available ? tcs("Verified") : tcs("Not published yet")}
                 </Badge>
               </Inline>
               <Text variant="caption" tone="muted" as="p">

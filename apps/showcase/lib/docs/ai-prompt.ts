@@ -66,7 +66,7 @@ function propsLine(props: Record<string, unknown> | undefined): string {
 export function buildAiPrompt({ entry, props, code, contract }: AiPromptInput): string {
   const symbols = entry.exports.slice(0, 6);
   const lines: string[] = [
-    `Implement \`${entry.title}\` from LUC UI. It is: ${entry.summary}`,
+    `Implement \`${entry.title}\` from Luc UI. It is: ${entry.summary}`,
     ``,
     `Import it with: ${importLine(entry.importPath, symbols)}`,
     `Requires: ${PEER_REQUIREMENTS.join("; ")}. Import the stylesheet once at the app root and wrap the tree in \`LucProvider\`. Both come from the package that publishes ${entry.importPath.split("/")[0]}.`,
@@ -81,7 +81,7 @@ export function buildAiPrompt({ entry, props, code, contract }: AiPromptInput): 
   lines.push(
     ``,
     `Accessibility: keep the component's own semantics. Do not re-implement its ARIA wiring, do not add roles it does not declare, and make sure every interactive element is reachable and operable from the keyboard with a visible focus state.`,
-    `Styling: use LUC UI design tokens and the component's own props. Do not restyle with raw colour literals and do not override the component's internal structure with page CSS.`,
+    `Styling: use Luc UI design tokens and the component's own props. Do not restyle with raw colour literals and do not override the component's internal structure with page CSS.`,
     `Motion: respect \`prefers-reduced-motion\`. The component already does, so do not disable it.`,
   );
 

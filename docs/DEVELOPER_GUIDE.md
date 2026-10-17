@@ -1,10 +1,19 @@
-# Using LUC UI
+# Using Luc UI
 
-`@luc/ui` is currently a local, unpublished ESM package. Its manifest requires React and React DOM 19, Node 22 or newer for the repository tools, and Tailwind CSS v4 for the supplied stylesheet (`packages/ui/package.json`, `../package.json`). Install it from the workspace or from a locally packed tarball; there is no npm release yet.
+`@luc/ui` is a public, ESM-only package. The current `1.0.0` release installs
+from the immutable `v1.0.0` Git tag; there is no npm registry release yet. It
+requires React and React DOM 19, Tailwind CSS v4 for the supplied stylesheet,
+and Node 22 or newer for the repository tools (`packages/ui/package.json`,
+`../package.json`).
+
+```bash
+pnpm add @luc/ui@github:lucxu495/luc-ui#v1.0.0
+```
 
 ## Start a React or Next.js app
 
-At the app root, import the stylesheet once:
+Install Tailwind v4 beside the package. Vite uses `@tailwindcss/vite`; Next.js
+uses `@tailwindcss/postcss`. At the app root, import the stylesheet once:
 
 ```css
 @import "tailwindcss";
@@ -12,6 +21,23 @@ At the app root, import the stylesheet once:
 ```
 
 The **packed** `styles.css` scans the installed `dist` modules with its own relative `@source`; it contains no `src` directory. Do not point Tailwind at `node_modules/@luc/ui/src`. The token-only entry is `@luc/ui/tokens.css` for apps that supply their own base layer (`packages/ui/src/styles/index.css`, `packages/ui/scripts/postbuild.mjs`).
+
+Vite:
+
+```ts
+import tailwindcss from "@tailwindcss/vite";
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
+
+export default defineConfig({ plugins: [react(), tailwindcss()] });
+```
+
+Next.js App Router:
+
+```js
+// postcss.config.mjs
+export default { plugins: { "@tailwindcss/postcss": {} } };
+```
 
 Wrap the rendered app with `LucProvider`; use `lucThemeInitScript` in the document head to avoid an incorrect first theme paint. In Next.js, the provider is a client boundary and can wrap server-rendered children. Pass an explicit locale for date/time output that is rendered on the server (`packages/ui/src/providers/luc-provider.tsx`, `packages/ui/src/providers/theme-script.ts`, `docs/DATE_TIME_GUIDE.md`).
 

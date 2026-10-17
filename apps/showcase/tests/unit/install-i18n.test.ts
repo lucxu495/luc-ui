@@ -44,8 +44,8 @@ const chineseKeys = (): Set<string> => new Set(Object.keys(dictionaries["zh-CN"]
 
 /** The literal keys the docs surface looks up, including the interpolated ones. */
 const SURFACE_KEYS = [
-  "Workspace or tarball",
-  "Package registry",
+  "Git tag",
+  "Packed tarball",
   "Works today",
   "Not published yet",
   "Required setup",
@@ -106,7 +106,7 @@ describe("the installation surface is translatable", () => {
       expect(manager).toMatch(/^[a-z]+$/);
     }
     for (const requirement of PEER_REQUIREMENTS) {
-      expect(requirement).toMatch(/^[A-Za-z-]+ >= [\d.]+/);
+      expect(requirement).toMatch(/^[A-Za-z0-9-]+ (?:[\^~]|>=) ?[\d.]+/);
     }
   });
 });

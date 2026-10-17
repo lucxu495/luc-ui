@@ -10,10 +10,12 @@
 import { describe, expect, it } from "vitest";
 import {
   DISTRIBUTION_MODES,
+  GIT_SPEC,
   PACKAGE_MANAGERS,
   PACKAGE_NAME,
   PEER_REQUIREMENTS,
   PACKED_TARBALL,
+  PUBLIC_VERSION,
   distributionSpec,
   importLine,
   installCommand,
@@ -31,27 +33,26 @@ describe("installation", () => {
     }
   });
 
-  it("labels the mode that cannot work yet, and does not pretend otherwise", () => {
-    expect(DISTRIBUTION_MODES.source.available).toBe(true);
-    expect(DISTRIBUTION_MODES.package.available).toBe(false);
-    expect(DISTRIBUTION_MODES.package.note).toContain("not");
+  it("offers the two verified distribution modes", () => {
+    expect(DISTRIBUTION_MODES.git.available).toBe(true);
+    expect(DISTRIBUTION_MODES.tarball.available).toBe(true);
+    expect(DISTRIBUTION_MODES.git.note).toContain("v1.0.0");
+    expect(DISTRIBUTION_MODES).not.toHaveProperty("package");
   });
 
-  it("never invents a version number", () => {
+  it("pins the public Git spec to the actual package version", () => {
     const commands = PACKAGE_MANAGERS.flatMap((manager) =>
-      (["source", "package"] as const).map((mode) => installCommand(manager, distributionSpec(mode))),
+      (["git", "tarball"] as const).map((mode) => installCommand(manager, distributionSpec(mode))),
     );
-    for (const command of commands) {
-      /* A caret, tilde or bare semver in an install command means the page is
-       * claiming a release exists. None of them may appear. */
-      expect(command, command).not.toMatch(/@[\^~]?\d/);
-    }
-    expect(distributionSpec("source")).toBe(PACKED_TARBALL);
-    expect(distributionSpec("package")).toBe(PACKAGE_NAME);
+    expect(GIT_SPEC).toContain(`#v${PUBLIC_VERSION}`);
+    expect(distributionSpec("git")).toBe(GIT_SPEC);
+    expect(distributionSpec("tarball")).toBe(PACKED_TARBALL);
+    expect(commands.some((command) => command.includes(GIT_SPEC))).toBe(true);
+    expect(commands.some((command) => command.endsWith(` ${PACKAGE_NAME}`))).toBe(false);
   });
 
   it("states the setup a consumer has to perform, in order", () => {
-    const snippets = setupSnippets("source");
+    const snippets = setupSnippets("git");
     expect(snippets.map((snippet) => snippet.title)).toEqual(["Install", "Import the styles", "Install the provider"]);
     expect(snippets[1]?.code).toContain("styles.css");
     expect(snippets[2]?.code).toContain("LucProvider");

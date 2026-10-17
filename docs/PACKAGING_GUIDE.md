@@ -1,4 +1,4 @@
-# LUC UI — Packaging guide
+# Luc UI — Packaging guide
 
 ## What ships
 

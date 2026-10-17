@@ -7,17 +7,19 @@
  * registry. So there are two honest modes, and the UI always says which one the
  * reader is looking at:
  *
- *   source   — true today. Either this monorepo's pnpm workspace, or the packed
- *              tarball that `pnpm verify:package` produces and installs.
- *   package  — intended publication usage. Correct in shape, labelled as not
- *              yet published, because a command that fails on paste is worse
- *              than a sentence that explains why it is not there yet.
+ *   git      — the public Git tag that consumers install today.
+ *   tarball  — the packed release artifact used for offline and checksum-pinned
+ *              installs.
  */
 
 export type PackageManager = "npm" | "pnpm" | "yarn" | "bun";
-export type DistributionMode = "source" | "package";
+export type DistributionMode = "git" | "tarball";
 
 export const PACKAGE_MANAGERS: readonly PackageManager[] = ["pnpm", "npm", "yarn", "bun"];
+export const PACKAGE_NAME = "@luc/ui";
+export const PUBLIC_VERSION = "1.0.0";
+export const GIT_SPEC = `${PACKAGE_NAME}@github:lucxu495/luc-ui#v${PUBLIC_VERSION}`;
+export const PACKED_TARBALL = `./luc-ui-${PUBLIC_VERSION}.tgz`;
 
 export interface DistributionModeInfo {
   id: DistributionMode;
@@ -29,19 +31,19 @@ export interface DistributionModeInfo {
 }
 
 export const DISTRIBUTION_MODES: Record<DistributionMode, DistributionModeInfo> = {
-  source: {
-    id: "source",
-    label: "Workspace or tarball",
+  git: {
+    id: "git",
+    label: "Git tag",
     available: true,
     note:
-      "The library is distributed as source inside its pnpm workspace, and as a packed tarball that is installed and built in an external consumer fixture. This is what works today.",
+      "The public install is the built package at the immutable v1.0.0 Git tag. It needs no install script, and the lockfile records the resolved commit.",
   },
-  package: {
-    id: "package",
-    label: "Package registry",
-    available: false,
+  tarball: {
+    id: "tarball",
+    label: "Packed tarball",
+    available: true,
     note:
-      "Intended publication usage. The package is built and packed, but no release has been published to a registry yet, so these commands do not resolve today.",
+      "Use the release tarball for offline or checksum-pinned installs. This repository's consumer gate installs both this artifact and the public Git tag with plain npm.",
   },
 };
 
@@ -64,12 +66,8 @@ export function installCommand(manager: PackageManager, spec: string): string {
   }
 }
 
-/** The spec each mode installs. The package name is the only constant. */
-export const PACKAGE_NAME = "@luc/ui";
-export const PACKED_TARBALL = "./luc-ui-1.0.0.tgz";
-
 export function distributionSpec(mode: DistributionMode): string {
-  return mode === "package" ? PACKAGE_NAME : PACKED_TARBALL;
+  return mode === "git" ? GIT_SPEC : PACKED_TARBALL;
 }
 
 export interface SetupSnippet {
@@ -87,30 +85,29 @@ export function setupSnippets(mode: DistributionMode): SetupSnippet[] {
     {
       title: "Install",
       description:
-        mode === "package"
-          ? "Add the package with whichever manager the project already uses."
-          : "Install the packed tarball that the package gate builds and verifies.",
+        mode === "git"
+          ? "Add the built package from the public Git tag with whichever package manager the project already uses."
+          : "Install the packed release artifact; keep its checksum with the vendored file.",
       code: installCommand("pnpm", distributionSpec(mode)),
       language: "bash",
     },
     {
       title: "Import the styles",
       description:
-        "The design tokens and component styles ship as one stylesheet. Import it once, in the root layout.",
-      code: `import "${PACKAGE_NAME}/styles.css";`,
+        "The stylesheet is Tailwind CSS v4 and ships the tokens plus component styles. Import Tailwind first, then the package stylesheet, once at the application root.",
+      code: `@import "tailwindcss";\n@import "${PACKAGE_NAME}/styles.css";`,
       language: "css",
     },
     {
       title: "Install the provider",
       description:
-        "One provider supplies the resolved theme, the locale and the motion default to every component below it. It is the only provider a product needs.",
+        "One provider supplies the resolved theme, the locale and the motion default to every component below it. In Next.js, put the returned init script in the document head before hydration.",
       code: [
-        `import { LucProvider } from "${PACKAGE_NAME}";`,
-        `import "${PACKAGE_NAME}/styles.css";`,
+        `import { LucProvider, lucThemeInitScript } from "${PACKAGE_NAME}";`,
         ``,
-        `export function Root({ children }: { children: React.ReactNode }) {`,
-        `  return <LucProvider>{children}</LucProvider>;`,
-        `}`,
+        `const themeScript = lucThemeInitScript({ defaultTheme: "dark" });`,
+        `// <head><script dangerouslySetInnerHTML={{ __html: themeScript }} /></head>`,
+        `// <LucProvider defaultTheme="dark">{children}</LucProvider>`,
       ].join("\n"),
       language: "tsx",
     },
@@ -124,8 +121,11 @@ export function setupSnippets(mode: DistributionMode): SetupSnippet[] {
  * support ticket; naming the peers is cheaper than debugging it.
  */
 export const PEER_REQUIREMENTS: readonly string[] = [
-  "react >= 19 and react-dom >= 19",
-  "TypeScript >= 5.6 for the published types",
+  "react ^19.0.0",
+  "react-dom ^19.0.0",
+  "react-hook-form ^7.0.0 (optional, for @luc/ui/forms/react-hook-form)",
+  "tailwindcss ^4.0.0",
+  "node >= 22 (repository tools)",
 ];
 
 /**
