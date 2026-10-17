@@ -19,12 +19,13 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
+import { resolveBaseUrl } from "./base-url.mjs";
 import { classifyRoute, entryRoutes, footerProblems } from "./page-kind.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const APP = path.resolve(HERE, "..");
 const EVIDENCE = path.resolve(HERE, "../../../artifacts/screenshots/showcase-transformation");
-const BASE = process.env.LUC_QA_BASE_URL ?? "http://127.0.0.1:3100";
+const BASE = resolveBaseUrl();
 
 /** Entry pages across all three registry trees, plus the catalogue. */
 const DEFAULT_ROUTES = [
@@ -155,18 +156,25 @@ for (const route of ROUTES) {
   if (problems.length > 0) report.failures.push({ route: "WB-005 sticky stage", problems });
 }
 
-/* --- IA-005: the header carries four capability families ------------------ */
+/* --- IA-005: the header carries the product's own primary areas ----------- */
 {
   const problems = [];
   const observations = [];
   /*
-   * Three primaries, not four. WP-5 moved Motion into Components — it is a
-   * component family, and a header entry made it compete with Charts for the same
-   * glance while a reader looking for a motion primitive under Components found
-   * nothing. The tier assertion lives in
-   * `tests/unit/discovery-areas.test.ts`; this one checks the pixels.
+   * Two primaries: Components and Charts. WP-5 moved Motion into Components — it
+   * is a component family, and a header entry made it compete with Charts for the
+   * same glance while a reader looking for a motion primitive under Components
+   * found nothing. Visuals left this repository for `luc-visuals` and its header
+   * entry went with it.
+   *
+   * This list is the pixel half of an assertion that already exists in
+   * `tests/unit/discovery-areas.test.ts` (`PRIMARY_AREAS.map(id)` → `["components",
+   * "charts"]`). It said `["Components", "Charts", "Visuals"]` for a while after
+   * the extraction, so the probe failed on every run while the unit test passed —
+   * a stale expectation, not a defect in the header. The labels below are the
+   * English display names of those two areas.
    */
-  const EXPECTED = ["Components", "Charts", "Visuals"];
+  const EXPECTED = ["Components", "Charts"];
   try {
     for (const width of [1024, 1280, 1440]) {
       await page.setViewportSize({ width, height: 900 });
@@ -411,25 +419,25 @@ for (const route of ROUTES) {
     const tiles = await readTiles();
     report.exploreTiles = tiles;
 
-    /* The Visuals catalogue states its own size; the two must agree. */
-    await open("/components/buttons");
-    const visualsBanner = await page.evaluate(() => {
-      const match = (document.querySelector("main")?.innerText ?? "").match(/(\d+)\s+elements? across/i);
-      return match ? Number(match[1]) : null;
-    });
-    /* The Blocks gallery states its own size in its "All" filter chip. */
+    /*
+     * The Blocks gallery states its own size in its "All" filter chip.
+     *
+     * There used to be a second cross-check above this one for "visual
+     * elements", reading "N elements across" off `/components/buttons`. Visuals
+     * is another repository now, that banner does not render, and the guard
+     * around the comparison (`if (visualsBanner && …)`) made it a probe that
+     * could not fail: it recorded `null` on every run and asserted nothing. It
+     * is removed rather than left as decoration — this one is the same check
+     * against a number that still has a source.
+     */
     await open("/blocks");
     const blocksChip = await page.evaluate(() => {
       const match = (document.querySelector("main")?.innerText ?? "").match(/All\s*\((\d+)\)/);
       return match ? Number(match[1]) : null;
     });
-    report.exploreCrossCheck = { visualsBanner, blocksChip };
+    report.exploreCrossCheck = { blocksChip };
 
-    const visualsTile = tiles["visual elements"];
     const blocksTile = tiles["blocks"];
-    if (visualsBanner && visualsTile !== visualsBanner) {
-      problems.push(`Explore says ${visualsTile} visual elements; the catalogue renders ${visualsBanner}`);
-    }
     if (blocksChip && blocksTile !== blocksChip) {
       problems.push(`Explore says ${blocksTile} blocks; the gallery lists ${blocksChip}`);
     }

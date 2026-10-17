@@ -9,6 +9,8 @@ import { Example } from "@/components/docs/example";
 import { PropsTable } from "@/components/docs/tables";
 import { useI18n } from "@/lib/i18n/provider";
 import { EntryFooter } from "@/components/docs/entry-footer";
+import { EntryNotes } from "@/components/docs/entry-notes";
+import { ExamplesHeading } from "@/components/docs/examples-heading";
 
 const initialOrder = [
   { id: "ingest", label: "Ingest", description: "04:00 · 1,284 bars" },
@@ -47,6 +49,7 @@ export default function BoardPage() {
   return (
     <DocPage>
       <PageHeader eyebrow={tcs("Components")} title="Sortable list and board" lead={tc("components.board.lead")} />
+      <ExamplesHeading />
 
       <ImportLine line={'import { KanbanBoard, SortableList } from "@luc/ui";'} />
 
@@ -119,6 +122,7 @@ export default function BoardPage() {
           {tc("components.board.api.note")}
         </Text>
       </Section>
+      <EntryNotes entryIds={["kanban-board"]} />
       <EntryFooter />
     </DocPage>
   );

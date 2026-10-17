@@ -70,7 +70,26 @@ export function Heading({ className, size = "heading-sm", tone = "primary", as =
   return (
     <Tag
       data-slot="heading"
-      className={cn(headingClass[size], toneClass[tone], "text-balance", className)}
+      /*
+       * `wrap-anywhere` belongs to every heading, not to the Showcase's page
+       * titles.
+       *
+       * A heading is where a long identifier lands: a component name
+       * (`ParallelCoordinatesChart`), a URL, a file path, a German compound. At
+       * `text-display` one such token is wider than a phone, and with
+       * `overflow-wrap: normal` that width becomes the heading's *min-content*
+       * — which propagates through every flex and grid ancestor and makes the
+       * consumer's whole page scroll sideways. The Showcase fixed its own titles
+       * first; a library whose headings can break their caller's layout is the
+       * same defect one level down.
+       *
+       * `anywhere`, not `break-word`: only the former participates in intrinsic
+       * sizing, so only it stops the overflow at the ancestor. Ordinary text is
+       * unaffected — the browser breaks at spaces as it always did and reaches
+       * inside a word only when that word cannot fit — and CJK text already
+       * breaks between characters, so nothing reflows for it.
+       */
+      className={cn(headingClass[size], toneClass[tone], "text-balance", "wrap-anywhere", className)}
       {...props}
     />
   );

@@ -8,18 +8,19 @@
  * interaction the component claims, at two viewports, so the result is a
  * *finding* whether or not a defect appears.
  *
- *   LUC_QA_BASE_URL=http://127.0.0.1:3100 node qa/card-stack.mjs
+ *   LUC_QA_BASE_URL=http://127.0.0.1:5300 node qa/card-stack.mjs
  */
 
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
+import { resolveBaseUrl } from "./base-url.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const EVIDENCE = path.resolve(HERE, "../../../artifacts/screenshots/showcase-transformation");
 const SHOTS = path.resolve(HERE, "../../../artifacts/screenshots/showcase-transformation");
-const BASE = process.env.LUC_QA_BASE_URL ?? "http://127.0.0.1:3100";
+const BASE = resolveBaseUrl();
 const ROUTES = ["/motion/card-stack", "/motion/spatial"];
 const VIEWPORTS = [
   { name: "desktop", width: 1440, height: 900 },

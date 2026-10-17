@@ -43,6 +43,24 @@ const navigationPath = path.join(appRoot, "lib/navigation.ts");
 const qaRoutesPath = path.join(appRoot, "qa/routes.mjs");
 const proseZhPath = path.join(appRoot, "lib/i18n/prose.zh.ts");
 
+/**
+ * How many routes the QA registry actually covers.
+ *
+ * Asked of the registry module rather than counted in its source: `ROUTES` is the
+ * handwritten policy list *plus* discovery, so a regex over the file sees only the
+ * policy half. Falls back to the literal count if the module cannot be imported —
+ * a smaller true number is a worse report, but a crashed check is a worse one
+ * still, and the fallback is what this line used to do.
+ */
+async function loadRegisteredRouteCount(modulePath, fallback) {
+  try {
+    const { ROUTES } = await import(modulePath);
+    return Array.isArray(ROUTES) ? ROUTES.length : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
 /** Walk `app/**\/page.tsx` and return a route path for each one. */
 async function collectRoutes(dir = path.join(appRoot, "app"), base = "") {
   const entries = await readdir(dir, { withFileTypes: true });
@@ -542,13 +560,38 @@ async function main() {
 
   const qaRoutes = (await readFile(qaRoutesPath, "utf8")).match(/path:\s*"/g)?.length ?? 0;
 
+  /*
+   * Distinct routes, not page files — they are not the same number, and using
+   * the wrong one made this report lie in both directions.
+   *
+   * `collectRoutes` walks `app/` and strips route groups and dynamic segments, so
+   * `charts/[chart]/page.tsx` and `charts/page.tsx` both arrive as `/charts`. It
+   * returns 165 entries for 161 routes: the four dynamic families
+   * (`[chart]`, `[component]`, `[family]`, `[motion]`) are counted twice. The
+   * header line then read "165/165" (a file count over a file count, reported as
+   * if it were coverage) and the body line read "161/165 (98%)" — a *correct*
+   * numerator over an inflated denominator, so a fully bilingual site looked like
+   * it had four gaps. Neither number was checkable by reading it.
+   *
+   * Both denominators are the distinct set now, and the page-file count is
+   * printed beside it rather than folded into it.
+   */
+  const routeKeys = [...new Set(routes.map((entry) => entry.route))];
+
   const report = {
     generatedAt: new Date().toISOString(),
     routes: {
-      total: routes.length,
-      headerTranslated: routes.filter((entry) => translatedRoutes.has(entry.route)).length,
+      total: routeKeys.length,
+      pageFiles: routes.length,
+      headerTranslated: routeKeys.filter((route) => translatedRoutes.has(route)).length,
       symbolBodies: symbolBodies.length,
-      registeredInQa: qaRoutes,
+      /*
+       * The QA registry itself, not the count of `path:` literals in the policy
+       * file. `qa/routes.mjs` exports `ROUTES` = the handwritten policy list plus
+       * everything discovery found on disk, so counting the literals reported 156
+       * of 357 registered routes and read as if two hundred pages were untested.
+       */
+      registeredInQa: await loadRegisteredRouteCount(qaRoutesPath, qaRoutes),
     },
     navigation: {
       labels: navLabels.length,
@@ -571,7 +614,7 @@ async function main() {
       translated: translatedSentences,
       keys: prose.size,
       routesFullyBilingual: fullyBilingual.length,
-      routeCount: routes.length,
+      routeCount: routeKeys.length,
       routesIncomplete: incompleteRoutes.sort(),
       perRoute: routeProse,
       missing: Object.fromEntries([...missingSentences].map(([route, list]) => [route, list])),
@@ -590,7 +633,9 @@ async function main() {
 
   const pct = (part, whole) => (whole === 0 ? "n/a" : `${Math.round((part / whole) * 100)}%`);
   console.log("LUC UI Showcase — bilingual coverage (en → zh-CN)");
-  console.log(`  routes on disk          : ${report.routes.total} (${report.routes.registeredInQa} registered in QA)`);
+  console.log(
+    `  routes on disk          : ${report.routes.total} (${report.routes.pageFiles} page files, ${report.routes.registeredInQa} registered in QA)`,
+  );
   console.log(
     `  page headers            : ${report.routes.headerTranslated}/${report.routes.total} (${pct(report.routes.headerTranslated, report.routes.total)})`,
   );
@@ -671,7 +716,7 @@ async function main() {
     );
   }
   if (report.prose.duplicates.length > 0) problems.push(`${report.prose.duplicates.length} duplicate prose key(s): ${report.prose.duplicates.join(", ")}`);
-  const headerGap = routes.filter((entry) => !translatedRoutes.has(entry.route)).map((entry) => entry.route);
+  const headerGap = routeKeys.filter((route) => !translatedRoutes.has(route));
   if (headerGap.length > 0) problems.push(`${headerGap.length} route header(s) without a translation`);
   if (problems.length > 0) {
     console.error(`\n  ${problems.join("; ")}`);

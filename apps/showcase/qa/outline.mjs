@@ -15,7 +15,7 @@
  *      catalogue page (UX-004) and no duplicate labels (IA-001's "duplicate or
  *      malformed anchors" in its visible form).
  *
- *   LUC_QA_BASE_URL=http://127.0.0.1:3100 node qa/outline.mjs
+ *   LUC_QA_BASE_URL=http://127.0.0.1:5300 node qa/outline.mjs
  *   node qa/outline.mjs --routes=/components/accordion,/motion
  *
  * Exits non-zero when an assertion fails, so it can be wired into a gate.
@@ -26,11 +26,12 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
 
+import { resolveBaseUrl } from "./base-url.mjs";
 import { DESKTOP } from "./constants.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const EVIDENCE = path.resolve(HERE, "../../../artifacts/screenshots/showcase-transformation");
-const BASE = process.env.LUC_QA_BASE_URL ?? "http://127.0.0.1:3100";
+const BASE = resolveBaseUrl();
 
 const DEFAULT_ROUTES = [
   "/components/accordion",

@@ -11,6 +11,7 @@
  */
 
 import { BEHAVIOUR_GROUPS } from "./constants.mjs";
+import { DEFAULT_BASE_URL } from "./base-url.mjs";
 import { ROUTES, ROUTE_GROUPS } from "./routes.mjs";
 
 function parseList(value) {
@@ -78,7 +79,13 @@ export function parseOptions(argv = process.argv.slice(2), env = process.env) {
   }
 
   return {
-    baseUrl: readArg(argv, "base-url") ?? env.LUC_QA_BASE_URL ?? "http://localhost:3000",
+    /*
+     * `LUC_QA_BASE_URL` wins, then the shared local default (5300 — see
+     * `base-url.mjs`). `env` is threaded in rather than read from
+     * `process.env`, so a caller that passes its own environment gets that
+     * environment's override.
+     */
+    baseUrl: readArg(argv, "base-url") ?? env.LUC_QA_BASE_URL ?? DEFAULT_BASE_URL,
     mode,
     providerMode,
     /** Explicit slugs from `--routes`. Empty means "decide from the mode". */

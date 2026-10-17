@@ -38,7 +38,17 @@ export function Progress({ className, value, tone = "accent", size = "md", ...pr
       {indeterminate ? (
         <span
           data-motion-essential
-          className={cn("absolute inset-y-0 w-1/3 rounded-full animate-indeterminate", toneClass[tone])}
+          /*
+           * `luc-indeterminate`, not the `animate-indeterminate` token.
+           *
+           * The token is the sweep; the utility is the sweep *and* its reduced
+           * form, in the same shape `luc-spinner` uses. The token alone kept a
+           * full-width travelling animation running under `reduce`, which is the
+           * one thing the clamp's `data-motion-essential` exception promises not
+           * to do ("a slow pulse — never travel/rotation"). See the utility's
+           * note in `styles/utilities.css`.
+           */
+          className={cn("absolute inset-y-0 w-1/3 rounded-full luc-indeterminate", toneClass[tone])}
         />
       ) : (
         <RadixProgress.Indicator

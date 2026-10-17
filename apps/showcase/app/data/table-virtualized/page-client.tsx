@@ -26,6 +26,8 @@ import { ImportLine } from "@/components/docs/family-imports";
 import { Example } from "@/components/docs/example";
 import { ledgerRows, type LedgerRow } from "@/lib/table-data";
 import { useI18n } from "@/lib/i18n/provider";
+import { EntryNotes } from "@/components/docs/entry-notes";
+import { ExamplesHeading } from "@/components/docs/examples-heading";
 
 const ROWS = ledgerRows(10_000);
 
@@ -74,6 +76,7 @@ export function VirtualTablePage({ apiSection }: { apiSection?: ReactNode }) {
         title="Virtualised table"
         lead="Opt-in virtualisation for the case where the DOM, not the data, is the bottleneck. The visible rows are still real table rows — two hidden spacer rows preserve the layout — so semantics never degrade into absolutely-positioned divs."
       />
+      <ExamplesHeading />
 
       <ImportLine line={'import { DataTablePagination, DataTableToolbar, StatCard, VirtualDataTable } from "@luc/ui";'} />
 
@@ -149,6 +152,7 @@ export function VirtualTablePage({ apiSection }: { apiSection?: ReactNode }) {
 />`}</Code>
       </Section>
           {apiSection}
+      <EntryNotes entryIds={["virtual-data-table"]} />
           <EntryFooter />
     </DocPage>
   );

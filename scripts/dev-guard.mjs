@@ -285,11 +285,24 @@ export function thresholds(env = process.env) {
 }
 
 /** Everything the CLI prints, as data — so a test can assert without scraping. */
-export async function inspect({ root = defaultRoot, env = process.env, strays = true } = {}) {
+/**
+ * @param {object} [options]
+ * @param {string} [options.root] measured checkout; its volume supplies free space
+ * @param {NodeJS.ProcessEnv} [options.env] source of the two thresholds
+ * @param {boolean} [options.strays] also look for lockless dev servers
+ * @param {number} [options.freeGb] free space to reason about, in GiB, instead
+ *   of measuring it. The guard's own tests use this: "a roomy disk produces no
+ *   warning" is a statement about the guard, and it has to hold on a machine
+ *   that is nearly full as well as on one that is empty. Asserting it against
+ *   whatever `statfs` reports made the test fail on a full CI/dev box for a
+ *   reason that had nothing to do with the code under test (measured
+ *   2026-10-17: 12.87 GiB free against a 20 GiB minimum).
+ */
+export async function inspect({ root = defaultRoot, env = process.env, strays = true, freeGb } = {}) {
   const limits = thresholds(env);
   const sessions = await readSessions(root);
   const cacheBytes = sessions.reduce((total, session) => total + session.cacheBytes, 0);
-  const free = await freeBytes(root);
+  const free = freeGb === undefined ? await freeBytes(root) : freeGb * GIB;
   const servers = sessions.map((session) => session.server).filter((server) => server?.alive);
   /* The first live server, for callers that only need to know one exists. */
   const server = servers[0];

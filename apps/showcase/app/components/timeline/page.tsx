@@ -10,6 +10,8 @@ import { Example } from "@/components/docs/example";
 import { PropsTable } from "@/components/docs/tables";
 import { useI18n } from "@/lib/i18n/provider";
 import { EntryFooter } from "@/components/docs/entry-footer";
+import { EntryNotes } from "@/components/docs/entry-notes";
+import { ExamplesHeading } from "@/components/docs/examples-heading";
 
 export default function TimelinePage() {
   const { tc, tcs } = useI18n();
@@ -18,6 +20,7 @@ export default function TimelinePage() {
   return (
     <DocPage>
       <PageHeader eyebrow={tcs("Components")} title="Timeline and Stepper" lead={tc("components.timeline.lead")} />
+      <ExamplesHeading />
 
       <ImportLine line={'import { Timeline } from "@luc/ui";'} />
 
@@ -159,6 +162,7 @@ export default function TimelinePage() {
           ]}
         />
       </Section>
+      <EntryNotes entryIds={["timeline"]} />
       <EntryFooter />
     </DocPage>
   );

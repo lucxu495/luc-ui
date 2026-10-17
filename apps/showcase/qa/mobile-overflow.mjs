@@ -19,7 +19,7 @@
  * names the widest element responsible rather than only reporting the pixel
  * count — a number with no element attached is a number nobody can act on.
  *
- *   LUC_QA_BASE_URL=http://127.0.0.1:3000 node qa/mobile-overflow.mjs
+ *   LUC_QA_BASE_URL=http://127.0.0.1:5300 node qa/mobile-overflow.mjs
  *   … --workers=3          parallel tabs
  *   … --json               machine-readable
  *   … --routes=buttons,charts-catalog
@@ -32,12 +32,13 @@ import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
+import { resolveBaseUrl } from "./base-url.mjs";
 import { parseOptions } from "./config.mjs";
 import { ROUTES, isProviderRoute, selectRoutes } from "./routes.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const OUT = path.resolve(HERE, "../artifacts/qa/mobile-overflow");
-const BASE = (process.env.LUC_QA_BASE_URL ?? "http://127.0.0.1:3000").replace(/\/$/, "");
+const BASE = resolveBaseUrl();
 
 /** iPhone-class viewport: the narrowest width the Showcase is reviewed at. */
 const VIEWPORT = { width: 390, height: 844 };
@@ -58,14 +59,47 @@ const MEASURE = () => {
   if (result.scrollWidth <= viewport + 1) return result;
 
   /*
-   * Two shapes of overflow, and the first version of this probe only caught one.
+   * Three shapes of overflow, and the first version of this probe only caught
+   * one.
    *
    *   - a box that is *wider* than the viewport (a specimen fixed at 998px);
    *   - a box that is the right width but whose *content* is wider and is not
    *     clipped (a `<code>` line, a grid of token names) — no element rect is
    *     ever wider than the viewport here, which is why `/foundations/colors`
-   *     reported "+19px" with an empty culprit list until this was added.
+   *     reported "+19px" with an empty culprit list until this was added;
+   *   - a box whose own *text* is wider than it (a page titled
+   *     `ParallelCoordinatesChart`, one unbreakable 28-character token at
+   *     `text-display`). Neither of the two rules above can see this one: the
+   *     element's rect is the width of its container and its `scrollWidth`
+   *     equals its parent's, so the box rule passes it over and the content rule
+   *     rejects it as "not the innermost carrier". Nine routes reported overflow
+   *     with the API table named as the culprit, which is where the box rule
+   *     pointed; the title was never mentioned.
+   *
+   * Pointing at the wrong element is worse than reporting a bare number: the
+   * API tables at 390px are *supposed* to be wider than the window — they sit in
+   * an `overflow-x-auto` region with a tab stop. An element inside a scroller is
+   * the scroller's business, so the box rule skips it now (the comment below
+   * always said so; the code did not), and `byText` measures the offsets of an
+   * element's *own* text nodes so a title that cannot wrap is named.
    */
+  const scroller = (element) => {
+    for (let node = element.parentElement; node && node !== html; node = node.parentElement) {
+      if (getComputedStyle(node).overflowX !== "visible") return true;
+    }
+    return false;
+  };
+  /** The union of this element's *own* text nodes — not its descendants'. */
+  const ownTextRight = (element) => {
+    let right = 0;
+    for (const node of element.childNodes) {
+      if (node.nodeType !== Node.TEXT_NODE || !node.data.trim()) continue;
+      const range = document.createRange();
+      range.selectNodeContents(node);
+      right = Math.max(right, range.getBoundingClientRect().right + window.scrollX);
+    }
+    return right;
+  };
   const offenders = [];
   const seen = new Set();
   for (const element of html.querySelectorAll("*")) {
@@ -73,11 +107,13 @@ const MEASURE = () => {
     if (rect.width === 0 && rect.height === 0) continue;
     const right = rect.right + window.scrollX;
     const left = rect.left + window.scrollX;
-    /* An element inside a scroller that is *meant* to scroll is the scroller's
-     * business: mark the scroller, not the content it carries. */
     const style = getComputedStyle(element);
     const clips = style.overflowX !== "visible";
-    const byRect = right > viewport + 1 || left < -1;
+    /* An element inside a scroller that is *meant* to scroll is the scroller's
+     * business: mark the scroller, not the content it carries. */
+    const inScroller = scroller(element);
+    const byRect = (right > viewport + 1 || left < -1) && !inScroller;
+    const byText = !inScroller && !clips && ownTextRight(element) > viewport + 1;
     /*
      * For the content case, keep only the *innermost* carrier: when a block's
      * content is wider than it, every ancestor's `scrollWidth` is that same
@@ -90,7 +126,7 @@ const MEASURE = () => {
       !clips &&
       element.scrollWidth > element.clientWidth + 1 &&
       element.scrollWidth > (parent?.scrollWidth ?? 0);
-    if (!byRect && !byContent) continue;
+    if (!byRect && !byContent && !byText) continue;
     const key = describe(element);
     if (seen.has(key)) continue;
     seen.add(key);
@@ -101,7 +137,7 @@ const MEASURE = () => {
       contentWidth: element.scrollWidth,
       text: (element.textContent ?? "").replace(/\s+/g, " ").trim().slice(0, 60),
       depth: depthOf(element),
-      via: byRect ? "box" : "content",
+      via: byText ? "text" : byRect ? "box" : "content",
     });
   }
   /*

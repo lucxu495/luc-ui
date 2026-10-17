@@ -26,6 +26,8 @@ import { Example } from "@/components/docs/example";
 import { runColumns, STATUS_PRESETS } from "@/components/tables/run-columns";
 import { researchRuns, type ResearchRun } from "@/lib/table-data";
 import { useI18n } from "@/lib/i18n/provider";
+import { EntryNotes } from "@/components/docs/entry-notes";
+import { ExamplesHeading } from "@/components/docs/examples-heading";
 
 const RUNS = researchRuns(48);
 const statusLabel = (value: string) => STATUS_PRESETS[value as ResearchRun["status"]]?.label ?? value;
@@ -42,6 +44,7 @@ export function DataTablePage({ apiSection }: { apiSection?: ReactNode }) {
         title="Data table"
         lead="A real table, not a spreadsheet. Semantic markup keeps screen readers and browser find-in-page working, while columns describe intent — numeric, currency, percent, status, sparkline — instead of repeating alignment and formatting rules on every screen."
       />
+      <ExamplesHeading />
 
       <ImportLine line={'import {\n  ColumnVisibilityMenu,\n  DataTable,\n  DataTablePagination,\n  DataTableSelectionCount,\n  DataTableToolbar,\n  FacetFilter,\n  SegmentedControl,\n  SegmentedItem,\n} from "@luc/ui";'} />
 
@@ -196,6 +199,7 @@ export function DataTablePage({ apiSection }: { apiSection?: ReactNode }) {
         </Panel>
       </Example>
           {apiSection}
+      <EntryNotes entryIds={["data-table"]} />
           <EntryFooter />
     </DocPage>
   );

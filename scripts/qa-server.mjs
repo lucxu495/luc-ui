@@ -34,7 +34,14 @@ const run = promisify(execFile);
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, "..");
 const markerPath = path.join(root, "artifacts/qa/server-build.json");
-const port = process.env.LUC_UI_SHOWCASE_PORT ?? "3000";
+/*
+ * This repository's own published port (see `docker-compose.yml`): 5300, beside
+ * `luc-visuals` on 5301. It used to default to 3000 — the container's internal
+ * port and the retired `luc-quant` stack's published one — which meant a rebuild
+ * could bring the stack up somewhere the review address was not. The QA scripts
+ * read the same variable through `apps/showcase/qa/base-url.mjs`.
+ */
+const port = process.env.LUC_UI_SHOWCASE_PORT ?? "5300";
 const baseUrl = process.env.LUC_QA_BASE_URL ?? `http://127.0.0.1:${port}`;
 const BUILD_TIMEOUT_MS = Number.parseInt(process.env.LUC_QA_BUILD_TIMEOUT_MS ?? "600000", 10);
 const HEALTH_TIMEOUT_MS = Number.parseInt(process.env.LUC_QA_HEALTH_TIMEOUT_MS ?? "120000", 10);

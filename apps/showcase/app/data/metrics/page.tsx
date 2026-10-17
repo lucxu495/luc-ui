@@ -25,6 +25,8 @@ import { Example } from "@/components/docs/example";
 import { PropsTable } from "@/components/docs/tables";
 import { Sparkline } from "@/components/showcase/sparkline";
 import { useI18n } from "@/lib/i18n/provider";
+import { EntryNotes } from "@/components/docs/entry-notes";
+import { ExamplesHeading } from "@/components/docs/examples-heading";
 
 const series = [86, 92, 88, 104, 99, 118, 112, 126, 121, 134, 128, 142];
 const latency = [42, 39, 44, 37, 35, 38, 33, 31, 34, 29, 30, 27];
@@ -54,6 +56,7 @@ export default function MetricsPage() {
         title="Metrics"
         lead="The same four primitives render finance, SaaS and infrastructure numbers. Nothing in this layer knows what Bitcoin is."
       />
+      <ExamplesHeading />
 
       <ImportLine line={'import { Button, Delta, FreshnessBadge, Metric, MetricValue, StatCard } from "@luc/ui";'} />
 
@@ -279,6 +282,7 @@ export default function MetricsPage() {
           </Card>
         </div>
       </Section>
+      <EntryNotes entryIds={["metric"]} />
           <EntryFooter />
     </DocPage>
   );

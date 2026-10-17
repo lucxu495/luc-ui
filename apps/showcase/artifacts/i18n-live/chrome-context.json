@@ -1,1 +1,125 @@
-{}
+{
+  "/components/overlay": [
+    {
+      "label": "Popover",
+      "element": "h3.font-display.text-title",
+      "context": "data-slot=example",
+      "picture": false,
+      "interactive": false
+    }
+  ],
+  "/experiences/general/publishing": [
+    {
+      "label": "Field notes",
+      "element": "h2.font-display.text-display",
+      "context": "data-slot=field-notes",
+      "picture": false,
+      "interactive": false
+    },
+    {
+      "label": "Reliability",
+      "element": "button.relative.isolate",
+      "context": "data-slot=button",
+      "picture": false,
+      "interactive": true
+    },
+    {
+      "label": "Architecture",
+      "element": "button.relative.isolate",
+      "context": "data-slot=button",
+      "picture": false,
+      "interactive": true
+    },
+    {
+      "label": "Practice",
+      "element": "button.relative.isolate",
+      "context": "data-slot=button",
+      "picture": false,
+      "interactive": true
+    },
+    {
+      "label": "Teams",
+      "element": "button.relative.isolate",
+      "context": "data-slot=button",
+      "picture": false,
+      "interactive": true
+    },
+    {
+      "label": "Observability",
+      "element": "button.relative.isolate",
+      "context": "data-slot=button",
+      "picture": false,
+      "interactive": true
+    },
+    {
+      "label": "Databases",
+      "element": "button.relative.isolate",
+      "context": "data-slot=button",
+      "picture": false,
+      "interactive": true
+    }
+  ],
+  "/experiences/personal/career": [
+    {
+      "label": "Ada Okonkwo",
+      "element": "h1.font-display.font-semibold",
+      "context": "data-slot=profile-hero",
+      "picture": false,
+      "interactive": false
+    }
+  ],
+  "/experiences/personal/academic": [
+    {
+      "label": "Dr. Rita Silva",
+      "element": "h1.font-display.font-semibold",
+      "context": "data-slot=profile-hero",
+      "picture": false,
+      "interactive": false
+    }
+  ],
+  "/experiences/personal/portfolio": [
+    {
+      "label": "The expressive one",
+      "element": "h1.max-w-[26ch].font-display",
+      "context": "data-slot=app-shell-content",
+      "picture": false,
+      "interactive": false
+    }
+  ],
+  "/experiences/vertical/ai": [
+    {
+      "label": "Copilot desk",
+      "element": "h2.font-display.text-heading-sm",
+      "context": "data-slot=copilot-desk",
+      "picture": false,
+      "interactive": false
+    }
+  ],
+  "/experiences/vertical/commerce": [
+    {
+      "label": "Northlight desk lamp",
+      "element": "h2.font-display.text-heading",
+      "context": "data-slot=northlight",
+      "picture": false,
+      "interactive": false
+    }
+  ],
+  "/experiences/vertical/forum": [
+    {
+      "label": "Signal",
+      "element": "h2.font-display.text-heading-sm",
+      "context": "data-slot=signal-forum",
+      "picture": false,
+      "interactive": false
+    }
+  ],
+  "/patterns/research-workspace": [
+    {
+      "label": "Momentum study — BTC-USD",
+      "element": "h1.text-fg-primary.text-title",
+      "context": "data-slot=page-header",
+      "picture": false,
+      "interactive": false
+    }
+  ]
+}

@@ -24,6 +24,7 @@ import {
   SocialLinks,
 } from "@luc/ui/experiences";
 import { ProjectShowcaseDemo } from "@/components/demo/islands/experience-demo";
+import { fixture } from "@/lib/i18n/specimen";
 import { composition, type DemoSpec } from "../index";
 
 /*
@@ -75,7 +76,7 @@ export const experienceDemos: readonly DemoSpec[] = [
     id: "experience-timeline",
     node: (
       <ExperienceTimeline
-        items={[
+        items={fixture([
           {
             id: "now",
             role: "Principal researcher",
@@ -94,7 +95,7 @@ export const experienceDemos: readonly DemoSpec[] = [
             summary: "Cross-sectional equity signals and execution research.",
             tags: ["equities", "execution"],
           },
-        ]}
+        ], ["summary"])}
       />
     ),
     layout: "block",
@@ -128,7 +129,7 @@ export const experienceDemos: readonly DemoSpec[] = [
     id: "publication-list",
     node: (
       <PublicationList
-        publications={[
+        publications={fixture([
           {
             id: "imbalance",
             title: "Queue imbalance and short-horizon returns",
@@ -152,7 +153,7 @@ export const experienceDemos: readonly DemoSpec[] = [
             url: "https://doi.org/10.1000/example.2024.2",
             citations: 6,
           },
-        ]}
+        ], ["title"])}
       />
     ),
     layout: "block",
@@ -166,11 +167,11 @@ export const experienceDemos: readonly DemoSpec[] = [
     id: "reading-shelf",
     node: (
       <ReadingShelf
-        items={[
+        items={fixture([
           { id: "b1", title: "Trading and Exchanges", author: "Larry Harris", status: "reading", progress: 0.38, progressLabel: "p. 142 of 380" },
           { id: "b2", title: "Thinking in Systems", author: "Donella Meadows", status: "queued", note: "For the regime chapter." },
           { id: "b3", title: "The Visual Display of Quantitative Information", author: "Edward Tufte", status: "finished" },
-        ]}
+        ], ["title", "note"])}
       />
     ),
     layout: "block",
@@ -186,11 +187,11 @@ export const experienceDemos: readonly DemoSpec[] = [
     node: (
       <NowSection
         updatedAt="2026-10-01"
-        items={[
+        items={fixture([
           { id: "building", label: "Building", value: "A replay tool for one exchange feed." },
           { id: "reading", label: "Reading", value: "Trading and Exchanges." },
           { id: "place", label: "Place", value: "Rotterdam" },
-        ]}
+        ], ["label", "value"])}
       />
     ),
     layout: "block",

@@ -706,6 +706,11 @@ export const generatedEntries = [
     "summary": "A short label for a state, a count or a category — and `Tag` when it needs to be removed.",
     "route": "/components/badges",
     "status": "curated",
+    "related": [
+      "timestamp",
+      "delta",
+      "list"
+    ],
     "pageFile": "app/components/badges/page.tsx"
   },
   {
@@ -1126,7 +1131,12 @@ export const generatedEntries = [
     ],
     "summary": "Show and hide columns without losing the user's arrangement.",
     "route": "/components/column-visibility-menu",
-    "status": "generated"
+    "status": "generated",
+    "related": [
+      "data-table-toolbar",
+      "data-table",
+      "facet-filter"
+    ]
   },
   {
     "id": "combobox",
@@ -1321,7 +1331,12 @@ export const generatedEntries = [
     ],
     "summary": "A definition list for a record, ready for the detail pane of a table.",
     "route": "/components/data-details",
-    "status": "generated"
+    "status": "generated",
+    "related": [
+      "data-table",
+      "list",
+      "metric"
+    ]
   },
   {
     "id": "data-table",
@@ -1335,6 +1350,11 @@ export const generatedEntries = [
     "summary": "A real table with sorting, facets, selection, column control and every state controlled.",
     "route": "/data/table",
     "status": "curated",
+    "related": [
+      "virtual-data-table",
+      "data-table-toolbar",
+      "data-table-pagination"
+    ],
     "pageFile": "app/data/table/page.tsx"
   },
   {
@@ -1348,7 +1368,12 @@ export const generatedEntries = [
     ],
     "summary": "Page controls bound to the table's own state, server-side paging included.",
     "route": "/components/data-table-pagination",
-    "status": "generated"
+    "status": "generated",
+    "related": [
+      "data-table",
+      "data-table-toolbar",
+      "virtual-data-table"
+    ]
   },
   {
     "id": "data-table-toolbar",
@@ -1362,7 +1387,12 @@ export const generatedEntries = [
     ],
     "summary": "The row above a table: search, facets, column visibility and the selection count.",
     "route": "/components/data-table-toolbar",
-    "status": "generated"
+    "status": "generated",
+    "related": [
+      "data-table",
+      "facet-filter",
+      "column-visibility-menu"
+    ]
   },
   {
     "id": "date-picker",
@@ -1410,7 +1440,12 @@ export const generatedEntries = [
     ],
     "summary": "A change with a direction, coloured by meaning rather than by sign alone.",
     "route": "/components/delta",
-    "status": "generated"
+    "status": "generated",
+    "related": [
+      "metric",
+      "stat-card",
+      "timestamp"
+    ]
   },
   {
     "id": "dendrogram-chart",
@@ -1660,7 +1695,12 @@ export const generatedEntries = [
     ],
     "summary": "Multi-select filtering derived from the data, with counts that reflect the other facets.",
     "route": "/components/facet-filter",
-    "status": "generated"
+    "status": "generated",
+    "related": [
+      "data-table-toolbar",
+      "column-visibility-menu",
+      "data-table"
+    ]
   },
   {
     "id": "factor-exposure-chart",
@@ -2250,6 +2290,11 @@ export const generatedEntries = [
     "summary": "Columns of cards that can be moved, with the move announced either way.",
     "route": "/components/board",
     "status": "curated",
+    "related": [
+      "sortable-list",
+      "list",
+      "data-table"
+    ],
     "pageFile": "app/components/board/page.tsx"
   },
   {
@@ -2351,7 +2396,12 @@ export const generatedEntries = [
     ],
     "summary": "A sequence of comparable rows on one hairline grid, with the slots that keep ten rows aligned.",
     "route": "/components/list",
-    "status": "generated"
+    "status": "generated",
+    "related": [
+      "timeline",
+      "data-details",
+      "sortable-list"
+    ]
   },
   {
     "id": "locale-provider",
@@ -2466,6 +2516,11 @@ export const generatedEntries = [
     "summary": "One number with its label, unit and context, in a hierarchy that reads at a glance.",
     "route": "/data/metrics",
     "status": "curated",
+    "related": [
+      "stat-card",
+      "delta",
+      "timestamp"
+    ],
     "pageFile": "app/data/metrics/page.tsx"
   },
   {
@@ -3524,7 +3579,12 @@ export const generatedEntries = [
     ],
     "summary": "Reorder with pointer or keyboard, announcing every move.",
     "route": "/components/sortable-list",
-    "status": "generated"
+    "status": "generated",
+    "related": [
+      "kanban-board",
+      "list",
+      "transfer-list"
+    ]
   },
   {
     "id": "sparkline",
@@ -3631,7 +3691,12 @@ export const generatedEntries = [
     ],
     "summary": "One number, its context and its trend in a single scannable surface.",
     "route": "/components/stat-card",
-    "status": "generated"
+    "status": "generated",
+    "related": [
+      "metric",
+      "delta",
+      "data-details"
+    ]
   },
   {
     "id": "status-badge",
@@ -3899,6 +3964,11 @@ export const generatedEntries = [
     "summary": "A sequence of events with machine-readable times and no invented ordering.",
     "route": "/components/timeline",
     "status": "curated",
+    "related": [
+      "list",
+      "timestamp",
+      "data-details"
+    ],
     "pageFile": "app/components/timeline/page.tsx"
   },
   {
@@ -3913,7 +3983,12 @@ export const generatedEntries = [
     ],
     "summary": "A moment written for a human, with the machine-readable value kept beside it.",
     "route": "/components/timestamp",
-    "status": "generated"
+    "status": "generated",
+    "related": [
+      "metric",
+      "delta",
+      "list"
+    ]
   },
   {
     "id": "toast",
@@ -3971,7 +4046,12 @@ export const generatedEntries = [
     "family": "tradingview",
     "group": "integrations",
     "importPath": "@luc/ui/tradingview",
-    "exports": [],
+    "exports": [
+      "TradingViewAdvancedChart",
+      "TradingViewMiniChart",
+      "TradingViewSeasonalChart",
+      "TradingViewSymbolOverview"
+    ],
     "summary": "Advanced chart, mini chart, symbol overview and seasonal chart widgets.",
     "route": "/integrations/tradingview/charts",
     "status": "curated",
@@ -3983,7 +4063,12 @@ export const generatedEntries = [
     "family": "tradingview",
     "group": "integrations",
     "importPath": "@luc/ui/tradingview",
-    "exports": [],
+    "exports": [
+      "TradingViewCryptoHeatmap",
+      "TradingViewEtfHeatmap",
+      "TradingViewForexTable",
+      "TradingViewStockHeatmap"
+    ],
     "summary": "Stock, crypto, ETF and forex heatmaps in one comparison.",
     "route": "/integrations/tradingview/heatmaps",
     "status": "curated",
@@ -3995,7 +4080,12 @@ export const generatedEntries = [
     "family": "tradingview",
     "group": "integrations",
     "importPath": "@luc/ui/tradingview",
-    "exports": [],
+    "exports": [
+      "TradingViewTopStories",
+      "TradingViewEconomicCalendar",
+      "TRADINGVIEW_ECONOMIC_METRIC_LABELS",
+      "TradingViewEconomicMap"
+    ],
     "summary": "Top stories, the economic calendar and the economic map.",
     "route": "/integrations/tradingview/news-calendars",
     "status": "curated",
@@ -4019,7 +4109,10 @@ export const generatedEntries = [
     "family": "tradingview",
     "group": "integrations",
     "importPath": "@luc/ui/tradingview",
-    "exports": [],
+    "exports": [
+      "TradingViewCryptocurrencyMarket",
+      "TradingViewScreener"
+    ],
     "summary": "The market screener and the cryptocurrency market widget.",
     "route": "/integrations/tradingview/screeners",
     "status": "curated",
@@ -4031,7 +4124,14 @@ export const generatedEntries = [
     "family": "tradingview",
     "group": "integrations",
     "importPath": "@luc/ui/tradingview",
-    "exports": [],
+    "exports": [
+      "TradingViewCompanyProfile",
+      "TradingViewFundamentalData",
+      "TradingViewSymbolInfo",
+      "TradingViewTechnicalAnalysis",
+      "TradingViewBrokerRating",
+      "TradingViewBrokerReviews"
+    ],
     "summary": "Symbol info, company profile, fundamentals, technicals and broker reviews.",
     "route": "/integrations/tradingview/symbol-details",
     "status": "curated",
@@ -4057,7 +4157,12 @@ export const generatedEntries = [
     "family": "tradingview",
     "group": "integrations",
     "importPath": "@luc/ui/tradingview",
-    "exports": [],
+    "exports": [
+      "TradingViewSingleTicker",
+      "TradingViewTickers",
+      "TradingViewTickerTag",
+      "TradingViewTickerTape"
+    ],
     "summary": "Ticker tape, single ticker, the tickers composition and a symbol tag.",
     "route": "/integrations/tradingview/tickers",
     "status": "curated",
@@ -4069,7 +4174,12 @@ export const generatedEntries = [
     "family": "tradingview",
     "group": "integrations",
     "importPath": "@luc/ui/tradingview",
-    "exports": [],
+    "exports": [
+      "TradingViewMarketData",
+      "TradingViewMarketOverview",
+      "TradingViewMarketSummary",
+      "TradingViewWorldMarketSummary"
+    ],
     "summary": "Watchlist, market overview, market summary and world market summary.",
     "route": "/integrations/tradingview/watchlists",
     "status": "curated",
@@ -4235,6 +4345,11 @@ export const generatedEntries = [
     "summary": "The same contract for result sets too large to render.",
     "route": "/data/table-virtualized",
     "status": "curated",
+    "related": [
+      "data-table",
+      "data-table-pagination",
+      "data-table-toolbar"
+    ],
     "pageFile": "app/data/table-virtualized/page.tsx"
   },
   {

@@ -1,6 +1,7 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { describe, expect, it, vi } from "vitest";
+import { act } from "react";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { AuroraSurface } from "./aurora-surface";
 import { BeamFlow } from "./beam-flow";
 import { MagnifyDock, MagnifyDockItem } from "./magnify-dock";
@@ -8,16 +9,57 @@ import { Marquee } from "./marquee";
 import { PressRipple, RippleLayer, usePressRipple } from "./press-ripple";
 
 describe("PressRipple", () => {
+  /*
+   * Every case that looks at ink has to own the clock.
+   *
+   * A ring is removed by `setTimeout(duration + 60)`, so "there is ink on the
+   * surface" is true only inside a window the component opens and closes on its
+   * own — an assertion about it is an assertion about *when the assertion runs*.
+   * It passed on an idle machine and failed under load, which is the worst kind
+   * of test: the reporter cannot reproduce it and the component is innocent.
+   * Measured 2026-10-17 with a 900ms real wait before the assertion in the hook
+   * case: last call `0`, not `1`.
+   *
+   * So time is faked and the *lifecycle* is asserted instead — the ink arrives
+   * when the press happens and is gone when the ring's lifetime has passed, both
+   * of which are the component's contract rather than the scheduler's mood.
+   * `duration={120}` keeps the arithmetic in the test instead of depending on the
+   * 620ms default. The press is dispatched with `fireEvent.pointerDown` rather
+   * than `userEvent.click`: the component listens to `pointerdown` only, and
+   * `userEvent` drives the whole pointer protocol through timers, which deadlocks
+   * against a faked clock (measured: the hook case timed out at 5s when it did).
+   * A press whose coordinates are known is also what makes "at the press point"
+   * an assertion rather than a description.
+   */
+  const RING_LIFETIME_MS = 120;
+  const PAST_RING_LIFETIME_MS = RING_LIFETIME_MS + 60;
+
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
   it("spawns ink at the press point and cleans it up", async () => {
-    const user = userEvent.setup();
+    vi.useFakeTimers();
     const { container } = render(
-      <PressRipple className="h-10 px-4">
+      <PressRipple className="h-10 px-4" duration={RING_LIFETIME_MS}>
         <span>Save</span>
       </PressRipple>,
     );
     expect(container.querySelectorAll("[data-slot='ripple-ring']")).toHaveLength(0);
-    await user.click(screen.getByText("Save"));
-    expect(container.querySelectorAll("[data-slot='ripple-ring']").length).toBeGreaterThan(0);
+    const surface = container.querySelector("[data-slot='press-ripple']") as HTMLElement;
+    act(() => {
+      fireEvent.pointerDown(surface, { clientX: 30, clientY: 12 });
+    });
+    /* One ring per press by default, so this is an exact number rather than a
+     * `> 0` that a second stray ring would also satisfy. */
+    const rings = container.querySelectorAll<HTMLElement>("[data-slot='ripple-ring']");
+    expect(rings).toHaveLength(1);
+    /* "At the press point": the surface's own box starts at 0 in a headless DOM,
+     * so the ink is placed at the coordinates the press carried. */
+    expect(rings[0]?.style.left).toBe("30px");
+    expect(rings[0]?.style.top).toBe("12px");
+    act(() => void vi.advanceTimersByTime(PAST_RING_LIFETIME_MS));
+    expect(container.querySelectorAll("[data-slot='ripple-ring']")).toHaveLength(0);
   });
 
   it("keeps the decorative layer out of the accessibility tree", () => {
@@ -45,10 +87,10 @@ describe("PressRipple", () => {
   });
 
   it("exposes the hook for surfaces that own their own element", async () => {
-    const user = userEvent.setup();
+    vi.useFakeTimers();
     const spy = vi.fn();
     function Probe() {
-      const ripple = usePressRipple();
+      const ripple = usePressRipple({ duration: RING_LIFETIME_MS });
       spy(ripple.ripples.length);
       return (
         <button type="button" onPointerDown={ripple.onPointerDown}>
@@ -57,9 +99,17 @@ describe("PressRipple", () => {
         </button>
       );
     }
-    render(<Probe />);
-    await user.click(screen.getByRole("button", { name: "Own" }));
+    const { container } = render(<Probe />);
+    act(() => {
+      fireEvent.pointerDown(screen.getByRole("button", { name: "Own" }), { clientX: 8, clientY: 8 });
+    });
+    /* The hook's own contract at the moment of the press… */
     expect(spy).toHaveBeenLastCalledWith(1);
+    /* …and afterwards, which is the half the old assertion could not see: a
+     * surface that never released its ink would also have passed. */
+    act(() => void vi.advanceTimersByTime(PAST_RING_LIFETIME_MS));
+    expect(spy).toHaveBeenLastCalledWith(0);
+    expect(container.querySelectorAll("[data-slot='ripple-ring']")).toHaveLength(0);
   });
 });
 

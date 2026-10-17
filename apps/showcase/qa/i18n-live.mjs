@@ -23,7 +23,7 @@
  * has reviewed is pinned in `i18n-chrome.json`. Pass `--update` to re-pin after
  * a review.
  *
- *   LUC_QA_BASE_URL=http://127.0.0.1:3000 node qa/i18n-live.mjs
+ *   LUC_QA_BASE_URL=http://127.0.0.1:5300 node qa/i18n-live.mjs
  *   … node qa/i18n-live.mjs --routes=charts-catalog,components-buttons
  *   … node qa/i18n-live.mjs --json > artifacts/i18n-live.json
  *
@@ -34,6 +34,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
+import { resolveBaseUrl } from "./base-url.mjs";
 import { ROUTES, selectRoutes } from "./routes.mjs";
 import {
   CHROME_SELECTORS,
@@ -48,7 +49,7 @@ import { isRegisteredIdList } from "./id-lists.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const artifacts = path.resolve(here, "../artifacts/i18n-live");
-const baseUrl = process.env.LUC_QA_BASE_URL ?? "http://127.0.0.1:3000";
+const baseUrl = resolveBaseUrl();
 const chromeBaselinePath = path.resolve(here, "i18n-chrome.json");
 
 const args = new Set(process.argv.slice(2));
@@ -160,6 +161,15 @@ const registryIds = [];
 /* Segments that are a list of registered ids rather than prose. Counted and
  * printed on every run; never silently dropped. */
 const idLists = [];
+/*
+ * Segments that are English because the page's own code block prints them.
+ *
+ * The specimen boundary, measured instead of allow-listed: a leak is only
+ * snippet-locked when the string appears verbatim in a `<pre>`/`<code>` block on
+ * the same page, which is a property a reviewer can check by looking at the
+ * page. Counted, sampled and printed like the id-list class, and never gated.
+ */
+const snippetLockedSegments = [];
 /* Where each leaked sentence sits: element, nearest marked ancestor. Evidence
  * for the fix, written next to the report so the next reader does not have to
  * re-derive it in a browser. */
@@ -182,7 +192,7 @@ for (const route of routes.slice(0, limit > 0 ? limit : undefined)) {
       }
       window.scrollTo(0, 0);
     });
-    const { segments, suppressed } = await page.evaluate(() => {
+    const { segments, suppressed, codeText } = await page.evaluate(() => {
       /*
        * `script` is not decoration: Next embeds the RSC flight payload in the
        * body, so the English source of a *translated* string is present in the
@@ -245,6 +255,22 @@ for (const route of routes.slice(0, limit > 0 ? limit : undefined)) {
         return parts;
       };
       const out = [];
+      /*
+       * Every code block on the page, joined, so a finding can be tested against
+       * it.
+       *
+       * This is the measured half of the fixture boundary
+       * `lib/i18n/messages.ts` states: "specimen fixture text that a printed
+       * snippet also contains stays as written", because a preview reading
+       * 本季度已填满 beside a snippet reading `title="Fills this quarter"` has broken
+       * the one promise a live specimen makes. A leaked segment that appears
+       * verbatim in one of these blocks is *snippet-locked*: English by
+       * construction, not by neglect, and reported as its own counted class
+       * rather than allow-listed by hand.
+       */
+      const codeText = [...document.querySelectorAll("pre, code")]
+        .map((element) => element.textContent ?? "")
+        .join("\n");
       const suppressed = { nodes: 0, regions: new Set(), rules: {}, examples: [] };
       let node = walker.nextNode();
       while (node) {
@@ -279,7 +305,7 @@ for (const route of routes.slice(0, limit > 0 ? limit : undefined)) {
         }
         node = walker.nextNode();
       }
-      return { segments: out, suppressed: { ...suppressed, regions: suppressed.regions.size } };
+      return { segments: out, codeText, suppressed: { ...suppressed, regions: suppressed.regions.size } };
     });
     /*
      * The chrome pass. Same page, a different question: not "is this sentence
@@ -292,7 +318,33 @@ for (const route of routes.slice(0, limit > 0 ? limit : undefined)) {
         const out = [];
         for (const element of document.querySelectorAll(selectors)) {
           if (element.closest(skip) || element.offsetParent === null) continue;
-          const text = (element.textContent ?? "").replace(/\s+/g, " ").trim();
+          /*
+           * Decoration by declaration is not a label.
+           *
+           * `Marquee` renders its content twice — the second copy exists to make
+           * the loop seamless and is `aria-hidden`, so a screen reader hears the
+           * list once. `textContent` does not know that, so the container's label
+           * came out as `Read the data, not the volumeRead the data, not the volume`
+           * and was pinned as a reviewed English string. That reading was an
+           * artifact of the extractor, not a defect in the component: the
+           * duplication is intended, visual and silent to assistive technology.
+           *
+           * Two rules fix it: an element *inside* an `aria-hidden` subtree is not
+           * chrome at all, and a label that contains one reads only the visible
+           * copies. Neither changes what the gate accepts — it changes what the
+           * page is asked to be.
+           */
+          if (element.closest("[aria-hidden='true']")) continue;
+          const raw = element.textContent ?? "";
+          const text = (
+            element.querySelector("[aria-hidden='true']")
+              ? (() => {
+                  const clone = element.cloneNode(true);
+                  for (const hidden of clone.querySelectorAll("[aria-hidden='true']")) hidden.remove();
+                  return clone.textContent ?? "";
+                })()
+              : raw
+          ).replace(/\s+/g, " ").trim();
           if (!text) continue;
           /*
            * Where the label came from, recorded beside it. A slot title and a
@@ -315,7 +367,18 @@ for (const route of routes.slice(0, limit > 0 ? limit : undefined)) {
             context: marks.join(" ") || undefined,
             /* Inside a picture the page has declared, so it is content rather
              * than chrome — counted separately by `splitSpecimenLabels`. */
-            picture: element.closest("[role='img']") !== null,
+            /*
+             * Declared specimen regions, not just pictures.
+             *
+             * `role="img"` was the first such region: a composed plate whose
+             * interior text is content. A `Marquee` is the second — it repeats
+             * its content to make the loop seamless (the copy is `aria-hidden`),
+             * and the words inside are the specimen's own headline, which the
+             * page's printed code also contains. Reading them as chrome produced
+             * the doubled label this rule replaced, and then the single headline
+             * as an untranslated label; both are the measurement, not the page.
+             */
+            picture: element.closest("[role='img'], [data-slot='marquee'], [data-slot='text-reveal'], [data-slot='kinetic-headline']") !== null,
             /* …unless it is a control, which stays chrome wherever it sits. */
             interactive:
               element.matches("button, a, input, select, textarea, summary, [role='button'], [role='link'], [role='tab']") ||
@@ -336,6 +399,17 @@ for (const route of routes.slice(0, limit > 0 ? limit : undefined)) {
     const unique = [...new Map(segments.map((entry) => [entry.text, entry])).values()];
     const leaked = unique.filter((entry) => !ALLOWED.some((allowed) => entry.text.includes(allowed)));
     /*
+     * The fixture boundary, applied after `ALLOWED` and before the id-list rule:
+     * a segment the page's own code block prints is the specimen, and a specimen
+     * is not translated. Counted and reported, never gated — the count is what
+     * keeps this from becoming a way to hide ordinary copy.
+     */
+    const snippetLocked = leaked.filter((entry) => codeText.includes(entry.text));
+    for (const entry of snippetLocked) {
+      snippetLockedSegments.push({ route: route.path, segment: entry.text });
+    }
+    const unsuppressed = leaked.filter((entry) => !snippetLocked.includes(entry));
+    /*
      * A reference table that prints `.join(", ")` over a capability's ids is not
      * an English page — it is nine registry keys in a row, and the policy is that
      * ids stay untranslated. `isIdList` requires *every* token to be a registered
@@ -344,16 +418,17 @@ for (const route of routes.slice(0, limit > 0 ? limit : undefined)) {
      * makes for a single identifier, applied to a list of them.
      */
     const isIdList = (entry) => isRegisteredIdList(entry.text, registryIds);
-    const idSegments = leaked.filter((entry) => isIdList(entry));
+    const idSegments = unsuppressed.filter((entry) => isIdList(entry));
     for (const entry of idSegments) idLists.push({ route: route.path, segment: entry.text });
-    const prose = leaked.filter((entry) => !isIdList(entry));
-    if (prose.length > 0) failures += 1;
-    if (prose.length > 0) proseContext[route.path] = prose;
+    const leakedProse = unsuppressed.filter((entry) => !isIdList(entry));
+    if (leakedProse.length > 0) failures += 1;
+    if (leakedProse.length > 0) proseContext[route.path] = leakedProse;
     report.push({
       slug: route.slug,
       path: route.path,
-      leaked: prose.map((entry) => entry.text),
-      leakedContext: prose,
+      leaked: leakedProse.map((entry) => entry.text),
+      leakedContext: leakedProse,
+      snippetLocked: snippetLocked.map((entry) => entry.text),
       idLists: idSegments.map((entry) => entry.text),
       suppressed,
     });
@@ -469,6 +544,19 @@ if (args.has("--json")) {
   console.log(
     `  chrome-shaped labels inside a declared picture (counted, not gated): ${specimenLabels} on ${Object.keys(specimenByRoute).length} route(s)`,
   );
+  /*
+   * A fifth class, printed so it is not a number only the exit code knows about:
+   * English that the page's own snippet prints. The rule is in
+   * `lib/i18n/messages.ts`; this is its measurement.
+   */
+  console.log(
+    `  specimen text printed by the page's own snippet (counted, not gated): ${
+      snippetLockedSegments.length
+    } on ${new Set(snippetLockedSegments.map((entry) => entry.route)).size} route(s)`,
+  );
+  for (const entry of snippetLockedSegments.slice(0, 4)) {
+    console.log(`      ${entry.route} — ${entry.segment.slice(0, 72)}`);
+  }
   if (!args.has("--update")) {
     for (const problem of chromeFailures) console.log(`  ${problem}`);
     if (chromeFailures.length === 0) console.log("  ✓ every chrome label is either translated or reviewed");

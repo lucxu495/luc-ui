@@ -42,9 +42,6 @@
     },
     "/patterns/research-workspace": {
       "Momentum study — BTC-USD": "the prepared dataset's own title, passed to the chart as data."
-    },
-    "/studios/motion": {
-      "Read the data, not the volumeRead the data, not the volume": "a TextReveal specimen's text, reported twice because the component renders a visible copy and a screen-reader copy. It is the demo's own sentence."
     }
   }
 }

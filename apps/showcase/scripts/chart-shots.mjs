@@ -1,16 +1,17 @@
 /**
  * Quick chart screenshots for visual inspection (not the full QA pass).
- *   LUC_QA_BASE_URL=http://localhost:3100 node scripts/chart-shots.mjs
+ *   LUC_QA_BASE_URL=http://localhost:5300 node scripts/chart-shots.mjs
  */
 
 import { mkdir } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
+import { resolveBaseUrl } from "../qa/base-url.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const outDir = path.resolve(here, "../../../artifacts/chart-review");
-const BASE_URL = process.env.LUC_QA_BASE_URL ?? "http://localhost:3100";
+const BASE_URL = resolveBaseUrl();
 const DESKTOP = { width: 1440, height: 1000 };
 
 const SHOTS = [

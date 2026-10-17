@@ -13,6 +13,7 @@
 
 import { Stack, Text } from "@luc/ui";
 import { ProjectShowcase, type Project } from "@luc/ui/experiences";
+import { useI18n } from "@/lib/i18n/provider";
 
 const PROJECTS: readonly Project[] = [
   {
@@ -32,9 +33,25 @@ const PROJECTS: readonly Project[] = [
 ];
 
 export function ProjectShowcaseDemo() {
+  /*
+   * The summaries below are copy, and an island has no other way to reach the
+   * dictionary: the server-side specimen walker sees `<ProjectShowcaseDemo />`
+   * and nothing inside it, and `fixture()` cannot cross into a client module
+   * either. So the island localizes its own data — the explicit entry point
+   * `lib/i18n/specimen.tsx` documents for a client component — and passes the
+   * component the localized records rather than the English literals.
+   */
+  const { tcs } = useI18n();
+  /*
+   * `summary` is optional on `Project`, so a project without one keeps
+   * `undefined` rather than growing an empty string the component would render.
+   */
+  const projects = PROJECTS.map((project) =>
+    project.summary === undefined ? project : { ...project, summary: tcs(project.summary) },
+  );
   return (
     <ProjectShowcase
-      projects={PROJECTS}
+      projects={projects}
       label="Projects"
       columns={2}
       defaultOpenFirst

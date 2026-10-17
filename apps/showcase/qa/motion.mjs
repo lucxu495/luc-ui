@@ -15,17 +15,18 @@
  *  4. **No specimen is a picture of a control** — nothing here asserts an
  *     interaction the component does not have.
  *
- *   LUC_QA_BASE_URL=http://127.0.0.1:3100 node qa/motion.mjs
+ *   LUC_QA_BASE_URL=http://127.0.0.1:5300 node qa/motion.mjs
  */
 
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
+import { resolveBaseUrl } from "./base-url.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const EVIDENCE = path.resolve(HERE, "../../../artifacts/screenshots/showcase-transformation");
-const BASE = (process.env.LUC_QA_BASE_URL ?? "http://127.0.0.1:3100").replace(/\/$/, "");
+const BASE = (resolveBaseUrl()).replace(/\/$/, "");
 
 const browser = await chromium.launch();
 const context = await browser.newContext({ viewport: { width: 1440, height: 900 } });

@@ -1,7 +1,7 @@
 /**
  * LUC UI — browser QA entry point.
  *
- *   LUC_QA_BASE_URL=http://127.0.0.1:3000 node scripts/visual-qa.mjs
+ *   LUC_QA_BASE_URL=http://127.0.0.1:5300 node scripts/visual-qa.mjs
  *
  * The implementation lives in `qa/`; this file only forwards argv so the
  * historical command keeps working:

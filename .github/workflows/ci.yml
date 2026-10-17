@@ -1,0 +1,132 @@
+# LUC UI — continuous integration for the standalone repository.
+#
+# Two jobs, and the difference between them is deliberate:
+#
+#   verify   MANDATORY. Everything that is deterministic on any Linux runner:
+#            types, lint, unit tests, i18n coverage, chart catalogue, the docs
+#            registry, package exports and the consumer proof. It is one
+#            command — `pnpm verify` — because re-listing its steps here would
+#            be a second pipeline to keep in sync with the first.
+#
+#   browser  OPTIONAL (environment-dependent). It builds the Showcase image and
+#            runs the browser tiers, including the Linux visual baselines that a
+#            macOS developer cannot diff (ADR-036). Docker-in-CI and a 10-minute
+#            browser sweep are real infrastructure, so the job is allowed to
+#            fail without blocking a merge — but it is not skipped silently: its
+#            result is visible on the run, and the README says which checks it
+#            owns.
+#
+# Not here, on purpose: no publish, no tag, no release and no deploy. The
+# package is distributed from a git tag cut by hand (docs/RELEASES.md).
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: verify (types, lint, tests, docs, package)
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      # The version comes from `packageManager` in package.json, so CI and a
+      # developer run the same pnpm.
+      - uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      # typecheck · lint · unit tests · i18n · charts · docs registry ·
+      # package exports/consumer · release-artifact reproducibility.
+      - name: Verify
+        run: pnpm verify
+
+  browser:
+    name: browser QA and Linux visual baselines (optional)
+    runs-on: ubuntu-latest
+    needs: verify
+    # Environment-dependent, so it does not block a merge. It still reports.
+    continue-on-error: true
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Install Chromium for Playwright
+        run: pnpm exec playwright install --with-deps chromium
+
+      # The production Showcase, built and run exactly as the review stack runs
+      # it. `docker compose config` is asserted first so a changed service name
+      # or published port fails here rather than five minutes later.
+      - name: Build and start the Showcase
+        run: |
+          docker compose config > /dev/null
+          docker compose up -d --build
+          for attempt in $(seq 1 40); do
+            status=$(docker inspect luc-ui-showcase-standalone --format '{{.State.Health.Status}}')
+            echo "health: $status"
+            [ "$status" = "healthy" ] && exit 0
+            sleep 3
+          done
+          docker compose logs --tail=80 showcase
+          exit 1
+
+      # Route health + behaviour + axe at desktop and 390 px. The target-size
+      # probe is separate because axe does not evaluate that rule in the
+      # touch-emulated mobile context — see qa/target-size.mjs.
+      - name: Browser QA
+        run: |
+          export LUC_QA_BASE_URL=http://127.0.0.1:5300
+          pnpm qa:behaviour
+          node apps/showcase/qa/target-size.mjs
+
+      # Linux baselines only. On macOS this suite skips with a reason instead of
+      # writing a snapshot (ADR-036); on the Linux runner it asserts.
+      - name: Visual baselines (Linux)
+        run: pnpm qa:baseline
+        env:
+          LUC_QA_BASE_URL: http://127.0.0.1:5300
+
+      - name: Stop the Showcase
+        if: always()
+        run: docker compose down
+
+      - name: Upload QA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-evidence
+          path: artifacts/reports
+          retention-days: 14
+          if-no-files-found: ignore

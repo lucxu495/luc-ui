@@ -54,7 +54,7 @@
  *     A control that says "I hold a state" and then does not move is a defect;
  *     a drawn button is not. See `--claims`.
  *
- *   LUC_QA_BASE_URL=http://127.0.0.1:3000 node qa/dead-controls.mjs
+ *   LUC_QA_BASE_URL=http://127.0.0.1:5300 node qa/dead-controls.mjs
  *   … --routes=experiences-vertical-productivity
  *   … --claims --routes=components-toggle,components-select   # Components pages
  *   … --claims --negative-test --routes=components-toggle     # proves it can fail
@@ -64,11 +64,12 @@ import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
+import { resolveBaseUrl } from "./base-url.mjs";
 import { ROUTES, selectRoutes } from "./routes.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const OUT = path.resolve(HERE, "../artifacts/qa/dead-controls");
-const BASE = (process.env.LUC_QA_BASE_URL ?? "http://127.0.0.1:3000").replace(/\/$/, "");
+const BASE = resolveBaseUrl();
 
 /** The groups where a control is the product: reference pages and compositions. */
 /*
@@ -110,6 +111,30 @@ const CLAIMS_ROUTES = [
   "components-ai", // AI surfaces
 ];
 
+/**
+ * Everything a click can change, and nothing a click merely *reveals*.
+ *
+ * The signature used to read `document.body.innerText`, and that made this probe
+ * unable to fail. `innerText` is layout-aware: it reflects what is *rendered*, so
+ * scrolling an off-screen control into view — which is exactly what
+ * `locator.click()` does before it clicks — changes its length and its tail.
+ * Every click on a long page therefore moved the signature by itself, every
+ * control counted as live, and "0 with no effect" was a statement about scrolling
+ * rather than about the controls.
+ *
+ * The `--negative-test` self-check is what caught it, in its own words: a
+ * handler-less `role="switch"` appended to `main` was not reported, and the
+ * probe's answer to that is "the probe is not looking where it thinks it is".
+ * Measured 2026-10-17 on `/components/toggle`: appending the switch and clicking
+ * it changed the old signature by text alone.
+ *
+ * `textContent` is not layout-aware, so a scroll cannot move it, and the two
+ * signals that were doing the real work are unchanged: the aria/`data-state` map
+ * and the value/checked/disabled table. `main.scrollHeight` and the element count
+ * are added because they are the scroll-independent half of what `innerText` was
+ * catching — a disclosure that expands, a list that grows, a panel that swaps —
+ * and neither of them moves when the page is scrolled.
+ */
 const SIGNATURE = () => {
   const aria = [...document.querySelectorAll("*")]
     .map((element) =>
@@ -122,9 +147,12 @@ const SIGNATURE = () => {
   const controls = [...document.querySelectorAll("input, select, textarea")]
     .map((element) => `${element.tagName}:${element.value ?? ""}:${element.checked ?? ""}:${element.disabled ?? ""}`)
     .join(",");
+  const main = document.querySelector("main");
   return [
-    document.body.innerText.length,
-    document.body.innerText.slice(-400),
+    document.body.textContent.length,
+    document.body.textContent.slice(-400),
+    main?.scrollHeight ?? 0,
+    main?.querySelectorAll("*").length ?? 0,
     aria,
     controls,
     `${location.pathname}${location.search}`,
@@ -359,6 +387,31 @@ for (const route of routes) {
    */
   if (Number.isFinite(maxClicks) && maxClicks > 0 && planned.length > maxClicks) planned = planned.slice(0, maxClicks);
   for (const button of planned) {
+    /*
+     * Bring the control into view *before* the baseline is taken.
+     *
+     * `locator.click()` scrolls the element into view first, and the Showcase
+     * reacts to that scroll: the "On this page" rail is a scroll-spy, so the
+     * anchor carrying `aria-current="location"` moves to whichever section is
+     * now on screen. That mutation is the *scroll's* doing, not the control's,
+     * but the signature cannot tell them apart — so a handler-less button
+     * appeared to do something and the probe could not fail.
+     *
+     * Measured 2026-10-17 on `/components/toggle`, with the injected
+     * `role="switch"` as the control: the aria map's only difference after the
+     * click was `BUTTON#aria-checked=false` being replaced by
+     * `A#aria-current=location` — the rail's marker following the scroll.
+     *
+     * Scrolling first, then waiting for the spy to settle, makes the click a
+     * no-op for the page's position, which is what leaves only the control's own
+     * effect in the delta.
+     */
+    await page
+      .locator("main button")
+      .nth(button.index)
+      .scrollIntoViewIfNeeded()
+      .catch(() => {});
+    await page.waitForTimeout(150);
     const before = await page.evaluate(SIGNATURE);
     let failed = null;
     try {

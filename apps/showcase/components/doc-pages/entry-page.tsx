@@ -84,6 +84,7 @@ import {
 import { exampleFor } from "./examples";
 import { entryLead } from "@/lib/docs/lead";
 import { localizeSpecimen } from "@/lib/i18n/specimen";
+import { CHART_NOTES } from "@/lib/docs/curation/notes";
 import type { ReactNode } from "react";
 
 /**
@@ -242,6 +243,7 @@ export async function DocEntryPage({
     : [];
   const isChart = entry.group === "charts";
   const isComponent = entry.group === "components";
+  const chartNote = isChart ? CHART_NOTES[entry.id] : undefined;
   const engine = isChart ? chartEngineFor(entry.exports) : undefined;
   /*
    * A page shows a specimen once. An entry that has a Live Demo uses it; the
@@ -299,6 +301,17 @@ export async function DocEntryPage({
   return (
     <DocPage intent={intent}>
       <DocEntryHeader entry={entry} lead={entryLead(entry, tcs)} tcs={tcs} />
+
+      {chartNote ? (
+        <section className="flex flex-col gap-3">
+          <Heading size="title" as="h2" id="what-it-shows">
+            {tcs("What it shows")}
+          </Heading>
+          <Text variant="body" tone="muted" as="p" className="max-w-[68ch]">
+            {tcs(chartNote.purpose)}
+          </Text>
+        </section>
+      ) : null}
 
       {isComponent ? (
         <>
@@ -417,6 +430,38 @@ export async function DocEntryPage({
                 </Stack>
               ) : null}
 
+              {/*
+                * The canonical import, for the pages that are not a component
+                * entry.
+                *
+                * A motion page passed a demo, so this branch rendered its
+                * `Usage` heading and *nothing under it* — the demo code lives in
+                * `Examples` above, and the import was only ever printed in the
+                * component branch. Thirty-five pages had an empty section, which
+                * is exactly what the no-empty-headings rule forbids. A chart
+                * page had the same gap: contract prose, but no import.
+                *
+                * The import is the right content here rather than a copy of the
+                * specimen: it is the sentence a reader needs (which subpath,
+                * which symbol) and the demo above already carries the copyable
+                * call.
+                */}
+              <ImportLine line={usageImportLine} />
+              {/*
+                * The minimal call, on the pages whose spec already owns one.
+                *
+                * A chart and a motion primitive are *used* by writing the
+                * component and its data; the demo spec is the shortest call that
+                * produces what the page shows, so it is the honest Usage here —
+                * and it is the same code the reader can copy from the specimen,
+                * not a second, drifting copy. Without it these 111 pages had an
+                * import line and prose, which the content standard does not
+                * count as Usage.
+                */}
+              {usage?.code ? (
+                <CodeBlock code={usage.code} label={usage.copyLabel ?? tcs("Copy the minimal call")} />
+              ) : null}
+
               {/* The specimen is only repeated here when the page has no Live
                * Demo section above it — that is, when the fallback example is
                * all the page can honestly show. */}
@@ -427,6 +472,37 @@ export async function DocEntryPage({
                 </Text>
               ) : null}
             </section>
+          ) : null}
+
+          {chartNote ? (
+            <>
+              <section className="flex flex-col gap-3">
+                <Heading size="title" as="h2" id="data-contract">
+                  {tcs("Data contract")}
+                </Heading>
+                <Text variant="body" tone="muted" as="p" className="max-w-[68ch]">
+                  {tcs(chartNote.dataContract)}
+                </Text>
+                <Heading size="title" as="h3">
+                  {tcs("Important configuration")}
+                </Heading>
+                <Text variant="body" tone="muted" as="p" className="max-w-[68ch]">
+                  {tcs(chartNote.configuration)}
+                </Text>
+              </section>
+
+              <section className="flex flex-col gap-3">
+                <Heading size="title" as="h2" id="guidelines">
+                  {tcs("Guidelines")}
+                </Heading>
+                <Heading size="title" as="h3">
+                  {tcs("When not to use")}
+                </Heading>
+                <Text variant="body" tone="muted" as="p" className="max-w-[68ch]">
+                  {tcs(chartNote.avoid)}
+                </Text>
+              </section>
+            </>
           ) : null}
 
           {/*

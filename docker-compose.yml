@@ -4,11 +4,12 @@
 # review through an SSH tunnel:
 #
 #   server:  docker compose up -d --build          # from this repository root
-#   mac:     ssh -L 3000:localhost:3000 luc@<SERVER_IP>
-#   browser: http://localhost:3000
+#   mac:     ssh -L 5300:localhost:5300 luc@<SERVER_IP>
+#   browser: http://localhost:5300
 #
-# The port is published on 127.0.0.1 ONLY. It is never exposed on 0.0.0.0, no
-# firewall port is opened and there is no public DNS entry. The stack has no
+# The host port is this checkout's own number (`LUC_UI_SHOWCASE_PORT`, default
+# **5300**) and it is published on 127.0.0.1 ONLY. It is never exposed on 0.0.0.0,
+# no firewall port is opened and there is no public DNS entry. The stack has no
 # shared networks or volumes and reads nothing from another project.
 #
 # The project name, image and container name are this repository's own.
@@ -20,6 +21,14 @@
 # network, `luc-ui_default`), and Docker refuses to create a second container
 # with a name that is already in use. The `-standalone` suffix removes the
 # ambiguity while both repositories exist.
+#
+# The *host* port carried the same ambiguity: this file published 3000, which
+# is both the container's own port and the number the retired `luc-quant` stack
+# published, so a rebuild of this repository could quietly answer on the wrong
+# address while the address it was reviewed at (5300, beside `luc-visuals` on
+# 5301) was served by nothing. The default is 5300 now; the container still
+# listens on 3000 inside, and `docker-compose.local.yml` still asks Docker for
+# an ephemeral port so a preview never fights for a fixed number.
 name: luc-ui-standalone
 services:
   showcase:
@@ -31,9 +40,10 @@ services:
     container_name: luc-ui-showcase-standalone
     restart: unless-stopped
     ports:
-      # Loopback-only host binding. Override the host port with
-      # LUC_UI_SHOWCASE_PORT if 3000 is already taken on the server.
-      - "127.0.0.1:${LUC_UI_SHOWCASE_PORT:-3000}:3000"
+      # Loopback-only host binding, on the port this repository owns.
+      # `LUC_UI_SHOWCASE_PORT` moves it (a second checkout, a busy port); the
+      # QA runner and the probes read the same variable, so they follow.
+      - "127.0.0.1:${LUC_UI_SHOWCASE_PORT:-5300}:3000"
     environment:
       NODE_ENV: production
       PORT: "3000"

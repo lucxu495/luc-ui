@@ -72,6 +72,115 @@ const TEXT_PROPS: readonly string[] = [
 const LITERAL_TAGS = new Set(["code", "pre", "kbd", "samp", "var", "script", "style", "option"]);
 
 /**
+ * The mark `fixture()` leaves on a data value, so `localizeSpecimen` knows the
+ * strings inside it are copy.
+ *
+ * A `Symbol.for` key rather than a module-local one: several copies of this
+ * module can coexist in one process (a test runner's module graph, a bundler's
+ * server and client graphs), and two module-local symbols would make a marked
+ * fixture unrecognisable to the other copy — a translation that silently stops
+ * happening, which is the failure mode this whole file exists to remove.
+ */
+const FIXTURE_MARK = Symbol.for("luc-ui.showcase.fixture");
+
+/**
+ * Declare which fields of a fixture carry copy, so the specimen localizer
+ * translates them.
+ *
+ * The gap this closes: `localizeSpecimen` translates JSX text nodes and the
+ * props in `TEXT_PROPS`, and both are the right rules for a *tree*. Neither can
+ * reach a fixture — `<PublicationList publications={[…]}/>` carries its visible
+ * words inside an array of records, and the walker refuses to guess which props
+ * hold text, because guessing is how a `variant` or a `status` starts being
+ * translated and the specimen stops behaving the way the page says it does.
+ *
+ * So the author names the fields, at the value:
+ *
+ *   <PublicationList publications={fixture(publications, ["title"])}/>
+ *   <NowSection items={fixture(items, ["label", "value"])}/>
+ *
+ * Naming the field, rather than translating every string inside the value, is
+ * what keeps the page honest in two directions at once:
+ *
+ *   - **Behaviour stays untouched.** `status: "Active"`, `doi`, `tags` and
+ *     `citations` are data the component acts on; a whole-value walk would
+ *     translate `Close` (a dictionary key — the market close) wherever a fixture
+ *     happened to use it as a label. A named field cannot do that.
+ *   - **The preview keeps agreeing with the snippet beside it.** A demo prints
+ *     the code that produced it, and a page whose preview says 运行回测 next to a
+ *     snippet saying `Run backtest` has broken the one promise a live specimen
+ *     makes. `fixture()` therefore names only the fields the snippet does *not*
+ *     print — the `summary` of a timeline entry, the title of a publication —
+ *     and leaves the fields the reader can see in the code block (`role`, `org`,
+ *     a printed label) exactly as written.
+ *
+ * What happens then is narrow and predictable: a string *value* under one of the
+ * named keys is looked up in the dictionary, and everything else — numbers,
+ * booleans, `null`, unnamed keys, the array and object shapes themselves — is
+ * passed through untouched. A string the dictionary does not have stays as it
+ * was, so identifiers fall back to English and a partly-translated fixture
+ * degrades rather than breaks.
+ *
+ * The mark is non-enumerable, so it is invisible to `Object.keys`, to spread and
+ * to React's own prop handling. The returned value is a shallow copy: the
+ * caller's literal is never mutated.
+ */
+export function fixture<T>(value: T, fields: readonly string[]): T {
+  if (value === null || typeof value !== "object") return value;
+  const marked = (Array.isArray(value) ? [...value] : { ...(value as object) }) as T;
+  Object.defineProperty(marked, FIXTURE_MARK, {
+    value: fields,
+    enumerable: false,
+    configurable: true,
+  });
+  return marked;
+}
+
+const fixtureFields = (value: unknown): readonly string[] | undefined => {
+  if (typeof value !== "object" || value === null) return undefined;
+  const fields = (value as Record<symbol, unknown>)[FIXTURE_MARK];
+  return Array.isArray(fields) ? (fields as string[]) : undefined;
+};
+
+/**
+ * Translate the marked fields of a fixture, preserving its shape.
+ *
+ * Returns the input when nothing changed, so an all-English fixture keeps its
+ * identity and React re-renders nothing.
+ */
+function localizeFixture(value: unknown, fields: readonly string[], tcs: (source: string) => string): unknown {
+  if (value === null || typeof value !== "object") return value;
+  if (Array.isArray(value)) {
+    let changed = false;
+    const mapped = value.map((child) => {
+      const next = localizeFixture(child, fields, tcs);
+      if (next !== child) changed = true;
+      return next;
+    });
+    return changed ? mapped : value;
+  }
+  let changed = false;
+  const next: Record<string, unknown> = {};
+  for (const [key, child] of Object.entries(value as Record<string, unknown>)) {
+    if (typeof child === "string" && fields.includes(key)) {
+      const translated = tcs(child);
+      if (translated !== child) changed = true;
+      next[key] = translated;
+      continue;
+    }
+    /*
+     * A nested record is walked with the same field names, so
+     * `items: [{ entry: { title } }]` behaves like `items: [{ title }]`; a plain
+     * string array (`tags`, `highlights`) holds no keys and is left alone.
+     */
+    const nested = localizeFixture(child, fields, tcs);
+    if (nested !== child) changed = true;
+    next[key] = nested;
+  }
+  return changed ? next : value;
+}
+
+/**
  * One text node, keeping the whitespace JSX put around it.
  *
  * JSX hands a frame's text over with its indentation attached (`"\n  Runs are
@@ -152,6 +261,19 @@ export function localizeSpecimen(
       const translated = tcs(value);
       if (translated !== value) changed = true;
       next[key] = translated;
+      continue;
+    }
+    /*
+     * A marked fixture is the one place this walker looks inside a non-string
+     * prop, and only because the author asked it to (`fixture()` above). The
+     * `isFixture` test is on the value, not on the prop name, so the same walker
+     * stays safe for every other prop on every other component.
+     */
+    const fields = fixtureFields(value);
+    if (fields) {
+      const localized = localizeFixture(value, fields, tcs);
+      if (localized !== value) changed = true;
+      next[key] = localized;
       continue;
     }
     next[key] = value;

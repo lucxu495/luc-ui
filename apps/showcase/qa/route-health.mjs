@@ -16,7 +16,7 @@
  * A route may be excused only by name **and** with the action-item id that owns
  * the defect, so a whitelist entry cannot outlive its reason.
  *
- *   LUC_QA_BASE_URL=http://127.0.0.1:3100 node qa/route-health.mjs
+ *   LUC_QA_BASE_URL=http://127.0.0.1:5300 node qa/route-health.mjs
  *   node qa/route-health.mjs --workers=2 --limit=40
  *
  * Bounded at two workers on purpose (ADR-036): one worker holds a desktop and
@@ -27,11 +27,12 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
+import { resolveBaseUrl } from "./base-url.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const APP = path.resolve(HERE, "..");
 const EVIDENCE = path.resolve(APP, "../../artifacts/screenshots/showcase-transformation");
-const BASE = process.env.LUC_QA_BASE_URL ?? "http://127.0.0.1:3100";
+const BASE = resolveBaseUrl();
 
 /**
  * Excused routes. Each entry must name the action item that owns the defect and

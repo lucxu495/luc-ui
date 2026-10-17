@@ -211,7 +211,14 @@ describe("the inspection", () => {
 
   it("says nothing when the cache is small and the disk is roomy", async () => {
     const root = await scaffold();
-    const { warnings } = await inspect({ root, env: {} });
+    /*
+     * The free space is stated, not measured: this case is about the *default*
+     * thresholds producing silence on a healthy checkout, and the machine
+     * running the test is not part of that claim. Measuring it made the case
+     * depend on the host — it failed on this Mac at 12.87 GiB free against the
+     * 20 GiB minimum, which is the guard working correctly.
+     */
+    const { warnings } = await inspect({ root, env: {}, freeGb: 500 });
     assert.deepEqual(warnings, []);
   });
 });

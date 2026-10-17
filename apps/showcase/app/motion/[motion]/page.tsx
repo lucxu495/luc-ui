@@ -78,6 +78,7 @@ export default async function MotionPage({ params }: { params: Promise<{ motion:
       <DocEntryPage
         entry={entry}
         {...(demo ? { demo: <DemoStage spec={demo} /> } : {})}
+        {...(demo?.code ? { usage: { code: demo.code } } : {})}
         {...(examples ? { examples } : {})}
       />
     );

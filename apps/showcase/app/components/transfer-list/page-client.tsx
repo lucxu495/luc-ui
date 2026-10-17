@@ -11,6 +11,8 @@ import { GuidanceCards } from "@/components/docs/guidance";
 import { EntryFooter } from "@/components/docs/entry-footer";
 import { ENTRY_NOTES } from "@/lib/docs/curation/notes";
 import { useI18n } from "@/lib/i18n/provider";
+import { EntryNotes } from "@/components/docs/entry-notes";
+import { ExamplesHeading } from "@/components/docs/examples-heading";
 
 /*
  * The two fixtures, built from the dictionary.
@@ -65,6 +67,7 @@ export function TransferListPage({ apiSection }: { apiSection?: ReactNode }) {
           "Move items between two sets with the keyboard: the ids on the right are the whole value, so a form saves one array.",
         )}
       />
+      <ExamplesHeading />
 
       {/* ------------------------------------------------------------ examples */}
       <section className="flex flex-col gap-5">
@@ -183,6 +186,7 @@ export function TransferListPage({ apiSection }: { apiSection?: ReactNode }) {
         ) : null}
       </section>
 
+      <EntryNotes entryIds={["transfer-list"]} />
       <EntryFooter entryId="transfer-list" related={["sortable-list", "kanban-board", "list"]} />
     </DocPage>
   );

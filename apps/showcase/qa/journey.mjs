@@ -32,10 +32,11 @@ import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium, firefox, webkit } from "@playwright/test";
+import { resolveBaseUrl } from "./base-url.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const EVIDENCE = path.resolve(HERE, "../../../artifacts/screenshots/showcase-transformation/journeys");
-const BASE = process.env.LUC_QA_BASE_URL ?? "http://127.0.0.1:3100";
+const BASE = resolveBaseUrl();
 
 /*
  * Which engine to drive — `QA-003` asks for the *same journeys* in Chromium,

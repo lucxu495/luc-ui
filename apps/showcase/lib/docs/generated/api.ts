@@ -25095,12 +25095,2765 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
    ]
   }
  ],
- "tradingview-charts": [],
- "tradingview-heatmaps": [],
- "tradingview-news-calendars": [],
+ "tradingview-charts": [
+  {
+   "name": "TradingViewAdvancedChart",
+   "kind": "value",
+   "signature": "({ symbol, interval, timezone, style, preset, hideTopToolbar, hideSideToolbar, hideLegend, hideVolume, allowSymbolChange, saveImage, withDateRanges, details, hotlist, watchlist, compareSymbols, studi…",
+   "propsType": "TradingViewAdvancedChartProps",
+   "props": [
+    {
+     "name": "allowSymbolChange",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "aria-label",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "compareSymbols",
+     "optional": true,
+     "type": "readonly TradingViewCompareSymbol[] | undefined",
+     "inherited": false
+    },
+    {
+     "name": "config",
+     "optional": true,
+     "type": "TradingViewRawConfig | undefined",
+     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "inherited": false
+    },
+    {
+     "name": "details",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "fallback",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered instead of the provider widget when the load fails.",
+     "inherited": false
+    },
+    {
+     "name": "height",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Height of the widget box. Defaults to the registry's usable minimum.",
+     "inherited": false
+    },
+    {
+     "name": "hideLegend",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "hideSideToolbar",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "hideTopToolbar",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "hideVolume",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "hotlist",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "inheritTheme",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Map LUC semantic tokens onto TradingView's public CSS custom properties. Default `true`. Ignored by iframe widgets, which only accept the provider's own theme config — that limit …",
+     "inherited": false
+    },
+    {
+     "name": "interval",
+     "optional": true,
+     "type": "TradingViewChartInterval | undefined",
+     "inherited": false
+    },
+    {
+     "name": "loading",
+     "optional": true,
+     "type": "\"lazy\" | \"eager\" | undefined",
+     "description": "Defer loading until the widget is near the viewport. Default `\"lazy\"`.",
+     "inherited": false
+    },
+    {
+     "name": "locale",
+     "optional": true,
+     "type": "TradingViewLocale | undefined",
+     "description": "Provider locale. Defaults to `LocaleProvider` when present, else `en`.",
+     "inherited": false
+    },
+    {
+     "name": "minHeight",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Minimum height, so a resizable pane cannot collapse the widget to nothing.",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((change: TradingViewStatusChange) => void) | undefined",
+     "description": "Notified on every lifecycle transition.",
+     "inherited": false
+    },
+    {
+     "name": "placeholder",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered inside the widget box until the provider takes over. Defaults to a geometry-matched skeleton; an inline widget (Ticker Tag) supplies its own so it can sit inside a paragr…",
+     "inherited": false
+    },
+    {
+     "name": "preset",
+     "optional": true,
+     "type": "TradingViewChartPreset | undefined",
+     "inherited": false
+    },
+    {
+     "name": "saveImage",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "studies",
+     "optional": true,
+     "type": "readonly string[] | undefined",
+     "inherited": false
+    },
+    {
+     "name": "style",
+     "optional": true,
+     "type": "TradingViewChartStyle | undefined",
+     "inherited": false
+    },
+    {
+     "name": "symbol",
+     "optional": false,
+     "type": "string",
+     "inherited": false
+    },
+    {
+     "name": "theme",
+     "optional": true,
+     "type": "TradingViewThemeProp | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeoutMs",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds to wait for a Web Component to register before reporting it as unavailable. Default `12000`. iframe widgets report failure from the script load instead.",
+     "inherited": false
+    },
+    {
+     "name": "timezone",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Accessible name for the widget box. Defaults to the registry display name.",
+     "inherited": false
+    },
+    {
+     "name": "transparent",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Ask the provider for a transparent background. Ignored by widgets that do not expose the option. LUC defaults to opaque: dense financial content is more readable on its own surfac…",
+     "inherited": false
+    },
+    {
+     "name": "watchlist",
+     "optional": true,
+     "type": "readonly string[] | undefined",
+     "inherited": false
+    },
+    {
+     "name": "withDateRanges",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    }
+   ]
+  },
+  {
+   "name": "TradingViewMiniChart",
+   "kind": "value",
+   "signature": "({ symbol, timeFrame, lineChartType, showTimeRange, showTimeScale, hideMarketStatus, chartOnly, symbolUrl, theme, ...base }: TradingViewMiniChartProps) => import(\"@types/react\").JSX.Element",
+   "propsType": "TradingViewMiniChartProps",
+   "props": [
+    {
+     "name": "aria-label",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "chartOnly",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "config",
+     "optional": true,
+     "type": "TradingViewRawConfig | undefined",
+     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "inherited": false
+    },
+    {
+     "name": "fallback",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered instead of the provider widget when the load fails.",
+     "inherited": false
+    },
+    {
+     "name": "height",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Height of the widget box. Defaults to the registry's usable minimum.",
+     "inherited": false
+    },
+    {
+     "name": "hideMarketStatus",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "inheritTheme",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Map LUC semantic tokens onto TradingView's public CSS custom properties. Default `true`. Ignored by iframe widgets, which only accept the provider's own theme config — that limit …",
+     "inherited": false
+    },
+    {
+     "name": "lineChartType",
+     "optional": true,
+     "type": "\"Area\" | \"Line\" | \"Baseline\" | undefined",
+     "inherited": false
+    },
+    {
+     "name": "loading",
+     "optional": true,
+     "type": "\"lazy\" | \"eager\" | undefined",
+     "description": "Defer loading until the widget is near the viewport. Default `\"lazy\"`.",
+     "inherited": false
+    },
+    {
+     "name": "locale",
+     "optional": true,
+     "type": "TradingViewLocale | undefined",
+     "description": "Provider locale. Defaults to `LocaleProvider` when present, else `en`.",
+     "inherited": false
+    },
+    {
+     "name": "minHeight",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Minimum height, so a resizable pane cannot collapse the widget to nothing.",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((change: TradingViewStatusChange) => void) | undefined",
+     "description": "Notified on every lifecycle transition.",
+     "inherited": false
+    },
+    {
+     "name": "placeholder",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered inside the widget box until the provider takes over. Defaults to a geometry-matched skeleton; an inline widget (Ticker Tag) supplies its own so it can sit inside a paragr…",
+     "inherited": false
+    },
+    {
+     "name": "showTimeRange",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "showTimeScale",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "symbol",
+     "optional": false,
+     "type": "string",
+     "inherited": false
+    },
+    {
+     "name": "symbolUrl",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "theme",
+     "optional": true,
+     "type": "TradingViewThemeProp | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeFrame",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeoutMs",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds to wait for a Web Component to register before reporting it as unavailable. Default `12000`. iframe widgets report failure from the script load instead.",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Accessible name for the widget box. Defaults to the registry display name.",
+     "inherited": false
+    },
+    {
+     "name": "transparent",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Ask the provider for a transparent background. Ignored by widgets that do not expose the option. LUC defaults to opaque: dense financial content is more readable on its own surfac…",
+     "inherited": false
+    }
+   ]
+  },
+  {
+   "name": "TradingViewSeasonalChart",
+   "kind": "value",
+   "signature": "({ symbol, symbolUrl, theme, ...rest }: TradingViewSeasonalChartProps) => import(\"@types/react\").JSX.Element",
+   "propsType": "TradingViewSeasonalChartProps",
+   "props": [
+    {
+     "name": "aria-label",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "config",
+     "optional": true,
+     "type": "TradingViewRawConfig | undefined",
+     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "inherited": false
+    },
+    {
+     "name": "fallback",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered instead of the provider widget when the load fails.",
+     "inherited": false
+    },
+    {
+     "name": "height",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Height of the widget box. Defaults to the registry's usable minimum.",
+     "inherited": false
+    },
+    {
+     "name": "hideHeader",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "hidePriceScale",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "inheritTheme",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Map LUC semantic tokens onto TradingView's public CSS custom properties. Default `true`. Ignored by iframe widgets, which only accept the provider's own theme config — that limit …",
+     "inherited": false
+    },
+    {
+     "name": "loading",
+     "optional": true,
+     "type": "\"lazy\" | \"eager\" | undefined",
+     "description": "Defer loading until the widget is near the viewport. Default `\"lazy\"`.",
+     "inherited": false
+    },
+    {
+     "name": "locale",
+     "optional": true,
+     "type": "TradingViewLocale | undefined",
+     "description": "Provider locale. Defaults to `LocaleProvider` when present, else `en`.",
+     "inherited": false
+    },
+    {
+     "name": "minHeight",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Minimum height, so a resizable pane cannot collapse the widget to nothing.",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((change: TradingViewStatusChange) => void) | undefined",
+     "description": "Notified on every lifecycle transition.",
+     "inherited": false
+    },
+    {
+     "name": "placeholder",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered inside the widget box until the provider takes over. Defaults to a geometry-matched skeleton; an inline widget (Ticker Tag) supplies its own so it can sit inside a paragr…",
+     "inherited": false
+    },
+    {
+     "name": "showAverage",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "showSeriesLabels",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "symbol",
+     "optional": false,
+     "type": "string",
+     "inherited": false
+    },
+    {
+     "name": "symbolUrl",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "theme",
+     "optional": true,
+     "type": "TradingViewThemeProp | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeoutMs",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds to wait for a Web Component to register before reporting it as unavailable. Default `12000`. iframe widgets report failure from the script load instead.",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Accessible name for the widget box. Defaults to the registry display name.",
+     "inherited": false
+    },
+    {
+     "name": "transparent",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Ask the provider for a transparent background. Ignored by widgets that do not expose the option. LUC defaults to opaque: dense financial content is more readable on its own surfac…",
+     "inherited": false
+    }
+   ]
+  },
+  {
+   "name": "TradingViewSymbolOverview",
+   "kind": "value",
+   "signature": "({ symbols, chartType, showVolume, showMA, hideDateRanges, hideMarketStatus, hideSymbolLogo, noTimeScale, transparent, locale, config, theme, ...base }: TradingViewSymbolOverviewProps) => import(\"@ty…",
+   "propsType": "TradingViewSymbolOverviewProps",
+   "props": [
+    {
+     "name": "aria-label",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "chartType",
+     "optional": true,
+     "type": "\"area\" | \"line\" | \"baseline\" | \"candlesticks\" | \"bars\" | \"heikin-ashi\" | \"hollow-candles\"…",
+     "inherited": false
+    },
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "config",
+     "optional": true,
+     "type": "TradingViewRawConfig | undefined",
+     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "inherited": false
+    },
+    {
+     "name": "fallback",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered instead of the provider widget when the load fails.",
+     "inherited": false
+    },
+    {
+     "name": "height",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Height of the widget box. Defaults to the registry's usable minimum.",
+     "inherited": false
+    },
+    {
+     "name": "hideDateRanges",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "hideMarketStatus",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "hideSymbolLogo",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "inheritTheme",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Map LUC semantic tokens onto TradingView's public CSS custom properties. Default `true`. Ignored by iframe widgets, which only accept the provider's own theme config — that limit …",
+     "inherited": false
+    },
+    {
+     "name": "loading",
+     "optional": true,
+     "type": "\"lazy\" | \"eager\" | undefined",
+     "description": "Defer loading until the widget is near the viewport. Default `\"lazy\"`.",
+     "inherited": false
+    },
+    {
+     "name": "locale",
+     "optional": true,
+     "type": "TradingViewLocale | undefined",
+     "description": "Provider locale. Defaults to `LocaleProvider` when present, else `en`.",
+     "inherited": false
+    },
+    {
+     "name": "minHeight",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Minimum height, so a resizable pane cannot collapse the widget to nothing.",
+     "inherited": false
+    },
+    {
+     "name": "noTimeScale",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((change: TradingViewStatusChange) => void) | undefined",
+     "description": "Notified on every lifecycle transition.",
+     "inherited": false
+    },
+    {
+     "name": "placeholder",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered inside the widget box until the provider takes over. Defaults to a geometry-matched skeleton; an inline widget (Ticker Tag) supplies its own so it can sit inside a paragr…",
+     "inherited": false
+    },
+    {
+     "name": "showMA",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "showVolume",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "symbols",
+     "optional": false,
+     "type": "readonly TradingViewSymbolOverviewEntry[]",
+     "inherited": false
+    },
+    {
+     "name": "theme",
+     "optional": true,
+     "type": "TradingViewThemeProp | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeoutMs",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds to wait for a Web Component to register before reporting it as unavailable. Default `12000`. iframe widgets report failure from the script load instead.",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Accessible name for the widget box. Defaults to the registry display name.",
+     "inherited": false
+    },
+    {
+     "name": "transparent",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Ask the provider for a transparent background. Ignored by widgets that do not expose the option. LUC defaults to opaque: dense financial content is more readable on its own surfac…",
+     "inherited": false
+    }
+   ]
+  }
+ ],
+ "tradingview-heatmaps": [
+  {
+   "name": "TradingViewCryptoHeatmap",
+   "kind": "value",
+   "signature": "({ dataSource, blockSize, blockColor, hasTopBar, isZoomEnabled, hasSymbolTooltip, transparent, symbolUrl, locale, theme, ...base }: TradingViewCryptoHeatmapProps) => import(\"@types/react\").JSX.Element",
+   "propsType": "TradingViewCryptoHeatmapProps",
+   "props": [
+    {
+     "name": "aria-label",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "blockColor",
+     "optional": true,
+     "type": "\"change\" | \"Perf.W\" | \"Perf.1M\" | \"Perf.3M\" | \"Perf.6M\" | \"Perf.YTD\" | \"Perf.Y\" | \"24h_cl…",
+     "inherited": false
+    },
+    {
+     "name": "blockSize",
+     "optional": true,
+     "type": "\"volume\" | \"market_cap_calc\" | \"24h_vol_cmc\" | undefined",
+     "inherited": false
+    },
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "config",
+     "optional": true,
+     "type": "TradingViewRawConfig | undefined",
+     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "inherited": false
+    },
+    {
+     "name": "dataSource",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "fallback",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered instead of the provider widget when the load fails.",
+     "inherited": false
+    },
+    {
+     "name": "hasSymbolTooltip",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "hasTopBar",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Zoombar, tooltips and top bar, all provider features.",
+     "inherited": false
+    },
+    {
+     "name": "height",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Height of the widget box. Defaults to the registry's usable minimum.",
+     "inherited": false
+    },
+    {
+     "name": "inheritTheme",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Map LUC semantic tokens onto TradingView's public CSS custom properties. Default `true`. Ignored by iframe widgets, which only accept the provider's own theme config — that limit …",
+     "inherited": false
+    },
+    {
+     "name": "isZoomEnabled",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "loading",
+     "optional": true,
+     "type": "\"lazy\" | \"eager\" | undefined",
+     "description": "Defer loading until the widget is near the viewport. Default `\"lazy\"`.",
+     "inherited": false
+    },
+    {
+     "name": "locale",
+     "optional": true,
+     "type": "TradingViewLocale | undefined",
+     "description": "Provider locale. Defaults to `LocaleProvider` when present, else `en`.",
+     "inherited": false
+    },
+    {
+     "name": "minHeight",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Minimum height, so a resizable pane cannot collapse the widget to nothing.",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((change: TradingViewStatusChange) => void) | undefined",
+     "description": "Notified on every lifecycle transition.",
+     "inherited": false
+    },
+    {
+     "name": "placeholder",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered inside the widget box until the provider takes over. Defaults to a geometry-matched skeleton; an inline widget (Ticker Tag) supplies its own so it can sit inside a paragr…",
+     "inherited": false
+    },
+    {
+     "name": "symbolUrl",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Redirect symbol clicks to your own site.",
+     "inherited": false
+    },
+    {
+     "name": "theme",
+     "optional": true,
+     "type": "TradingViewThemeProp | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeoutMs",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds to wait for a Web Component to register before reporting it as unavailable. Default `12000`. iframe widgets report failure from the script load instead.",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Accessible name for the widget box. Defaults to the registry display name.",
+     "inherited": false
+    },
+    {
+     "name": "transparent",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Ask the provider for a transparent background. Ignored by widgets that do not expose the option. LUC defaults to opaque: dense financial content is more readable on its own surfac…",
+     "inherited": false
+    }
+   ]
+  },
+  {
+   "name": "TradingViewEtfHeatmap",
+   "kind": "value",
+   "signature": "({ dataSource, grouping, blockSize, blockColor, hasTopBar, isZoomEnabled, hasSymbolTooltip, transparent, symbolUrl, locale, theme, ...base }: TradingViewEtfHeatmapProps) => import(\"@types/react\").JSX…",
+   "propsType": "TradingViewEtfHeatmapProps",
+   "props": [
+    {
+     "name": "aria-label",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "blockColor",
+     "optional": true,
+     "type": "\"change\" | \"Perf.W\" | \"Perf.1M\" | \"Perf.3M\" | \"Perf.6M\" | \"Perf.YTD\" | \"Perf.Y\" | undefin…",
+     "inherited": false
+    },
+    {
+     "name": "blockSize",
+     "optional": true,
+     "type": "\"volume\" | \"market_cap_calc\" | \"AUM\" | undefined",
+     "inherited": false
+    },
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "config",
+     "optional": true,
+     "type": "TradingViewRawConfig | undefined",
+     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "inherited": false
+    },
+    {
+     "name": "dataSource",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "fallback",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered instead of the provider widget when the load fails.",
+     "inherited": false
+    },
+    {
+     "name": "grouping",
+     "optional": true,
+     "type": "\"no_group\" | \"asset_class\" | undefined",
+     "inherited": false
+    },
+    {
+     "name": "hasSymbolTooltip",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "hasTopBar",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Zoombar, tooltips and top bar, all provider features.",
+     "inherited": false
+    },
+    {
+     "name": "height",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Height of the widget box. Defaults to the registry's usable minimum.",
+     "inherited": false
+    },
+    {
+     "name": "inheritTheme",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Map LUC semantic tokens onto TradingView's public CSS custom properties. Default `true`. Ignored by iframe widgets, which only accept the provider's own theme config — that limit …",
+     "inherited": false
+    },
+    {
+     "name": "isZoomEnabled",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "loading",
+     "optional": true,
+     "type": "\"lazy\" | \"eager\" | undefined",
+     "description": "Defer loading until the widget is near the viewport. Default `\"lazy\"`.",
+     "inherited": false
+    },
+    {
+     "name": "locale",
+     "optional": true,
+     "type": "TradingViewLocale | undefined",
+     "description": "Provider locale. Defaults to `LocaleProvider` when present, else `en`.",
+     "inherited": false
+    },
+    {
+     "name": "minHeight",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Minimum height, so a resizable pane cannot collapse the widget to nothing.",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((change: TradingViewStatusChange) => void) | undefined",
+     "description": "Notified on every lifecycle transition.",
+     "inherited": false
+    },
+    {
+     "name": "placeholder",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered inside the widget box until the provider takes over. Defaults to a geometry-matched skeleton; an inline widget (Ticker Tag) supplies its own so it can sit inside a paragr…",
+     "inherited": false
+    },
+    {
+     "name": "symbolUrl",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Redirect symbol clicks to your own site.",
+     "inherited": false
+    },
+    {
+     "name": "theme",
+     "optional": true,
+     "type": "TradingViewThemeProp | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeoutMs",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds to wait for a Web Component to register before reporting it as unavailable. Default `12000`. iframe widgets report failure from the script load instead.",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Accessible name for the widget box. Defaults to the registry display name.",
+     "inherited": false
+    },
+    {
+     "name": "transparent",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Ask the provider for a transparent background. Ignored by widgets that do not expose the option. LUC defaults to opaque: dense financial content is more readable on its own surfac…",
+     "inherited": false
+    }
+   ]
+  },
+  {
+   "name": "TradingViewForexTable",
+   "kind": "value",
+   "signature": "({ currencies, displayedValue, heatmap, symbolUrl, theme, ...base }: TradingViewForexTableProps) => import(\"@types/react\").JSX.Element",
+   "propsType": "TradingViewForexTableProps",
+   "props": [
+    {
+     "name": "aria-label",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "config",
+     "optional": true,
+     "type": "TradingViewRawConfig | undefined",
+     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "inherited": false
+    },
+    {
+     "name": "currencies",
+     "optional": true,
+     "type": "readonly string[] | undefined",
+     "description": "Currency codes shown in the matrix. The provider requires at least two.",
+     "inherited": false
+    },
+    {
+     "name": "displayedValue",
+     "optional": true,
+     "type": "\"rate\" | \"dailyChange\" | undefined",
+     "inherited": false
+    },
+    {
+     "name": "fallback",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered instead of the provider widget when the load fails.",
+     "inherited": false
+    },
+    {
+     "name": "heatmap",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "height",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Height of the widget box. Defaults to the registry's usable minimum.",
+     "inherited": false
+    },
+    {
+     "name": "inheritTheme",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Map LUC semantic tokens onto TradingView's public CSS custom properties. Default `true`. Ignored by iframe widgets, which only accept the provider's own theme config — that limit …",
+     "inherited": false
+    },
+    {
+     "name": "loading",
+     "optional": true,
+     "type": "\"lazy\" | \"eager\" | undefined",
+     "description": "Defer loading until the widget is near the viewport. Default `\"lazy\"`.",
+     "inherited": false
+    },
+    {
+     "name": "locale",
+     "optional": true,
+     "type": "TradingViewLocale | undefined",
+     "description": "Provider locale. Defaults to `LocaleProvider` when present, else `en`.",
+     "inherited": false
+    },
+    {
+     "name": "minHeight",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Minimum height, so a resizable pane cannot collapse the widget to nothing.",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((change: TradingViewStatusChange) => void) | undefined",
+     "description": "Notified on every lifecycle transition.",
+     "inherited": false
+    },
+    {
+     "name": "placeholder",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered inside the widget box until the provider takes over. Defaults to a geometry-matched skeleton; an inline widget (Ticker Tag) supplies its own so it can sit inside a paragr…",
+     "inherited": false
+    },
+    {
+     "name": "symbolUrl",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "theme",
+     "optional": true,
+     "type": "TradingViewThemeProp | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeoutMs",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds to wait for a Web Component to register before reporting it as unavailable. Default `12000`. iframe widgets report failure from the script load instead.",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Accessible name for the widget box. Defaults to the registry display name.",
+     "inherited": false
+    },
+    {
+     "name": "transparent",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Ask the provider for a transparent background. Ignored by widgets that do not expose the option. LUC defaults to opaque: dense financial content is more readable on its own surfac…",
+     "inherited": false
+    }
+   ]
+  },
+  {
+   "name": "TradingViewStockHeatmap",
+   "kind": "value",
+   "signature": "({ dataSource, grouping, blockSize, blockColor, exchanges, hasTopBar, isZoomEnabled, hasSymbolTooltip, transparent, symbolUrl, locale, theme, ...base }: TradingViewStockHeatmapProps) => import(\"@type…",
+   "propsType": "TradingViewStockHeatmapProps",
+   "props": [
+    {
+     "name": "aria-label",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "blockColor",
+     "optional": true,
+     "type": "\"change\" | \"Perf.W\" | \"Perf.1M\" | \"Perf.3M\" | \"Perf.6M\" | \"Perf.YTD\" | \"Perf.Y\" | undefin…",
+     "inherited": false
+    },
+    {
+     "name": "blockSize",
+     "optional": true,
+     "type": "\"market_cap_basic\" | \"volume\" | undefined",
+     "inherited": false
+    },
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "config",
+     "optional": true,
+     "type": "TradingViewRawConfig | undefined",
+     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "inherited": false
+    },
+    {
+     "name": "dataSource",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "exchanges",
+     "optional": true,
+     "type": "readonly string[] | undefined",
+     "inherited": false
+    },
+    {
+     "name": "fallback",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered instead of the provider widget when the load fails.",
+     "inherited": false
+    },
+    {
+     "name": "grouping",
+     "optional": true,
+     "type": "\"sector\" | \"no_group\" | undefined",
+     "inherited": false
+    },
+    {
+     "name": "hasSymbolTooltip",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "hasTopBar",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Zoombar, tooltips and top bar, all provider features.",
+     "inherited": false
+    },
+    {
+     "name": "height",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Height of the widget box. Defaults to the registry's usable minimum.",
+     "inherited": false
+    },
+    {
+     "name": "inheritTheme",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Map LUC semantic tokens onto TradingView's public CSS custom properties. Default `true`. Ignored by iframe widgets, which only accept the provider's own theme config — that limit …",
+     "inherited": false
+    },
+    {
+     "name": "isZoomEnabled",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "loading",
+     "optional": true,
+     "type": "\"lazy\" | \"eager\" | undefined",
+     "description": "Defer loading until the widget is near the viewport. Default `\"lazy\"`.",
+     "inherited": false
+    },
+    {
+     "name": "locale",
+     "optional": true,
+     "type": "TradingViewLocale | undefined",
+     "description": "Provider locale. Defaults to `LocaleProvider` when present, else `en`.",
+     "inherited": false
+    },
+    {
+     "name": "minHeight",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Minimum height, so a resizable pane cannot collapse the widget to nothing.",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((change: TradingViewStatusChange) => void) | undefined",
+     "description": "Notified on every lifecycle transition.",
+     "inherited": false
+    },
+    {
+     "name": "placeholder",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered inside the widget box until the provider takes over. Defaults to a geometry-matched skeleton; an inline widget (Ticker Tag) supplies its own so it can sit inside a paragr…",
+     "inherited": false
+    },
+    {
+     "name": "symbolUrl",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Redirect symbol clicks to your own site.",
+     "inherited": false
+    },
+    {
+     "name": "theme",
+     "optional": true,
+     "type": "TradingViewThemeProp | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeoutMs",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds to wait for a Web Component to register before reporting it as unavailable. Default `12000`. iframe widgets report failure from the script load instead.",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Accessible name for the widget box. Defaults to the registry display name.",
+     "inherited": false
+    },
+    {
+     "name": "transparent",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Ask the provider for a transparent background. Ignored by widgets that do not expose the option. LUC defaults to opaque: dense financial content is more readable on its own surfac…",
+     "inherited": false
+    }
+   ]
+  }
+ ],
+ "tradingview-news-calendars": [
+  {
+   "name": "TradingViewTopStories",
+   "kind": "value",
+   "signature": "({ feedMode, symbol, market, displayMode, transparent, locale, theme, ...base }: TradingViewTopStoriesProps) => import(\"@types/react\").JSX.Element",
+   "propsType": "TradingViewTopStoriesProps",
+   "props": [
+    {
+     "name": "aria-label",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "config",
+     "optional": true,
+     "type": "TradingViewRawConfig | undefined",
+     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "inherited": false
+    },
+    {
+     "name": "displayMode",
+     "optional": true,
+     "type": "\"compact\" | \"regular\" | \"adaptive\" | undefined",
+     "inherited": false
+    },
+    {
+     "name": "fallback",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered instead of the provider widget when the load fails.",
+     "inherited": false
+    },
+    {
+     "name": "feedMode",
+     "optional": true,
+     "type": "TradingViewTopStoriesFeedMode | undefined",
+     "description": "Which timeline to show. Default `all_symbols` (the provider's global feed).",
+     "inherited": false
+    },
+    {
+     "name": "height",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Height of the widget box. Defaults to the registry's usable minimum.",
+     "inherited": false
+    },
+    {
+     "name": "inheritTheme",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Map LUC semantic tokens onto TradingView's public CSS custom properties. Default `true`. Ignored by iframe widgets, which only accept the provider's own theme config — that limit …",
+     "inherited": false
+    },
+    {
+     "name": "loading",
+     "optional": true,
+     "type": "\"lazy\" | \"eager\" | undefined",
+     "description": "Defer loading until the widget is near the viewport. Default `\"lazy\"`.",
+     "inherited": false
+    },
+    {
+     "name": "locale",
+     "optional": true,
+     "type": "TradingViewLocale | undefined",
+     "description": "Provider locale. Defaults to `LocaleProvider` when present, else `en`.",
+     "inherited": false
+    },
+    {
+     "name": "market",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "The market whose timeline is shown. Used by `feedMode=\"market\"`.",
+     "inherited": false
+    },
+    {
+     "name": "minHeight",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Minimum height, so a resizable pane cannot collapse the widget to nothing.",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((change: TradingViewStatusChange) => void) | undefined",
+     "description": "Notified on every lifecycle transition.",
+     "inherited": false
+    },
+    {
+     "name": "placeholder",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered inside the widget box until the provider takes over. Defaults to a geometry-matched skeleton; an inline widget (Ticker Tag) supplies its own so it can sit inside a paragr…",
+     "inherited": false
+    },
+    {
+     "name": "symbol",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "The instrument whose feed is shown. Required by `feedMode=\"symbol\"`.",
+     "inherited": false
+    },
+    {
+     "name": "theme",
+     "optional": true,
+     "type": "TradingViewThemeProp | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeoutMs",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds to wait for a Web Component to register before reporting it as unavailable. Default `12000`. iframe widgets report failure from the script load instead.",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Accessible name for the widget box. Defaults to the registry display name.",
+     "inherited": false
+    },
+    {
+     "name": "transparent",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Ask the provider for a transparent background. Ignored by widgets that do not expose the option. LUC defaults to opaque: dense financial content is more readable on its own surfac…",
+     "inherited": false
+    }
+   ]
+  },
+  {
+   "name": "TradingViewEconomicCalendar",
+   "kind": "value",
+   "signature": "({ importanceFilter, countryFilter, transparent, locale, theme, ...base }: TradingViewEconomicCalendarProps) => import(\"@types/react\").JSX.Element",
+   "propsType": "TradingViewEconomicCalendarProps",
+   "props": [
+    {
+     "name": "aria-label",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "config",
+     "optional": true,
+     "type": "TradingViewRawConfig | undefined",
+     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "inherited": false
+    },
+    {
+     "name": "countryFilter",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Comma-separated ISO country codes, or a single code.",
+     "inherited": false
+    },
+    {
+     "name": "fallback",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered instead of the provider widget when the load fails.",
+     "inherited": false
+    },
+    {
+     "name": "height",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Height of the widget box. Defaults to the registry's usable minimum.",
+     "inherited": false
+    },
+    {
+     "name": "importanceFilter",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Comma-separated importance filter, e.g. `\"0,1\"` for medium and high.",
+     "inherited": false
+    },
+    {
+     "name": "inheritTheme",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Map LUC semantic tokens onto TradingView's public CSS custom properties. Default `true`. Ignored by iframe widgets, which only accept the provider's own theme config — that limit …",
+     "inherited": false
+    },
+    {
+     "name": "loading",
+     "optional": true,
+     "type": "\"lazy\" | \"eager\" | undefined",
+     "description": "Defer loading until the widget is near the viewport. Default `\"lazy\"`.",
+     "inherited": false
+    },
+    {
+     "name": "locale",
+     "optional": true,
+     "type": "TradingViewLocale | undefined",
+     "description": "Provider locale. Defaults to `LocaleProvider` when present, else `en`.",
+     "inherited": false
+    },
+    {
+     "name": "minHeight",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Minimum height, so a resizable pane cannot collapse the widget to nothing.",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((change: TradingViewStatusChange) => void) | undefined",
+     "description": "Notified on every lifecycle transition.",
+     "inherited": false
+    },
+    {
+     "name": "placeholder",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered inside the widget box until the provider takes over. Defaults to a geometry-matched skeleton; an inline widget (Ticker Tag) supplies its own so it can sit inside a paragr…",
+     "inherited": false
+    },
+    {
+     "name": "theme",
+     "optional": true,
+     "type": "TradingViewThemeProp | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeoutMs",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds to wait for a Web Component to register before reporting it as unavailable. Default `12000`. iframe widgets report failure from the script load instead.",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Accessible name for the widget box. Defaults to the registry display name.",
+     "inherited": false
+    },
+    {
+     "name": "transparent",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Ask the provider for a transparent background. Ignored by widgets that do not expose the option. LUC defaults to opaque: dense financial content is more readable on its own surfac…",
+     "inherited": false
+    }
+   ]
+  },
+  {
+   "name": "TRADINGVIEW_ECONOMIC_METRIC_LABELS",
+   "kind": "value",
+   "signature": "Readonly<Record<TradingViewEconomicMetric, string>>"
+  },
+  {
+   "name": "TradingViewEconomicMap",
+   "kind": "value",
+   "signature": "({ region, metric, metrics, hideLegend, hideSelection, symbolUrl, theme, ...base }: TradingViewEconomicMapProps) => import(\"@types/react\").JSX.Element",
+   "propsType": "TradingViewEconomicMapProps",
+   "props": [
+    {
+     "name": "aria-label",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "config",
+     "optional": true,
+     "type": "TradingViewRawConfig | undefined",
+     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "inherited": false
+    },
+    {
+     "name": "fallback",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered instead of the provider widget when the load fails.",
+     "inherited": false
+    },
+    {
+     "name": "height",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Height of the widget box. Defaults to the registry's usable minimum.",
+     "inherited": false
+    },
+    {
+     "name": "hideLegend",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "hideSelection",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "inheritTheme",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Map LUC semantic tokens onto TradingView's public CSS custom properties. Default `true`. Ignored by iframe widgets, which only accept the provider's own theme config — that limit …",
+     "inherited": false
+    },
+    {
+     "name": "loading",
+     "optional": true,
+     "type": "\"lazy\" | \"eager\" | undefined",
+     "description": "Defer loading until the widget is near the viewport. Default `\"lazy\"`.",
+     "inherited": false
+    },
+    {
+     "name": "locale",
+     "optional": true,
+     "type": "TradingViewLocale | undefined",
+     "description": "Provider locale. Defaults to `LocaleProvider` when present, else `en`.",
+     "inherited": false
+    },
+    {
+     "name": "metric",
+     "optional": true,
+     "type": "TradingViewEconomicMetric | undefined",
+     "inherited": false
+    },
+    {
+     "name": "metrics",
+     "optional": true,
+     "type": "readonly TradingViewEconomicMetric[] | undefined",
+     "description": "Extra metrics to show alongside the primary one.",
+     "inherited": false
+    },
+    {
+     "name": "minHeight",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Minimum height, so a resizable pane cannot collapse the widget to nothing.",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((change: TradingViewStatusChange) => void) | undefined",
+     "description": "Notified on every lifecycle transition.",
+     "inherited": false
+    },
+    {
+     "name": "placeholder",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered inside the widget box until the provider takes over. Defaults to a geometry-matched skeleton; an inline widget (Ticker Tag) supplies its own so it can sit inside a paragr…",
+     "inherited": false
+    },
+    {
+     "name": "region",
+     "optional": true,
+     "type": "TradingViewEconomicRegion | undefined",
+     "inherited": false
+    },
+    {
+     "name": "symbolUrl",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "theme",
+     "optional": true,
+     "type": "TradingViewThemeProp | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeoutMs",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds to wait for a Web Component to register before reporting it as unavailable. Default `12000`. iframe widgets report failure from the script load instead.",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Accessible name for the widget box. Defaults to the registry display name.",
+     "inherited": false
+    },
+    {
+     "name": "transparent",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Ask the provider for a transparent background. Ignored by widgets that do not expose the option. LUC defaults to opaque: dense financial content is more readable on its own surfac…",
+     "inherited": false
+    }
+   ]
+  }
+ ],
  "tradingview-patterns": [],
- "tradingview-screeners": [],
- "tradingview-symbol-details": [],
+ "tradingview-screeners": [
+  {
+   "name": "TradingViewCryptocurrencyMarket",
+   "kind": "value",
+   "signature": "({ displayCurrency, defaultColumn, defaultScreen, showToolbar, transparent, locale, theme, ...base }: TradingViewCryptocurrencyMarketProps) => import(\"@types/react\").JSX.Element",
+   "propsType": "TradingViewCryptocurrencyMarketProps",
+   "props": [
+    {
+     "name": "aria-label",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "config",
+     "optional": true,
+     "type": "TradingViewRawConfig | undefined",
+     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "inherited": false
+    },
+    {
+     "name": "defaultColumn",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "defaultScreen",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "displayCurrency",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "`USD`, `EUR`… — the provider's display currency.",
+     "inherited": false
+    },
+    {
+     "name": "fallback",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered instead of the provider widget when the load fails.",
+     "inherited": false
+    },
+    {
+     "name": "height",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Height of the widget box. Defaults to the registry's usable minimum.",
+     "inherited": false
+    },
+    {
+     "name": "inheritTheme",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Map LUC semantic tokens onto TradingView's public CSS custom properties. Default `true`. Ignored by iframe widgets, which only accept the provider's own theme config — that limit …",
+     "inherited": false
+    },
+    {
+     "name": "loading",
+     "optional": true,
+     "type": "\"lazy\" | \"eager\" | undefined",
+     "description": "Defer loading until the widget is near the viewport. Default `\"lazy\"`.",
+     "inherited": false
+    },
+    {
+     "name": "locale",
+     "optional": true,
+     "type": "TradingViewLocale | undefined",
+     "description": "Provider locale. Defaults to `LocaleProvider` when present, else `en`.",
+     "inherited": false
+    },
+    {
+     "name": "minHeight",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Minimum height, so a resizable pane cannot collapse the widget to nothing.",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((change: TradingViewStatusChange) => void) | undefined",
+     "description": "Notified on every lifecycle transition.",
+     "inherited": false
+    },
+    {
+     "name": "placeholder",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered inside the widget box until the provider takes over. Defaults to a geometry-matched skeleton; an inline widget (Ticker Tag) supplies its own so it can sit inside a paragr…",
+     "inherited": false
+    },
+    {
+     "name": "showToolbar",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "theme",
+     "optional": true,
+     "type": "TradingViewThemeProp | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeoutMs",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds to wait for a Web Component to register before reporting it as unavailable. Default `12000`. iframe widgets report failure from the script load instead.",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Accessible name for the widget box. Defaults to the registry display name.",
+     "inherited": false
+    },
+    {
+     "name": "transparent",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Ask the provider for a transparent background. Ignored by widgets that do not expose the option. LUC defaults to opaque: dense financial content is more readable on its own surfac…",
+     "inherited": false
+    }
+   ]
+  },
+  {
+   "name": "TradingViewScreener",
+   "kind": "value",
+   "signature": "({ market, defaultColumn, defaultScreen, showToolbar, transparent, locale, theme, ...base }: TradingViewScreenerProps) => import(\"@types/react\").JSX.Element",
+   "propsType": "TradingViewScreenerProps",
+   "props": [
+    {
+     "name": "aria-label",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "config",
+     "optional": true,
+     "type": "TradingViewRawConfig | undefined",
+     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "inherited": false
+    },
+    {
+     "name": "defaultColumn",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Provider column preset.",
+     "inherited": false
+    },
+    {
+     "name": "defaultScreen",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Provider screen preset, e.g. `general`, `top_gainers`.",
+     "inherited": false
+    },
+    {
+     "name": "fallback",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered instead of the provider widget when the load fails.",
+     "inherited": false
+    },
+    {
+     "name": "height",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Height of the widget box. Defaults to the registry's usable minimum.",
+     "inherited": false
+    },
+    {
+     "name": "inheritTheme",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Map LUC semantic tokens onto TradingView's public CSS custom properties. Default `true`. Ignored by iframe widgets, which only accept the provider's own theme config — that limit …",
+     "inherited": false
+    },
+    {
+     "name": "loading",
+     "optional": true,
+     "type": "\"lazy\" | \"eager\" | undefined",
+     "description": "Defer loading until the widget is near the viewport. Default `\"lazy\"`.",
+     "inherited": false
+    },
+    {
+     "name": "locale",
+     "optional": true,
+     "type": "TradingViewLocale | undefined",
+     "description": "Provider locale. Defaults to `LocaleProvider` when present, else `en`.",
+     "inherited": false
+    },
+    {
+     "name": "market",
+     "optional": true,
+     "type": "TradingViewScreenerMarket | undefined",
+     "inherited": false
+    },
+    {
+     "name": "minHeight",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Minimum height, so a resizable pane cannot collapse the widget to nothing.",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((change: TradingViewStatusChange) => void) | undefined",
+     "description": "Notified on every lifecycle transition.",
+     "inherited": false
+    },
+    {
+     "name": "placeholder",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered inside the widget box until the provider takes over. Defaults to a geometry-matched skeleton; an inline widget (Ticker Tag) supplies its own so it can sit inside a paragr…",
+     "inherited": false
+    },
+    {
+     "name": "showToolbar",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "theme",
+     "optional": true,
+     "type": "TradingViewThemeProp | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeoutMs",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds to wait for a Web Component to register before reporting it as unavailable. Default `12000`. iframe widgets report failure from the script load instead.",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Accessible name for the widget box. Defaults to the registry display name.",
+     "inherited": false
+    },
+    {
+     "name": "transparent",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Ask the provider for a transparent background. Ignored by widgets that do not expose the option. LUC defaults to opaque: dense financial content is more readable on its own surfac…",
+     "inherited": false
+    }
+   ]
+  }
+ ],
+ "tradingview-symbol-details": [
+  {
+   "name": "TradingViewCompanyProfile",
+   "kind": "value",
+   "signature": "({ symbol, symbolUrl, theme, ...base }: TradingViewCompanyProfileProps) => import(\"@types/react\").JSX.Element",
+   "propsType": "TradingViewCompanyProfileProps",
+   "props": [
+    {
+     "name": "aria-label",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "config",
+     "optional": true,
+     "type": "TradingViewRawConfig | undefined",
+     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "inherited": false
+    },
+    {
+     "name": "fallback",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered instead of the provider widget when the load fails.",
+     "inherited": false
+    },
+    {
+     "name": "height",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Height of the widget box. Defaults to the registry's usable minimum.",
+     "inherited": false
+    },
+    {
+     "name": "inheritTheme",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Map LUC semantic tokens onto TradingView's public CSS custom properties. Default `true`. Ignored by iframe widgets, which only accept the provider's own theme config — that limit …",
+     "inherited": false
+    },
+    {
+     "name": "loading",
+     "optional": true,
+     "type": "\"lazy\" | \"eager\" | undefined",
+     "description": "Defer loading until the widget is near the viewport. Default `\"lazy\"`.",
+     "inherited": false
+    },
+    {
+     "name": "locale",
+     "optional": true,
+     "type": "TradingViewLocale | undefined",
+     "description": "Provider locale. Defaults to `LocaleProvider` when present, else `en`.",
+     "inherited": false
+    },
+    {
+     "name": "minHeight",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Minimum height, so a resizable pane cannot collapse the widget to nothing.",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((change: TradingViewStatusChange) => void) | undefined",
+     "description": "Notified on every lifecycle transition.",
+     "inherited": false
+    },
+    {
+     "name": "placeholder",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered inside the widget box until the provider takes over. Defaults to a geometry-matched skeleton; an inline widget (Ticker Tag) supplies its own so it can sit inside a paragr…",
+     "inherited": false
+    },
+    {
+     "name": "symbol",
+     "optional": false,
+     "type": "string",
+     "inherited": false
+    },
+    {
+     "name": "symbolUrl",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "theme",
+     "optional": true,
+     "type": "TradingViewThemeProp | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeoutMs",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds to wait for a Web Component to register before reporting it as unavailable. Default `12000`. iframe widgets report failure from the script load instead.",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Accessible name for the widget box. Defaults to the registry display name.",
+     "inherited": false
+    },
+    {
+     "name": "transparent",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Ask the provider for a transparent background. Ignored by widgets that do not expose the option. LUC defaults to opaque: dense financial content is more readable on its own surfac…",
+     "inherited": false
+    }
+   ]
+  },
+  {
+   "name": "TradingViewFundamentalData",
+   "kind": "value",
+   "signature": "({ symbol, displayMode, transparent, locale, theme, ...base }: TradingViewFundamentalDataProps) => import(\"@types/react\").JSX.Element",
+   "propsType": "TradingViewFundamentalDataProps",
+   "props": [
+    {
+     "name": "aria-label",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "config",
+     "optional": true,
+     "type": "TradingViewRawConfig | undefined",
+     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "inherited": false
+    },
+    {
+     "name": "displayMode",
+     "optional": true,
+     "type": "\"compact\" | \"regular\" | \"adaptive\" | undefined",
+     "inherited": false
+    },
+    {
+     "name": "fallback",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered instead of the provider widget when the load fails.",
+     "inherited": false
+    },
+    {
+     "name": "height",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Height of the widget box. Defaults to the registry's usable minimum.",
+     "inherited": false
+    },
+    {
+     "name": "inheritTheme",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Map LUC semantic tokens onto TradingView's public CSS custom properties. Default `true`. Ignored by iframe widgets, which only accept the provider's own theme config — that limit …",
+     "inherited": false
+    },
+    {
+     "name": "loading",
+     "optional": true,
+     "type": "\"lazy\" | \"eager\" | undefined",
+     "description": "Defer loading until the widget is near the viewport. Default `\"lazy\"`.",
+     "inherited": false
+    },
+    {
+     "name": "locale",
+     "optional": true,
+     "type": "TradingViewLocale | undefined",
+     "description": "Provider locale. Defaults to `LocaleProvider` when present, else `en`.",
+     "inherited": false
+    },
+    {
+     "name": "minHeight",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Minimum height, so a resizable pane cannot collapse the widget to nothing.",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((change: TradingViewStatusChange) => void) | undefined",
+     "description": "Notified on every lifecycle transition.",
+     "inherited": false
+    },
+    {
+     "name": "placeholder",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered inside the widget box until the provider takes over. Defaults to a geometry-matched skeleton; an inline widget (Ticker Tag) supplies its own so it can sit inside a paragr…",
+     "inherited": false
+    },
+    {
+     "name": "symbol",
+     "optional": false,
+     "type": "string",
+     "inherited": false
+    },
+    {
+     "name": "theme",
+     "optional": true,
+     "type": "TradingViewThemeProp | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeoutMs",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds to wait for a Web Component to register before reporting it as unavailable. Default `12000`. iframe widgets report failure from the script load instead.",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Accessible name for the widget box. Defaults to the registry display name.",
+     "inherited": false
+    },
+    {
+     "name": "transparent",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Ask the provider for a transparent background. Ignored by widgets that do not expose the option. LUC defaults to opaque: dense financial content is more readable on its own surfac…",
+     "inherited": false
+    }
+   ]
+  },
+  {
+   "name": "TradingViewSymbolInfo",
+   "kind": "value",
+   "signature": "({ symbol, transparent, locale, theme, ...base }: TradingViewSymbolInfoProps) => import(\"@types/react\").JSX.Element",
+   "propsType": "TradingViewSymbolInfoProps",
+   "props": [
+    {
+     "name": "aria-label",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "config",
+     "optional": true,
+     "type": "TradingViewRawConfig | undefined",
+     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "inherited": false
+    },
+    {
+     "name": "fallback",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered instead of the provider widget when the load fails.",
+     "inherited": false
+    },
+    {
+     "name": "height",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Height of the widget box. Defaults to the registry's usable minimum.",
+     "inherited": false
+    },
+    {
+     "name": "inheritTheme",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Map LUC semantic tokens onto TradingView's public CSS custom properties. Default `true`. Ignored by iframe widgets, which only accept the provider's own theme config — that limit …",
+     "inherited": false
+    },
+    {
+     "name": "loading",
+     "optional": true,
+     "type": "\"lazy\" | \"eager\" | undefined",
+     "description": "Defer loading until the widget is near the viewport. Default `\"lazy\"`.",
+     "inherited": false
+    },
+    {
+     "name": "locale",
+     "optional": true,
+     "type": "TradingViewLocale | undefined",
+     "description": "Provider locale. Defaults to `LocaleProvider` when present, else `en`.",
+     "inherited": false
+    },
+    {
+     "name": "minHeight",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Minimum height, so a resizable pane cannot collapse the widget to nothing.",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((change: TradingViewStatusChange) => void) | undefined",
+     "description": "Notified on every lifecycle transition.",
+     "inherited": false
+    },
+    {
+     "name": "placeholder",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered inside the widget box until the provider takes over. Defaults to a geometry-matched skeleton; an inline widget (Ticker Tag) supplies its own so it can sit inside a paragr…",
+     "inherited": false
+    },
+    {
+     "name": "symbol",
+     "optional": false,
+     "type": "string",
+     "inherited": false
+    },
+    {
+     "name": "theme",
+     "optional": true,
+     "type": "TradingViewThemeProp | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeoutMs",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds to wait for a Web Component to register before reporting it as unavailable. Default `12000`. iframe widgets report failure from the script load instead.",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Accessible name for the widget box. Defaults to the registry display name.",
+     "inherited": false
+    },
+    {
+     "name": "transparent",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Ask the provider for a transparent background. Ignored by widgets that do not expose the option. LUC defaults to opaque: dense financial content is more readable on its own surfac…",
+     "inherited": false
+    }
+   ]
+  },
+  {
+   "name": "TradingViewTechnicalAnalysis",
+   "kind": "value",
+   "signature": "({ symbol, interval, ratingsMode, ratingsDisplayMode, hideLogoAndName, hideIntervals, noLinks, symbolUrl, theme, ...base }: TradingViewTechnicalAnalysisProps) => import(\"@types/react\").JSX.Element",
+   "propsType": "TradingViewTechnicalAnalysisProps",
+   "props": [
+    {
+     "name": "aria-label",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "config",
+     "optional": true,
+     "type": "TradingViewRawConfig | undefined",
+     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "inherited": false
+    },
+    {
+     "name": "fallback",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered instead of the provider widget when the load fails.",
+     "inherited": false
+    },
+    {
+     "name": "height",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Height of the widget box. Defaults to the registry's usable minimum.",
+     "inherited": false
+    },
+    {
+     "name": "hideIntervals",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "hideLogoAndName",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "inheritTheme",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Map LUC semantic tokens onto TradingView's public CSS custom properties. Default `true`. Ignored by iframe widgets, which only accept the provider's own theme config — that limit …",
+     "inherited": false
+    },
+    {
+     "name": "interval",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "loading",
+     "optional": true,
+     "type": "\"lazy\" | \"eager\" | undefined",
+     "description": "Defer loading until the widget is near the viewport. Default `\"lazy\"`.",
+     "inherited": false
+    },
+    {
+     "name": "locale",
+     "optional": true,
+     "type": "TradingViewLocale | undefined",
+     "description": "Provider locale. Defaults to `LocaleProvider` when present, else `en`.",
+     "inherited": false
+    },
+    {
+     "name": "minHeight",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Minimum height, so a resizable pane cannot collapse the widget to nothing.",
+     "inherited": false
+    },
+    {
+     "name": "noLinks",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((change: TradingViewStatusChange) => void) | undefined",
+     "description": "Notified on every lifecycle transition.",
+     "inherited": false
+    },
+    {
+     "name": "placeholder",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered inside the widget box until the provider takes over. Defaults to a geometry-matched skeleton; an inline widget (Ticker Tag) supplies its own so it can sit inside a paragr…",
+     "inherited": false
+    },
+    {
+     "name": "ratingsDisplayMode",
+     "optional": true,
+     "type": "\"gauge\" | \"gauge-and-breakdown\" | \"breakdown\" | undefined",
+     "inherited": false
+    },
+    {
+     "name": "ratingsMode",
+     "optional": true,
+     "type": "\"single\" | \"multiple\" | undefined",
+     "inherited": false
+    },
+    {
+     "name": "symbol",
+     "optional": false,
+     "type": "string",
+     "inherited": false
+    },
+    {
+     "name": "symbolUrl",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "theme",
+     "optional": true,
+     "type": "TradingViewThemeProp | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeoutMs",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds to wait for a Web Component to register before reporting it as unavailable. Default `12000`. iframe widgets report failure from the script load instead.",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Accessible name for the widget box. Defaults to the registry display name.",
+     "inherited": false
+    },
+    {
+     "name": "transparent",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Ask the provider for a transparent background. Ignored by widgets that do not expose the option. LUC defaults to opaque: dense financial content is more readable on its own surfac…",
+     "inherited": false
+    }
+   ]
+  },
+  {
+   "name": "TradingViewBrokerRating",
+   "kind": "value",
+   "signature": "({ broker, showBrokerName, showReviews, theme, ...base }: TradingViewBrokerRatingProps) => import(\"@types/react\").JSX.Element",
+   "propsType": "TradingViewBrokerRatingProps",
+   "props": [
+    {
+     "name": "aria-label",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "broker",
+     "optional": false,
+     "type": "string",
+     "description": "Your TradingView broker slug, e.g. `sample`. Required by the provider.",
+     "inherited": false
+    },
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "config",
+     "optional": true,
+     "type": "TradingViewRawConfig | undefined",
+     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "inherited": false
+    },
+    {
+     "name": "fallback",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered instead of the provider widget when the load fails.",
+     "inherited": false
+    },
+    {
+     "name": "height",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Height of the widget box. Defaults to the registry's usable minimum.",
+     "inherited": false
+    },
+    {
+     "name": "inheritTheme",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Map LUC semantic tokens onto TradingView's public CSS custom properties. Default `true`. Ignored by iframe widgets, which only accept the provider's own theme config — that limit …",
+     "inherited": false
+    },
+    {
+     "name": "loading",
+     "optional": true,
+     "type": "\"lazy\" | \"eager\" | undefined",
+     "description": "Defer loading until the widget is near the viewport. Default `\"lazy\"`.",
+     "inherited": false
+    },
+    {
+     "name": "locale",
+     "optional": true,
+     "type": "TradingViewLocale | undefined",
+     "description": "Provider locale. Defaults to `LocaleProvider` when present, else `en`.",
+     "inherited": false
+    },
+    {
+     "name": "minHeight",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Minimum height, so a resizable pane cannot collapse the widget to nothing.",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((change: TradingViewStatusChange) => void) | undefined",
+     "description": "Notified on every lifecycle transition.",
+     "inherited": false
+    },
+    {
+     "name": "placeholder",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered inside the widget box until the provider takes over. Defaults to a geometry-matched skeleton; an inline widget (Ticker Tag) supplies its own so it can sit inside a paragr…",
+     "inherited": false
+    },
+    {
+     "name": "showBrokerName",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "showReviews",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "theme",
+     "optional": true,
+     "type": "TradingViewThemeProp | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeoutMs",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds to wait for a Web Component to register before reporting it as unavailable. Default `12000`. iframe widgets report failure from the script load instead.",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Accessible name for the widget box. Defaults to the registry display name.",
+     "inherited": false
+    },
+    {
+     "name": "transparent",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Ask the provider for a transparent background. Ignored by widgets that do not expose the option. LUC defaults to opaque: dense financial content is more readable on its own surfac…",
+     "inherited": false
+    }
+   ]
+  },
+  {
+   "name": "TradingViewBrokerReviews",
+   "kind": "value",
+   "signature": "({ broker, showBrokerName, showReviews, theme, ...base }: TradingViewBrokerReviewsProps) => import(\"@types/react\").JSX.Element",
+   "propsType": "TradingViewBrokerReviewsProps",
+   "props": [
+    {
+     "name": "aria-label",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "broker",
+     "optional": false,
+     "type": "string",
+     "inherited": false
+    },
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "config",
+     "optional": true,
+     "type": "TradingViewRawConfig | undefined",
+     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "inherited": false
+    },
+    {
+     "name": "fallback",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered instead of the provider widget when the load fails.",
+     "inherited": false
+    },
+    {
+     "name": "height",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Height of the widget box. Defaults to the registry's usable minimum.",
+     "inherited": false
+    },
+    {
+     "name": "inheritTheme",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Map LUC semantic tokens onto TradingView's public CSS custom properties. Default `true`. Ignored by iframe widgets, which only accept the provider's own theme config — that limit …",
+     "inherited": false
+    },
+    {
+     "name": "loading",
+     "optional": true,
+     "type": "\"lazy\" | \"eager\" | undefined",
+     "description": "Defer loading until the widget is near the viewport. Default `\"lazy\"`.",
+     "inherited": false
+    },
+    {
+     "name": "locale",
+     "optional": true,
+     "type": "TradingViewLocale | undefined",
+     "description": "Provider locale. Defaults to `LocaleProvider` when present, else `en`.",
+     "inherited": false
+    },
+    {
+     "name": "minHeight",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Minimum height, so a resizable pane cannot collapse the widget to nothing.",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((change: TradingViewStatusChange) => void) | undefined",
+     "description": "Notified on every lifecycle transition.",
+     "inherited": false
+    },
+    {
+     "name": "placeholder",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered inside the widget box until the provider takes over. Defaults to a geometry-matched skeleton; an inline widget (Ticker Tag) supplies its own so it can sit inside a paragr…",
+     "inherited": false
+    },
+    {
+     "name": "showBrokerName",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "showReviews",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "theme",
+     "optional": true,
+     "type": "TradingViewThemeProp | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeoutMs",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds to wait for a Web Component to register before reporting it as unavailable. Default `12000`. iframe widgets report failure from the script load instead.",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Accessible name for the widget box. Defaults to the registry display name.",
+     "inherited": false
+    },
+    {
+     "name": "transparent",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Ask the provider for a transparent background. Ignored by widgets that do not expose the option. LUC defaults to opaque: dense financial content is more readable on its own surfac…",
+     "inherited": false
+    }
+   ]
+  }
+ ],
  "tradingview-themes": [
   {
    "name": "TRADINGVIEW_TOKEN_BRIDGE",
@@ -25108,8 +27861,1297 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
    "signature": "Readonly<Record<string, string>>"
   }
  ],
- "tradingview-tickers": [],
- "tradingview-watchlists": [],
+ "tradingview-tickers": [
+  {
+   "name": "TradingViewSingleTicker",
+   "kind": "value",
+   "signature": "({ symbol, hideMarketStatus, symbolUrl, theme, ...base }: TradingViewSingleTickerProps) => import(\"@types/react\").JSX.Element",
+   "propsType": "TradingViewSingleTickerProps",
+   "props": [
+    {
+     "name": "aria-label",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "config",
+     "optional": true,
+     "type": "TradingViewRawConfig | undefined",
+     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "inherited": false
+    },
+    {
+     "name": "fallback",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered instead of the provider widget when the load fails.",
+     "inherited": false
+    },
+    {
+     "name": "height",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Height of the widget box. Defaults to the registry's usable minimum.",
+     "inherited": false
+    },
+    {
+     "name": "hideMarketStatus",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "inheritTheme",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Map LUC semantic tokens onto TradingView's public CSS custom properties. Default `true`. Ignored by iframe widgets, which only accept the provider's own theme config — that limit …",
+     "inherited": false
+    },
+    {
+     "name": "loading",
+     "optional": true,
+     "type": "\"lazy\" | \"eager\" | undefined",
+     "description": "Defer loading until the widget is near the viewport. Default `\"lazy\"`.",
+     "inherited": false
+    },
+    {
+     "name": "locale",
+     "optional": true,
+     "type": "TradingViewLocale | undefined",
+     "description": "Provider locale. Defaults to `LocaleProvider` when present, else `en`.",
+     "inherited": false
+    },
+    {
+     "name": "minHeight",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Minimum height, so a resizable pane cannot collapse the widget to nothing.",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((change: TradingViewStatusChange) => void) | undefined",
+     "description": "Notified on every lifecycle transition.",
+     "inherited": false
+    },
+    {
+     "name": "placeholder",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered inside the widget box until the provider takes over. Defaults to a geometry-matched skeleton; an inline widget (Ticker Tag) supplies its own so it can sit inside a paragr…",
+     "inherited": false
+    },
+    {
+     "name": "symbol",
+     "optional": false,
+     "type": "string",
+     "inherited": false
+    },
+    {
+     "name": "symbolUrl",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "theme",
+     "optional": true,
+     "type": "TradingViewThemeProp | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeoutMs",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds to wait for a Web Component to register before reporting it as unavailable. Default `12000`. iframe widgets report failure from the script load instead.",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Accessible name for the widget box. Defaults to the registry display name.",
+     "inherited": false
+    },
+    {
+     "name": "transparent",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Ask the provider for a transparent background. Ignored by widgets that do not expose the option. LUC defaults to opaque: dense financial content is more readable on its own surfac…",
+     "inherited": false
+    }
+   ]
+  },
+  {
+   "name": "TradingViewTickers",
+   "kind": "value",
+   "signature": "({ symbols, theme, symbolUrl, ...rest }: TradingViewTickersProps) => import(\"@types/react\").JSX.Element",
+   "propsType": "TradingViewTickerTapeProps",
+   "props": [
+    {
+     "name": "aria-label",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "config",
+     "optional": true,
+     "type": "TradingViewRawConfig | undefined",
+     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "inherited": false
+    },
+    {
+     "name": "direction",
+     "optional": true,
+     "type": "TradingViewDirection | undefined",
+     "inherited": false
+    },
+    {
+     "name": "fallback",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered instead of the provider widget when the load fails.",
+     "inherited": false
+    },
+    {
+     "name": "height",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Height of the widget box. Defaults to the registry's usable minimum.",
+     "inherited": false
+    },
+    {
+     "name": "hideChart",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "hideLogo",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Removes the provider's own logo mark. Attribution links stay.",
+     "inherited": false
+    },
+    {
+     "name": "hoverType",
+     "optional": true,
+     "type": "TradingViewHoverType | undefined",
+     "inherited": false
+    },
+    {
+     "name": "inheritTheme",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Map LUC semantic tokens onto TradingView's public CSS custom properties. Default `true`. Ignored by iframe widgets, which only accept the provider's own theme config — that limit …",
+     "inherited": false
+    },
+    {
+     "name": "itemSize",
+     "optional": true,
+     "type": "TradingViewItemSize | undefined",
+     "inherited": false
+    },
+    {
+     "name": "lineChartType",
+     "optional": true,
+     "type": "\"Area\" | \"Line\" | \"Baseline\" | undefined",
+     "inherited": false
+    },
+    {
+     "name": "loading",
+     "optional": true,
+     "type": "\"lazy\" | \"eager\" | undefined",
+     "description": "Defer loading until the widget is near the viewport. Default `\"lazy\"`.",
+     "inherited": false
+    },
+    {
+     "name": "locale",
+     "optional": true,
+     "type": "TradingViewLocale | undefined",
+     "description": "Provider locale. Defaults to `LocaleProvider` when present, else `en`.",
+     "inherited": false
+    },
+    {
+     "name": "minHeight",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Minimum height, so a resizable pane cannot collapse the widget to nothing.",
+     "inherited": false
+    },
+    {
+     "name": "noLinks",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Disables symbol links entirely. Attribution links stay.",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((change: TradingViewStatusChange) => void) | undefined",
+     "description": "Notified on every lifecycle transition.",
+     "inherited": false
+    },
+    {
+     "name": "placeholder",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered inside the widget box until the provider takes over. Defaults to a geometry-matched skeleton; an inline widget (Ticker Tag) supplies its own so it can sit inside a paragr…",
+     "inherited": false
+    },
+    {
+     "name": "showHover",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "symbols",
+     "optional": false,
+     "type": "readonly string[]",
+     "inherited": false
+    },
+    {
+     "name": "symbolUrl",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "theme",
+     "optional": true,
+     "type": "TradingViewThemeProp | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeoutMs",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds to wait for a Web Component to register before reporting it as unavailable. Default `12000`. iframe widgets report failure from the script load instead.",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Accessible name for the widget box. Defaults to the registry display name.",
+     "inherited": false
+    },
+    {
+     "name": "transparent",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Ask the provider for a transparent background. Ignored by widgets that do not expose the option. LUC defaults to opaque: dense financial content is more readable on its own surfac…",
+     "inherited": false
+    }
+   ]
+  },
+  {
+   "name": "TradingViewTickerTag",
+   "kind": "value",
+   "signature": "({ symbol, size, hideChange, hideBackground, preserveText, symbolUrl, theme, ...base }: TradingViewTickerTagProps) => import(\"@types/react\").JSX.Element",
+   "propsType": "TradingViewTickerTagProps",
+   "props": [
+    {
+     "name": "aria-label",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "children",
+     "optional": true,
+     "type": "ReactNode",
+     "inherited": false
+    },
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "config",
+     "optional": true,
+     "type": "TradingViewRawConfig | undefined",
+     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "inherited": false
+    },
+    {
+     "name": "fallback",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered instead of the provider widget when the load fails.",
+     "inherited": false
+    },
+    {
+     "name": "height",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Height of the widget box. Defaults to the registry's usable minimum.",
+     "inherited": false
+    },
+    {
+     "name": "hideBackground",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "hideChange",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "inheritTheme",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Map LUC semantic tokens onto TradingView's public CSS custom properties. Default `true`. Ignored by iframe widgets, which only accept the provider's own theme config — that limit …",
+     "inherited": false
+    },
+    {
+     "name": "loading",
+     "optional": true,
+     "type": "\"lazy\" | \"eager\" | undefined",
+     "description": "Defer loading until the widget is near the viewport. Default `\"lazy\"`.",
+     "inherited": false
+    },
+    {
+     "name": "locale",
+     "optional": true,
+     "type": "TradingViewLocale | undefined",
+     "description": "Provider locale. Defaults to `LocaleProvider` when present, else `en`.",
+     "inherited": false
+    },
+    {
+     "name": "minHeight",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Minimum height, so a resizable pane cannot collapse the widget to nothing.",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((change: TradingViewStatusChange) => void) | undefined",
+     "description": "Notified on every lifecycle transition.",
+     "inherited": false
+    },
+    {
+     "name": "placeholder",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered inside the widget box until the provider takes over. Defaults to a geometry-matched skeleton; an inline widget (Ticker Tag) supplies its own so it can sit inside a paragr…",
+     "inherited": false
+    },
+    {
+     "name": "preserveText",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "When a `symbol` is set, use the element's own text as the display name. Pass the label through `children`.",
+     "inherited": false
+    },
+    {
+     "name": "size",
+     "optional": true,
+     "type": "\"small\" | \"medium\" | \"large\" | undefined",
+     "inherited": false
+    },
+    {
+     "name": "symbol",
+     "optional": false,
+     "type": "string",
+     "inherited": false
+    },
+    {
+     "name": "symbolUrl",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "theme",
+     "optional": true,
+     "type": "TradingViewThemeProp | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeoutMs",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds to wait for a Web Component to register before reporting it as unavailable. Default `12000`. iframe widgets report failure from the script load instead.",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Accessible name for the widget box. Defaults to the registry display name.",
+     "inherited": false
+    },
+    {
+     "name": "transparent",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Ask the provider for a transparent background. Ignored by widgets that do not expose the option. LUC defaults to opaque: dense financial content is more readable on its own surfac…",
+     "inherited": false
+    }
+   ]
+  },
+  {
+   "name": "TradingViewTickerTape",
+   "kind": "value",
+   "signature": "({ symbols, direction, itemSize, hideChart, lineChartType, showHover, hoverType, hideLogo, noLinks, symbolUrl, theme, ...base }: TradingViewTickerTapeProps) => import(\"@types/react\").JSX.Element",
+   "propsType": "TradingViewTickerTapeProps",
+   "props": [
+    {
+     "name": "aria-label",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "config",
+     "optional": true,
+     "type": "TradingViewRawConfig | undefined",
+     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "inherited": false
+    },
+    {
+     "name": "direction",
+     "optional": true,
+     "type": "TradingViewDirection | undefined",
+     "inherited": false
+    },
+    {
+     "name": "fallback",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered instead of the provider widget when the load fails.",
+     "inherited": false
+    },
+    {
+     "name": "height",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Height of the widget box. Defaults to the registry's usable minimum.",
+     "inherited": false
+    },
+    {
+     "name": "hideChart",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "hideLogo",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Removes the provider's own logo mark. Attribution links stay.",
+     "inherited": false
+    },
+    {
+     "name": "hoverType",
+     "optional": true,
+     "type": "TradingViewHoverType | undefined",
+     "inherited": false
+    },
+    {
+     "name": "inheritTheme",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Map LUC semantic tokens onto TradingView's public CSS custom properties. Default `true`. Ignored by iframe widgets, which only accept the provider's own theme config — that limit …",
+     "inherited": false
+    },
+    {
+     "name": "itemSize",
+     "optional": true,
+     "type": "TradingViewItemSize | undefined",
+     "inherited": false
+    },
+    {
+     "name": "lineChartType",
+     "optional": true,
+     "type": "\"Area\" | \"Line\" | \"Baseline\" | undefined",
+     "inherited": false
+    },
+    {
+     "name": "loading",
+     "optional": true,
+     "type": "\"lazy\" | \"eager\" | undefined",
+     "description": "Defer loading until the widget is near the viewport. Default `\"lazy\"`.",
+     "inherited": false
+    },
+    {
+     "name": "locale",
+     "optional": true,
+     "type": "TradingViewLocale | undefined",
+     "description": "Provider locale. Defaults to `LocaleProvider` when present, else `en`.",
+     "inherited": false
+    },
+    {
+     "name": "minHeight",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Minimum height, so a resizable pane cannot collapse the widget to nothing.",
+     "inherited": false
+    },
+    {
+     "name": "noLinks",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Disables symbol links entirely. Attribution links stay.",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((change: TradingViewStatusChange) => void) | undefined",
+     "description": "Notified on every lifecycle transition.",
+     "inherited": false
+    },
+    {
+     "name": "placeholder",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered inside the widget box until the provider takes over. Defaults to a geometry-matched skeleton; an inline widget (Ticker Tag) supplies its own so it can sit inside a paragr…",
+     "inherited": false
+    },
+    {
+     "name": "showHover",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "symbols",
+     "optional": false,
+     "type": "readonly string[]",
+     "inherited": false
+    },
+    {
+     "name": "symbolUrl",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "theme",
+     "optional": true,
+     "type": "TradingViewThemeProp | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeoutMs",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds to wait for a Web Component to register before reporting it as unavailable. Default `12000`. iframe widgets report failure from the script load instead.",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Accessible name for the widget box. Defaults to the registry display name.",
+     "inherited": false
+    },
+    {
+     "name": "transparent",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Ask the provider for a transparent background. Ignored by widgets that do not expose the option. LUC defaults to opaque: dense financial content is more readable on its own surfac…",
+     "inherited": false
+    }
+   ]
+  }
+ ],
+ "tradingview-watchlists": [
+  {
+   "name": "TradingViewMarketData",
+   "kind": "value",
+   "signature": "({ symbolSectors, view, heatmap, symbolUrl, theme, ...base }: TradingViewMarketDataProps) => import(\"@types/react\").JSX.Element",
+   "propsType": "TradingViewMarketDataProps",
+   "props": [
+    {
+     "name": "aria-label",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "assetsType",
+     "optional": true,
+     "type": "TradingViewAssetType | undefined",
+     "inherited": false
+    },
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "config",
+     "optional": true,
+     "type": "TradingViewRawConfig | undefined",
+     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "inherited": false
+    },
+    {
+     "name": "exchange",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Provider exchange filter, used by the market-movers mode.",
+     "inherited": false
+    },
+    {
+     "name": "fallback",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered instead of the provider widget when the load fails.",
+     "inherited": false
+    },
+    {
+     "name": "heatmap",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "height",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Height of the widget box. Defaults to the registry's usable minimum.",
+     "inherited": false
+    },
+    {
+     "name": "inheritTheme",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Map LUC semantic tokens onto TradingView's public CSS custom properties. Default `true`. Ignored by iframe widgets, which only accept the provider's own theme config — that limit …",
+     "inherited": false
+    },
+    {
+     "name": "itemSize",
+     "optional": true,
+     "type": "TradingViewItemSize | undefined",
+     "inherited": false
+    },
+    {
+     "name": "loading",
+     "optional": true,
+     "type": "\"lazy\" | \"eager\" | undefined",
+     "description": "Defer loading until the widget is near the viewport. Default `\"lazy\"`.",
+     "inherited": false
+    },
+    {
+     "name": "locale",
+     "optional": true,
+     "type": "TradingViewLocale | undefined",
+     "description": "Provider locale. Defaults to `LocaleProvider` when present, else `en`.",
+     "inherited": false
+    },
+    {
+     "name": "minHeight",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Minimum height, so a resizable pane cannot collapse the widget to nothing.",
+     "inherited": false
+    },
+    {
+     "name": "mode",
+     "optional": true,
+     "type": "TradingViewMarketMode | undefined",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((change: TradingViewStatusChange) => void) | undefined",
+     "description": "Notified on every lifecycle transition.",
+     "inherited": false
+    },
+    {
+     "name": "placeholder",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered inside the widget box until the provider takes over. Defaults to a geometry-matched skeleton; an inline widget (Ticker Tag) supplies its own so it can sit inside a paragr…",
+     "inherited": false
+    },
+    {
+     "name": "symbolSectors",
+     "optional": true,
+     "type": "readonly TradingViewSymbolSector[] | undefined",
+     "description": "Symbol groups rendered as provider tabs.",
+     "inherited": false
+    },
+    {
+     "name": "symbolUrl",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "theme",
+     "optional": true,
+     "type": "TradingViewThemeProp | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeoutMs",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds to wait for a Web Component to register before reporting it as unavailable. Default `12000`. iframe widgets report failure from the script load instead.",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Accessible name for the widget box. Defaults to the registry display name.",
+     "inherited": false
+    },
+    {
+     "name": "transparent",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Ask the provider for a transparent background. Ignored by widgets that do not expose the option. LUC defaults to opaque: dense financial content is more readable on its own surfac…",
+     "inherited": false
+    },
+    {
+     "name": "view",
+     "optional": true,
+     "type": "\"overview\" | \"performance\" | undefined",
+     "inherited": false
+    }
+   ]
+  },
+  {
+   "name": "TradingViewMarketOverview",
+   "kind": "value",
+   "signature": "({ symbolSectors, exchange, mode, assetsType, itemSize, chartSize, timeFrame, hideMarketStatus, symbolUrl, theme, ...base }: TradingViewMarketOverviewProps) => import(\"@types/react\").JSX.Element",
+   "propsType": "TradingViewMarketOverviewProps",
+   "props": [
+    {
+     "name": "aria-label",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "assetsType",
+     "optional": true,
+     "type": "TradingViewAssetType | undefined",
+     "inherited": false
+    },
+    {
+     "name": "chartSize",
+     "optional": true,
+     "type": "\"compact\" | \"normal\" | \"large\" | undefined",
+     "inherited": false
+    },
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "config",
+     "optional": true,
+     "type": "TradingViewRawConfig | undefined",
+     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "inherited": false
+    },
+    {
+     "name": "exchange",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Provider exchange filter, used by the market-movers mode.",
+     "inherited": false
+    },
+    {
+     "name": "fallback",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered instead of the provider widget when the load fails.",
+     "inherited": false
+    },
+    {
+     "name": "height",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Height of the widget box. Defaults to the registry's usable minimum.",
+     "inherited": false
+    },
+    {
+     "name": "hideMarketStatus",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "inheritTheme",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Map LUC semantic tokens onto TradingView's public CSS custom properties. Default `true`. Ignored by iframe widgets, which only accept the provider's own theme config — that limit …",
+     "inherited": false
+    },
+    {
+     "name": "itemSize",
+     "optional": true,
+     "type": "TradingViewItemSize | undefined",
+     "inherited": false
+    },
+    {
+     "name": "loading",
+     "optional": true,
+     "type": "\"lazy\" | \"eager\" | undefined",
+     "description": "Defer loading until the widget is near the viewport. Default `\"lazy\"`.",
+     "inherited": false
+    },
+    {
+     "name": "locale",
+     "optional": true,
+     "type": "TradingViewLocale | undefined",
+     "description": "Provider locale. Defaults to `LocaleProvider` when present, else `en`.",
+     "inherited": false
+    },
+    {
+     "name": "minHeight",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Minimum height, so a resizable pane cannot collapse the widget to nothing.",
+     "inherited": false
+    },
+    {
+     "name": "mode",
+     "optional": true,
+     "type": "TradingViewMarketMode | undefined",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((change: TradingViewStatusChange) => void) | undefined",
+     "description": "Notified on every lifecycle transition.",
+     "inherited": false
+    },
+    {
+     "name": "placeholder",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered inside the widget box until the provider takes over. Defaults to a geometry-matched skeleton; an inline widget (Ticker Tag) supplies its own so it can sit inside a paragr…",
+     "inherited": false
+    },
+    {
+     "name": "symbolSectors",
+     "optional": true,
+     "type": "readonly TradingViewSymbolSector[] | undefined",
+     "description": "Symbol groups rendered as provider tabs.",
+     "inherited": false
+    },
+    {
+     "name": "symbolUrl",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "theme",
+     "optional": true,
+     "type": "TradingViewThemeProp | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeFrame",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeoutMs",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds to wait for a Web Component to register before reporting it as unavailable. Default `12000`. iframe widgets report failure from the script load instead.",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Accessible name for the widget box. Defaults to the registry display name.",
+     "inherited": false
+    },
+    {
+     "name": "transparent",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Ask the provider for a transparent background. Ignored by widgets that do not expose the option. LUC defaults to opaque: dense financial content is more readable on its own surfac…",
+     "inherited": false
+    }
+   ]
+  },
+  {
+   "name": "TradingViewMarketSummary",
+   "kind": "value",
+   "signature": "({ symbolSectors, exchange, mode, assetsType, itemSize, timeFrame, showTimeRange, direction, hideMarketStatus, layoutMode, symbolUrl, theme, ...base }: TradingViewMarketSummaryProps) => import(\"@type…",
+   "propsType": "TradingViewMarketSummaryProps",
+   "props": [
+    {
+     "name": "aria-label",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "assetsType",
+     "optional": true,
+     "type": "TradingViewAssetType | undefined",
+     "inherited": false
+    },
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "config",
+     "optional": true,
+     "type": "TradingViewRawConfig | undefined",
+     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "inherited": false
+    },
+    {
+     "name": "direction",
+     "optional": true,
+     "type": "TradingViewDirection | undefined",
+     "inherited": false
+    },
+    {
+     "name": "exchange",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Provider exchange filter, used by the market-movers mode.",
+     "inherited": false
+    },
+    {
+     "name": "fallback",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered instead of the provider widget when the load fails.",
+     "inherited": false
+    },
+    {
+     "name": "height",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Height of the widget box. Defaults to the registry's usable minimum.",
+     "inherited": false
+    },
+    {
+     "name": "hideMarketStatus",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "inheritTheme",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Map LUC semantic tokens onto TradingView's public CSS custom properties. Default `true`. Ignored by iframe widgets, which only accept the provider's own theme config — that limit …",
+     "inherited": false
+    },
+    {
+     "name": "itemSize",
+     "optional": true,
+     "type": "TradingViewItemSize | undefined",
+     "inherited": false
+    },
+    {
+     "name": "layoutMode",
+     "optional": true,
+     "type": "\"grid\" | \"flow\" | undefined",
+     "inherited": false
+    },
+    {
+     "name": "loading",
+     "optional": true,
+     "type": "\"lazy\" | \"eager\" | undefined",
+     "description": "Defer loading until the widget is near the viewport. Default `\"lazy\"`.",
+     "inherited": false
+    },
+    {
+     "name": "locale",
+     "optional": true,
+     "type": "TradingViewLocale | undefined",
+     "description": "Provider locale. Defaults to `LocaleProvider` when present, else `en`.",
+     "inherited": false
+    },
+    {
+     "name": "minHeight",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Minimum height, so a resizable pane cannot collapse the widget to nothing.",
+     "inherited": false
+    },
+    {
+     "name": "mode",
+     "optional": true,
+     "type": "TradingViewMarketMode | undefined",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((change: TradingViewStatusChange) => void) | undefined",
+     "description": "Notified on every lifecycle transition.",
+     "inherited": false
+    },
+    {
+     "name": "placeholder",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered inside the widget box until the provider takes over. Defaults to a geometry-matched skeleton; an inline widget (Ticker Tag) supplies its own so it can sit inside a paragr…",
+     "inherited": false
+    },
+    {
+     "name": "showTimeRange",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "symbolSectors",
+     "optional": true,
+     "type": "readonly TradingViewSymbolSector[] | undefined",
+     "description": "Symbol groups rendered as provider tabs.",
+     "inherited": false
+    },
+    {
+     "name": "symbolUrl",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "theme",
+     "optional": true,
+     "type": "TradingViewThemeProp | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeFrame",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeoutMs",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds to wait for a Web Component to register before reporting it as unavailable. Default `12000`. iframe widgets report failure from the script load instead.",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Accessible name for the widget box. Defaults to the registry display name.",
+     "inherited": false
+    },
+    {
+     "name": "transparent",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Ask the provider for a transparent background. Ignored by widgets that do not expose the option. LUC defaults to opaque: dense financial content is more readable on its own surfac…",
+     "inherited": false
+    }
+   ]
+  },
+  {
+   "name": "TradingViewWorldMarketSummary",
+   "kind": "value",
+   "signature": "({ view, sort, hoverType, hideLegend, hideViewToggle, countries, focusedCountries, symbolUrl, theme, ...base }: TradingViewWorldMarketSummaryProps) => import(\"@types/react\").JSX.Element",
+   "propsType": "TradingViewWorldMarketSummaryProps",
+   "props": [
+    {
+     "name": "aria-label",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "config",
+     "optional": true,
+     "type": "TradingViewRawConfig | undefined",
+     "description": "Advanced: extra provider configuration, merged under LUC's own keys. Cannot change the script URL, the element, or attribution.",
+     "inherited": false
+    },
+    {
+     "name": "countries",
+     "optional": true,
+     "type": "readonly string[] | undefined",
+     "inherited": false
+    },
+    {
+     "name": "fallback",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered instead of the provider widget when the load fails.",
+     "inherited": false
+    },
+    {
+     "name": "focusedCountries",
+     "optional": true,
+     "type": "readonly string[] | undefined",
+     "inherited": false
+    },
+    {
+     "name": "height",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Height of the widget box. Defaults to the registry's usable minimum.",
+     "inherited": false
+    },
+    {
+     "name": "hideLegend",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "hideViewToggle",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "hoverType",
+     "optional": true,
+     "type": "\"chart\" | \"performance-grid\" | \"chart-performance-grid\" | undefined",
+     "inherited": false
+    },
+    {
+     "name": "inheritTheme",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Map LUC semantic tokens onto TradingView's public CSS custom properties. Default `true`. Ignored by iframe widgets, which only accept the provider's own theme config — that limit …",
+     "inherited": false
+    },
+    {
+     "name": "loading",
+     "optional": true,
+     "type": "\"lazy\" | \"eager\" | undefined",
+     "description": "Defer loading until the widget is near the viewport. Default `\"lazy\"`.",
+     "inherited": false
+    },
+    {
+     "name": "locale",
+     "optional": true,
+     "type": "TradingViewLocale | undefined",
+     "description": "Provider locale. Defaults to `LocaleProvider` when present, else `en`.",
+     "inherited": false
+    },
+    {
+     "name": "minHeight",
+     "optional": true,
+     "type": "string | number | undefined",
+     "description": "Minimum height, so a resizable pane cannot collapse the widget to nothing.",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((change: TradingViewStatusChange) => void) | undefined",
+     "description": "Notified on every lifecycle transition.",
+     "inherited": false
+    },
+    {
+     "name": "placeholder",
+     "optional": true,
+     "type": "ReactNode",
+     "description": "Rendered inside the widget box until the provider takes over. Defaults to a geometry-matched skeleton; an inline widget (Ticker Tag) supplies its own so it can sit inside a paragr…",
+     "inherited": false
+    },
+    {
+     "name": "sort",
+     "optional": true,
+     "type": "\"performance\" | \"alphabetical\" | undefined",
+     "inherited": false
+    },
+    {
+     "name": "symbolUrl",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "theme",
+     "optional": true,
+     "type": "TradingViewThemeProp | undefined",
+     "inherited": false
+    },
+    {
+     "name": "timeoutMs",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds to wait for a Web Component to register before reporting it as unavailable. Default `12000`. iframe widgets report failure from the script load instead.",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": true,
+     "type": "string | undefined",
+     "description": "Accessible name for the widget box. Defaults to the registry display name.",
+     "inherited": false
+    },
+    {
+     "name": "transparent",
+     "optional": true,
+     "type": "boolean | undefined",
+     "description": "Ask the provider for a transparent background. Ignored by widgets that do not expose the option. LUC defaults to opaque: dense financial content is more readable on its own surfac…",
+     "inherited": false
+    },
+    {
+     "name": "view",
+     "optional": true,
+     "type": "\"map\" | \"list\" | undefined",
+     "inherited": false
+    }
+   ]
+  }
+ ],
  "transfer-list": [
   {
    "name": "TransferList",

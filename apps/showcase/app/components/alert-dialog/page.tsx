@@ -23,12 +23,15 @@ import { Example } from "@/components/docs/example";
 import { PropsTable } from "@/components/docs/tables";
 import { useI18n } from "@/lib/i18n/provider";
 import { EntryFooter } from "@/components/docs/entry-footer";
+import { EntryNotes } from "@/components/docs/entry-notes";
+import { ExamplesHeading } from "@/components/docs/examples-heading";
 
 export default function AlertDialogPage() {
   const { tc, tcs } = useI18n();
   return (
     <DocPage>
       <PageHeader eyebrow={tcs("Components")} title="AlertDialog" lead={tc("components.alertDialog.lead")} />
+      <ExamplesHeading />
 
       <ImportLine line={'import {\n  AlertDialog,\n  AlertDialogAction,\n  AlertDialogCancel,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n} from "@luc/ui";'} />
 
@@ -147,6 +150,7 @@ export default function AlertDialogPage() {
           ]}
         />
       </Section>
+      <EntryNotes entryIds={["alert-dialog"]} />
       <EntryFooter />
     </DocPage>
   );

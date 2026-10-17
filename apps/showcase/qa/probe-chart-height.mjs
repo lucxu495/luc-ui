@@ -7,10 +7,11 @@
  */
 
 import { chromium } from "@playwright/test";
+import { resolveBaseUrl } from "./base-url.mjs";
 import { DESKTOP } from "./constants.mjs";
 import { navigateAndReady } from "./readiness.mjs";
 
-const base = process.env.LUC_QA_BASE_URL ?? "http://127.0.0.1:3000";
+const base = resolveBaseUrl();
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: DESKTOP });
 await navigateAndReady(page, `${base}/charts/ecdf-chart`);

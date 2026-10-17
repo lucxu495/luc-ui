@@ -7,8 +7,9 @@
  */
 
 import { chromium } from "@playwright/test";
+import { resolveBaseUrl } from "../qa/base-url.mjs";
 
-const BASE_URL = process.env.LUC_QA_BASE_URL ?? "http://localhost:3100";
+const BASE_URL = resolveBaseUrl();
 /** Pages with no chart engine: they only assert that they render cleanly. */
 const TEXT_ONLY = new Set(["/charts/architecture"]);
 

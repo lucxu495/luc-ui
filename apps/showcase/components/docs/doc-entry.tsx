@@ -87,7 +87,25 @@ export function DocEntryHeader({
         </span>
         <StatusBadge status={entry.status} tcs={tcs} />
       </Inline>
-      <Heading size="display" as="h1" id="overview">
+      {/*
+        * `wrap-anywhere` is not decoration; it is the difference between a page
+        * that fits a phone and one that scrolls sideways.
+        *
+        * A component title is one unbreakable token — `ParallelCoordinatesChart`
+        * is 25 characters with no space to wrap at — and `text-display` is 40px.
+        * At 390px the word was 424px wide inside a 339px column, and because
+        * `overflow-wrap: normal` leaves the element's *min-content* width at the
+        * full word, that width propagated up the flex column and made the whole
+        * document 54px wider than the window. `break-words`
+        * (`overflow-wrap: break-word`) would not have fixed it: it breaks the
+        * line but leaves min-content alone, so the ancestors still overflow.
+        * `anywhere` is the value that participates in intrinsic sizing.
+        *
+        * It only applies when a single word cannot fit, so nothing reflows on a
+        * desktop and short titles are untouched. Nine routes shared this cause —
+        * every chart page whose class name is longer than the phone is wide.
+        */}
+      <Heading size="display" as="h1" id="overview" className="wrap-anywhere">
         {entry.title}
       </Heading>
       <Text variant="body-lg" tone="muted" as="p" className="max-w-[68ch]">

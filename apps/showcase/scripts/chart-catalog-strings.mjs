@@ -220,7 +220,20 @@ export async function loadRegistryProse() {
     add(entry.route, entry.chartName ? chartLeadFor(entry) : entry.summary);
   }
   for (const group of arrays.get("generatedGroups") ?? []) add(group.route, group.summary);
-  for (const family of arrays.get("generatedFamilies") ?? []) add(family.route, family.summary);
+  /*
+   * A family's summary is the lead of `/docs/reference/<family>`, and that route
+   * had no route of its own in this table: `generatedFamilies` rows carry no
+   * `route` key, so `add(undefined, summary)` filed twenty-seven sentences under
+   * `undefined` and `perRoute.get(undefined)` dropped every one of them. The
+   * pages then rendered their leads through `tcs()` while the coverage gate
+   * counted nothing — which is how `/docs/reference/tradingview` shipped an
+   * English lead on `/zh` with the gate reporting 100%.
+   *
+   * They belong to `/docs/reference` because that is the file that renders them:
+   * `app/docs/reference/[family]/page.tsx`, whose dynamic segment the route model
+   * strips exactly as it strips `[chart]` and `[motion]`.
+   */
+  for (const family of arrays.get("generatedFamilies") ?? []) add("/docs/reference", family.summary);
   return rows;
 }
 

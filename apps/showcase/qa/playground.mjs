@@ -13,7 +13,7 @@
  *    sentence**, because a disabled control with no reason is exactly the
  *    silent fallback the item forbids.
  *
- *   LUC_QA_BASE_URL=http://127.0.0.1:3100 node qa/playground.mjs
+ *   LUC_QA_BASE_URL=http://127.0.0.1:5300 node qa/playground.mjs
  *   node qa/playground.mjs --routes=/components/buttons,/charts/line-chart
  *
  * A route with no playground is reported as `no-playground` rather than passing
@@ -24,10 +24,11 @@ import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
+import { resolveBaseUrl } from "./base-url.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const EVIDENCE = path.resolve(HERE, "../../../artifacts/screenshots/showcase-transformation");
-const BASE = process.env.LUC_QA_BASE_URL ?? "http://127.0.0.1:3100";
+const BASE = resolveBaseUrl();
 const ROUTES = (
   process.argv.find((a) => a.startsWith("--routes="))?.slice("--routes=".length) ??
   "/components/ai,/charts/line-chart,/motion/kinetic"

@@ -33,6 +33,8 @@ import { ImportLine } from "@/components/docs/family-imports";
 import { Example } from "@/components/docs/example";
 import { useI18n } from "@/lib/i18n/provider";
 import { EntryFooter } from "@/components/docs/entry-footer";
+import { EntryNotes } from "@/components/docs/entry-notes";
+import { ExamplesHeading } from "@/components/docs/examples-heading";
 
 export function SheetPage({ apiSection }: { apiSection?: ReactNode }) {
   const { tcs } = useI18n();
@@ -61,6 +63,7 @@ export function SheetPage({ apiSection }: { apiSection?: ReactNode }) {
         title="Sheet"
         lead="A side-anchored panel for settings, filters, details and navigation. It is built on the same Radix Dialog primitive as Dialog, so focus trapping, focus restore, Escape and overlay behaviour are the mature ones LUC already ships. A gesture drawer is deliberately out of scope: a Sheet is a panel, not a swipeable card."
       />
+      <ExamplesHeading />
 
       <ImportLine line={'import {\n  Sheet,\n  SheetBody,\n  SheetContent,\n  SheetDescription,\n  SheetFooter,\n  SheetHeader,\n  SheetTitle,\n} from "@luc/ui";'} />
 
@@ -204,6 +207,7 @@ export function SheetPage({ apiSection }: { apiSection?: ReactNode }) {
         </Panel>
       </Section>
       {apiSection}
+      <EntryNotes entryIds={["sheet"]} />
       <EntryFooter />
     </DocPage>
   );

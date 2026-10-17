@@ -64,6 +64,23 @@ import { useRef } from "react";
 
 export function CollapseDemo() {
   const [open, setOpen] = useState(true);
+  /*
+   * A client island is invisible to `localizeSpecimen`: the server walker sees
+   * `<CollapseDemo />`, an element with no props and no children, and the copy
+   * below is compiled into this module. So every string a reader sees in an island
+   * is looked up here, through the same `tcs` the frames use — the dictionary is
+   * shared, so the server render and the client hydration agree and there is
+   * nothing to mismatch.
+   *
+   * The exception is the specimen's own fixture text: `title` and `description`
+   * below are printed verbatim in this demo's code block (`lib/demo/motion/
+   * feedback.tsx`), so they stay English. A preview that says 本季度已填满 beside a
+   * snippet that says `title="Fills this quarter"` is a page contradicting itself,
+   * which is worse than an English word inside a live example — see the same
+   * boundary in `lib/i18n/messages.ts`. The prose underneath them is not printed
+   * anywhere, so it is translated.
+   */
+  const { tcs } = useI18n();
   return (
     <Collapse
       open={open}
@@ -72,7 +89,9 @@ export function CollapseDemo() {
       description="One hundred and eighty-four, up from one hundred and two."
     >
       <Text variant="body" tone="muted" as="p">
-        The trigger is a real button with `aria-expanded` and `aria-controls`; the panel is the region it points at.
+        {tcs(
+          "The trigger is a real button with `aria-expanded` and `aria-controls`; the panel is the region it points at.",
+        )}
       </Text>
     </Collapse>
   );
@@ -169,15 +188,16 @@ export function IconMorphDemo() {
 
 export function PresenceDemo() {
   const [present, setPresent] = useState(true);
+  const { tcs } = useI18n();
   return (
     <Stack gap="sm" align="start">
       <Toggle size="sm" pressed={present} onPressedChange={setPresent}>
-        Filter bar
+        {tcs("Filter bar")}
       </Toggle>
       <Presence present={present}>
         <Card variant="outline" className="p-3">
           <Text variant="caption" tone="muted">
-            Mounted and unmounted with a fade, so a contextual panel does not pop.
+            {tcs("Mounted and unmounted with a fade, so a contextual panel does not pop.")}
           </Text>
         </Card>
       </Presence>
@@ -285,6 +305,11 @@ export function PressRippleDemo() {
   return (
     <PressRipple className="rounded-lg border border-line-subtle bg-surface-default px-6 py-4" rings={2}>
       <Text variant="body" as="span">
+        {/*
+         * Printed in this demo's own snippet (`lib/demo/motion/feedback.tsx`), so
+         * it stays as written; `qa/i18n-live.mjs` recognises the class and reports
+         * it as snippet-locked rather than as a leak.
+         */}
         Press anywhere on this surface
       </Text>
     </PressRipple>
@@ -501,6 +526,15 @@ export function MorphingDialogDemo({
   triggerTitle = "Run detail",
   items = RUN_FACTS,
 }: MorphingDialogDemoProps = {}) {
+  /*
+   * The island's own copy, looked up here for the reason `CollapseDemo` states —
+   * and, as there, only the strings this demo's code block does *not* print.
+   * `Run detail` and `Close` are both in the snippet, so they stay as written;
+   * `Close` in particular is a dictionary key that means the market close
+   * (收盘), and translating a dialog's close button into it would be a worse bug
+   * than the one being fixed.
+   */
+  const { tcs } = useI18n();
   return (
     <MorphingDialog>
       <MorphingDialogTrigger>
@@ -515,7 +549,7 @@ export function MorphingDialogDemo({
               {triggerTitle}
             </Text>
             <Text variant="caption" tone="muted" as="p">
-              Opens a panel from this card
+              {tcs("Opens a panel from this card")}
             </Text>
           </Stack>
         </Card>
@@ -535,7 +569,7 @@ export function MorphingDialogDemo({
             <Stack gap="xs">
               <MorphingDialogTitle className="text-title text-fg-primary">{triggerTitle}</MorphingDialogTitle>
               <MorphingDialogDescription className="text-caption text-fg-muted">
-                The panel grows out of the card it was opened from, so the reader keeps their place.
+                {tcs("The panel grows out of the card it was opened from, so the reader keeps their place.")}
               </MorphingDialogDescription>
             </Stack>
             {/* A real close control: an empty `<button>` has no accessible name. */}
@@ -552,11 +586,11 @@ export function MorphingDialogDemo({
           <div className="flex justify-end gap-2">
             <MorphingDialogClose asChild>
               <Button variant="ghost" size="sm">
-                Cancel
+                {tcs("Cancel")}
               </Button>
             </MorphingDialogClose>
             <Button variant="primary" size="sm">
-              Open the run
+              {tcs("Open the run")}
             </Button>
           </div>
         </div>

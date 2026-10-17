@@ -41,8 +41,9 @@
     "qa:dead-controls": "node qa/dead-controls.mjs",
     "qa:dead-controls:claims": "node qa/dead-controls.mjs --claims --max-clicks=14",
     "qa:reduced-motion": "node qa/reduced-motion.mjs",
-    "qa:product": "pnpm qa:contracts && node qa/mobile-overflow.mjs && node qa/dead-controls.mjs && node qa/dead-controls.mjs --claims --negative-test --routes=components-toggle && node qa/dead-controls.mjs --claims --max-clicks=14 && node qa/reduced-motion.mjs --negative-test --routes=motion-kinetic && node qa/reduced-motion.mjs && node qa/reduced-motion.mjs --open-overlay --negative-test --routes=dialog && node qa/reduced-motion.mjs --open-overlay && node qa/i18n-live.mjs",
+    "qa:product": "pnpm qa:contracts && node qa/content-contract.mjs && node qa/mobile-overflow.mjs && node qa/dead-controls.mjs && node qa/dead-controls.mjs --claims --negative-test --routes=components-toggle && node qa/dead-controls.mjs --claims --max-clicks=14 && node qa/reduced-motion.mjs --negative-test --routes=motion-kinetic && node qa/reduced-motion.mjs && node qa/reduced-motion.mjs --open-overlay --negative-test --routes=dialog && node qa/reduced-motion.mjs --open-overlay && node qa/target-size.mjs && node qa/i18n-live.mjs",
     "docs:registry": "node scripts/docs-registry.mjs",
+    "content:acceptance": "node scripts/content-acceptance.mjs",
     "docs:registry:check": "node scripts/docs-registry.mjs --check",
     "visuals:geometry": "node scripts/visuals-element-geometry.mjs",
     "visuals:geometry:check": "node scripts/visuals-element-geometry.mjs --check",
@@ -50,7 +51,9 @@
     "qa:api": "node qa/api-delivery.mjs",
     "qa:api:contract": "node --test qa/api-delivery.test.mjs",
     "qa:i18n:contract": "node --test qa/i18n-chrome.test.mjs qa/id-lists.test.mjs",
-    "qa:contracts": "pnpm qa:nav:contract && pnpm qa:i18n:contract && pnpm qa:api:contract"
+    "qa:contracts": "pnpm qa:nav:contract && pnpm qa:i18n:contract && pnpm qa:api:contract",
+    "qa:target-size": "node qa/target-size.mjs",
+    "qa:content-contract": "node qa/content-contract.mjs"
   },
   "dependencies": {
     "@fontsource-variable/inter": "5.3.0",

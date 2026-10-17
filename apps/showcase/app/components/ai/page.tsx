@@ -22,6 +22,8 @@ import { FamilyImports } from "@/components/docs/family-imports";
 import { PropsTable } from "@/components/docs/tables";
 import { PlaygroundSection } from "@/components/docs/playground-section";
 import { useI18n } from "@/lib/i18n/provider";
+import { EntryNotes } from "@/components/docs/entry-notes";
+import { ExamplesHeading } from "@/components/docs/examples-heading";
 
 // The "model" is a fixed string written out on a timer. Nothing here calls a
 // provider: the point of the page is the surface, and a canned sentence is a
@@ -90,6 +92,7 @@ export default function AiPage() {
   return (
     <DocPage>
       <PageHeader eyebrow={tcs("Components")} title="AI surface" lead={tc("components.ai.lead")} />
+      <ExamplesHeading />
 
       <Example
         title={tc("components.ai.thread.title")}
@@ -236,6 +239,7 @@ export default function AiPage() {
         </Text>
       </Section>
 
+      <EntryNotes entryIds={["ai"]} />
       <EntryFooter entryId="ai" />
     </DocPage>
   );

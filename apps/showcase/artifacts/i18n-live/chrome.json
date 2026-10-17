@@ -1,1 +1,35 @@
-{}
+{
+  "/components/overlay": [
+    "Popover"
+  ],
+  "/experiences/general/publishing": [
+    "Architecture",
+    "Databases",
+    "Field notes",
+    "Observability",
+    "Practice",
+    "Reliability",
+    "Teams"
+  ],
+  "/experiences/personal/career": [
+    "Ada Okonkwo"
+  ],
+  "/experiences/personal/academic": [
+    "Dr. Rita Silva"
+  ],
+  "/experiences/personal/portfolio": [
+    "The expressive one"
+  ],
+  "/experiences/vertical/ai": [
+    "Copilot desk"
+  ],
+  "/experiences/vertical/commerce": [
+    "Northlight desk lamp"
+  ],
+  "/experiences/vertical/forum": [
+    "Signal"
+  ],
+  "/patterns/research-workspace": [
+    "Momentum study — BTC-USD"
+  ]
+}

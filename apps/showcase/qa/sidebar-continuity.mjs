@@ -28,7 +28,7 @@
  * sees the same four sections would pass on a site where the sidebar never
  * changed at all.
  *
- *   LUC_QA_BASE_URL=http://127.0.0.1:3000 node qa/sidebar-continuity.mjs
+ *   LUC_QA_BASE_URL=http://127.0.0.1:5300 node qa/sidebar-continuity.mjs
  *   … node qa/sidebar-continuity.mjs --limit=20     # first N destinations
  *   … node qa/sidebar-continuity.mjs --json
  */
@@ -37,10 +37,11 @@ import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
+import { resolveBaseUrl } from "./base-url.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const EVIDENCE = path.resolve(HERE, "../../../artifacts/screenshots/showcase-transformation");
-const BASE = (process.env.LUC_QA_BASE_URL ?? "http://127.0.0.1:3000").replace(/\/$/, "");
+const BASE = resolveBaseUrl();
 
 const json = process.argv.includes("--json");
 const limitArg = process.argv.find((value) => value.startsWith("--limit="));

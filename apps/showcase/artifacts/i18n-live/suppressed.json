@@ -1,4 +1,859 @@
 {
+  "/": {
+    "nodes": 37,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 37
+    },
+    "examples": [
+      "0.9%",
+      "0",
+      "1"
+    ]
+  },
+  "/explore": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/explore/browse": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/foundations": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/foundations/colors": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/foundations/typography": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/foundations/spacing": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/foundations/radius": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/foundations/surface": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/foundations/shadow": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/foundations/glow": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/foundations/motion": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/foundations/spatial": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/foundations/themes": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/foundations/personality": {
+    "nodes": 136,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 136
+    },
+    "examples": [
+      "12.8K",
+      "0",
+      "1"
+    ]
+  },
+  "/components/buttons": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components": {
+    "nodes": 9,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 9
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/slider": {
+    "nodes": 26,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 26
+    },
+    "examples": [
+      "0.72",
+      "45%",
+      "30"
+    ]
+  },
+  "/components/menus": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/alert": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "*",
+      "·",
+      "·"
+    ]
+  },
+  "/components/empty-state": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/inputs": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "*",
+      "·",
+      "·"
+    ]
+  },
+  "/components/selection": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/tabs": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/badges": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/cards": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/overlay": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/dialog": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/feedback": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/data/metrics": {
+    "nodes": 1034,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 1034
+    },
+    "examples": [
+      "$128,431",
+      "$",
+      "0"
+    ]
+  },
+  "/data/statuses": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/border-glow": {
+    "nodes": 67,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 67
+    },
+    "examples": [
+      "$182,410",
+      "$",
+      "0"
+    ]
+  },
+  "/motion/kinetic": {
+    "nodes": 204,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 204
+    },
+    "examples": [
+      "0.045s",
+      "Markets",
+      "reprice"
+    ]
+  },
+  "/motion": {
+    "nodes": 24,
+    "regions": 3,
+    "rules": {
+      "aria-hidden": 24
+    },
+    "examples": [
+      "Alive",
+      "on",
+      "every"
+    ]
+  },
+  "/motion/signature": {
+    "nodes": 13,
+    "regions": 2,
+    "rules": {
+      "aria-hidden": 13
+    },
+    "examples": [
+      "Design tokens",
+      "Data tables",
+      "Charts"
+    ]
+  },
+  "/motion/spatial": {
+    "nodes": 24,
+    "regions": 2,
+    "rules": {
+      "aria-hidden": 24
+    },
+    "examples": [
+      "24",
+      "6",
+      "1"
+    ]
+  },
+  "/motion/spotlight": {
+    "nodes": 78,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 78
+    },
+    "examples": [
+      "$1,284,310",
+      "$",
+      "0"
+    ]
+  },
+  "/motion/shimmer": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/number-ticker": {
+    "nodes": 164,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 164
+    },
+    "examples": [
+      "$128,431",
+      "$128,431",
+      "$10,000"
+    ]
+  },
+  "/motion/reveal": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/patterns": {
+    "nodes": 271,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 271
+    },
+    "examples": [
+      "$182,410",
+      "$",
+      "0"
+    ]
+  },
+  "/experiences": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/experiences/general/marketing": {
+    "nodes": 14,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 14
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/experiences/general/saas": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "2",
+      "·",
+      "·"
+    ]
+  },
+  "/experiences/general/publishing": {
+    "nodes": 15,
+    "regions": 2,
+    "rules": {
+      "role=img": 1,
+      "aria-hidden": 14
+    },
+    "examples": [
+      "P",
+      "·",
+      "·"
+    ]
+  },
+  "/experiences/general/community": {
+    "nodes": 10,
+    "regions": 6,
+    "rules": {
+      "role=img": 6,
+      "aria-hidden": 4
+    },
+    "examples": [
+      "M",
+      "T",
+      "M"
+    ]
+  },
+  "/experiences/personal/career": {
+    "nodes": 10,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 10
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/experiences/personal/academic": {
+    "nodes": 15,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 15
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/experiences/personal/portfolio": {
+    "nodes": 21,
+    "regions": 2,
+    "rules": {
+      "aria-hidden": 21
+    },
+    "examples": [
+      "我们",
+      "只留下",
+      "一个"
+    ]
+  },
+  "/experiences/personal/garden": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/experiences/vertical/ai": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/experiences/vertical/science": {
+    "nodes": 6,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 6
+    },
+    "examples": [
+      "24",
+      "3",
+      "·"
+    ]
+  },
+  "/experiences/vertical/finance": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/experiences/vertical/commerce": {
+    "nodes": 7,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 7
+    },
+    "examples": [
+      "1",
+      "2",
+      "3"
+    ]
+  },
+  "/experiences/vertical/education": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/experiences/vertical/media": {
+    "nodes": 8,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 8
+    },
+    "examples": [
+      "1",
+      "2",
+      "3"
+    ]
+  },
+  "/experiences/vertical/productivity": {
+    "nodes": 16,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 16
+    },
+    "examples": [
+      "3",
+      "·",
+      "·"
+    ]
+  },
+  "/experiences/vertical/forum": {
+    "nodes": 16,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 16
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/patterns/industries": {
+    "nodes": 27,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 27
+    },
+    "examples": [
+      "$92",
+      "$",
+      "0"
+    ]
+  },
+  "/components/select": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/combobox": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/sheet": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/toast": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/command": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/accordion": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/toggle": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/avatar": {
+    "nodes": 22,
+    "regions": 7,
+    "rules": {
+      "role=img": 18,
+      "aria-hidden": 4
+    },
+    "examples": [
+      "AL",
+      "GH",
+      "AT"
+    ]
+  },
+  "/components/pagination": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/alert-dialog": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/timeline": {
+    "nodes": 8,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 8
+    },
+    "examples": [
+      "2",
+      "3",
+      "4"
+    ]
+  },
+  "/components/carousel": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
   "/components/field-parts": {
     "nodes": 7,
     "regions": 1,
@@ -11,7 +866,2374 @@
       "+"
     ]
   },
+  "/components/tree-view": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/board": {
+    "nodes": 12,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 12
+    },
+    "examples": [
+      "1",
+      "2",
+      "3"
+    ]
+  },
+  "/components/color-picker": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/media": {
+    "nodes": 7,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 7
+    },
+    "examples": [
+      "Before",
+      "After",
+      "50"
+    ]
+  },
+  "/components/notifications": {
+    "nodes": 8,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 8
+    },
+    "examples": [
+      "3",
+      "5",
+      "1"
+    ]
+  },
+  "/components/ai": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/data/table": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/data/table-virtualized": {
+    "nodes": 98,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 98
+    },
+    "examples": [
+      "10,000",
+      "0",
+      "1"
+    ]
+  },
+  "/patterns/table-filters": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/patterns/command-palette": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/patterns/chart-table": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/patterns/data-details": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/patterns/workspace": {
+    "nodes": 67,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 67
+    },
+    "examples": [
+      "24",
+      "0",
+      "1"
+    ]
+  },
+  "/application": {
+    "nodes": 6,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 6
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/application/navigation": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/application/workspace": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/application/url-state": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/application/outline-drawer": {
+    "nodes": 8,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 8
+    },
+    "examples": [
+      "01",
+      "02",
+      "03"
+    ]
+  },
+  "/application/packaging": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/patterns/research-workspace": {
+    "nodes": 9,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 9
+    },
+    "examples": [
+      "/",
+      "/",
+      "–"
+    ]
+  },
+  "/components/number": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "ms",
+      "·",
+      "·"
+    ]
+  },
+  "/components/password": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/otp": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
   "/components/file-upload": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/tags": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/forms": {
+    "nodes": 7,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 7
+    },
+    "examples": [
+      "/",
+      "/",
+      "*"
+    ]
+  },
+  "/forms/validation": {
+    "nodes": 7,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 7
+    },
+    "examples": [
+      "*",
+      "*",
+      "*"
+    ]
+  },
+  "/forms/async": {
+    "nodes": 7,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 7
+    },
+    "examples": [
+      "*",
+      "*",
+      "*"
+    ]
+  },
+  "/forms/sections": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "*",
+      "·",
+      "·"
+    ]
+  },
+  "/date-time/calendar": {
+    "nodes": 53,
+    "regions": 2,
+    "rules": {
+      "aria-hidden": 53
+    },
+    "examples": [
+      "Sun",
+      "Mon",
+      "Tue"
+    ]
+  },
+  "/date-time/date-picker": {
+    "nodes": 54,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 54
+    },
+    "examples": [
+      "*",
+      "/",
+      "/"
+    ]
+  },
+  "/date-time/date-range": {
+    "nodes": 54,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 54
+    },
+    "examples": [
+      "/",
+      "/",
+      "–"
+    ]
+  },
+  "/date-time/time": {
+    "nodes": 38,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 38
+    },
+    "examples": [
+      "⁦",
+      ":",
+      "⁩"
+    ]
+  },
+  "/patterns/table-date-filter": {
+    "nodes": 9,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 9
+    },
+    "examples": [
+      "/",
+      "/",
+      "–"
+    ]
+  },
+  "/patterns/chart-date-filter": {
+    "nodes": 9,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 9
+    },
+    "examples": [
+      "/",
+      "/",
+      "–"
+    ]
+  },
+  "/patterns/settings-form": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/architecture": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/timeseries": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/comparison": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/distribution": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/relationship": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/uncertainty": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/matrix": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/composition": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/flow": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/radial": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/composed": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/research": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/financial": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/sync": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/interaction": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/performance": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/sizing": {
+    "nodes": 28,
+    "regions": 4,
+    "rules": {
+      "role=img": 24,
+      "aria-hidden": 4
+    },
+    "examples": [
+      "82th percentile · +8.4%",
+      "10",
+      "25"
+    ]
+  },
+  "/charts/statistical": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/scientific": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/workflow": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/quantitative": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/multidimensional": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/diagnostics": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/networks": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/geospatial": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/surfaces": {
+    "nodes": 6,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 6
+    },
+    "examples": [
+      "-34",
+      "28",
+      "·"
+    ]
+  },
+  "/charts/catalog": {
+    "nodes": 102,
+    "regions": 9,
+    "rules": {
+      "role=img": 78,
+      "aria-hidden": 24
+    },
+    "examples": [
+      "94.0",
+      "95.0",
+      "96.0"
+    ]
+  },
+  "/integrations/tradingview": {
+    "nodes": 8,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 8
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/integrations/tradingview/charts": {
+    "nodes": 15,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 15
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/integrations/tradingview/watchlists": {
+    "nodes": 14,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 14
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/integrations/tradingview/tickers": {
+    "nodes": 16,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 16
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/integrations/tradingview/heatmaps": {
+    "nodes": 11,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 11
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/integrations/tradingview/screeners": {
+    "nodes": 8,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 8
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/integrations/tradingview/symbol-details": {
+    "nodes": 13,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 13
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/integrations/tradingview/news-calendars": {
+    "nodes": 10,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 10
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/integrations/tradingview/themes": {
+    "nodes": 13,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 13
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/integrations/tradingview/patterns": {
+    "nodes": 19,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 19
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/progress": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/spinner": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/skeleton": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/result": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/guided-tour": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/stepper": {
+    "nodes": 16,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 16
+    },
+    "examples": [
+      "3",
+      "4",
+      "2"
+    ]
+  },
+  "/experiments/design-lab": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/experiments/design-lab/precision-instrument": {
+    "nodes": 15,
+    "regions": 2,
+    "rules": {
+      "aria-hidden": 15
+    },
+    "examples": [
+      "Observed",
+      "Reference",
+      "·"
+    ]
+  },
+  "/experiments/design-lab/editorial-research": {
+    "nodes": 15,
+    "regions": 2,
+    "rules": {
+      "aria-hidden": 15
+    },
+    "examples": [
+      "Observed",
+      "Reference",
+      "·"
+    ]
+  },
+  "/experiments/design-lab/focused-workspace": {
+    "nodes": 15,
+    "regions": 2,
+    "rules": {
+      "aria-hidden": 15
+    },
+    "examples": [
+      "Observed",
+      "Reference",
+      "·"
+    ]
+  },
+  "/blocks": {
+    "nodes": 177,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 177
+    },
+    "examples": [
+      "1,284",
+      "0",
+      "1"
+    ]
+  },
+  "/charts/area-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "320px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/autocorrelation-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "320px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/bar-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "320px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/box-plot-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "320px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/bubble-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "320px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/bullet-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "280px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/bump-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "320px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/calendar-heatmap": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "300px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/calibration-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "320px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/candlestick-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "340px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/chord-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "380px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/choropleth-chart": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/composed-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "340px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/confusion-matrix-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "320px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/contour-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "340px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/correlation-matrix": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "340px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/curve-comparison-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "320px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/dendrogram-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "340px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/depth-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "320px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/distribution-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "320px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/drawdown-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "320px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/dumbbell-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "300px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/ecdf-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "320px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/efficient-frontier-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "340px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/error-bar-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "320px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/event-timeline": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "260px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/factor-exposure-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "320px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/fan-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "340px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/feature-importance-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "320px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/funnel-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "340px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/gantt-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "300px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/gauge-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "220px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/geo-scatter-chart": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/geo-trajectory-chart": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/graph-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "380px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/heatmap-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "320px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/hexbin-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "340px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/hierarchy-tree-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "320px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/histogram-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "320px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/historical-position-chart": {
+    "nodes": 21,
+    "regions": 2,
+    "rules": {
+      "role=img": 16,
+      "aria-hidden": 5
+    },
+    "examples": [
+      "78th percentile · +4.1 %",
+      "10",
+      "25"
+    ]
+  },
+  "/charts/line-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "260px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/lollipop-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "300px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/mekko-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "340px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/parallel-coordinates-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "340px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/pie-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "320px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/pnl-attribution-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "340px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/polar-rose-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "340px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/precision-recall-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "320px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/qq-plot-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "320px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/quadrant-scatter-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "340px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/radar-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "340px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/range-band-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "320px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/regime-strip": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "200px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/ridgeline-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "340px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/roc-curve-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "320px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/sankey-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "380px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/scatter-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "320px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/scatter-matrix-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "360px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/scatter-regression-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "340px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/slope-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "300px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/small-multiples": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/sparkline": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "200px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/spectrogram-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "340px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/sunburst-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "340px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/surface3-dchart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "380px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/survival-curve-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "320px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/term-structure-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "320px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/ternary-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "360px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/theme-river-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "360px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/treemap-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "340px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/vector-field-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "340px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/violin-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "260px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/volatility-smile-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "340px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/volatility-surface-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "380px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/waterfall-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "340px",
+      "·",
+      "·"
+    ]
+  },
+  "/charts/wind-rose-chart": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "340px",
+      "·",
+      "·"
+    ]
+  },
+  "/components/aspect-ratio": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/button-group": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/checkbox": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/column-visibility-menu": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/container": {
+    "nodes": 10,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 10
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/data-details": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/data-table-pagination": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/data-table-toolbar": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/delta": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/experience-timeline": {
+    "nodes": 6,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 6
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/facet-filter": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/float-button": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "3",
+      "·",
+      "·"
+    ]
+  },
+  "/components/grid": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/hover-card": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/icon": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/icon-button": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/image-compare": {
+    "nodes": 7,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 7
+    },
+    "examples": [
+      "Before",
+      "After",
+      "50"
+    ]
+  },
+  "/components/image-gallery": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/inline": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/input-group": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/kbd": {
+    "nodes": 17,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 17
+    },
+    "examples": [
+      "+",
+      "+",
+      "+"
+    ]
+  },
+  "/components/label": {
+    "nodes": 6,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 6
+    },
+    "examples": [
+      "*",
+      "*",
+      "·"
+    ]
+  },
+  "/components/link": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/list": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/native-select": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/now-section": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/panel": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/popover": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/profile-hero": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/project-showcase": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/publication-list": {
+    "nodes": 8,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 8
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/radio-group": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/rating": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/reading-shelf": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/scroll-area": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/search-input": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/section": {
     "nodes": 4,
     "regions": 1,
     "rules": {
@@ -35,7 +3257,1027 @@
       "3"
     ]
   },
+  "/components/segmented-control": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/separator": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/social-links": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/sortable-list": {
+    "nodes": 9,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 9
+    },
+    "examples": [
+      "1",
+      "2",
+      "3"
+    ]
+  },
+  "/components/stack": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/stat-card": {
+    "nodes": 36,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 36
+    },
+    "examples": [
+      "1.24",
+      "0",
+      "1"
+    ]
+  },
+  "/components/switch": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/textarea": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/timestamp": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/tooltip": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
   "/components/transfer-list": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/typography": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/actions": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/forms": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/date-time": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/layout": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/navigation": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/overlays": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/data-display": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/application": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/components/experiences": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/installation": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference/actions": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference/ai": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference/application": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference/chart-diagnostics": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference/chart-financial": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference/chart-general": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference/chart-geographic": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference/chart-multidimensional": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference/chart-scientific": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference/chart-statistical": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference/chart-time": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference/chart-workflow": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference/data-display": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference/date-time": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference/experiences": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference/feedback": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference/forms": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference/layout": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference/media": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference/motion-feedback": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference/motion-spatial": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference/motion-surfaces": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference/motion-typography": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference/navigation": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference/overlays": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference/tradingview": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/reference/typography": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/docs/theming": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/aurora-surface": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/beam-flow": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/border-trail": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/card-stack": {
+    "nodes": 33,
+    "regions": 3,
+    "rules": {
+      "aria-hidden": 33
+    },
+    "examples": [
+      "趋势",
+      "预设演示数据",
+      "持有收益"
+    ]
+  },
+  "/motion/click-burst": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/collapse": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/data-change-flash": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/expandable-surface": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/glare-surface": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/icon-morph": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "▶",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/intensity": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/interactive-grid": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/magnetic": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/magnify-dock": {
+    "nodes": 9,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 9
+    },
+    "examples": [
+      "◧",
+      "◫",
+      "⊞"
+    ]
+  },
+  "/motion/marquee": {
+    "nodes": 19,
+    "regions": 2,
+    "rules": {
+      "aria-hidden": 19
+    },
+    "examples": [
+      "动量",
+      "持有收益",
+      "价值"
+    ]
+  },
+  "/motion/morphing-dialog": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/morphing-popover": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/motion-surface": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/orbit-field": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/parallax-scene": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/presence": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/press-ripple": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/pressable": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/selection-beam": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/shared-highlight": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/stagger": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/text-reveal": {
+    "nodes": 5,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 5
+    },
+    "examples": [
+      "Markets reprice in seconds",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/tilt-surface": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/motion/transition-panel": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/studios/charts": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/studios/composer": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/studios/motion": {
+    "nodes": 10,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 10
+    },
+    "examples": [
+      "Read",
+      "the",
+      "data,"
+    ]
+  },
+  "/studios/themes": {
+    "nodes": 4,
+    "regions": 1,
+    "rules": {
+      "aria-hidden": 4
+    },
+    "examples": [
+      "·",
+      "·",
+      "·"
+    ]
+  },
+  "/templates": {
     "nodes": 4,
     "regions": 1,
     "rules": {

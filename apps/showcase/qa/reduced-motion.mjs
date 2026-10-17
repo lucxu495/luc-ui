@@ -42,7 +42,7 @@
  * duplicates), and decoration inside controls (a slider's own value glyphs) —
  * which is why (3) looks at semantic text blocks rather than every element.
  *
- *   LUC_QA_BASE_URL=http://127.0.0.1:3000 node qa/reduced-motion.mjs
+ *   LUC_QA_BASE_URL=http://127.0.0.1:5300 node qa/reduced-motion.mjs
  *   … --routes=motion-gallery,motion-kinetic,components-spinner
  *   … --negative-test --routes=motion-kinetic   # proves the probe can fail
  *   … --open-overlay                             # measure the overlay itself
@@ -52,11 +52,12 @@ import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
+import { resolveBaseUrl } from "./base-url.mjs";
 import { ROUTES, selectRoutes } from "./routes.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const artifacts = path.resolve(here, "../artifacts/qa/reduced-motion");
-const baseUrl = process.env.LUC_QA_BASE_URL ?? "http://127.0.0.1:3000";
+const baseUrl = resolveBaseUrl();
 const args = new Set(process.argv.slice(2));
 const slugArg = (process.argv.find((arg) => arg.startsWith("--routes=")) ?? "").slice("--routes=".length);
 

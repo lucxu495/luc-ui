@@ -26,9 +26,10 @@ import path from "node:path";
 import { mkdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
+import { resolveBaseUrl } from "./base-url.mjs";
 import { navigateAndReady } from "./readiness.mjs";
 
-const BASE_URL = process.env.LUC_QA_BASE_URL ?? "http://127.0.0.1:3000";
+const BASE_URL = resolveBaseUrl();
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const PACKAGE_ROOT = path.resolve(HERE, "../../..");
 

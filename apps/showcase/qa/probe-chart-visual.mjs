@@ -20,6 +20,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
 
+import { resolveBaseUrl } from "./base-url.mjs";
 import { navigateAndReady } from "./readiness.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -35,7 +36,7 @@ const width = Number.parseInt(arg("width", "1440"), 10);
 const theme = arg("theme", "dark");
 const lang = arg("lang", "en");
 const outDir = path.resolve(showcaseRoot, arg("out", "artifacts/chart-review"));
-const baseUrl = process.env.LUC_QA_BASE_URL ?? "http://127.0.0.1:3000";
+const baseUrl = resolveBaseUrl();
 
 await mkdir(outDir, { recursive: true });
 

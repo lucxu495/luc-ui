@@ -133,6 +133,29 @@
     animation-duration: 1.6s !important;
     animation-iteration-count: infinite !important;
   }
+
+  /*
+   * …and the *shape* of that exception, not only its duration.
+   *
+   * The clamp above re-times an essential indicator but leaves its animation
+   * name alone, and the two essential indicators in the library swap to a pulse
+   * inside their own `@media (prefers-reduced-motion: reduce)` block. So with the
+   * OS set to `no-preference` and the reviewer's override on — the combination
+   * `MotionControl` exists to create — the spinner froze and the indeterminate
+   * bar kept travelling, while the OS-level path pulsed. A override that
+   * describes a different reduced-motion than the media query is the "review
+   * quietly invalidated" this block's own comment warns about.
+   */
+  [data-motion="reduced"] .luc-spinner,
+  [data-motion="reduced"] .luc-indeterminate {
+    animation-name: luc-pulse-soft !important;
+    animation-timing-function: ease-in-out !important;
+  }
+
+  /* The sweep's travel is the part the exception does not cover. */
+  [data-motion="reduced"] .luc-indeterminate {
+    transform: translateX(100%);
+  }
 }
 
 

@@ -23,10 +23,11 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
+import { resolveBaseUrl } from "./base-url.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const EVIDENCE = path.resolve(HERE, "../../../artifacts/screenshots/showcase-transformation");
-const BASE = (process.env.LUC_QA_BASE_URL ?? "http://127.0.0.1:3100").replace(/\/$/, "");
+const BASE = (resolveBaseUrl()).replace(/\/$/, "");
 
 const MAX_HOPS = 6;
 const MAX_REPEATS = 3;

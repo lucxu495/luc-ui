@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Badge, Card, Code, Inline, Panel, Section, StatusBadge, Tag, Text } from "@luc/ui";
+import { Badge, Inline, Panel, Section, StatusBadge, Tag, Text } from "@luc/ui";
 import { RiBitCoinLine, RiLineChartLine } from "@remixicon/react";
 import { DocPage } from "@/components/docs/doc-page";
 import { PageHeader } from "@/components/docs/page-header";
@@ -10,6 +10,8 @@ import { Example } from "@/components/docs/example";
 import { PropsTable } from "@/components/docs/tables";
 import { useI18n } from "@/lib/i18n/provider";
 import { EntryFooter } from "@/components/docs/entry-footer";
+import { EntryNotes } from "@/components/docs/entry-notes";
+import { ExamplesHeading } from "@/components/docs/examples-heading";
 
 export default function BadgesPage() {
   const { tcs } = useI18n();
@@ -22,6 +24,7 @@ export default function BadgesPage() {
         title="Badges and tags"
         lead="Badges state a fact about what they sit next to. Tags are editable labels you can remove. Both stay within the semantic colour set — no decorative colours."
       />
+      <ExamplesHeading />
 
       <ImportLine line={'import { StatusBadge, Tag } from "@luc/ui";'} />
 
@@ -182,30 +185,8 @@ export default function BadgesPage() {
         />
       </Section>
 
-      <Section title={tcs("Rules")}>
-        <div className="grid gap-4 md:grid-cols-2">
-          <Card variant="outline" className="gap-2 p-4">
-            <Text variant="micro" tone="positive" as="p">
-              Do
-            </Text>
-            <ul className="flex list-disc flex-col gap-1.5 pl-4 text-label text-fg-secondary">
-              <li>{ tcs("Keep badge text to one or two words, including the unit.") }</li>
-              <li>Use <Code>dot</Code> {tcs("when the badge represents a live state.")}</li>
-              <li>{ tcs("Pair a delta badge with an arrow glyph — colour alone is not enough.") }</li>
-            </ul>
-          </Card>
-          <Card variant="outline" className="gap-2 p-4">
-            <Text variant="micro" tone="negative" as="p">
-              Don&apos;t
-            </Text>
-            <ul className="flex list-disc flex-col gap-1.5 pl-4 text-label text-fg-secondary">
-              <li>{ tcs("Turn a badge into a button — use a real button.") }</li>
-              <li>{ tcs("Put three accent badges in one row.") }</li>
-              <li>{ tcs("Introduce a new status colour for a product-specific state.") }</li>
-            </ul>
-          </Card>
-        </div>
-      </Section>
+
+      <EntryNotes entryIds={["badge"]} />
       <EntryFooter />
     </DocPage>
   );

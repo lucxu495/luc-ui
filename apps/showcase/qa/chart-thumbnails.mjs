@@ -21,7 +21,7 @@
  *      card happens to be makes the catalogue uneven, so the rendered heights
  *      must be one number.
  *
- *   LUC_QA_BASE_URL=http://127.0.0.1:3100 node qa/chart-thumbnails.mjs
+ *   LUC_QA_BASE_URL=http://127.0.0.1:5300 node qa/chart-thumbnails.mjs
  *   LUC_QA_ROUTE=/zh/charts/catalog node qa/chart-thumbnails.mjs
  *
  * Exits non-zero when a row is blank, when too many pictures repeat, or when the
@@ -33,11 +33,12 @@ import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
+import { resolveBaseUrl } from "./base-url.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const APP = path.resolve(HERE, "..");
 const EVIDENCE = path.resolve(APP, "../../artifacts/screenshots/showcase-transformation");
-const BASE = process.env.LUC_QA_BASE_URL ?? "http://127.0.0.1:3100";
+const BASE = resolveBaseUrl();
 const ROUTES = (process.env.LUC_QA_ROUTES ?? "/charts/catalog,/zh/charts/catalog").split(",");
 const VIEWPORT = { width: 1440, height: 900 };
 

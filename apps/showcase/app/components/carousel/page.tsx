@@ -19,6 +19,8 @@ import { Example } from "@/components/docs/example";
 import { PropsTable } from "@/components/docs/tables";
 import { useI18n } from "@/lib/i18n/provider";
 import { EntryFooter } from "@/components/docs/entry-footer";
+import { EntryNotes } from "@/components/docs/entry-notes";
+import { ExamplesHeading } from "@/components/docs/examples-heading";
 
 const CARDS = [
   { name: "Aurora", tag: "Motion", note: "A drifting aurora surface for hero panels." },
@@ -33,6 +35,7 @@ export default function CarouselPage() {
   return (
     <DocPage>
       <PageHeader eyebrow={tcs("Components")} title="Carousel and AspectRatio" lead={tc("components.carousel.lead")} />
+      <ExamplesHeading />
 
       <ImportLine line={'import { Carousel, CarouselControls, CarouselItem, CarouselTrack } from "@luc/ui";'} />
 
@@ -146,6 +149,7 @@ export default function CarouselPage() {
           ]}
         />
       </Section>
+      <EntryNotes entryIds={["carousel"]} />
       <EntryFooter />
     </DocPage>
   );

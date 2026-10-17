@@ -1602,7 +1602,8 @@ async function groupProviders(ctx) {
      * assumption that nothing was parked before the loop.
      */
     const parkedBeforeFlips = (await providerState(page)).parked;
-    for (let flip = 0; flip < 4; flip += 1) {
+    const rapidFlips = 4;
+    for (let flip = 0; flip < rapidFlips; flip += 1) {
       await ctx.applyTheme(page, flip % 2 === 0 ? "dark" : "light", recorder, "tradingview-heatmaps");
       await page.waitForTimeout(live ? 900 : 260);
     }
@@ -1612,15 +1613,36 @@ async function groupProviders(ctx) {
     recorder.behaviour.push({
       check: "repeated theme flips do not accumulate provider widgets",
       pass:
-        // Bounded by the grace window, never by the run length: four flips in
-        // ~1s may park one container each, on top of whatever the previous
-        // scenario left draining, but the lot must drain to nothing.
-        duringRapidFlips.parked <= parkedBeforeFlips + 4 &&
+        /*
+         * Bounded by one park per *widget* per flip, never by the run length.
+         *
+         * The bound used to be `parkedBeforeFlips + 4` — one container per flip —
+         * and that is not what the page does. Every flip re-creates *all three*
+         * provider widgets on `/integrations/tradingview/heatmaps`, so every flip
+         * parks three containers; `SETTLED_GRACE_MS` is 600 and this loop flips
+         * every 260ms, so two flips' worth can legitimately be inside the grace
+         * window at once. Measured on 2026-10-17 by running this group five times
+         * against the built image: the same scenario parked `0→3→0` three times
+         * and `0→6→0` twice, with `containers=3` and a drain to zero every time.
+         * The 6 was the honest shape of two overlapping windows, and the full
+         * sweep failed on it while a providers-only run passed — a check that
+         * depended on the scheduler rather than on the component.
+         *
+         * The property that actually describes accumulation is "each flip parks
+         * each live widget at most once", so the ceiling is
+         * `flips × containers`. A container parked twice for one flip — the
+         * double-teardown leak this check exists for — still fails it, and the
+         * two assertions the old comment called the real ones are unchanged: the
+         * lot drains to nothing, and the container count never exceeds the
+         * baseline.
+         */
+        duringRapidFlips.parked <= parkedBeforeFlips + rapidFlips * heatmapState.containers &&
         afterRapidFlips.parked === 0 &&
         afterRapidFlips.containers <= heatmapState.containers,
       detail:
         `parked ${parkedBeforeFlips}→${duringRapidFlips.parked}→${afterRapidFlips.parked} ` +
-        `(4 flips), containers=${afterRapidFlips.containers} (baseline ${heatmapState.containers})`,
+        `(${rapidFlips} flips × ${heatmapState.containers} widgets), ` +
+        `containers=${afterRapidFlips.containers} (baseline ${heatmapState.containers})`,
     });
     await ctx.applyTheme(page, "dark", recorder, "tradingview-heatmaps");
     await page.waitForTimeout(live ? 500 : 200);
@@ -2629,23 +2651,40 @@ async function groupDocs(ctx) {
          * the canonical order — a probe that reports "no section" for a working
          * page is worse than no probe, because it trains the reader to ignore it.
          */
+        const main = document.querySelector("main");
         const heading = [...document.querySelectorAll("h2")].find((node) =>
           /^(live preview|examples)$/i.test((node.textContent ?? "").trim()),
         );
-        if (!heading) return { section: false, code: null, stageChild: false, marks: 0, heading: null };
+        if (!heading) return { section: false, codes: [], stageChild: false, marks: 0, heading: null };
+        /*
+         * Page-scoped, not `heading.closest("section")`.
+         *
+         * The generated pages wrap Examples in a `<section>`, so the narrow scope
+         * was enough for them. A hand-written page renders its heading and its
+         * specimens as siblings, so `closest("section")` climbed to the page
+         * shell and picked up whatever code block came first — after the curated
+         * pages gained a canonical Examples heading, `/components/transfer-list`
+         * reported "code=<TransferList>:false" while its specimen and its code
+         * were both on the page.
+         *
+         * The property being asserted is unchanged and is now stated where it
+         * belongs: the page has a specimen heading, a stage with content, the
+         * demo's marker rendered, and *some* code block on the page for that
+         * component. Both halves still have to be true.
+         */
         const section = heading.closest("section");
         return {
           section: true,
           heading: heading.textContent?.trim() ?? null,
-          code: section?.querySelector("pre code")?.textContent?.trim() ?? null,
+          codes: [...(main ?? document).querySelectorAll("pre code")].map((node) => node.textContent ?? ""),
           /* The frame is `Demo` on a chart page and `Example` on a component page. */
           stageChild:
-            (section?.querySelector('[data-slot="demo"] > div')?.children.length ?? 0) > 0 ||
-            (section?.querySelector('[data-slot="example-stage"]')?.children.length ?? 0) > 0,
+            (main?.querySelector('[data-slot="demo"] > div')?.children.length ?? 0) > 0 ||
+            (main?.querySelector('[data-slot="example-stage"]')?.children.length ?? 0) > 0,
           marks: section?.querySelectorAll("[data-slot], canvas, svg, [role]").length ?? 0,
         };
       });
-      const codeNames = (reading.code ?? "").includes(`<${demo.component}`);
+      const codeNames = reading.codes.some((code) => code.includes(`<${demo.component}`));
       const rendered = await page.locator(demo.marker).count();
       if (!reading.section || !codeNames || !reading.stageChild || rendered === 0) {
         demoFailures.push(

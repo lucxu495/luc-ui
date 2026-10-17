@@ -11,6 +11,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
 
+import { resolveBaseUrl } from "./base-url.mjs";
 import { DESKTOP } from "./constants.mjs";
 import { navigateAndReady } from "./readiness.mjs";
 
@@ -25,7 +26,7 @@ function arg(name, fallback) {
 const route = arg("route", "/");
 const wait = Number.parseInt(arg("wait", "2500"), 10);
 const shot = arg("shot", "");
-const baseUrl = process.env.LUC_QA_BASE_URL ?? "http://127.0.0.1:3100";
+const baseUrl = resolveBaseUrl();
 
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: DESKTOP, deviceScaleFactor: 1 });

@@ -17,6 +17,8 @@ import { Example } from "@/components/docs/example";
 import { PropsTable } from "@/components/docs/tables";
 import { useI18n } from "@/lib/i18n/provider";
 import { EntryFooter } from "@/components/docs/entry-footer";
+import { EntryNotes } from "@/components/docs/entry-notes";
+import { ExamplesHeading } from "@/components/docs/examples-heading";
 
 const PEOPLE = [
   { name: "Ada Lovelace", role: "Research", status: "online" as const },
@@ -31,6 +33,7 @@ export default function AvatarPage() {
   return (
     <DocPage intent="compact">
       <PageHeader eyebrow={tcs("Components")} title="Avatar and Rating" lead={tc("components.avatar.lead")} />
+      <ExamplesHeading />
 
       <ImportLine line={'import { Avatar, AvatarGroup } from "@luc/ui";'} />
 
@@ -139,6 +142,7 @@ export default function AvatarPage() {
           ]}
         />
       </Section>
+      <EntryNotes entryIds={["avatar"]} />
       <EntryFooter />
     </DocPage>
   );

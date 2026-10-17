@@ -28,6 +28,8 @@ import { Example } from "@/components/docs/example";
 import { PageHeader } from "@/components/docs/page-header";
 import { PropsTable } from "@/components/docs/tables";
 import { useI18n } from "@/lib/i18n/provider";
+import { EntryNotes } from "@/components/docs/entry-notes";
+import { ExamplesHeading } from "@/components/docs/examples-heading";
 
 /*
  * Dialog, in the Components V2 shape.
@@ -46,6 +48,7 @@ export default function DialogPage() {
         title="Dialog"
         lead={tcs("A decision that needs the page stopped: a restrained scrim, trapped focus, and Escape or an outside click to leave.")}
       />
+      <ExamplesHeading />
 
       <ImportLine line={'import { DialogRoot, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogBody, DialogFooter } from "@luc/ui";'} />
 
@@ -265,6 +268,7 @@ export default function DialogPage() {
         </div>
       </Section>
 
+      <EntryNotes entryIds={["dialog"]} />
       <EntryFooter entryId="dialog" />
     </DocPage>
   );

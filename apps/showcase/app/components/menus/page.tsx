@@ -55,6 +55,8 @@ import { Example } from "@/components/docs/example";
 import { PropsTable } from "@/components/docs/tables";
 import { useI18n } from "@/lib/i18n/provider";
 import { EntryFooter } from "@/components/docs/entry-footer";
+import { EntryNotes } from "@/components/docs/entry-notes";
+import { ExamplesHeading } from "@/components/docs/examples-heading";
 
 const runs = [
   { id: "btc-sma-2026-09", status: "Complete" },
@@ -74,6 +76,7 @@ export default function MenusPage() {
         title="Menus"
         lead="DropdownMenu and ContextMenu are two triggers for one menu language: actions and options attached to a trigger, or to a target. Radix owns focus, typeahead, submenus and Escape; LUC owns the surface."
       />
+      <ExamplesHeading />
 
       <ImportLine line={'import {\n  Button,\n  ContextMenu,\n  ContextMenuCheckboxItem,\n  ContextMenuContent,\n  ContextMenuItem,\n  ContextMenuLabel,\n  ContextMenuRadioGroup,\n  ContextMenuRadioItem,\n  ContextMenuSeparator,\n  ContextMenuShortcut,\n  ContextMenuSub,\n  ContextMenuSubContent,\n  ContextMenuSubTrigger,\n  ContextMenuTrigger,\n  DropdownMenu,\n  DropdownMenuCheckboxItem,\n  DropdownMenuContent,\n  DropdownMenuItem,\n  DropdownMenuLabel,\n  DropdownMenuRadioGroup,\n  DropdownMenuRadioItem,\n  DropdownMenuSeparator,\n  DropdownMenuShortcut,\n  DropdownMenuSub,\n  DropdownMenuSubContent,\n  DropdownMenuSubTrigger,\n  DropdownMenuTrigger,\n  IconButton,\n} from "@luc/ui";'} />
 
@@ -388,6 +391,7 @@ export default function MenusPage() {
           </Card>
         </div>
       </Section>
+      <EntryNotes entryIds={["context-menu", "dropdown-menu"]} />
       <EntryFooter />
     </DocPage>
   );

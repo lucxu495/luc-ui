@@ -3,7 +3,7 @@
 A loopback-only production build of the Showcase on your own Mac, so the current
 state of the tree can be reviewed in a browser at any time.
 
-It **reuses** the existing `luc-ui/Dockerfile` and `luc-ui/docker-compose.yml`.
+It **reuses** this repository's own `Dockerfile` and `docker-compose.yml`.
 Nothing in this document replaces or edits the production stack; the local
 preview is the base stack plus one small override file.
 
@@ -84,18 +84,24 @@ read back from `docker port`; neither is ever assumed.
 ```bash
 BASE=$(docker port luc-ui-showcase-standalone-local 3000 | sed 's/.*://')
 for p in / /components/native-select /components/project-showcase /charts/line-chart \
-         /motion/card-stack /visuals/elements /visuals/styles; do
+         /motion/card-stack /docs/reference/tradingview; do
   printf '%s %s\n' "$(curl -s -o /dev/null -w '%{http_code}' "http://127.0.0.1:$BASE$p")" "$p"
 done
 ```
 
-Then, from `luc-ui/apps/showcase`, run the browser gates against the container:
+The list used to end with `/visuals/elements` and `/visuals/styles`. Both are 404s
+now: the Visuals product moved to its own repository in Phase 2 and this
+Showcase serves none of its routes, so the recipe was asking a reader to accept
+two failures as the expected result of a health check. `/docs/reference/tradingview`
+replaces them — it is a generated route, which is the shape worth proving by hand.
+
+Then, from `apps/showcase`, run the browser gates against the container:
 
 ```bash
-cd luc-ui/apps/showcase
+cd apps/showcase
 export LUC_QA_BASE_URL="http://127.0.0.1:$BASE"
-node qa/preview-check.mjs     # 6 pages: HTTP 200 + hydration + a real interaction
-node qa/route-health.mjs      # 326 documented routes: HTTP 200 + hydration + no console errors
+node qa/preview-check.mjs     # 4 surfaces: HTTP 200 + hydration + a real interaction
+node qa/route-health.mjs      # 357 documented routes: HTTP 200 + hydration + no console errors
 node qa/outline.mjs --all     # the "On this page" rail, every registry route
 node qa/playground.mjs        # control → code → Reset, presets, disabled reasons
 node qa/card-stack.mjs        # the Card Stack interaction protocol
@@ -107,10 +113,9 @@ node qa/locale.mjs --all      # every documented route under /zh hands out /zh l
 ```
 
 `preview-check.mjs` is the quick answer to "is this build actually usable": on
-`/components/native-select`, `/components/project-showcase`, `/charts/line-chart`,
-`/motion/card-stack`, `/visuals/elements` and `/visuals/styles` it clicks or
-selects something and records the observed change plus every console error. It is
-also wired as `pnpm qa:preview` and writes
+`/components/native-select`, `/components/project-showcase`, `/charts/line-chart`
+and `/motion/card-stack` it clicks or selects something and records the observed
+change plus every console error. It is also wired as `pnpm qa:preview` and writes
 `artifacts/screenshots/showcase-transformation/preview-check.json`.
 
 `locale.mjs --all` is the gate to run after touching any link, the i18n config or

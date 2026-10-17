@@ -17,7 +17,7 @@
  * horizontal overflow. Chinese and mobile passes cover a representative sample of
  * every component family.
  *
- *   LUC_QA_BASE_URL=http://127.0.0.1:3100 node qa/v2-pages.mjs
+ *   LUC_QA_BASE_URL=http://127.0.0.1:5300 node qa/v2-pages.mjs
  *   node qa/v2-pages.mjs --routes=/components/alert,/forms
  */
 
@@ -25,12 +25,13 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
+import { resolveBaseUrl } from "./base-url.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const APP = path.resolve(HERE, "..");
 const EVIDENCE = path.resolve(APP, "../../artifacts/screenshots/showcase-transformation");
 const INVENTORY = path.resolve(APP, "../../docs/audits/showcase-transformation/progress/v2-inventory.json");
-const BASE = process.env.LUC_QA_BASE_URL ?? "http://127.0.0.1:3100";
+const BASE = resolveBaseUrl();
 
 const argRoutes = process.argv.find((value) => value.startsWith("--routes="));
 const desktop = { width: 1440, height: 900 };

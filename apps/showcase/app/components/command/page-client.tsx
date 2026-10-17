@@ -35,6 +35,8 @@ import { Demo } from "@/components/docs/demo";
 import { ImportLine } from "@/components/docs/family-imports";
 import { useI18n } from "@/lib/i18n/provider";
 import { EntryFooter } from "@/components/docs/entry-footer";
+import { EntryNotes } from "@/components/docs/entry-notes";
+import { ExamplesHeading } from "@/components/docs/examples-heading";
 
 const COMMANDS = [
   { id: "nav-overview", group: "Navigate", label: "Go to overview", shortcut: "G O" },
@@ -58,6 +60,7 @@ export function CommandPage({ apiSection }: { apiSection?: ReactNode }) {
         title="Command menu"
         lead="A palette for running things: navigate, act, toggle. cmdk owns filtering, ranking, the active-descendant model and scroll-into-view; LUC owns the palette layout, the search field, the grouping rhythm, the active row language and the shortcut column."
       />
+      <ExamplesHeading />
 
       <ImportLine line={'import {\n  Command,\n  CommandEmpty,\n  CommandGroup,\n  CommandInput,\n  CommandItem,\n  CommandList,\n  CommandMenu,\n  CommandSeparator,\n  useCommandPages,\n} from "@luc/ui";'} />
 
@@ -234,6 +237,7 @@ Escape closes, Enter runs the highlighted command.`}</Code>
         </Command>
       </CommandMenu>
       {apiSection}
+      <EntryNotes entryIds={["command"]} />
       <EntryFooter />
     </DocPage>
   );

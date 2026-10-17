@@ -15,6 +15,7 @@ import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
 import { AxeBuilder } from "@axe-core/playwright";
 
+import { resolveBaseUrl } from "./base-url.mjs";
 import { navigateAndReady } from "./readiness.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -27,7 +28,7 @@ function arg(name, fallback) {
 
 const route = arg("route", "/components/buttons");
 const width = Number.parseInt(arg("width", "390"), 10);
-const baseUrl = process.env.LUC_QA_BASE_URL ?? "http://127.0.0.1:3000";
+const baseUrl = resolveBaseUrl();
 
 const browser = await chromium.launch();
 /* A context rather than `newPage`: axe's Playwright binding requires one. */

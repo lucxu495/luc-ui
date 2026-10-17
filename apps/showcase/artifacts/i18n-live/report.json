@@ -1,9 +1,1433 @@
 [
   {
+    "slug": "home",
+    "path": "/",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 37,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 37
+      },
+      "examples": [
+        "0.9%",
+        "0",
+        "1"
+      ]
+    }
+  },
+  {
+    "slug": "explore",
+    "path": "/explore",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "explore-browse",
+    "path": "/explore/browse",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "foundations-overview",
+    "path": "/foundations",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "foundations-colors",
+    "path": "/foundations/colors",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "foundations-typography",
+    "path": "/foundations/typography",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "foundations-spacing",
+    "path": "/foundations/spacing",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "foundations-radius",
+    "path": "/foundations/radius",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "foundations-surface",
+    "path": "/foundations/surface",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "foundations-shadow",
+    "path": "/foundations/shadow",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "foundations-glow",
+    "path": "/foundations/glow",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "foundations-motion",
+    "path": "/foundations/motion",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "foundations-spatial",
+    "path": "/foundations/spatial",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "foundations-themes",
+    "path": "/foundations/themes",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "foundations-personality",
+    "path": "/foundations/personality",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 136,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 136
+      },
+      "examples": [
+        "12.8K",
+        "0",
+        "1"
+      ]
+    }
+  },
+  {
+    "slug": "buttons",
+    "path": "/components/buttons",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-overview",
+    "path": "/components",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 9,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 9
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-slider",
+    "path": "/components/slider",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 26,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 26
+      },
+      "examples": [
+        "0.72",
+        "45%",
+        "30"
+      ]
+    }
+  },
+  {
+    "slug": "components-menus",
+    "path": "/components/menus",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-alert",
+    "path": "/components/alert",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "*",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-empty-state",
+    "path": "/components/empty-state",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "inputs",
+    "path": "/components/inputs",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "*",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "selection",
+    "path": "/components/selection",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "tabs",
+    "path": "/components/tabs",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "badges",
+    "path": "/components/badges",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "cards",
+    "path": "/components/cards",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "overlay",
+    "path": "/components/overlay",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "dialog",
+    "path": "/components/dialog",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "feedback",
+    "path": "/components/feedback",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "data-metrics",
+    "path": "/data/metrics",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 1034,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 1034
+      },
+      "examples": [
+        "$128,431",
+        "$",
+        "0"
+      ]
+    }
+  },
+  {
+    "slug": "data-statuses",
+    "path": "/data/statuses",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-border-glow",
+    "path": "/motion/border-glow",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 67,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 67
+      },
+      "examples": [
+        "$182,410",
+        "$",
+        "0"
+      ]
+    }
+  },
+  {
+    "slug": "motion-kinetic",
+    "path": "/motion/kinetic",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 204,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 204
+      },
+      "examples": [
+        "0.045s",
+        "Markets",
+        "reprice"
+      ]
+    }
+  },
+  {
+    "slug": "motion-gallery",
+    "path": "/motion",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 24,
+      "regions": 3,
+      "rules": {
+        "aria-hidden": 24
+      },
+      "examples": [
+        "Alive",
+        "on",
+        "every"
+      ]
+    }
+  },
+  {
+    "slug": "motion-signature",
+    "path": "/motion/signature",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 13,
+      "regions": 2,
+      "rules": {
+        "aria-hidden": 13
+      },
+      "examples": [
+        "Design tokens",
+        "Data tables",
+        "Charts"
+      ]
+    }
+  },
+  {
+    "slug": "motion-spatial",
+    "path": "/motion/spatial",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 24,
+      "regions": 2,
+      "rules": {
+        "aria-hidden": 24
+      },
+      "examples": [
+        "24",
+        "6",
+        "1"
+      ]
+    }
+  },
+  {
+    "slug": "motion-spotlight",
+    "path": "/motion/spotlight",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 78,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 78
+      },
+      "examples": [
+        "$1,284,310",
+        "$",
+        "0"
+      ]
+    }
+  },
+  {
+    "slug": "motion-shimmer",
+    "path": "/motion/shimmer",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-number-ticker",
+    "path": "/motion/number-ticker",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 164,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 164
+      },
+      "examples": [
+        "$128,431",
+        "$128,431",
+        "$10,000"
+      ]
+    }
+  },
+  {
+    "slug": "motion-reveal",
+    "path": "/motion/reveal",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "patterns",
+    "path": "/patterns",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 271,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 271
+      },
+      "examples": [
+        "$182,410",
+        "$",
+        "0"
+      ]
+    }
+  },
+  {
+    "slug": "experiences",
+    "path": "/experiences",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "experiences-marketing",
+    "path": "/experiences/general/marketing",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 14,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 14
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "experiences-saas",
+    "path": "/experiences/general/saas",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "2",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "experiences-publishing",
+    "path": "/experiences/general/publishing",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 15,
+      "regions": 2,
+      "rules": {
+        "role=img": 1,
+        "aria-hidden": 14
+      },
+      "examples": [
+        "P",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "experiences-community",
+    "path": "/experiences/general/community",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 10,
+      "regions": 6,
+      "rules": {
+        "role=img": 6,
+        "aria-hidden": 4
+      },
+      "examples": [
+        "M",
+        "T",
+        "M"
+      ]
+    }
+  },
+  {
+    "slug": "experiences-career",
+    "path": "/experiences/personal/career",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 10,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 10
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "experiences-academic",
+    "path": "/experiences/personal/academic",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 15,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 15
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "experiences-portfolio",
+    "path": "/experiences/personal/portfolio",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 21,
+      "regions": 2,
+      "rules": {
+        "aria-hidden": 21
+      },
+      "examples": [
+        "我们",
+        "只留下",
+        "一个"
+      ]
+    }
+  },
+  {
+    "slug": "experiences-garden",
+    "path": "/experiences/personal/garden",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "experiences-ai",
+    "path": "/experiences/vertical/ai",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "experiences-science",
+    "path": "/experiences/vertical/science",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 6,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 6
+      },
+      "examples": [
+        "24",
+        "3",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "experiences-finance",
+    "path": "/experiences/vertical/finance",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "experiences-commerce",
+    "path": "/experiences/vertical/commerce",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 7,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 7
+      },
+      "examples": [
+        "1",
+        "2",
+        "3"
+      ]
+    }
+  },
+  {
+    "slug": "experiences-education",
+    "path": "/experiences/vertical/education",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "experiences-media",
+    "path": "/experiences/vertical/media",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 8,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 8
+      },
+      "examples": [
+        "1",
+        "2",
+        "3"
+      ]
+    }
+  },
+  {
+    "slug": "experiences-productivity",
+    "path": "/experiences/vertical/productivity",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 16,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 16
+      },
+      "examples": [
+        "3",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "experiences-forum",
+    "path": "/experiences/vertical/forum",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 16,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 16
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "patterns-industries",
+    "path": "/patterns/industries",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 27,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 27
+      },
+      "examples": [
+        "$92",
+        "$",
+        "0"
+      ]
+    }
+  },
+  {
+    "slug": "components-select",
+    "path": "/components/select",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-combobox",
+    "path": "/components/combobox",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-sheet",
+    "path": "/components/sheet",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-toast",
+    "path": "/components/toast",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-command",
+    "path": "/components/command",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-accordion",
+    "path": "/components/accordion",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-toggle",
+    "path": "/components/toggle",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-avatar",
+    "path": "/components/avatar",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 22,
+      "regions": 7,
+      "rules": {
+        "role=img": 18,
+        "aria-hidden": 4
+      },
+      "examples": [
+        "AL",
+        "GH",
+        "AT"
+      ]
+    }
+  },
+  {
+    "slug": "components-pagination",
+    "path": "/components/pagination",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-alert-dialog",
+    "path": "/components/alert-dialog",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-timeline",
+    "path": "/components/timeline",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 8,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 8
+      },
+      "examples": [
+        "2",
+        "3",
+        "4"
+      ]
+    }
+  },
+  {
+    "slug": "components-carousel",
+    "path": "/components/carousel",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
     "slug": "components-field-parts",
     "path": "/components/field-parts",
     "leaked": [],
     "leakedContext": [],
+    "snippetLocked": [],
     "idLists": [],
     "suppressed": {
       "nodes": 7,
@@ -19,10 +1443,3954 @@
     }
   },
   {
+    "slug": "components-tree-view",
+    "path": "/components/tree-view",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-board",
+    "path": "/components/board",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 12,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 12
+      },
+      "examples": [
+        "1",
+        "2",
+        "3"
+      ]
+    }
+  },
+  {
+    "slug": "components-color-picker",
+    "path": "/components/color-picker",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-media",
+    "path": "/components/media",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 7,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 7
+      },
+      "examples": [
+        "Before",
+        "After",
+        "50"
+      ]
+    }
+  },
+  {
+    "slug": "components-notifications",
+    "path": "/components/notifications",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 8,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 8
+      },
+      "examples": [
+        "3",
+        "5",
+        "1"
+      ]
+    }
+  },
+  {
+    "slug": "components-ai",
+    "path": "/components/ai",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "data-table",
+    "path": "/data/table",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "data-table-virtualized",
+    "path": "/data/table-virtualized",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 98,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 98
+      },
+      "examples": [
+        "10,000",
+        "0",
+        "1"
+      ]
+    }
+  },
+  {
+    "slug": "patterns-table-filters",
+    "path": "/patterns/table-filters",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "patterns-command-palette",
+    "path": "/patterns/command-palette",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "patterns-chart-table",
+    "path": "/patterns/chart-table",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "patterns-data-details",
+    "path": "/patterns/data-details",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "patterns-workspace",
+    "path": "/patterns/workspace",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 67,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 67
+      },
+      "examples": [
+        "24",
+        "0",
+        "1"
+      ]
+    }
+  },
+  {
+    "slug": "application-shell",
+    "path": "/application",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 6,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 6
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "application-navigation",
+    "path": "/application/navigation",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "application-workspace",
+    "path": "/application/workspace",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "application-url-state",
+    "path": "/application/url-state",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "application-outline-drawer",
+    "path": "/application/outline-drawer",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 8,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 8
+      },
+      "examples": [
+        "01",
+        "02",
+        "03"
+      ]
+    }
+  },
+  {
+    "slug": "application-packaging",
+    "path": "/application/packaging",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "patterns-research-workspace",
+    "path": "/patterns/research-workspace",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 9,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 9
+      },
+      "examples": [
+        "/",
+        "/",
+        "–"
+      ]
+    }
+  },
+  {
+    "slug": "components-number",
+    "path": "/components/number",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "ms",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-password",
+    "path": "/components/password",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-otp",
+    "path": "/components/otp",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
     "slug": "components-file-upload",
     "path": "/components/file-upload",
     "leaked": [],
     "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-tags",
+    "path": "/components/tags",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "forms-overview",
+    "path": "/forms",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 7,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 7
+      },
+      "examples": [
+        "/",
+        "/",
+        "*"
+      ]
+    }
+  },
+  {
+    "slug": "forms-validation",
+    "path": "/forms/validation",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 7,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 7
+      },
+      "examples": [
+        "*",
+        "*",
+        "*"
+      ]
+    }
+  },
+  {
+    "slug": "forms-async",
+    "path": "/forms/async",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 7,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 7
+      },
+      "examples": [
+        "*",
+        "*",
+        "*"
+      ]
+    }
+  },
+  {
+    "slug": "forms-sections",
+    "path": "/forms/sections",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "*",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "date-time-calendar",
+    "path": "/date-time/calendar",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 53,
+      "regions": 2,
+      "rules": {
+        "aria-hidden": 53
+      },
+      "examples": [
+        "Sun",
+        "Mon",
+        "Tue"
+      ]
+    }
+  },
+  {
+    "slug": "date-time-date-picker",
+    "path": "/date-time/date-picker",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 54,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 54
+      },
+      "examples": [
+        "*",
+        "/",
+        "/"
+      ]
+    }
+  },
+  {
+    "slug": "date-time-date-range",
+    "path": "/date-time/date-range",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 54,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 54
+      },
+      "examples": [
+        "/",
+        "/",
+        "–"
+      ]
+    }
+  },
+  {
+    "slug": "date-time-time",
+    "path": "/date-time/time",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 38,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 38
+      },
+      "examples": [
+        "⁦",
+        ":",
+        "⁩"
+      ]
+    }
+  },
+  {
+    "slug": "patterns-table-date-filter",
+    "path": "/patterns/table-date-filter",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 9,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 9
+      },
+      "examples": [
+        "/",
+        "/",
+        "–"
+      ]
+    }
+  },
+  {
+    "slug": "patterns-chart-date-filter",
+    "path": "/patterns/chart-date-filter",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 9,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 9
+      },
+      "examples": [
+        "/",
+        "/",
+        "–"
+      ]
+    }
+  },
+  {
+    "slug": "patterns-settings-form",
+    "path": "/patterns/settings-form",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-overview",
+    "path": "/charts",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-architecture",
+    "path": "/charts/architecture",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-timeseries",
+    "path": "/charts/timeseries",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-comparison",
+    "path": "/charts/comparison",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-distribution",
+    "path": "/charts/distribution",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-relationship",
+    "path": "/charts/relationship",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-uncertainty",
+    "path": "/charts/uncertainty",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-matrix",
+    "path": "/charts/matrix",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-composition",
+    "path": "/charts/composition",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-flow",
+    "path": "/charts/flow",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-radial",
+    "path": "/charts/radial",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-composed",
+    "path": "/charts/composed",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-research",
+    "path": "/charts/research",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-financial",
+    "path": "/charts/financial",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-sync",
+    "path": "/charts/sync",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-interaction",
+    "path": "/charts/interaction",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-performance",
+    "path": "/charts/performance",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-sizing",
+    "path": "/charts/sizing",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 28,
+      "regions": 4,
+      "rules": {
+        "role=img": 24,
+        "aria-hidden": 4
+      },
+      "examples": [
+        "82th percentile · +8.4%",
+        "10",
+        "25"
+      ]
+    }
+  },
+  {
+    "slug": "charts-statistical",
+    "path": "/charts/statistical",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-scientific",
+    "path": "/charts/scientific",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-workflow",
+    "path": "/charts/workflow",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-quantitative",
+    "path": "/charts/quantitative",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-multidimensional",
+    "path": "/charts/multidimensional",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-diagnostics",
+    "path": "/charts/diagnostics",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-networks",
+    "path": "/charts/networks",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-geospatial",
+    "path": "/charts/geospatial",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-surfaces",
+    "path": "/charts/surfaces",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 6,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 6
+      },
+      "examples": [
+        "-34",
+        "28",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-catalog",
+    "path": "/charts/catalog",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 102,
+      "regions": 9,
+      "rules": {
+        "role=img": 78,
+        "aria-hidden": 24
+      },
+      "examples": [
+        "94.0",
+        "95.0",
+        "96.0"
+      ]
+    }
+  },
+  {
+    "slug": "tradingview-overview",
+    "path": "/integrations/tradingview",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 8,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 8
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "tradingview-charts",
+    "path": "/integrations/tradingview/charts",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 15,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 15
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "tradingview-watchlists",
+    "path": "/integrations/tradingview/watchlists",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 14,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 14
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "tradingview-tickers",
+    "path": "/integrations/tradingview/tickers",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 16,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 16
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "tradingview-heatmaps",
+    "path": "/integrations/tradingview/heatmaps",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 11,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 11
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "tradingview-screeners",
+    "path": "/integrations/tradingview/screeners",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 8,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 8
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "tradingview-symbol-details",
+    "path": "/integrations/tradingview/symbol-details",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 13,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 13
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "tradingview-news-calendars",
+    "path": "/integrations/tradingview/news-calendars",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 10,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 10
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "tradingview-themes",
+    "path": "/integrations/tradingview/themes",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 13,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 13
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "tradingview-patterns",
+    "path": "/integrations/tradingview/patterns",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 19,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 19
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-progress",
+    "path": "/components/progress",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-spinner",
+    "path": "/components/spinner",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-skeleton",
+    "path": "/components/skeleton",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-result",
+    "path": "/components/result",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-guided-tour",
+    "path": "/components/guided-tour",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-stepper",
+    "path": "/components/stepper",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 16,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 16
+      },
+      "examples": [
+        "3",
+        "4",
+        "2"
+      ]
+    }
+  },
+  {
+    "slug": "design-lab",
+    "path": "/experiments/design-lab",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "design-lab-precision",
+    "path": "/experiments/design-lab/precision-instrument",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 15,
+      "regions": 2,
+      "rules": {
+        "aria-hidden": 15
+      },
+      "examples": [
+        "Observed",
+        "Reference",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "design-lab-editorial",
+    "path": "/experiments/design-lab/editorial-research",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 15,
+      "regions": 2,
+      "rules": {
+        "aria-hidden": 15
+      },
+      "examples": [
+        "Observed",
+        "Reference",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "design-lab-focused",
+    "path": "/experiments/design-lab/focused-workspace",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 15,
+      "regions": 2,
+      "rules": {
+        "aria-hidden": 15
+      },
+      "examples": [
+        "Observed",
+        "Reference",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "blocks",
+    "path": "/blocks",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 177,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 177
+      },
+      "examples": [
+        "1,284",
+        "0",
+        "1"
+      ]
+    }
+  },
+  {
+    "slug": "charts-area-chart",
+    "path": "/charts/area-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "320px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-autocorrelation-chart",
+    "path": "/charts/autocorrelation-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "320px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-bar-chart",
+    "path": "/charts/bar-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "320px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-box-plot-chart",
+    "path": "/charts/box-plot-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "320px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-bubble-chart",
+    "path": "/charts/bubble-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "320px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-bullet-chart",
+    "path": "/charts/bullet-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "280px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-bump-chart",
+    "path": "/charts/bump-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "320px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-calendar-heatmap",
+    "path": "/charts/calendar-heatmap",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "300px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-calibration-chart",
+    "path": "/charts/calibration-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "320px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-candlestick-chart",
+    "path": "/charts/candlestick-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "340px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-chord-chart",
+    "path": "/charts/chord-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "380px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-choropleth-chart",
+    "path": "/charts/choropleth-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-composed-chart",
+    "path": "/charts/composed-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "340px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-confusion-matrix-chart",
+    "path": "/charts/confusion-matrix-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "320px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-contour-chart",
+    "path": "/charts/contour-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "340px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-correlation-matrix",
+    "path": "/charts/correlation-matrix",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "340px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-curve-comparison-chart",
+    "path": "/charts/curve-comparison-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "320px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-dendrogram-chart",
+    "path": "/charts/dendrogram-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "340px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-depth-chart",
+    "path": "/charts/depth-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "320px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-distribution-chart",
+    "path": "/charts/distribution-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "320px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-drawdown-chart",
+    "path": "/charts/drawdown-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "320px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-dumbbell-chart",
+    "path": "/charts/dumbbell-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "300px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-ecdf-chart",
+    "path": "/charts/ecdf-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "320px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-efficient-frontier-chart",
+    "path": "/charts/efficient-frontier-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "340px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-error-bar-chart",
+    "path": "/charts/error-bar-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "320px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-event-timeline",
+    "path": "/charts/event-timeline",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "260px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-factor-exposure-chart",
+    "path": "/charts/factor-exposure-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "320px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-fan-chart",
+    "path": "/charts/fan-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "340px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-feature-importance-chart",
+    "path": "/charts/feature-importance-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "320px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-funnel-chart",
+    "path": "/charts/funnel-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "340px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-gantt-chart",
+    "path": "/charts/gantt-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "300px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-gauge-chart",
+    "path": "/charts/gauge-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "220px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-geo-scatter-chart",
+    "path": "/charts/geo-scatter-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-geo-trajectory-chart",
+    "path": "/charts/geo-trajectory-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-graph-chart",
+    "path": "/charts/graph-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "380px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-heatmap-chart",
+    "path": "/charts/heatmap-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "320px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-hexbin-chart",
+    "path": "/charts/hexbin-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "340px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-hierarchy-tree-chart",
+    "path": "/charts/hierarchy-tree-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "320px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-histogram-chart",
+    "path": "/charts/histogram-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "320px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-historical-position-chart",
+    "path": "/charts/historical-position-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 21,
+      "regions": 2,
+      "rules": {
+        "role=img": 16,
+        "aria-hidden": 5
+      },
+      "examples": [
+        "78th percentile · +4.1 %",
+        "10",
+        "25"
+      ]
+    }
+  },
+  {
+    "slug": "charts-line-chart",
+    "path": "/charts/line-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "260px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-lollipop-chart",
+    "path": "/charts/lollipop-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "300px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-mekko-chart",
+    "path": "/charts/mekko-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "340px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-parallel-coordinates-chart",
+    "path": "/charts/parallel-coordinates-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "340px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-pie-chart",
+    "path": "/charts/pie-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "320px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-pnl-attribution-chart",
+    "path": "/charts/pnl-attribution-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "340px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-polar-rose-chart",
+    "path": "/charts/polar-rose-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "340px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-precision-recall-chart",
+    "path": "/charts/precision-recall-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "320px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-qq-plot-chart",
+    "path": "/charts/qq-plot-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "320px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-quadrant-scatter-chart",
+    "path": "/charts/quadrant-scatter-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "340px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-radar-chart",
+    "path": "/charts/radar-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "340px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-range-band-chart",
+    "path": "/charts/range-band-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "320px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-regime-strip",
+    "path": "/charts/regime-strip",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "200px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-ridgeline-chart",
+    "path": "/charts/ridgeline-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "340px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-roc-curve-chart",
+    "path": "/charts/roc-curve-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "320px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-sankey-chart",
+    "path": "/charts/sankey-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "380px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-scatter-chart",
+    "path": "/charts/scatter-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "320px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-scatter-matrix-chart",
+    "path": "/charts/scatter-matrix-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "360px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-scatter-regression-chart",
+    "path": "/charts/scatter-regression-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "340px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-slope-chart",
+    "path": "/charts/slope-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "300px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-small-multiples",
+    "path": "/charts/small-multiples",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-sparkline",
+    "path": "/charts/sparkline",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "200px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-spectrogram-chart",
+    "path": "/charts/spectrogram-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "340px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-sunburst-chart",
+    "path": "/charts/sunburst-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "340px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-surface3-dchart",
+    "path": "/charts/surface3-dchart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "380px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-survival-curve-chart",
+    "path": "/charts/survival-curve-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "320px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-term-structure-chart",
+    "path": "/charts/term-structure-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "320px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-ternary-chart",
+    "path": "/charts/ternary-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "360px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-theme-river-chart",
+    "path": "/charts/theme-river-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "360px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-treemap-chart",
+    "path": "/charts/treemap-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "340px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-vector-field-chart",
+    "path": "/charts/vector-field-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "340px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-violin-chart",
+    "path": "/charts/violin-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "260px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-volatility-smile-chart",
+    "path": "/charts/volatility-smile-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "340px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-volatility-surface-chart",
+    "path": "/charts/volatility-surface-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "380px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-waterfall-chart",
+    "path": "/charts/waterfall-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "340px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "charts-wind-rose-chart",
+    "path": "/charts/wind-rose-chart",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "340px",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-aspect-ratio",
+    "path": "/components/aspect-ratio",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-button-group",
+    "path": "/components/button-group",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-checkbox",
+    "path": "/components/checkbox",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-column-visibility-menu",
+    "path": "/components/column-visibility-menu",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-container",
+    "path": "/components/container",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 10,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 10
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-data-details",
+    "path": "/components/data-details",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-data-table-pagination",
+    "path": "/components/data-table-pagination",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-data-table-toolbar",
+    "path": "/components/data-table-toolbar",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-delta",
+    "path": "/components/delta",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-experience-timeline",
+    "path": "/components/experience-timeline",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 6,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 6
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-facet-filter",
+    "path": "/components/facet-filter",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-float-button",
+    "path": "/components/float-button",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "3",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-grid",
+    "path": "/components/grid",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-hover-card",
+    "path": "/components/hover-card",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-icon",
+    "path": "/components/icon",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-icon-button",
+    "path": "/components/icon-button",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-image-compare",
+    "path": "/components/image-compare",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 7,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 7
+      },
+      "examples": [
+        "Before",
+        "After",
+        "50"
+      ]
+    }
+  },
+  {
+    "slug": "components-image-gallery",
+    "path": "/components/image-gallery",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-inline",
+    "path": "/components/inline",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-input-group",
+    "path": "/components/input-group",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-kbd",
+    "path": "/components/kbd",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 17,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 17
+      },
+      "examples": [
+        "+",
+        "+",
+        "+"
+      ]
+    }
+  },
+  {
+    "slug": "components-label",
+    "path": "/components/label",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 6,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 6
+      },
+      "examples": [
+        "*",
+        "*",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-link",
+    "path": "/components/link",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-list",
+    "path": "/components/list",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-native-select",
+    "path": "/components/native-select",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-now-section",
+    "path": "/components/now-section",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-panel",
+    "path": "/components/panel",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-popover",
+    "path": "/components/popover",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-profile-hero",
+    "path": "/components/profile-hero",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-project-showcase",
+    "path": "/components/project-showcase",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-publication-list",
+    "path": "/components/publication-list",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 8,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 8
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-radio-group",
+    "path": "/components/radio-group",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-rating",
+    "path": "/components/rating",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-reading-shelf",
+    "path": "/components/reading-shelf",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-scroll-area",
+    "path": "/components/scroll-area",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-search-input",
+    "path": "/components/search-input",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-section",
+    "path": "/components/section",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
     "idLists": [],
     "suppressed": {
       "nodes": 4,
@@ -42,6 +5410,7 @@
     "path": "/components/sections",
     "leaked": [],
     "leakedContext": [],
+    "snippetLocked": [],
     "idLists": [],
     "suppressed": {
       "nodes": 10,
@@ -57,10 +5426,1715 @@
     }
   },
   {
+    "slug": "components-segmented-control",
+    "path": "/components/segmented-control",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-separator",
+    "path": "/components/separator",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-social-links",
+    "path": "/components/social-links",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-sortable-list",
+    "path": "/components/sortable-list",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 9,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 9
+      },
+      "examples": [
+        "1",
+        "2",
+        "3"
+      ]
+    }
+  },
+  {
+    "slug": "components-stack",
+    "path": "/components/stack",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-stat-card",
+    "path": "/components/stat-card",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 36,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 36
+      },
+      "examples": [
+        "1.24",
+        "0",
+        "1"
+      ]
+    }
+  },
+  {
+    "slug": "components-switch",
+    "path": "/components/switch",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-textarea",
+    "path": "/components/textarea",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-timestamp",
+    "path": "/components/timestamp",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-tooltip",
+    "path": "/components/tooltip",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
     "slug": "components-transfer-list",
     "path": "/components/transfer-list",
     "leaked": [],
     "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-typography",
+    "path": "/components/typography",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-actions",
+    "path": "/components/actions",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-forms",
+    "path": "/components/forms",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-date-time",
+    "path": "/components/date-time",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-layout",
+    "path": "/components/layout",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-navigation",
+    "path": "/components/navigation",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-overlays",
+    "path": "/components/overlays",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-data-display",
+    "path": "/components/data-display",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-application",
+    "path": "/components/application",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "components-experiences",
+    "path": "/components/experiences",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs",
+    "path": "/docs",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-installation",
+    "path": "/docs/installation",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference",
+    "path": "/docs/reference",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference-actions",
+    "path": "/docs/reference/actions",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference-ai",
+    "path": "/docs/reference/ai",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference-application",
+    "path": "/docs/reference/application",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference-chart-diagnostics",
+    "path": "/docs/reference/chart-diagnostics",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference-chart-financial",
+    "path": "/docs/reference/chart-financial",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference-chart-general",
+    "path": "/docs/reference/chart-general",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference-chart-geographic",
+    "path": "/docs/reference/chart-geographic",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference-chart-multidimensional",
+    "path": "/docs/reference/chart-multidimensional",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference-chart-scientific",
+    "path": "/docs/reference/chart-scientific",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference-chart-statistical",
+    "path": "/docs/reference/chart-statistical",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference-chart-time",
+    "path": "/docs/reference/chart-time",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference-chart-workflow",
+    "path": "/docs/reference/chart-workflow",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference-data-display",
+    "path": "/docs/reference/data-display",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference-date-time",
+    "path": "/docs/reference/date-time",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference-experiences",
+    "path": "/docs/reference/experiences",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference-feedback",
+    "path": "/docs/reference/feedback",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference-forms",
+    "path": "/docs/reference/forms",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference-layout",
+    "path": "/docs/reference/layout",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference-media",
+    "path": "/docs/reference/media",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference-motion-feedback",
+    "path": "/docs/reference/motion-feedback",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference-motion-spatial",
+    "path": "/docs/reference/motion-spatial",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference-motion-surfaces",
+    "path": "/docs/reference/motion-surfaces",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference-motion-typography",
+    "path": "/docs/reference/motion-typography",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference-navigation",
+    "path": "/docs/reference/navigation",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference-overlays",
+    "path": "/docs/reference/overlays",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference-tradingview",
+    "path": "/docs/reference/tradingview",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-reference-typography",
+    "path": "/docs/reference/typography",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "docs-theming",
+    "path": "/docs/theming",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-aurora-surface",
+    "path": "/motion/aurora-surface",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-beam-flow",
+    "path": "/motion/beam-flow",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-border-trail",
+    "path": "/motion/border-trail",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-card-stack",
+    "path": "/motion/card-stack",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 33,
+      "regions": 3,
+      "rules": {
+        "aria-hidden": 33
+      },
+      "examples": [
+        "趋势",
+        "预设演示数据",
+        "持有收益"
+      ]
+    }
+  },
+  {
+    "slug": "motion-click-burst",
+    "path": "/motion/click-burst",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-collapse",
+    "path": "/motion/collapse",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [
+      "One hundred and eighty-four, up from one hundred and two."
+    ],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-data-change-flash",
+    "path": "/motion/data-change-flash",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-expandable-surface",
+    "path": "/motion/expandable-surface",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-glare-surface",
+    "path": "/motion/glare-surface",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-icon-morph",
+    "path": "/motion/icon-morph",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "▶",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-intensity",
+    "path": "/motion/intensity",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-interactive-grid",
+    "path": "/motion/interactive-grid",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-magnetic",
+    "path": "/motion/magnetic",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-magnify-dock",
+    "path": "/motion/magnify-dock",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 9,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 9
+      },
+      "examples": [
+        "◧",
+        "◫",
+        "⊞"
+      ]
+    }
+  },
+  {
+    "slug": "motion-marquee",
+    "path": "/motion/marquee",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 19,
+      "regions": 2,
+      "rules": {
+        "aria-hidden": 19
+      },
+      "examples": [
+        "动量",
+        "持有收益",
+        "价值"
+      ]
+    }
+  },
+  {
+    "slug": "motion-morphing-dialog",
+    "path": "/motion/morphing-dialog",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-morphing-popover",
+    "path": "/motion/morphing-popover",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-motion-surface",
+    "path": "/motion/motion-surface",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-orbit-field",
+    "path": "/motion/orbit-field",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-parallax-scene",
+    "path": "/motion/parallax-scene",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-presence",
+    "path": "/motion/presence",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-press-ripple",
+    "path": "/motion/press-ripple",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [
+      "Press anywhere on this surface"
+    ],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-pressable",
+    "path": "/motion/pressable",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-selection-beam",
+    "path": "/motion/selection-beam",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-shared-highlight",
+    "path": "/motion/shared-highlight",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-stagger",
+    "path": "/motion/stagger",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-text-reveal",
+    "path": "/motion/text-reveal",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 5,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 5
+      },
+      "examples": [
+        "Markets reprice in seconds",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-tilt-surface",
+    "path": "/motion/tilt-surface",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "motion-transition-panel",
+    "path": "/motion/transition-panel",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "studios-charts",
+    "path": "/studios/charts",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "studios-composer",
+    "path": "/studios/composer",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "studios-motion",
+    "path": "/studios/motion",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 10,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 10
+      },
+      "examples": [
+        "Read",
+        "the",
+        "data,"
+      ]
+    }
+  },
+  {
+    "slug": "studios-themes",
+    "path": "/studios/themes",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
+    "idLists": [],
+    "suppressed": {
+      "nodes": 4,
+      "regions": 1,
+      "rules": {
+        "aria-hidden": 4
+      },
+      "examples": [
+        "·",
+        "·",
+        "·"
+      ]
+    }
+  },
+  {
+    "slug": "templates",
+    "path": "/templates",
+    "leaked": [],
+    "leakedContext": [],
+    "snippetLocked": [],
     "idLists": [],
     "suppressed": {
       "nodes": 4,

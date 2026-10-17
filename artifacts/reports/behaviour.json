@@ -1,26 +1,29 @@
 {
   "baseUrl": "http://127.0.0.1:5300",
-  "generatedAt": "2026-10-16T15:30:09.053Z",
+  "generatedAt": "2026-10-17T10:48:18.636Z",
   "mode": "behaviour",
   "providerMode": "stub",
   "workers": 1,
   "routes": 0,
   "selectedRoutes": [],
   "screenshots": [
-    "screenshots/tradingview-charts-settled-dark.png",
-    "screenshots/tradingview-failure-states-dark.png"
+    "screenshots/home-phase9-dark-desktop.png",
+    "screenshots/components-rating-dark-desktop.png",
+    "screenshots/components-button-examples-dark-desktop.png",
+    "screenshots/blocks-dark-desktop.png",
+    "screenshots/components-rating-dark-mobile.png"
   ],
-  "screenshotsCount": 2,
+  "screenshotsCount": 5,
   "durations": {
-    "totalMs": 11343,
+    "totalMs": 12818,
     "phases": [
       {
-        "name": "behaviour:providers",
-        "durationMs": 11012
+        "name": "behaviour:docs",
+        "durationMs": 12595
       },
       {
         "name": "behaviour",
-        "durationMs": 11012
+        "durationMs": 12595
       }
     ],
     "routes": []
@@ -29,8 +32,8 @@
     "navigationTimeouts": 0,
     "readinessTimeouts": 0,
     "providerTimeouts": 0,
-    "providerReady": 23,
-    "providerErrors": 2,
+    "providerReady": 0,
+    "providerErrors": 0,
     "consoleErrors": 0,
     "pageErrors": 0,
     "failedRequests": 0,
@@ -40,34 +43,173 @@
   },
   "behaviour": [
     {
-      "check": "provider widgets register and render their own format",
+      "check": "the homepage states what the library is in one h1",
       "pass": true,
-      "detail": "{\"widgets\":4,\"undefinedTags\":[],\"iframes\":4,\"parked\":0,\"skeletons\":0,\"boxes\":8,\"ready\":8,\"errored\":0,\"pending\":0,\"attribution\":4,\"containers\":4}"
+      "detail": "1 h1 · Precision meets expression."
     },
     {
-      "check": "every iframe widget renders the provider's attribution block",
+      "check": "the homepage shows an install command",
       "pass": true,
-      "detail": "3/3 containers attributed"
+      "detail": "Two ways to install it, one of them real The package is built, packed and instal"
     },
     {
-      "check": "a theme flip does not stack a second iframe",
+      "check": "the homepage labels the registry command as not yet published",
       "pass": true,
-      "detail": "3→3 containers, 3→3 iframes"
+      "detail": "badge missing"
     },
     {
-      "check": "repeated theme flips do not accumulate provider widgets",
+      "check": "every link on the homepage resolves",
       "pass": true,
-      "detail": "parked 0→3→0 (4 flips), containers=3 (baseline 3)"
+      "detail": "15 links checked"
     },
     {
-      "check": "an unreachable provider degrades to a retryable error state",
+      "check": "a component id URL redirects to its real page",
       "pass": true,
-      "detail": "3 alerts, 2 retries, 3 after retry (no duplicates)"
+      "detail": "308 → /components/buttons"
     },
     {
-      "check": "provider requests are deferred until the widget is in view",
+      "check": "a generated component page has its own route and heading",
       "pass": true,
-      "detail": "1 request(s) before scrolling, 4 after"
+      "detail": "Rating"
+    },
+    {
+      "check": "a component page documents props from the compiler",
+      "pass": true,
+      "detail": "1 props table(s)"
+    },
+    {
+      "check": "a component page carries its import line and no install boilerplate",
+      "pass": true,
+      "detail": "1 import line(s), 1 copy control(s); install boilerplate absent"
+    },
+    {
+      "check": "a component page keeps an agent brief out of the reading path",
+      "pass": true,
+      "detail": "none rendered"
+    },
+    {
+      "check": "an ordinary component page leads with a disclosed, copyable example",
+      "pass": true,
+      "detail": "<Button variant=\"primary\">Run backtest</Button>; 1 copy control(s)"
+    },
+    {
+      "check": "an ordinary component page carries no Playground",
+      "pass": true,
+      "detail": "none"
+    },
+    {
+      "check": "generated pages render a live specimen with matching code",
+      "pass": true,
+      "detail": "6 pages checked"
+    },
+    {
+      "check": "a demo island hydrates and works from the keyboard",
+      "pass": true,
+      "detail": "9 rows, closed on Escape: true"
+    },
+    {
+      "check": "a chart Playground is built from the page's own fixture",
+      "pass": true,
+      "detail": "  state=\"ready\" />"
+    },
+    {
+      "check": "changing a chart control moves the code and the drawing",
+      "pass": true,
+      "detail": "code changed; height 320 → 340px"
+    },
+    {
+      "check": "component search finds a chart by name",
+      "pass": true,
+      "detail": "ViolinChart /charts/violin-chart"
+    },
+    {
+      "check": "component search says so when nothing matches",
+      "pass": true,
+      "detail": "empty state shown"
+    },
+    {
+      "check": "Escape clears the search",
+      "pass": true
+    },
+    {
+      "check": "a chart has its own page",
+      "pass": true,
+      "detail": "ViolinChart"
+    },
+    {
+      "check": "a chart page states the data contract",
+      "pass": true,
+      "detail": "LUC UI Charts Statistical ViolinChart STATISTICAL GENERATED FROM THE PUBLIC API "
+    },
+    {
+      "check": "the /docs route serves a page",
+      "pass": true,
+      "detail": "200"
+    },
+    {
+      "check": "the /docs/installation route serves a page",
+      "pass": true,
+      "detail": "200"
+    },
+    {
+      "check": "the /docs/theming route serves a page",
+      "pass": true,
+      "detail": "200"
+    },
+    {
+      "check": "the /docs/reference route serves a page",
+      "pass": true,
+      "detail": "200"
+    },
+    {
+      "check": "the /blocks route serves a page",
+      "pass": true,
+      "detail": "200"
+    },
+    {
+      "check": "the /templates route serves a page",
+      "pass": true,
+      "detail": "200"
+    },
+    {
+      "check": "the templates page does not offer a download it cannot honour",
+      "pass": true,
+      "detail": "honest statement present"
+    },
+    {
+      "check": "the blocks gallery renders real previews",
+      "pass": true,
+      "detail": "12 block headings"
+    },
+    {
+      "check": "the /studios/charts studio answers",
+      "pass": true,
+      "detail": "200"
+    },
+    {
+      "check": "the /studios/motion studio answers",
+      "pass": true,
+      "detail": "200"
+    },
+    {
+      "check": "the /studios/themes studio answers",
+      "pass": true,
+      "detail": "200"
+    },
+    {
+      "check": "the /studios/composer studio answers",
+      "pass": true,
+      "detail": "200"
+    },
+    {
+      "check": "a component page does not overflow a 390 px viewport",
+      "pass": true,
+      "detail": "-11px of horizontal overflow"
+    },
+    {
+      "check": "the Chinese locale serves a translated component page",
+      "pass": true,
+      "detail": "200, CJK present"
     }
   ],
   "axe": [],

@@ -23,12 +23,15 @@ import { Example } from "@/components/docs/example";
 import { PropsTable } from "@/components/docs/tables";
 import { useI18n } from "@/lib/i18n/provider";
 import { EntryFooter } from "@/components/docs/entry-footer";
+import { EntryNotes } from "@/components/docs/entry-notes";
+import { ExamplesHeading } from "@/components/docs/examples-heading";
 
 export default function AccordionPage() {
   const { tc, tcs } = useI18n();
   return (
     <DocPage>
       <PageHeader eyebrow={tcs("Components")} title="Accordion and Collapsible" lead={tc("components.accordion.lead")} />
+      <ExamplesHeading />
 
       <ImportLine line={'import {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n  Collapsible,\n  CollapsibleContent,\n  CollapsibleTriggerRow,\n} from "@luc/ui";'} />
 
@@ -155,6 +158,7 @@ export default function AccordionPage() {
           ]}
         />
       </Section>
+      <EntryNotes entryIds={["accordion"]} />
       <EntryFooter />
     </DocPage>
   );

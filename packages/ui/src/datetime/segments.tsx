@@ -23,7 +23,24 @@ export const segmentClass = cn(
    * text inside does not move, and the smallest control that contains a segment
    * is 26 px tall, so there is room for it.
    */
-  "rounded-xs px-1 py-1 text-label text-fg-primary outline-none luc-numeric luc-transition",
+  /*
+   * `min-w-6 text-center` finishes the WCAG 2.2 work `py-1` started.
+   *
+   * The padding above fixed the *height*: 26 px is over the 24 px minimum. The
+   * *width* was still the text plus 8 px, so a two-digit day in a field squeezed
+   * by a date-range layout measured 16 px — a serious `target-size` finding at
+   * 390 px, and one the Showcase's own mobile axe pass could not see because axe
+   * does not evaluate that rule in a touch-emulated context (`hasTouch: true`).
+   *
+   * `min-w-6` is 24 px, so every segment is at least 24 × 26 whatever the
+   * container does, and it cannot be flex-shrunk below the minimum either.
+   * `text-center` keeps the digits optically centred in the wider box instead of
+   * hanging them off the left padding. This is a small, uniform change to the
+   * date/time field's horizontal rhythm — the one consumer-visible trade the rule
+   * requires — and it is the smallest one that satisfies it without touching the
+   * height, the type scale or the separator spacing.
+   */
+  "rounded-xs min-w-6 px-1 py-1 text-center text-label text-fg-primary outline-none luc-numeric luc-transition",
   "data-[placeholder]:text-fg-muted",
   "data-[type=literal]:px-0.5 data-[type=literal]:text-fg-muted",
   "data-[focused]:bg-accent-soft data-[focused]:text-fg-accent",

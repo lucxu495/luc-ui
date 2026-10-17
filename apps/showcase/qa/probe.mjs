@@ -11,9 +11,10 @@
  */
 
 import { chromium } from "@playwright/test";
+import { resolveBaseUrl } from "./base-url.mjs";
 
 const route = process.argv[2] ?? "/";
-const baseUrl = process.env.LUC_QA_BASE_URL ?? "http://127.0.0.1:3000";
+const baseUrl = resolveBaseUrl();
 const prefix = process.env.LUC_PROBE_PREFIX ?? "";
 
 const browser = await chromium.launch();

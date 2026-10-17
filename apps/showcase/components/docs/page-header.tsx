@@ -40,7 +40,15 @@ export function PageHeader({ eyebrow, title, lead, actions, className }: PageHea
           * "read from the top" meant two different URLs depending on which page
           * kind the reader happened to be on.
           */}
-        <h1 id="overview" className="font-display text-display-sm font-semibold tracking-[-0.026em] text-fg-primary text-balance">
+        {/*
+          * `wrap-anywhere` for the same reason `DocEntryHeader` carries it: a
+          * title with no space in it (`DataTableSelectionCount`) is wider than a
+          * phone at `text-display-sm`, and `overflow-wrap: normal` would push
+          * that width into every ancestor. No handwritten page has such a title
+          * today; the guard is here because the two header components render the
+          * same thing and only one of them was fixed is how a defect comes back.
+          */}
+        <h1 id="overview" className="wrap-anywhere font-display text-display-sm font-semibold tracking-[-0.026em] text-fg-primary text-balance">
           {copy.title}
         </h1>
         {copy.lead ? (

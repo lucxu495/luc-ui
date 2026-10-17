@@ -19,8 +19,9 @@
 
 import path from "node:path";
 import { defineConfig, devices } from "@playwright/test";
+import { resolveBaseUrl } from "./qa/base-url.mjs";
 
-const baseURL = process.env.LUC_QA_BASE_URL ?? "http://127.0.0.1:3000";
+const baseURL = resolveBaseUrl();
 
 export default defineConfig({
   testDir: "./tests",

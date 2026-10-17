@@ -57,6 +57,7 @@ export default async function ChartPage({ params }: { params: Promise<{ chart: s
       <DocEntryPage
         entry={entry}
         {...(demo ? { demo: <DemoStage spec={demo} /> } : {})}
+        {...(demo?.code ? { usage: { code: demo.code } } : {})}
         /* Charts mount the chart boundary, so the engine is loaded by chart
          * routes only. */
         playground={<ChartPlayground entry={entry} />}

@@ -190,7 +190,10 @@ async function collectPages(dir = path.join(appRoot, "app"), base = "") {
  * of the library, not a transcription of it.
  */
 async function extractProps(symbolNames) {
-  const entry = path.join(uiRoot, "src/index.ts");
+  const entryFiles = [
+    path.join(uiRoot, "src/index.ts"),
+    path.join(uiRoot, "src/integrations/tradingview/index.ts"),
+  ];
   const compilerOptions = {
     jsx: ts.JsxEmit.ReactJSX,
     module: ts.ModuleKind.ESNext,
@@ -216,68 +219,68 @@ async function extractProps(symbolNames) {
    */
   const host = ts.createCompilerHost(compilerOptions);
   host.getCurrentDirectory = () => uiRoot;
-  const program = ts.createProgram([entry], compilerOptions, host);
+  const program = ts.createProgram(entryFiles, compilerOptions, host);
   const checker = program.getTypeChecker();
-  const source = program.getSourceFile(entry);
-  const moduleSymbol = source && checker.getSymbolAtLocation(source);
-  if (!moduleSymbol) return {};
-  const exports = checker.getExportsOfModule(moduleSymbol);
-
   const wanted = new Set(symbolNames);
   const result = {};
 
-  for (const symbol of exports) {
-    const name = symbol.getName();
-    if (!wanted.has(name)) continue;
-    try {
-      const resolved =
-        symbol.flags & ts.SymbolFlags.Alias ? checker.getAliasedSymbol(symbol) : symbol;
-      const type = checker.getTypeOfSymbolAtLocation(
-        resolved,
-        resolved.valueDeclaration ?? resolved.declarations?.[0] ?? source,
-      );
-      const signature = type.getCallSignatures()[0];
-      if (!signature) continue;
-      const parameter = signature.getParameters()[0];
-      if (!parameter) continue;
-      const parameterType = checker.getTypeOfSymbolAtLocation(parameter, parameter.valueDeclaration ?? source);
-      const members = [];
-      for (const property of checker.getPropertiesOfType(parameterType)) {
-        const declaration = property.valueDeclaration ?? property.declarations?.[0];
-        if (!declaration) continue;
-        /*
-         * A DOM element's own attributes are inherited, not documented. Every
-         * component that spreads `...props` onto an element picks up a hundred
-         * of them (`about`, `accessKey`, `autoCapitalize`, …), which buries the
-         * props a reader came for. Declarations from `@types/react` are
-         * therefore skipped; a prop from Radix or from LUC is kept and marked
-         * as coming from somewhere else.
-         */
-        const declaredIn = declaration.getSourceFile()?.fileName ?? "";
-        if (declaredIn.includes("/@types/react/")) continue;
-        const propertyType = checker.getTypeOfSymbolAtLocation(property, declaration);
-        const tags = ts.getJSDocTags(declaration);
-        const defaultTag = tags.find((tag) => tag.tagName.text === "default");
-        const docs = ts.displayPartsToString(property.getDocumentationComment(checker));
-        members.push({
-          name: property.getName(),
-          optional: Boolean(property.flags & ts.SymbolFlags.Optional),
-          type: clip(stableType(checker.typeToString(propertyType, declaration)), 90),
-          default: defaultTag
-            ? clip(ts.displayPartsToString(defaultTag.comment ?? []), 40)
-            : undefined,
-          description: docs.trim() ? clip(docs, 180) : undefined,
-          inherited: !declaredIn.includes("/packages/ui/src/"),
-        });
+  for (const entry of entryFiles) {
+    const source = program.getSourceFile(entry);
+    const moduleSymbol = source && checker.getSymbolAtLocation(source);
+    if (!moduleSymbol) continue;
+    for (const symbol of checker.getExportsOfModule(moduleSymbol)) {
+      const name = symbol.getName();
+      if (!wanted.has(name) || result[name]) continue;
+      try {
+        const resolved =
+          symbol.flags & ts.SymbolFlags.Alias ? checker.getAliasedSymbol(symbol) : symbol;
+        const type = checker.getTypeOfSymbolAtLocation(
+          resolved,
+          resolved.valueDeclaration ?? resolved.declarations?.[0] ?? source,
+        );
+        const signature = type.getCallSignatures()[0];
+        if (!signature) continue;
+        const parameter = signature.getParameters()[0];
+        if (!parameter) continue;
+        const parameterType = checker.getTypeOfSymbolAtLocation(parameter, parameter.valueDeclaration ?? source);
+        const members = [];
+        for (const property of checker.getPropertiesOfType(parameterType)) {
+          const declaration = property.valueDeclaration ?? property.declarations?.[0];
+          if (!declaration) continue;
+          /*
+           * A DOM element's own attributes are inherited, not documented. Every
+           * component that spreads `...props` onto an element picks up a hundred
+           * of them (`about`, `accessKey`, `autoCapitalize`, …), which buries the
+           * props a reader came for. Declarations from `@types/react` are
+           * therefore skipped; a prop from Radix or from LUC is kept and marked
+           * as coming from somewhere else.
+           */
+          const declaredIn = declaration.getSourceFile()?.fileName ?? "";
+          if (declaredIn.includes("/@types/react/")) continue;
+          const propertyType = checker.getTypeOfSymbolAtLocation(property, declaration);
+          const tags = ts.getJSDocTags(declaration);
+          const defaultTag = tags.find((tag) => tag.tagName.text === "default");
+          const docs = ts.displayPartsToString(property.getDocumentationComment(checker));
+          members.push({
+            name: property.getName(),
+            optional: Boolean(property.flags & ts.SymbolFlags.Optional),
+            type: clip(stableType(checker.typeToString(propertyType, declaration)), 90),
+            default: defaultTag
+              ? clip(ts.displayPartsToString(defaultTag.comment ?? []), 40)
+              : undefined,
+            description: docs.trim() ? clip(docs, 180) : undefined,
+            inherited: !declaredIn.includes("/packages/ui/src/"),
+          });
+        }
+        if (members.length === 0) continue;
+        result[name] = {
+          propsType: clip(stableType(checker.typeToString(parameterType, parameter.valueDeclaration ?? source)), 140),
+          props: members.sort((a, b) => a.name.localeCompare(b.name)).slice(0, 60),
+        };
+      } catch {
+        /* A symbol the checker cannot reduce to props is documented by signature
+         * instead; a wrong table would be worse than a missing one. */
       }
-      if (members.length === 0) continue;
-      result[name] = {
-        propsType: clip(stableType(checker.typeToString(parameterType, parameter.valueDeclaration ?? source)), 140),
-        props: members.sort((a, b) => a.name.localeCompare(b.name)).slice(0, 60),
-      };
-    } catch {
-      /* A symbol the checker cannot reduce to props is documented by signature
-       * instead; a wrong table would be worse than a missing one. */
     }
   }
   return result;
@@ -614,7 +617,10 @@ async function main() {
 
   const integrationEntries = taxonomy.INTEGRATION_PAGES.map((page) => {
     const declared = page.modules.flatMap(
-      (moduleKey) => exportsBySource.get(`packages/ui/src/${moduleKey}.ts`) ?? [],
+      (moduleKey) =>
+        exportsBySource.get(`packages/ui/src/${moduleKey}.ts`) ??
+        exportsBySource.get(`packages/ui/src/${moduleKey}.tsx`) ??
+        [],
     );
     const pageFile = pages.get(page.route) ?? null;
     return {
