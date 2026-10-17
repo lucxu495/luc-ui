@@ -46,6 +46,7 @@ artifacts/chart-review/
 artifacts/pack/
 artifacts/qa/
 artifacts/qa-report.json
+artifacts/consumers/
 # Independent acceptance evidence (Agent C) and its probe scripts. Regenerated on
 # every audit run, so it belongs with the other QA output rather than in review
 # diffs. The audit *reports* live in `docs/audits/.../qa-independent/` and are
