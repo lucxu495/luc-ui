@@ -2253,6 +2253,22 @@ async function groupExperiences(ctx) {
   /* ---- J. Science: the display parameter changes the figure ---------- */
   await navigateAndReady(page, `${baseUrl}/experiences/vertical/science`);
   const binLabel = page.locator("label", { hasText: /Histogram bins/ }).locator("span.luc-numeric").first();
+  /*
+   * The ECharts surface mounts asynchronously. Waiting only for hydration used
+   * to let this check measure before the canvases existed — the slider worked,
+   * but both readings were the empty set and the check failed as if the chart
+   * had not repainted. Wait for the drawn surface, not just the page shell.
+   */
+  const echartCanvases = page.locator('[data-slot="echart-surface"] canvas');
+  await echartCanvases.first().waitFor({ state: "visible", timeout: 15_000 });
+  await page.waitForFunction(
+    () => {
+      const nodes = Array.from(document.querySelectorAll('[data-slot="echart-surface"] canvas'));
+      return nodes.length >= 2 && nodes.every((node) => (node.toDataURL?.().length ?? 0) > 1_000);
+    },
+    null,
+    { timeout: 15_000 },
+  );
   const binsBefore = await binLabel.innerText();
   /*
    * The figure is a canvas, so its markup never changes — a repaint has to be
@@ -2266,9 +2282,12 @@ async function groupExperiences(ctx) {
   const inkBefore = await inkOf();
   await page.locator('label:has-text("Histogram bins") [role="slider"]').focus();
   for (let index = 0; index < 6; index += 1) await page.keyboard.press("ArrowRight");
-  await page.waitForTimeout(600);
   const binsAfter = await binLabel.innerText();
-  const inkAfter = await inkOf();
+  let inkAfter = inkBefore;
+  for (let attempt = 0; attempt < 20 && inkAfter === inkBefore; attempt += 1) {
+    await page.waitForTimeout(150);
+    inkAfter = await inkOf();
+  }
   recorder.behaviour.push({
     check: "research bench: the bin slider changes the parameter and repaints the histogram",
     pass: binsBefore !== binsAfter && inkBefore !== inkAfter,
@@ -2434,8 +2453,9 @@ async function groupExperiences(ctx) {
  *
  * Two of them are deliberately about honesty rather than function, because they
  * are the ones an agent is most likely to drift on: the installation section
- * must label the registry command as not yet available, and the templates page
- * must not offer a download it cannot honour.
+ * must state that npm publication does not exist yet and must not print a bare
+ * registry command, and the templates page must not offer a download it cannot
+ * honour.
  */
 async function groupDocs(ctx) {
   const { browser, recorder, baseUrl, capture, navigateAndReady } = ctx;
@@ -2472,10 +2492,16 @@ async function groupDocs(ctx) {
       pass: /pnpm add|npm install|yarn add|bun add/.test(installText),
       detail: installText.slice(0, 80),
     });
+    const namesMissingRegistry = /not published on npm|not published to a registry/i.test(installText);
+    const bareRegistryCommand = /(?:npm install|pnpm add|yarn add|bun add)\s+@luc\/ui(?:\s|$)/.test(
+      installText,
+    );
     recorder.behaviour.push({
-      check: "the homepage labels the registry command as not yet published",
-      pass: /Not published yet|not published to a registry/i.test(installText),
-      detail: /Not published yet/.test(installText) ? "badge present" : "badge missing",
+      check: "the homepage says npm publication does not exist yet and avoids a bare registry command",
+      pass: namesMissingRegistry && !bareRegistryCommand,
+      detail: `${namesMissingRegistry ? "registry absence stated" : "registry absence missing"}; ${
+        bareRegistryCommand ? "bare command present" : "no bare command"
+      }`,
     });
 
     /*

@@ -1,29 +1,40 @@
 {
   "baseUrl": "http://127.0.0.1:5300",
-  "generatedAt": "2026-10-17T10:48:18.636Z",
+  "generatedAt": "2026-10-17T19:00:53.473Z",
   "mode": "behaviour",
   "providerMode": "stub",
   "workers": 1,
   "routes": 0,
   "selectedRoutes": [],
   "screenshots": [
-    "screenshots/home-phase9-dark-desktop.png",
-    "screenshots/components-rating-dark-desktop.png",
-    "screenshots/components-button-examples-dark-desktop.png",
-    "screenshots/blocks-dark-desktop.png",
-    "screenshots/components-rating-dark-mobile.png"
+    "screenshots/experiences-marketing-submitted-dark-desktop.png",
+    "screenshots/experiences-saas-invited-dark-desktop.png",
+    "screenshots/experiences-publishing-index-dark-desktop.png",
+    "screenshots/experiences-community-dark-desktop.png",
+    "screenshots/experiences-career-dark-desktop.png",
+    "screenshots/experiences-academic-filtered-dark-desktop.png",
+    "screenshots/experiences-portfolio-dark-desktop.png",
+    "screenshots/experiences-garden-empty-dark-desktop.png",
+    "screenshots/experiences-ai-streamed-dark-desktop.png",
+    "screenshots/experiences-science-bins-dark-desktop.png",
+    "screenshots/experiences-finance-range-dark-desktop.png",
+    "screenshots/experiences-commerce-checkout-dark-desktop.png",
+    "screenshots/experiences-education-scored-dark-desktop.png",
+    "screenshots/experiences-media-dark-desktop.png",
+    "screenshots/experiences-productivity-moved-dark-desktop.png",
+    "screenshots/experiences-forum-report-dark-desktop.png"
   ],
-  "screenshotsCount": 5,
+  "screenshotsCount": 16,
   "durations": {
-    "totalMs": 12818,
+    "totalMs": 35230,
     "phases": [
       {
-        "name": "behaviour:docs",
-        "durationMs": 12595
+        "name": "behaviour:experiences",
+        "durationMs": 34933
       },
       {
         "name": "behaviour",
-        "durationMs": 12595
+        "durationMs": 34933
       }
     ],
     "routes": []
@@ -43,173 +54,84 @@
   },
   "behaviour": [
     {
-      "check": "the homepage states what the library is in one h1",
+      "check": "marketing: billing period changes the price, the FAQ opens, the form validates then succeeds",
       "pass": true,
-      "detail": "1 h1 · Precision meets expression."
+      "detail": "price $24→$19, faq false→true, empty=1, malformed=1, success=1"
     },
     {
-      "check": "the homepage shows an install command",
+      "check": "SaaS console: role filter, search empty state, clear, and an invite that adds a row",
       "pass": true,
-      "detail": "Two ways to install it, one of them real The package is built, packed and instal"
+      "detail": "rows 12 → filter 4 → empty=1 → restored 12 → invited 13"
     },
     {
-      "check": "the homepage labels the registry command as not yet published",
+      "check": "publishing: topic filter narrows the index, an article opens, related pieces appear, back returns",
       "pass": true,
-      "detail": "badge missing"
+      "detail": "articles 6 → filtered 1, opened=1, related=1, back=1"
     },
     {
-      "check": "every link on the homepage resolves",
+      "check": "community: a two-word post is refused, a real one appears, a reaction counts, delete is confirmed and cancellable",
       "pass": true,
-      "detail": "15 links checked"
+      "detail": "refused=1, posts 3 → 4, reaction 0→1, confirm=1, cancelled=true"
     },
     {
-      "check": "a component id URL redirects to its real page",
+      "check": "career: a project opens in place, closes again, and the timeline carries a machine-readable period",
       "pass": true,
-      "detail": "308 → /components/buttons"
+      "detail": "open=1 (aria-expanded=true), closed=0, dateTime=2023"
     },
     {
-      "check": "a generated component page has its own route and heading",
+      "check": "academic: year and topic facets narrow the bibliography and the live count follows",
       "pass": true,
-      "detail": "Rating"
+      "detail": "6 of 6 → 2 of 6 → 1 of 6 → 6 of 6"
     },
     {
-      "check": "a component page documents props from the compiler",
+      "check": "portfolio: the sleeve gallery opens a viewer, steps with the arrow key and closes on Escape",
       "pass": true,
-      "detail": "1 props table(s)"
+      "detail": "open=1, stepped=true, closed=true"
     },
     {
-      "check": "a component page carries its import line and no install boilerplate",
+      "check": "garden: the kind selector filters, an impossible combination explains itself, and the shelf exposes progress",
       "pass": true,
-      "detail": "1 import line(s), 1 copy control(s); install boilerplate absent"
+      "detail": "notes 6 → photos 1 → empty=1 → restored 6, meters=2"
     },
     {
-      "check": "a component page keeps an agent brief out of the reading path",
+      "check": "AI workspace: a prepared answer streams to completion with its tool calls attached",
       "pass": true,
-      "detail": "none rendered"
+      "detail": "streaming true → false, body 48 → 248 chars, tool timelines=1"
     },
     {
-      "check": "an ordinary component page leads with a disclosed, copyable example",
+      "check": "research bench: the bin slider changes the parameter and repaints the histogram",
       "pass": true,
-      "detail": "<Button variant=\"primary\">Run backtest</Button>; 1 copy control(s)"
+      "detail": "bins 24→30, canvas bytes 113236→116416"
     },
     {
-      "check": "an ordinary component page carries no Playground",
+      "check": "quant desk: selecting a row changes the inspector and the range control keeps every figure",
       "pass": true,
-      "detail": "none"
+      "detail": "inspector \"BTCUSD\" → \"SOLUSD\", canvases 3 → 3"
     },
     {
-      "check": "generated pages render a live specimen with matching code",
+      "check": "commerce: a variant changes the price and the three-step checkout can go back",
       "pass": true,
-      "detail": "6 pages checked"
+      "detail": "price $148→$196, steps delivered=1 payment=1 back=1"
     },
     {
-      "check": "a demo island hydrates and works from the keyboard",
+      "check": "education: marking a lesson moves the progress and the check scores and explains every answer",
       "pass": true,
-      "detail": "9 rows, closed on Escape: true"
+      "detail": "progress 0→33, score shown=1, explanation=1"
     },
     {
-      "check": "a chart Playground is built from the page's own fixture",
+      "check": "creator studio: an edit survives switching assets and the keyboard reorders the reel",
       "pass": true,
-      "detail": "  state=\"ready\" />"
+      "detail": "title persisted=\"Harbour, 06:10 — regraded\", first shot \"Current first shot: Harbour, 06:10 — regraded\" → \"Current first shot: Crossing, wide\""
     },
     {
-      "check": "changing a chart control moves the code and the drawing",
+      "check": "productivity: a card moves by keyboard, the move is announced, and selection enables the bulk action",
       "pass": true,
-      "detail": "code changed; height 320 → 340px"
+      "detail": "progress=25, announced=1, bulk enabled=true"
     },
     {
-      "check": "component search finds a chart by name",
+      "check": "forum: a thread opens, a reply is appended, and the report dialog is escapable",
       "pass": true,
-      "detail": "ViolinChart /charts/violin-chart"
-    },
-    {
-      "check": "component search says so when nothing matches",
-      "pass": true,
-      "detail": "empty state shown"
-    },
-    {
-      "check": "Escape clears the search",
-      "pass": true
-    },
-    {
-      "check": "a chart has its own page",
-      "pass": true,
-      "detail": "ViolinChart"
-    },
-    {
-      "check": "a chart page states the data contract",
-      "pass": true,
-      "detail": "LUC UI Charts Statistical ViolinChart STATISTICAL GENERATED FROM THE PUBLIC API "
-    },
-    {
-      "check": "the /docs route serves a page",
-      "pass": true,
-      "detail": "200"
-    },
-    {
-      "check": "the /docs/installation route serves a page",
-      "pass": true,
-      "detail": "200"
-    },
-    {
-      "check": "the /docs/theming route serves a page",
-      "pass": true,
-      "detail": "200"
-    },
-    {
-      "check": "the /docs/reference route serves a page",
-      "pass": true,
-      "detail": "200"
-    },
-    {
-      "check": "the /blocks route serves a page",
-      "pass": true,
-      "detail": "200"
-    },
-    {
-      "check": "the /templates route serves a page",
-      "pass": true,
-      "detail": "200"
-    },
-    {
-      "check": "the templates page does not offer a download it cannot honour",
-      "pass": true,
-      "detail": "honest statement present"
-    },
-    {
-      "check": "the blocks gallery renders real previews",
-      "pass": true,
-      "detail": "12 block headings"
-    },
-    {
-      "check": "the /studios/charts studio answers",
-      "pass": true,
-      "detail": "200"
-    },
-    {
-      "check": "the /studios/motion studio answers",
-      "pass": true,
-      "detail": "200"
-    },
-    {
-      "check": "the /studios/themes studio answers",
-      "pass": true,
-      "detail": "200"
-    },
-    {
-      "check": "the /studios/composer studio answers",
-      "pass": true,
-      "detail": "200"
-    },
-    {
-      "check": "a component page does not overflow a 390 px viewport",
-      "pass": true,
-      "detail": "-11px of horizontal overflow"
-    },
-    {
-      "check": "the Chinese locale serves a translated component page",
-      "pass": true,
-      "detail": "200, CJK present"
+      "detail": "thread=1, replies 2 → 3, report=1, cancelled=true"
     }
   ],
   "axe": [],

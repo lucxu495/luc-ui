@@ -54,7 +54,7 @@ const context = await browser.newContext({
  * capture a chart the visitor never sees.
  */
 await context.addInitScript((value) => {
-  window.localStorage.setItem("luc-ui:theme", value);
+  window.localStorage.setItem("luc-ui-theme", value);
 }, theme);
 const page = await context.newPage();
 await navigateAndReady(page, pageUrl, { allowProviderTimeout: true });

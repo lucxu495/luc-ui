@@ -54,6 +54,7 @@ const HASH_ROOTS = [
   "apps/showcase/app",
   "apps/showcase/components",
   "apps/showcase/lib",
+  "apps/showcase/public",
   "apps/showcase/package.json",
   "apps/showcase/middleware.ts",
   "apps/showcase/next.config.ts",
