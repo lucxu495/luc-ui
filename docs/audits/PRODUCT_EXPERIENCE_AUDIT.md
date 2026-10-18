@@ -497,8 +497,12 @@ node scripts/product-audit/public-reliability.mjs
 - 审计基线：`origin/main` @ `bc7cd49`
 - 审计分支：`audit/product-experience-polish`
 - 工作区：`/Users/luc/Documents/luc/luc-ui-audit`
-- 未修改 `main`、`v1.0.1`、package version 或 Cloudflare 部署。
-- 提交与 PR：见本报告提交后的 `git log` / 最终交付说明；不直接合并 `main`。
+- 报告提交：`66f8d0f`（`docs(audit): record product experience findings and first batch`）
+- 远端分支：已推送到 `origin/audit/product-experience-polish`
+- PR：当前环境的 `gh` 未登录且没有 `GH_TOKEN` / `GITHUB_TOKEN`，因此不能自动创建 PR；可直接打开
+  <https://github.com/lucxu495/luc-ui/pull/new/audit/product-experience-polish>
+- 未修改 `main`、`v1.0.1`、package version、运行时代码、视觉基线或 Cloudflare 部署。
+- 不直接合并 `main`；PR 创建后仅用于审阅。
 
 ---
 
