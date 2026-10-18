@@ -23,6 +23,9 @@
 # The two browser jobs each build the same production image on an isolated
 # runner. That costs one extra build but keeps their check contexts and failure
 # reports independent without introducing an image registry or shared artifact.
+# The runner is pinned to Ubuntu 24.04 because the Linux pixel baselines are
+# host-specific; `ubuntu-latest` is scheduled to move to Ubuntu 26 on
+# 2026-10-19 and must not silently change the rendering environment.
 #
 # Not here, on purpose: no publish, no tag, no release and no deploy. The
 # package is distributed from a git tag cut by hand (docs/RELEASES.md).
@@ -45,7 +48,7 @@ permissions:
 jobs:
   verify:
     name: verify (types, lint, tests, docs, package)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
@@ -71,7 +74,7 @@ jobs:
 
   consumer:
     name: clean consumer apps (Vite + Next.js)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: verify
     timeout-minutes: 25
     steps:
@@ -106,7 +109,7 @@ jobs:
 
   browser-qa:
     name: browser QA (routes, axe, behaviour)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: verify
     timeout-minutes: 35
     steps:
@@ -162,7 +165,7 @@ jobs:
 
   visual-regression:
     name: visual regression (Linux baselines)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: verify
     timeout-minutes: 30
     steps:

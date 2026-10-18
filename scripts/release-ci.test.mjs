@@ -56,4 +56,12 @@ describe("release CI contract", () => {
     assert.match(missing, new RegExp(`no ${BASELINE_HOST} baseline for missing\\.png`));
     assert.match(missing, /ADR-036/);
   });
+
+  it("pins the Linux runner that owns the pixel baselines", () => {
+    assert.doesNotMatch(workflow, /runs-on:\s*ubuntu-latest/);
+    assert.equal(
+      [...workflow.matchAll(/runs-on:\s*ubuntu-24\.04/g)].length,
+      4,
+    );
+  });
 });
