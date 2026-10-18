@@ -1,0 +1,63 @@
+{
+  "capturedAt": "2026-10-18T13:11:00Z",
+  "base": "https://ui.lucxu.com",
+  "method": "12 spaced sequential GET requests while changing cookie and cache-busting query parameters",
+  "summary": {
+    "requests": 12,
+    "http200": 10,
+    "http503": 2,
+    "workerErrorCode": "1102",
+    "htmlCacheControl": "private, no-cache, no-store, max-age=0, must-revalidate"
+  },
+  "failures": [
+    {
+      "url": "https://ui.lucxu.com/zh",
+      "status": 503,
+      "wallMs": 5038,
+      "bytes": 17,
+      "body": "error code: 1102",
+      "cfRay": "a4c7ca768f761997-FRA",
+      "contentType": "text/plain; charset=UTF-8",
+      "cacheControl": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+      "sentCookie": null
+    },
+    {
+      "url": "https://ui.lucxu.com/application/navigation?probe=nocookie",
+      "status": 503,
+      "wallMs": 4716,
+      "bytes": 17,
+      "body": "error code: 1102",
+      "cfRay": "a4c7cb0b7cd9155c-FRA",
+      "contentType": "text/plain; charset=UTF-8",
+      "cacheControl": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+      "sentCookie": null
+    }
+  ],
+  "representativeSuccesses": [
+    {
+      "url": "https://ui.lucxu.com/",
+      "status": 200,
+      "wallMs": 3108,
+      "bytes": 140001,
+      "cfRay": "a4c7ca397ba1d149-CDG",
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate"
+    },
+    {
+      "url": "https://ui.lucxu.com/date-time/date-picker?probe=nocookie",
+      "status": 200,
+      "wallMs": 5758,
+      "bytes": 664767,
+      "cfRay": "a4c7cab1e83a915f-FRA",
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate"
+    },
+    {
+      "url": "https://ui.lucxu.com/zh/date-time/date-picker?probe=zhcookie",
+      "status": 200,
+      "wallMs": 1928,
+      "bytes": 665089,
+      "cfRay": "a4c7cb2d08828e13-SIN",
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate",
+      "sentCookie": "luc-ui-locale=zh-CN"
+    }
+  ]
+}

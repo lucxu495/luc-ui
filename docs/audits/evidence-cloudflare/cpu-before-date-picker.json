@@ -1,0 +1,188 @@
+{
+  "target": "http://127.0.0.1:8787/date-time/date-picker",
+  "status": 200,
+  "bytes": 664689,
+  "wallMs": 83.89,
+  "sampledMs": 121.87,
+  "sampledSelfMs": 121.95,
+  "idleMs": 45.98,
+  "nonIdleMs": 75.97,
+  "gcMs": 7.45,
+  "topSelfTime": [
+    {
+      "function": "(idle)",
+      "location": "(native):0",
+      "selfMs": 45.98
+    },
+    {
+      "function": "(anonymous)",
+      "location": "worker.js:124409",
+      "selfMs": 8.36
+    },
+    {
+      "function": "(garbage collector)",
+      "location": "(native):0",
+      "selfMs": 7.45
+    },
+    {
+      "function": "__name",
+      "location": "worker.js:3",
+      "selfMs": 4
+    },
+    {
+      "function": "(program)",
+      "location": "(native):0",
+      "selfMs": 3.02
+    },
+    {
+      "function": "_addListener",
+      "location": "node-internal:events:336",
+      "selfMs": 2.94
+    },
+    {
+      "function": "L",
+      "location": "worker.js:94875",
+      "selfMs": 2.91
+    },
+    {
+      "function": "(anonymous)",
+      "location": "worker.js:97942",
+      "selfMs": 2.63
+    },
+    {
+      "function": "eH",
+      "location": "worker.js:105500",
+      "selfMs": 2.49
+    },
+    {
+      "function": "j",
+      "location": "worker.js:71951",
+      "selfMs": 2.23
+    },
+    {
+      "function": "(anonymous)",
+      "location": "worker.js:255280",
+      "selfMs": 2.04
+    },
+    {
+      "function": "aT",
+      "location": "worker.js:97398",
+      "selfMs": 1.54
+    },
+    {
+      "function": "resolvedOptions",
+      "location": "worker.js:126318",
+      "selfMs": 1.28
+    },
+    {
+      "function": "eS",
+      "location": "worker.js:99252",
+      "selfMs": 1.25
+    },
+    {
+      "function": "set supportedEntryTypes",
+      "location": "(native):0",
+      "selfMs": 1.22
+    },
+    {
+      "function": "eW",
+      "location": "worker.js:105758",
+      "selfMs": 1.21
+    },
+    {
+      "function": "r",
+      "location": "worker.js:127567",
+      "selfMs": 1.14
+    },
+    {
+      "function": "(anonymous)",
+      "location": "worker.js:124405",
+      "selfMs": 1.03
+    },
+    {
+      "function": "(anonymous)",
+      "location": "worker.js:289610",
+      "selfMs": 1.02
+    },
+    {
+      "function": "nA",
+      "location": "worker.js:95810",
+      "selfMs": 1.01
+    },
+    {
+      "function": "n",
+      "location": "worker.js:127520",
+      "selfMs": 0.98
+    },
+    {
+      "function": "z",
+      "location": "worker.js:103346",
+      "selfMs": 0.92
+    },
+    {
+      "function": "fromString",
+      "location": "node-internal:internal_buffer:147",
+      "selfMs": 0.91
+    },
+    {
+      "function": "emit",
+      "location": "node-internal:events:264",
+      "selfMs": 0.8
+    },
+    {
+      "function": "format",
+      "location": "worker.js:126301",
+      "selfMs": 0.7
+    },
+    {
+      "function": "ah",
+      "location": "worker.js:97106",
+      "selfMs": 0.67
+    },
+    {
+      "function": "(anonymous)",
+      "location": "worker.js:96374",
+      "selfMs": 0.63
+    },
+    {
+      "function": "al",
+      "location": "worker.js:96308",
+      "selfMs": 0.6
+    },
+    {
+      "function": "ac",
+      "location": "worker.js:96326",
+      "selfMs": 0.59
+    },
+    {
+      "function": "h",
+      "location": "worker.js:126333",
+      "selfMs": 0.56
+    },
+    {
+      "function": "e0",
+      "location": "worker.js:95200",
+      "selfMs": 0.52
+    },
+    {
+      "function": "C",
+      "location": "worker.js:104978",
+      "selfMs": 0.51
+    },
+    {
+      "function": "bidirectionalIndexOf",
+      "location": "node-internal:internal_buffer:470",
+      "selfMs": 0.51
+    },
+    {
+      "function": "(anonymous)",
+      "location": "worker.js:128328",
+      "selfMs": 0.49
+    },
+    {
+      "function": "e4",
+      "location": "worker.js:99253",
+      "selfMs": 0.48
+    }
+  ]
+}

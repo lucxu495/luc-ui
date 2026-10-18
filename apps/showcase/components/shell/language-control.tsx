@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Suspense } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { IconButton, PopoverContent, PopoverRoot, PopoverTrigger, Text, cn } from "@luc/ui";
 import { RiCheckLine, RiTranslate2 } from "@remixicon/react";
@@ -44,6 +45,25 @@ function rememberLocale(target: Locale): void {
  * survives a language change.
  */
 export function LanguageControl() {
+  const { t } = useI18n();
+  return (
+    <Suspense
+      fallback={
+        <IconButton
+          variant="ghost"
+          size="sm"
+          label={t("language.switch")}
+          icon={<RiTranslate2 />}
+          disabled
+        />
+      }
+    >
+      <LanguageControlInner />
+    </Suspense>
+  );
+}
+
+function LanguageControlInner() {
   const pathname = usePathname() ?? "/";
   const searchParams = useSearchParams();
   const { locale, t } = useI18n();

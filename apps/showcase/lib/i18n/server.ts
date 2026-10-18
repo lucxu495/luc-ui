@@ -29,6 +29,15 @@ import {
  * rendering is cheap and correctness wins.
  */
 export async function getLocale(): Promise<Locale> {
+  /*
+   * Static export builds run once per language. In that mode there is no
+   * request to read, and returning the build locale keeps every page
+   * prerenderable instead of making the entire tree dynamic via headers().
+   * Production keeps the request-aware path below.
+   */
+  const buildLocale = process.env.LUC_STATIC_LOCALE;
+  if (isLocale(buildLocale)) return buildLocale;
+
   const [headerList, cookieStore] = await Promise.all([headers(), cookies()]);
 
   const fromMiddleware = headerList.get(LOCALE_HEADER);

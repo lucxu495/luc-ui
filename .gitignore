@@ -56,6 +56,7 @@ artifacts/consumers/
 # diffs. The audit *reports* live in `docs/audits/.../qa-independent/` and are
 # committed; only the screenshots/JSON here are ignored.
 artifacts/qa-independent/
+artifacts/reliability/
 
 # Local env
 .env

@@ -8,10 +8,10 @@
     "dev:a": "LUC_NEXT_DIST_DIR=.next-a next dev --port 3300",
     "dev:b": "LUC_NEXT_DIST_DIR=.next-b next dev --port 3301",
     "build": "next build",
-    "cf:build": "opennextjs-cloudflare build",
+    "cf:build": "node scripts/cloudflare-build.mjs",
     "cf:check": "wrangler deploy --dry-run --outdir .open-next/dry-run",
-    "cf:preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "cf:deploy": "opennextjs-cloudflare deploy",
+    "cf:preview": "pnpm run cf:build && opennextjs-cloudflare preview",
+    "cf:deploy": "pnpm run cf:build && opennextjs-cloudflare deploy",
     "cf:upload": "opennextjs-cloudflare upload",
     "start": "next start",
     "typecheck": "tsc --noEmit",
@@ -59,7 +59,8 @@
     "qa:i18n:contract": "node --test qa/i18n-chrome.test.mjs qa/id-lists.test.mjs",
     "qa:contracts": "pnpm qa:nav:contract && pnpm qa:i18n:contract && pnpm qa:api:contract",
     "qa:target-size": "node qa/target-size.mjs",
-    "qa:content-contract": "node qa/content-contract.mjs"
+    "qa:content-contract": "node qa/content-contract.mjs",
+    "qa:cloudflare": "node qa/cloudflare-reliability.mjs"
   },
   "dependencies": {
     "@fontsource-variable/inter": "5.3.0",

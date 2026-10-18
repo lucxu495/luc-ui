@@ -1,0 +1,23 @@
+{
+  "target": "http://127.0.0.1:8787/docs",
+  "status": 200,
+  "bytes": 81635,
+  "wallMs": 20.65,
+  "sampledMs": 64.94,
+  "sampledSelfMs": 64.94,
+  "idleMs": 51.61,
+  "nonIdleMs": 13.33,
+  "gcMs": 0,
+  "topSelfTime": [
+    {
+      "function": "(idle)",
+      "location": "(native):0",
+      "selfMs": 51.61
+    },
+    {
+      "function": "fetch",
+      "location": "(native):0",
+      "selfMs": 13.33
+    }
+  ]
+}

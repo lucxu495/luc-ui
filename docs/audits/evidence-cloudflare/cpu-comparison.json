@@ -1,0 +1,32 @@
+{
+  "method": "Five local workerd inspector CPU profiles per route after one warm request. Values are sampled self time from `scripts/reliability/cpu-profile.mjs`; they show relative work, not Cloudflare's production CPU accounting.",
+  "beforeDynamicSsrMs": {
+    "docs": 31.54,
+    "components/buttons": 28.17,
+    "date-time/date-picker": 75.97,
+    "components/command": 28.25,
+    "components/ai": 27.15,
+    "application/navigation": 34.51,
+    "charts/financial": 33.66,
+    "home": 26.62
+  },
+  "afterStaticAssetsMedianMs": {
+    "docs": 4.05,
+    "zh/docs": 3.04,
+    "date-time/date-picker": 0.6,
+    "components/command": 2.86,
+    "components/ai": 3.35,
+    "application/navigation": 2.9,
+    "blocks": 3.25
+  },
+  "afterStaticAssetsMedianWallMs": {
+    "docs": 9.72,
+    "zh/docs": 6.77,
+    "date-time/date-picker": 20.69,
+    "components/command": 9.21,
+    "components/ai": 9.64,
+    "application/navigation": 16.82,
+    "blocks": 8.69
+  },
+  "caveat": "Local workerd does not enforce the Free Plan CPU ceiling. A real staging Worker measurement is still required before production deployment."
+}

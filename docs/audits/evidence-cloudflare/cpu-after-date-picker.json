@@ -1,0 +1,18 @@
+{
+  "target": "http://127.0.0.1:8787/date-time/date-picker",
+  "status": 200,
+  "bytes": 664899,
+  "wallMs": 20.69,
+  "sampledMs": 53.1,
+  "sampledSelfMs": 53.1,
+  "idleMs": 53.1,
+  "nonIdleMs": 0,
+  "gcMs": 0,
+  "topSelfTime": [
+    {
+      "function": "(idle)",
+      "location": "(native):0",
+      "selfMs": 53.1
+    }
+  ]
+}
