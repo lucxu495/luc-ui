@@ -238,8 +238,11 @@ Block 的分类筛选从 server `searchParams` 改为客户端读取 query；Blo
 
 - 分支：`fix/cloudflare-worker-reliability`
 - 基线：`origin/main` @ `bc7cd49`
+- 修复提交：`f95a6f8`（`fix(showcase): prerender public pages for Workers reliability`）
+- 远端分支：已推送到 `origin/fix/cloudflare-worker-reliability`
 - 本轮未合并 `main`。
-- 提交与 PR：见本轮提交后的 Git 输出；当前环境 `gh` 未登录，无法自动创建 PR。
+- PR：当前环境 `gh` 未登录，未能自动创建；可直接打开
+  <https://github.com/lucxu495/luc-ui/pull/new/fix/cloudflare-worker-reliability>
 
 ---
 
