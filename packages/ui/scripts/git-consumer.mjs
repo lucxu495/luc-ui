@@ -82,10 +82,27 @@ function remoteArtifact() {
  * install would fail here.
  */
 async function remoteTagCommit() {
-  const { stdout } = await run("git", ["ls-remote", "https://github.com/lucxu495/luc-ui", `refs/tags/${tag}`], {
-    maxBuffer: 1024 * 1024,
-  });
-  const sha = stdout.trim().split(/\s+/)[0];
+  /*
+   * An annotated tag has two object IDs: the tag object and the commit it
+   * peels to. pnpm records the peeled commit, so prefer the `^{}` ref when the
+   * remote returns both. Lightweight tags only return the direct ref.
+   */
+  const { stdout } = await run(
+    "git",
+    [
+      "ls-remote",
+      "https://github.com/lucxu495/luc-ui",
+      `refs/tags/${tag}`,
+      `refs/tags/${tag}^{}`,
+    ],
+    { maxBuffer: 1024 * 1024 },
+  );
+  const refs = stdout
+    .trim()
+    .split("\n")
+    .map((line) => line.trim().split(/\s+/))
+    .filter(([sha, ref]) => /^[0-9a-f]{40}$/.test(sha ?? "") && ref);
+  const sha = refs.find(([, ref]) => ref?.endsWith("^{}"))?.[0] ?? refs[0]?.[0] ?? "";
   if (!/^[0-9a-f]{40}$/.test(sha)) throw new Error(`could not resolve refs/tags/${tag} on the remote`);
   return sha;
 }
