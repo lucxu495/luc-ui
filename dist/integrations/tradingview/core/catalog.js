@@ -968,7 +968,7 @@ const TRADINGVIEW_CATEGORIES = [
 	{
 		id: "calendars",
 		label: "Calendars",
-		description: "Macro event calendars — distinct from LUC's own Calendar component."
+		description: "Macro event calendars — distinct from Luc UI's own Calendar component."
 	},
 	{
 		id: "brokers",

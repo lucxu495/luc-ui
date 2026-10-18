@@ -37,7 +37,7 @@ function Text({ className, variant = "body", tone = "primary", truncate, as = "p
 function Heading({ className, size = "heading-sm", tone = "primary", as = "h2", ...props }) {
 	return /* @__PURE__ */ jsx(as, {
 		"data-slot": "heading",
-		className: cn(headingClass[size], toneClass[tone], "text-balance", className),
+		className: cn(headingClass[size], toneClass[tone], "text-balance", "wrap-anywhere", className),
 		...props
 	});
 }

@@ -75,7 +75,7 @@ export declare const dataTableFeatures: {
   columnMeta: DataTableColumnMeta;
 };
 export type DataTableFeatureSet = typeof dataTableFeatures;
-/** A column definition bound to LUC's feature set. */
+/** A column definition bound to Luc UI's feature set. */
 export type DataTableColumn<TData extends RowData> = ColumnDef<DataTableFeatureSet, TData, unknown>;
 export type DataTableDensity = "compact" | "comfortable";
 export type DataTableState = "ready" | "loading" | "empty" | "error";

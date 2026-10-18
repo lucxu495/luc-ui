@@ -22,7 +22,7 @@ function Progress$1({ className, value, tone = "accent", size = "md", ...props }
 		...props,
 		children: indeterminate ? /* @__PURE__ */ jsx("span", {
 			"data-motion-essential": true,
-			className: cn("absolute inset-y-0 w-1/3 rounded-full animate-indeterminate", toneClass[tone])
+			className: cn("absolute inset-y-0 w-1/3 rounded-full luc-indeterminate", toneClass[tone])
 		}) : /* @__PURE__ */ jsx(Progress.Indicator, {
 			className: cn("h-full rounded-full luc-transition-slow", "[transition-property:width,background-color]", toneClass[tone]),
 			style: { width: `${Math.min(Math.max(value ?? 0, 0), 100)}%` }

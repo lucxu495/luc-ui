@@ -29,7 +29,7 @@ function providerLocale(locale) {
 	return locale ?? "en";
 }
 /**
-* Resolve LUC's surface colours for an iframe config.
+* Resolve Luc UI's surface colours for an iframe config.
 *
 * Read through `useSyncExternalStore`, so nothing is measured during a server
 * render and the first client render still matches the server markup. A theme

@@ -130,7 +130,7 @@ function RhfForm({ form, onSubmit, formatError, fieldLabels, summary = true, sum
 	const [formError, setFormError] = useState(void 0);
 	/**
 	* RHF's `handleSubmit` runs validation, then either our handler or its own
-	* `onInvalid` branch. Routing that through LUC's `Form` by *returning* a
+	* `onInvalid` branch. Routing that through Luc UI's `Form` by *returning* a
 	* status keeps one submit lifecycle instead of two competing ones.
 	*/
 	const submit = async (event) => {

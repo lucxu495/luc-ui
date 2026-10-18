@@ -1,6 +1,6 @@
 //#region src/motion/types.d.ts
 /**
- * Shared prop vocabulary for LUC's kinetic primitives.
+ * Shared prop vocabulary for Luc UI's kinetic primitives.
  *
  * Motion for React redefines the pointer/drag/animation handlers on `div`
  * (`onDrag` becomes `(event, info) => void`, `style` becomes a motion style).

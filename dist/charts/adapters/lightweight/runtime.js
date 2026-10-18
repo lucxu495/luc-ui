@@ -4,7 +4,7 @@ function loadLightweightCharts() {
 	if (!loading) loading = import("lightweight-charts");
 	return loading;
 }
-/** Chart engines take seconds; LUC's canonical time unit is milliseconds. */
+/** Chart engines take seconds; Luc UI's canonical time unit is milliseconds. */
 function toChartTime(ms) {
 	return Math.floor(ms / 1e3);
 }

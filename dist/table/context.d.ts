@@ -2,7 +2,7 @@ import { DataTableDensity, DataTableFeatureSet } from "./types.js";
 import { RowData, useTable } from "@tanstack/react-table";
 //#region src/table/context.d.ts
 /**
- * The table instance with LUC's feature set bound. `TSelected` defaults to the
+ * The table instance with Luc UI's feature set bound. `TSelected` defaults to the
  * full state, matching how `DataTable` subscribes.
  */
 export type DataTableInstance<TData extends RowData> = ReturnType<typeof useTable<DataTableFeatureSet, TData>>;

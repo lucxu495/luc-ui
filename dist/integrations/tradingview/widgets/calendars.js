@@ -8,7 +8,7 @@ const ECONOMIC_CALENDAR = tradingViewWidgetById("economic-calendar");
 /**
 * The macro event calendar.
 *
-* Named for the provider on purpose: this is not LUC's `Calendar`, and the two
+* Named for the provider on purpose: this is not Luc UI's `Calendar`, and the two
 * must never be confused. One shows a date grid the product controls; this one
 * shows TradingView's event data.
 */

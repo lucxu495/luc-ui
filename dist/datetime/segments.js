@@ -3,7 +3,7 @@ import { cn } from "../utils/cn.js";
 import { DateSegment } from "react-aria-components";
 import { jsx } from "react/jsx-runtime";
 //#region src/datetime/segments.tsx
-const segmentClass = cn("rounded-xs px-1 py-1 text-label text-fg-primary outline-none luc-numeric luc-transition", "data-[placeholder]:text-fg-muted", "data-[type=literal]:px-0.5 data-[type=literal]:text-fg-muted", "data-[focused]:bg-accent-soft data-[focused]:text-fg-accent", "data-[disabled]:text-fg-disabled");
+const segmentClass = cn("rounded-xs min-w-6 px-1 py-1 text-center text-label text-fg-primary outline-none luc-numeric luc-transition", "data-[placeholder]:text-fg-muted", "data-[type=literal]:px-0.5 data-[type=literal]:text-fg-muted", "data-[focused]:bg-accent-soft data-[focused]:text-fg-accent", "data-[disabled]:text-fg-disabled");
 /** ICU whitespace that varies between runtimes, normalised to a plain space. */
 function normalizeLiteral(text) {
 	return text.replace(/[\u00a0\u202f\u2009]/g, " ");

@@ -5,7 +5,7 @@ import { getTradingViewLoadError, getTradingViewLoadState, loadTradingViewElemen
 import { getLucBridgeColorSnapshot, parseLucBridgeColorSnapshot, subscribeLucTokens } from "./tokens.js";
 import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 //#region src/integrations/tradingview/core/use-tradingview.ts
-/** The theme a widget should render in, resolved from LUC's theme. */
+/** The theme a widget should render in, resolved from Luc UI's theme. */
 function useTradingViewTheme(theme = "auto") {
 	const resolved = useOptionalTheme()?.resolvedTheme ?? "dark";
 	return resolveTradingViewTheme(theme, resolved);

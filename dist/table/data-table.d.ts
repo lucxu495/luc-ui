@@ -13,7 +13,7 @@ import { RowData } from "@tanstack/react-table";
  * TanStack Table supplies sorting, filtering, faceting, selection, expansion,
  * visibility, pinning, sizing and pagination as headless state. Everything the
  * reader sees — row rhythm, numeric alignment, header hierarchy, hover, sticky
- * behaviour, loading/empty/error — is LUC's.
+ * behaviour, loading/empty/error — is Luc UI's.
  *
  * Every state slice is controllable: pass `sorting` + `onSortingChange` (or
  * `pagination` + `onPaginationChange`) and the table stops owning it, which is
