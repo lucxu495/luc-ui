@@ -11,6 +11,7 @@ checklist, not a published release announcement.
 | Package version | `1.0.0` |
 | Public tag | `v1.0.0` |
 | Tag commit | `1ea6cd7b7dad96d9b60daf4654ade2721a0ab5e0` |
+| Release candidate | `1.0.1` on `main`, not tagged or published |
 | Release branch | `release` |
 | npm registry | not published |
 | Install path | Git tag or packed release tarball |
@@ -20,14 +21,17 @@ checklist, not a published release announcement.
 
 ## Version decision
 
-No version is chosen by this checklist. If the changes currently on `main` are
-released after `v1.0.0` and contain only backward-compatible fixes, package
-metadata or README changes, the smallest SemVer-correct candidate is
-`1.0.1`. A new public prop, subpath or component requires `1.1.0`; a breaking
-API, token or package-shape change requires `2.0.0`.
+The Phase 3 audit compared the public export map, package exports, required
+peers and the component/type diffs against the source of `v1.0.0`. No export
+was removed or moved, no required prop or peer was added, and no existing prop
+type was narrowed. The release candidate is therefore **patch**:
+`1.0.1`.
 
-The version must be chosen from the actual diff and approved before a tag is
-created.
+A new public prop, subpath or component would require `1.1.0`; a breaking API,
+token or package-shape change would require `2.0.0`.
+
+The candidate version is a proposal until explicitly approved and written into
+`packages/ui/package.json` during release preparation.
 
 ## Pre-release checklist
 
@@ -37,7 +41,11 @@ created.
 - [ ] Run `pnpm test:consumers` against the packed artifact.
 - [ ] Run `pnpm test:consumers -- --mode=remote` against the existing public tag.
 - [ ] Run `pnpm qa:full` and record browser/axe results.
-- [ ] Review visual differences; do not update baselines without approval.
+- [x] Review all Darwin and Linux visual differences and record the decision in
+  [`RELEASE_V1_0_1_VISUAL_ACCEPTANCE.md`](./audits/RELEASE_V1_0_1_VISUAL_ACCEPTANCE.md).
+- [x] Update only the reviewed host-local baselines; keep Darwin and Linux
+  snapshots isolated.
+- [x] Make browser QA and Linux visual regression separate required CI jobs.
 - [ ] Build `release/` with `pnpm --filter @luc/ui release:build`.
 - [ ] Run `pnpm --filter @luc/ui release:check`.
 - [ ] Record the tarball SHA-256 and `release/RELEASE.json`.

@@ -13,6 +13,23 @@ cutting a successor.
 pnpm add @luc/ui@github:lucxu495/luc-ui#v1.0.0
 ```
 
+## Release candidate `1.0.1`
+
+`main` contains the reviewed `1.0.1` release candidate. It fixes accessibility
+and documentation defects without changing the public export map, required
+peers or package layout. The recommended SemVer bump is **patch**.
+
+The candidate is intentionally not exposed to consumers yet:
+
+- `packages/ui/package.json` still says `1.0.0`;
+- no `v1.0.1` tag or GitHub Release exists;
+- npm has not been published;
+- the current public install remains the immutable `v1.0.0` tag.
+
+The source commit, packed artifact and both clean-consumer builds are verified
+before tagging. The release candidate must not be represented as an available
+install until a successor tag is approved and verified from a fresh directory.
+
 ## Why a branch and a tag, and not `#main`
 
 The repository root is a pnpm workspace (`apps/*`, `packages/*`), and the

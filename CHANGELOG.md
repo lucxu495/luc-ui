@@ -3,6 +3,41 @@
 All notable changes to `@luc/ui`. The foundation rounds (V0.1–V0.6) shipped as
 a single uncommitted working tree; V1.0 is the first frozen release.
 
+## 1.0.1 — release candidate, not released
+
+Status: release candidate on `main`; package metadata remains `1.0.0`, and
+`v1.0.0` remains the current public tag until the next release is approved.
+
+This candidate contains no public-export, prop-shape or package-layout break.
+It adds the official Luc UI identity, public installation and contribution
+guides, isolated Vite and Next.js consumer verification, complete component and
+chart documentation, and the accessibility corrections accumulated since the
+first release.
+
+Consumer-visible corrections:
+
+* Heading text can break inside an otherwise unbreakable identifier, preventing
+  long component names and paths from making a consumer page scroll sideways.
+* Date and time segments reserve a 24 px minimum target width in squeezed
+  layouts.
+* Indeterminate progress uses its reduced-motion form instead of a travelling
+  animation when motion is reduced.
+* The README, logo, favicon, social metadata and installation examples point at
+  the current public entry points and the immutable `v1.0.0` install tag.
+
+Documentation and release infrastructure:
+
+* All canonical component, Motion, Chart and TradingView entries now expose
+  usable Usage examples, public API references and implementation boundaries.
+* Clean consumers install the packed artifact with plain npm, build Vite and
+  Next.js applications for production, and load both in Chromium.
+* GitHub Actions separates deterministic verification, clean consumers,
+  functional browser QA and Linux visual regression into independent required
+  checks.
+* Reviewed Darwin and Linux visual baselines now cover both the library
+  surfaces and the Showcase's own navigation, documentation, chart and motion
+  pages.
+
 ## 1.0.0 — first public release
 
 The version `packages/ui/package.json` has declared since the V1.0 freeze, and
