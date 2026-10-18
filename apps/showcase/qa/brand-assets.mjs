@@ -169,6 +169,32 @@ try {
             await page.getByRole("button", { name: /Open navigation/i }).first().click();
             const drawer = page.getByRole("dialog").first();
             await drawer.waitFor({ state: "visible", timeout: 10_000 });
+            /*
+             * Wait for the visible mark to decode before reading naturalWidth.
+             * The drawer mounts the logo immediately, but image optimization
+             * (Cloudflare Images on Workers) can finish a beat after the dialog
+             * is visible. Reading at that instant reports 0×0 for a healthy
+             * asset; the assertion below is about the decoded dimensions, not
+             * about which event won the race.
+             */
+            await drawer.evaluate(async (node) => {
+              const images = Array.from(node.querySelectorAll('img[src*="luc-ui-logo-"]')).filter(
+                (image) => image.getBoundingClientRect().width > 0,
+              );
+              await Promise.race([
+                Promise.all(
+                  images.map(
+                    (image) =>
+                      image.complete ||
+                      new Promise((resolve) => {
+                        image.addEventListener("load", resolve, { once: true });
+                        image.addEventListener("error", resolve, { once: true });
+                      }),
+                  ),
+                ),
+                new Promise((resolve) => setTimeout(resolve, 2_000)),
+              ]);
+            });
             const drawerLogos = await drawer.evaluate((node) =>
               Array.from(node.querySelectorAll('img[src*="luc-ui-logo-"]'))
                 .map((image) => {

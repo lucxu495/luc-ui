@@ -13,6 +13,8 @@ export const sharedConfig = [
     ignores: [
       "**/node_modules/**",
       "**/.next/**",
+      "**/.open-next/**",
+      "**/.wrangler/**",
       "**/dist/**",
       "**/coverage/**",
       "**/artifacts/**",

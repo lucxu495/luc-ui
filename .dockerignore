@@ -13,6 +13,11 @@ node_modules
 .next
 **/.next
 **/.next-*
+.open-next
+**/.open-next
+.wrangler
+**/.wrangler
+*.cpuprofile
 dist
 **/dist
 **/*.tsbuildinfo

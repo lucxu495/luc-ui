@@ -8,6 +8,11 @@
     "dev:a": "LUC_NEXT_DIST_DIR=.next-a next dev --port 3300",
     "dev:b": "LUC_NEXT_DIST_DIR=.next-b next dev --port 3301",
     "build": "next build",
+    "cf:build": "opennextjs-cloudflare build",
+    "cf:check": "wrangler deploy --dry-run --outdir .open-next/dry-run",
+    "cf:preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "cf:deploy": "opennextjs-cloudflare deploy",
+    "cf:upload": "opennextjs-cloudflare upload",
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --max-warnings 0",
@@ -73,6 +78,7 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "4.13.0",
+    "@opennextjs/cloudflare": "1.20.5",
     "@playwright/test": "1.63.0",
     "@tailwindcss/postcss": "4.3.3",
     "@types/node": "26.6.3",
@@ -81,6 +87,7 @@
     "eslint": "9.39.5",
     "eslint-config-next": "16.3.6",
     "tailwindcss": "4.3.3",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "wrangler": "4.151.1"
   }
 }
