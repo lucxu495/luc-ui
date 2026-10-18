@@ -1,0 +1,166 @@
+{
+  "homeResources": [
+    {
+      "id": "home-resource-foundations",
+      "text": "Foundations | 164 in this area | The tokens, the spacing rhythm and the rules a page is built from."
+    },
+    {
+      "id": "home-resource-components",
+      "text": "Components | 164 in this area | Every public primitive and composite, one honest page at a time."
+    },
+    {
+      "id": "home-resource-charts",
+      "text": "Charts | 76 in this area | The chart catalogue, and the contracts that keep chart engines out of your data layer."
+    },
+    {
+      "id": "home-resource-motion",
+      "text": "Motion | 164 in this area | Spatial and expressive motion primitives, with reduced-motion behaviour built in."
+    },
+    {
+      "id": "home-resource-experiences",
+      "text": "Experiences | 34 in this area | Sixteen reference products assembled only from public components."
+    },
+    {
+      "id": "home-resource-data-table",
+      "text": "Data table | 164 in this area | Sorting, filtering, selection and virtualisation for datasets that are actually large."
+    },
+    {
+      "id": "home-resource-integrations",
+      "text": "Integrations | 164 in this area | Third-party surfaces wrapped behind a LUC contract, starting with TradingView."
+    },
+    {
+      "id": "home-resource-studios",
+      "text": "Studios | 34 in this area | Configure a chart, a motion feel or a theme against the real props, then copy the code."
+    },
+    {
+      "id": "home-resource-blocks",
+      "text": "Blocks | 34 in this area | Page sections assembled from components: a hero, a pricing band, a feed, a timeline."
+    },
+    {
+      "id": "home-resource-templates",
+      "text": "Templates | 34 in this area | Whole-page starters — a personal site, a marketing page, a product console."
+    },
+    {
+      "id": "home-resource-personal",
+      "text": "Personal sites | 34 in this area | Career, academic, portfolio and digital-garden references, built from the same primitives."
+    }
+  ],
+  "docsCounts": "Components\n\n13 entries\n\nEvery public primitive and composite, organised by the job it does — actions, forms, navigation, feedback, overlays and data display.\n\nCharts\n\n9 entries\n\nThe charting surface: general time series, distributions, statistics, financial risk, scientific fields, matrices and networks.\n\nMotion\n\n4 entries\n\nSpatial and expressive motion — typographic effects, surfaces that respond to a pointer, depth and layered composition.\n\nIntegrations\n\n1 entries\n\nThird-party surfaces wrapped behind a LUC contract. Today: the TradingView widget catalogue.",
+  "mobileTheme": {
+    "visibleControls": [],
+    "domControls": [
+      {
+        "label": "System theme",
+        "width": 0,
+        "height": 0,
+        "display": "flex"
+      },
+      {
+        "label": "Light theme",
+        "width": 0,
+        "height": 0,
+        "display": "flex"
+      },
+      {
+        "label": "Dark theme",
+        "width": 0,
+        "height": 0,
+        "display": "flex"
+      }
+    ]
+  },
+  "mobilePropsTable": {
+    "tableWidth": 339,
+    "columns": [
+      {
+        "text": "block?",
+        "width": 110,
+        "height": 64
+      },
+      {
+        "text": "boolean | undefined",
+        "width": 96,
+        "height": 64
+      },
+      {
+        "text": "—",
+        "width": 70,
+        "height": 64
+      },
+      {
+        "text": "",
+        "width": 62,
+        "height": 64
+      }
+    ],
+    "pageHeight": 5415
+  },
+  "mobileTable": {
+    "tableWidth": 1040,
+    "visibleViewport": 390,
+    "scroller": {
+      "clientWidth": 337,
+      "scrollWidth": 1040,
+      "overflowX": "auto"
+    },
+    "headers": [
+      "",
+      "Symbol",
+      "Strategy",
+      "Status",
+      "Sharpe",
+      "CAGR",
+      "Equity",
+      "Updated",
+      ""
+    ]
+  },
+  "financeChart": {
+    "canvas": {
+      "x": 58,
+      "right": 684,
+      "width": 626,
+      "height": 340
+    },
+    "viewportWidth": 390
+  },
+  "skipLink": {
+    "skipBefore": {
+      "tag": "A",
+      "text": "Skip to content"
+    },
+    "skipAfter": {
+      "tag": "BODY",
+      "text": "Skip to contentLuc UIDesign systemComponentsEvery public component, by the job i",
+      "scrollY": 52
+    },
+    "skipNextTab": {
+      "tag": "A",
+      "text": "Luc UI",
+      "href": "/"
+    }
+  },
+  "slashShortcut": {
+    "activeTag": "BODY",
+    "activeRole": null
+  },
+  "commandFocusAfterNavigation": {
+    "url": "http://127.0.0.1:5300/components/buttons",
+    "activeTag": "BODY",
+    "activeText": "Skip to contentLuc UIDesign systemComponentsEvery public component, by the job it does.Design founda",
+    "heading": "Button"
+  },
+  "copyFeedback": {
+    "activeLabel": "Copy import",
+    "liveRegions": [
+      {
+        "live": "polite",
+        "text": ""
+      }
+    ],
+    "tooltip": null
+  },
+  "chartUnits": {
+    "tooltip": "Volume5.2B"
+  }
+}

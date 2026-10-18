@@ -1,0 +1,220 @@
+{
+  "capturedAt": "2026-10-18T12:04:56.647Z",
+  "base": "https://ui.lucxu.com",
+  "sequential": [
+    {
+      "route": "/",
+      "status": 200,
+      "elapsedMs": 3211,
+      "bytes": 140001,
+      "server": "cloudflare",
+      "cfRay": "a4c767e6e8d28bd2-CDG",
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate"
+    },
+    {
+      "route": "/docs",
+      "status": 200,
+      "elapsedMs": 329,
+      "bytes": 81597,
+      "server": "cloudflare",
+      "cfRay": "a4c767febb918bd2-CDG",
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate"
+    },
+    {
+      "route": "/components/buttons",
+      "status": 200,
+      "elapsedMs": 277,
+      "bytes": 188074,
+      "server": "cloudflare",
+      "cfRay": "a4c76806ef7d8bd2-CDG",
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate"
+    },
+    {
+      "route": "/components/ai",
+      "status": 200,
+      "elapsedMs": 349,
+      "bytes": 150630,
+      "server": "cloudflare",
+      "cfRay": "a4c7680f2c568bd2-CDG",
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate"
+    },
+    {
+      "route": "/components/command",
+      "status": 200,
+      "elapsedMs": 281,
+      "bytes": 211670,
+      "server": "cloudflare",
+      "cfRay": "a4c768175e9a8bd2-CDG",
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate"
+    },
+    {
+      "route": "/date-time/date-picker",
+      "status": 200,
+      "elapsedMs": 404,
+      "bytes": 664689,
+      "server": "cloudflare",
+      "cfRay": "a4c7681f7a478bd2-CDG",
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate"
+    },
+    {
+      "route": "/application/navigation",
+      "status": 200,
+      "elapsedMs": 276,
+      "bytes": 357235,
+      "server": "cloudflare",
+      "cfRay": "a4c768281c418bd2-CDG",
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate"
+    },
+    {
+      "route": "/explore",
+      "status": 200,
+      "elapsedMs": 495,
+      "bytes": 159994,
+      "server": "cloudflare",
+      "cfRay": "a4c768301e248bd2-CDG",
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate"
+    },
+    {
+      "route": "/zh",
+      "status": 200,
+      "elapsedMs": 312,
+      "bytes": 139829,
+      "server": "cloudflare",
+      "cfRay": "a4c76839be658bd2-CDG",
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate"
+    },
+    {
+      "route": "/zh/components/buttons",
+      "status": 200,
+      "elapsedMs": 309,
+      "bytes": 188014,
+      "server": "cloudflare",
+      "cfRay": "a4c76841accb8bd2-CDG",
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate"
+    }
+  ],
+  "burst": [
+    {
+      "round": 1,
+      "route": "/components/ai",
+      "status": 200,
+      "elapsedMs": 256,
+      "bytes": 150630,
+      "server": "cloudflare",
+      "cfRay": "a4c7684a193a8bd2-CDG",
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate"
+    },
+    {
+      "round": 1,
+      "route": "/date-time/date-picker",
+      "status": 200,
+      "elapsedMs": 2665,
+      "bytes": 664689,
+      "server": "cloudflare",
+      "cfRay": "a4c7684c69d4ef9a-MRS",
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate"
+    },
+    {
+      "round": 1,
+      "route": "/zh",
+      "status": 200,
+      "elapsedMs": 2333,
+      "bytes": 139829,
+      "server": "cloudflare",
+      "cfRay": "a4c7684c4f79ed6a-MXP",
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate"
+    },
+    {
+      "round": 1,
+      "route": "/components/command",
+      "status": 200,
+      "elapsedMs": 638,
+      "bytes": 211670,
+      "server": "cloudflare",
+      "cfRay": "a4c7684c4d85df81-MRS",
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate"
+    },
+    {
+      "round": 2,
+      "route": "/components/ai",
+      "status": 200,
+      "elapsedMs": 248,
+      "bytes": 150630,
+      "server": "cloudflare",
+      "cfRay": "a4c7685f882f8bd2-CDG",
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate"
+    },
+    {
+      "round": 2,
+      "route": "/date-time/date-picker",
+      "status": 200,
+      "elapsedMs": 3589,
+      "bytes": 664689,
+      "server": "cloudflare",
+      "cfRay": "a4c7685f784aef9a-MRS",
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate"
+    },
+    {
+      "round": 2,
+      "route": "/zh",
+      "status": 200,
+      "elapsedMs": 248,
+      "bytes": 139829,
+      "server": "cloudflare",
+      "cfRay": "a4c7685f7f53ed6a-MXP",
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate"
+    },
+    {
+      "round": 2,
+      "route": "/components/command",
+      "status": 200,
+      "elapsedMs": 254,
+      "bytes": 211670,
+      "server": "cloudflare",
+      "cfRay": "a4c7685f7a52df81-MRS",
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate"
+    },
+    {
+      "round": 3,
+      "route": "/components/ai",
+      "status": 200,
+      "elapsedMs": 619,
+      "bytes": 150630,
+      "server": "cloudflare",
+      "cfRay": "a4c7687d79998a38-CDG",
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate"
+    },
+    {
+      "round": 3,
+      "route": "/date-time/date-picker",
+      "status": 503,
+      "elapsedMs": 402,
+      "bytes": 4629,
+      "server": "cloudflare",
+      "cfRay": "a4c7687b3f52ef9a-MRS",
+      "cacheControl": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+    },
+    {
+      "round": 3,
+      "route": "/zh",
+      "status": 200,
+      "elapsedMs": 2397,
+      "bytes": 139829,
+      "server": "cloudflare",
+      "cfRay": "a4c7687d8b1aee8e-MXP",
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate"
+    },
+    {
+      "round": 3,
+      "route": "/components/command",
+      "status": 200,
+      "elapsedMs": 2156,
+      "bytes": 211670,
+      "server": "cloudflare",
+      "cfRay": "a4c7687ae8aefd1c-SIN",
+      "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate"
+    }
+  ],
+  "sequentialFailures": 0,
+  "burstFailures": 1
+}
