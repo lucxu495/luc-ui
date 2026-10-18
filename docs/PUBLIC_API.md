@@ -6,7 +6,7 @@ its declaring source and packed target; use it for exact names and signatures.
 The V1 compatibility policy is in [versioning](./VERSIONING.md). A symbol may
 be publicly reachable through the root barrel without having its own subpath.
 
-Package: `@luc/ui` · version `1.0.0` · ESM only · React 19 peer.
+Package: `@luc/ui` · version `1.0.1` · ESM only · React 19 peer.
 
 ## Import paths
 

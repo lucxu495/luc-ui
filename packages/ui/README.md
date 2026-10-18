@@ -4,7 +4,7 @@ Luc UI is a reusable React 19 component, chart and application UI package. It is
 published from this repository as a git tag — not from a registry:
 
 ```bash
-pnpm add @luc/ui@github:lucxu495/luc-ui#v1.0.0
+pnpm add @luc/ui@github:lucxu495/luc-ui#v1.0.1
 ```
 
 The tag points at a commit on the `release` branch whose root is this package,

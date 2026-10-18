@@ -4,31 +4,26 @@
 points at a commit whose root is the built package. This document is the
 contract: what a release is, how to make one, and what a consumer can rely on.
 
-Current public state: package `1.0.0`, tag `v1.0.0`, commit
-`1ea6cd7b7dad96d9b60daf4654ade2721a0ab5e0`. The tag is immutable. See
+Current public state: package `1.0.1`, tag `v1.0.1`, published in GitHub
+Releases. The release tree commit is the commit returned by
+`git rev-parse v1.0.1^{}`. The tags are immutable. See
 [OPEN_SOURCE_RELEASE_CHECKLIST.md](./OPEN_SOURCE_RELEASE_CHECKLIST.md) before
 cutting a successor.
 
 ```bash
-pnpm add @luc/ui@github:lucxu495/luc-ui#v1.0.0
+pnpm add @luc/ui@github:lucxu495/luc-ui#v1.0.1
 ```
 
-## Release candidate `1.0.1`
+## Release `1.0.1`
 
-`main` contains the reviewed `1.0.1` release candidate. It fixes accessibility
-and documentation defects without changing the public export map, required
-peers or package layout. The recommended SemVer bump is **patch**.
+`1.0.1` is a patch release. It fixes accessibility and documentation defects
+without changing the public export map, required peers or package layout. It is
+available from the immutable `v1.0.1` tag and its GitHub Release assets.
 
-The candidate is intentionally not exposed to consumers yet:
-
-- `packages/ui/package.json` still says `1.0.0`;
-- no `v1.0.1` tag or GitHub Release exists;
-- npm has not been published;
-- the current public install remains the immutable `v1.0.0` tag.
-
-The source commit, packed artifact and both clean-consumer builds are verified
-before tagging. The release candidate must not be represented as an available
-install until a successor tag is approved and verified from a fresh directory.
+The release tarball and its SHA-256 checksum are attached to the GitHub Release.
+The tag itself remains the recommended install because it needs no install
+script and the consumer lockfile records the resolved release-tree commit. npm
+has not been published.
 
 ## Why a branch and a tag, and not `#main`
 
@@ -37,10 +32,10 @@ package is at `packages/ui`. Neither obvious git spec works:
 
 | Spec | What a consumer gets | Why not |
 | --- | --- | --- |
-| `github:lucxu495/luc-ui#v1.0.0` | the **root** package, `luc-ui-workspace` | it is `private` and exports nothing |
-| `…#v1.0.0&path:packages/ui` | `exports` → `src/*.ts` | a git fetch reads the manifest verbatim; npm and pnpm apply `publishConfig` when they *pack*, never when they *fetch*. The consumer would compile this repository's TypeScript instead of installing the package it publishes |
-| `…#v1.0.0&path:packages/ui` + `prepare` | built package ✓ | every consumer must allow-list an install-time build script by *resolved git URL* — `onlyBuiltDependencies` wants the full spec including the commit, so it is pasted from an error message rather than written by hand |
-| `…#v1.0.0` where the **tag is the release tree** | built package ✓ | this is the design |
+| `github:lucxu495/luc-ui#v1.0.1` | the **root** package, `luc-ui-workspace` | it is `private` and exports nothing |
+| `…#v1.0.1&path:packages/ui` | `exports` → `src/*.ts` | a git fetch reads the manifest verbatim; npm and pnpm apply `publishConfig` when they *pack*, never when they *fetch*. The consumer would compile this repository's TypeScript instead of installing the package it publishes |
+| `…#v1.0.1&path:packages/ui` + `prepare` | built package ✓ | every consumer must allow-list an install-time build script by *resolved git URL* — `onlyBuiltDependencies` wants the full spec including the commit, so it is pasted from an error message rather than written by hand |
+| `…#v1.0.1` where the **tag is the release tree** | built package ✓ | this is the design |
 
 The tag therefore points at a commit on an orphan `release` branch. `main` holds
 the source and no build output; the release branch holds build output and no

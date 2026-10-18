@@ -5,7 +5,7 @@ Three ways to install the package, in the order they are recommended.
 ## 1. A git tag (recommended)
 
 ```json
-{ "dependencies": { "@luc/ui": "github:lucxu495/luc-ui#v1.0.0" } }
+{ "dependencies": { "@luc/ui": "github:lucxu495/luc-ui#v1.0.1" } }
 ```
 
 That is the whole contract. The tag points at a commit on the `release` branch
@@ -36,7 +36,7 @@ pnpm --filter @luc/ui pack:local         # → artifacts/pack/luc-ui-<hash>.tgz
 ```
 
 ```json
-{ "dependencies": { "@luc/ui": "file:./vendor/luc-ui-1.0.0.tgz" } }
+{ "dependencies": { "@luc/ui": "file:./vendor/luc-ui-1.0.1.tgz" } }
 ```
 
 The tarball is the same build, and `pnpm pack` applies `publishConfig`, so its

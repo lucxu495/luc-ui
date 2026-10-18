@@ -9,6 +9,7 @@
  *
  *   node tests/consumers/run.mjs
  *   node tests/consumers/run.mjs --mode=remote
+ *   node tests/consumers/run.mjs --mode=remote --ref=v1.0.1
  *   node tests/consumers/run.mjs --fixtures=vite
  */
 
@@ -28,6 +29,7 @@ const fixturesRoot = path.join(here, "fixtures");
 const outRoot = path.join(root, "artifacts/consumers");
 const args = new Set(process.argv.slice(2));
 const mode = process.argv.find((value) => value.startsWith("--mode="))?.slice("--mode=".length) ?? "artifact";
+const requestedRef = process.argv.find((value) => value.startsWith("--ref="))?.slice("--ref=".length);
 const requested = (process.argv.find((value) => value.startsWith("--fixtures="))?.slice("--fixtures=".length) ?? "vite,next")
   .split(",")
   .filter(Boolean);
@@ -43,7 +45,9 @@ await run("pnpm", ["--filter", "@luc/ui", "build:package"], {
   timeout: 300_000,
 });
 const tarball = await ensurePack(path.join(root, "packages/ui"));
-const spec = mode === "remote" ? "github:lucxu495/luc-ui#v1.0.0" : `file:${tarball}`;
+const packageVersion = JSON.parse(await readFile(path.join(root, "packages/ui/package.json"), "utf8")).version;
+const ref = requestedRef ?? `v${packageVersion}`;
+const spec = mode === "remote" ? `github:lucxu495/luc-ui#${ref}` : `file:${tarball}`;
 
 async function waitFor(url, child, logs) {
   for (let attempt = 0; attempt < 80; attempt += 1) {
@@ -218,6 +222,7 @@ try {
 const report = {
   generatedAt: new Date().toISOString(),
   mode,
+  ref: mode === "remote" ? ref : null,
   packageSource: spec,
   tarball,
   results,

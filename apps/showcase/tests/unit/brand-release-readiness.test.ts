@@ -17,7 +17,7 @@ describe("open-source README and brand assets", () => {
     const readme = read("README.md");
     expect(readme).toContain("luc-ui-logo-light-512.png");
     expect(readme).toContain("luc-ui-logo-dark-512.png");
-    expect(readme).toContain("@luc/ui@github:lucxu495/luc-ui#v1.0.0");
+    expect(readme).toContain("@luc/ui@github:lucxu495/luc-ui#v1.0.1");
     expect(readme.replace(/\s+/g, " ")).toContain("not published to an npm registry");
     expect(readme).not.toMatch(/(?:^|[\s("'])\/(?:Users|home)\//);
 

@@ -1,13 +1,13 @@
 # Using Luc UI
 
-`@luc/ui` is a public, ESM-only package. The current `1.0.0` release installs
-from the immutable `v1.0.0` Git tag; there is no npm registry release yet. It
+`@luc/ui` is a public, ESM-only package. The current `1.0.1` release installs
+from the immutable `v1.0.1` Git tag; there is no npm registry release yet. It
 requires React and React DOM 19, Tailwind CSS v4 for the supplied stylesheet,
 and Node 22 or newer for the repository tools (`packages/ui/package.json`,
 `../package.json`).
 
 ```bash
-pnpm add @luc/ui@github:lucxu495/luc-ui#v1.0.0
+pnpm add @luc/ui@github:lucxu495/luc-ui#v1.0.1
 ```
 
 ## Start a React or Next.js app

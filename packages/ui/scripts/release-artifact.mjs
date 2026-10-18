@@ -23,7 +23,7 @@
  * verbatim, plus a `RELEASE.json` that says where it came from. That tree is
  * pushed as a commit on the `release` branch and tagged, so a consumer writes
  *
- *     "@luc/ui": "github:lucxu495/luc-ui#v1.0.0"
+ *     "@luc/ui": "github:lucxu495/luc-ui#v1.0.1"
  *
  * and gets built JavaScript, type declarations, CSS and the runtime
  * dependencies — with no install script, nothing to allow-list, and the exact

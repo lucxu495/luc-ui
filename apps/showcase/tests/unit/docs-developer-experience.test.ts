@@ -36,7 +36,7 @@ describe("installation", () => {
   it("offers the two verified distribution modes", () => {
     expect(DISTRIBUTION_MODES.git.available).toBe(true);
     expect(DISTRIBUTION_MODES.tarball.available).toBe(true);
-    expect(DISTRIBUTION_MODES.git.note).toContain("v1.0.0");
+    expect(DISTRIBUTION_MODES.git.note).toContain(`v${PUBLIC_VERSION}`);
     expect(DISTRIBUTION_MODES).not.toHaveProperty("package");
   });
 

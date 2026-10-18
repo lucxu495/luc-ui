@@ -9,7 +9,7 @@
 # Build context is this repository's root: the pnpm workspace is rooted here and
 # `apps/` + `packages/` are its members (see `/pnpm-workspace.yaml`).
 #
-#   docker build -t luc-ui/showcase:1.0.0 .
+#   docker build -t luc-ui-standalone/showcase:1.0.1 .
 #
 # Until 2026-10-16 this file built inside the `luc-quant` monorepo, where the
 # workspace root was the repository root and this directory was one package

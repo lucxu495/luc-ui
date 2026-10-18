@@ -1,6 +1,6 @@
 {
   "name": "@luc/ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "description": "Luc UI \u2014 an accessible React and TypeScript design system for product interfaces.",
   "license": "MIT",

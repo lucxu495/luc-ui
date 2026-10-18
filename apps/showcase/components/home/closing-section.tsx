@@ -26,7 +26,7 @@ export async function HomeClosing() {
       </p>
       <Text variant="caption" tone="muted" className="max-w-[70ch]">
         {tcs(
-          "Luc UI is public on GitHub. Version 1.0.0 installs from an immutable Git tag; registry publication is still pending, and there is no paid tier. The installation guide shows the exact commands that work today.",
+          "Luc UI is public on GitHub. Version 1.0.1 installs from an immutable Git tag published in GitHub Releases; registry publication is still pending, and there is no paid tier. The installation guide shows the exact commands that work today.",
         )}
       </Text>
       <Inline gap="sm" wrap>

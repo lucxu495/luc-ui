@@ -17,7 +17,7 @@ export type DistributionMode = "git" | "tarball";
 
 export const PACKAGE_MANAGERS: readonly PackageManager[] = ["pnpm", "npm", "yarn", "bun"];
 export const PACKAGE_NAME = "@luc/ui";
-export const PUBLIC_VERSION = "1.0.0";
+export const PUBLIC_VERSION = "1.0.1";
 export const GIT_SPEC = `${PACKAGE_NAME}@github:lucxu495/luc-ui#v${PUBLIC_VERSION}`;
 export const PACKED_TARBALL = `./luc-ui-${PUBLIC_VERSION}.tgz`;
 
@@ -36,7 +36,7 @@ export const DISTRIBUTION_MODES: Record<DistributionMode, DistributionModeInfo> 
     label: "Git tag",
     available: true,
     note:
-      "The public install is the built package at the immutable v1.0.0 Git tag. It needs no install script, and the lockfile records the resolved commit.",
+      "The public install is the built package at the immutable v1.0.1 Git tag. It needs no install script, and the lockfile records the resolved commit.",
   },
   tarball: {
     id: "tarball",

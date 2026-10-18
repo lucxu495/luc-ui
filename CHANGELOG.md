@@ -3,10 +3,11 @@
 All notable changes to `@luc/ui`. The foundation rounds (V0.1–V0.6) shipped as
 a single uncommitted working tree; V1.0 is the first frozen release.
 
-## 1.0.1 — release candidate, not released
+## 1.0.1 — 2026-10-18
 
-Status: release candidate on `main`; package metadata remains `1.0.0`, and
-`v1.0.0` remains the current public tag until the next release is approved.
+`@luc/ui@1.0.1` is the second public Git-tag release. It is available from the
+immutable `v1.0.1` tag and the public GitHub Release. The npm registry package
+is still unavailable.
 
 This candidate contains no public-export, prop-shape or package-layout break.
 It adds the official Luc UI identity, public installation and contribution
@@ -23,7 +24,7 @@ Consumer-visible corrections:
 * Indeterminate progress uses its reduced-motion form instead of a travelling
   animation when motion is reduced.
 * The README, logo, favicon, social metadata and installation examples point at
-  the current public entry points and the immutable `v1.0.0` install tag.
+  the current public entry points and the immutable `v1.0.1` install tag.
 
 Documentation and release infrastructure:
 
@@ -37,6 +38,8 @@ Documentation and release infrastructure:
 * Reviewed Darwin and Linux visual baselines now cover both the library
   surfaces and the Showcase's own navigation, documentation, chart and motion
   pages.
+* Release artifacts record their source commit, ship a SHA-256 checksum and are
+  verified again from the public Git tag in clean Vite and Next.js projects.
 
 ## 1.0.0 — first public release
 

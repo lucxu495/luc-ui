@@ -17,9 +17,9 @@ responsive data surfaces, chart primitives and typed TradingView wrappers. The
 package is ESM-only, ships compiled JavaScript and declarations, and includes a
 Tailwind CSS v4 stylesheet.
 
-The project is public on GitHub. The current package release is **1.0.0**,
-installed from the immutable **`v1.0.0` Git tag**. Luc UI is not published to an
-npm registry yet.
+The project is public on GitHub. The current package release is **1.0.1**,
+announced in GitHub Releases and installed from the immutable **`v1.0.1` Git
+tag**. Luc UI is not published to an npm registry yet.
 
 ## Features
 
@@ -47,11 +47,11 @@ npm registry yet.
 ### 1. Install from the Git tag
 
 ```bash
-pnpm add @luc/ui@github:lucxu495/luc-ui#v1.0.0
+pnpm add @luc/ui@github:lucxu495/luc-ui#v1.0.1
 ```
 
 ```bash
-npm install @luc/ui@github:lucxu495/luc-ui#v1.0.0
+npm install @luc/ui@github:lucxu495/luc-ui#v1.0.1
 ```
 
 The tag points to a commit on the `release` branch whose root is the built
@@ -206,6 +206,7 @@ The full Showcase runs locally:
 pnpm install
 pnpm dev
 # http://localhost:3000
+# http://127.0.0.1:5300
 ```
 
 There is no hosted public Showcase URL yet.
@@ -253,14 +254,14 @@ and version, and any relevant browser or framework details.
 ## Stability and distribution
 
 - Package: `@luc/ui`
-- Current version: `1.0.0`
-- Public Git tag: `v1.0.0`
+- Current version: `1.0.1`
+- Public Git tag: `v1.0.1`
 - Module format: ESM
 - Stylesheet: Tailwind CSS v4
 - License: MIT
 
-The public tag is immutable. Changes on `main` are not available through the
-`v1.0.0` install until a new version is built and tagged. See
+The public tag is immutable. Changes merged after `v1.0.1` are not available
+through that install until a new version is built and tagged. See
 [`docs/VERSIONING.md`](./docs/VERSIONING.md),
 [`docs/RELEASES.md`](./docs/RELEASES.md) and
 [`docs/OPEN_SOURCE_RELEASE_CHECKLIST.md`](./docs/OPEN_SOURCE_RELEASE_CHECKLIST.md).

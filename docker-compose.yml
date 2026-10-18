@@ -36,7 +36,7 @@ services:
       # The pnpm workspace root is this repository's root.
       context: .
       dockerfile: Dockerfile
-    image: luc-ui-standalone/showcase:1.0.0
+    image: luc-ui-standalone/showcase:1.0.1
     container_name: luc-ui-showcase-standalone
     restart: unless-stopped
     ports:
