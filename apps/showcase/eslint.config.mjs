@@ -11,7 +11,14 @@ const config = [
      * A session directory has to be invisible to every tool: the repository
      * ignore file, ESLint, and `tsconfig.json`.
      */
-    ignores: ["**/.next/**", "**/.next-*/**", "**/node_modules/**", "next-env.d.ts"],
+    ignores: [
+      "**/.next/**",
+      "**/.next-*/**",
+      "**/.open-next/**",
+      "**/.wrangler/**",
+      "**/node_modules/**",
+      "next-env.d.ts",
+    ],
   },
   ...next,
   {

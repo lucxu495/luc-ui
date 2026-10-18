@@ -21,3 +21,5 @@ allowBuilds:
   esbuild: true
   sharp: true
   unrs-resolver: true
+  # Wrangler's local Workers runtime downloads/links its native binary here.
+  workerd: true

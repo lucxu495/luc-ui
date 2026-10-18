@@ -59,6 +59,24 @@ const rewrites = async () => ({
   ],
 });
 
+/*
+ * Response headers for document routes. `public/_headers` applies the same
+ * policy to Workers static assets, which bypass the Next.js server.
+ */
+const securityHeaders = [
+  { key: "X-Content-Type-Options", value: "nosniff" },
+  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+  { key: "Permissions-Policy", value: "camera=(), geolocation=(), microphone=()" },
+  { key: "X-Frame-Options", value: "SAMEORIGIN" },
+];
+
+const headers = async () => [
+  {
+    source: "/(.*)",
+    headers: securityHeaders,
+  },
+];
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   /*
@@ -111,6 +129,7 @@ const nextConfig: NextConfig = {
   agentRules: false,
   redirects,
   rewrites,
+  headers,
 };
 
 export default nextConfig;

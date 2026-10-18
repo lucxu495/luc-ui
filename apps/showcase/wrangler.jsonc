@@ -1,0 +1,27 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "luc-ui-showcase",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-10-12",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      // OpenNext uses this self-reference for cache revalidation and queue work.
+      // The service name must stay identical to `name` above.
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "luc-ui-showcase"
+    }
+  ],
+  "images": {
+    // Free plan includes 5,000 unique transformations per month. The Showcase
+    // only optimizes a small, finite set of local brand images.
+    "binding": "IMAGES"
+  },
+  "observability": {
+    "enabled": true
+  }
+}
