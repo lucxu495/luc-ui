@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T07:06:05.802Z",
+  "generatedAt": "2026-10-18T09:47:29.268Z",
   "baseUrl": "http://127.0.0.1:5300",
   "viewport": {
     "width": 390,
@@ -8,6 +8,6 @@
   "routes": 347,
   "locales": 2,
   "measured": 694,
-  "durationMs": 167238,
+  "durationMs": 207084,
   "findings": []
 }

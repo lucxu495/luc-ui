@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-18T07:12:31.347Z",
+  "generatedAt": "2026-10-18T09:56:38.168Z",
   "baseUrl": "http://127.0.0.1:5300",
   "mode": "claims",
   "routes": 17,
   "clicked": 162,
   "declaredBusy": 2,
   "openedDetails": 149,
-  "durationMs": 142646,
+  "durationMs": 178316,
   "findings": [],
   "benignFindings": []
 }
