@@ -39,7 +39,7 @@
     "cache:prune": "node scripts/cache-prune.mjs",
     "cache:prune:safe": "node scripts/dev-guard.mjs --prune",
     "qa:clean:test": "node --test scripts/qa-clean.test.mjs scripts/cache-prune.test.mjs scripts/dev-guard.test.mjs",
-    "qa:tooling:test": "node --test scripts/qa-clean.test.mjs scripts/cache-prune.test.mjs scripts/dev-guard.test.mjs scripts/preview-inputs.test.mjs scripts/release-artifact.test.mjs",
+    "qa:tooling:test": "node --test scripts/qa-clean.test.mjs scripts/cache-prune.test.mjs scripts/dev-guard.test.mjs scripts/preview-inputs.test.mjs scripts/release-artifact.test.mjs scripts/release-ci.test.mjs",
     "test:consumers": "node tests/consumers/run.mjs",
     "qa:dev-isolation": "pnpm --filter @luc/showcase qa:dev-isolation",
     "verify": "pnpm typecheck && pnpm lint && pnpm test && pnpm verify:i18n && pnpm verify:charts && pnpm verify:docs && pnpm verify:registry && pnpm verify:package && pnpm verify:release-artifact",
