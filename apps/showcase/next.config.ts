@@ -80,6 +80,12 @@ const headers = async () => [
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   /*
+   * The Cloudflare build prerenders the same route graph twice, once per
+   * language. Both builds must agree on the build id so their static cache
+   * entries can live under one immutable Worker version.
+   */
+  generateBuildId: async () => process.env.LUC_NEXT_BUILD_ID ?? null,
+  /*
    * CONCURRENCY-001 — one output directory per development session.
    *
    * Two `next dev` processes over the same source and the same `distDir` write

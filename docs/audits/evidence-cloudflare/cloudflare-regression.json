@@ -1,0 +1,654 @@
+{
+  "capturedAt": "2026-10-18T14:56:15.289Z",
+  "base": "http://127.0.0.1:8787",
+  "sequential": [
+    {
+      "path": "/",
+      "status": 200,
+      "elapsedMs": 43,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/zh",
+      "status": 200,
+      "elapsedMs": 12,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "zh-Hans-CN",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/docs",
+      "status": 200,
+      "elapsedMs": 15,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/zh/docs",
+      "status": 200,
+      "elapsedMs": 35,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "zh-Hans-CN",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/date-time/date-picker",
+      "status": 200,
+      "elapsedMs": 16,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/zh/date-time/date-picker",
+      "status": 200,
+      "elapsedMs": 16,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "zh-Hans-CN",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/components/command",
+      "status": 200,
+      "elapsedMs": 18,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/components/ai",
+      "status": 200,
+      "elapsedMs": 22,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/application/navigation",
+      "status": 200,
+      "elapsedMs": 23,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/charts/financial",
+      "status": 200,
+      "elapsedMs": 9,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/integrations/tradingview",
+      "status": 200,
+      "elapsedMs": 7,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/blocks",
+      "status": 200,
+      "elapsedMs": 9,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/zh/blocks",
+      "status": 200,
+      "elapsedMs": 8,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "zh-Hans-CN",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "elapsedMs": 8,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/zh",
+      "status": 200,
+      "elapsedMs": 8,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "zh-Hans-CN",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/docs",
+      "status": 200,
+      "elapsedMs": 7,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/zh/docs",
+      "status": 200,
+      "elapsedMs": 6,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "zh-Hans-CN",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/date-time/date-picker",
+      "status": 200,
+      "elapsedMs": 15,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/zh/date-time/date-picker",
+      "status": 200,
+      "elapsedMs": 16,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "zh-Hans-CN",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/components/command",
+      "status": 200,
+      "elapsedMs": 42,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/components/ai",
+      "status": 200,
+      "elapsedMs": 7,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/application/navigation",
+      "status": 200,
+      "elapsedMs": 9,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/charts/financial",
+      "status": 200,
+      "elapsedMs": 7,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/integrations/tradingview",
+      "status": 200,
+      "elapsedMs": 6,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/blocks",
+      "status": 200,
+      "elapsedMs": 6,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/zh/blocks",
+      "status": 200,
+      "elapsedMs": 5,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "zh-Hans-CN",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "elapsedMs": 6,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/zh",
+      "status": 200,
+      "elapsedMs": 5,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "zh-Hans-CN",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/docs",
+      "status": 200,
+      "elapsedMs": 4,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/zh/docs",
+      "status": 200,
+      "elapsedMs": 5,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "zh-Hans-CN",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/date-time/date-picker",
+      "status": 200,
+      "elapsedMs": 10,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/zh/date-time/date-picker",
+      "status": 200,
+      "elapsedMs": 10,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "zh-Hans-CN",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/components/command",
+      "status": 200,
+      "elapsedMs": 8,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/components/ai",
+      "status": 200,
+      "elapsedMs": 6,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/application/navigation",
+      "status": 200,
+      "elapsedMs": 8,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/charts/financial",
+      "status": 200,
+      "elapsedMs": 4,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/integrations/tradingview",
+      "status": 200,
+      "elapsedMs": 6,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/blocks",
+      "status": 200,
+      "elapsedMs": 5,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/zh/blocks",
+      "status": 200,
+      "elapsedMs": 5,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "zh-Hans-CN",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "elapsedMs": 6,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/zh",
+      "status": 200,
+      "elapsedMs": 5,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "zh-Hans-CN",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/docs",
+      "status": 200,
+      "elapsedMs": 5,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/zh/docs",
+      "status": 200,
+      "elapsedMs": 4,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "zh-Hans-CN",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/date-time/date-picker",
+      "status": 200,
+      "elapsedMs": 10,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/zh/date-time/date-picker",
+      "status": 200,
+      "elapsedMs": 12,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "zh-Hans-CN",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/components/command",
+      "status": 200,
+      "elapsedMs": 8,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/components/ai",
+      "status": 200,
+      "elapsedMs": 7,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/application/navigation",
+      "status": 200,
+      "elapsedMs": 9,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/charts/financial",
+      "status": 200,
+      "elapsedMs": 6,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/integrations/tradingview",
+      "status": 200,
+      "elapsedMs": 5,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    }
+  ],
+  "concurrent": [
+    {
+      "path": "/",
+      "status": 200,
+      "elapsedMs": 13,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/zh",
+      "status": 200,
+      "elapsedMs": 19,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "zh-Hans-CN",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/docs",
+      "status": 200,
+      "elapsedMs": 18,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/zh/docs",
+      "status": 200,
+      "elapsedMs": 17,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "zh-Hans-CN",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/date-time/date-picker",
+      "status": 200,
+      "elapsedMs": 24,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/zh/date-time/date-picker",
+      "status": 200,
+      "elapsedMs": 35,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "zh-Hans-CN",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/blocks",
+      "status": 200,
+      "elapsedMs": 29,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "en",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    },
+    {
+      "path": "/zh/blocks",
+      "status": 200,
+      "elapsedMs": 31,
+      "cacheControl": "private, no-cache",
+      "contentLanguage": "zh-Hans-CN",
+      "static": "html",
+      "hasWorkerError": false,
+      "langMatches": true
+    }
+  ],
+  "redirects": [
+    {
+      "path": "/docs",
+      "status": 307,
+      "location": "http://127.0.0.1:8787/zh/docs"
+    },
+    {
+      "path": "/components/button",
+      "status": 308,
+      "location": "/components/buttons"
+    },
+    {
+      "path": "/zh/components/button",
+      "status": 308,
+      "location": "/zh/components/buttons"
+    },
+    {
+      "path": "/explore/browse?use=monitoring",
+      "status": 308,
+      "location": "http://127.0.0.1:8787/explore?use=monitoring"
+    },
+    {
+      "path": "/zh/explore/browse?use=monitoring",
+      "status": 308,
+      "location": "http://127.0.0.1:8787/zh/explore?use=monitoring"
+    }
+  ],
+  "rsc": [
+    {
+      "route": "/docs/installation",
+      "status": 200,
+      "contentType": "text/x-component",
+      "rscStatic": "rsc",
+      "hasExpectedLanguage": true
+    },
+    {
+      "route": "/zh/docs/installation",
+      "status": 200,
+      "contentType": "text/x-component",
+      "rscStatic": "rsc",
+      "hasExpectedLanguage": true
+    }
+  ],
+  "hydration": [
+    {
+      "start": "/docs",
+      "url": "http://127.0.0.1:8787/docs/installation",
+      "heading": "Installation",
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "start": "/zh/docs",
+      "url": "http://127.0.0.1:8787/zh/docs/installation",
+      "heading": "安装",
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "start": "/blocks",
+      "url": "http://127.0.0.1:8787/blocks?category=marketing",
+      "filterPressed": "page",
+      "errors": []
+    }
+  ],
+  "failures": []
+}

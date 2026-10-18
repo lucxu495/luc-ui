@@ -1,0 +1,188 @@
+{
+  "target": "http://127.0.0.1:8787/docs",
+  "status": 200,
+  "bytes": 81597,
+  "wallMs": 35.01,
+  "sampledMs": 104.32,
+  "sampledSelfMs": 104.37,
+  "idleMs": 72.83,
+  "nonIdleMs": 31.54,
+  "gcMs": 0.8,
+  "topSelfTime": [
+    {
+      "function": "(idle)",
+      "location": "(native):0",
+      "selfMs": 72.83
+    },
+    {
+      "function": "(program)",
+      "location": "(native):0",
+      "selfMs": 5.28
+    },
+    {
+      "function": "readableAddChunkPushByteMode",
+      "location": "node-internal:streams_readable:470",
+      "selfMs": 3.6
+    },
+    {
+      "function": "getMaybePagePath",
+      "location": "worker.js:295217",
+      "selfMs": 2.81
+    },
+    {
+      "function": "nL",
+      "location": "worker.js:95895",
+      "selfMs": 2.45
+    },
+    {
+      "function": "(anonymous)",
+      "location": "worker.js:103074",
+      "selfMs": 2.33
+    },
+    {
+      "function": "v",
+      "location": "worker.js:103980",
+      "selfMs": 0.89
+    },
+    {
+      "function": "(garbage collector)",
+      "location": "(native):0",
+      "selfMs": 0.8
+    },
+    {
+      "function": "(anonymous)",
+      "location": "worker.js:118822",
+      "selfMs": 0.77
+    },
+    {
+      "function": "(anonymous)",
+      "location": "worker.js:1040",
+      "selfMs": 0.68
+    },
+    {
+      "function": "normalizePathSep",
+      "location": "worker.js:9798",
+      "selfMs": 0.64
+    },
+    {
+      "function": "module.exports",
+      "location": "worker.js:273413",
+      "selfMs": 0.63
+    },
+    {
+      "function": "eC",
+      "location": "worker.js:105396",
+      "selfMs": 0.56
+    },
+    {
+      "function": "resume",
+      "location": "node-internal:streams_readable:1248",
+      "selfMs": 0.52
+    },
+    {
+      "function": "URL",
+      "location": "(native):0",
+      "selfMs": 0.51
+    },
+    {
+      "function": "a2",
+      "location": "worker.js:94806",
+      "selfMs": 0.31
+    },
+    {
+      "function": "getIncrementalCache",
+      "location": "worker.js:306025",
+      "selfMs": 0.27
+    },
+    {
+      "function": "instantiateModule",
+      "location": "worker.js:289838",
+      "selfMs": 0.26
+    },
+    {
+      "function": "eW",
+      "location": "worker.js:105758",
+      "selfMs": 0.26
+    },
+    {
+      "function": "n",
+      "location": "worker.js:273313",
+      "selfMs": 0.25
+    },
+    {
+      "function": "L",
+      "location": "worker.js:94875",
+      "selfMs": 0.25
+    },
+    {
+      "function": "ah",
+      "location": "worker.js:97106",
+      "selfMs": 0.24
+    },
+    {
+      "function": "al",
+      "location": "worker.js:96308",
+      "selfMs": 0.18
+    },
+    {
+      "function": "(anonymous)",
+      "location": "worker.js:109192",
+      "selfMs": 0.17
+    },
+    {
+      "function": "(anonymous)",
+      "location": "worker.js:131518",
+      "selfMs": 0.15
+    },
+    {
+      "function": "eP",
+      "location": "worker.js:95069",
+      "selfMs": 0.15
+    },
+    {
+      "function": "(anonymous)",
+      "location": "worker.js:273442",
+      "selfMs": 0.15
+    },
+    {
+      "function": "endReadableNT",
+      "location": "node-internal:streams_readable:1694",
+      "selfMs": 0.15
+    },
+    {
+      "function": "getResponseCache",
+      "location": "worker.js:112679",
+      "selfMs": 0.14
+    },
+    {
+      "function": "(anonymous)",
+      "location": "worker.js:109184",
+      "selfMs": 0.14
+    },
+    {
+      "function": "PassThrough._transform",
+      "location": "node-internal:streams_transform:215",
+      "selfMs": 0.14
+    },
+    {
+      "function": "get",
+      "location": "worker.js:131364",
+      "selfMs": 0.14
+    },
+    {
+      "function": "af",
+      "location": "worker.js:97102",
+      "selfMs": 0.14
+    },
+    {
+      "function": "(anonymous)",
+      "location": "worker.js:286098",
+      "selfMs": 0.14
+    },
+    {
+      "function": "Readable.read",
+      "location": "node-internal:streams_readable:665",
+      "selfMs": 0.14
+    }
+  ]
+}
