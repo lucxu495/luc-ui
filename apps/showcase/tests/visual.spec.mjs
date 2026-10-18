@@ -1,7 +1,7 @@
 /**
  * Visual-regression baselines.
  *
- * Fourteen states, chosen to be *representative and stable* rather than
+ * Fifteen states, chosen to be *representative and stable* rather than
  * exhaustive: the token foundations, the core control, the form-input lane, the
  * four V1.0 primitives, the data lane, the application shell, the workspace, and
  * one provider page under the deterministic stub. Charts are excluded on
@@ -14,7 +14,7 @@
  */
 
 import { expect, test } from "@playwright/test";
-import { existsSync } from "node:fs";
+import { missingHostedBaseline } from "./baseline-host.mjs";
 import { installProviderStubOnContext } from "../qa/provider.mjs";
 import { readThrough } from "../qa/readiness.mjs";
 
@@ -27,19 +27,15 @@ const SETTLE_MS = 300;
  * baseline into the repository ("A snapshot doesn't exist … writing actual") or
  * fails for a reason that is not a defect. Neither is a QA result.
  *
- * `skipHosted` makes that explicit instead: the run reports a skip naming the
- * missing host, the Linux run still asserts, and nothing is written. The
- * Showcase's own set (`tests/showcase.spec.mjs`) *is* captured on this machine,
- * which is where Mac coverage comes from.
+ * `requireHostedBaseline` makes that explicit instead: the run reports a skip
+ * naming the missing host, every existing baseline still asserts, and nothing
+ * is written. The Showcase's own set (`tests/showcase.spec.mjs`) has both
+ * Darwin and Linux baselines, so macOS local runs still cover a representative
+ * product surface set.
  */
-const HOST = process.platform === "darwin" ? "darwin" : "linux";
-const skipHosted = (testInfo, name) =>
-  !existsSync(testInfo.snapshotPath(name)) &&
-  `no ${HOST} baseline for ${name} — this set is captured on Linux (ADR-036: never diff across hosts)`;
-
 /** Skip the current test, with a reason, when this host has no baseline for it. */
 function requireHostedBaseline(testInfo, name) {
-  const reason = skipHosted(testInfo, name);
+  const reason = missingHostedBaseline(testInfo, name);
   if (reason) test.skip(true, reason);
 }
 

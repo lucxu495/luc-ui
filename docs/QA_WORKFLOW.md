@@ -24,11 +24,11 @@ Read §7 before running anything.
 | `pnpm qa:quick` | the **default loop**: routes affected by the diff (alias of `qa:changed` with the bounded 2 workers) | **~1 min** | while iterating on UI |
 | `pnpm qa:charts` | the chart-primitive loop: affected chart routes only | **~30 s** | while iterating on a chart |
 | `pnpm qa:changed` | routes reachable from the working-tree diff: dark + light + mobile, axe, screenshots, console + hydration | **~1 min** | while iterating on UI |
-| `pnpm qa:behaviour` | all 71 behaviour checks, no route sweep | **~1.7 min** | after touching behaviour/ARIA |
-| `pnpm qa:live` | the 71 behaviour checks on the running Showcase (alias of `qa:behaviour`): the real-browser interaction tier | **~1.7 min** | when interaction is what changed |
-| `pnpm qa:full` | all 101 registered routes + all 71 behaviour checks, deterministic provider | **~5 min** | end of a feature set |
+| `pnpm qa:behaviour` | all 155 behaviour checks, no route sweep | **~4 min** | after touching behaviour/ARIA |
+| `pnpm qa:live` | the 155 behaviour checks on the running Showcase (alias of `qa:behaviour`): the real-browser interaction tier | **~4 min** | when interaction is what changed |
+| `pnpm qa:full` | all 357 registered routes + all 155 behaviour checks, deterministic provider | **~15 min** | end of a feature set |
 | `pnpm qa:providers` | live TradingView: all 10 provider routes swept + the wrapper contract asserted | **~1.1 min** | before freezing/release |
-| `pnpm qa:baseline` | 15 pixel-diff baselines | **~26 s** | before freezing/release |
+| `pnpm qa:baseline` | 25 host-local pixel baselines (10 on macOS, 25 on Linux) | **~25 s** | before freezing/release |
 | `pnpm qa:release` | `verify` → `qa:preview-inputs` → `qa:full` → `qa:product` → `qa:providers` → `qa:baseline` | **~15 min** | release/freeze only |
 
 Every command above starts (and, when the source hash changed, rebuilds) the
@@ -55,12 +55,13 @@ image and container names are now the standalone ones above.
 
 ### Host policy, concurrency and caches (ADR-036)
 
-- **Visual acceptance is Mac-first.** Do component/visual/interaction work in a
-  real desktop browser (Chrome, and WebKit before calling it done); the Linux host
-  is for integration, Docker build verification and final representative smoke
-  tests. Never diff a Linux-headless screenshot against a Mac-Retina baseline:
-  baselines are per-host, with viewport, DPR, fonts, locale, theme, animation
-  state and data as-of fixed. `qa:baseline` is a Mac/release activity.
+- **Visual baselines are host-local and both hosts are covered.** The 10
+  Showcase surfaces have committed Darwin and Linux baselines; the 15 library
+  surfaces currently have Linux baselines. Never diff a Linux-headless
+  screenshot against a Mac-Retina baseline: baselines are per-host, with
+  viewport, DPR, fonts, locale, theme, animation state and data as-of fixed.
+  macOS runs the 10 Showcase assertions and reports the 15 Linux-only tests as
+  skips; the mandatory Linux CI job asserts all 25.
 - **Concurrency is bounded in code**: workers default to **2** and are clamped at
   **4** (`apps/showcase/qa/config.mjs`). One worker holds a desktop context and a
   lazily created mobile one, so the pages really in flight are roughly twice the
@@ -214,15 +215,22 @@ lost five one-line wrappers, and the V2 pages lost the material that moved behin
 the example disclosures). Those four baselines are re-generated in this commit,
 which is the review event this file asks for.
 
-`tests/visual.spec.mjs` is a different case: its committed set is the **Linux**
-one, and on a Mac there is no `-chromium-darwin` snapshot to diff against.
-Playwright's response to a missing snapshot is to write one into the repository,
-which would commit fifteen unreviewed baselines from a single run; failing
-instead would report a defect that is not one. `requireHostedBaseline` skips with
-the reason named ("no darwin baseline for … — this set is captured on Linux"),
-so the run says out loud what it covered. On this host that is 10 passed, 15
-skipped; the Linux run still asserts all 15, and Mac coverage comes from
-`tests/showcase.spec.mjs`, which is captured here.
+Playwright's response to a missing snapshot is to write one into the repository.
+That is never an acceptable CI outcome: a missing platform baseline would become
+an unreviewed baseline from whichever runner happened to execute first. The two
+suites now share `tests/baseline-host.mjs`; `requireHostedBaseline` reports the
+missing host as a skip with an ADR-036 reason, while every baseline that does
+exist still asserts normally.
+
+The committed set is:
+
+- `tests/visual.spec.mjs`: 15 Linux library surfaces;
+- `tests/showcase.spec.mjs`: 10 Showcase surfaces on Darwin and Linux.
+
+On macOS the local result is 10 passed and 15 skipped. The mandatory
+`visual regression (Linux baselines)` CI job asserts all 25. Baselines are only
+updated after the expected/actual/diff review recorded in
+[`audits/RELEASE_V1_0_1_VISUAL_ACCEPTANCE.md`](./audits/RELEASE_V1_0_1_VISUAL_ACCEPTANCE.md).
 
 ---
 
