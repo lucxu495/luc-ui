@@ -3,6 +3,12 @@
 All notable changes to `@luc/ui`. The foundation rounds (V0.1–V0.6) shipped as
 a single uncommitted working tree; V1.0 is the first frozen release.
 
+## 1.1.0 — 2026-10-28
+
+Adds professional financial crosshair and TradingView-style axis drag scaling for Cartesian ECharts charts. New optional `crosshair` and `axisDrag` controls default to enabled, with `crosshair: false` preserving Tooltip behavior. Includes independent dual-Y-axis labels (including percentage/USD units), time-axis labels, axis-specific scaling/reset, mouse and mobile gestures, accessibility/theme support, and fixes for Brush registration and invalid-time Tooltip handling.
+
+Existing Luc UI consumers should update their pinned Git tag to `v1.1.0` and verify chart interactions; unrelated chart types are unaffected.
+
 ## 1.0.1 — 2026-10-18
 
 `@luc/ui@1.0.1` is the second public Git-tag release. It is available from the

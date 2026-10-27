@@ -4,14 +4,13 @@
 points at a commit whose root is the built package. This document is the
 contract: what a release is, how to make one, and what a consumer can rely on.
 
-Current public state: package `1.0.1`, tag `v1.0.1`, published in GitHub
-Releases. The release tree commit is the commit returned by
-`git rev-parse v1.0.1^{}`. The tags are immutable. See
+Current public state: package `1.1.0`, tag `v1.1.0`, published as a Git tag. The release tree commit is the commit returned by
+`git rev-parse v1.1.0^{}`. The tags are immutable. See
 [OPEN_SOURCE_RELEASE_CHECKLIST.md](./OPEN_SOURCE_RELEASE_CHECKLIST.md) before
 cutting a successor.
 
 ```bash
-pnpm add @luc/ui@github:lucxu495/luc-ui#v1.0.1
+pnpm add @luc/ui@github:lucxu495/luc-ui#v1.1.0
 ```
 
 ## Release `1.0.1`
