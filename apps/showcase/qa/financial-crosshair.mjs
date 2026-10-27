@@ -348,6 +348,30 @@ try {
       1,
       "after-multi-hover-light.png",
     );
+    const lightMultiBox = await lightMulti.host.boundingBox();
+    await page.mouse.click(
+      lightMultiBox.x + lightMultiBox.width - 65,
+      lightMultiBox.y + 28,
+    );
+    await page.waitForTimeout(150);
+    await page.mouse.move(
+      lightMultiBox.x + lightMultiBox.width * 0.22,
+      lightMultiBox.y + lightMultiBox.height * 0.3,
+    );
+    await page.mouse.down();
+    await page.mouse.move(
+      lightMultiBox.x + lightMultiBox.width * 0.48,
+      lightMultiBox.y + lightMultiBox.height * 0.7,
+      { steps: 10 },
+    );
+    await page.mouse.up();
+    await page.waitForTimeout(200);
+    await shot(lightMulti.wrapper, "after-brush-light.png");
+    await page.mouse.click(
+      lightMultiBox.x + lightMultiBox.width - 42,
+      lightMultiBox.y + 28,
+    );
+    await page.waitForTimeout(150);
     await page.mouse.move(3, 3);
     await page.waitForTimeout(250);
     await assertHidden(lightMulti.host);
@@ -409,6 +433,7 @@ try {
       dual: true,
       multi: true,
       xAxisDrag: true,
+      brush: true,
       mouseLeave: true,
       snapToggle: true,
       disabledCrosshair: true,
