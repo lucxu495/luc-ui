@@ -25,6 +25,64 @@
   outline: none;
 }
 
+/*
+ * Pointer state is set from the chart instance, not React. Only the explicit
+ * plot state overrides ZRender's own cursor, so legend, toolbox, Brush and the
+ * DataZoom slider keep their native affordances.
+ */
+.luc-chart-surface[data-crosshair-state="plot"] canvas {
+  cursor: crosshair !important;
+}
+
+.luc-chart-surface[data-crosshair-state="axis-x"] canvas,
+.luc-chart-surface[data-crosshair-state="axis-x-drag"] canvas {
+  cursor: ew-resize !important;
+}
+
+.luc-chart-surface[data-crosshair-state="axis-y"] canvas,
+.luc-chart-surface[data-crosshair-state="axis-y-drag"] canvas {
+  cursor: ns-resize !important;
+}
+
+.luc-chart-surface[data-crosshair-state="plot-drag"] canvas {
+  cursor: grabbing !important;
+}
+
+/* --- Per-axis crosshair labels ------------------------------------------ */
+
+.luc-chart-axis-labels {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.luc-chart-axis-label {
+  position: absolute;
+  padding: 3px 6px;
+  border-radius: 4px;
+  background: var(--chart-crosshair-label-bg);
+  color: var(--chart-crosshair-label-fg);
+  font-family: var(--font-sans);
+  font-size: var(--text-micro);
+  font-weight: 450;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "cv05" 1;
+  line-height: 1.2;
+  white-space: nowrap;
+  transform: translateY(-50%);
+  transition: none;
+}
+
+.luc-chart-axis-label[data-side="left"] {
+  left: 2px;
+}
+
+.luc-chart-axis-label[data-side="right"] {
+  right: 2px;
+}
+
 /* --- Tooltip ------------------------------------------------------------- */
 
 .luc-chart-tooltip {

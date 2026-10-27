@@ -41,6 +41,11 @@ describe("time axis labels follow the visible span", () => {
     expect(timeAxisFormatter(90 * DAY)(autumn)).toBe("Sep");
     expect(timeAxisFormatter(5 * DAY)(autumn)).toBe("Sep 25");
   });
+
+  it("is total for an axis pointer that has no valid coordinate yet", () => {
+    expect(timeAxisFormatter(5 * DAY)(Number.NaN)).toBe("");
+    expect(timeAxisFormatter(5 * DAY)(Number.POSITIVE_INFINITY)).toBe("");
+  });
 });
 
 describe("formatChartValue", () => {

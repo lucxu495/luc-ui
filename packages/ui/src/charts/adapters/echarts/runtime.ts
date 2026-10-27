@@ -95,6 +95,13 @@ export function loadECharts(): Promise<EChartsModule> {
       components.VisualMapPiecewiseComponent,
       components.CalendarComponent,
       components.BrushComponent,
+      /*
+       * Brush stores its clear/select controls in the toolbox. Registering
+       * Brush alone accepts the option but leaves ECharts emitting a runtime
+       * "ToolboxComponent is used but not imported" error whenever the reader
+       * enables brush selection.
+       */
+      components.ToolboxComponent,
       components.PolarComponent,
       components.RadarComponent,
       components.ParallelComponent,

@@ -37,6 +37,7 @@
     "qa:card-stack": "node qa/card-stack.mjs",
     "qa:charts:geometry": "node qa/chart-geometry.mjs",
     "qa:charts:assert": "node qa/chart-assertions.mjs",
+    "qa:financial-crosshair": "node qa/financial-crosshair.mjs",
     "qa:charts:thumbnails": "node qa/chart-thumbnails.mjs",
     "qa:baseline": "playwright test -c playwright.config.mjs",
     "qa:baseline:update": "playwright test -c playwright.config.mjs --update-snapshots",

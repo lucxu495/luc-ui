@@ -31,6 +31,7 @@ describe("the ECharts runtime registration", () => {
       "components.GridComponent",
       "components.TooltipComponent",
       "components.DataZoomComponent",
+      "components.ToolboxComponent",
       "renderers.CanvasRenderer",
     ]) {
       expect(source).toContain(component);

@@ -32,6 +32,7 @@ import {
 import {
   axisFragment,
   baseOption,
+  buildCartesianCrosshairOptions,
   dataZoomFragment,
   gridForSides,
   tooltipShell,
@@ -716,6 +717,40 @@ export function buildCartesianOption(input: CartesianInput): Option {
           }),
         ];
 
+  const crosshair = buildCartesianCrosshairOptions(
+    theme,
+    spec.interaction?.crosshair,
+  );
+  /*
+   * Merge the shared policy into each actual axis rather than setting
+   * `type: "cross"` mechanically. The X axis owns snapping and the visible
+   * time label; every Y plate owns the same horizontal line and retains its
+   * formatter for the renderer's per-axis HTML label.
+   */
+  const withAxisPointer = (axis: Option, pointer: Option, labelVisible: boolean): Option => {
+    const current = (axis.axisPointer ?? {}) as Record<string, unknown>;
+    const currentLabel = (current.label ?? {}) as Record<string, unknown>;
+    const pointerLabel = (pointer.label ?? {}) as Record<string, unknown>;
+    return {
+      ...axis,
+      axisPointer: {
+        ...current,
+        ...pointer,
+        label: { ...currentLabel, ...pointerLabel, show: labelVisible },
+      },
+    };
+  };
+  const crosshairXAxes = xAxes.map((axis) =>
+    withAxisPointer(
+      axis,
+      crosshair.xAxisPointer,
+      ((crosshair.xAxisPointer.label ?? {}) as { show?: boolean }).show ?? true,
+    ),
+  );
+  const crosshairYAxes = finalYAxes.map((axis) =>
+    withAxisPointer(axis, crosshair.yAxisPointer, false),
+  );
+
   const metaById = new Map<string, TooltipSeriesMeta>();
   spec.series.forEach((series, index) => {
     // A tooltip row inherits the format of the axis its series is bound to, so a
@@ -811,6 +846,7 @@ export function buildCartesianOption(input: CartesianInput): Option {
       ? tooltipShell(theme, { formatter: () => "", mode: "none" })
       : tooltipShell(theme, {
           mode: spec.tooltip?.mode ?? (family === "scatter" || family === "bubble" ? "item" : "axis"),
+          crosshair: spec.interaction?.crosshair ?? true,
           formatter:
             family === "scatter" || family === "bubble"
               ? itemScatterFormatter(input)
@@ -842,6 +878,7 @@ export function buildCartesianOption(input: CartesianInput): Option {
     theme,
     interaction: spec.interaction,
     axisIndices: categoryX ? [0] : [0],
+    dragOnly: spec.interaction?.axisDrag ?? true,
   });
 
   /*
@@ -907,10 +944,17 @@ export function buildCartesianOption(input: CartesianInput): Option {
       finalYAxes.map((axis) => ((axis.position as AxisSide | undefined) ?? DEFAULT_Y_AXIS_SIDE)),
       // The legend lives in the plot's own rectangle, so the reading area has to
       // give up the band it occupies — otherwise the control covers the axis.
-      showLegend ? { bottom: LEGEND_BAND_PX } : {},
+      showLegend
+        ? {
+            bottom:
+              LEGEND_BAND_PX + (spec.interaction?.zoom === "slider" ? 28 : 0),
+          }
+        : spec.interaction?.zoom === "slider"
+          ? { bottom: 44 }
+          : {},
     ),
-    xAxis: xAxes,
-    yAxis: finalYAxes,
+    xAxis: crosshairXAxes,
+    yAxis: crosshairYAxes,
     series: [...seriesOptions, ...currentPointSeries],
     tooltip,
     ...legendFragment,

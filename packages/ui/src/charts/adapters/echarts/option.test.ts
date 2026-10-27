@@ -3,6 +3,7 @@ import {
   animationFragment,
   axisFragment,
   baseOption,
+  buildCartesianCrosshairOptions,
   dataZoomFragment,
   gridFragment,
   tooltipShell,
@@ -131,6 +132,49 @@ describe("tooltipShell", () => {
 
   it("can be switched off entirely", () => {
     expect(tooltipShell(THEME, { formatter: () => "", mode: "none" })).toEqual({ show: false });
+  });
+
+  it("does not turn a non-Cartesian item tooltip into a crosshair", () => {
+    const shell = tooltipShell(THEME, { formatter: () => "", mode: "item" }) as {
+      axisPointer?: { type?: string };
+    };
+    expect(shell.axisPointer?.type).toBe("none");
+  });
+});
+
+describe("cartesian crosshair policy", () => {
+  it("uses one native cross, snaps X and leaves Y continuous", () => {
+    const fragments = buildCartesianCrosshairOptions(THEME);
+    expect(fragments.tooltipAxisPointer).toMatchObject({
+      type: "cross",
+      axis: "x",
+      lineStyle: { color: THEME.crosshair, width: 1, type: "solid" },
+      label: { show: true },
+    });
+    expect(fragments.xAxisPointer).toMatchObject({ snap: true, label: { show: true } });
+    expect(fragments.yAxisPointer).toMatchObject({ snap: false, label: { show: false } });
+  });
+
+  it("allows X to follow continuously without changing the Y policy", () => {
+    const fragments = buildCartesianCrosshairOptions(THEME, { snap: false });
+    expect(fragments.xAxisPointer.snap).toBe(false);
+    expect(fragments.yAxisPointer.snap).toBe(false);
+  });
+
+  it("can disable drawing while keeping the axis Tooltip's data model", () => {
+    const fragments = buildCartesianCrosshairOptions(THEME, false);
+    expect(fragments.tooltipAxisPointer).toMatchObject({
+      type: "none",
+      show: true,
+      triggerTooltip: true,
+      label: { show: false },
+    });
+    expect(fragments.xAxisPointer).toMatchObject({
+      show: "auto",
+      triggerTooltip: true,
+      lineStyle: { opacity: 0 },
+      label: { show: false },
+    });
   });
 });
 
@@ -450,6 +494,93 @@ describe("buildCartesianOption", () => {
     expect(option.yAxis).toHaveLength(2);
     expect(option.series[0]).toMatchObject({ id: "close", yAxisIndex: 0 });
     expect(option.series[1]).toMatchObject({ id: "other", yAxisIndex: 1 });
+  });
+
+  it("builds a crosshair whose two Y plates retain their own formatters", () => {
+    const option = buildCartesianOption({
+      spec: {
+        family: "line",
+        xKey: "time",
+        x: { type: "time" },
+        interaction: { zoom: "none" },
+        axes: [
+          { id: "ratio", position: "left", format: { kind: "percent", decimals: 1 } },
+          { id: "price", position: "right", format: { kind: "currency", currency: "USD", decimals: 0 } },
+        ],
+        series: [
+          { key: "ratio", axis: "ratio" },
+          { key: "price", axis: "price" },
+        ],
+      },
+      theme: THEME,
+      motion: MOTION,
+      normalized: normalizeTabular(rows, "time"),
+    }) as {
+      tooltip: { axisPointer: { type?: string; axis?: string; label?: { show?: boolean } } };
+      xAxis: Array<{
+        axisPointer: {
+          snap?: boolean;
+          label: { show?: boolean; formatter?: (value: number) => string };
+        };
+      }>;
+      yAxis: Array<{
+        position?: string;
+        axisPointer: {
+          snap?: boolean;
+          label: { show?: boolean; formatter?: (value: number) => string };
+        };
+      }>;
+      dataZoom: Array<{ type?: string; zoomOnMouseWheel?: boolean; moveOnMouseMove?: boolean }>;
+    };
+    expect(option.tooltip.axisPointer).toMatchObject({
+      type: "cross",
+      axis: "x",
+      label: { show: true },
+    });
+    expect(option.xAxis[0]!.axisPointer).toMatchObject({ snap: true, label: { show: true } });
+    expect(option.xAxis[0]!.axisPointer.label.formatter!(Date.UTC(2026, 0, 2))).toBe("Jan 26");
+    expect(option.yAxis.map((axis) => axis.position)).toEqual(["left", "right"]);
+    expect(option.yAxis[0]!.axisPointer.snap).toBe(false);
+    expect(option.yAxis[1]!.axisPointer.snap).toBe(false);
+    expect(option.yAxis[0]!.axisPointer.label.show).toBe(false);
+    expect(option.yAxis[1]!.axisPointer.label.show).toBe(false);
+    expect(option.yAxis[0]!.axisPointer.label.formatter!(52.4)).toContain("%");
+    expect(option.yAxis[1]!.axisPointer.label.formatter!(84_250)).toContain("$");
+    // Axis dragging has a range model even when wheel zoom is off, but it does
+    // not steal wheel or plot-drag input.
+    expect(option.dataZoom[0]).toMatchObject({
+      type: "inside",
+      zoomOnMouseWheel: false,
+      moveOnMouseMove: false,
+    });
+  });
+
+  it("emits no visible pointer or label when crosshair is explicitly off", () => {
+    const option = buildCartesianOption({
+      spec: {
+        family: "line",
+        xKey: "time",
+        interaction: { crosshair: false, axisDrag: false, zoom: "none" },
+        series: [{ key: "close" }],
+      },
+      theme: THEME,
+      motion: MOTION,
+      normalized: normalizeTabular(rows, "time"),
+    }) as {
+      tooltip: { axisPointer: { type?: string; show?: boolean; label?: { show?: boolean } } };
+      xAxis: Array<{ axisPointer: { lineStyle: { opacity?: number }; label: { show?: boolean } } }>;
+      yAxis: Array<{ axisPointer: { show?: boolean; label: { show?: boolean } } }>;
+      dataZoom?: unknown[];
+    };
+    expect(option.tooltip.axisPointer).toMatchObject({
+      type: "none",
+      show: true,
+      label: { show: false },
+    });
+    expect(option.xAxis[0]!.axisPointer.lineStyle.opacity).toBe(0);
+    expect(option.xAxis[0]!.axisPointer.label.show).toBe(false);
+    expect(option.yAxis[0]!.axisPointer).toMatchObject({ show: false, label: { show: false } });
+    expect(option.dataZoom).toBeUndefined();
   });
 
   it("lets a caller reach the assembled option through extendOption", () => {

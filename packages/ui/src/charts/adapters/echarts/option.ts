@@ -8,7 +8,7 @@
  */
 
 import type { ChartTheme } from "../../core/theme";
-import type { ChartFormat, ChartInteractionSpec } from "../../types";
+import type { ChartCrosshairSpec, ChartFormat, ChartInteractionSpec } from "../../types";
 import { ECHARTS_GLOBAL_OPTION } from "./echart-init";
 import { timeAxisFormatter, timeAxisTickPlan, numericAxisFormatter } from "../../core/formatters";
 import {
@@ -310,13 +310,26 @@ export function axisFragment(options: AxisFragmentOptions): Option {
       lineStyle: { color: theme.grid, width: 1 },
     },
     axisPointer: {
-      lineStyle: { color: theme.crosshair, width: 1 },
-      label: axisPointerLabel(theme),
+      lineStyle: crosshairLineStyle(theme),
+      label: axisPointerLabel(theme, tickFormatter ?? undefined),
     },
   };
 }
 
-export function axisPointerLabel(theme: ChartTheme): Option {
+/** The single line treatment used by both axes and the Tooltip's cross pointer. */
+export function crosshairLineStyle(theme: ChartTheme): Option {
+  return {
+    color: theme.crosshair,
+    width: 1,
+    type: "solid",
+    opacity: 1,
+  };
+}
+
+export function axisPointerLabel(
+  theme: ChartTheme,
+  formatter?: (value: number) => string,
+): Option {
   return {
     backgroundColor: theme.crosshairLabelBg,
     color: theme.crosshairLabelFg,
@@ -325,6 +338,104 @@ export function axisPointerLabel(theme: ChartTheme): Option {
     fontWeight: AXIS_FONT_WEIGHT,
     borderRadius: 4,
     padding: [3, 6],
+    margin: 5,
+    shadowBlur: 0,
+    shadowColor: "transparent",
+    ...(formatter ? { formatter } : {}),
+  };
+}
+
+export interface CartesianCrosshairFragments {
+  tooltipAxisPointer: Option;
+  xAxisPointer: Option;
+  yAxisPointer: Option;
+}
+
+/**
+ * Build the one Cartesian crosshair policy shared by every declarative chart.
+ *
+ * In ECharts, `tooltip.axisPointer.type = "cross"` asks the Tooltip machinery
+ * to involve both dimensions; an axis-level `type: "cross"` is a different
+ * setting and would make each plate draw its own pointer. The base X pointer
+ * therefore stays a line, snaps X to the nearest valid observation, and lets
+ * Y follow the pointer continuously. Axis-specific line/label configuration is
+ * merged after this fragment so a chart may override only its own semantics.
+ */
+export function buildCartesianCrosshairOptions(
+  theme: ChartTheme,
+  policy: boolean | ChartCrosshairSpec | undefined = true,
+): CartesianCrosshairFragments {
+  const enabled = typeof policy === "boolean" ? policy : (policy?.enabled ?? true);
+  const snap = typeof policy === "object" ? (policy.snap ?? true) : true;
+  const lineStyle = crosshairLineStyle(theme);
+  const label = { ...axisPointerLabel(theme), show: enabled };
+
+  if (!enabled) {
+    const invisibleLine = { ...lineStyle, opacity: 0 };
+    return {
+      /*
+       * A fully hidden AxisPointer also removes the axis Tooltip's data input.
+       * Keep the model and its data selection, but draw neither line nor label.
+       */
+      tooltipAxisPointer: {
+        type: "none",
+        axis: "x",
+        show: true,
+        snap,
+        triggerTooltip: true,
+        lineStyle: invisibleLine,
+        crossStyle: invisibleLine,
+        label: { show: false },
+      },
+      xAxisPointer: {
+        show: "auto",
+        snap,
+        triggerTooltip: true,
+        lineStyle: invisibleLine,
+        label: { show: false },
+      },
+      yAxisPointer: { show: false, label: { show: false } },
+    };
+  }
+
+  return {
+    tooltipAxisPointer: {
+      type: "cross",
+      /*
+       * Declare time as the Tooltip's base axis explicitly. With two value
+       * plates, "auto" can leave the axis-trigger model without the series set
+       * it needs, which draws a pointer but no Tooltip rows.
+       */
+      axis: "x",
+      show: true,
+      snap,
+      triggerTooltip: true,
+      animation: false,
+      z: 50,
+      lineStyle,
+      crossStyle: lineStyle,
+      label,
+    },
+    xAxisPointer: {
+      show: "auto",
+      snap,
+      triggerTooltip: true,
+      triggerEmphasis: true,
+      animation: false,
+      lineStyle,
+      label: { ...label, show: true },
+    },
+    yAxisPointer: {
+      show: "auto",
+      snap: false,
+      triggerTooltip: false,
+      triggerEmphasis: false,
+      animation: false,
+      lineStyle,
+      // ECharts' cross Tooltip only reports the first Y axis. The renderer
+      // draws a token-backed label for every Y plate at the live pixel instead.
+      label: { ...label, show: false },
+    },
   };
 }
 
@@ -334,9 +445,14 @@ export function tooltipShell(
     formatter: (params: unknown) => string;
     mode?: "axis" | "item" | "none";
     pointer?: boolean;
+    crosshair?: boolean | ChartCrosshairSpec;
   },
 ): Option {
   if (options.mode === "none") return { show: false };
+  const crosshair = buildCartesianCrosshairOptions(
+    theme,
+    options.crosshair ?? (options.mode === "axis" ? true : false),
+  );
   return {
     show: true,
     trigger: options.mode ?? "axis",
@@ -352,14 +468,33 @@ export function tooltipShell(
     textStyle: { color: theme.textPrimary, fontFamily: theme.fontFamily },
     extraCssText: "pointer-events:none;box-shadow:none;background:transparent;border:0;padding:0;",
     formatter: options.formatter,
-    axisPointer:
-      options.mode === "item"
-        ? { type: "none" }
-        : {
-            type: "line",
-            lineStyle: { color: theme.crosshair, width: 1, type: "solid" },
-            label: axisPointerLabel(theme),
-          },
+    /*
+     * Cartesian scatter/bubble charts opt into the cross even in item-tooltip
+     * mode. Non-Cartesian item families default to no pointer, so a pie does
+     * not inherit a Cartesian reading aid it cannot express.
+     */
+    axisPointer: crosshair.tooltipAxisPointer,
+    /*
+     * Keep the panel clear of both the pointer and the reserved axis label
+     * gutters. The callback runs inside ECharts and never causes a React render.
+     */
+    position: (
+      point: [number, number],
+      _params: unknown,
+      dom: HTMLElement,
+      _rect: unknown,
+      size: { viewWidth: number; viewHeight: number; contentWidth: number; contentHeight: number },
+    ) => {
+      const gap = 12;
+      const width = dom.offsetWidth || size.contentWidth || 160;
+      const height = dom.offsetHeight || size.contentHeight || 72;
+      const x =
+        point[0] + gap + width > size.viewWidth
+          ? Math.max(gap, point[0] - width - gap)
+          : point[0] + gap;
+      const y = Math.min(Math.max(gap, point[1] + gap), Math.max(gap, size.viewHeight - height - gap));
+      return [x, y];
+    },
   };
 }
 
@@ -370,11 +505,25 @@ export interface ZoomOptions {
   theme: ChartTheme;
   /** Trailing window as a percentage pair, e.g. `{ start: 60, end: 100 }`. */
   start?: number;
+  /**
+   * Keep a non-interactive range model when wheel zoom is off so direct X-axis
+   * drag scaling can dispatch `dataZoom`.
+   */
+  dragOnly?: boolean;
 }
 
 export function dataZoomFragment(options: ZoomOptions): Option[] {
   const zoom = options.interaction?.zoom ?? "inside";
-  if (zoom === "none") return [];
+  if (zoom === "none") {
+    return options.dragOnly
+      ? [{
+          type: "inside",
+          ...(options.axisIndices ? { xAxisIndex: options.axisIndices } : {}),
+          zoomOnMouseWheel: false,
+          moveOnMouseMove: false,
+        }]
+      : [];
+  }
   const theme = options.theme;
   const shared: Option = {
     ...(options.axisIndices ? { xAxisIndex: options.axisIndices } : {}),
