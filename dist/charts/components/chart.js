@@ -54,7 +54,7 @@ function fallbackChartLabel(family, series) {
 * all. That is why the states take precedence over the surface rather than
 * rendering on top of it.
 */
-function ChartSurface({ option, xValues, syncGroup, state = "ready", height, className, ariaLabel, ariaDescription, copy, onReady, onEvent, eager, onVisibleSpan, renderer }) {
+function ChartSurface({ option, xValues, syncGroup, state = "ready", height, className, ariaLabel, ariaDescription, copy, onReady, onEvent, eager, onVisibleSpan, renderer, axisDrag }) {
 	const box = (node, compact = false) => /* @__PURE__ */ jsx("div", {
 		className: cn("relative w-full min-h-0", className),
 		style: compact ? void 0 : { height: height ?? "100%" },
@@ -83,7 +83,8 @@ function ChartSurface({ option, xValues, syncGroup, state = "ready", height, cla
 		onEvent,
 		eager,
 		onVisibleSpan,
-		renderer
+		renderer,
+		axisDrag
 	}));
 }
 /**
@@ -151,7 +152,8 @@ function Chart({ spec, state = "ready", height, className, visibleSeries, ariaLa
 		onEvent,
 		eager,
 		onVisibleSpan: normalized.kind === "time" ? handleVisibleSpan : void 0,
-		renderer: spec.renderer
+		renderer: spec.renderer,
+		axisDrag: spec.interaction?.axisDrag ?? true
 	});
 }
 /** Standalone plot box for charts that compose their own chrome. */

@@ -2,7 +2,7 @@ import { DEFAULT_Y_AXIS_SIDE, axisBoundFn, normalizeScaleCapability, resolveAxis
 import { cell, extent, seriesValues, toNumber } from "../../core/data.js";
 import { paletteColor, toneColor, withAlpha } from "../../core/theme.js";
 import { resolveFormatter } from "../../core/formatters.js";
-import { axisFragment, baseOption, dataZoomFragment, gridForSides, tooltipShell } from "./option.js";
+import { axisFragment, baseOption, buildCartesianCrosshairOptions, dataZoomFragment, gridForSides, tooltipShell } from "./option.js";
 import { annotationMarks } from "./marks.js";
 import { axisTooltipFormatter, escapeHtml, tooltipGridHtml, tooltipRuleHtml, tooltipShellHtml } from "../../core/tooltip-html.js";
 //#region src/charts/adapters/echarts/cartesian.ts
@@ -470,6 +470,26 @@ function buildCartesianOption(input) {
 		position: DEFAULT_Y_AXIS_SIDE,
 		format: spec.series[0]?.format
 	})];
+	const crosshair = buildCartesianCrosshairOptions(theme, spec.interaction?.crosshair);
+	const withAxisPointer = (axis, pointer, labelVisible) => {
+		const current = axis.axisPointer ?? {};
+		const currentLabel = current.label ?? {};
+		const pointerLabel = pointer.label ?? {};
+		return {
+			...axis,
+			axisPointer: {
+				...current,
+				...pointer,
+				label: {
+					...currentLabel,
+					...pointerLabel,
+					show: labelVisible
+				}
+			}
+		};
+	};
+	const crosshairXAxes = xAxes.map((axis) => withAxisPointer(axis, crosshair.xAxisPointer, (crosshair.xAxisPointer.label ?? {}).show ?? true));
+	const crosshairYAxes = finalYAxes.map((axis) => withAxisPointer(axis, crosshair.yAxisPointer, false));
 	const metaById = /* @__PURE__ */ new Map();
 	spec.series.forEach((series, index) => {
 		const axisFormat = findAxis(spec.axes, axisIdOf(series)).format;
@@ -543,6 +563,7 @@ function buildCartesianOption(input) {
 		mode: "none"
 	}) : tooltipShell(theme, {
 		mode: spec.tooltip?.mode ?? (family === "scatter" || family === "bubble" ? "item" : "axis"),
+		crosshair: spec.interaction?.crosshair ?? true,
 		formatter: family === "scatter" || family === "bubble" ? itemScatterFormatter(input) : axisTooltipFormatter({
 			theme,
 			metaById,
@@ -562,7 +583,8 @@ function buildCartesianOption(input) {
 	const zoom = dataZoomFragment({
 		theme,
 		interaction: spec.interaction,
-		axisIndices: categoryX ? [0] : [0]
+		axisIndices: categoryX ? [0] : [0],
+		dragOnly: spec.interaction?.axisDrag ?? true
 	});
 	const legendNames = spec.series.filter((series) => series.legend !== false).map((series) => series.label ?? series.key).filter((name, index, names) => names.indexOf(name) === index);
 	const showLegend = spec.legend === true && legendNames.length >= 2;
@@ -598,9 +620,9 @@ function buildCartesianOption(input) {
 			universal: spec.universalTransition,
 			threshold: spec.pointCount !== void 0 && spec.pointCount > 4e3 ? 1 : void 0
 		}),
-		grid: gridForSides(finalYAxes.map((axis) => axis.position ?? "right"), showLegend ? { bottom: LEGEND_BAND_PX } : {}),
-		xAxis: xAxes,
-		yAxis: finalYAxes,
+		grid: gridForSides(finalYAxes.map((axis) => axis.position ?? "right"), showLegend ? { bottom: LEGEND_BAND_PX + (spec.interaction?.zoom === "slider" ? 28 : 0) } : spec.interaction?.zoom === "slider" ? { bottom: 44 } : {}),
+		xAxis: crosshairXAxes,
+		yAxis: crosshairYAxes,
 		series: [...seriesOptions, ...currentPointSeries],
 		tooltip,
 		...legendFragment,

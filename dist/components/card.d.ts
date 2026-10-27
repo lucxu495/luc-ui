@@ -5,7 +5,7 @@ export declare const cardVariants: (props?: ({
   interactive?: boolean | null | undefined;
   interaction?: "interactive" | "static" | "selectable" | "featured" | null | undefined;
   selected?: boolean | null | undefined;
-  padding?: "sm" | "md" | "lg" | "none" | null | undefined;
+  padding?: "none" | "sm" | "md" | "lg" | null | undefined;
 } & import("class-variance-authority/types").ClassProp) | undefined) => string;
 export interface CardProps extends React.ComponentPropsWithRef<"div">, VariantProps<typeof cardVariants> {
   as?: "div" | "article" | "section" | "li" | "button" | "a";

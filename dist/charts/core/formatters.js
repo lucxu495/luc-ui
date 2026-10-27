@@ -142,7 +142,7 @@ function resolveFormatter(series, fallback) {
 function timeAxisFormatter(spanMs) {
 	const options = TIME_AXIS_LABEL_OPTIONS[timeAxisLabelScale(spanMs)];
 	const formatter = new Intl.DateTimeFormat("en-US", options);
-	return (value) => formatter.format(new Date(value));
+	return (value) => Number.isFinite(value) ? formatter.format(new Date(value)) : "";
 }
 const DAY_MS = 864e5;
 function timeAxisLabelScale(spanMs) {

@@ -131,15 +131,21 @@ function axisFragment(options) {
 			}
 		},
 		axisPointer: {
-			lineStyle: {
-				color: theme.crosshair,
-				width: 1
-			},
-			label: axisPointerLabel(theme)
+			lineStyle: crosshairLineStyle(theme),
+			label: axisPointerLabel(theme, tickFormatter ?? void 0)
 		}
 	};
 }
-function axisPointerLabel(theme) {
+/** The single line treatment used by both axes and the Tooltip's cross pointer. */
+function crosshairLineStyle(theme) {
+	return {
+		color: theme.crosshair,
+		width: 1,
+		type: "solid",
+		opacity: 1
+	};
+}
+function axisPointerLabel(theme, formatter) {
 	return {
 		backgroundColor: theme.crosshairLabelBg,
 		color: theme.crosshairLabelFg,
@@ -147,11 +153,102 @@ function axisPointerLabel(theme) {
 		fontSize: theme.fontMicro,
 		fontWeight: 450,
 		borderRadius: 4,
-		padding: [3, 6]
+		padding: [3, 6],
+		margin: 5,
+		shadowBlur: 0,
+		shadowColor: "transparent",
+		...formatter ? { formatter } : {}
+	};
+}
+/**
+* Build the one Cartesian crosshair policy shared by every declarative chart.
+*
+* In ECharts, `tooltip.axisPointer.type = "cross"` asks the Tooltip machinery
+* to involve both dimensions; an axis-level `type: "cross"` is a different
+* setting and would make each plate draw its own pointer. The base X pointer
+* therefore stays a line, snaps X to the nearest valid observation, and lets
+* Y follow the pointer continuously. Axis-specific line/label configuration is
+* merged after this fragment so a chart may override only its own semantics.
+*/
+function buildCartesianCrosshairOptions(theme, policy = true) {
+	const enabled = typeof policy === "boolean" ? policy : policy?.enabled ?? true;
+	const snap = typeof policy === "object" ? policy.snap ?? true : true;
+	const lineStyle = crosshairLineStyle(theme);
+	const label = {
+		...axisPointerLabel(theme),
+		show: enabled
+	};
+	if (!enabled) {
+		const invisibleLine = {
+			...lineStyle,
+			opacity: 0
+		};
+		return {
+			tooltipAxisPointer: {
+				type: "none",
+				axis: "x",
+				show: true,
+				snap,
+				triggerTooltip: true,
+				lineStyle: invisibleLine,
+				crossStyle: invisibleLine,
+				label: { show: false }
+			},
+			xAxisPointer: {
+				show: "auto",
+				snap,
+				triggerTooltip: true,
+				lineStyle: invisibleLine,
+				label: { show: false }
+			},
+			yAxisPointer: {
+				show: false,
+				label: { show: false }
+			}
+		};
+	}
+	return {
+		tooltipAxisPointer: {
+			type: "cross",
+			axis: "x",
+			show: true,
+			snap,
+			triggerTooltip: true,
+			animation: false,
+			z: 50,
+			lineStyle,
+			crossStyle: lineStyle,
+			label
+		},
+		xAxisPointer: {
+			show: "auto",
+			snap,
+			triggerTooltip: true,
+			triggerEmphasis: true,
+			animation: false,
+			lineStyle,
+			label: {
+				...label,
+				show: true
+			}
+		},
+		yAxisPointer: {
+			show: "auto",
+			snap: false,
+			triggerTooltip: false,
+			triggerEmphasis: false,
+			animation: false,
+			lineStyle,
+			label: {
+				...label,
+				show: false
+			}
+		}
 	};
 }
 function tooltipShell(theme, options) {
 	if (options.mode === "none") return { show: false };
+	const crosshair = buildCartesianCrosshairOptions(theme, options.crosshair ?? (options.mode === "axis" ? true : false));
 	return {
 		show: true,
 		trigger: options.mode ?? "axis",
@@ -170,20 +267,23 @@ function tooltipShell(theme, options) {
 		},
 		extraCssText: "pointer-events:none;box-shadow:none;background:transparent;border:0;padding:0;",
 		formatter: options.formatter,
-		axisPointer: options.mode === "item" ? { type: "none" } : {
-			type: "line",
-			lineStyle: {
-				color: theme.crosshair,
-				width: 1,
-				type: "solid"
-			},
-			label: axisPointerLabel(theme)
+		axisPointer: crosshair.tooltipAxisPointer,
+		position: (point, _params, dom, _rect, size) => {
+			const gap = 12;
+			const width = dom.offsetWidth || size.contentWidth || 160;
+			const height = dom.offsetHeight || size.contentHeight || 72;
+			return [point[0] + gap + width > size.viewWidth ? Math.max(gap, point[0] - width - gap) : point[0] + gap, Math.min(Math.max(gap, point[1] + gap), Math.max(gap, size.viewHeight - height - gap))];
 		}
 	};
 }
 function dataZoomFragment(options) {
 	const zoom = options.interaction?.zoom ?? "inside";
-	if (zoom === "none") return [];
+	if (zoom === "none") return options.dragOnly ? [{
+		type: "inside",
+		...options.axisIndices ? { xAxisIndex: options.axisIndices } : {},
+		zoomOnMouseWheel: false,
+		moveOnMouseMove: false
+	}] : [];
 	const theme = options.theme;
 	const shared = {
 		...options.axisIndices ? { xAxisIndex: options.axisIndices } : {},
@@ -238,6 +338,6 @@ function dataZoomFragment(options) {
 	}];
 }
 //#endregion
-export { animationFragment, axisFragment, axisPointerLabel, baseOption, dataZoomFragment, gridForSides, gridFragment, tooltipShell };
+export { animationFragment, axisFragment, axisPointerLabel, baseOption, buildCartesianCrosshairOptions, crosshairLineStyle, dataZoomFragment, gridForSides, gridFragment, tooltipShell };
 
 //# sourceMappingURL=option.js.map

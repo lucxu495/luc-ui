@@ -295,6 +295,18 @@ export interface ChartTooltipSpec {
   /** Always render the tooltip header, even with one series. */
   showTitle?: boolean;
 }
+/**
+ * Cartesian crosshair policy.
+ *
+ * The crosshair follows the pointer on Y while X snaps to an observation by
+ * default, so the Tooltip and its date label always describe the same point.
+ * Set `snap: false` when the X label and both pointer lines should follow the
+ * continuous pointer position; the Tooltip still reads the nearest real row.
+ */
+export interface ChartCrosshairSpec {
+  enabled?: boolean;
+  snap?: boolean;
+}
 export interface ChartInteractionSpec {
   zoom?: "none" | "inside" | "slider";
   pan?: boolean;
@@ -303,6 +315,20 @@ export interface ChartInteractionSpec {
   resetZoom?: boolean;
   /** Auto-zoom to the trailing window on first paint. */
   autoRange?: boolean;
+  /**
+   * Professional X/Y crosshair for declarative Cartesian charts.
+   *
+   * Defaults to enabled. `false` keeps the Tooltip but removes the pointer
+   * lines and axis labels; the object form only changes the X snap policy.
+   */
+  crosshair?: boolean | ChartCrosshairSpec;
+  /**
+   * TradingView-style drag scaling on the time and value axes.
+   *
+   * Defaults to enabled for Cartesian charts. Touch always keeps its native
+   * gesture behaviour; this option owns pointer/mouse axis drags only.
+   */
+  axisDrag?: boolean;
 }
 export interface ChartSpec<TRow extends object = ChartRow> {
   id?: string;

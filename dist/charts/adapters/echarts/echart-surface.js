@@ -6,12 +6,35 @@ import { watchPlateGesture } from "../../core/gesture.js";
 import { useChartId, useLatest } from "../../core/use-chart-theme.js";
 import { ensureSvgRenderer, loadECharts } from "./runtime.js";
 import { useChartArm } from "../../core/use-chart-arm.js";
-import { axisBandAt, plotRect, scaleValueRange, scaleWindow, windowFractions } from "../../core/axis-drag.js";
+import { axisTargetAt, plotRect, scaleValueRange, scaleWindow, windowFractions } from "../../core/axis-drag.js";
 import { ECHARTS_GLOBAL_OPTION, ECHARTS_INIT_OPTIONS } from "./echart-init.js";
 import { collectChartDiagnostics, serializeDiagnostics } from "../../core/diagnostics.js";
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";
 import { useCallback, useEffect, useRef, useState } from "react";
 //#region src/charts/adapters/echarts/echart-surface.tsx
+function axesFromOption(option, key) {
+	const value = option[key];
+	if (Array.isArray(value)) return value;
+	return value && typeof value === "object" ? [value] : [];
+}
+function formatPointerAxisValue(axis, value, gridIndex) {
+	if (typeof value !== "number" || !Number.isFinite(value)) return null;
+	const formatter = axis.axisPointer?.label?.formatter;
+	try {
+		if (typeof formatter === "function") {
+			const formatted = formatter(value, gridIndex);
+			if (formatted === null || formatted === void 0) return null;
+			return String(formatted) || null;
+		}
+	} catch {
+		return null;
+	}
+	if (axis.type === "category" && axis.data) {
+		const index = Math.max(0, Math.min(axis.data.length - 1, Math.round(value)));
+		return axis.data[index] == null ? null : String(axis.data[index]);
+	}
+	return String(value);
+}
 /**
 * The one place ECharts is created, resized, synchronised and disposed.
 *
@@ -19,7 +42,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 * option object and hand it here. That keeps cleanup, resize and cross-chart
 * synchronisation identical for all ~20 chart types.
 */
-function EChartSurface({ option, xValues, syncGroup, className, ariaLabel, ariaDescription, onReady, onEvent, eager = false, onVisibleSpan, renderer = "canvas" }) {
+function EChartSurface({ option, xValues, syncGroup, className, ariaLabel, ariaDescription, onReady, onEvent, eager = false, onVisibleSpan, renderer = "canvas", axisDrag = true }) {
 	const hostRef = useRef(null);
 	const chartRef = useRef(null);
 	const sizeRef = useRef({
@@ -51,7 +74,7 @@ function EChartSurface({ option, xValues, syncGroup, className, ariaLabel, ariaD
 	* changes no time range, so it publishes nothing. `null` means autoscale, which
 	* is also what a double-click on the axis restores.
 	*/
-	const localYRangeRef = useRef(null);
+	const localYRangeRef = useRef({});
 	/** Detaches the axis-interaction listeners created with the engine. */
 	const axisCleanupRef = useRef(null);
 	/**
@@ -82,6 +105,7 @@ function EChartSurface({ option, xValues, syncGroup, className, ariaLabel, ariaD
 	const onReadyRef = useLatest(onReady);
 	const onVisibleSpanRef = useLatest(onVisibleSpan);
 	const latestOption = useLatest(option);
+	const axisDragRef = useLatest(axisDrag);
 	/**
 	* The span the engine currently shows, read back from its own dataZoom model.
 	*
@@ -90,11 +114,7 @@ function EChartSurface({ option, xValues, syncGroup, className, ariaLabel, ariaD
 	*/
 	const reportVisibleSpan = useCallback(() => {
 		const chart = chartRef.current;
-		const x = xValuesRef.current;
-		if (!chart || !x || x.length < 2) return;
-		const lo = x[0];
-		const full = x[x.length - 1] - lo;
-		if (!(full > 0)) return;
+		if (!chart) return;
 		let start = 0;
 		let end = 100;
 		try {
@@ -104,7 +124,18 @@ function EChartSurface({ option, xValues, syncGroup, className, ariaLabel, ariaD
 				end = typeof zoom.end === "number" ? zoom.end : 100;
 			}
 		} catch {}
+		const host = hostRef.current;
+		if (host) {
+			host.dataset.dataZoomStart = String(start);
+			host.dataset.dataZoomEnd = String(end);
+		}
+		const x = xValuesRef.current;
+		if (!x || x.length < 2) return;
+		const lo = x[0];
+		const full = x[x.length - 1] - lo;
+		if (!(full > 0)) return;
 		const span = full * (end - start) / 100;
+		if (host) host.dataset.visibleSpan = String(span > 0 ? span : full);
 		onVisibleSpanRef.current?.(span > 0 ? span : full);
 	}, [onVisibleSpanRef, xValuesRef]);
 	const armed = useChartArm(hostRef, !eager);
@@ -145,27 +176,161 @@ function EChartSurface({ option, xValues, syncGroup, className, ariaLabel, ariaD
 				...ECHARTS_GLOBAL_OPTION,
 				...latestOption.current
 			}, { notMerge: true });
+			const initialDataZoom = chart.getOption().dataZoom;
+			host.dataset.zoomModel = String(initialDataZoom?.length ?? 0);
+			if (axisDragRef.current && !initialDataZoom?.length) {
+				if (chart.getOption().grid?.length) chart.setOption({ dataZoom: [{
+					type: "inside",
+					xAxisIndex: [0],
+					zoomOnMouseWheel: false,
+					moveOnMouseMove: false
+				}] });
+			}
 			appliedOptionRef.current = latestOption.current;
 			setReady(true);
 			const groupAtCreate = syncGroupRef.current;
 			if (groupAtCreate && bus.hasRange(groupAtCreate)) applyRangeRef.current(normalizeRange(bus.getRange(groupAtCreate)));
-			const currentRect = () => {
-				const bounds = hostRef.current?.getBoundingClientRect();
-				const size = {
-					width: bounds?.width ?? sizeRef.current.width,
-					height: bounds?.height ?? sizeRef.current.height
-				};
-				const applied = chart.getOption();
+			const labelLayer = document.createElement("div");
+			labelLayer.className = "luc-chart-axis-labels";
+			labelLayer.setAttribute("aria-hidden", "true");
+			host.appendChild(labelLayer);
+			const yLabels = /* @__PURE__ */ new Map();
+			const boundsNow = () => {
+				const bounds = host.getBoundingClientRect();
 				return {
-					rect: plotRect(applied.grid?.[0], size),
-					size
+					bounds,
+					size: {
+						width: bounds.width || sizeRef.current.width,
+						height: bounds.height || sizeRef.current.height
+					}
 				};
 			};
-			const valueRangeNow = () => {
-				const { rect } = currentRect();
+			const gridBands = (size) => {
+				const applied = chart.getOption();
+				const descriptors = applied.grid?.length ? applied.grid : [];
+				const model = chart.getModel?.();
+				return descriptors.map((descriptor, gridIndex) => {
+					const engineRect = model?.getComponent?.("grid", gridIndex)?.coordinateSystem?.getRect?.();
+					return {
+						gridIndex,
+						rect: engineRect ? {
+							left: engineRect.x,
+							top: engineRect.y,
+							right: engineRect.x + engineRect.width,
+							bottom: engineRect.y + engineRect.height
+						} : plotRect(descriptor, size)
+					};
+				});
+			};
+			const graph = () => {
+				const { bounds, size } = boundsNow();
+				const grids = gridBands(size);
+				const yAxes = axesFromOption(latestOption.current, "yAxis");
+				return {
+					bounds,
+					size,
+					grids,
+					yAxes,
+					plates: yAxes.flatMap((axis, axisIndex) => {
+						if ((axis.type ?? "value") === "category" || axis.hidden) return [];
+						return [{
+							axisIndex,
+							gridIndex: axis.gridIndex ?? 0,
+							side: axis.position === "left" ? "left" : "right"
+						}];
+					})
+				};
+			};
+			const targetAt = (x, y) => {
+				const state = graph();
+				return axisDragRef.current ? axisTargetAt({
+					x,
+					y
+				}, state.grids, state.size, state.plates) : null;
+			};
+			const gridForPoint = (grids, x, y) => grids.find(({ rect }) => x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom) ?? null;
+			const isChartControlAt = (x, y) => {
 				try {
-					const top = chart.convertFromPixel({ yAxisIndex: 0 }, rect.top);
-					const bottom = chart.convertFromPixel({ yAxisIndex: 0 }, rect.bottom);
+					let target = (chart.getZr().handler?.findHover?.(x, y))?.target;
+					while (target) {
+						const mainType = target.__ecComponentInfo?.mainType;
+						if (mainType === "toolbox" || mainType === "legend" || mainType === "dataZoom" || mainType === "brush") return true;
+						target = target.parent;
+					}
+				} catch {}
+				return false;
+			};
+			const setInteractionState = (state) => {
+				if (state) host.dataset.crosshairState = state;
+				else host.removeAttribute("data-crosshair-state");
+			};
+			const hideYLabels = () => {
+				for (const label of yLabels.values()) label.hidden = true;
+				for (const key of Object.keys(host.dataset)) if (key.startsWith("crosshairY")) delete host.dataset[key];
+				delete host.dataset.crosshairX;
+			};
+			const crosshairDrawn = () => latestOption.current.tooltip?.axisPointer?.type !== "none";
+			const updateCrosshairLabels = (x, y, activeGrid) => {
+				if (!crosshairDrawn()) return;
+				const { yAxes } = graph();
+				const rect = activeGrid.rect;
+				if (!yAxes.some((axis) => axis.axisPointer?.label?.show === false)) return;
+				const seen = /* @__PURE__ */ new Set();
+				yAxes.forEach((axis, axisIndex) => {
+					if ((axis.gridIndex ?? 0) !== activeGrid.gridIndex) return;
+					if (axis.hidden || (axis.type ?? "value") === "category") return;
+					const formatter = axis.axisPointer?.label?.show === false ? axis.axisPointer.label.formatter : void 0;
+					let value;
+					try {
+						value = chart.convertFromPixel({
+							yAxisIndex: axisIndex,
+							gridIndex: activeGrid.gridIndex
+						}, y);
+					} catch {
+						return;
+					}
+					const text = formatPointerAxisValue({
+						...axis,
+						axisPointer: { label: { formatter } }
+					}, value, activeGrid.gridIndex);
+					if (!text) return;
+					let label = yLabels.get(axisIndex);
+					if (!label) {
+						label = document.createElement("div");
+						label.className = "luc-chart-axis-label";
+						labelLayer.appendChild(label);
+						yLabels.set(axisIndex, label);
+					}
+					const side = axis.position === "left" ? "left" : "right";
+					label.dataset.side = side;
+					label.textContent = text;
+					label.style.top = `${Math.min(Math.max(y, 8), rect.bottom - 4)}px`;
+					label.hidden = false;
+					host.dataset[`crosshairY${axisIndex}`] = text;
+					host.dataset[`crosshairYValue${axisIndex}`] = String(value);
+					seen.add(axisIndex);
+				});
+				for (const [index, label] of yLabels) if (!seen.has(index)) {
+					label.hidden = true;
+					delete host.dataset[`crosshairY${index}`];
+					delete host.dataset[`crosshairYValue${index}`];
+				}
+				const xAxes = axesFromOption(latestOption.current, "xAxis");
+				const xAxisIndex = xAxes.findIndex((axis) => (axis.gridIndex ?? 0) === activeGrid.gridIndex);
+				if (xAxisIndex < 0) return;
+				try {
+					const value = chart.convertFromPixel({
+						xAxisIndex,
+						gridIndex: activeGrid.gridIndex
+					}, x);
+					const text = formatPointerAxisValue(xAxes[xAxisIndex], value, activeGrid.gridIndex);
+					if (text) host.dataset.crosshairX = text;
+				} catch {}
+			};
+			const valueRangeNow = (axisIndex, rect) => {
+				try {
+					const top = chart.convertFromPixel({ yAxisIndex: axisIndex }, rect.top);
+					const bottom = chart.convertFromPixel({ yAxisIndex: axisIndex }, rect.bottom);
 					if (Number.isFinite(top) && Number.isFinite(bottom) && top !== bottom) return {
 						min: Math.min(top, bottom),
 						max: Math.max(top, bottom)
@@ -173,20 +338,34 @@ function EChartSurface({ option, xValues, syncGroup, className, ariaLabel, ariaD
 				} catch {}
 				return null;
 			};
-			const applyLocalY = (range) => {
-				localYRangeRef.current = range;
-				try {
-					chart.setOption({ yAxis: range ? {
-						min: range.min,
-						max: range.max
-					} : {
-						min: null,
-						max: null
-					} });
-				} catch {}
-				hostRef.current?.setAttribute("data-y-range", range ? `${range.min.toFixed(4)},${range.max.toFixed(4)}` : "auto");
+			const reportLocalY = () => {
+				axesFromOption(latestOption.current, "yAxis").forEach((_axis, axisIndex) => {
+					const range = localYRangeRef.current[axisIndex];
+					host.dataset[`yRange${axisIndex}`] = range ? `${range.min.toPrecision(12)},${range.max.toPrecision(12)}` : "auto";
+				});
 			};
-			let axisDrag = null;
+			const applyLocalY = (axisIndex, range) => {
+				if (range) localYRangeRef.current[axisIndex] = range;
+				else delete localYRangeRef.current[axisIndex];
+				const baseAxes = axesFromOption(latestOption.current, "yAxis");
+				try {
+					chart.setOption({ yAxis: baseAxes.map((axis, index) => {
+						if (index !== axisIndex) return {};
+						if (range) return {
+							min: range.min,
+							max: range.max
+						};
+						return {
+							min: axis.min,
+							max: axis.max,
+							scale: axis.scale
+						};
+					}) });
+				} catch {}
+				reportLocalY();
+			};
+			reportLocalY();
+			let axisGesture = null;
 			const zoomWindow = () => {
 				const zoom = chart.getOption().dataZoom?.[0] ?? {};
 				return {
@@ -204,94 +383,173 @@ function EChartSurface({ option, xValues, syncGroup, className, ariaLabel, ariaD
 					hi
 				} : null;
 			};
-			const onAxisPointerDown = (event) => {
-				const host = hostRef.current;
-				if (!host || event.button !== 0) return;
-				const bounds = host.getBoundingClientRect();
-				const { rect, size } = currentRect();
-				const band = axisBandAt({
-					x: event.clientX - bounds.left,
-					y: event.clientY - bounds.top
-				}, rect, size);
-				if (!band) return;
-				if (band === "time") {
+			const stateForTarget = (target, dragging) => target.kind === "time" ? dragging ? "axis-x-drag" : "axis-x" : dragging ? "axis-y-drag" : "axis-y";
+			const onPointerDown = (event) => {
+				if (!axisDragRef.current || event.button !== 0 || event.pointerType === "touch") return;
+				const { bounds } = boundsNow();
+				const x = event.clientX - bounds.left;
+				const y = event.clientY - bounds.top;
+				if (isChartControlAt(x, y)) return;
+				const target = targetAt(x, y);
+				if (!target) return;
+				const grid = graph().grids.find((entry) => entry.gridIndex === target.gridIndex);
+				if (!grid) return;
+				const rect = grid.rect;
+				if (target.kind === "time") {
 					const window = zoomWindow();
-					const { anchor } = windowFractions(window, event.clientX - bounds.left, {
+					const { anchor } = windowFractions(window, x, {
 						from: rect.left,
 						to: rect.right
 					});
-					axisDrag = {
-						kind: "time",
+					axisGesture = {
+						target,
 						startX: event.clientX,
 						startY: event.clientY,
+						rect,
+						pointerId: event.pointerId,
 						window,
 						anchor
 					};
 				} else {
-					const range = valueRangeNow();
+					const range = valueRangeNow(target.axisIndex, rect);
 					if (!range) return;
+					const axis = axesFromOption(latestOption.current, "yAxis")[target.axisIndex];
 					let anchorValue = range.min;
 					try {
-						anchorValue = chart.convertFromPixel({ yAxisIndex: 0 }, event.clientY - bounds.top);
+						anchorValue = chart.convertFromPixel({
+							yAxisIndex: target.axisIndex,
+							gridIndex: target.gridIndex
+						}, y);
 					} catch {}
-					axisDrag = {
-						kind: "value",
+					axisGesture = {
+						target,
 						startX: event.clientX,
 						startY: event.clientY,
+						rect,
+						pointerId: event.pointerId,
 						range,
-						anchorValue
+						anchorValue,
+						scaleMode: axis?.type === "log" || axis?.scaleMode === "log" ? "log" : "linear"
 					};
 				}
+				setInteractionState(stateForTarget(target, true));
+				host.dataset.axis = target.kind;
+				host.dataset.axisIndex = String(target.axisIndex);
+				hideYLabels();
 				event.preventDefault();
 				host.setPointerCapture?.(event.pointerId);
 			};
-			const onAxisPointerMove = (event) => {
-				const host = hostRef.current;
-				if (!host) return;
-				const bounds = host.getBoundingClientRect();
-				if (!axisDrag) {
-					const { rect, size } = currentRect();
-					const band = axisBandAt({
-						x: event.clientX - bounds.left,
-						y: event.clientY - bounds.top
-					}, rect, size);
-					host.setAttribute("data-axis", band ?? "none");
-					host.style.cursor = band === "time" ? "col-resize" : band === "value" ? "row-resize" : "";
+			const onPointerMove = (event) => {
+				const { bounds } = boundsNow();
+				const x = event.clientX - bounds.left;
+				const y = event.clientY - bounds.top;
+				if (axisGesture) {
+					event.preventDefault();
+					setInteractionState(stateForTarget(axisGesture.target, true));
+					if (axisGesture.target.kind === "time" && axisGesture.window) {
+						const next = scaleWindow(axisGesture.window, axisGesture.anchor ?? 50, event.clientX - axisGesture.startX, axisGesture.rect.right - axisGesture.rect.left);
+						try {
+							chart.dispatchAction({
+								type: "dataZoom",
+								start: next.start,
+								end: next.end
+							});
+							reportVisibleSpan();
+						} catch {}
+					} else if (axisGesture.target.kind === "value" && axisGesture.range) applyLocalY(axisGesture.target.axisIndex, scaleValueRange(axisGesture.range, axisGesture.anchorValue ?? 0, event.clientY - axisGesture.startY, axisGesture.rect.bottom - axisGesture.rect.top, { scaleMode: axisGesture.scaleMode }));
 					return;
 				}
-				const { rect } = currentRect();
-				if (axisDrag.kind === "time" && axisDrag.window) {
-					const next = scaleWindow(axisDrag.window, axisDrag.anchor ?? 50, event.clientX - axisDrag.startX, rect.right - rect.left);
-					try {
-						chart.dispatchAction({
-							type: "dataZoom",
-							start: next.start,
-							end: next.end
-						});
-					} catch {}
+				if (event.pointerType === "touch") {
+					setInteractionState(null);
 					return;
 				}
-				if (axisDrag.kind === "value" && axisDrag.range) applyLocalY(scaleValueRange(axisDrag.range, axisDrag.anchorValue ?? 0, event.clientY - axisDrag.startY, rect.bottom - rect.top));
+				if (isChartControlAt(x, y)) {
+					setInteractionState(null);
+					host.dataset.axis = "none";
+					hideYLabels();
+					return;
+				}
+				const target = targetAt(x, y);
+				if (target) {
+					setInteractionState(stateForTarget(target, false));
+					host.dataset.axis = target.kind;
+					host.dataset.axisIndex = String(target.axisIndex);
+					hideYLabels();
+					return;
+				}
+				host.dataset.axis = "none";
+				const state = graph();
+				const grid = gridForPoint(state.grids, x, y);
+				if (!grid) {
+					setInteractionState(null);
+					hideYLabels();
+					return;
+				}
+				if (!crosshairDrawn()) {
+					setInteractionState(null);
+					hideYLabels();
+					return;
+				}
+				const pointerPolicy = latestOption.current.tooltip?.axisPointer;
+				host.dataset.crosshairSnap = String(pointerPolicy?.snap ?? true);
+				host.dataset.plotRect = `${grid.rect.left},${grid.rect.top},${grid.rect.right},${grid.rect.bottom}`;
+				setInteractionState(event.buttons > 0 ? null : "plot");
+				updateCrosshairLabels(x, y, grid);
 			};
-			const endAxisDrag = () => {
-				if (!axisDrag) return;
-				axisDrag = null;
-			};
-			const onAxisDoubleClick = (event) => {
-				const host = hostRef.current;
-				if (!host) return;
-				const bounds = host.getBoundingClientRect();
-				const { rect, size } = currentRect();
-				const band = axisBandAt({
-					x: event.clientX - bounds.left,
-					y: event.clientY - bounds.top
-				}, rect, size);
-				if (band === "value") {
-					applyLocalY(null);
-					return;
+			const finishAxisGesture = (event) => {
+				if (!axisGesture) return;
+				const pointerId = axisGesture.pointerId;
+				axisGesture = null;
+				if (host.hasPointerCapture?.(pointerId)) host.releasePointerCapture(pointerId);
+				if (event?.pointerType === "touch") {
+					setInteractionState(null);
+					hideYLabels();
+				} else if (event) onPointerMove(event);
+				else {
+					setInteractionState(null);
+					hideYLabels();
 				}
-				if (band !== "time") return;
+			};
+			const onPointerUp = (event) => {
+				const wasAxisGesture = Boolean(axisGesture);
+				finishAxisGesture(event);
+				if (event.pointerType === "touch") {
+					setInteractionState(null);
+					hideYLabels();
+				} else if (!wasAxisGesture) onPointerMove(event);
+			};
+			const onPointerCancel = (event) => {
+				finishAxisGesture(event);
+				setInteractionState(null);
+				hideYLabels();
+			};
+			const onLostPointerCapture = () => finishAxisGesture();
+			const onPointerLeave = () => {
+				if (axisGesture) return;
+				setInteractionState(null);
+				host.dataset.axis = "none";
+				hideYLabels();
+			};
+			const onPlotPointerDown = (event) => {
+				if (!axisDragRef.current || event.button !== 0 || event.pointerType === "touch") return;
+				const { bounds } = boundsNow();
+				const x = event.clientX - bounds.left;
+				const y = event.clientY - bounds.top;
+				if (targetAt(x, y) || isChartControlAt(x, y)) return;
+				if (crosshairDrawn() && gridForPoint(graph().grids, x, y)) setInteractionState(null);
+			};
+			const onDoubleClick = (event) => {
+				const { bounds } = boundsNow();
+				const x = event.clientX - bounds.left;
+				const y = event.clientY - bounds.top;
+				if (isChartControlAt(x, y)) return;
+				const target = targetAt(x, y);
+				if (!target) return;
 				event.preventDefault();
+				if (target.kind === "value") {
+					applyLocalY(target.axisIndex, null);
+					return;
+				}
 				const extent = loadedExtent();
 				try {
 					chart.dispatchAction({
@@ -305,25 +563,28 @@ function EChartSurface({ option, xValues, syncGroup, className, ariaLabel, ariaD
 					from: extent.lo,
 					to: extent.hi
 				}, id, { intent: "gesture" });
+				reportVisibleSpan();
 			};
-			host.addEventListener("pointerdown", onAxisPointerDown);
-			host.addEventListener("pointermove", onAxisPointerMove);
-			host.addEventListener("pointerup", endAxisDrag);
-			host.addEventListener("pointercancel", endAxisDrag);
-			const onAxisPointerLeave = () => {
-				host.removeAttribute("data-axis");
-				host.style.cursor = "";
-			};
-			host.addEventListener("pointerleave", onAxisPointerLeave);
-			host.addEventListener("dblclick", onAxisDoubleClick);
+			host.addEventListener("pointerdown", onPlotPointerDown);
+			host.addEventListener("pointerdown", onPointerDown);
+			host.addEventListener("pointermove", onPointerMove);
+			host.addEventListener("pointerup", onPointerUp);
+			host.addEventListener("pointercancel", onPointerCancel);
+			host.addEventListener("lostpointercapture", onLostPointerCapture);
+			host.addEventListener("pointerleave", onPointerLeave);
+			host.addEventListener("dblclick", onDoubleClick);
 			axisCleanupRef.current = () => {
-				host.removeEventListener("pointerdown", onAxisPointerDown);
-				host.removeEventListener("pointermove", onAxisPointerMove);
-				host.removeEventListener("pointerup", endAxisDrag);
-				host.removeEventListener("pointercancel", endAxisDrag);
-				host.removeEventListener("pointerleave", onAxisPointerLeave);
-				host.removeEventListener("dblclick", onAxisDoubleClick);
-				host.style.cursor = "";
+				host.removeEventListener("pointerdown", onPlotPointerDown);
+				host.removeEventListener("pointerdown", onPointerDown);
+				host.removeEventListener("pointermove", onPointerMove);
+				host.removeEventListener("pointerup", onPointerUp);
+				host.removeEventListener("pointercancel", onPointerCancel);
+				host.removeEventListener("lostpointercapture", onLostPointerCapture);
+				host.removeEventListener("pointerleave", onPointerLeave);
+				host.removeEventListener("dblclick", onDoubleClick);
+				labelLayer.remove();
+				host.removeAttribute("data-crosshair-state");
+				host.removeAttribute("data-axis");
 			};
 			const measure = () => {
 				const rect = hostRef.current?.getBoundingClientRect();
@@ -372,6 +633,10 @@ function EChartSurface({ option, xValues, syncGroup, className, ariaLabel, ariaD
 				bus.publishCursor(syncGroupRef.current, null, id);
 			});
 			chart.getZr().on("globalout", () => {
+				if (!axisGesture) {
+					setInteractionState(null);
+					hideYLabels();
+				}
 				if (applyingRef.current || !syncGroupRef.current) return;
 				if (bus.getPinned(syncGroupRef.current) != null) return;
 				bus.publishCursor(syncGroupRef.current, null, id);
@@ -421,12 +686,15 @@ function EChartSurface({ option, xValues, syncGroup, className, ariaLabel, ariaD
 			notMerge: false,
 			replaceMerge: ["series"]
 		});
-		const localY = localYRangeRef.current;
-		if (localY) try {
-			chart.setOption({ yAxis: {
-				min: localY.min,
-				max: localY.max
-			} });
+		if (Object.entries(localYRangeRef.current).length > 0) try {
+			const axisCount = axesFromOption(option, "yAxis").length;
+			chart.setOption({ yAxis: Array.from({ length: axisCount }, (_, index) => {
+				const range = localYRangeRef.current[index];
+				return range ? {
+					min: range.min,
+					max: range.max
+				} : {};
+			}) });
 		} catch {}
 		publishDiagnostics();
 	}, [

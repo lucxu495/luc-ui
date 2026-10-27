@@ -29,6 +29,8 @@ export interface ChartSurfaceProps {
   eager?: boolean;
   /** Drawing layer. Defaults to `canvas`; `svg` is for capture pipelines. */
   renderer?: ChartRenderer;
+  /** Enable TradingView-style time/value axis drag scaling. Defaults to on. */
+  axisDrag?: boolean;
   /**
    * The span the engine currently shows, in ms (`null` before it is known).
    *
@@ -46,7 +48,7 @@ export interface ChartSurfaceProps {
  * all. That is why the states take precedence over the surface rather than
  * rendering on top of it.
  */
-export declare function ChartSurface({ option, xValues, syncGroup, state, height, className, ariaLabel, ariaDescription, copy, onReady, onEvent, eager, onVisibleSpan, renderer }: ChartSurfaceProps): import("react").JSX.Element;
+export declare function ChartSurface({ option, xValues, syncGroup, state, height, className, ariaLabel, ariaDescription, copy, onReady, onEvent, eager, onVisibleSpan, renderer, axisDrag }: ChartSurfaceProps): import("react").JSX.Element;
 export interface ChartProps extends ChartStateCopy {
   spec: ChartSpec<object>;
   state?: ChartState;

@@ -53,6 +53,7 @@ function loadECharts() {
 			components.VisualMapPiecewiseComponent,
 			components.CalendarComponent,
 			components.BrushComponent,
+			components.ToolboxComponent,
 			components.PolarComponent,
 			components.RadarComponent,
 			components.ParallelComponent,

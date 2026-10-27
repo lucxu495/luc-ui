@@ -28,17 +28,46 @@ function plotRect(grid, size) {
 	};
 }
 /**
-* Which axis the pointer is on, if any.
+* Resolve the exact Cartesian plate and axis under the pointer.
 *
-* The bands are the strips *outside* the plot rectangle: the time axis along the
-* bottom, the value axis along whichever side carries it. `side` matters because
-* a chart may place its price scale on the left.
+* A chart may put a different unit on each side of the same grid, and a
+* multi-grid chart may reserve a gutter for more than one plot. Returning the
+* axis index with the hit target is therefore mandatory: a left-axis drag must
+* never edit `yAxisIndex: 0` just because that happens to be the first series.
 */
-function axisBandAt(point, rect, size, options = {}) {
+function axisTargetAt(point, grids, size, axes, options = {}) {
 	const band = options.band ?? 34;
-	if (((options.side ?? "right") === "right" ? point.x > rect.right && point.y <= rect.bottom + 2 : point.x < rect.left && point.y <= rect.bottom + 2) && point.y >= rect.top - band && point.y <= size.height) return "value";
-	if (point.y > rect.bottom && point.x >= rect.left - band && point.x <= rect.right + 2 && point.x <= size.width) return "time";
-	return null;
+	let best = null;
+	for (const grid of grids) {
+		const { rect } = grid;
+		if (point.y > rect.bottom && point.y <= Math.min(size.height, rect.bottom + band) && point.x >= rect.left - band && point.x <= rect.right + 2) {
+			const distance = point.y - rect.bottom;
+			if (!best || distance < best.distance) best = {
+				target: {
+					kind: "time",
+					axisIndex: 0,
+					gridIndex: grid.gridIndex,
+					side: "bottom"
+				},
+				distance
+			};
+		}
+		for (const axis of axes) {
+			if (axis.gridIndex !== grid.gridIndex || point.y < rect.top - band || point.y > rect.bottom + 2) continue;
+			if (!(axis.side === "right" ? point.x > rect.right && point.x <= rect.right + band : point.x < rect.left && point.x >= Math.max(0, rect.left - band))) continue;
+			const distance = axis.side === "right" ? point.x - rect.right : rect.left - point.x;
+			if (!best || distance < best.distance) best = {
+				target: {
+					kind: "value",
+					axisIndex: axis.axisIndex,
+					gridIndex: grid.gridIndex,
+					side: axis.side
+				},
+				distance
+			};
+		}
+	}
+	return best?.target ?? null;
 }
 /**
 * Scale a window around the pointer, in the engine's own percent space.
@@ -93,6 +122,20 @@ function scaleValueRange(range, anchorValue, pixels, plotSize, options = {}) {
 	if (!(plotSize > 0) || !(span > 0) || !Number.isFinite(anchorValue)) return { ...range };
 	const minSpan = span * (options.minSpanRatio ?? .02);
 	const factor = 1 / (1 + pixels / plotSize);
+	if (options.scaleMode === "log") {
+		if (!(range.min > 0) || !(range.max > 0) || !(anchorValue > 0)) return { ...range };
+		const logMin = Math.log10(range.min);
+		const logMax = Math.log10(range.max);
+		const logAnchor = Math.min(Math.max(Math.log10(anchorValue), logMin), logMax);
+		const logSpan = logMax - logMin;
+		const logMinSpan = logSpan * (options.minSpanRatio ?? .02);
+		const wanted = Math.max(logSpan * factor, logMinSpan);
+		const next = {
+			min: 10 ** (logAnchor - (logAnchor - logMin) * (wanted / logSpan)),
+			max: 10 ** (logAnchor + (logMax - logAnchor) * (wanted / logSpan))
+		};
+		return Number.isFinite(next.min) && Number.isFinite(next.max) && next.min < next.max ? next : { ...range };
+	}
 	const anchored = Math.min(Math.max(anchorValue, range.min), range.max);
 	const wanted = Math.max(span * factor, minSpan);
 	return {
@@ -101,6 +144,6 @@ function scaleValueRange(range, anchorValue, pixels, plotSize, options = {}) {
 	};
 }
 //#endregion
-export { axisBandAt, plotRect, scaleValueRange, scaleWindow, windowFractions };
+export { axisTargetAt, plotRect, scaleValueRange, scaleWindow, windowFractions };
 
 //# sourceMappingURL=axis-drag.js.map
