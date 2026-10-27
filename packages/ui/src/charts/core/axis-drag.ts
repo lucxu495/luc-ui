@@ -23,6 +23,24 @@ export type AxisBand = "time" | "value" | null;
 /** How wide the axis bands are, in CSS pixels, when the engine does not say. */
 export const AXIS_BAND_PX = 34;
 
+export interface AxisTarget {
+  kind: Exclude<AxisBand, null>;
+  axisIndex: number;
+  gridIndex: number;
+  side: "bottom" | "left" | "right";
+}
+
+export interface GridBand {
+  gridIndex: number;
+  rect: PlotRect;
+}
+
+export interface AxisPlate {
+  axisIndex: number;
+  gridIndex: number;
+  side: "left" | "right";
+}
+
 export interface PlotRect {
   left: number;
   right: number;
@@ -77,16 +95,77 @@ export function axisBandAt(
   size: { width: number; height: number },
   options: { side?: "left" | "right"; band?: number } = {},
 ): AxisBand {
+  const target = axisTargetAt(
+    point,
+    [{ gridIndex: 0, rect }],
+    size,
+    [{ axisIndex: 0, gridIndex: 0, side: options.side ?? "right" }],
+    { band: options.band },
+  );
+  return target?.kind ?? null;
+}
+
+/**
+ * Resolve the exact Cartesian plate and axis under the pointer.
+ *
+ * A chart may put a different unit on each side of the same grid, and a
+ * multi-grid chart may reserve a gutter for more than one plot. Returning the
+ * axis index with the hit target is therefore mandatory: a left-axis drag must
+ * never edit `yAxisIndex: 0` just because that happens to be the first series.
+ */
+export function axisTargetAt(
+  point: { x: number; y: number },
+  grids: readonly GridBand[],
+  size: { width: number; height: number },
+  axes: readonly AxisPlate[],
+  options: { band?: number } = {},
+): AxisTarget | null {
   const band = options.band ?? AXIS_BAND_PX;
-  const side = options.side ?? "right";
-  const inValueBand =
-    side === "right"
-      ? point.x > rect.right && point.y <= rect.bottom + 2
-      : point.x < rect.left && point.y <= rect.bottom + 2;
-  if (inValueBand && point.y >= rect.top - band && point.y <= size.height) return "value";
-  const inTimeBand = point.y > rect.bottom && point.x >= rect.left - band && point.x <= rect.right + 2;
-  if (inTimeBand && point.x <= size.width) return "time";
-  return null;
+  let best: { target: AxisTarget; distance: number } | null = null;
+
+  for (const grid of grids) {
+    const { rect } = grid;
+    if (
+      point.y > rect.bottom &&
+      point.y <= Math.min(size.height, rect.bottom + band) &&
+      point.x >= rect.left - band &&
+      point.x <= rect.right + 2
+    ) {
+      const distance = point.y - rect.bottom;
+      if (!best || distance < best.distance) {
+        best = {
+          target: { kind: "time", axisIndex: 0, gridIndex: grid.gridIndex, side: "bottom" },
+          distance,
+        };
+      }
+    }
+
+    for (const axis of axes) {
+      if (axis.gridIndex !== grid.gridIndex || point.y < rect.top - band || point.y > rect.bottom + 2) {
+        continue;
+      }
+      const outside =
+        axis.side === "right"
+          ? point.x > rect.right && point.x <= rect.right + band
+          : point.x < rect.left && point.x >= Math.max(0, rect.left - band);
+      if (!outside) continue;
+      const distance =
+        axis.side === "right" ? point.x - rect.right : rect.left - point.x;
+      if (!best || distance < best.distance) {
+        best = {
+          target: {
+            kind: "value",
+            axisIndex: axis.axisIndex,
+            gridIndex: grid.gridIndex,
+            side: axis.side,
+          },
+          distance,
+        };
+      }
+    }
+  }
+
+  return best?.target ?? null;
 }
 
 export interface Window {
@@ -150,12 +229,28 @@ export function scaleValueRange(
   anchorValue: number,
   pixels: number,
   plotSize: number,
-  options: { minSpanRatio?: number } = {},
+  options: { minSpanRatio?: number; scaleMode?: "linear" | "log" } = {},
 ): { min: number; max: number } {
   const span = range.max - range.min;
   if (!(plotSize > 0) || !(span > 0) || !Number.isFinite(anchorValue)) return { ...range };
   const minSpan = span * (options.minSpanRatio ?? 0.02);
   const factor = 1 / (1 + pixels / plotSize);
+  if (options.scaleMode === "log") {
+    if (!(range.min > 0) || !(range.max > 0) || !(anchorValue > 0)) return { ...range };
+    const logMin = Math.log10(range.min);
+    const logMax = Math.log10(range.max);
+    const logAnchor = Math.min(Math.max(Math.log10(anchorValue), logMin), logMax);
+    const logSpan = logMax - logMin;
+    const logMinSpan = logSpan * (options.minSpanRatio ?? 0.02);
+    const wanted = Math.max(logSpan * factor, logMinSpan);
+    const next = {
+      min: 10 ** (logAnchor - (logAnchor - logMin) * (wanted / logSpan)),
+      max: 10 ** (logAnchor + (logMax - logAnchor) * (wanted / logSpan)),
+    };
+    return Number.isFinite(next.min) && Number.isFinite(next.max) && next.min < next.max
+      ? next
+      : { ...range };
+  }
   const anchored = Math.min(Math.max(anchorValue, range.min), range.max);
   const wanted = Math.max(span * factor, minSpan);
   return {

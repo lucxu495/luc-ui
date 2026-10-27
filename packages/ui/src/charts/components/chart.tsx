@@ -82,6 +82,8 @@ export interface ChartSurfaceProps {
   eager?: boolean;
   /** Drawing layer. Defaults to `canvas`; `svg` is for capture pipelines. */
   renderer?: ChartRenderer;
+  /** Enable TradingView-style time/value axis drag scaling. Defaults to on. */
+  axisDrag?: boolean;
   /**
    * The span the engine currently shows, in ms (`null` before it is known).
    *
@@ -115,6 +117,7 @@ export function ChartSurface({
   eager,
   onVisibleSpan,
   renderer,
+  axisDrag,
 }: ChartSurfaceProps) {
   // A bounded plot for a real chart; a content-sized one for a state with
   // nothing to draw in it (see `ChartStateProps.compact`).
@@ -163,6 +166,7 @@ export function ChartSurface({
       eager={eager}
       onVisibleSpan={onVisibleSpan}
       renderer={renderer}
+      axisDrag={axisDrag}
     />,
   );
 }
@@ -274,6 +278,7 @@ export function Chart({
       eager={eager}
       onVisibleSpan={normalized.kind === "time" ? handleVisibleSpan : undefined}
       renderer={spec.renderer}
+      axisDrag={spec.interaction?.axisDrag ?? true}
     />
   );
 }

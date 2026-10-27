@@ -165,7 +165,8 @@ export function resolveFormatter(
 export function timeAxisFormatter(spanMs: number): (value: number) => string {
   const options = TIME_AXIS_LABEL_OPTIONS[timeAxisLabelScale(spanMs)];
   const formatter = new Intl.DateTimeFormat("en-US", options);
-  return (value: number) => formatter.format(new Date(value));
+  return (value: number) =>
+    Number.isFinite(value) ? formatter.format(new Date(value)) : "";
 }
 
 const DAY_MS = 86_400_000;

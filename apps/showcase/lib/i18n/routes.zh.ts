@@ -473,6 +473,10 @@ export const routesZh: Record<string, RouteCopy> = {
     title: "提示、缩放、框选与全屏",
     lead: "交互是图表不再只是图片的地方。提示表面、十字光标、缩放行为与全屏研究视图都由 LUC 拥有，因此没有一个交给引擎的默认实现。",
   },
+  "/charts/crosshair": {
+    title: "专业金融十字光标",
+    lead: "在指针位置读取时间与数值，让 Tooltip 继续显示真实观测，并通过拖动各个笛卡尔坐标轴来缩放视图。",
+  },
   "/charts/performance": {
     title: "密集时间序列",
     lead: "图表必须扛得住真实的数据量。ECharts 用自己的渐进渲染路径绘制这些数据，动画被限流，超过几百个点后直接丢弃标记点，而不是画出来再隐藏。",

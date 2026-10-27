@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { BarChart, Card, Code, LineChart, Section, Text } from "@luc/ui";
 import { DocPage } from "@/components/docs/doc-page";
 import { PageHeader } from "@/components/docs/page-header";
@@ -17,6 +18,14 @@ export default function InteractionPage() {
         eyebrow={tcs("Charts · Interaction")}
         title="Tooltips, zoom, brush, fullscreen"
         lead="Interaction is where a chart stops being a picture. LUC owns the tooltip surface, the crosshair, the zoom behaviour and the fullscreen research view, so none of them is left to an engine default."
+        actions={
+          <Link
+            href="/charts/crosshair"
+            className="luc-focus inline-flex h-8 items-center rounded-md border border-line-default px-3 text-caption font-medium text-fg-primary hover:border-line-strong"
+          >
+            {tcs("Open financial crosshair")}
+          </Link>
+        }
       />
 
       <Section
@@ -181,6 +190,7 @@ export default function InteractionPage() {
 
       <Section title={tcs("Usage")}>
         <Code block>{`<LineChart interaction={{ zoom: "inside", pan: true }} … />
+<LineChart interaction={{ crosshair: { enabled: true, snap: true }, axisDrag: true }} … />
 <LineChart interaction={{ brush: true }} … />
 <LineChart tooltip={{ mode: "item" }} … />
 

@@ -3229,6 +3229,46 @@ export const proseZh: Record<string, string> = {
   "One interaction that did not ship this round.": "一项本轮没有交付的交互。",
   "Click-to-pin a tooltip for comparison belongs with the research workspace work: it needs a visible pin affordance, an unpin gesture, and a decision about what happens when the pinned x scrolls out of view. The transient tooltip already covers reading a single value.":
     "用于对比的「点击钉住 tooltip」属于研究工作区那项工作：它需要一个可见的钉住入口、一个取消钉住的手势，以及决定被钉住的 x 滚出视野时该怎么办。临时 tooltip 已经覆盖了读单个值的场景。",
+  "Open financial crosshair": "打开金融十字光标",
+
+  /* --------------------------------------------------------------- charts/crosshair */
+  "Charts · Financial interaction": "图表 · 金融交互",
+  "Professional financial crosshair": "专业金融十字光标",
+  "Hover the plot for a persistent X/Y crosshair. Drag the time plate horizontally, or either Y plate vertically, to scale. Double-click an axis to reset its own scale.":
+    "将指针移入绘图区即可持续读取 X/Y 十字光标。水平拖动时间轴，或垂直拖动任一 Y 轴来缩放；双击某个轴只恢复该轴自身的刻度。",
+  "Crosshair enabled": "启用十字光标",
+  "Snap X to observation": "X 吸附到观测点",
+  "Demo Data": "演示数据",
+  "Drag axis to scale · Double-click to reset": "拖动轴缩放 · 双击重置",
+  "Demo A · Single-axis time series": "示例 A · 单轴时间序列",
+  "Synthetic daily close with a currency Y axis. The horizontal label follows the pointer pixel, not a series point.":
+    "带货币 Y 轴的合成日收盘价。水平标签跟随鼠标所在像素，而不是某一个序列数据点。",
+  "Synthetic close": "合成收盘价",
+  "Synthetic single-axis financial crosshair demo": "合成单轴金融十字光标示例",
+  "Demo B · BTC USD price + rolling up-day ratio": "示例 B · BTC USD 价格 + 滚动一年上涨天数占比",
+  "Left axis: synthetic rolling 1Y up-day ratio (%). Right axis: synthetic BTC USD price. Each plate keeps its own scale, formatter and drag gesture.":
+    "左轴为合成的滚动一年上涨天数占比（%），右轴为合成的 BTC USD 价格。两侧各自保留刻度、格式化器与拖动交互。",
+  "Rolling 1Y up-day ratio": "滚动一年上涨天数占比",
+  "BTC USD price": "BTC USD 价格",
+  "Synthetic BTC USD": "合成 BTC USD",
+  "Synthetic dual-axis Bitcoin price and up-day ratio demo": "合成双轴 Bitcoin 价格与上涨天数占比示例",
+  "Demo C · Multi-series, zoom and pan": "示例 C · 多序列、缩放与平移",
+  "Two prepared price curves share one time window. Wheel zoom, plot pan and direct axis drag use the same DataZoom state.":
+    "两条已备好的价格曲线共享同一个时间窗口。滚轮缩放、绘图区平移与直接拖动轴都使用同一份 DataZoom 状态。",
+  "Prepared fast line": "已备好的快线",
+  "Prepared trend": "已备好的趋势线",
+  "Synthetic multi-series crosshair and zoom demo": "合成多序列十字光标与缩放示例",
+  "Demo D · Non-Cartesian stays unchanged": "示例 D · 非笛卡尔图表保持不变",
+  "A pie has no Cartesian time or value plates. It keeps item hover and receives no crosshair configuration or axis-drag listener.":
+    "饼图没有笛卡尔时间轴或数值轴，因此保留条目悬停，也不会收到十字光标配置或轴拖动监听器。",
+  "Portfolio weights · Demo Data": "组合权重 · 演示数据",
+  "Five deterministic weights; hover reports one item.": "五个确定性的权重；悬停只报告当前条目。",
+  "Synthetic portfolio weight pie chart": "合成组合权重饼图",
+  "Why no crosshair here?": "为什么这里没有十字光标？",
+  "Crosshair is a Cartesian reading aid. A pie encodes part-to-whole by angle and area, so a horizontal dollar coordinate would be invented rather than measured.":
+    "十字光标是笛卡尔图表的读数辅助。饼图用角度与面积表达部分对整体的关系，因此一条水平美元坐标会是凭空构造而非真实测量。",
+  "Luc UI Cartesian crosshair, per-axis labels and TradingView-style axis drag scaling.":
+    "Luc UI 笛卡尔十字光标、逐轴标签，以及 TradingView 风格的轴拖动缩放。",
 
   /* ------------------------------------------------------------- charts/geospatial */
   "Choropleth": "分级统计图",
