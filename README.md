@@ -17,9 +17,9 @@ responsive data surfaces, chart primitives and typed TradingView wrappers. The
 package is ESM-only, ships compiled JavaScript and declarations, and includes a
 Tailwind CSS v4 stylesheet.
 
-The project is public on GitHub. The latest published Git tag is **`v1.1.0`**, which can be installed directly
-from GitHub. The latest GitHub Release entry is **v1.0.1**; a separate v1.1.0
-GitHub Release entry has not yet been published. Luc UI is not published to an npm registry yet.
+The project is public on GitHub. The current published Git tag and GitHub Release
+are **`v1.1.0`**, which can be installed directly from GitHub. Luc UI is not yet
+published to the npm registry.
 
 ## Features
 
@@ -255,7 +255,7 @@ and version, and any relevant browser or framework details.
 
 - Package: `@luc/ui`
 - Latest public Git tag: `v1.1.0`
-- Latest GitHub Release entry: `v1.0.1`
+- Latest GitHub Release: `v1.1.0`
 - Module format: ESM
 - Stylesheet: Tailwind CSS v4
 - License: MIT
