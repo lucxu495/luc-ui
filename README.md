@@ -17,9 +17,9 @@ responsive data surfaces, chart primitives and typed TradingView wrappers. The
 package is ESM-only, ships compiled JavaScript and declarations, and includes a
 Tailwind CSS v4 stylesheet.
 
-The project is public on GitHub. The current package release is **1.0.1**,
-announced in GitHub Releases and installed from the immutable **`v1.0.1` Git
-tag**. Luc UI is not published to an npm registry yet.
+The project is public on GitHub. The latest published Git tag is **`v1.1.0`**, which can be installed directly
+from GitHub. The latest GitHub Release entry is **v1.0.1**; a separate v1.1.0
+GitHub Release entry has not yet been published. Luc UI is not published to an npm registry yet.
 
 ## Features
 
@@ -47,11 +47,11 @@ tag**. Luc UI is not published to an npm registry yet.
 ### 1. Install from the Git tag
 
 ```bash
-pnpm add @luc/ui@github:lucxu495/luc-ui#v1.0.1
+pnpm add @luc/ui@github:lucxu495/luc-ui#v1.1.0
 ```
 
 ```bash
-npm install @luc/ui@github:lucxu495/luc-ui#v1.0.1
+npm install @luc/ui@github:lucxu495/luc-ui#v1.1.0
 ```
 
 The tag points to a commit on the `release` branch whose root is the built
@@ -254,13 +254,13 @@ and version, and any relevant browser or framework details.
 ## Stability and distribution
 
 - Package: `@luc/ui`
-- Current version: `1.0.1`
-- Public Git tag: `v1.0.1`
+- Latest public Git tag: `v1.1.0`
+- Latest GitHub Release entry: `v1.0.1`
 - Module format: ESM
 - Stylesheet: Tailwind CSS v4
 - License: MIT
 
-The public tag is immutable. Changes merged after `v1.0.1` are not available
+The public tag is immutable. Changes merged after `v1.1.0` are not available
 through that install until a new version is built and tagged. See
 [`docs/VERSIONING.md`](./docs/VERSIONING.md),
 [`docs/RELEASES.md`](./docs/RELEASES.md) and
