@@ -187,6 +187,14 @@ export function MarketCard() {
 The widget loads TradingView-hosted content over the network. Market data and
 attribution belong to TradingView, not Luc UI.
 
+## Live Showcase and production applications
+
+- **[Luc UI Showcase](https://ui.lucxu.com/)** — publicly accessible component and design-system showcase.
+- **[Luc Quant](https://quant.lucxu.com/)** — publicly deployed financial and quantitative application built with Luc UI.
+- **[Luc Resume](https://resume.lucxu.com/)** — publicly deployed resume application built with Luc UI.
+
+These applications are maintained by the Luc UI project owner and demonstrate first-party production usage; they are not presented as independent third-party adoption.
+
 ## Documentation
 
 - [Developer guide](./docs/DEVELOPER_GUIDE.md)
@@ -200,7 +208,7 @@ attribution belong to TradingView, not Luc UI.
 - [TradingView](./docs/TRADINGVIEW_GUIDE.md)
 - [Accessibility](./docs/ACCESSIBILITY.md)
 
-The full Showcase runs locally:
+Explore the [public Showcase](https://ui.lucxu.com/), or run it locally:
 
 ```bash
 pnpm install
@@ -209,7 +217,6 @@ pnpm dev
 # http://127.0.0.1:5300
 ```
 
-There is no hosted public Showcase URL yet.
 
 ## Development
 
