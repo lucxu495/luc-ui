@@ -216,7 +216,7 @@ describe("the per-entry documentation notes", () => {
      * never reaches the page a reader is on.
      */
     const feedback = docEntries.filter((entry) => entry.family === "feedback");
-    expect(feedback.length).toBe(10);
+    expect(feedback.length).toBe(11);
     const missing = feedback
       .filter((entry) => {
         const note = ENTRY_NOTES[entry.id];

@@ -15,10 +15,13 @@ function pngSize(relative: string): { width: number; height: number } {
 describe("open-source README and brand assets", () => {
   it("uses the official light/dark logo pair and resolves every relative README link", () => {
     const readme = read("README.md");
+    const version = (JSON.parse(read("packages/ui/package.json")) as { version: string }).version;
     expect(readme).toContain("luc-ui-logo-light-512.png");
     expect(readme).toContain("luc-ui-logo-dark-512.png");
-    expect(readme).toContain("@luc/ui@github:lucxu495/luc-ui#v1.0.1");
-    expect(readme.replace(/\s+/g, " ")).toContain("not published to an npm registry");
+    expect(readme).toContain(`@luc/ui@github:lucxu495/luc-ui#v${version}`);
+    expect(readme.replace(/\s+/g, " ")).toMatch(
+      /not (?:yet )?published to (?:an|the) npm registry/i,
+    );
     expect(readme).not.toMatch(/(?:^|[\s("'])\/(?:Users|home)\//);
 
     for (const match of readme.matchAll(/\]\(([^)]+)\)/g)) {

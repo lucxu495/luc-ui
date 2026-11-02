@@ -60,6 +60,8 @@ export const proseZh: Record<string, string> = {
     "带有两种安静轮廓的引导层",
   "A real product surface, not a mock. Preview the first-visit welcome, switch both contours, and exercise manual, auto, nested-scroll, viewport-edge and missing-target recovery scenarios.":
     "这是实际产品表面，而不是静态模拟。可以预览首次访问欢迎页、切换两种轮廓，并测试手动、自动、嵌套滚动、视口边缘和目标缺失恢复场景。",
+  "A guided product layer with a live spotlight, collision-aware glass bubble, manual and auto steps, and graceful target recovery.":
+    "带实时聚光、避让碰撞的玻璃气泡、手动与自动步骤以及优雅目标恢复的产品引导层。",
   "WELCOME TO FIELDNOTE": "欢迎来到 FIELDNOTE",
   "Let’s take a tour?": "要不要一起看看？",
   "Five quiet steps through the signal desk. You can leave at any time.":
