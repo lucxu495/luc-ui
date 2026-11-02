@@ -21,10 +21,10 @@ const steps: ProductTourStep[] = [
   steps={steps}
   defaultOpen
   intro={{
-    target: "#workspace",
     eyebrow: "WELCOME",
     title: "Let’s take a tour?",
     description: "A few quiet steps through the workspace.",
+    autoStartAfter: 5000,
   }}
   variant="cloud-glass"
   mode="manual"
@@ -33,10 +33,12 @@ const steps: ProductTourStep[] = [
 />;
 ```
 
-The optional `intro` is a welcome moment, not an extra numbered step. Its target
-is spotlighted first; **Take the tour** starts step one in the same layer, while
-**Explore on my own** dismisses it through `onSkip`. The consumer decides when to
-open the tour and whether it should appear again:
+The optional `intro` is a welcome moment, not an extra numbered step. Omit its
+target for a centred global spotlight; **Take the tour** starts step one in the
+same layer, while **Explore on my own** dismisses it through `onSkip`. Adding
+`autoStartAfter` shows a numeric countdown and enters step one after that delay.
+The countdown pauses on bubble hover, target focus and hidden pages. The consumer
+decides when to open the tour and whether it should appear again:
 
 ```tsx
 const [open, setOpen] = useState(false);

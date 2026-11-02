@@ -213,6 +213,40 @@ describe("ProductTour", () => {
     );
   });
 
+  it("can time the welcome and pauses its countdown on hover", async () => {
+    vi.useFakeTimers();
+    render(
+      <Harness
+        defaultOpen={false}
+        steps={[
+          { id: "one", title: "First tutorial step" },
+          { id: "two", title: "Second tutorial step" },
+        ]}
+        intro={{
+          eyebrow: "WELCOME",
+          title: "Let’s take a tour?",
+          description: "A short introduction.",
+          autoStartAfter: 1000,
+        }}
+      />,
+    );
+    fireEvent.click(screen.getByRole("button", { name: "Launch" }));
+    const dialog = screen.getByRole("dialog");
+    fireEvent.pointerEnter(dialog);
+    act(() => {
+      vi.advanceTimersByTime(1400);
+    });
+    expect(screen.getByRole("dialog")).toHaveTextContent("Let’s take a tour?");
+    fireEvent.pointerLeave(dialog);
+    act(() => {
+      vi.advanceTimersByTime(1200);
+    });
+    vi.useRealTimers();
+    await waitFor(() =>
+      expect(screen.getByRole("dialog")).toHaveTextContent("First tutorial step"),
+    );
+  });
+
   it("keeps a missing target recoverable and offers a way out", async () => {
     const onSkip = vi.fn();
     render(

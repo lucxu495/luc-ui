@@ -23,10 +23,10 @@
     var(--tour-scrim);
   cursor: default;
   transition:
-    top var(--motion-slow) var(--ease-emphasized),
-    left var(--motion-slow) var(--ease-emphasized),
-    width var(--motion-slow) var(--ease-emphasized),
-    height var(--motion-slow) var(--ease-emphasized),
+    top var(--motion-slower) var(--ease-enter),
+    left var(--motion-slower) var(--ease-enter),
+    width var(--motion-slower) var(--ease-enter),
+    height var(--motion-slower) var(--ease-enter),
     opacity var(--motion-fast) var(--ease-standard);
 }
 
@@ -43,15 +43,22 @@
   border-radius: var(--tour-spotlight-radius);
   opacity: 0;
   transition:
-    transform var(--motion-slow) var(--ease-emphasized),
-    width var(--motion-slow) var(--ease-emphasized),
-    height var(--motion-slow) var(--ease-emphasized),
+    transform var(--motion-slower) var(--ease-enter),
+    width var(--motion-slower) var(--ease-enter),
+    height var(--motion-slower) var(--ease-enter),
     opacity var(--motion-fast) var(--ease-standard);
   will-change: transform, width, height;
 }
 
 .luc-product-tour__target.is-visible {
   opacity: 1;
+}
+
+.luc-product-tour__tail {
+  transition:
+    left var(--motion-slower) var(--ease-enter),
+    top var(--motion-slower) var(--ease-enter),
+    transform var(--motion-slower) var(--ease-enter);
 }
 
 .luc-product-tour__target-rim,

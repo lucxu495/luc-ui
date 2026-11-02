@@ -5832,7 +5832,7 @@
         {
           "name": "ProductTourBubble",
           "kind": "value",
-          "signature": "({ eyebrow, title, description, icon, index, total, placement, anchor, variant, auto, interval, paused, missing, intro, onBack, onNext, onAutoAdvance, onSkip, onClose, onTogglePause, labels, titleId, descriptionId, bubbleRef, onHoverChange, }: ProductTourBubbleProps) => import(\"@types/react\").JSX.Element",
+          "signature": "({ eyebrow, title, description, icon, index, total, placement, anchor, variant, auto, interval, paused, missing, intro, introAutoStartAfter, onBack, onNext, onAutoAdvance, onSkip, onClose, onTogglePause, labels, titleId, descriptionId, bubbleRef, onHoverChange, }: ProductTourBubbleProps) => import(\"@types/react\").JS...",
           "source": "packages/ui/src/product-tour/bubble.tsx"
         },
         {
@@ -16066,7 +16066,7 @@
         {
           "name": "ProductTourBubble",
           "kind": "value",
-          "signature": "({ eyebrow, title, description, icon, index, total, placement, anchor, variant, auto, interval, paused, missing, intro, onBack, onNext, onAutoAdvance, onSkip, onClose, onTogglePause, labels, titleId, descriptionId, bubbleRef, onHoverChange, }: ProductTourBubbleProps) => import(\"@types/react\").JSX.Element",
+          "signature": "({ eyebrow, title, description, icon, index, total, placement, anchor, variant, auto, interval, paused, missing, intro, introAutoStartAfter, onBack, onNext, onAutoAdvance, onSkip, onClose, onTogglePause, labels, titleId, descriptionId, bubbleRef, onHoverChange, }: ProductTourBubbleProps) => import(\"@types/react\").JS...",
           "source": "packages/ui/src/product-tour/bubble.tsx"
         },
         {

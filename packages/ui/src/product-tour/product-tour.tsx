@@ -47,8 +47,8 @@ export interface ProductTourStep {
 }
 
 /**
- * An optional welcome moment before step one. The target is highlighted first;
- * accepting the intro starts the first step, while declining dismisses the tour.
+ * An optional welcome moment before step one. With no target it opens as a
+ * centred global spotlight; accepting starts step one in the same layer.
  */
 export interface ProductTourIntro {
   target?: ProductTourTarget;
@@ -58,6 +58,8 @@ export interface ProductTourIntro {
   icon?: ReactNode;
   placement?: ProductTourPlacement;
   padding?: number;
+  /** Advance into step one after this many milliseconds. Omit for manual choice. */
+  autoStartAfter?: number;
 }
 
 export interface ProductTourLabels extends ProductTourBubbleLabels {
@@ -196,6 +198,7 @@ export function ProductTour({
   const step = steps[safeIndex];
   const [introDone, setIntroDone] = useState(false);
   const introActive = Boolean(intro) && !introDone && steps.length > 0;
+  const introTimed = introActive && (intro?.autoStartAfter ?? 0) > 0;
   const activeStep = useMemo<ProductTourStep | undefined>(
     () =>
       introActive && intro
@@ -237,7 +240,9 @@ export function ProductTour({
   }, [activeStep]);
 
   const autoPaused =
-    paused || (mode === "auto" && (bubbleHovered || targetEngaged || !pageVisible));
+    paused ||
+    ((mode === "auto" || introTimed) &&
+      (bubbleHovered || targetEngaged || !pageVisible));
   const status: ProductTourStatus = !open
     ? finalStatus
     : autoPaused
@@ -288,16 +293,25 @@ export function ProductTour({
     setIndex(safeIndex + 1);
   }, [safeIndex, setIndex, steps.length]);
 
+  const acceptIntro = useCallback(() => {
+    setIntroDone(true);
+    setPaused(false);
+    setBubbleHovered(false);
+  }, []);
+
+  const advanceByTimer = useCallback(() => {
+    if (introActive) acceptIntro();
+    else autoAdvance();
+  }, [acceptIntro, autoAdvance, introActive]);
+
   const next = useCallback(() => {
     if (introActive) {
-      setIntroDone(true);
-      setPaused(false);
-      setBubbleHovered(false);
+      acceptIntro();
       return;
     }
     if (safeIndex >= steps.length - 1) complete();
     else goTo(safeIndex + 1);
-  }, [complete, goTo, introActive, safeIndex, steps.length]);
+  }, [acceptIntro, complete, goTo, introActive, safeIndex, steps.length]);
 
   const start = useCallback(
     (nextIndex = 0) => {
@@ -379,6 +393,14 @@ export function ProductTour({
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
         if (disposed) return;
+        if (!activeStep.target) {
+          measuredRef.current = null;
+          observer?.disconnect();
+          observer = null;
+          setMissing(false);
+          setRect(null);
+          return;
+        }
         const target = resolveTourTarget(activeStep.target);
         if (!target) {
           measuredRef.current = null;
@@ -558,9 +580,10 @@ export function ProductTour({
               paused={autoPaused}
               missing={missing}
               intro={introActive}
+              introAutoStartAfter={introActive ? intro?.autoStartAfter : undefined}
               onBack={() => goTo(safeIndex - 1)}
               onNext={next}
-              onAutoAdvance={autoAdvance}
+              onAutoAdvance={advanceByTimer}
               onSkip={() => dismiss("skip")}
               onClose={() => dismiss("close")}
               onTogglePause={() => setPaused((current) => !current)}

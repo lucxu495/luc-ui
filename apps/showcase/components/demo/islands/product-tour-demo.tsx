@@ -438,7 +438,6 @@ export function ProductTourDemo() {
   ];
 
   const intro = {
-    target: "#tour-workspace-intro",
     eyebrow: tcs("WELCOME TO FIELDNOTE"),
     title: tcs("Let’s take a tour?"),
     description: tcs(
@@ -446,6 +445,7 @@ export function ProductTourDemo() {
     ),
     icon: <RiCompass3Line />,
     placement: "bottom" as const,
+    autoStartAfter: 5000,
   };
 
   const steps =
@@ -570,6 +570,8 @@ export function ProductTourDemo() {
               .replace("{total}", String(total)),
           introMeta: (total) =>
             tcs("{count} quiet steps").replace("{count}", String(total)),
+          introAutoStart: (seconds) =>
+            tcs("Auto · {seconds}s").replace("{seconds}", String(seconds)),
           introStatus: tcs("Tour welcome. Take the tour or explore on your own."),
           takeTour: tcs("Take the tour"),
           exploreAlone: tcs("I’ll explore on my own"),

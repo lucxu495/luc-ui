@@ -66,7 +66,8 @@ await check("welcome intro before step one", { viewport: { width: 1440, height: 
   await start(page, "Welcome");
   const dialog = page.getByRole("dialog");
   assert.match(await dialog.innerText(), /Let’s take a tour\?/);
-  assert.match(await dialog.innerText(), /5 quiet steps/);
+  assert.match(await dialog.innerText(), /Auto · 5s/);
+  assert.equal(await page.locator('[data-slot="product-tour-target"]').count(), 0);
   await page.getByRole("button", { name: "Take the tour" }).click();
   await page.waitForFunction(() =>
     document.querySelector('[data-slot="product-tour-bubble"]')?.textContent?.includes(
@@ -77,6 +78,26 @@ await check("welcome intro before step one", { viewport: { width: 1440, height: 
   await page.getByRole("button", { name: "Preview welcome" }).click();
   await page.getByRole("button", { name: "I’ll explore on my own" }).click();
   await page.waitForFunction(() => !document.querySelector('[data-slot="product-tour-bubble"]'));
+});
+
+await check("welcome countdown pauses and auto-enters", { viewport: { width: 1440, height: 900 } }, async (page) => {
+  await start(page, "Welcome");
+  await page.mouse.move(2, 2);
+  const dialog = page.getByRole("dialog");
+  assert.match(await dialog.innerText(), /Auto · 5s/);
+  const box = await dialog.boundingBox();
+  assert.ok(box);
+  await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+  await page.waitForTimeout(5200);
+  assert.match(await dialog.innerText(), /Let’s take a tour\?/);
+  await page.mouse.move(2, 2);
+  await page.waitForFunction(
+    () =>
+      document.querySelector('[data-slot="product-tour-bubble"]')?.textContent?.includes(
+        "WORKSPACE · 01",
+      ),
+    { timeout: 6500 },
+  );
 });
 
 await check("auto pause, resume and final-step stop", { viewport: { width: 1440, height: 900 } }, async (page) => {

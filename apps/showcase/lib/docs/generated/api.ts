@@ -18872,7 +18872,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
   {
    "name": "ProductTourBubble",
    "kind": "value",
-   "signature": "({ eyebrow, title, description, icon, index, total, placement, anchor, variant, auto, interval, paused, missing, intro, onBack, onNext, onAutoAdvance, onSkip, onClose, onTogglePause, labels, titleId,…",
+   "signature": "({ eyebrow, title, description, icon, index, total, placement, anchor, variant, auto, interval, paused, missing, intro, introAutoStartAfter, onBack, onNext, onAutoAdvance, onSkip, onClose, onTogglePa…",
    "propsType": "ProductTourBubbleProps",
    "props": [
     {
@@ -18933,6 +18933,12 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "name": "intro",
      "optional": true,
      "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "introAutoStartAfter",
+     "optional": true,
+     "type": "number | undefined",
      "inherited": false
     },
     {

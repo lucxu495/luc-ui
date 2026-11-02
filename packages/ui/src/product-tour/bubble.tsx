@@ -5,7 +5,7 @@ import {
   motion,
   useReducedMotion as useMotionReducedMotion,
 } from "motion/react";
-import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import {
   RiArrowLeftSLine,
   RiArrowRightSLine,
@@ -34,6 +34,7 @@ export interface ProductTourBubbleLabels {
   resume?: string;
   step?: (current: number, total: number) => string;
   introMeta?: (total: number) => string;
+  introAutoStart?: (seconds: number) => string;
   introStatus?: string;
   takeTour?: string;
   exploreAlone?: string;
@@ -56,6 +57,7 @@ export interface ProductTourBubbleProps {
   paused: boolean;
   missing: boolean;
   intro?: boolean;
+  introAutoStartAfter?: number;
   onBack: () => void;
   onNext: () => void;
   onAutoAdvance: () => void;
@@ -74,20 +76,26 @@ function Countdown({
   duration,
   resetKey,
   onElapsed,
+  onSecondChange,
 }: {
   active: boolean;
   duration: number;
   resetKey: string;
   onElapsed: () => void;
+  onSecondChange?: (seconds: number) => void;
 }) {
   const barRef = useRef<HTMLSpanElement>(null);
   const elapsedRef = useRef(0);
   const startedRef = useRef<number | null>(null);
+  const reportedSecondRef = useRef<number | null>(null);
 
   useEffect(() => {
     elapsedRef.current = 0;
     if (barRef.current) barRef.current.style.transform = "scaleX(1)";
-  }, [duration, resetKey]);
+    const seconds = Math.ceil(duration / 1000);
+    reportedSecondRef.current = seconds;
+    onSecondChange?.(seconds);
+  }, [duration, onSecondChange, resetKey]);
 
   useEffect(() => {
     if (!active) {
@@ -105,6 +113,10 @@ function Countdown({
       if (elapsedRef.current + (now - (startedRef.current ?? now)) >= duration) {
         elapsedRef.current = duration;
         if (barRef.current) barRef.current.style.transform = "scaleX(0)";
+        if (reportedSecondRef.current !== 0) {
+          reportedSecondRef.current = 0;
+          onSecondChange?.(0);
+        }
         if (!complete) {
           complete = true;
           onElapsed();
@@ -113,6 +125,11 @@ function Countdown({
       }
       const remaining =
         duration - elapsedRef.current - (now - (startedRef.current ?? now));
+      const seconds = Math.ceil(remaining / 1000);
+      if (seconds !== reportedSecondRef.current) {
+        reportedSecondRef.current = seconds;
+        onSecondChange?.(seconds);
+      }
       if (barRef.current) {
         barRef.current.style.transform = `scaleX(${Math.max(0, remaining / duration)})`;
       }
@@ -126,7 +143,7 @@ function Countdown({
         startedRef.current = null;
       }
     };
-  }, [active, duration, onElapsed]);
+  }, [active, duration, onElapsed, onSecondChange]);
 
   return (
     <span
@@ -192,7 +209,7 @@ function Tail({
   return (
     <span
       aria-hidden="true"
-      className="pointer-events-none absolute"
+      className="luc-product-tour__tail pointer-events-none absolute"
       style={{
         left: side === "top" || side === "bottom" ? x : y,
         top: side === "top" || side === "bottom" ? y : x,
@@ -231,6 +248,7 @@ export function ProductTourBubble({
   paused,
   missing,
   intro = false,
+  introAutoStartAfter,
   onBack,
   onNext,
   onAutoAdvance,
@@ -245,6 +263,9 @@ export function ProductTourBubble({
 }: ProductTourBubbleProps) {
   const localRef = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState<{ width: number; height: number } | null>(null);
+  const [introSeconds, setIntroSeconds] = useState(() =>
+    Math.ceil((introAutoStartAfter ?? 0) / 1000),
+  );
   const [viewport, setViewport] = useState(() =>
     typeof window === "undefined"
       ? { width: 0, height: 0 }
@@ -252,6 +273,9 @@ export function ProductTourBubble({
   );
   const reducedMotion = useMotionReducedMotion();
   const isLast = index === total - 1;
+  const handleSecondChange = useCallback((seconds: number) => {
+    setIntroSeconds(seconds);
+  }, []);
 
   useLayoutEffect(() => {
     const node = localRef.current;
@@ -320,13 +344,21 @@ export function ProductTourBubble({
         left: position.left,
         transition: reducedMotion
           ? "none"
-          : "top var(--motion-slow) var(--ease-emphasized), left var(--motion-slow) var(--ease-emphasized), width var(--motion-normal) var(--ease-standard), height var(--motion-normal) var(--ease-standard)",
+          : "top var(--motion-slower) var(--ease-enter), left var(--motion-slower) var(--ease-enter), width var(--motion-slower) var(--ease-enter), height var(--motion-slower) var(--ease-enter)",
       }}
     >
       <BubbleShape variant={variant} />
       <Tail position={position} variant={variant} />
       <div className="relative z-[1] flex min-h-0 flex-1 flex-col px-4 pb-3.5 pt-4">
-        {intro ? null : auto ? (
+        {intro && introAutoStartAfter ? (
+          <Countdown
+            active={!paused && !missing}
+            duration={introAutoStartAfter}
+            resetKey={`intro-${titleId}`}
+            onElapsed={onAutoAdvance}
+            onSecondChange={handleSecondChange}
+          />
+        ) : intro ? null : auto ? (
           <Countdown
             active={!paused && !missing && !isLast}
             duration={interval}
@@ -363,7 +395,10 @@ export function ProductTourBubble({
               </span>
               <span className="shrink-0 text-[10px] font-medium tabular-nums tracking-[0.04em] text-[var(--tour-meta)]">
                 {intro
-                  ? labels?.introMeta?.(total) ?? `${total} steps`
+                  ? introAutoStartAfter
+                    ? labels?.introAutoStart?.(introSeconds) ??
+                      `Auto · ${introSeconds}s`
+                    : labels?.introMeta?.(total) ?? `${total} steps`
                   : labels?.step?.(index + 1, total) ?? `${String(index + 1).padStart(2, "0")} / ${String(total).padStart(2, "0")}`}
               </span>
             </div>
@@ -373,8 +408,12 @@ export function ProductTourBubble({
                   key={`${index}-${missing ? "missing" : "ready"}`}
                   initial={reducedMotion ? false : { opacity: 0, y: 4 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={reducedMotion ? { opacity: 0 } : { opacity: 0, y: -3 }}
-                  transition={{ duration: reducedMotion ? 0.001 : 0.16, ease: [0.2, 0, 0, 1] }}
+                  exit={
+                    reducedMotion
+                      ? { opacity: 0 }
+                      : { opacity: 0, y: -3, transition: { duration: 0.12 } }
+                  }
+                  transition={{ duration: reducedMotion ? 0.001 : 0.2, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <h2 id={titleId} className="text-title font-[560] leading-[1.28] tracking-[-0.018em] text-[var(--tour-title)]">
                     {missing ? labels?.unavailableTitle ?? "The anchor moved" : title}

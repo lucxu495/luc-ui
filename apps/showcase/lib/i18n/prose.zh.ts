@@ -45,6 +45,7 @@ export const proseZh: Record<string, string> = {
   "Tour mode": "导览模式",
   "Positioning scenario": "定位场景",
   "{count} quiet steps": "{count} 个安静步骤",
+  "Auto · {seconds}s": "自动 · {seconds} 秒",
   "Tour welcome. Take the tour or explore on your own.":
     "导览欢迎页。可以开始导览，也可以自己探索。",
   "Take the tour": "开始导览",

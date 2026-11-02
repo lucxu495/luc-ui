@@ -8,8 +8,9 @@ Stage 1 adds a standalone `ProductTour` prototype without changing the released
 `GuidedTour` API. The showcase at `/components/product-tour` is a live product
 surface with manual, auto, nested-scroll, viewport-edge, missing-target recovery,
 light/dark, desktop/mobile and reduced-motion scenarios. It also includes an
-optional first-use welcome that spotlights the workspace, asks “Let’s take a
-tour?”, and only starts step one after the reader accepts.
+optional first-use welcome: the page dims into a centred global spotlight,
+asks “Let’s take a tour?”, counts down from five seconds, then travels to step
+one. The reader can accept immediately, pause by hovering, or leave.
 
 ## Engine selection
 
@@ -43,9 +44,9 @@ welcome without changing controls, focus, placement or text readability.
 
 ## Motion and spotlight
 
-The page scrim, spotlight geometry and bubble enter/exit together. Step changes
-move the spotlight and bubble on the emphasized curve while the bubble stays
-mounted and swaps only its copy. Auto mode uses a 2-second hairline countdown,
+The page scrim, spotlight geometry and bubble enter/exit together. Spotlight,
+bubble and tail geometry share a 460 ms ease-out transition while the bubble
+stays mounted and swaps only its copy. Auto mode uses a 2-second hairline countdown,
 pauses on hover, target focus, manual navigation and hidden pages, and stops at
 the final step. Reduced motion clamps both CSS transitions and smooth scrolling.
 
@@ -65,8 +66,8 @@ pointer-interactive. A portal avoids page stacking and overflow contexts.
 
 ## Validation
 
-- `pnpm --filter @luc/ui test`: 102 files, 1,018 tests passed.
-- `pnpm --filter @luc/showcase qa:product-tour`: all six browser scenarios pass.
+- `pnpm --filter @luc/ui test`: 102 files, 1,019 tests passed.
+- `pnpm --filter @luc/showcase qa:product-tour`: all seven browser scenarios pass.
 - `pnpm --filter @luc/ui build:package`: package build passes.
 - `pnpm --filter @luc/ui verify:package`: export map and tarball pass.
 - `pnpm --filter @luc/ui verify:types`: ESM and bundler resolution pass.
