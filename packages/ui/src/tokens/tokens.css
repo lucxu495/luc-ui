@@ -329,6 +329,36 @@
   --glass-border: color-mix(in oklab, var(--line-default) 78%, transparent);
   --glass-highlight: oklch(1 0 0 / 0.6);
   --glass-sheen: oklch(1 0 0 / 0.14);
+  /* Product-tour spotlight. Gold is used as a narrow optical rim around the
+     live target, never as a large fill or a yellow border. */
+  --tour-scrim: oklch(0.1900 0.0140 258 / 0.36);
+  --tour-spotlight-edge: color-mix(in oklab, oklch(0.7600 0.1050 78) 52%, var(--line-strong));
+  --tour-spotlight-halo: color-mix(in oklab, oklch(0.8000 0.1000 82) 24%, transparent);
+  --tour-spotlight-aura: color-mix(in oklab, oklch(0.7900 0.1050 80) 34%, transparent);
+  --tour-spotlight-inset: oklch(1 0 0 / 0.56);
+  --tour-spotlight-radius: calc(var(--radius-md) + 2px);
+  --tour-bubble: color-mix(in oklab, var(--glass-surface-strong) 84%, transparent);
+  --tour-bubble-wash: color-mix(in oklab, var(--surface-overlay) 28%, transparent);
+  --tour-bubble-border: color-mix(in oklab, oklch(0.7300 0.0800 79) 23%, var(--glass-border));
+  --tour-bubble-highlight: oklch(1 0 0 / 0.72);
+  --tour-bubble-shadow: oklch(0.2000 0.0140 258 / 0.18);
+  --tour-bubble-cloud-shadow: oklch(0.2000 0.0140 258 / 0.16);
+  --tour-bubble-inner-radius: calc(var(--radius-2xl) - 1px);
+  --tour-title: var(--fg-primary);
+  --tour-copy: var(--fg-secondary);
+  --tour-eyebrow: color-mix(in oklab, var(--fg-primary) 72%, var(--tour-spotlight-edge));
+  --tour-meta: var(--fg-muted);
+  --tour-divider: var(--line-subtle);
+  --tour-countdown: color-mix(in oklab, var(--tour-spotlight-edge) 76%, transparent);
+  --tour-icon-border: color-mix(in oklab, var(--tour-spotlight-edge) 28%, var(--line-subtle));
+  --tour-icon-surface: color-mix(in oklab, var(--surface-overlay) 58%, transparent);
+  --tour-icon-ink: var(--fg-secondary);
+  --tour-button-surface: color-mix(in oklab, var(--surface-overlay) 76%, transparent);
+  --tour-button-hover: color-mix(in oklab, var(--surface-overlay) 92%, transparent);
+  --tour-button-border: color-mix(in oklab, var(--line-default) 84%, transparent);
+  --tour-button-border-hover: color-mix(in oklab, var(--tour-spotlight-edge) 42%, var(--line-default));
+  --tour-button-shadow: oklch(0.2400 0.0200 258 / 0.06);
+  --tour-control-hover: color-mix(in oklab, var(--surface-interactive-hover) 62%, transparent);
   --layer-shadow: 0 1px 1px -0.5px oklch(0.24 0.02 258 / 0.05),
     0 12px 28px -14px oklch(0.24 0.02 258 / 0.2);
 
@@ -463,6 +493,34 @@
   --glass-border: color-mix(in oklab, var(--line-strong) 62%, transparent);
   --glass-highlight: oklch(1 0 0 / 0.1);
   --glass-sheen: oklch(1 0 0 / 0.08);
+  --tour-scrim: oklch(0.0600 0.0080 258 / 0.58);
+  --tour-spotlight-edge: color-mix(in oklab, oklch(0.8600 0.0900 82) 56%, var(--line-strong));
+  --tour-spotlight-halo: color-mix(in oklab, oklch(0.8400 0.0900 82) 22%, transparent);
+  --tour-spotlight-aura: color-mix(in oklab, oklch(0.8400 0.0950 82) 26%, transparent);
+  --tour-spotlight-inset: oklch(1 0 0 / 0.16);
+  --tour-spotlight-radius: calc(var(--radius-md) + 2px);
+  --tour-bubble: color-mix(in oklab, var(--glass-surface-strong) 82%, transparent);
+  --tour-bubble-wash: color-mix(in oklab, var(--surface-overlay) 30%, transparent);
+  --tour-bubble-border: color-mix(in oklab, oklch(0.7900 0.0700 81) 28%, var(--glass-border));
+  --tour-bubble-highlight: oklch(1 0 0 / 0.16);
+  --tour-bubble-shadow: oklch(0 0 0 / 0.52);
+  --tour-bubble-cloud-shadow: oklch(0 0 0 / 0.42);
+  --tour-bubble-inner-radius: calc(var(--radius-2xl) - 1px);
+  --tour-title: var(--fg-primary);
+  --tour-copy: var(--fg-secondary);
+  --tour-eyebrow: color-mix(in oklab, var(--fg-primary) 80%, var(--tour-spotlight-edge));
+  --tour-meta: var(--fg-muted);
+  --tour-divider: var(--line-subtle);
+  --tour-countdown: color-mix(in oklab, var(--tour-spotlight-edge) 72%, transparent);
+  --tour-icon-border: color-mix(in oklab, var(--tour-spotlight-edge) 24%, var(--line-subtle));
+  --tour-icon-surface: color-mix(in oklab, var(--surface-raised) 62%, transparent);
+  --tour-icon-ink: var(--fg-secondary);
+  --tour-button-surface: color-mix(in oklab, var(--surface-raised) 72%, transparent);
+  --tour-button-hover: color-mix(in oklab, var(--surface-raised) 90%, transparent);
+  --tour-button-border: color-mix(in oklab, var(--line-default) 84%, transparent);
+  --tour-button-border-hover: color-mix(in oklab, var(--tour-spotlight-edge) 38%, var(--line-default));
+  --tour-button-shadow: oklch(0 0 0 / 0.22);
+  --tour-control-hover: color-mix(in oklab, var(--surface-interactive-hover) 58%, transparent);
   --layer-shadow: inset 0 1px 0 0 oklch(1 0 0 / 0.04), 0 4px 10px -4px oklch(0 0 0 / 0.5),
     0 22px 48px -20px oklch(0 0 0 / 0.62);
 

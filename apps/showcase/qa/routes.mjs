@@ -436,6 +436,13 @@ POLICY.push(
     light: true,
     groups: ["feedback"],
   },
+  {
+    slug: "components-product-tour",
+    path: "/components/product-tour",
+    mobile: true,
+    light: true,
+    groups: ["feedback"],
+  },
   { slug: "components-stepper", path: "/components/stepper", mobile: true, light: true, groups: ["core"] },
 );
 

@@ -147,7 +147,8 @@ export const generatedFamilies = [
       "status-badge",
       "toast",
       "notification-center",
-      "guided-tour"
+      "guided-tour",
+      "product-tour"
     ]
   },
   {
@@ -2954,6 +2955,24 @@ export const generatedEntries = [
     ],
     "summary": "The pointer-level press contract, extracted so any surface can have it.",
     "route": "/motion/pressable",
+    "status": "generated"
+  },
+  {
+    "id": "product-tour",
+    "title": "ProductTour",
+    "family": "feedback",
+    "group": "components",
+    "importPath": "@luc/ui/product-tour",
+    "exports": [
+      "measureTarget",
+      "positionTourBubble",
+      "resolveTourTarget",
+      "ProductTour",
+      "ProductTourBubble",
+      "ProductTourSpotlight"
+    ],
+    "summary": "A guided product layer with a live spotlight, collision-aware glass bubble, manual and auto steps, and graceful target recovery.",
+    "route": "/components/product-tour",
     "status": "generated"
   },
   {

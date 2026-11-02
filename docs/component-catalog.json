@@ -1102,6 +1102,12 @@
           "source": "packages/ui/src/charts/chart-card.tsx"
         },
         {
+          "name": "ChartCrosshairSpec",
+          "kind": "type",
+          "signature": "ChartCrosshairSpec",
+          "source": "packages/ui/src/charts/types.ts"
+        },
+        {
           "name": "ChartDataRow",
           "kind": "type",
           "signature": "ChartDataRow",
@@ -1464,7 +1470,7 @@
         {
           "name": "ChartSurface",
           "kind": "value",
-          "signature": "({ option, xValues, syncGroup, state, height, className, ariaLabel, ariaDescription, copy, onReady, onEvent, eager, onVisibleSpan, renderer, }: ChartSurfaceProps) => import(\"@types/react\").JSX.Element",
+          "signature": "({ option, xValues, syncGroup, state, height, className, ariaLabel, ariaDescription, copy, onReady, onEvent, eager, onVisibleSpan, renderer, axisDrag, }: ChartSurfaceProps) => import(\"@types/react\").JSX.Element",
           "source": "packages/ui/src/charts/components/chart.tsx"
         },
         {
@@ -4828,6 +4834,12 @@
           "source": "packages/ui/src/charts/core/matrix-labels.ts"
         },
         {
+          "name": "measureTarget",
+          "kind": "value",
+          "signature": "(element: Element, padding?: number) => TourRect | null",
+          "source": "packages/ui/src/product-tour/engine.ts"
+        },
+        {
           "name": "MekkoChart",
           "kind": "value",
           "signature": "({ columns, format, title, description, state, height, className, ariaLabel, ariaDescription, onReady, onEvent, eager, }: MekkoChartProps) => import(\"@types/react\").JSX.Element",
@@ -5734,6 +5746,12 @@
           "source": "packages/ui/src/components/popover.tsx"
         },
         {
+          "name": "positionTourBubble",
+          "kind": "value",
+          "signature": "({ anchor, bubble, viewport, preferred, gap, margin, }: PositionTourBubbleOptions) => TourBubblePosition",
+          "source": "packages/ui/src/product-tour/engine.ts"
+        },
+        {
           "name": "preciseFormatter",
           "kind": "value",
           "signature": "(format?: ChartFormat) => ChartFormatter",
@@ -5804,6 +5822,96 @@
           "kind": "type",
           "signature": "PressRippleRing",
           "source": "packages/ui/src/motion/press-ripple.tsx"
+        },
+        {
+          "name": "ProductTour",
+          "kind": "value",
+          "signature": "({ steps, intro, open: controlledOpen, defaultOpen, onOpenChange, stepIndex: controlledIndex, defaultStepIndex, onStepChange, variant, mode, interval, spotlight, onComplete, onSkip, onClose, onTargetUnavailable, onStatusChange, labels, className, ref, }: ProductTourProps) => import(\"@types/react\").ReactPortal | null",
+          "source": "packages/ui/src/product-tour/product-tour.tsx"
+        },
+        {
+          "name": "ProductTourBubble",
+          "kind": "value",
+          "signature": "({ eyebrow, title, description, icon, index, total, placement, anchor, variant, auto, interval, paused, missing, intro, introAutoStartAfter, onBack, onNext, onAutoAdvance, onSkip, onClose, onTogglePause, labels, titleId, descriptionId, bubbleRef, onHoverChange, }: ProductTourBubbleProps) => import(\"@types/react\").JS...",
+          "source": "packages/ui/src/product-tour/bubble.tsx"
+        },
+        {
+          "name": "ProductTourBubbleProps",
+          "kind": "type",
+          "signature": "ProductTourBubbleProps",
+          "source": "packages/ui/src/product-tour/bubble.tsx"
+        },
+        {
+          "name": "ProductTourHandle",
+          "kind": "type",
+          "signature": "ProductTourHandle",
+          "source": "packages/ui/src/product-tour/product-tour.tsx"
+        },
+        {
+          "name": "ProductTourIntro",
+          "kind": "type",
+          "signature": "ProductTourIntro",
+          "source": "packages/ui/src/product-tour/product-tour.tsx"
+        },
+        {
+          "name": "ProductTourLabels",
+          "kind": "type",
+          "signature": "ProductTourLabels",
+          "source": "packages/ui/src/product-tour/product-tour.tsx"
+        },
+        {
+          "name": "ProductTourMode",
+          "kind": "type",
+          "signature": "ProductTourMode",
+          "source": "packages/ui/src/product-tour/product-tour.tsx"
+        },
+        {
+          "name": "ProductTourPlacement",
+          "kind": "type",
+          "signature": "ProductTourPlacement",
+          "source": "packages/ui/src/product-tour/engine.ts"
+        },
+        {
+          "name": "ProductTourProps",
+          "kind": "type",
+          "signature": "ProductTourProps",
+          "source": "packages/ui/src/product-tour/product-tour.tsx"
+        },
+        {
+          "name": "ProductTourSpotlight",
+          "kind": "value",
+          "signature": "({ rect, viewport, visible, variant, onDismiss, dismissLabel, }: ProductTourSpotlightProps) => import(\"@types/react\").JSX.Element",
+          "source": "packages/ui/src/product-tour/spotlight.tsx"
+        },
+        {
+          "name": "ProductTourSpotlightProps",
+          "kind": "type",
+          "signature": "ProductTourSpotlightProps",
+          "source": "packages/ui/src/product-tour/spotlight.tsx"
+        },
+        {
+          "name": "ProductTourStatus",
+          "kind": "type",
+          "signature": "ProductTourStatus",
+          "source": "packages/ui/src/product-tour/product-tour.tsx"
+        },
+        {
+          "name": "ProductTourStep",
+          "kind": "type",
+          "signature": "ProductTourStep",
+          "source": "packages/ui/src/product-tour/product-tour.tsx"
+        },
+        {
+          "name": "ProductTourTarget",
+          "kind": "type",
+          "signature": "ProductTourTarget",
+          "source": "packages/ui/src/product-tour/engine.ts"
+        },
+        {
+          "name": "ProductTourVariant",
+          "kind": "type",
+          "signature": "ProductTourVariant",
+          "source": "packages/ui/src/product-tour/product-tour.tsx"
         },
         {
           "name": "Progress",
@@ -6206,6 +6314,12 @@
           "kind": "value",
           "signature": "(options: { requested?: YScaleMode | null; capability?: ChartScaleCapability; values?: readonly (number | null | undefined)[]; }) => ResolvedScaleMode",
           "source": "packages/ui/src/charts/core/axis.ts"
+        },
+        {
+          "name": "resolveTourTarget",
+          "kind": "value",
+          "signature": "(target: ProductTourTarget, root?: ParentNode) => Element | null",
+          "source": "packages/ui/src/product-tour/engine.ts"
         },
         {
           "name": "Result",
@@ -7906,16 +8020,34 @@
           "source": "node_modules/.pnpm/@internationalized+date@3.12.4/node_modules/@internationalized/date/dist/types/src/conversion.d.ts"
         },
         {
+          "name": "TourBubblePosition",
+          "kind": "type",
+          "signature": "TourBubblePosition",
+          "source": "packages/ui/src/product-tour/engine.ts"
+        },
+        {
           "name": "TourPlacement",
           "kind": "type",
           "signature": "TourPlacement",
           "source": "packages/ui/src/components/guided-tour.tsx"
         },
         {
+          "name": "TourRect",
+          "kind": "type",
+          "signature": "TourRect",
+          "source": "packages/ui/src/product-tour/engine.ts"
+        },
+        {
           "name": "TourStep",
           "kind": "type",
           "signature": "TourStep",
           "source": "packages/ui/src/components/guided-tour.tsx"
+        },
+        {
+          "name": "TourViewport",
+          "kind": "type",
+          "signature": "TourViewport",
+          "source": "packages/ui/src/product-tour/engine.ts"
         },
         {
           "name": "toZoned",
@@ -9420,6 +9552,12 @@
           "source": "packages/ui/src/charts/chart-card.tsx"
         },
         {
+          "name": "ChartCrosshairSpec",
+          "kind": "type",
+          "signature": "ChartCrosshairSpec",
+          "source": "packages/ui/src/charts/types.ts"
+        },
+        {
           "name": "ChartDataRow",
           "kind": "type",
           "signature": "ChartDataRow",
@@ -9776,7 +9914,7 @@
         {
           "name": "ChartSurface",
           "kind": "value",
-          "signature": "({ option, xValues, syncGroup, state, height, className, ariaLabel, ariaDescription, copy, onReady, onEvent, eager, onVisibleSpan, renderer, }: ChartSurfaceProps) => import(\"@types/react\").JSX.Element",
+          "signature": "({ option, xValues, syncGroup, state, height, className, ariaLabel, ariaDescription, copy, onReady, onEvent, eager, onVisibleSpan, renderer, axisDrag, }: ChartSurfaceProps) => import(\"@types/react\").JSX.Element",
           "source": "packages/ui/src/charts/components/chart.tsx"
         },
         {
@@ -15892,6 +16030,148 @@
       "packed": "./package.json",
       "status": "public",
       "recommended": false
+    },
+    "./product-tour": {
+      "import": "@luc/ui/product-tour",
+      "source": "./src/product-tour/index.ts",
+      "packed": {
+        "types": "./dist/product-tour.d.ts",
+        "default": "./dist/product-tour.js"
+      },
+      "status": "public",
+      "recommended": true,
+      "category": "Feedback",
+      "use": "Guide a reader through live interface targets with manual or auto steps and a recoverable spotlight.",
+      "avoid": "Do not use auto-play for essential reading or bind step content to a business-specific product.",
+      "a11y": "The target remains interactive, Escape dismisses, focus is restored and reduced motion removes travel.",
+      "exports": [
+        {
+          "name": "measureTarget",
+          "kind": "value",
+          "signature": "(element: Element, padding?: number) => TourRect | null",
+          "source": "packages/ui/src/product-tour/engine.ts"
+        },
+        {
+          "name": "positionTourBubble",
+          "kind": "value",
+          "signature": "({ anchor, bubble, viewport, preferred, gap, margin, }: PositionTourBubbleOptions) => TourBubblePosition",
+          "source": "packages/ui/src/product-tour/engine.ts"
+        },
+        {
+          "name": "ProductTour",
+          "kind": "value",
+          "signature": "({ steps, intro, open: controlledOpen, defaultOpen, onOpenChange, stepIndex: controlledIndex, defaultStepIndex, onStepChange, variant, mode, interval, spotlight, onComplete, onSkip, onClose, onTargetUnavailable, onStatusChange, labels, className, ref, }: ProductTourProps) => import(\"@types/react\").ReactPortal | null",
+          "source": "packages/ui/src/product-tour/product-tour.tsx"
+        },
+        {
+          "name": "ProductTourBubble",
+          "kind": "value",
+          "signature": "({ eyebrow, title, description, icon, index, total, placement, anchor, variant, auto, interval, paused, missing, intro, introAutoStartAfter, onBack, onNext, onAutoAdvance, onSkip, onClose, onTogglePause, labels, titleId, descriptionId, bubbleRef, onHoverChange, }: ProductTourBubbleProps) => import(\"@types/react\").JS...",
+          "source": "packages/ui/src/product-tour/bubble.tsx"
+        },
+        {
+          "name": "ProductTourBubbleProps",
+          "kind": "type",
+          "signature": "ProductTourBubbleProps",
+          "source": "packages/ui/src/product-tour/bubble.tsx"
+        },
+        {
+          "name": "ProductTourHandle",
+          "kind": "type",
+          "signature": "ProductTourHandle",
+          "source": "packages/ui/src/product-tour/product-tour.tsx"
+        },
+        {
+          "name": "ProductTourIntro",
+          "kind": "type",
+          "signature": "ProductTourIntro",
+          "source": "packages/ui/src/product-tour/product-tour.tsx"
+        },
+        {
+          "name": "ProductTourLabels",
+          "kind": "type",
+          "signature": "ProductTourLabels",
+          "source": "packages/ui/src/product-tour/product-tour.tsx"
+        },
+        {
+          "name": "ProductTourMode",
+          "kind": "type",
+          "signature": "ProductTourMode",
+          "source": "packages/ui/src/product-tour/product-tour.tsx"
+        },
+        {
+          "name": "ProductTourPlacement",
+          "kind": "type",
+          "signature": "ProductTourPlacement",
+          "source": "packages/ui/src/product-tour/engine.ts"
+        },
+        {
+          "name": "ProductTourProps",
+          "kind": "type",
+          "signature": "ProductTourProps",
+          "source": "packages/ui/src/product-tour/product-tour.tsx"
+        },
+        {
+          "name": "ProductTourSpotlight",
+          "kind": "value",
+          "signature": "({ rect, viewport, visible, variant, onDismiss, dismissLabel, }: ProductTourSpotlightProps) => import(\"@types/react\").JSX.Element",
+          "source": "packages/ui/src/product-tour/spotlight.tsx"
+        },
+        {
+          "name": "ProductTourSpotlightProps",
+          "kind": "type",
+          "signature": "ProductTourSpotlightProps",
+          "source": "packages/ui/src/product-tour/spotlight.tsx"
+        },
+        {
+          "name": "ProductTourStatus",
+          "kind": "type",
+          "signature": "ProductTourStatus",
+          "source": "packages/ui/src/product-tour/product-tour.tsx"
+        },
+        {
+          "name": "ProductTourStep",
+          "kind": "type",
+          "signature": "ProductTourStep",
+          "source": "packages/ui/src/product-tour/product-tour.tsx"
+        },
+        {
+          "name": "ProductTourTarget",
+          "kind": "type",
+          "signature": "ProductTourTarget",
+          "source": "packages/ui/src/product-tour/engine.ts"
+        },
+        {
+          "name": "ProductTourVariant",
+          "kind": "type",
+          "signature": "ProductTourVariant",
+          "source": "packages/ui/src/product-tour/product-tour.tsx"
+        },
+        {
+          "name": "resolveTourTarget",
+          "kind": "value",
+          "signature": "(target: ProductTourTarget, root?: ParentNode) => Element | null",
+          "source": "packages/ui/src/product-tour/engine.ts"
+        },
+        {
+          "name": "TourBubblePosition",
+          "kind": "type",
+          "signature": "TourBubblePosition",
+          "source": "packages/ui/src/product-tour/engine.ts"
+        },
+        {
+          "name": "TourRect",
+          "kind": "type",
+          "signature": "TourRect",
+          "source": "packages/ui/src/product-tour/engine.ts"
+        },
+        {
+          "name": "TourViewport",
+          "kind": "type",
+          "signature": "TourViewport",
+          "source": "packages/ui/src/product-tour/engine.ts"
+        }
+      ]
     },
     "./providers": {
       "import": "@luc/ui/providers",

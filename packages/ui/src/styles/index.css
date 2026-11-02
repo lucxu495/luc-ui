@@ -11,6 +11,7 @@
 @import "./utilities.css";
 @import "./charts.css";
 @import "./toast.css";
+@import "./product-tour.css";
 
 /* Dark mode is class driven so the provider, the OS, and tests all agree. */
 @custom-variant dark (&:where(.dark, .dark *));

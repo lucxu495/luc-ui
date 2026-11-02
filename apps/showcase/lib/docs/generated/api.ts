@@ -18724,6 +18724,360 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
    ]
   }
  ],
+ "product-tour": [
+  {
+   "name": "measureTarget",
+   "kind": "value",
+   "signature": "(element: Element, padding?: number) => TourRect | null"
+  },
+  {
+   "name": "positionTourBubble",
+   "kind": "value",
+   "signature": "({ anchor, bubble, viewport, preferred, gap, margin, }: PositionTourBubbleOptions) => TourBubblePosition"
+  },
+  {
+   "name": "resolveTourTarget",
+   "kind": "value",
+   "signature": "(target: ProductTourTarget, root?: ParentNode) => Element | null"
+  },
+  {
+   "name": "ProductTour",
+   "kind": "value",
+   "signature": "({ steps, intro, open: controlledOpen, defaultOpen, onOpenChange, stepIndex: controlledIndex, defaultStepIndex, onStepChange, variant, mode, interval, spotlight, onComplete, onSkip, onClose, onTarget…",
+   "propsType": "ProductTourProps",
+   "props": [
+    {
+     "name": "className",
+     "optional": true,
+     "type": "string | undefined",
+     "inherited": false
+    },
+    {
+     "name": "defaultOpen",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "defaultStepIndex",
+     "optional": true,
+     "type": "number | undefined",
+     "inherited": false
+    },
+    {
+     "name": "interval",
+     "optional": true,
+     "type": "number | undefined",
+     "description": "Milliseconds per step in auto mode. Default 2000.",
+     "inherited": false
+    },
+    {
+     "name": "intro",
+     "optional": true,
+     "type": "ProductTourIntro | undefined",
+     "inherited": false
+    },
+    {
+     "name": "labels",
+     "optional": true,
+     "type": "ProductTourLabels | undefined",
+     "inherited": false
+    },
+    {
+     "name": "mode",
+     "optional": true,
+     "type": "ProductTourMode | undefined",
+     "inherited": false
+    },
+    {
+     "name": "onClose",
+     "optional": true,
+     "type": "(() => void) | undefined",
+     "inherited": false
+    },
+    {
+     "name": "onComplete",
+     "optional": true,
+     "type": "(() => void) | undefined",
+     "inherited": false
+    },
+    {
+     "name": "onOpenChange",
+     "optional": true,
+     "type": "((open: boolean) => void) | undefined",
+     "inherited": false
+    },
+    {
+     "name": "onSkip",
+     "optional": true,
+     "type": "(() => void) | undefined",
+     "inherited": false
+    },
+    {
+     "name": "onStatusChange",
+     "optional": true,
+     "type": "((status: ProductTourStatus) => void) | undefined",
+     "inherited": false
+    },
+    {
+     "name": "onStepChange",
+     "optional": true,
+     "type": "((index: number, step: ProductTourStep) => void) | undefined",
+     "inherited": false
+    },
+    {
+     "name": "onTargetUnavailable",
+     "optional": true,
+     "type": "((step: ProductTourStep) => void) | undefined",
+     "inherited": false
+    },
+    {
+     "name": "open",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "ref",
+     "optional": true,
+     "type": "Ref<ProductTourHandle> | undefined",
+     "inherited": false
+    },
+    {
+     "name": "spotlight",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "stepIndex",
+     "optional": true,
+     "type": "number | undefined",
+     "inherited": false
+    },
+    {
+     "name": "steps",
+     "optional": false,
+     "type": "readonly ProductTourStep[]",
+     "inherited": false
+    },
+    {
+     "name": "variant",
+     "optional": true,
+     "type": "ProductTourVariant | undefined",
+     "inherited": false
+    }
+   ]
+  },
+  {
+   "name": "ProductTourBubble",
+   "kind": "value",
+   "signature": "({ eyebrow, title, description, icon, index, total, placement, anchor, variant, auto, interval, paused, missing, intro, introAutoStartAfter, onBack, onNext, onAutoAdvance, onSkip, onClose, onTogglePa…",
+   "propsType": "ProductTourBubbleProps",
+   "props": [
+    {
+     "name": "anchor",
+     "optional": false,
+     "type": "TourRect | null",
+     "inherited": false
+    },
+    {
+     "name": "auto",
+     "optional": false,
+     "type": "boolean",
+     "inherited": false
+    },
+    {
+     "name": "bubbleRef",
+     "optional": false,
+     "type": "Ref<HTMLDivElement>",
+     "inherited": false
+    },
+    {
+     "name": "description",
+     "optional": true,
+     "type": "ReactNode",
+     "inherited": false
+    },
+    {
+     "name": "descriptionId",
+     "optional": false,
+     "type": "string",
+     "inherited": false
+    },
+    {
+     "name": "eyebrow",
+     "optional": true,
+     "type": "ReactNode",
+     "inherited": false
+    },
+    {
+     "name": "icon",
+     "optional": true,
+     "type": "ReactNode",
+     "inherited": false
+    },
+    {
+     "name": "index",
+     "optional": false,
+     "type": "number",
+     "inherited": false
+    },
+    {
+     "name": "interval",
+     "optional": false,
+     "type": "number",
+     "inherited": false
+    },
+    {
+     "name": "intro",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
+     "name": "introAutoStartAfter",
+     "optional": true,
+     "type": "number | undefined",
+     "inherited": false
+    },
+    {
+     "name": "labels",
+     "optional": true,
+     "type": "ProductTourBubbleLabels | undefined",
+     "inherited": false
+    },
+    {
+     "name": "missing",
+     "optional": false,
+     "type": "boolean",
+     "inherited": false
+    },
+    {
+     "name": "onAutoAdvance",
+     "optional": false,
+     "type": "() => void",
+     "inherited": false
+    },
+    {
+     "name": "onBack",
+     "optional": false,
+     "type": "() => void",
+     "inherited": false
+    },
+    {
+     "name": "onClose",
+     "optional": false,
+     "type": "() => void",
+     "inherited": false
+    },
+    {
+     "name": "onHoverChange",
+     "optional": false,
+     "type": "(hovered: boolean) => void",
+     "inherited": false
+    },
+    {
+     "name": "onNext",
+     "optional": false,
+     "type": "() => void",
+     "inherited": false
+    },
+    {
+     "name": "onSkip",
+     "optional": false,
+     "type": "() => void",
+     "inherited": false
+    },
+    {
+     "name": "onTogglePause",
+     "optional": false,
+     "type": "() => void",
+     "inherited": false
+    },
+    {
+     "name": "paused",
+     "optional": false,
+     "type": "boolean",
+     "inherited": false
+    },
+    {
+     "name": "placement",
+     "optional": false,
+     "type": "ProductTourPlacement",
+     "inherited": false
+    },
+    {
+     "name": "title",
+     "optional": false,
+     "type": "ReactNode",
+     "inherited": false
+    },
+    {
+     "name": "titleId",
+     "optional": false,
+     "type": "string",
+     "inherited": false
+    },
+    {
+     "name": "total",
+     "optional": false,
+     "type": "number",
+     "inherited": false
+    },
+    {
+     "name": "variant",
+     "optional": false,
+     "type": "\"minimal-glass\" | \"cloud-glass\"",
+     "inherited": false
+    }
+   ]
+  },
+  {
+   "name": "ProductTourSpotlight",
+   "kind": "value",
+   "signature": "({ rect, viewport, visible, variant, onDismiss, dismissLabel, }: ProductTourSpotlightProps) => import(\"@types/react\").JSX.Element",
+   "propsType": "ProductTourSpotlightProps",
+   "props": [
+    {
+     "name": "dismissLabel",
+     "optional": false,
+     "type": "string",
+     "inherited": false
+    },
+    {
+     "name": "onDismiss",
+     "optional": false,
+     "type": "() => void",
+     "inherited": false
+    },
+    {
+     "name": "rect",
+     "optional": false,
+     "type": "TourRect | null",
+     "inherited": false
+    },
+    {
+     "name": "variant",
+     "optional": false,
+     "type": "\"minimal-glass\" | \"cloud-glass\"",
+     "inherited": false
+    },
+    {
+     "name": "viewport",
+     "optional": false,
+     "type": "{ width: number; height: number; }",
+     "inherited": false
+    },
+    {
+     "name": "visible",
+     "optional": false,
+     "type": "boolean",
+     "inherited": false
+    }
+   ]
+  }
+ ],
  "profile-hero": [
   {
    "name": "ProfileHero",

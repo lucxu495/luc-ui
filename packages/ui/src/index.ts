@@ -56,6 +56,7 @@ export * from "./components/field";
 export * from "./components/file-upload";
 export * from "./components/float-button";
 export * from "./components/guided-tour";
+export * from "./product-tour";
 export * from "./components/hover-card";
 export * from "./components/icon";
 export * from "./components/icon-button";

@@ -58,6 +58,7 @@ export default defineConfig({
 
     layout: "src/layout/index.ts",
     motion: "src/motion/index.ts",
+    "product-tour": "src/product-tour/index.ts",
     hooks: "src/hooks/index.ts",
     providers: "src/providers/index.ts",
     utils: "src/utils/index.ts",
