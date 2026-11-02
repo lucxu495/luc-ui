@@ -35,7 +35,7 @@ async function start(page, scenario) {
       .click();
   }
   await page
-    .getByRole("button", { name: /^(Start tour|Replay tour|Preview welcome)$/ })
+    .getByRole("button", { name: /^(Start tour|Replay tour)$/ })
     .click();
   await page.getByRole("dialog").waitFor();
   await page.waitForTimeout(450);
@@ -48,7 +48,7 @@ async function targetBox(page) {
 }
 
 await check("manual steps and spotlight movement", { viewport: { width: 1440, height: 900 } }, async (page) => {
-  await start(page);
+  await start(page, "Manual");
   const first = await targetBox(page);
   assert.match(await page.getByRole("dialog").innerText(), /Find the signal/);
   await page.getByRole("button", { name: "Continue" }).click();
@@ -75,7 +75,7 @@ await check("welcome intro before step one", { viewport: { width: 1440, height: 
     ),
   );
   await page.getByRole("button", { name: "Close tour" }).click();
-  await page.getByRole("button", { name: "Preview welcome" }).click();
+  await page.getByRole("button", { name: "Replay tour" }).click();
   await page.getByRole("button", { name: "I’ll explore on my own" }).click();
   await page.waitForFunction(() => !document.querySelector('[data-slot="product-tour-bubble"]'));
 });
@@ -168,7 +168,7 @@ await check(
   "reduced motion removes travel",
   { viewport: { width: 390, height: 844 }, reducedMotion: "reduce" },
   async (page) => {
-    await start(page);
+    await start(page, "Manual");
     const durations = await page.evaluate(() => {
       const bubble = document.querySelector('[data-slot="product-tour-bubble"]');
       const target = document.querySelector('[data-slot="product-tour-target"]');

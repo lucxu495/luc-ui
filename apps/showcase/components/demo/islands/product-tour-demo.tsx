@@ -314,7 +314,7 @@ export function ProductTourDemo() {
   const { tcs } = useI18n();
   const tourRef = useRef<ProductTourHandle>(null);
   const [variant, setVariant] = useState<ProductTourVariant>("cloud-glass");
-  const [scenario, setScenario] = useState<DemoScenario>("manual");
+  const [scenario, setScenario] = useState<DemoScenario>("welcome");
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState("idle");
   const [recoveryReady, setRecoveryReady] = useState(false);
@@ -523,11 +523,7 @@ export function ProductTourDemo() {
             onClick={start}
             className="h-8"
           >
-            {open
-              ? tcs("Stop tour")
-              : scenario === "welcome"
-                ? tcs("Preview welcome")
-                : tcs(starts > 0 ? "Replay tour" : "Start tour")}
+            {open ? tcs("Stop tour") : tcs(starts > 0 ? "Replay tour" : "Start tour")}
           </Button>
         </div>
       </div>

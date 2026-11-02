@@ -41,7 +41,6 @@ export const proseZh: Record<string, string> = {
   "Five quiet steps through the signal desk. You can leave at any time.":
     "用五个安静的步骤熟悉信号台，你随时可以离开。",
   "Welcome": "欢迎",
-  "Preview welcome": "预览欢迎页",
   "Tour mode": "导览模式",
   "Positioning scenario": "定位场景",
   "{count} quiet steps": "{count} 个安静步骤",
