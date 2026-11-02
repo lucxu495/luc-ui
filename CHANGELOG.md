@@ -3,6 +3,17 @@
 All notable changes to `@luc/ui`. The foundation rounds (V0.1–V0.6) shipped as
 a single uncommitted working tree; V1.0 is the first frozen release.
 
+## 1.2.0 — 2026-11-03
+
+Adds `ProductTour`, a reusable guided product layer with an optional five-second
+welcome, responsive spotlight, collision-aware glass bubble, manual and automatic
+step modes, nested-scroll handling, target recovery and reduced-motion support.
+It is available from `@luc/ui/product-tour` and the root package export.
+
+The existing `GuidedTour` API and release tag remain unchanged. Existing
+consumers can upgrade by moving their pinned Git tag to `v1.2.0`; `ProductTour`
+is additive and does not become a dependency of any other component.
+
 ## 1.1.0 — 2026-10-28
 
 Adds professional financial crosshair and TradingView-style axis drag scaling for Cartesian ECharts charts. New optional `crosshair` and `axisDrag` controls default to enabled, with `crosshair: false` preserving Tooltip behavior. Includes independent dual-Y-axis labels (including percentage/USD units), time-axis labels, axis-specific scaling/reset, mouse and mobile gestures, accessibility/theme support, and fixes for Brush registration and invalid-time Tooltip handling.

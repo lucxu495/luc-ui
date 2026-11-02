@@ -36,6 +36,30 @@
 
 export const proseZh: Record<string, string> = {
 
+  "`ProductTour` composes a positioning adapter, spotlight, optional welcome intro and bubble behind one lifecycle API. `open`, `stepIndex` and the imperative handle cover both declarative and product-driven flows; `variant` selects the contour without changing behaviour.":
+    "`ProductTour` 通过统一的生命周期 API 组合定位适配器、聚光灯、可选欢迎引导和气泡。`open`、`stepIndex` 与命令式句柄同时支持声明式和产品驱动流程；`variant` 只改变轮廓，不改变行为。",
+  "Steps point at stable selectors or elements. Auto mode pauses on hover, target focus, navigation and hidden pages, and stops at the final step.":
+    "步骤会指向稳定的选择器或元素。自动模式在悬停、目标获得焦点、手动导航和页面隐藏时暂停，并在最后一步停止。",
+  "Use `minimal-glass` when the tour should disappear into a restrained product shell.":
+    "当导览需要融入克制的产品界面时，使用 `minimal-glass`。",
+  "Use `cloud-glass` for a gentler first-run moment where the contour is part of the welcome.":
+    "当首次体验需要更柔和、轮廓本身构成欢迎感时，使用 `cloud-glass`。",
+  "Keep the highlighted target interactive and give every step one idea.":
+    "保持高亮目标可交互，并让每一步只表达一个想法。",
+  "Provide `onSkip` and `onComplete` separately when onboarding completion affects product state.":
+    "当引导完成状态会影响产品状态时，分别提供 `onSkip` 和 `onComplete`。",
+  "Do not use auto mode for instructions a person must read or an assistive technology must announce.":
+    "不要把需要用户阅读或辅助技术播报的说明设为自动模式。",
+  "Do not target an element inside a permanently closed overlay.":
+    "不要将始终关闭的覆盖层内部元素设为目标。",
+  "Do not hide the target's own focus state behind the tour bubble.":
+    "不要让导览气泡遮住目标自身的焦点状态。",
+  "The bubble is a non-modal dialog so the highlighted target remains usable. Focus enters the bubble, Tab cycles through the bubble and the target, Escape dismisses from any step, and focus returns to the launch control. The spotlight is decorative, status changes are announced politely, and reduced motion removes travel rather than merely shortening it.":
+    "气泡是非模态对话框，因此高亮目标仍然可用。焦点会进入气泡，Tab 在气泡与目标之间循环，Escape 可从任一步关闭，焦点最终返回启动控件。聚光是装饰层，状态变化会被礼貌播报，减弱动效会移除位移而不只是缩短时长。",
+  "A guided layer with two quiet contours":
+    "带有两种安静轮廓的引导层",
+  "A real product surface, not a mock. Preview the first-visit welcome, switch both contours, and exercise manual, auto, nested-scroll, viewport-edge and missing-target recovery scenarios.":
+    "这是实际产品表面，而不是静态模拟。可以预览首次访问欢迎页、切换两种轮廓，并测试手动、自动、嵌套滚动、视口边缘和目标缺失恢复场景。",
   "WELCOME TO FIELDNOTE": "欢迎来到 FIELDNOTE",
   "Let’s take a tour?": "要不要一起看看？",
   "Five quiet steps through the signal desk. You can leave at any time.":
