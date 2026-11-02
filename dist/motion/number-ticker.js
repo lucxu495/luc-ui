@@ -1,5 +1,5 @@
 "use client";
-import { useReducedMotion } from "../hooks/use-reduced-motion.js";
+import { useReducedMotion as useReducedMotion$1 } from "../hooks/use-reduced-motion.js";
 import { cn } from "../utils/cn.js";
 import { formatNumber } from "../utils/format.js";
 import { jsx, jsxs } from "react/jsx-runtime";
@@ -9,7 +9,7 @@ import { animate } from "motion/react";
 function NumberTicker({ className, value, kind = "number", currency, suffix, signed, locale, minimumFractionDigits, maximumFractionDigits, duration = .55, startFrom, align = "left", variant = "count", format, ...props }) {
 	const nodeRef = useRef(null);
 	const previousValue = useRef(startFrom ?? value ?? 0);
-	const reducedMotion = useReducedMotion();
+	const reducedMotion = useReducedMotion$1();
 	const formatValue = useCallback((input) => format ? format(input) : formatNumber(input, {
 		kind,
 		currency,

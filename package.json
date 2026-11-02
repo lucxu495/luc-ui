@@ -1,6 +1,6 @@
 {
   "name": "@luc/ui",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": false,
   "description": "Luc UI — an accessible React and TypeScript design system for product interfaces.",
   "license": "MIT",
@@ -163,6 +163,10 @@
     "./motion": {
       "types": "./dist/motion.d.ts",
       "default": "./dist/motion.js"
+    },
+    "./product-tour": {
+      "types": "./dist/product-tour.d.ts",
+      "default": "./dist/product-tour.js"
     },
     "./hooks": {
       "types": "./dist/hooks.d.ts",

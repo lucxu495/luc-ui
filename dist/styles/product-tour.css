@@ -1,0 +1,166 @@
+/* =============================================================================
+ * Product Tour — minimal glass / soft cloud glass
+ * -----------------------------------------------------------------------------
+ * The bubble is translucent because the highlighted product surface is the
+ * subject; its text sits on a strong glass layer and never depends on the
+ * background image for contrast. Geometry moves on one shared eased transition.
+ * ========================================================================== */
+
+.luc-product-tour__scrim {
+  position: fixed;
+  z-index: var(--z-overlay);
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background:
+    radial-gradient(
+      120% 90% at 50% 42%,
+      color-mix(in oklab, var(--surface-inverse) 4%, transparent),
+      transparent 68%
+    ),
+    var(--tour-scrim);
+  cursor: default;
+  transition:
+    top var(--motion-slower) var(--ease-enter),
+    left var(--motion-slower) var(--ease-enter),
+    width var(--motion-slower) var(--ease-enter),
+    height var(--motion-slower) var(--ease-enter),
+    opacity var(--motion-fast) var(--ease-standard);
+}
+
+.luc-product-tour__scrim:focus {
+  outline: none;
+}
+
+.luc-product-tour__target {
+  position: fixed;
+  z-index: calc(var(--z-overlay) + 1);
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  border-radius: var(--tour-spotlight-radius);
+  opacity: 0;
+  transition:
+    transform var(--motion-slower) var(--ease-enter),
+    width var(--motion-slower) var(--ease-enter),
+    height var(--motion-slower) var(--ease-enter),
+    opacity var(--motion-fast) var(--ease-standard);
+  will-change: transform, width, height;
+}
+
+.luc-product-tour__target.is-visible {
+  opacity: 1;
+}
+
+.luc-product-tour__tail {
+  transition:
+    left var(--motion-slower) var(--ease-enter),
+    top var(--motion-slower) var(--ease-enter),
+    transform var(--motion-slower) var(--ease-enter);
+}
+
+.luc-product-tour__target-rim,
+.luc-product-tour__target-aura {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.luc-product-tour__target-rim {
+  box-shadow:
+    0 0 0 1px var(--tour-spotlight-edge),
+    0 0 0 3px var(--tour-spotlight-halo),
+    inset 0 0 0 1px var(--tour-spotlight-inset);
+}
+
+.luc-product-tour__target-aura {
+  inset: -9px;
+  box-shadow: 0 0 28px -8px var(--tour-spotlight-aura);
+  opacity: 0.8;
+}
+
+.luc-product-tour__bubble {
+  display: flex;
+  box-sizing: border-box;
+  min-width: min(272px, calc(100vw - 24px));
+  max-width: min(360px, calc(100vw - 24px));
+  min-height: 150px;
+  color: var(--tour-title);
+  -webkit-backdrop-filter: blur(18px) saturate(1.14);
+  backdrop-filter: blur(18px) saturate(1.14);
+  filter: drop-shadow(0 1px 1px var(--tour-bubble-shadow));
+  isolation: isolate;
+  will-change: transform, opacity;
+}
+
+/* The SVG supplies the contour. This layer is the glass inside it. */
+.luc-product-tour__bubble::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  z-index: 0;
+  border-radius: var(--tour-bubble-inner-radius);
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in oklab, var(--glass-sheen) 82%, transparent),
+      transparent 39%
+    ),
+    linear-gradient(
+      180deg,
+      transparent 24%,
+      var(--tour-bubble-wash)
+    ),
+    var(--tour-bubble);
+  pointer-events: none;
+}
+
+.luc-product-tour__bubble::after {
+  content: "";
+  position: absolute;
+  inset: 9px 13px auto;
+  height: 1px;
+  z-index: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--tour-bubble-highlight) 22%,
+    color-mix(in oklab, var(--tour-spotlight-edge) 32%, transparent) 78%,
+    transparent
+  );
+  opacity: 0.74;
+  pointer-events: none;
+}
+
+.luc-product-tour__bubble[data-variant="cloud-glass"] {
+  filter:
+    drop-shadow(0 1px 1px var(--tour-bubble-shadow))
+    drop-shadow(0 14px 30px var(--tour-bubble-cloud-shadow));
+}
+
+.luc-product-tour__bubble[data-variant="cloud-glass"]::before {
+  border-radius: 28px 22px 25px 20px / 24px 28px 19px 25px;
+}
+
+@media (min-width: 30rem) {
+  .luc-product-tour__bubble {
+    width: fit-content;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .luc-product-tour__scrim,
+  .luc-product-tour__target,
+  .luc-product-tour__bubble {
+    transition-duration: 0.001ms;
+  }
+}
+
+[data-motion="reduced"] .luc-product-tour__scrim,
+[data-motion="reduced"] .luc-product-tour__target,
+[data-motion="reduced"] .luc-product-tour__bubble {
+  transition-duration: 0.001ms;
+}

@@ -1,6 +1,6 @@
 "use client";
 import { useMediaQuery } from "./use-media-query.js";
-import { useReducedMotion } from "./use-reduced-motion.js";
+import { useReducedMotion as useReducedMotion$1 } from "./use-reduced-motion.js";
 import { spring } from "../motion/tokens.js";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useMotionValue, useSpring, useTransform } from "motion/react";
@@ -18,7 +18,7 @@ import { useMotionValue, useSpring, useTransform } from "motion/react";
 * boolean "is the pointer over me", which changes twice per interaction.
 */
 function usePointerMotion({ disabled = false, preset = "responsive" } = {}) {
-	const reducedMotion = useReducedMotion();
+	const reducedMotion = useReducedMotion$1();
 	const coarsePointer = useMediaQuery("(pointer: coarse)", true);
 	const enabled = !disabled && !reducedMotion && !coarsePointer;
 	const ref = useRef(null);

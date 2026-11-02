@@ -1,5 +1,5 @@
 "use client";
-import { useReducedMotion } from "../hooks/use-reduced-motion.js";
+import { useReducedMotion as useReducedMotion$1 } from "../hooks/use-reduced-motion.js";
 import { cn } from "../utils/cn.js";
 import { depth, duration, easing } from "./tokens.js";
 import { jsx } from "react/jsx-runtime";
@@ -15,7 +15,7 @@ import { AnimatePresence, motion } from "motion/react";
 * breaks the moment panels are added or reordered.
 */
 function TransitionPanel({ className, activeIndex, direction = 1, mode = "overlay", blur = true, children, ...props }) {
-	const reduced = useReducedMotion();
+	const reduced = useReducedMotion$1();
 	const travel = 14 * direction;
 	return /* @__PURE__ */ jsx("div", {
 		"data-slot": "transition-panel",

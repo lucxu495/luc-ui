@@ -1,5 +1,5 @@
 "use client";
-import { useReducedMotion } from "../hooks/use-reduced-motion.js";
+import { useReducedMotion as useReducedMotion$1 } from "../hooks/use-reduced-motion.js";
 import { cn } from "../utils/cn.js";
 import { spring } from "./tokens.js";
 import { jsx, jsxs } from "react/jsx-runtime";
@@ -41,7 +41,7 @@ function useCardStack() {
 */
 function CardStack({ className, children, index, defaultIndex = 0, onIndexChange, visible = 3, offsetX = 0, offsetY = 14, shrink = .06, spread = 0, dim = .28, loop = false, label, ...props }) {
 	const [uncontrolled, setUncontrolled] = useState(defaultIndex);
-	const reduced = useReducedMotion();
+	const reduced = useReducedMotion$1();
 	const dragStart = useRef(null);
 	const all = useMemo(() => Children.toArray(children), [children]);
 	const items = useMemo(() => all.filter((child) => isValidElement(child) && child.type === CardStackItem), [all]);

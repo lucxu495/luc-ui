@@ -1,5 +1,5 @@
 "use client";
-import { useReducedMotion } from "../hooks/use-reduced-motion.js";
+import { useReducedMotion as useReducedMotion$1 } from "../hooks/use-reduced-motion.js";
 import { cn } from "../utils/cn.js";
 import { duration, easing } from "./tokens.js";
 import { jsx, jsxs } from "react/jsx-runtime";
@@ -7,7 +7,7 @@ import { useId } from "react";
 import { AnimatePresence, motion } from "motion/react";
 //#region src/motion/collapse.tsx
 function Collapse({ className, open, onOpenChange, title, description, aside, children, size = "md", variant = "plain", ...props }) {
-	const reduced = useReducedMotion();
+	const reduced = useReducedMotion$1();
 	const contentId = useId();
 	return /* @__PURE__ */ jsxs("div", {
 		"data-slot": "collapse",

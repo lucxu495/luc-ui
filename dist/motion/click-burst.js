@@ -1,5 +1,5 @@
 "use client";
-import { useReducedMotion } from "../hooks/use-reduced-motion.js";
+import { useReducedMotion as useReducedMotion$1 } from "../hooks/use-reduced-motion.js";
 import { cn } from "../utils/cn.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -14,7 +14,7 @@ import { AnimatePresence, motion } from "motion/react";
 * second, and is never rendered under reduced motion.
 */
 function ClickBurst({ className, children, count = 7, color = "var(--accent-default)", spread = 26, length = 8, duration = 420, disabled = false, ...props }) {
-	const reduced = useReducedMotion();
+	const reduced = useReducedMotion$1();
 	const [bursts, setBursts] = useState([]);
 	const nextId = useRef(0);
 	const timers = useRef([]);

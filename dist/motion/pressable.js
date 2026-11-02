@@ -1,5 +1,5 @@
 "use client";
-import { useReducedMotion } from "../hooks/use-reduced-motion.js";
+import { useReducedMotion as useReducedMotion$1 } from "../hooks/use-reduced-motion.js";
 import { cn } from "../utils/cn.js";
 import { useMotionProfile } from "./intensity.js";
 import { surfaceResponse } from "./tokens.js";
@@ -26,7 +26,7 @@ const PRESSABLE_COMPONENTS = {
 * Reduced motion renders an inert element with the same DOM and semantics.
 */
 function Pressable({ className, children, as = "div", href, lift = true, press = true, growOnHover = false, disabled = false, ...props }) {
-	const reduced = useReducedMotion();
+	const reduced = useReducedMotion$1();
 	const profile = useMotionProfile();
 	const Component = PRESSABLE_COMPONENTS[as];
 	if (reduced || profile.intensity === "none") return /* @__PURE__ */ jsx(as, {

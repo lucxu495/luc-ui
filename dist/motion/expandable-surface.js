@@ -1,5 +1,5 @@
 "use client";
-import { useReducedMotion } from "../hooks/use-reduced-motion.js";
+import { useReducedMotion as useReducedMotion$1 } from "../hooks/use-reduced-motion.js";
 import { cn } from "../utils/cn.js";
 import { spring } from "./tokens.js";
 import { jsx } from "react/jsx-runtime";
@@ -39,7 +39,7 @@ function useExpandableSurface(component) {
 function ExpandableSurface({ children, open, defaultOpen, onOpenChange, className }) {
 	const [uncontrolled, setUncontrolled] = useState(defaultOpen ?? false);
 	const isOpen = open ?? uncontrolled;
-	const reduced = useReducedMotion();
+	const reduced = useReducedMotion$1();
 	const id = useId();
 	const triggerRef = useRef(null);
 	const contentRef = useRef(null);

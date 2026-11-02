@@ -1,5 +1,5 @@
 "use client";
-import { useReducedMotion } from "../hooks/use-reduced-motion.js";
+import { useReducedMotion as useReducedMotion$1 } from "../hooks/use-reduced-motion.js";
 import { cn } from "../utils/cn.js";
 import { duration } from "./tokens.js";
 import { jsx } from "react/jsx-runtime";
@@ -16,7 +16,7 @@ import { AnimatePresence, motion } from "motion/react";
 * Reduced motion swaps instantly — no scale, no fade.
 */
 function IconMorph({ className, state, icons, size, style, ...props }) {
-	const reduced = useReducedMotion();
+	const reduced = useReducedMotion$1();
 	const glyph = icons[state] ?? null;
 	return /* @__PURE__ */ jsx("span", {
 		"data-slot": "icon-morph",
