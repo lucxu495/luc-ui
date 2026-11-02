@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Badge,
   Button,
@@ -13,6 +13,7 @@ import {
   SegmentedItem,
   Text,
   type ProductTourStep,
+  type ProductTourHandle,
   type ProductTourVariant,
 } from "@luc/ui";
 import {
@@ -36,7 +37,7 @@ import {
 } from "@remixicon/react";
 import { useI18n } from "@/lib/i18n/provider";
 
-type DemoScenario = "manual" | "auto" | "nested" | "edge" | "recovery";
+type DemoScenario = "welcome" | "manual" | "auto" | "nested" | "edge" | "recovery";
 
 const boardRows = [
   { title: "Materials refresh", meta: "3 changes", tone: "positive" as const },
@@ -151,7 +152,7 @@ function ProductTourPreviewSurface({
             </Button>
           </div>
 
-          <div className="mt-4 grid gap-2 sm:grid-cols-[minmax(0,1fr)_auto]">
+          <div id="tour-workspace-intro" className="mt-4 grid gap-2 sm:grid-cols-[minmax(0,1fr)_auto]">
             <Input
               id="tour-workspace-search"
               aria-label={tcs("Search this workspace")}
@@ -311,6 +312,7 @@ function ProductTourPreviewSurface({
 
 export function ProductTourDemo() {
   const { tcs } = useI18n();
+  const tourRef = useRef<ProductTourHandle>(null);
   const [variant, setVariant] = useState<ProductTourVariant>("cloud-glass");
   const [scenario, setScenario] = useState<DemoScenario>("manual");
   const [open, setOpen] = useState(false);
@@ -339,7 +341,7 @@ export function ProductTourDemo() {
     }
     if (scenario === "recovery") setRecoveryReady(false);
     setStarts((value) => value + 1);
-    setOpen(true);
+    tourRef.current?.start(0);
   };
 
   const sharedSteps: ProductTourStep[] = [
@@ -435,6 +437,17 @@ export function ProductTourDemo() {
     },
   ];
 
+  const intro = {
+    target: "#tour-workspace-intro",
+    eyebrow: tcs("WELCOME TO FIELDNOTE"),
+    title: tcs("Let’s take a tour?"),
+    description: tcs(
+      "Five quiet steps through the signal desk. You can leave at any time.",
+    ),
+    icon: <RiCompass3Line />,
+    placement: "bottom" as const,
+  };
+
   const steps =
     scenario === "nested"
       ? nestedSteps
@@ -473,15 +486,27 @@ export function ProductTourDemo() {
           <SegmentedControl
             value={scenario}
             onValueChange={(next) => {
-              if (["manual", "auto", "nested", "edge", "recovery"].includes(next)) {
+              if (["welcome", "manual", "auto"].includes(next)) {
                 changeScenario(next as DemoScenario);
               }
             }}
             size="sm"
-            aria-label={tcs("Interaction scenario")}
+            aria-label={tcs("Tour mode")}
           >
+            <SegmentedItem value="welcome" size="sm" className="whitespace-nowrap">{tcs("Welcome")}</SegmentedItem>
             <SegmentedItem value="manual" size="sm" className="whitespace-nowrap">{tcs("Manual")}</SegmentedItem>
             <SegmentedItem value="auto" size="sm" className="whitespace-nowrap">{tcs("Auto · 2s")}</SegmentedItem>
+          </SegmentedControl>
+          <SegmentedControl
+            value={scenario}
+            onValueChange={(next) => {
+              if (["nested", "edge", "recovery"].includes(next)) {
+                changeScenario(next as DemoScenario);
+              }
+            }}
+            size="sm"
+            aria-label={tcs("Positioning scenario")}
+          >
             <SegmentedItem value="nested" size="sm" className="whitespace-nowrap">{tcs("Nested")}</SegmentedItem>
             <SegmentedItem value="edge" size="sm" className="whitespace-nowrap">{tcs("Edge")}</SegmentedItem>
             <SegmentedItem value="recovery" size="sm" className="whitespace-nowrap">{tcs("Recovery")}</SegmentedItem>
@@ -498,7 +523,11 @@ export function ProductTourDemo() {
             onClick={start}
             className="h-8"
           >
-            {open ? tcs("Stop tour") : tcs(starts > 0 ? "Replay tour" : "Start tour")}
+            {open
+              ? tcs("Stop tour")
+              : scenario === "welcome"
+                ? tcs("Preview welcome")
+                : tcs(starts > 0 ? "Replay tour" : "Start tour")}
           </Button>
         </div>
       </div>
@@ -521,7 +550,9 @@ export function ProductTourDemo() {
       </div>
 
       <ProductTour
+        ref={tourRef}
         steps={steps}
+        intro={scenario === "welcome" ? intro : undefined}
         open={open}
         onOpenChange={setOpen}
         variant={variant}
@@ -537,6 +568,11 @@ export function ProductTourDemo() {
             tcs("Step {current} of {total}")
               .replace("{current}", String(current))
               .replace("{total}", String(total)),
+          introMeta: (total) =>
+            tcs("{count} quiet steps").replace("{count}", String(total)),
+          introStatus: tcs("Tour welcome. Take the tour or explore on your own."),
+          takeTour: tcs("Take the tour"),
+          exploreAlone: tcs("I’ll explore on my own"),
           next: tcs("Continue"),
           back: tcs("Back"),
           finish: tcs("Finish"),

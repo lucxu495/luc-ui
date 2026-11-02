@@ -18743,7 +18743,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
   {
    "name": "ProductTour",
    "kind": "value",
-   "signature": "({ steps, open: controlledOpen, defaultOpen, onOpenChange, stepIndex: controlledIndex, defaultStepIndex, onStepChange, variant, mode, interval, spotlight, onComplete, onSkip, onClose, onTargetUnavail…",
+   "signature": "({ steps, intro, open: controlledOpen, defaultOpen, onOpenChange, stepIndex: controlledIndex, defaultStepIndex, onStepChange, variant, mode, interval, spotlight, onComplete, onSkip, onClose, onTarget…",
    "propsType": "ProductTourProps",
    "props": [
     {
@@ -18769,6 +18769,12 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "optional": true,
      "type": "number | undefined",
      "description": "Milliseconds per step in auto mode. Default 2000.",
+     "inherited": false
+    },
+    {
+     "name": "intro",
+     "optional": true,
+     "type": "ProductTourIntro | undefined",
      "inherited": false
     },
     {
@@ -18866,7 +18872,7 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
   {
    "name": "ProductTourBubble",
    "kind": "value",
-   "signature": "({ eyebrow, title, description, icon, index, total, placement, anchor, variant, auto, interval, paused, missing, onBack, onNext, onAutoAdvance, onSkip, onTogglePause, labels, titleId, descriptionId, …",
+   "signature": "({ eyebrow, title, description, icon, index, total, placement, anchor, variant, auto, interval, paused, missing, intro, onBack, onNext, onAutoAdvance, onSkip, onClose, onTogglePause, labels, titleId,…",
    "propsType": "ProductTourBubbleProps",
    "props": [
     {
@@ -18924,6 +18930,12 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
      "inherited": false
     },
     {
+     "name": "intro",
+     "optional": true,
+     "type": "boolean | undefined",
+     "inherited": false
+    },
+    {
      "name": "labels",
      "optional": true,
      "type": "ProductTourBubbleLabels | undefined",
@@ -18943,6 +18955,12 @@ export const generatedApi: Record<string, readonly ApiSymbol[]> = {
     },
     {
      "name": "onBack",
+     "optional": false,
+     "type": "() => void",
+     "inherited": false
+    },
+    {
+     "name": "onClose",
      "optional": false,
      "type": "() => void",
      "inherited": false

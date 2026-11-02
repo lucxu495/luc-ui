@@ -1704,11 +1704,11 @@ export const ENTRY_NOTES: Record<string, EntryNote> = {
   },
   "product-tour": {
     api: {
-      note: "`ProductTour` composes a positioning adapter, spotlight and bubble behind one lifecycle API. `open`, `stepIndex` and the imperative handle cover both declarative and product-driven flows; `variant` selects the contour without changing behaviour.",
+      note: "`ProductTour` composes a positioning adapter, spotlight, optional welcome intro and bubble behind one lifecycle API. `open`, `stepIndex` and the imperative handle cover both declarative and product-driven flows; `variant` selects the contour without changing behaviour.",
     },
     usage: {
       imports: ["ProductTour"],
-      code: `const [open, setOpen] = useState(false);\n\n<ProductTour\n  open={open}\n  onOpenChange={setOpen}\n  steps={steps}\n  variant="cloud-glass"\n  mode="manual"\n  interval={2000}\n  onComplete={() => {}}\n  onSkip={() => {}}\n/>`,
+      code: `const [open, setOpen] = useState(false);\n\n<ProductTour\n  open={open}\n  onOpenChange={setOpen}\n  steps={steps}\n  intro={welcome}\n  variant="cloud-glass"\n  mode="manual"\n  interval={2000}\n  onComplete={() => {}}\n  onSkip={() => {}}\n/>`,
       note: "Steps point at stable selectors or elements. Auto mode pauses on hover, target focus, navigation and hidden pages, and stops at the final step.",
     },
     guidance: {

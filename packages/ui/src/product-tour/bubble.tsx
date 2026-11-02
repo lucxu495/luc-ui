@@ -33,6 +33,10 @@ export interface ProductTourBubbleLabels {
   pause?: string;
   resume?: string;
   step?: (current: number, total: number) => string;
+  introMeta?: (total: number) => string;
+  introStatus?: string;
+  takeTour?: string;
+  exploreAlone?: string;
   unavailableTitle?: string;
   unavailableDescription?: string;
 }
@@ -51,10 +55,12 @@ export interface ProductTourBubbleProps {
   interval: number;
   paused: boolean;
   missing: boolean;
+  intro?: boolean;
   onBack: () => void;
   onNext: () => void;
   onAutoAdvance: () => void;
   onSkip: () => void;
+  onClose: () => void;
   onTogglePause: () => void;
   labels?: ProductTourBubbleLabels;
   titleId: string;
@@ -224,10 +230,12 @@ export function ProductTourBubble({
   interval,
   paused,
   missing,
+  intro = false,
   onBack,
   onNext,
   onAutoAdvance,
   onSkip,
+  onClose,
   onTogglePause,
   labels,
   titleId,
@@ -318,7 +326,7 @@ export function ProductTourBubble({
       <BubbleShape variant={variant} />
       <Tail position={position} variant={variant} />
       <div className="relative z-[1] flex min-h-0 flex-1 flex-col px-4 pb-3.5 pt-4">
-        {auto ? (
+        {intro ? null : auto ? (
           <Countdown
             active={!paused && !missing && !isLast}
             duration={interval}
@@ -354,7 +362,9 @@ export function ProductTourBubble({
                   : eyebrow}
               </span>
               <span className="shrink-0 text-[10px] font-medium tabular-nums tracking-[0.04em] text-[var(--tour-meta)]">
-                {labels?.step?.(index + 1, total) ?? `${String(index + 1).padStart(2, "0")} / ${String(total).padStart(2, "0")}`}
+                {intro
+                  ? labels?.introMeta?.(total) ?? `${total} steps`
+                  : labels?.step?.(index + 1, total) ?? `${String(index + 1).padStart(2, "0")} / ${String(total).padStart(2, "0")}`}
               </span>
             </div>
             <div className="mt-1.5 min-w-0">
@@ -390,7 +400,7 @@ export function ProductTourBubble({
             tactile={false}
             label={labels?.close ?? "Close tour"}
             icon={<RiCloseLine />}
-            onClick={onSkip}
+            onClick={onClose}
             className="-mr-1.5 -mt-1.5 shrink-0 text-[var(--tour-meta)] hover:bg-[var(--tour-control-hover)] hover:text-[var(--tour-title)]"
           />
         </div>
@@ -405,9 +415,13 @@ export function ProductTourBubble({
               onClick={onSkip}
               className="h-7 px-1.5 text-caption text-[var(--tour-meta)] hover:bg-[var(--tour-control-hover)] hover:text-[var(--tour-title)]"
             >
-              {missing ? labels?.skip ?? "Skip step" : labels?.skip ?? "Skip"}
+              {intro
+                ? labels?.exploreAlone ?? "Explore on my own"
+                : missing
+                  ? labels?.skip ?? "Skip step"
+                  : labels?.skip ?? "Skip"}
             </Button>
-            {auto ? (
+            {auto && !intro ? (
               <button
                 type="button"
                 onClick={onTogglePause}
@@ -419,7 +433,7 @@ export function ProductTourBubble({
             ) : null}
           </div>
           <div className="flex items-center gap-1.5">
-            {index > 0 ? (
+            {index > 0 && !intro ? (
               <Button
                 type="button"
                 variant="ghost"
@@ -440,8 +454,12 @@ export function ProductTourBubble({
               onClick={onNext}
               className="h-7 border-[var(--tour-button-border)] bg-[var(--tour-button-surface)] px-2.5 text-caption text-[var(--tour-title)] shadow-[0_1px_1px_var(--tour-button-shadow)] hover:border-[var(--tour-button-border-hover)] hover:bg-[var(--tour-button-hover)]"
             >
-              {isLast ? labels?.finish ?? "Finish" : labels?.next ?? "Continue"}
-              {isLast ? null : <RiArrowRightSLine aria-hidden="true" className="size-3.5" />}
+              {intro
+                ? labels?.takeTour ?? "Take the tour"
+                : isLast
+                  ? labels?.finish ?? "Finish"
+                  : labels?.next ?? "Continue"}
+              {isLast && !intro ? null : <RiArrowRightSLine aria-hidden="true" className="size-3.5" />}
             </Button>
           </div>
         </div>

@@ -5826,13 +5826,13 @@
         {
           "name": "ProductTour",
           "kind": "value",
-          "signature": "({ steps, open: controlledOpen, defaultOpen, onOpenChange, stepIndex: controlledIndex, defaultStepIndex, onStepChange, variant, mode, interval, spotlight, onComplete, onSkip, onClose, onTargetUnavailable, onStatusChange, labels, className, ref, }: ProductTourProps) => import(\"@types/react\").ReactPortal | null",
+          "signature": "({ steps, intro, open: controlledOpen, defaultOpen, onOpenChange, stepIndex: controlledIndex, defaultStepIndex, onStepChange, variant, mode, interval, spotlight, onComplete, onSkip, onClose, onTargetUnavailable, onStatusChange, labels, className, ref, }: ProductTourProps) => import(\"@types/react\").ReactPortal | null",
           "source": "packages/ui/src/product-tour/product-tour.tsx"
         },
         {
           "name": "ProductTourBubble",
           "kind": "value",
-          "signature": "({ eyebrow, title, description, icon, index, total, placement, anchor, variant, auto, interval, paused, missing, onBack, onNext, onAutoAdvance, onSkip, onTogglePause, labels, titleId, descriptionId, bubbleRef, onHoverChange, }: ProductTourBubbleProps) => import(\"@types/react\").JSX.Element",
+          "signature": "({ eyebrow, title, description, icon, index, total, placement, anchor, variant, auto, interval, paused, missing, intro, onBack, onNext, onAutoAdvance, onSkip, onClose, onTogglePause, labels, titleId, descriptionId, bubbleRef, onHoverChange, }: ProductTourBubbleProps) => import(\"@types/react\").JSX.Element",
           "source": "packages/ui/src/product-tour/bubble.tsx"
         },
         {
@@ -5845,6 +5845,12 @@
           "name": "ProductTourHandle",
           "kind": "type",
           "signature": "ProductTourHandle",
+          "source": "packages/ui/src/product-tour/product-tour.tsx"
+        },
+        {
+          "name": "ProductTourIntro",
+          "kind": "type",
+          "signature": "ProductTourIntro",
           "source": "packages/ui/src/product-tour/product-tour.tsx"
         },
         {
@@ -16054,13 +16060,13 @@
         {
           "name": "ProductTour",
           "kind": "value",
-          "signature": "({ steps, open: controlledOpen, defaultOpen, onOpenChange, stepIndex: controlledIndex, defaultStepIndex, onStepChange, variant, mode, interval, spotlight, onComplete, onSkip, onClose, onTargetUnavailable, onStatusChange, labels, className, ref, }: ProductTourProps) => import(\"@types/react\").ReactPortal | null",
+          "signature": "({ steps, intro, open: controlledOpen, defaultOpen, onOpenChange, stepIndex: controlledIndex, defaultStepIndex, onStepChange, variant, mode, interval, spotlight, onComplete, onSkip, onClose, onTargetUnavailable, onStatusChange, labels, className, ref, }: ProductTourProps) => import(\"@types/react\").ReactPortal | null",
           "source": "packages/ui/src/product-tour/product-tour.tsx"
         },
         {
           "name": "ProductTourBubble",
           "kind": "value",
-          "signature": "({ eyebrow, title, description, icon, index, total, placement, anchor, variant, auto, interval, paused, missing, onBack, onNext, onAutoAdvance, onSkip, onTogglePause, labels, titleId, descriptionId, bubbleRef, onHoverChange, }: ProductTourBubbleProps) => import(\"@types/react\").JSX.Element",
+          "signature": "({ eyebrow, title, description, icon, index, total, placement, anchor, variant, auto, interval, paused, missing, intro, onBack, onNext, onAutoAdvance, onSkip, onClose, onTogglePause, labels, titleId, descriptionId, bubbleRef, onHoverChange, }: ProductTourBubbleProps) => import(\"@types/react\").JSX.Element",
           "source": "packages/ui/src/product-tour/bubble.tsx"
         },
         {
@@ -16073,6 +16079,12 @@
           "name": "ProductTourHandle",
           "kind": "type",
           "signature": "ProductTourHandle",
+          "source": "packages/ui/src/product-tour/product-tour.tsx"
+        },
+        {
+          "name": "ProductTourIntro",
+          "kind": "type",
+          "signature": "ProductTourIntro",
           "source": "packages/ui/src/product-tour/product-tour.tsx"
         },
         {

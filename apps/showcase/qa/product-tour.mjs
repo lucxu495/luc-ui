@@ -34,7 +34,9 @@ async function start(page, scenario) {
       .getByRole("radio", { name: scenario, exact: true })
       .click();
   }
-  await page.getByRole("button", { name: /^(Start|Replay) tour$/ }).click();
+  await page
+    .getByRole("button", { name: /^(Start tour|Replay tour|Preview welcome)$/ })
+    .click();
   await page.getByRole("dialog").waitFor();
   await page.waitForTimeout(450);
 }
@@ -58,6 +60,23 @@ await check("manual steps and spotlight movement", { viewport: { width: 1440, he
   await page.waitForTimeout(350);
   const second = await targetBox(page);
   assert.ok(Math.abs(first.x - second.x) > 1 || Math.abs(first.y - second.y) > 1);
+});
+
+await check("welcome intro before step one", { viewport: { width: 1440, height: 900 } }, async (page) => {
+  await start(page, "Welcome");
+  const dialog = page.getByRole("dialog");
+  assert.match(await dialog.innerText(), /Let’s take a tour\?/);
+  assert.match(await dialog.innerText(), /5 quiet steps/);
+  await page.getByRole("button", { name: "Take the tour" }).click();
+  await page.waitForFunction(() =>
+    document.querySelector('[data-slot="product-tour-bubble"]')?.textContent?.includes(
+      "WORKSPACE · 01",
+    ),
+  );
+  await page.getByRole("button", { name: "Close tour" }).click();
+  await page.getByRole("button", { name: "Preview welcome" }).click();
+  await page.getByRole("button", { name: "I’ll explore on my own" }).click();
+  await page.waitForFunction(() => !document.querySelector('[data-slot="product-tour-bubble"]'));
 });
 
 await check("auto pause, resume and final-step stop", { viewport: { width: 1440, height: 900 } }, async (page) => {

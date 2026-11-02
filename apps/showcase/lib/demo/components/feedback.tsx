@@ -525,9 +525,9 @@ export const feedbackDemos: readonly DemoSpec[] = [
     id: "product-tour",
     title: "A guided layer with two quiet contours",
     node: <ProductTourDemo />,
-    code: `const [open, setOpen] = useState(false);\n\n<Button onClick={() => setOpen(true)}>Start tour</Button>\n<ProductTour\n  open={open}\n  onOpenChange={setOpen}\n  steps={steps}\n  variant="cloud-glass"\n  mode="auto"\n  interval={2000}\n  onComplete={() => {}}\n/>`,
+    code: `const [open, setOpen] = useState(false);\n\n<Button onClick={() => setOpen(true)}>Start tour</Button>\n<ProductTour\n  open={open}\n  onOpenChange={setOpen}\n  steps={steps}\n  intro={welcome}\n  variant="cloud-glass"\n  mode="auto"\n  interval={2000}\n  onComplete={() => {}}\n  onSkip={() => {}}\n/>`,
     layout: "stage",
     height: 760,
-    note: "A real product surface, not a mock. Switch between both contour variants and exercise manual, auto, nested-scroll, viewport-edge and missing-target recovery scenarios.",
+    note: "A real product surface, not a mock. Preview the first-visit welcome, switch both contours, and exercise manual, auto, nested-scroll, viewport-edge and missing-target recovery scenarios.",
   }),
 ];

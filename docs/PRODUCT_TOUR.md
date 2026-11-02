@@ -20,12 +20,45 @@ const steps: ProductTourStep[] = [
 <ProductTour
   steps={steps}
   defaultOpen
+  intro={{
+    target: "#workspace",
+    eyebrow: "WELCOME",
+    title: "Let’s take a tour?",
+    description: "A few quiet steps through the workspace.",
+  }}
   variant="cloud-glass"
   mode="manual"
   onComplete={() => {}}
   onSkip={() => {}}
 />;
 ```
+
+The optional `intro` is a welcome moment, not an extra numbered step. Its target
+is spotlighted first; **Take the tour** starts step one in the same layer, while
+**Explore on my own** dismisses it through `onSkip`. The consumer decides when to
+open the tour and whether it should appear again:
+
+```tsx
+const [open, setOpen] = useState(false);
+
+useEffect(() => {
+  setOpen(!localStorage.getItem("workspace-tour-v1"));
+}, []);
+
+const remember = () => localStorage.setItem("workspace-tour-v1", "seen");
+
+<ProductTour
+  steps={steps}
+  intro={welcome}
+  open={open}
+  onOpenChange={setOpen}
+  onComplete={remember}
+  onSkip={remember}
+/>;
+```
+
+Keep this to a genuine first visit or a meaningful product change. Declining the
+welcome is a valid result and should count as seen.
 
 ## Engine selection
 
@@ -47,7 +80,7 @@ only while a tour is active.
 
 ## Architecture
 
-- `product-tour.tsx` owns open/step/status state, callbacks, focus, keyboard
+- `product-tour.tsx` owns open/intro/step/status state, callbacks, focus, keyboard
   handling, pause policy, cleanup and the optional imperative handle.
 - `engine.ts` is React-free positioning logic.
 - `spotlight.tsx` draws four scrim plates around the live target. The target

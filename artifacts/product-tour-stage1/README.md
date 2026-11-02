@@ -7,7 +7,9 @@
 Stage 1 adds a standalone `ProductTour` prototype without changing the released
 `GuidedTour` API. The showcase at `/components/product-tour` is a live product
 surface with manual, auto, nested-scroll, viewport-edge, missing-target recovery,
-light/dark, desktop/mobile and reduced-motion scenarios.
+light/dark, desktop/mobile and reduced-motion scenarios. It also includes an
+optional first-use welcome that spotlights the workspace, asks “Let’s take a
+tour?”, and only starts step one after the reader accepts.
 
 ## Engine selection
 
@@ -53,14 +55,18 @@ pointer-interactive. A portal avoids page stacking and overflow contexts.
 ## Visual evidence
 
 - [Desktop dark, Soft Cloud](./desktop-dark-cloud.png)
+- [Desktop dark welcome](./desktop-dark-welcome.png)
+- [Desktop welcome accepted](./desktop-dark-welcome-accepted.png)
 - [Desktop light, Soft Cloud](./desktop-light-cloud.png)
 - [Desktop light, Minimal Glass](./desktop-light-minimal.png)
 - [Mobile dark, Soft Cloud](./mobile-cloud.png)
+- [Mobile dark welcome](./mobile-dark-welcome.png)
+- [Mobile welcome accepted](./mobile-dark-welcome-accepted.png)
 
 ## Validation
 
-- `pnpm --filter @luc/ui test`: 102 files, 1,017 tests passed.
-- `pnpm --filter @luc/showcase qa:product-tour`: all five browser scenarios pass.
+- `pnpm --filter @luc/ui test`: 102 files, 1,018 tests passed.
+- `pnpm --filter @luc/showcase qa:product-tour`: all six browser scenarios pass.
 - `pnpm --filter @luc/ui build:package`: package build passes.
 - `pnpm --filter @luc/ui verify:package`: export map and tarball pass.
 - `pnpm --filter @luc/ui verify:types`: ESM and bundler resolution pass.

@@ -1,6 +1,7 @@
 export { ProductTour } from "./product-tour";
 export type {
   ProductTourHandle,
+  ProductTourIntro,
   ProductTourLabels,
   ProductTourMode,
   ProductTourProps,

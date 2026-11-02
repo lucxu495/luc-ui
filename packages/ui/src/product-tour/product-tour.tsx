@@ -6,6 +6,7 @@ import {
   useEffect,
   useId,
   useImperativeHandle,
+  useMemo,
   useRef,
   useState,
   useSyncExternalStore,
@@ -45,6 +46,20 @@ export interface ProductTourStep {
   padding?: number;
 }
 
+/**
+ * An optional welcome moment before step one. The target is highlighted first;
+ * accepting the intro starts the first step, while declining dismisses the tour.
+ */
+export interface ProductTourIntro {
+  target?: ProductTourTarget;
+  eyebrow?: ReactNode;
+  title: ReactNode;
+  description?: ReactNode;
+  icon?: ReactNode;
+  placement?: ProductTourPlacement;
+  padding?: number;
+}
+
 export interface ProductTourLabels extends ProductTourBubbleLabels {
   region?: string;
 }
@@ -64,6 +79,7 @@ export interface ProductTourHandle {
 
 export interface ProductTourProps {
   steps: readonly ProductTourStep[];
+  intro?: ProductTourIntro;
   open?: boolean;
   defaultOpen?: boolean;
   onOpenChange?: (open: boolean) => void;
@@ -138,6 +154,7 @@ function isVisiblePage(): boolean {
  */
 export function ProductTour({
   steps,
+  intro,
   open: controlledOpen,
   defaultOpen = false,
   onOpenChange,
@@ -177,6 +194,24 @@ export function ProductTour({
   });
   const safeIndex = Math.min(Math.max(index, 0), Math.max(0, steps.length - 1));
   const step = steps[safeIndex];
+  const [introDone, setIntroDone] = useState(false);
+  const introActive = Boolean(intro) && !introDone && steps.length > 0;
+  const activeStep = useMemo<ProductTourStep | undefined>(
+    () =>
+      introActive && intro
+        ? {
+            id: "__product-tour-intro__",
+            target: intro.target,
+            eyebrow: intro.eyebrow,
+            title: intro.title,
+            description: intro.description,
+            icon: intro.icon,
+            placement: intro.placement,
+            padding: intro.padding,
+          }
+        : step,
+    [intro, introActive, step],
+  );
   const [rect, setRect] = useState<TourRect | null>(null);
   const [missing, setMissing] = useState(false);
   const [paused, setPaused] = useState(false);
@@ -191,15 +226,15 @@ export function ProductTour({
   const titleId = useId();
   const descriptionId = useId();
   const statusId = useId();
-  const stepRef = useRef(step);
+  const stepRef = useRef(activeStep);
   const callbacks = useRef({ onComplete, onSkip, onClose, onTargetUnavailable });
   useEffect(() => {
     callbacks.current = { onComplete, onSkip, onClose, onTargetUnavailable };
   }, [onClose, onComplete, onSkip, onTargetUnavailable]);
 
   useEffect(() => {
-    stepRef.current = step;
-  }, [step]);
+    stepRef.current = activeStep;
+  }, [activeStep]);
 
   const autoPaused =
     paused || (mode === "auto" && (bubbleHovered || targetEngaged || !pageVisible));
@@ -215,6 +250,7 @@ export function ProductTour({
 
   const dismiss = useCallback(
     (kind: "skip" | "close") => {
+      setIntroDone(true);
       setPaused(false);
       setFinalStatus(kind === "skip" ? "dismissed" : "dismissed");
       setOpen(false);
@@ -225,6 +261,7 @@ export function ProductTour({
   );
 
   const complete = useCallback(() => {
+    setIntroDone(true);
     setPaused(false);
     setFinalStatus("completed");
     setOpen(false);
@@ -234,6 +271,7 @@ export function ProductTour({
   const goTo = useCallback(
     (next: number) => {
       if (steps.length === 0) return;
+      setIntroDone(true);
       const bounded = Math.min(Math.max(next, 0), steps.length - 1);
       if (bounded === safeIndex) return;
       if (mode === "auto") setPaused(true);
@@ -251,23 +289,31 @@ export function ProductTour({
   }, [safeIndex, setIndex, steps.length]);
 
   const next = useCallback(() => {
+    if (introActive) {
+      setIntroDone(true);
+      setPaused(false);
+      setBubbleHovered(false);
+      return;
+    }
     if (safeIndex >= steps.length - 1) complete();
     else goTo(safeIndex + 1);
-  }, [complete, goTo, safeIndex, steps.length]);
+  }, [complete, goTo, introActive, safeIndex, steps.length]);
 
   const start = useCallback(
     (nextIndex = 0) => {
       if (steps.length === 0) return;
+      const boundedIndex = Math.min(Math.max(nextIndex, 0), steps.length - 1);
       setPaused(false);
       setBubbleHovered(false);
       setTargetEngaged(false);
       setRect(null);
       setMissing(false);
       setFinalStatus("idle");
-      setIndex(Math.min(Math.max(nextIndex, 0), steps.length - 1));
+      setIntroDone(!intro || boundedIndex !== 0);
+      setIndex(boundedIndex);
       setOpen(true);
     },
-    [setIndex, setOpen, steps.length],
+    [intro, setIndex, setOpen, steps.length],
   );
 
   useImperativeHandle(
@@ -319,7 +365,7 @@ export function ProductTour({
 
   const measuredRef = useRef<Element | null>(null);
   useEffect(() => {
-    if (!open || !step) return;
+    if (!open || !activeStep) return;
     let disposed = false;
     let frame = 0;
     let observer: ResizeObserver | null = null;
@@ -333,14 +379,14 @@ export function ProductTour({
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
         if (disposed) return;
-        const target = resolveTourTarget(step.target);
+        const target = resolveTourTarget(activeStep.target);
         if (!target) {
           measuredRef.current = null;
           observer?.disconnect();
           observer = null;
           setMissing(true);
           setRect(null);
-          callbacks.current.onTargetUnavailable?.(step);
+          callbacks.current.onTargetUnavailable?.(activeStep);
           return;
         }
         if (measuredRef.current !== target) {
@@ -350,7 +396,7 @@ export function ProductTour({
           observer.observe(target);
           if (reveal) revealTourTarget(target, reducedMotion);
         }
-        const nextRect = measureTarget(target, step.padding ?? 8);
+        const nextRect = measureTarget(target, activeStep.padding ?? 8);
         setMissing(!nextRect);
         setRect((current) => (sameTourRect(current, nextRect) ? current : nextRect));
         if (
@@ -374,7 +420,7 @@ export function ProductTour({
     update(true);
     const handleViewportChange = () => update(false);
     mutation = new MutationObserver(() => {
-      const target = resolveTourTarget(step.target);
+      const target = resolveTourTarget(activeStep.target);
       if (!target || !target.isConnected || measuredRef.current !== target) update(false);
     });
     mutation.observe(document.body, {
@@ -401,10 +447,10 @@ export function ProductTour({
       window.removeEventListener("scroll", handleViewportChange, true);
       window.visualViewport?.removeEventListener("scroll", handleViewportChange);
     };
-  }, [open, reducedMotion, step]);
+  }, [activeStep, open, reducedMotion]);
 
   useEffect(() => {
-    if (!open || !step) return;
+    if (!open || !activeStep) return;
     const handleKeyDown = (event: KeyboardEvent) => {
       const active = document.activeElement;
       const editing =
@@ -430,7 +476,7 @@ export function ProductTour({
       }
       if (event.key !== "Tab") return;
 
-      const target = resolveTourTarget(step.target);
+      const target = resolveTourTarget(activeStep.target);
       const candidates = [
         ...(target
           ? [
@@ -467,9 +513,9 @@ export function ProductTour({
     };
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [dismiss, goTo, next, open, safeIndex, step]);
+  }, [activeStep, dismiss, goTo, next, open, safeIndex]);
 
-  if (!mounted || !step) return null;
+  if (!mounted || !activeStep) return null;
 
   return createPortal(
     <AnimatePresence>
@@ -498,23 +544,25 @@ export function ProductTour({
           <AnimatePresence initial={false}>
             <ProductTourBubble
               key="bubble"
-              eyebrow={step.eyebrow}
-              title={step.title}
-              description={step.description}
-              icon={step.icon}
+              eyebrow={activeStep.eyebrow}
+              title={activeStep.title}
+              description={activeStep.description}
+              icon={activeStep.icon}
               index={safeIndex}
               total={steps.length}
-              placement={step.placement ?? "auto"}
+              placement={activeStep.placement ?? "auto"}
               anchor={rect}
               variant={variant}
-              auto={mode === "auto"}
+              auto={mode === "auto" && !introActive}
               interval={interval}
               paused={autoPaused}
               missing={missing}
+              intro={introActive}
               onBack={() => goTo(safeIndex - 1)}
               onNext={next}
               onAutoAdvance={autoAdvance}
               onSkip={() => dismiss("skip")}
+              onClose={() => dismiss("close")}
               onTogglePause={() => setPaused((current) => !current)}
               labels={labels}
               titleId={titleId}
@@ -530,7 +578,10 @@ export function ProductTour({
             aria-atomic="true"
             className="sr-only"
           >
-            {missing
+            {introActive
+              ? labels?.introStatus ??
+                "Tour welcome. Take the tour or explore on your own."
+              : missing
               ? labels?.unavailableTitle ?? "Waiting for the highlighted element"
               : `${labels?.region ?? "Product tour"}. ${labels?.step?.(safeIndex + 1, steps.length) ?? `Step ${safeIndex + 1} of ${steps.length}`}.`}
           </div>

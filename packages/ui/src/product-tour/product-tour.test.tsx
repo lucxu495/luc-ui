@@ -179,6 +179,40 @@ describe("ProductTour", () => {
     expect(input).toHaveFocus();
   });
 
+  it("offers a welcome choice before entering step one", async () => {
+    anchor("welcome-target");
+    anchor("step-target", { top: 240 });
+    render(
+      <Harness
+        defaultOpen={false}
+        steps={[
+          { id: "one", target: "#step-target", title: "First tutorial step" },
+          { id: "two", title: "Second tutorial step" },
+        ]}
+        intro={{
+          target: "#welcome-target",
+          eyebrow: "WELCOME",
+          title: "Let’s take a tour?",
+          description: "A short introduction.",
+        }}
+        labels={{
+          introMeta: (total) => `${total} quiet steps`,
+          takeTour: "Take the tour",
+          exploreAlone: "Explore on my own",
+        }}
+      />,
+    );
+    await userEvent.click(screen.getByRole("button", { name: "Launch" }));
+    const dialog = screen.getByRole("dialog");
+    expect(dialog).toHaveTextContent("Let’s take a tour?");
+    expect(dialog).toHaveTextContent("2 quiet steps");
+    expect(within(dialog).queryByRole("button", { name: "Back" })).not.toBeInTheDocument();
+    await userEvent.click(within(dialog).getByRole("button", { name: "Take the tour" }));
+    await waitFor(() =>
+      expect(screen.getByRole("dialog")).toHaveTextContent("First tutorial step"),
+    );
+  });
+
   it("keeps a missing target recoverable and offers a way out", async () => {
     const onSkip = vi.fn();
     render(
@@ -269,7 +303,7 @@ describe("ProductTour", () => {
         <ProductTour
           defaultOpen
           steps={[{ id: "a", target: "#tour-a", title: "Tour A" }]}
-          onSkip={onA}
+          onClose={onA}
           labels={{ close: "Close A" }}
         />
         <ProductTour

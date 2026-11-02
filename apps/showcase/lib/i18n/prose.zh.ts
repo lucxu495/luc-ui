@@ -36,6 +36,20 @@
 
 export const proseZh: Record<string, string> = {
 
+  "WELCOME TO FIELDNOTE": "欢迎来到 FIELDNOTE",
+  "Let’s take a tour?": "要不要一起看看？",
+  "Five quiet steps through the signal desk. You can leave at any time.":
+    "用五个安静的步骤熟悉信号台，你随时可以离开。",
+  "Welcome": "欢迎",
+  "Preview welcome": "预览欢迎页",
+  "Tour mode": "导览模式",
+  "Positioning scenario": "定位场景",
+  "{count} quiet steps": "{count} 个安静步骤",
+  "Tour welcome. Take the tour or explore on your own.":
+    "导览欢迎页。可以开始导览，也可以自己探索。",
+  "Take the tour": "开始导览",
+  "I’ll explore on my own": "我自己探索",
+
   "Nested queue": "嵌套队列",
   "Materials refresh": "素材刷新",
   "Search ranking review": "搜索排序评审",
