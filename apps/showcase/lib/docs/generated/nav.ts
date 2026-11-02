@@ -1162,6 +1162,14 @@ export const generatedNav: readonly NavRow[] = [
   "s": "generated"
  },
  {
+  "id": "product-tour",
+  "t": "ProductTour",
+  "r": "/components/product-tour",
+  "f": "feedback",
+  "g": "components",
+  "s": "generated"
+ },
+ {
   "id": "profile-hero",
   "t": "ProfileHero",
   "r": "/components/profile-hero",

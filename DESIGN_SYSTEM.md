@@ -176,6 +176,13 @@ wins over every level.
 4. Passive surfaces have **no** glow. Ever.
 5. Glow is drawn on a masked 1px ring, not as a radial blob inside the surface.
 
+`ProductTour` adds one narrow optical role: `--tour-spotlight-edge`,
+`--tour-spotlight-halo` and `--tour-spotlight-aura`. They make a restrained
+gold trace around the live target. The glass body uses the existing
+`--glass-surface`, `--glass-surface-strong`, `--glass-border` and
+`--glass-highlight` tokens; gold never becomes a large fill, a button colour or
+body text.
+
 ### Chart colour
 
 Charts cannot read utilities — they paint into a canvas — so they get their own

@@ -1702,6 +1702,33 @@ export const ENTRY_NOTES: Record<string, EntryNote> = {
         "The card is a modal dialog: focus moves into it when the tour opens and returns to the trigger when it closes, Escape leaves from any step, and Tab is kept inside the card while it is up. The spotlight is decorative and `aria-hidden`, so a reader hears the step's own title and description rather than the shape of the highlight — and a step whose target has disappeared falls back to a centred card instead of failing.",
     },
   },
+  "product-tour": {
+    api: {
+      note: "`ProductTour` composes a positioning adapter, spotlight and bubble behind one lifecycle API. `open`, `stepIndex` and the imperative handle cover both declarative and product-driven flows; `variant` selects the contour without changing behaviour.",
+    },
+    usage: {
+      imports: ["ProductTour"],
+      code: `const [open, setOpen] = useState(false);\n\n<ProductTour\n  open={open}\n  onOpenChange={setOpen}\n  steps={steps}\n  variant="cloud-glass"\n  mode="manual"\n  interval={2000}\n  onComplete={() => {}}\n  onSkip={() => {}}\n/>`,
+      note: "Steps point at stable selectors or elements. Auto mode pauses on hover, target focus, navigation and hidden pages, and stops at the final step.",
+    },
+    guidance: {
+      use: [
+        "Use `minimal-glass` when the tour should disappear into a restrained product shell.",
+        "Use `cloud-glass` for a gentler first-run moment where the contour is part of the welcome.",
+        "Keep the highlighted target interactive and give every step one idea.",
+        "Provide `onSkip` and `onComplete` separately when onboarding completion affects product state.",
+      ],
+      avoid: [
+        "Do not use auto mode for instructions a person must read or an assistive technology must announce.",
+        "Do not target an element inside a permanently closed overlay.",
+        "Do not hide the target's own focus state behind the tour bubble.",
+      ],
+    },
+    accessibility: {
+      detail:
+        "The bubble is a non-modal dialog so the highlighted target remains usable. Focus enters the bubble, Tab cycles through the bubble and the target, Escape dismisses from any step, and focus returns to the launch control. The spotlight is decorative, status changes are announced politely, and reduced motion removes travel rather than merely shortening it.",
+    },
+  },
 
   /* ---------------------------------------------------------- data display */
   badge: {

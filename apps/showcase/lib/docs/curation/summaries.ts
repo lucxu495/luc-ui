@@ -161,6 +161,8 @@ export const MODULE_SUMMARIES: Record<ModuleKey, string> = {
     "An inbox for the notifications a user has already been shown, with read state.",
   "components/guided-tour":
     "A multi-step tour anchored to real elements, with the steps declared as data.",
+  "product-tour/index":
+    "A guided product layer with a live spotlight, collision-aware glass bubble, manual and auto steps, and graceful target recovery.",
 
   /* -------------------------------------------------------------- overlays */
   "components/accordion":

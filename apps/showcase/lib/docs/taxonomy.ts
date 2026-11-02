@@ -192,6 +192,7 @@ export const COMPONENT_FAMILIES: FamilySpec[] = [
       "components/toast",
       "components/notification-center",
       "components/guided-tour",
+      "product-tour/index",
     ],
   },
   {
@@ -476,6 +477,10 @@ export const INTEGRATION_PAGES: IntegrationPage[] = [
  *    helper (`components/callout` lives inside `components/alert`).
  */
 export const ROUTE_OVERRIDES: Record<ModuleKey, RouteOverride> = {
+  "product-tour/index": {
+    id: "product-tour",
+    title: "ProductTour",
+  },
   "components/accordion": {
     id: "accordion",
     route: "/components/accordion",

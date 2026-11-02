@@ -35,6 +35,7 @@
     "qa:outline": "node qa/outline.mjs",
     "qa:playground": "node qa/playground.mjs",
     "qa:card-stack": "node qa/card-stack.mjs",
+    "qa:product-tour": "node qa/product-tour.mjs",
     "qa:charts:geometry": "node qa/chart-geometry.mjs",
     "qa:charts:assert": "node qa/chart-assertions.mjs",
     "qa:financial-crosshair": "node qa/financial-crosshair.mjs",

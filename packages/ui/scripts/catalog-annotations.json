@@ -58,6 +58,12 @@
     "category": "Feedback",
     "showcase": "/components/toast"
   },
+  "./product-tour": {
+    "category": "Feedback",
+    "use": "Guide a reader through live interface targets with manual or auto steps and a recoverable spotlight.",
+    "avoid": "Do not use auto-play for essential reading or bind step content to a business-specific product.",
+    "a11y": "The target remains interactive, Escape dismisses, focus is restored and reduced motion removes travel."
+  },
   "./context-menu": {
     "category": "Menus",
     "showcase": "/components/menus"

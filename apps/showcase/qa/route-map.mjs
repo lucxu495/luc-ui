@@ -97,6 +97,7 @@ const RULES = [
   { match: /components\/(combobox)\.tsx$/, slugs: () => ["components-combobox", "data-table"] },
   { match: /components\/(sheet|dialog|popover|tooltip)\.tsx$/, slugs: () => ["overlay", "dialog", "components-sheet"] },
   { match: /components\/(toast)\.tsx$/, slugs: () => ["components-toast", "feedback"] },
+  { match: /^packages\/ui\/src\/product-tour\//, slugs: () => ["components-product-tour"] },
   { match: /components\/(command)\.tsx$/, slugs: () => ["components-command", "patterns-command-palette"] },
   { match: /components\/(input|textarea|search-input|checkbox|radio|switch|tabs|segmented-control)\.tsx$/, slugs: () => ["inputs", "selection", "tabs", "forms-overview"] },
   { match: /components\/(badge|tag)\.tsx$/, slugs: () => ["badges", "components-tags", "data-statuses"] },

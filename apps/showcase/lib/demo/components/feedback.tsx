@@ -28,6 +28,7 @@ import { ProgressDemo } from "@/components/demo/islands/progress-demo";
 import { SkeletonDemo } from "@/components/demo/islands/skeleton-demo";
 import { SpinnerDemo } from "@/components/demo/islands/spinner-demo";
 import { GuidedTourDemo } from "@/components/demo/islands/c-guided-tour";
+import { ProductTourDemo } from "@/components/demo/islands/product-tour-demo";
 import { composition, type DemoSpec } from "../index";
 
 /** A labelled bar: the component draws the track, the caller writes the number. */
@@ -518,5 +519,15 @@ export const feedbackDemos: readonly DemoSpec[] = [
         note: "Omit `target` for a step that is a summary rather than a pointer: it centres itself and still owns focus, Escape and the step counter.",
       },
     ],
+  }),
+
+  composition({
+    id: "product-tour",
+    title: "A guided layer with two quiet contours",
+    node: <ProductTourDemo />,
+    code: `const [open, setOpen] = useState(false);\n\n<Button onClick={() => setOpen(true)}>Start tour</Button>\n<ProductTour\n  open={open}\n  onOpenChange={setOpen}\n  steps={steps}\n  variant="cloud-glass"\n  mode="auto"\n  interval={2000}\n  onComplete={() => {}}\n/>`,
+    layout: "stage",
+    height: 760,
+    note: "A real product surface, not a mock. Switch between both contour variants and exercise manual, auto, nested-scroll, viewport-edge and missing-target recovery scenarios.",
   }),
 ];
