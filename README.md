@@ -263,7 +263,7 @@ and version, and any relevant browser or framework details.
 
 - Package: `@luc/ui`
 - Latest public Git tag: `v1.3.0`
-- Latest GitHub Release: `v1.3.0`
+- Latest GitHub Release page: `v1.1.0` (the newer `v1.2.0` and `v1.3.0` are published as immutable Git tags, not GitHub Release pages)
 - Module format: ESM
 - Stylesheet: Tailwind CSS v4
 - License: MIT
