@@ -1,21 +1,9 @@
 import { AxisSide, YScaleMode } from "../../core/axis.js";
 import { ChartTheme } from "../../core/theme-tokens.js";
-import { LightweightChart, LightweightModule, LightweightSeries } from "./runtime.js";
+import { LightweightChart, LightweightSeriesKind } from "./runtime.js";
+import { LightweightController } from "./chart-controller.js";
+import { ControlledVisibleRange } from "./range-application.js";
 //#region src/charts/adapters/lightweight/lightweight-surface.d.ts
-export type LightweightSeriesKind = "candlestick" | "line" | "area" | "histogram" | "baseline" | "bar";
-export interface LightweightController {
-  chart: LightweightChart;
-  module: LightweightModule;
-  theme: ChartTheme;
-  /**
-   * Create or update a named series. Calling it again with the same id updates
-   * in place, so a theme or data change never resets the visible range.
-   */
-  upsertSeries: (id: string, kind: LightweightSeriesKind, options: Record<string, unknown>, data: readonly unknown[], paneIndex?: number) => LightweightSeries;
-  removeSeries: (id: string) => void;
-  fit: () => void;
-  setVisibleRange: (fromMs: number, toMs: number) => void;
-}
 export interface LightweightSurfaceProps {
   build: (controller: LightweightController) => void;
   syncGroup?: string | null;
@@ -64,6 +52,16 @@ export interface LightweightSurfaceProps {
   onCrosshair?: (position: CrosshairPosition) => void;
   onReady?: (chart: LightweightChart) => void;
   /**
+   * Opt-in theme contract for hosts that do not inherit Luc UI's CSS variables
+   * (notebooks, embeds). Light/Dark still resolve from the design tokens.
+   */
+  themeOverride?: ChartTheme;
+  /**
+   * Controlled viewport. `undefined` lets the chart preserve the reader's own
+   * zoom after its initial frame; `null` explicitly fits all loaded data.
+   */
+  visibleRange?: ControlledVisibleRange | null;
+  /**
    * Create the engine on mount instead of waiting for proximity/an idle period.
    * See `useChartArm`: the plate is in the layout either way.
    */
@@ -86,6 +84,7 @@ export interface CrosshairPosition {
  * and never flashes. Pointer handling stays inside the engine and reaches the
  * sync bus as a normalised cursor — a mousemove never triggers a React render.
  */
-export declare function LightweightSurface({ build, syncGroup, resolvePrice, className, ariaLabel, ariaDescription, priceScale, priceFormatter, tickFormatter, onCrosshair, onReady, eager }: LightweightSurfaceProps): import("react").JSX.Element;
+export declare function LightweightSurface({ build, syncGroup, resolvePrice, className, ariaLabel, ariaDescription, priceScale, priceFormatter, tickFormatter, onCrosshair, onReady, themeOverride, visibleRange, eager }: LightweightSurfaceProps): import("react").JSX.Element;
 //#endregion
+export type { LightweightController, LightweightSeriesKind };
 //# sourceMappingURL=lightweight-surface.d.ts.map

@@ -6,6 +6,8 @@ import { watchPlateGesture } from "../../core/gesture.js";
 import { useChartId, useChartTheme, useLatest } from "../../core/use-chart-theme.js";
 import { fromChartTime, loadLightweightCharts, toChartTime } from "./runtime.js";
 import { useChartArm } from "../../core/use-chart-arm.js";
+import { createLightweightController } from "./chart-controller.js";
+import { resolveVisibleRangeAction, visibleRangeKey } from "./range-application.js";
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";
 import { useEffect, useRef, useState } from "react";
 //#region src/charts/adapters/lightweight/lightweight-surface.tsx
@@ -19,7 +21,8 @@ import { useEffect, useRef, useState } from "react";
 * makes an axis feel dead.
 */
 const TIME_AXIS_BAND_PX = 34;
-function chartOptions(theme, priceScale, formatters) {
+const INTERACTION_DESCRIPTION = "Interactive financial chart. Use the arrow keys to pan, plus and minus to zoom, Home to reset the viewport, and Escape to clear the crosshair.";
+function buildLightweightChartOptions(theme, priceScale, formatters) {
 	const side = priceScale?.side ?? "right";
 	const mode = priceScale?.mode === "log" ? 1 : 0;
 	const plate = {
@@ -111,6 +114,16 @@ function chartOptions(theme, priceScale, formatters) {
 		}
 	};
 }
+function applyVisibleRange(chart, action) {
+	if (action.kind === "preserve") return;
+	try {
+		if (action.kind === "fit") chart.timeScale().fitContent();
+		else chart.timeScale().setVisibleRange({
+			from: toChartTime(action.fromMs),
+			to: toChartTime(action.toMs)
+		});
+	} catch {}
+}
 /**
 * The one place Lightweight Charts is created, synchronised and disposed.
 *
@@ -119,13 +132,15 @@ function chartOptions(theme, priceScale, formatters) {
 * and never flashes. Pointer handling stays inside the engine and reaches the
 * sync bus as a normalised cursor — a mousemove never triggers a React render.
 */
-function LightweightSurface({ build, syncGroup, resolvePrice, className, ariaLabel, ariaDescription, priceScale, priceFormatter, tickFormatter, onCrosshair, onReady, eager = false }) {
+function LightweightSurface({ build, syncGroup, resolvePrice, className, ariaLabel, ariaDescription, priceScale, priceFormatter, tickFormatter, onCrosshair, onReady, themeOverride, visibleRange, eager = false }) {
 	const hostRef = useRef(null);
 	const chartRef = useRef(null);
 	const controllerRef = useRef(null);
 	const bindingsRef = useRef(/* @__PURE__ */ new Map());
 	const unsubscribeRef = useRef(null);
 	const applyingRef = useRef(false);
+	const lastRangeKeyRef = useRef(null);
+	const skipNextBuildEffectRef = useRef(false);
 	/**
 	* The reader's own input on this plate.
 	*
@@ -141,10 +156,12 @@ function LightweightSurface({ build, syncGroup, resolvePrice, className, ariaLab
 	/** Re-applies a cursor from the engine's own crosshair subscription. */
 	const applyCursorRef = useRef(() => {});
 	const [ready, setReady] = useState(false);
-	const theme = useChartTheme();
+	const systemTheme = useChartTheme();
+	const theme = themeOverride ?? systemTheme;
 	const bus = useChartSyncBus();
 	const id = useChartId("lw-chart");
 	const descriptionId = `${id}-description`;
+	const interactionDescriptionId = `${id}-interaction-description`;
 	const priceScaleSide = priceScale?.side ?? "right";
 	const priceScaleMode = priceScale?.mode ?? "linear";
 	const plateRef = useLatest({
@@ -155,6 +172,7 @@ function LightweightSurface({ build, syncGroup, resolvePrice, className, ariaLab
 		priceFormatter,
 		tickFormatter
 	});
+	const visibleRangeRef = useLatest(visibleRange);
 	const buildRef = useLatest(build);
 	const resolvePriceRef = useLatest(resolvePrice);
 	const syncGroupRef = useLatest(syncGroup);
@@ -166,66 +184,22 @@ function LightweightSurface({ build, syncGroup, resolvePrice, className, ariaLab
 		if (!armed) return;
 		let disposed = false;
 		const host = hostRef.current;
-		const bindings = bindingsRef.current;
 		if (!host) return;
 		gestureRef.current?.dispose();
 		gestureRef.current = watchPlateGesture(host);
 		loadLightweightCharts().then((module) => {
 			if (disposed || !hostRef.current) return;
-			const chart = module.createChart(hostRef.current, chartOptions(themeRef.current, {
+			const chart = module.createChart(hostRef.current, buildLightweightChartOptions(themeRef.current, {
 				side: plateRef.current.side,
 				mode: plateRef.current.mode
 			}, formatterRef.current));
 			chartRef.current = chart;
-			const definitions = {
-				candlestick: module.CandlestickSeries,
-				line: module.LineSeries,
-				area: module.AreaSeries,
-				histogram: module.HistogramSeries,
-				baseline: module.BaselineSeries,
-				bar: module.BarSeries
-			};
-			const controller = {
-				chart,
-				module,
-				theme: themeRef.current,
-				upsertSeries(seriesId, kind, options, data, paneIndex = 0) {
-					let binding = bindings.get(seriesId);
-					if (binding && (binding.kind !== kind || binding.paneIndex !== paneIndex)) {
-						chart.removeSeries(binding.series);
-						bindings.delete(seriesId);
-						binding = void 0;
-					}
-					if (!binding) {
-						binding = {
-							kind,
-							series: chart.addSeries(definitions[kind], options, paneIndex),
-							paneIndex
-						};
-						bindings.set(seriesId, binding);
-					} else binding.series.applyOptions(options);
-					binding.series.setData(data);
-					return binding.series;
-				},
-				removeSeries(seriesId) {
-					const binding = bindings.get(seriesId);
-					if (!binding) return;
-					chart.removeSeries(binding.series);
-					bindings.delete(seriesId);
-				},
-				fit() {
-					chart.timeScale().fitContent();
-				},
-				setVisibleRange(fromMs, toMs) {
-					chart.timeScale().setVisibleRange({
-						from: toChartTime(fromMs),
-						to: toChartTime(toMs)
-					});
-				}
-			};
+			const { controller, bindings: controllerBindings } = createLightweightController(chart, module, themeRef.current);
+			bindingsRef.current = controllerBindings;
 			controllerRef.current = controller;
 			buildRef.current(controller);
-			chart.timeScale().fitContent();
+			lastRangeKeyRef.current = visibleRangeKey(visibleRangeRef.current);
+			applyVisibleRange(chart, resolveVisibleRangeAction(visibleRangeRef.current, null, false));
 			const groupAtCreate = syncGroupRef.current;
 			if (groupAtCreate && bus.hasRange(groupAtCreate)) try {
 				const stored = normalizeRange(bus.getRange(groupAtCreate));
@@ -235,9 +209,10 @@ function LightweightSurface({ build, syncGroup, resolvePrice, className, ariaLab
 					to: toChartTime(stored.to)
 				});
 			} catch {}
+			skipNextBuildEffectRef.current = true;
 			setReady(true);
 			onReadyRef.current?.(chart);
-			chart.subscribeCrosshairMove((param) => {
+			const onCrosshairMove = (param) => {
 				onCrosshairRef.current?.({
 					timeMs: param.time === void 0 ? null : normalizeCursorX(fromChartTime(param.time)),
 					x: param.point?.x ?? null,
@@ -255,7 +230,8 @@ function LightweightSurface({ build, syncGroup, resolvePrice, className, ariaLab
 					return;
 				}
 				bus.publishCursor(group, normalizeCursorX(fromChartTime(param.time)), id);
-			});
+			};
+			chart.subscribeCrosshairMove(onCrosshairMove);
 			const scale = chart.timeScale();
 			const onLogicalRange = () => {
 				const group = syncGroupRef.current;
@@ -301,9 +277,59 @@ function LightweightSurface({ build, syncGroup, resolvePrice, className, ariaLab
 				} catch {}
 			};
 			host.addEventListener("dblclick", onAxisDoubleClick);
+			const publishCurrentRange = () => {
+				const group = syncGroupRef.current;
+				if (!group) return;
+				const range = scale.getVisibleRange();
+				if (!range) return;
+				const from = fromChartTime(range.from);
+				const to = fromChartTime(range.to);
+				if (from === null || to === null || to <= from) return;
+				bus.publishRange(group, {
+					from,
+					to
+				}, id, { intent: "gesture" });
+			};
+			const onKeyDown = (event) => {
+				if (event.target !== host || event.altKey || event.ctrlKey || event.metaKey || event.defaultPrevented) return;
+				const logical = scale.getVisibleLogicalRange();
+				if (!logical) return;
+				const span = logical.to - logical.from;
+				const middle = logical.from + span / 2;
+				if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+					const move = span * (event.shiftKey ? .25 : .1);
+					const delta = event.key === "ArrowLeft" ? -move : move;
+					scale.setVisibleLogicalRange({
+						from: logical.from + delta,
+						to: logical.to + delta
+					});
+				} else if (event.key === "+" || event.key === "=") {
+					const next = span * .8;
+					scale.setVisibleLogicalRange({
+						from: middle - next / 2,
+						to: middle + next / 2
+					});
+				} else if (event.key === "-" || event.key === "_") {
+					const next = span * 1.25;
+					scale.setVisibleLogicalRange({
+						from: middle - next / 2,
+						to: middle + next / 2
+					});
+				} else if (event.key === "Home" || event.key === "0") scale.fitContent();
+				else if (event.key === "Escape") {
+					event.preventDefault();
+					chart.clearCrosshairPosition();
+					return;
+				} else return;
+				event.preventDefault();
+				publishCurrentRange();
+			};
+			host.addEventListener("keydown", onKeyDown);
 			unsubscribeRef.current = () => {
 				scale.unsubscribeVisibleLogicalRangeChange(onLogicalRange);
+				chart.unsubscribeCrosshairMove(onCrosshairMove);
 				host.removeEventListener("dblclick", onAxisDoubleClick);
+				host.removeEventListener("keydown", onKeyDown);
 			};
 		}).catch((error) => {
 			console.error("[luc-ui] Lightweight Charts failed to load", error);
@@ -315,11 +341,10 @@ function LightweightSurface({ build, syncGroup, resolvePrice, className, ariaLab
 			gestureRef.current?.dispose();
 			gestureRef.current = null;
 			const chart = chartRef.current;
-			const controller = controllerRef.current;
 			chartRef.current = null;
 			controllerRef.current = null;
-			bindings.clear();
-			if (chart && controller) try {
+			bindingsRef.current.clear();
+			if (chart) try {
 				chart.remove();
 			} catch {}
 		};
@@ -327,8 +352,12 @@ function LightweightSurface({ build, syncGroup, resolvePrice, className, ariaLab
 	useEffect(() => {
 		const controller = controllerRef.current;
 		if (!controller || !ready) return;
+		if (skipNextBuildEffectRef.current) {
+			skipNextBuildEffectRef.current = false;
+			return;
+		}
 		controller.theme = theme;
-		controller.chart.applyOptions(chartOptions(theme, {
+		controller.chart.applyOptions(buildLightweightChartOptions(theme, {
 			side: priceScaleSide,
 			mode: priceScaleMode
 		}, {
@@ -344,6 +373,18 @@ function LightweightSurface({ build, syncGroup, resolvePrice, className, ariaLab
 		priceScaleMode,
 		priceFormatter,
 		tickFormatter
+	]);
+	const currentRangeKey = visibleRangeKey(visibleRange);
+	useEffect(() => {
+		const chart = chartRef.current;
+		if (!chart || !ready) return;
+		const action = resolveVisibleRangeAction(visibleRangeRef.current, lastRangeKeyRef.current, true);
+		lastRangeKeyRef.current = currentRangeKey;
+		applyVisibleRange(chart, action);
+	}, [
+		currentRangeKey,
+		ready,
+		visibleRangeRef
 	]);
 	useEffect(() => {
 		if (!syncGroup) return;
@@ -398,21 +439,31 @@ function LightweightSurface({ build, syncGroup, resolvePrice, className, ariaLab
 		syncGroup,
 		resolvePriceRef
 	]);
-	return /* @__PURE__ */ jsxs(Fragment, { children: [/* @__PURE__ */ jsx("div", {
-		ref: hostRef,
-		"data-slot": "lightweight-surface",
-		className: className ? `luc-chart-surface ${className}` : "luc-chart-surface",
-		role: "figure",
-		"aria-roledescription": "chart",
-		"aria-label": ariaLabel,
-		"aria-describedby": ariaDescription ? descriptionId : void 0
-	}), ariaDescription ? /* @__PURE__ */ jsx("span", {
-		id: descriptionId,
-		className: "sr-only",
-		children: ariaDescription
-	}) : null] });
+	return /* @__PURE__ */ jsxs(Fragment, { children: [
+		/* @__PURE__ */ jsx("div", {
+			ref: hostRef,
+			"data-slot": "lightweight-surface",
+			className: className ? `luc-chart-surface ${className}` : "luc-chart-surface",
+			role: "application",
+			"aria-roledescription": "chart",
+			tabIndex: 0,
+			"aria-label": ariaLabel,
+			"aria-keyshortcuts": "ArrowLeft ArrowRight + - Home Escape",
+			"aria-describedby": ariaDescription ? `${descriptionId} ${interactionDescriptionId}` : interactionDescriptionId
+		}),
+		/* @__PURE__ */ jsx("span", {
+			id: interactionDescriptionId,
+			className: "sr-only",
+			children: INTERACTION_DESCRIPTION
+		}),
+		ariaDescription ? /* @__PURE__ */ jsx("span", {
+			id: descriptionId,
+			className: "sr-only",
+			children: ariaDescription
+		}) : null
+	] });
 }
 //#endregion
-export { LightweightSurface };
+export { LightweightSurface, buildLightweightChartOptions };
 
 //# sourceMappingURL=lightweight-surface.js.map

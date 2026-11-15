@@ -200,7 +200,7 @@ function toneToColor(tone) {
 function ChartToolbar({ className, ...props }) {
 	return /* @__PURE__ */ jsx("div", {
 		"data-slot": "chart-toolbar",
-		className: cn("flex items-center gap-1.5", className),
+		className: cn("flex flex-wrap items-center justify-end gap-1.5", className),
 		...props
 	});
 }

@@ -1,60 +1,21 @@
 import { AxisSide, YScaleMode } from "./charts/core/axis.js";
-import { ChartFormat, SeriesTone } from "./charts/types.js";
-import { LightweightSeriesKind } from "./charts/adapters/lightweight/lightweight-surface.js";
+import { ChartFormat } from "./charts/types.js";
+import { ChartTheme } from "./charts/core/theme-tokens.js";
+import { LightweightChart } from "./charts/adapters/lightweight/runtime.js";
+import { LightweightController } from "./charts/adapters/lightweight/chart-controller.js";
+import "./charts/adapters/lightweight/lightweight-surface.js";
+import { Candle, FinancialDataError, FinancialOverlay, IndicatorPane, IndicatorSeries, OverlayPoint, PriceSeriesData, PriceSeriesPoint, VolumePoint } from "./charts/financial/financial-data.js";
 //#region src/charts/financial/financial-chart.d.ts
-export interface Candle {
-  /** Epoch milliseconds, a `Date`, or an ISO date string. */
-  time: number | string | Date;
-  open: number;
-  high: number;
-  low: number;
-  close: number;
-}
-export interface VolumePoint {
-  time: number | string | Date;
-  value: number;
-  direction?: "up" | "down" | "neutral";
-}
-export interface OverlayPoint {
-  time: number | string | Date;
-  value: number | null;
-}
-export interface FinancialOverlay {
-  id: string;
-  label: string;
-  data: readonly OverlayPoint[];
-  tone?: SeriesTone;
-  color?: string;
-  lineWidth?: number;
-  lineType?: "solid" | "dashed" | "dotted";
-  /** Draw the same scale as price (default) or its own overlay scale. */
-  paneIndex?: number;
-}
-export interface IndicatorSeries {
-  id: string;
-  label?: string;
-  kind: Extract<LightweightSeriesKind, "line" | "area" | "histogram" | "bar">;
-  data: readonly OverlayPoint[];
-  tone?: SeriesTone;
-  color?: string;
-  lineWidth?: number;
-}
-export interface IndicatorPane {
-  id: string;
-  label: string;
-  series: readonly IndicatorSeries[];
-  /** Horizontal guides, e.g. 30/70 for an oscillator. */
-  referenceLines?: readonly number[];
-  /** Share of the chart height. Price pane defaults to 3. */
-  stretch?: number;
-}
-export interface FinancialChartProps {
-  candles: readonly Candle[];
+interface FinancialChartBaseProps {
   volume?: readonly VolumePoint[];
   overlays?: readonly FinancialOverlay[];
   indicators?: readonly IndicatorPane[];
+  /** Price mark used when the source is OHLC. */
   mode?: "candlestick" | "line" | "area";
-  /** Trailing window. `null` fits all data; changing it never refetches. */
+  /**
+   * Controlled viewport in epoch milliseconds. `undefined` preserves reader
+   * zoom after the first frame; `null` explicitly fits all loaded data.
+   */
   range?: {
     from: number;
     to: number;
@@ -63,12 +24,9 @@ export interface FinancialChartProps {
   volumeFormat?: ChartFormat;
   visibleOverlays?: readonly string[];
   showVolume?: boolean;
+  /** Show the engine's last-price line and label in the primary price pane. */
+  showPriceLine?: boolean;
   syncGroup?: string | null;
-  /**
-   * Which plate the price uses and how it maps values. `linear` / `log` is the
-   * same presentation contract as the analytical lane: the same real candles are
-   * mapped either way, and nothing is transformed upstream.
-   */
   priceScale?: {
     side?: AxisSide;
     mode?: YScaleMode;
@@ -78,19 +36,60 @@ export interface FinancialChartProps {
   className?: string;
   ariaLabel?: string;
   ariaDescription?: string;
-  onReady?: (chart: unknown) => void;
+  showLegend?: boolean;
+  /** Human-readable field names for the crosshair tooltip. */
+  tooltipLabels?: Partial<{
+    open: string;
+    high: string;
+    low: string;
+    close: string;
+    change: string;
+    volume: string;
+  }>;
+  /**
+   * Resolved chart theme for notebook/embedded hosts. The normal Light/Dark
+   * path should omit this and inherit the design-system tokens.
+   */
+  themeOverride?: ChartTheme;
+  onReady?: (chart: LightweightChart) => void;
+  /**
+   * Optional thin-controller escape hatch. `updateSeries` is the official
+   * Lightweight `update()` path for high-frequency latest-point changes;
+   * `setSeriesData` remains full-history replacement.
+   */
+  onControllerReady?: (controller: FinancialChartController) => void;
+}
+export type FinancialChartProps = FinancialChartBaseProps & ({
+  candles: readonly Candle[];
+  series?: undefined;
+} | {
+  candles?: undefined;
+  /** Clean close/time series. No synthetic OHLC is created. */
+  series: readonly PriceSeriesData[];
+});
+export interface FinancialChartController {
+  readonly chart: LightweightChart | null;
+  readonly controller: LightweightController | null;
+  /** Append/update one OHLC candle or one primary close-only point. */
+  updatePrice: (point: Candle | PriceSeriesPoint) => void;
+  updateVolume: (point: VolumePoint) => void;
+  updateOverlay: (id: string, point: OverlayPoint) => void;
+  updateIndicator: (paneId: string, seriesId: string, point: OverlayPoint) => void;
+  /** Official engine `update()` for a series key already known to the caller. */
+  updateSeries: (id: string, item: Parameters<LightweightController["updateSeries"]>[1]) => void;
+  /** Full-history replacement through the official `setData()` path. */
+  setSeriesData: (id: string, data: Parameters<LightweightController["setSeriesData"]>[1]) => void;
+  fit: () => void;
 }
 /**
- * Financial price chart.
+ * Financial price chart for OHLC candles or clean close/time series.
  *
- * Candles (or a price line/area), an optional volume pane and any number of
- * prepared indicator panes, behind one adapter that owns creation, resize,
- * theme, range and crosshair synchronisation. The consumer never sees
- * `createChart`.
- *
- * Calculations are the caller's responsibility: SMA, RSI, MACD and volatility
- * arrive as prepared series. This component draws what it is given.
+ * The component owns no indicator maths: overlays and pane series are
+ * prepared by the caller. Data is validated, never repaired by interpolation
+ * or gap filling. Chart creation, dynamic import, attribution, sync and range
+ * application live in `LightweightSurface`.
  */
-export declare function FinancialChart({ candles, volume, overlays, indicators, mode, range, priceFormat, volumeFormat, visibleOverlays, showVolume, syncGroup, priceScale, state, height, className, ariaLabel, ariaDescription, onReady }: FinancialChartProps): import("react").JSX.Element;
+export declare function FinancialChart(props: FinancialChartProps): import("react").JSX.Element;
 //#endregion
+export { type Candle, FinancialDataError, type FinancialOverlay, type IndicatorPane, type IndicatorSeries, type OverlayPoint, type PriceSeriesData, type PriceSeriesPoint, type VolumePoint };
 //# sourceMappingURL=financial-chart.d.ts.map

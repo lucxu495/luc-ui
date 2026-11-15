@@ -3,14 +3,30 @@ import { formatChartValue } from "./formatters.js";
 function escapeHtml(value) {
 	return String(value ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 }
+/**
+* Only CSS colour grammar is allowed inside a style attribute.
+*
+* Consumer series colours are presentation data, not trusted markup. Hex and
+* numeric colour functions cover the resolved design-system tokens; named CSS
+* colours are intentionally omitted because they would require a second,
+* browser-dependent validation path.
+*/
+function safeCssColor(value) {
+	if (!value) return null;
+	const color = value.trim();
+	if (/^#[\da-f]{3,4}(?:[\da-f]{2}){0,2}$/i.test(color) || /^(?:rgb|rgba|hsl|hsla|oklch)\(\s*[-+.\d%deg,\s/]+\)$/i.test(color) || /^(?:transparent|currentcolor)$/i.test(color)) return color;
+	return null;
+}
 function swatchHtml(color) {
-	return `<span class="luc-chart-tooltip__swatch" style="background-color:${color}"></span>`;
+	const safe = safeCssColor(color);
+	return `<span class="luc-chart-tooltip__swatch"${safe ? ` style="background-color:${safe}"` : ""}></span>`;
 }
 function tooltipRowHtml(label, value, color) {
 	return `<div class="luc-chart-tooltip__row"><span class="luc-chart-tooltip__label">${color ? swatchHtml(color) : ""}${escapeHtml(label)}</span><span class="luc-chart-tooltip__value">${escapeHtml(value)}</span></div>`;
 }
 function tooltipGridHtml(rows, tone) {
-	return `<dl class="luc-chart-tooltip__grid">${rows.map(([label, value]) => `<dt>${escapeHtml(label)}</dt><dd${tone ? ` style="color:${tone}"` : ""}>${escapeHtml(value)}</dd>`).join("")}</dl>`;
+	const safeTone = safeCssColor(tone);
+	return `<dl class="luc-chart-tooltip__grid">${rows.map(([label, value]) => `<dt>${escapeHtml(label)}</dt><dd${safeTone ? ` style="color:${safeTone}"` : ""}>${escapeHtml(value)}</dd>`).join("")}</dl>`;
 }
 function tooltipShellHtml(title, body, subtitle) {
 	return `<div class="luc-chart-tooltip">` + (title ? `<span class="luc-chart-tooltip__title">${escapeHtml(title)}</span>` : "") + (subtitle ? `<span class="luc-chart-tooltip__subtitle">${escapeHtml(subtitle)}</span>` : "") + body + `</div>`;
@@ -72,6 +88,6 @@ function axisTooltipFormatter(config) {
 	};
 }
 //#endregion
-export { axisTooltipFormatter, escapeHtml, swatchHtml, tooltipGridHtml, tooltipRowHtml, tooltipRuleHtml, tooltipShellHtml };
+export { axisTooltipFormatter, escapeHtml, safeCssColor, swatchHtml, tooltipGridHtml, tooltipRowHtml, tooltipRuleHtml, tooltipShellHtml };
 
 //# sourceMappingURL=tooltip-html.js.map

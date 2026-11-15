@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { VariantProps } from "class-variance-authority";
 //#region src/components/icon-button.d.ts
 declare const iconButtonVariants: (props?: ({
-  variant?: "ghost" | "accent" | "danger" | "solid" | null | undefined;
+  variant?: "accent" | "ghost" | "danger" | "solid" | null | undefined;
   size?: "sm" | "md" | "lg" | null | undefined;
 } & import("class-variance-authority/types").ClassProp) | undefined) => string;
 export interface IconButtonProps extends Omit<React.ComponentPropsWithRef<"button">, "aria-label">, VariantProps<typeof iconButtonVariants> {

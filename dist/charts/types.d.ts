@@ -1,5 +1,5 @@
-import { AxisSide, YScaleMode } from "./core/axis.js";
 import { NumericFormatKind } from "../utils/format.js";
+import { AxisSide, YScaleMode } from "./core/axis.js";
 //#region src/charts/types.d.ts
 export type ChartEngine = "echarts" | "lightweight-charts" | "visx" | "svg";
 /**

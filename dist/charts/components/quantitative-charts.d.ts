@@ -1,5 +1,6 @@
 import { ChartFormat } from "../types.js";
-import { Candle } from "../../financial-chart.js";
+import { Candle } from "../financial/financial-data.js";
+import "../../financial-chart.js";
 import { FamilyCommonProps } from "./chart-common.js";
 //#region src/charts/components/quantitative-charts.d.ts
 /**

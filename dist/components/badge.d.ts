@@ -1,7 +1,7 @@
 import { VariantProps } from "class-variance-authority";
 //#region src/components/badge.d.ts
 export declare const badgeVariants: (props?: ({
-  tone?: "outline" | "neutral" | "accent" | "positive" | "negative" | "warning" | "info" | null | undefined;
+  tone?: "neutral" | "accent" | "positive" | "negative" | "warning" | "info" | "outline" | null | undefined;
   size?: "sm" | "md" | "lg" | null | undefined;
   shape?: "rounded" | "pill" | null | undefined;
 } & import("class-variance-authority/types").ClassProp) | undefined) => string;

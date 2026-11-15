@@ -1,11 +1,11 @@
 import { VariantProps } from "class-variance-authority";
 //#region src/components/card.d.ts
 export declare const cardVariants: (props?: ({
-  variant?: "default" | "raised" | "outline" | "ghost" | null | undefined;
+  variant?: "outline" | "default" | "raised" | "ghost" | null | undefined;
   interactive?: boolean | null | undefined;
   interaction?: "interactive" | "static" | "selectable" | "featured" | null | undefined;
   selected?: boolean | null | undefined;
-  padding?: "none" | "sm" | "md" | "lg" | null | undefined;
+  padding?: "sm" | "md" | "lg" | "none" | null | undefined;
 } & import("class-variance-authority/types").ClassProp) | undefined) => string;
 export interface CardProps extends React.ComponentPropsWithRef<"div">, VariantProps<typeof cardVariants> {
   as?: "div" | "article" | "section" | "li" | "button" | "a";
