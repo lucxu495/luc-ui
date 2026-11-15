@@ -29,8 +29,30 @@ export function escapeHtml(value: unknown): string {
     .replace(/'/g, "&#39;");
 }
 
+/**
+ * Only CSS colour grammar is allowed inside a style attribute.
+ *
+ * Consumer series colours are presentation data, not trusted markup. Hex and
+ * numeric colour functions cover the resolved design-system tokens; named CSS
+ * colours are intentionally omitted because they would require a second,
+ * browser-dependent validation path.
+ */
+export function safeCssColor(value: string | undefined): string | null {
+  if (!value) return null;
+  const color = value.trim();
+  if (
+    /^#[\da-f]{3,4}(?:[\da-f]{2}){0,2}$/i.test(color) ||
+    /^(?:rgb|rgba|hsl|hsla|oklch)\(\s*[-+.\d%deg,\s/]+\)$/i.test(color) ||
+    /^(?:transparent|currentcolor)$/i.test(color)
+  ) {
+    return color;
+  }
+  return null;
+}
+
 export function swatchHtml(color: string): string {
-  return `<span class="luc-chart-tooltip__swatch" style="background-color:${color}"></span>`;
+  const safe = safeCssColor(color);
+  return `<span class="luc-chart-tooltip__swatch"${safe ? ` style="background-color:${safe}"` : ""}></span>`;
 }
 
 export function tooltipRowHtml(label: string, value: string, color?: string): string {
@@ -43,10 +65,11 @@ export function tooltipRowHtml(label: string, value: string, color?: string): st
 }
 
 export function tooltipGridHtml(rows: ReadonlyArray<readonly [string, string]>, tone?: string): string {
+  const safeTone = safeCssColor(tone);
   const body = rows
     .map(
       ([label, value]) =>
-        `<dt>${escapeHtml(label)}</dt><dd${tone ? ` style="color:${tone}"` : ""}>${escapeHtml(value)}</dd>`,
+        `<dt>${escapeHtml(label)}</dt><dd${safeTone ? ` style="color:${safeTone}"` : ""}>${escapeHtml(value)}</dd>`,
     )
     .join("");
   return `<dl class="luc-chart-tooltip__grid">${body}</dl>`;

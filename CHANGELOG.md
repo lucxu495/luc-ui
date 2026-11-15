@@ -3,6 +3,24 @@
 All notable changes to `@luc/ui`. The foundation rounds (V0.1–V0.6) shipped as
 a single uncommitted working tree; V1.0 is the first frozen release.
 
+## 1.3.0 — 2026-11-15
+
+Adds the new Lightweight Charts financial research surface, including a typed
+`FinancialChartController`, multi-pane financial displays, prepared close-only
+price series, overlays, reference lines, configurable price scales, synchronized
+crosshair and Catppuccin Mocha chart theme. Financial values remain caller
+supplied: Luc UI does not run portfolio analytics or trading strategies.
+
+Showcase gains a dedicated **Lightweight Charts** sidebar family, six interactive
+financial demos with individual routes and React usage examples, and an honest
+inventory of 19 upstream plugin packages that are **not yet integrated**.
+ECharts financial/quantitative demos continue to exist separately.
+
+The release maintains the previous public exports and adds functionality without
+a required peer dependency or intentional breaking API change. Consumers should
+upgrade their Git ref to `v1.3.0` after validating chart/theme behavior. The
+package is published as a GitHub release-tree tag, **not** to the npm registry.
+
 ## 1.2.0 — 2026-11-03
 
 Adds `ProductTour`, a reusable guided product layer with an optional five-second

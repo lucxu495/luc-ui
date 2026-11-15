@@ -17,32 +17,22 @@ import {
   loadLightweightCharts,
   toChartTime,
   type LightweightChart,
-  type LightweightModule,
-  type LightweightSeries,
+  type LightweightSeriesKind,
 } from "./runtime";
 import { useChartArm } from "../../core/use-chart-arm";
+import {
+  createLightweightController,
+  type LightweightBinding,
+  type LightweightController,
+} from "./chart-controller";
+import {
+  resolveVisibleRangeAction,
+  visibleRangeKey,
+  type ControlledVisibleRange,
+  type VisibleRangeAction,
+} from "./range-application";
 
-export type LightweightSeriesKind = "candlestick" | "line" | "area" | "histogram" | "baseline" | "bar";
-
-export interface LightweightController {
-  chart: LightweightChart;
-  module: LightweightModule;
-  theme: ChartTheme;
-  /**
-   * Create or update a named series. Calling it again with the same id updates
-   * in place, so a theme or data change never resets the visible range.
-   */
-  upsertSeries: (
-    id: string,
-    kind: LightweightSeriesKind,
-    options: Record<string, unknown>,
-    data: readonly unknown[],
-    paneIndex?: number,
-  ) => LightweightSeries;
-  removeSeries: (id: string) => void;
-  fit: () => void;
-  setVisibleRange: (fromMs: number, toMs: number) => void;
-}
+export type { LightweightController, LightweightSeriesKind };
 
 export interface LightweightSurfaceProps {
   build: (controller: LightweightController) => void;
@@ -92,6 +82,16 @@ export interface LightweightSurfaceProps {
   onCrosshair?: (position: CrosshairPosition) => void;
   onReady?: (chart: LightweightChart) => void;
   /**
+   * Opt-in theme contract for hosts that do not inherit Luc UI's CSS variables
+   * (notebooks, embeds). Light/Dark still resolve from the design tokens.
+   */
+  themeOverride?: ChartTheme;
+  /**
+   * Controlled viewport. `undefined` lets the chart preserve the reader's own
+   * zoom after its initial frame; `null` explicitly fits all loaded data.
+   */
+  visibleRange?: ControlledVisibleRange | null;
+  /**
    * Create the engine on mount instead of waiting for proximity/an idle period.
    * See `useChartArm`: the plate is in the layout either way.
    */
@@ -108,12 +108,6 @@ export interface CrosshairPosition {
   y: number | null;
 }
 
-interface Binding {
-  kind: LightweightSeriesKind;
-  series: LightweightSeries;
-  paneIndex: number;
-}
-
 /**
  * How tall the time-axis band is, in CSS pixels.
  *
@@ -124,8 +118,10 @@ interface Binding {
  * makes an axis feel dead.
  */
 const TIME_AXIS_BAND_PX = 34;
+const INTERACTION_DESCRIPTION =
+  "Interactive financial chart. Use the arrow keys to pan, plus and minus to zoom, Home to reset the viewport, and Escape to clear the crosshair.";
 
-function chartOptions(
+export function buildLightweightChartOptions(
   theme: ChartTheme,
   priceScale?: LightweightSurfaceProps["priceScale"],
   formatters?: {
@@ -240,6 +236,22 @@ function chartOptions(
   };
 }
 
+function applyVisibleRange(chart: LightweightChart, action: VisibleRangeAction): void {
+  if (action.kind === "preserve") return;
+  try {
+    if (action.kind === "fit") {
+      chart.timeScale().fitContent();
+    } else {
+      chart.timeScale().setVisibleRange({
+        from: toChartTime(action.fromMs),
+        to: toChartTime(action.toMs),
+      });
+    }
+  } catch {
+    /* Engine disposal can race a controlled prop update. */
+  }
+}
+
 /**
  * The one place Lightweight Charts is created, synchronised and disposed.
  *
@@ -260,14 +272,18 @@ export function LightweightSurface({
   tickFormatter,
   onCrosshair,
   onReady,
+  themeOverride,
+  visibleRange,
   eager = false,
 }: LightweightSurfaceProps) {
   const hostRef = useRef<HTMLDivElement | null>(null);
   const chartRef = useRef<LightweightChart | null>(null);
   const controllerRef = useRef<LightweightController | null>(null);
-  const bindingsRef = useRef(new Map<string, Binding>());
+  const bindingsRef = useRef(new Map<string, LightweightBinding>());
   const unsubscribeRef = useRef<(() => void) | null>(null);
   const applyingRef = useRef(false);
+  const lastRangeKeyRef = useRef<string | null>(null);
+  const skipNextBuildEffectRef = useRef(false);
   /**
    * The reader's own input on this plate.
    *
@@ -283,10 +299,12 @@ export function LightweightSurface({
   /** Re-applies a cursor from the engine's own crosshair subscription. */
   const applyCursorRef = useRef<(value: number | null) => void>(() => {});
   const [ready, setReady] = useState(false);
-  const theme = useChartTheme();
+  const systemTheme = useChartTheme();
+  const theme = themeOverride ?? systemTheme;
   const bus = useChartSyncBus();
   const id = useChartId("lw-chart");
   const descriptionId = `${id}-description`;
+  const interactionDescriptionId = `${id}-interaction-description`;
   // The plate is described by two primitives, so a caller that passes an inline
   // object literal never re-creates the chart on every render.
   const priceScaleSide: AxisSide = priceScale?.side ?? DEFAULT_Y_AXIS_SIDE;
@@ -295,6 +313,7 @@ export function LightweightSurface({
   // every later change goes through the restyle effect below.
   const plateRef = useLatest({ side: priceScaleSide, mode: priceScaleMode });
   const formatterRef = useLatest({ priceFormatter, tickFormatter });
+  const visibleRangeRef = useLatest(visibleRange);
 
   const buildRef = useLatest(build);
   const resolvePriceRef = useLatest(resolvePrice);
@@ -310,7 +329,6 @@ export function LightweightSurface({
     if (!armed) return;
     let disposed = false;
     const host = hostRef.current;
-    const bindings = bindingsRef.current;
     if (!host) return;
     gestureRef.current?.dispose();
     gestureRef.current = watchPlateGesture(host);
@@ -320,60 +338,27 @@ export function LightweightSurface({
         if (disposed || !hostRef.current) return;
         const chart = module.createChart(
           hostRef.current,
-          chartOptions(
+          buildLightweightChartOptions(
             themeRef.current,
             { side: plateRef.current.side, mode: plateRef.current.mode },
             formatterRef.current,
           ) as never,
         );
         chartRef.current = chart;
-        const definitions: Record<LightweightSeriesKind, unknown> = {
-          candlestick: module.CandlestickSeries,
-          line: module.LineSeries,
-          area: module.AreaSeries,
-          histogram: module.HistogramSeries,
-          baseline: module.BaselineSeries,
-          bar: module.BarSeries,
-        };
-
-        const controller: LightweightController = {
+        const { controller, bindings: controllerBindings } = createLightweightController(
           chart,
           module,
-          theme: themeRef.current,
-          upsertSeries(seriesId, kind, options, data, paneIndex = 0) {
-            let binding = bindings.get(seriesId);
-            if (binding && (binding.kind !== kind || binding.paneIndex !== paneIndex)) {
-              chart.removeSeries(binding.series);
-              bindings.delete(seriesId);
-              binding = undefined;
-            }
-            if (!binding) {
-              const series = chart.addSeries(definitions[kind] as never, options as never, paneIndex);
-              binding = { kind, series, paneIndex };
-              bindings.set(seriesId, binding);
-            } else {
-              binding.series.applyOptions(options as never);
-            }
-            binding.series.setData(data as never);
-            return binding.series;
-          },
-          removeSeries(seriesId) {
-            const binding = bindings.get(seriesId);
-            if (!binding) return;
-            chart.removeSeries(binding.series);
-            bindings.delete(seriesId);
-          },
-          fit() {
-            chart.timeScale().fitContent();
-          },
-          setVisibleRange(fromMs, toMs) {
-            chart.timeScale().setVisibleRange({ from: toChartTime(fromMs), to: toChartTime(toMs) });
-          },
-        };
+          themeRef.current,
+        );
+        bindingsRef.current = controllerBindings;
         controllerRef.current = controller;
 
         buildRef.current(controller);
-        chart.timeScale().fitContent();
+        lastRangeKeyRef.current = visibleRangeKey(visibleRangeRef.current);
+        applyVisibleRange(
+          chart,
+          resolveVisibleRangeAction(visibleRangeRef.current, null, false),
+        );
         /*
          * A surface mounting into a group that is already on a window shows that
          * window, not its own fitted extent.
@@ -394,10 +379,11 @@ export function LightweightSurface({
             /* the engine may be mid-layout; the fitted frame still applies */
           }
         }
+        skipNextBuildEffectRef.current = true;
         setReady(true);
         onReadyRef.current?.(chart);
 
-        chart.subscribeCrosshairMove((param) => {
+        const onCrosshairMove = (param: Parameters<Parameters<LightweightChart["subscribeCrosshairMove"]>[0]>[0]) => {
           /*
            * The overlay callback fires on every pointer move, before the sync
            * bus's own early exits: an event tooltip is local to this plate and
@@ -422,7 +408,8 @@ export function LightweightSurface({
             return;
           }
           bus.publishCursor(group, normalizeCursorX(fromChartTime(param.time)), id);
-        });
+        };
+        chart.subscribeCrosshairMove(onCrosshairMove);
 
         const scale = chart.timeScale();
         const onLogicalRange = () => {
@@ -444,7 +431,7 @@ export function LightweightSurface({
          *
          * TradingView's own convention, and the reader asked for it explicitly.
          * The native `axisDoubleClickReset.time` is off on purpose (see
-         * `chartOptions`): it would change the visible range outside a gesture
+         * `buildLightweightChartOptions`): it would change the visible range outside a gesture
          * window, leaving the plate on a full history while the group still held
          * the reader's old window — a half-synchronized state. So the reset is
          * performed here and **published as a reader gesture**, which is the
@@ -488,9 +475,62 @@ export function LightweightSurface({
           }
         };
         host.addEventListener("dblclick", onAxisDoubleClick);
+
+        const publishCurrentRange = () => {
+          const group = syncGroupRef.current;
+          if (!group) return;
+          const range = scale.getVisibleRange();
+          if (!range) return;
+          const from = fromChartTime(range.from);
+          const to = fromChartTime(range.to);
+          if (from === null || to === null || to <= from) return;
+          bus.publishRange(group, { from, to }, id, { intent: "gesture" });
+        };
+        const onKeyDown = (event: KeyboardEvent) => {
+          if (
+            event.target !== host ||
+            event.altKey ||
+            event.ctrlKey ||
+            event.metaKey ||
+            event.defaultPrevented
+          ) {
+            return;
+          }
+          const logical = scale.getVisibleLogicalRange();
+          if (!logical) return;
+          const span = logical.to - logical.from;
+          const middle = logical.from + span / 2;
+          if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+            const move = span * (event.shiftKey ? 0.25 : 0.1);
+            const delta = event.key === "ArrowLeft" ? -move : move;
+            scale.setVisibleLogicalRange({
+              from: logical.from + delta,
+              to: logical.to + delta,
+            });
+          } else if (event.key === "+" || event.key === "=") {
+            const next = span * 0.8;
+            scale.setVisibleLogicalRange({ from: middle - next / 2, to: middle + next / 2 });
+          } else if (event.key === "-" || event.key === "_") {
+            const next = span * 1.25;
+            scale.setVisibleLogicalRange({ from: middle - next / 2, to: middle + next / 2 });
+          } else if (event.key === "Home" || event.key === "0") {
+            scale.fitContent();
+          } else if (event.key === "Escape") {
+            event.preventDefault();
+            chart.clearCrosshairPosition();
+            return;
+          } else {
+            return;
+          }
+          event.preventDefault();
+          publishCurrentRange();
+        };
+        host.addEventListener("keydown", onKeyDown);
         unsubscribeRef.current = () => {
           scale.unsubscribeVisibleLogicalRangeChange(onLogicalRange);
+          chart.unsubscribeCrosshairMove(onCrosshairMove);
           host.removeEventListener("dblclick", onAxisDoubleClick);
+          host.removeEventListener("keydown", onKeyDown);
         };
       })
       .catch((error: unknown) => {
@@ -504,11 +544,10 @@ export function LightweightSurface({
       gestureRef.current?.dispose();
       gestureRef.current = null;
       const chart = chartRef.current;
-      const controller = controllerRef.current;
       chartRef.current = null;
       controllerRef.current = null;
-      bindings.clear();
-      if (chart && controller) {
+      bindingsRef.current.clear();
+      if (chart) {
         try {
           chart.remove();
         } catch {
@@ -524,12 +563,35 @@ export function LightweightSurface({
   useEffect(() => {
     const controller = controllerRef.current;
     if (!controller || !ready) return;
+    if (skipNextBuildEffectRef.current) {
+      skipNextBuildEffectRef.current = false;
+      return;
+    }
     controller.theme = theme;
     controller.chart.applyOptions(
-      chartOptions(theme, { side: priceScaleSide, mode: priceScaleMode }, { priceFormatter, tickFormatter }) as never,
+      buildLightweightChartOptions(
+        theme,
+        { side: priceScaleSide, mode: priceScaleMode },
+        { priceFormatter, tickFormatter },
+      ) as never,
     );
     build(controller);
   }, [build, ready, theme, priceScaleSide, priceScaleMode, priceFormatter, tickFormatter]);
+
+  // A controlled range moves the viewport only when the explicit range value
+  // changes. Builds above never fit and therefore never overwrite reader zoom.
+  const currentRangeKey = visibleRangeKey(visibleRange);
+  useEffect(() => {
+    const chart = chartRef.current;
+    if (!chart || !ready) return;
+    const action = resolveVisibleRangeAction(
+      visibleRangeRef.current,
+      lastRangeKeyRef.current,
+      true,
+    );
+    lastRangeKeyRef.current = currentRangeKey;
+    applyVisibleRange(chart, action);
+  }, [currentRangeKey, ready, visibleRangeRef]);
 
   // --------------------------------------------------------------------- sync
   useEffect(() => {
@@ -603,15 +665,25 @@ export function LightweightSurface({
         data-slot="lightweight-surface"
         className={className ? `luc-chart-surface ${className}` : "luc-chart-surface"}
         /*
-         * `figure`, not `img`: the library's canvas is focusable and the
-         * attribution notice is a link, so the box legitimately contains
-         * interactive content and `img` would be a nested-interactive defect.
+         * This is an interactive canvas application: focus and keyboard
+         * gestures belong to the plot itself, while the attribution notice
+         * remains a real link inside it.
          */
-        role="figure"
+        role="application"
         aria-roledescription="chart"
+        // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex -- This is an interactive canvas application.
+        tabIndex={0}
         aria-label={ariaLabel}
-        aria-describedby={ariaDescription ? descriptionId : undefined}
+        aria-keyshortcuts="ArrowLeft ArrowRight + - Home Escape"
+        aria-describedby={
+          ariaDescription
+            ? `${descriptionId} ${interactionDescriptionId}`
+            : interactionDescriptionId
+        }
       />
+      <span id={interactionDescriptionId} className="sr-only">
+        {INTERACTION_DESCRIPTION}
+      </span>
       {ariaDescription ? (
         <span id={descriptionId} className="sr-only">
           {ariaDescription}

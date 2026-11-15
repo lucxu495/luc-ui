@@ -39,6 +39,7 @@
 import type { NavigationGroup, NavigationItem } from "@luc/ui/app-shell";
 import { navFamiliesInGroup, navGroupMeta, type NavFamily } from "./docs/nav";
 import { ART_DIRECTIONS, USE_CASES } from "./discovery/taxonomy";
+import { lightweightExamples } from "./charts/lightweight-examples";
 
 export interface NavItem {
   title: string;
@@ -244,6 +245,36 @@ const libraryGroups: NavGroup[] = navGroupMeta
       ...navFamiliesInGroup(group.id).map(familyItem),
     ],
   }));
+
+/** Native Lightweight Charts examples are separate from ECharts financial metrics.
+ * The route list is also consumed by static generation and acceptance tests.
+ * Only implemented examples appear as navigable items.
+ */
+const lightweightChartsGroup: NavGroup = {
+  id: "lightweight-charts",
+  title: "Lightweight Charts",
+  items: [
+    {
+      title: "Gallery overview",
+      href: "/charts/lightweight",
+      description: "Browse interactive native financial charts.",
+    },
+    {
+      title: "Live examples",
+      children: lightweightExamples.map((example) => ({
+        title: example.title,
+        href: `/charts/lightweight/${example.id}`,
+        description: example.description,
+      })),
+    },
+    {
+      title: "Official plugins roadmap",
+      href: "/charts/lightweight/plugins",
+      description: "Integration status of every upstream published plugin.",
+    },
+  ],
+};
+
 
 /* -------------------------------------------------------------------------- */
 /* Explore                                                                     */
@@ -639,6 +670,7 @@ export const navigation: NavGroup[] = claimRoutes([
   useCaseGroup,
   artDirectionNavGroup,
   ...libraryGroups,
+  lightweightChartsGroup,
   studiosGroup,
   buildWithGroup,
   experiencesGroup,

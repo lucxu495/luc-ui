@@ -47,6 +47,67 @@ missing a field. Add it to `types.ts` instead.
 | Term structure, smile, yield curve, depth | `TermStructureChart`, `CurveComparisonChart`, `DepthChart` | ECharts (thin wrappers over the line/area families) |
 | Stat cards, watchlists, dense table cells | `Sparkline`, `SparkArea`, `MiniBar` | none (SVG) |
 
+### Lightweight Charts coverage and boundaries
+
+`FinancialChart` is the high-level financial component. It owns the common
+presentation path: OHLC candles or close-only comparison lines, optional volume,
+prepared overlay/indicator panes, reference lines, crosshair tooltip, legend,
+shared cursor/range, Light/Dark tokens and an optional explicit `ChartTheme`
+(`catppuccinMochaChartTheme` is the bundled opt-in example).
+
+This is not a claim that Luc UI reimplements TradingView's platform. Official
+Lightweight Charts v5 capabilities remain available through the typed escape
+hatches:
+
+| Capability | Luc UI path |
+| --- | --- |
+| Candlestick, line, area, histogram, baseline and bar series | `series` / `indicators` for value data; all six natively through `onReady` or `LightweightSurface` |
+| Multiple panes, price/time scales and their options | `indicators`, `priceScale`, and the complete `LightweightChart` / `IPaneApi` types exported by `@luc/ui/charts` |
+| Crosshair, click and range events | Shared through `syncGroup`; official event signatures are available from the engine handle |
+| Markers, primitives and custom series | Typed official interfaces through `onReady` / `LightweightSurface` |
+
+`Pine Script`, TradingView's indicator catalogue, charting toolbar, hosted market
+data and hosted-widget internals are not included in this component. Use
+`@luc/ui/tradingview` for TradingView-hosted widgets. Bespoke financial features
+that need annotations, drawing tools, provider sessions or a data-feed protocol
+remain consumer/plugin work through the official escape hatch.
+
+The maintained status ledger for native API coverage, official plugins,
+drawing tools, financial/quant domains and acceptance cases is
+[`FINANCIAL_CHARTS_CAPABILITY_MATRIX.md`](./FINANCIAL_CHARTS_CAPABILITY_MATRIX.md).
+It is deliberately not an "all supported" claim: every incomplete row names its
+next implementation step.
+
+`attributionLogo` is intentionally always `true`; do not accept a prop or
+configuration path that turns it off. Pane gesture resizing is intentionally
+off, so pane proportions are deterministic and keyboard/scroll gestures do not
+compete with separator drags.
+
+#### Financial data contract
+
+- Times are epoch **milliseconds**, `Date`, an ISO calendar date, or an ISO
+  datetime with `Z`/an explicit offset. A timezone-less datetime is rejected
+  rather than interpreted differently on each host.
+- Each series is ordered earliest-to-latest. Lightweight Charts stores seconds,
+  so two inputs that collide after millisecond-to-second truncation are rejected.
+- `null` in OHLC-free overlay/indicator/price data is official whitespace
+  (`{ time }`). `0` remains a plotted value. `NaN` and `Infinity` are rejected.
+- OHLC requires finite values and `low <= open/close <= high`. LUC never sorts,
+  interpolates, fills or repairs prices. Invalid input renders the component's
+  explicit error state (`FinancialDataError` is also exported for upstream use).
+- `range === undefined` preserves the reader's zoom after initial mount.
+  A changed concrete range is controlled; `null` means fit-all. Data, theme,
+  mode, visibility and pane rebuilds do not fit.
+- Use `onControllerReady(({ updatePrice, updateOverlay, updateSeries,
+  setSeriesData }) => …)` for validated single-point updates and the official
+  full-history `setData()` path. `updateSeries` remains the typed low-level
+  escape hatch and expects engine data in seconds. High-frequency feeds should
+  coalesce to their frame/notification cadence rather than push every source tick
+  into React state.
+- `showVolume`, `showPriceLine`, `visibleOverlays` and `indicators` are
+  presentation toggles. Disabling a pane or line does not alter prepared values.
+  Removing volume packs the remaining analysis panes continuously.
+
 ## 3. Choosing a chart type
 
 | Question the reader has | Chart |
@@ -272,7 +333,7 @@ is distinguished from a completed one.
 
 ## 7. Tooltips
 
-Every tooltip is LUC markup assembled in `adapters/echarts/tooltip-html.ts` and
+Every tooltip is LUC markup assembled in `core/tooltip-html.ts` and
 styled by `styles/charts.css`:
 
 | Mode | For | Shape |
@@ -293,6 +354,8 @@ Rules:
 3. A tooltip reports only fields that exist. `null` renders an em dash.
 4. `Pinned inspection` (click to pin) is **deferred** to V0.3 — it needs a pin
    affordance, an unpin gesture and a rule for a pinned x that scrolls away.
+5. Consumer colours are validated against CSS colour grammar before entering a
+   style attribute. Invalid strings are omitted, never interpolated as HTML.
 
 ### Histograms: bin range, count and share
 
@@ -488,9 +551,9 @@ To add a chart token: add it to `:root` **and** `.dark`, bridge it in
   hidden description wired through `aria-describedby` when one is supplied. A
   chart always has a name: the caller's label, then the spec title, then a label
   derived from the family and its visible series.
-- The financial surface renders `role="figure"` instead, because the engine's
-  canvas is focusable and the attribution notice is a link — `img` would be a
-  nested-interactive defect.
+- The financial surface renders an interactive `role="application"` with a
+  name, description and focus ring. Arrow keys pan, `+`/`-` zoom and `Home`
+  resets the viewport. The attribution notice remains a real link.
 - Legends are buttons with `aria-pressed`. Range selectors are radio groups.
   Fullscreen is a dialog with a title, a description and Escape.
 - Reduced motion removes chart entrance animation and range transitions; the
@@ -522,6 +585,15 @@ To add a chart token: add it to `:root` **and** `.dark`, bridge it in
   from first paint to ~5 s. A chart five screens down is work the reader has not
   asked for yet; when they do scroll to it, the reserved box means the engine
   appears without moving anything on the page.
+- **Crosshair movement never renders React state.** Financial tooltip updates
+  use a stable latest-state subscription and at most one DOM write per animation
+  frame. Repeated events before that frame collapse to the latest pointer event.
+- **Theme and option rebuilds do not rewrite unchanged history.** A series keeps
+  the last prepared data reference and calls `setData()` only when that reference
+  changes. Prepared arrays are therefore treated as immutable: mutate a copy and
+  pass the new reference, or use `update()` for a latest-point feed.
+- **Range presets move the viewport, not the loaded fixture.** Keeping the data
+  domain mounted avoids replacing every series merely to select 1M, 6M or 1Y.
 - ECharts is registered from `echarts/core` with only the chart types and
   components in use.
 - Line series drop their vertex symbols past 60 points. Heatmaps use the

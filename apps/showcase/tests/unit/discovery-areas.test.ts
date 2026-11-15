@@ -179,7 +179,9 @@ describe("navigation areas", () => {
       ).toEqual(["foundations", "components", "motion", "integrations"]);
     }
     const charts = sidebarForArea(areaForRoute("/charts/line-chart"), groups);
-    expect(charts.map((group) => group.id)).toEqual(["charts"]);
+    // Native Lightweight Charts is a first-class charting lane, shown before
+    // the existing ECharts / quantitative chart families for discoverability.
+    expect(charts.map((group) => group.id)).toEqual(["lightweight-charts", "charts"]);
     const patterns = sidebarForArea(areaForRoute("/patterns/workspace"), groups);
     expect(patterns.map((group) => group.id)).toEqual(["patterns"]);
   });

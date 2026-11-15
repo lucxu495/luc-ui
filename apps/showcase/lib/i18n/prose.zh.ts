@@ -3432,22 +3432,64 @@ export const proseZh: Record<string, string> = {
 
   /* --------------------------------------------------------------- charts/financial */
   "Charts · Financial": "图表 · 金融",
+  "Native Lightweight Charts interaction behind a typed LUC surface: a shared time scale, smooth crosshair inspection, prepared overlays and indicators, and theme-aware controls that preserve the reader's viewport.":
+    "类型化 LUC 表面背后的原生 Lightweight Charts 交互：共享时间轴、流畅十字光标读取、已备好的叠加线与指标，以及会保留读者视窗的主题感知控件。",
   "Candlestick with volume and overlays": "K 线配成交量与叠加线",
   "A price pane, a volume pane, two moving-average overlays and a fullscreen research view.":
     "价格窗格、成交量窗格、两条移动平均叠加线，以及一个全屏研究视图。",
+  "Toggle volume, moving averages and the last-price line. Open the inspector for a larger reading surface with the same state.":
+    "可切换成交量、移动平均线与最新价线。打开检查器后，会在更大的读取表面上保留同一状态。",
   "Candles · volume · overlays": "K 线 · 成交量 · 叠加线",
   "Prepared OHLC, volume and moving averages — no indicator is computed here.":
     "已备好的 OHLC、成交量与移动平均线——这里不计算任何指标。",
+  "Prepared OHLC, volume and moving averages. Range presets move the viewport without replacing the loaded history.":
+    "已备好的 OHLC、成交量与移动平均线。时间范围预设只移动视窗，不替换已加载的历史。",
+  "Toggle volume": "切换成交量",
+  "Toggle last price line": "切换最新价线",
+  "Reset viewport": "重置视窗",
+  "Open": "开盘",
+  "High": "最高",
+  "Low": "最低",
+  "Change": "变化",
   "Candlestick chart with volume and moving averages": "带成交量与移动平均线的 K 线图",
+  "Hover to inspect OHLC, volume and prepared moving averages. Scroll to zoom and drag to pan.":
+    "悬停读取 OHLC、成交量与已备好的移动平均线；滚轮缩放，拖动平移。",
   "Line and area modes": "折线与面积模式",
   "The same component, the same panes, a different price mark.":
     "同一个组件、同样的窗格，只是价格图元不同。",
+  "The same time scale and reader gestures with a different price mark. The area variant deliberately omits volume so the price pane keeps the full height.":
+    "相同的时间轴与读者手势，只替换价格图元。面积变体刻意省略成交量，让价格窗格保留完整高度。",
   "Price line": "价格折线",
   "Price area": "价格面积",
+  "Price line chart": "价格折线图",
+  "Price area chart": "价格面积图",
+  "Portfolio close": "组合收盘价",
+  "Prepared benchmark": "已备好的基准",
+  "Rolling 30d Sharpe": "30 日滚动 Sharpe",
+  "Notebook comparison · log price · Sharpe pane": "Notebook 对照 · 对数价格 · Sharpe 窗格",
+  "A close-only research view with two price lines and a lower analysis pane. Switch Linear/Log, hide the Sharpe pane, reset the viewport, or opt into Catppuccin Mocha without changing the page theme.":
+    "仅收盘价的研究视图，包含两条价格折线与下方分析窗格。可切换线性/对数、隐藏 Sharpe 窗格、重置视窗，或在不改变页面主题的情况下显式启用 Catppuccin Mocha。",
+  "Portfolio versus prepared benchmark": "组合与已备好的基准",
+  "Close-only data goes directly to two price lines. No synthetic OHLC is created, and the prepared Sharpe series gets its own synchronized pane.":
+    "仅收盘价数据直接进入两条价格折线，不构造合成 OHLC；已备好的 Sharpe 序列进入独立且同步的窗格。",
+  "2 panes · close-only": "双窗格 · 仅收盘价",
+  "UTC sessions": "UTC 交易日",
+  "Toggle Sharpe pane": "切换 Sharpe 窗格",
+  "Toggle Catppuccin Mocha preset": "切换 Catppuccin Mocha 预设",
+  "Mocha": "Mocha",
+  "Two close series share one time scale. The prepared Sharpe pane follows the same crosshair and viewport.":
+    "两条收盘价序列共享一个时间轴；已备好的 Sharpe 窗格跟随同一十字光标与视窗。",
   "Multi-pane": "多窗格",
   "Price, volume and a prepared indicator pane. RSI or MACD would arrive the same way: prepared values with reference lines.":
     "价格、成交量，以及一个已备好的指标窗格。RSI 或 MACD 也会以同样方式进入：已备好的值配参考线。",
   "Price · volume · realized volatility": "价格 · 成交量 · 已实现波动率",
+  "Indicators arrive as prepared values with reference lines. Hiding a pane closes the gap instead of leaving an empty strip.":
+    "指标以已备好的值与参考线进入。隐藏窗格会收拢空隙，而不是留下一条空白。",
+  "Prepared research panes": "已备好的研究窗格",
+  "Toggle volatility pane": "切换波动率窗格",
+  "Volatility": "波动率",
+  "Price, optional volume, and optional realized-volatility panes share one native time scale.":
+    "价格、可选成交量与可选已实现波动率窗格共享一个原生时间轴。",
 
   /* -------------------------------------------------------------- charts/distribution */
   "Charts · Distribution": "图表 · 分布",
@@ -3565,6 +3607,8 @@ export const proseZh: Record<string, string> = {
   /* ------------------------------------------------------------ charts/catalog+arch */
   "Charts": "图表",
   "Charts · Architecture": "图表 · 架构",
+  "Two engines, one interaction contract. Luc UI owns chart chrome, typed data preparation, synchronized cursor/range state and accessibility; the engines still own their native canvas gestures and rendering quality.":
+    "两个引擎，一套交互契约。Luc UI 负责图表外壳、类型化数据准备、同步光标与区间状态以及无障碍体验；原生画布手势和渲染质量仍由引擎负责。",
   "Layers": "分层",
   "Nothing above the adapter layer knows which engine is drawing.":
     "适配器层之上没有任何东西知道是哪个引擎在绘制。",
@@ -3575,6 +3619,38 @@ export const proseZh: Record<string, string> = {
     "切换主题会让缓存的主题对象失效、重建每个 option 并就地重新应用——不重新挂载、不丢失缩放、不闪烁。",
   "Engine decisions": "引擎决策",
   "Recorded so the choice stays deliberate.": "记录下来，让这个选择保持是有意为之。",
+  "Lightweight Charts capability boundary": "Lightweight Charts 能力边界",
+  "The matrix distinguishes what the engine provides natively, what Luc UI wraps, and what remains product or consumer work. Missing plugins are not described as supported.":
+    "能力矩阵区分引擎原生提供的能力、Luc UI 封装的能力，以及仍需产品或调用方完成的工作。缺失的插件不会被描述成已支持。",
+  "Lightweight Charts capability matrix": "Lightweight Charts 能力矩阵",
+  "Current path": "当前路径",
+  "Boundary": "边界",
+  "v5.3 series, panes, crosshair, time/price scales": "v5.3 系列、窗格、十字光标、时间轴与价轴",
+  "FinancialChart · LightweightSurface · onReady": "FinancialChart · LightweightSurface · onReady",
+  "Native canvas behaviour stays native. The typed engine handle is the complete-API escape hatch.":
+    "原生画布行为保持原生。类型化引擎句柄是覆盖完整 API 的逃生口。",
+  "OHLC, close-only, volume and prepared indicator panes": "OHLC、仅收盘价、成交量与已备好的指标窗格",
+  "Presentation only. Callers prepare indicators, ranges and financial semantics.":
+    "只负责展示。指标、区间与金融语义由调用方准备好。",
+  "Stable React API for every engine method": "覆盖每个引擎方法的稳定 React API",
+  "FinancialChartController": "FinancialChartController",
+  "Data updates, fit and the raw chart are covered; the remaining v5 API is typed through onReady.":
+    "已覆盖数据更新、适配与原始图表句柄；其余 v5 API 通过 onReady 获得类型支持。",
+  "Trendline, rectangle, volume profile, heatmap, bands and alerts":
+    "趋势线、矩形、成交量分布、热力图、带与价格提醒",
+  "Not wrapped": "尚未封装",
+  "Official plugin examples are upstream sources, not shipped Luc UI components.":
+    "官方插件示例是上游来源，不是 Luc UI 已发布的组件。",
+  "Drawing persistence, saved layouts and plugin toolbar": "绘图持久化、布局保存与插件工具栏",
+  "Needs a product-owned document model, serialization and acceptance tests before claiming support.":
+    "在宣称支持前，需要产品自有的文档模型、序列化与验收用例。",
+  "Sharpe, drawdown, factors, portfolio and backtest calculations":
+    "Sharpe、回撤、因子、组合与回测计算",
+  "Consumer / quant service": "调用方 / 量化服务",
+  "Luc UI draws prepared values. It must never imply that it computes or validates trading strategies.":
+    "Luc UI 只绘制已备好的值，不能暗示它会计算或验证交易策略。",
+  "The developer record, future component plan and acceptance cases live in docs/FINANCIAL_CHARTS_CAPABILITY_MATRIX.md.":
+    "开发记录、后续组件计划与验收用例见 docs/FINANCIAL_CHARTS_CAPABILITY_MATRIX.md。",
   "Chart engines": "图表引擎",
   "Escape hatch": "逃生口",
   "Raw engine configuration is available, and clearly marked as advanced.":
@@ -3585,6 +3661,15 @@ export const proseZh: Record<string, string> = {
   "Modular registration, lazy loading, split by route.": "模块化注册、懒加载、按路由拆分。",
   "What LUC owns": "LUC 拥有的部分",
   "If it appears on screen, it is ours.": "只要出现在屏幕上，就是我们的。",
+  "Runtime ownership": "运行时归属",
+  "LUC owns the shared contract around the canvas; pan, zoom and crosshair tracking remain native to Lightweight Charts.":
+    "LUC 负责画布周围的共享契约；平移、缩放和十字光标追踪仍由 Lightweight Charts 原生处理。",
+  "Tooltips — frame-coalesced DOM, safe markup, typed values and edge avoidance.":
+    "Tooltip——按帧合并的 DOM 更新、安全标记、类型化数值与边缘避让。",
+  "Legends — colour, encoding samples, visibility toggle and keyboard access.":
+    "图例——颜色、编码样例、显隐开关与键盘可达。",
+  "Accessibility — labels, descriptions, focus, keyboard pan/zoom and reset.":
+    "无障碍——标签、描述、焦点、键盘平移/缩放与复位。",
 
   /* ---------------------------------------------------- application/workspace */
   "Research runs": "研究运行",
@@ -8031,5 +8116,70 @@ export const proseZh: Record<string, string> = {
   "Install the packed release artifact; keep its checksum with the vendored file.": "安装打包后的 release 产物，并把校验和与随仓库保存的文件放在一起。",
   "The stylesheet is Tailwind CSS v4 and ships the tokens plus component styles. Import Tailwind first, then the package stylesheet, once at the application root.": "样式表基于 Tailwind CSS v4，包含令牌与组件样式。在应用根部先导入 Tailwind，再导入包样式表，且只导入一次。",
 
+  /* ---- financial chart QA copy ---- */
+  "Close-only comparison with a Sharpe pane and logarithmic price scale": "仅使用收盘价的对比图，包含 Sharpe 指标面板和对数价格刻度",
+  "Multi-pane financial chart": "多面板金融图表",
+  "Price, volume and a prepared indicator pane. Toggle either lower series and the remaining panes close the gap instead of leaving a blank strip.": "包含价格、成交量和已计算好的指标面板。切换任一下方序列时，其余面板会自动收紧布局，不会留下空白带。",
+
+  /* ---- Lightweight Charts navigation, gallery and live demos ---- */
+  "All Lightweight Charts examples": "全部 Lightweight Charts 示例",
+  "Charts · Lightweight Charts": "图表 · Lightweight Charts",
+  "Charts · TradingView engine": "图表 · TradingView 引擎",
+  "Financial & quantitative overview": "金融与量化概览",
+  "Financial & quantitative — existing chart overview": "金融与量化 — 现有图表概览",
+  "Live example · 已实现": "交互示例 · 已实现",
+  "Markers, watermark & session shading adapters": "标记、水印与交易时段背景适配器",
+  "Not wrapped yet": "尚未封装",
+  "Prepared Sharpe-like score": "预计算的类 Sharpe 分数",
+  "Prepared rolling score": "预计算滚动分数",
+  "Prepared volatility": "预计算波动率",
+  "Published upstream plugin integrations": "上游已发布插件的集成",
+  "Saved layouts, persistent drawings & undo": "保存布局、持久化绘图与撤销",
+  "Synthetic, prepared fixture. Change the controls, inspect the crosshair, zoom and pan the real Lightweight Charts canvas.": "使用准备好的模拟数据。切换控件、检查十字光标，在真实 Lightweight Charts 画布上缩放和平移。",
+  "These are not released components. They will receive individual working example routes only after implementation and verification. 目前尚未封装，不会以静态假图冒充演示。": "这些功能尚未发布。只有实现并通过验证后，才会开放独立交互示例页面；不会以假图冒充演示。",
+  "Trendline, rectangle & volume profile tools": "趋势线、矩形与成交量分布工具",
+  "· Real canvas / prepared synthetic data · React API:": "· 真实画布 / 预计算模拟数据 · React API：",
+  "Lightweight Charts": "Lightweight Charts",
+  "Lightweight Charts Gallery": "Lightweight Charts 示例库",
+  "Native financial charts, interactive examples and honest capability status.": "原生金融图表、交互示例与真实能力状态。",
+
+  /* ---- Lightweight Charts official plugin roadmap ---- */
+  ". Listed packages are verified separately from earlier unpublished examples.": "。所列 npm 包已经与之前仅供复制的未发布示例区分核实。",
+  "01 · Core React API": "01 · 核心 React API",
+  "02 · Published upstream plugins": "02 · 上游已发布插件",
+  "03 · Drawing & research tools": "03 · 绘图与研究工具",
+  "04 · Release gates": "04 · 发布门禁",
+  "Controller parity, lifecycle contracts, typed plugin adapters, series/pane/time-scale commands.": "补齐控制器能力、生命周期契约、类型化插件适配器及序列、面板与时间轴命令。",
+  "Desktop and mobile browser QA, accessibility, isolated consumer bundles and release-artifact review.": "桌面与移动浏览器测试、无障碍、独立消费者包体积和发布产物审查。",
+  "Each plugin will get a real canvas demo and a sidebar route after implementation. A published TradingView package is not a shipped Luc UI component.": "每个插件只有在实现之后才会获得真实 Canvas 示例及 Sidebar 路由。已发布的 TradingView 插件不等于 Luc UI 已交付组件。",
+  "Explore all Lightweight Charts live examples": "浏览全部 Lightweight Charts 交互示例",
+  "Implementation order · 开发顺序": "开发顺序",
+  "Nineteen independently imported official packages; each requires a working example and lifecycle test.": "19 个独立按需引入的官方包；每个都必须有可运行示例及生命周期测试。",
+  "Official Plugins Roadmap · 19 packages": "官方插件路线图 · 19 个包",
+  "Prepared rolling Sharpe (30d; rf = 0)": "预计算 Rolling Sharpe（30 天，无风险收益率为 0）",
+  "Published upstream · 尚未集成": "上游已发布 · 尚未集成",
+  "Return to live Lightweight Charts examples": "返回 Lightweight Charts 交互示例",
+  "Rolling Sharpe (synthetic)": "Rolling Sharpe（模拟数据）",
+  "Trendlines, rectangles, volume profile, price alerts, export and persisted workspace state.": "趋势线、矩形、成交量分布、价格提醒、导出与持久化工作区状态。",
+  "Gallery overview": "示例库概览",
+  "Live examples": "交互示例",
+  "Official plugins roadmap": "官方插件路线图",
+  "Browse interactive native financial charts.": "浏览原生金融图表交互示例。",
+  "Integration status of every upstream published plugin.": "全部上游已发布插件的集成状态。",
+  "Official Plugins Roadmap": "官方插件路线图",
+  "Upstream plugin inventory is separate from Luc UI implementation. All listed packages are published upstream, but none is currently wrapped as a public Luc UI plugin component.": "上游插件清单与 Luc UI 已实现功能分开管理。列出的包均在上游发布，但目前尚未作为 Luc UI 的公开插件组件封装。",
+
+  /* ---- Lightweight Charts example titles & API snippets ---- */
+  "Candlestick & Volume": "K 线与成交量",
+  "Close Line": "收盘价折线",
+  "Price Area": "价格面积图",
+  "Multi-series Comparison": "多序列对比",
+  "Multi-pane Indicators": "多面板指标",
+  "Rolling Sharpe Research": "Rolling Sharpe 研究",
+  "Data arrays are prepared by the caller; Luc UI renders the values without computing indicators.": "数据由调用方预先准备；Luc UI 只负责渲染，不计算指标。",
+  "Published TradingView plugin inventory": "TradingView 已发布插件清单",
+
+  "Not integrated · 尚未集成": "尚未集成",
+  "React API · 使用示例": "React API · 使用示例",
 /* ---- end of dictionary ---- */
 };

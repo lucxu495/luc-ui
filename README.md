@@ -18,7 +18,7 @@ package is ESM-only, ships compiled JavaScript and declarations, and includes a
 Tailwind CSS v4 stylesheet.
 
 The project is public on GitHub. The current published Git tag and GitHub Release
-are **`v1.2.0`**, which can be installed directly from GitHub. Luc UI is not yet
+are **`v1.3.0`**, which can be installed directly from GitHub. Luc UI is not yet
 published to the npm registry.
 
 ## Features
@@ -48,11 +48,11 @@ published to the npm registry.
 ### 1. Install from the Git tag
 
 ```bash
-pnpm add @luc/ui@github:lucxu495/luc-ui#v1.2.0
+pnpm add @luc/ui@github:lucxu495/luc-ui#v1.3.0
 ```
 
 ```bash
-npm install @luc/ui@github:lucxu495/luc-ui#v1.2.0
+npm install @luc/ui@github:lucxu495/luc-ui#v1.3.0
 ```
 
 The tag points to a commit on the `release` branch whose root is the built
@@ -262,13 +262,13 @@ and version, and any relevant browser or framework details.
 ## Stability and distribution
 
 - Package: `@luc/ui`
-- Latest public Git tag: `v1.2.0`
-- Latest GitHub Release: `v1.2.0`
+- Latest public Git tag: `v1.3.0`
+- Latest GitHub Release: `v1.3.0`
 - Module format: ESM
 - Stylesheet: Tailwind CSS v4
 - License: MIT
 
-The public tag is immutable. Changes merged after `v1.2.0` are not available
+The public tag is immutable. Changes merged after `v1.3.0` are not available
 through that install until a new version is built and tagged. See
 [`docs/VERSIONING.md`](./docs/VERSIONING.md),
 [`docs/RELEASES.md`](./docs/RELEASES.md) and

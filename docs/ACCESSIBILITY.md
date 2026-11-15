@@ -72,8 +72,9 @@ carry a glyph as well as colour.
 **Chart surfaces** — every chart renders `role="img"` with an `aria-label`
 (falling back to the family and its visible series), plus a visually hidden
 description wired through `aria-describedby` when one is supplied. The financial
-surface uses `role="figure"` because its canvas is focusable and the required
-attribution notice is a link. A chart in the loading, empty or error state never
+surface uses an interactive `role="application"`: the plot is focusable, arrow
+keys pan, `+`/`-` zoom and `Home` resets the viewport. The required attribution
+notice remains a real link. A chart in the loading, empty or error state never
 initialises an engine, so a screen reader reaches the state message rather than a
 silent canvas.
 

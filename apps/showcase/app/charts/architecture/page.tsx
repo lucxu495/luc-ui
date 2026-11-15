@@ -20,7 +20,7 @@ const LAYERS = `LUC chart system
                          adapters/lightweight  (financial)
 
   Engines .............. Apache ECharts 6.1                Apache-2.0
-                         TradingView Lightweight Charts 5.2  Apache-2.0 + notice`;
+                         TradingView Lightweight Charts 5.3  Apache-2.0 + notice`;
 
 const SPEC_SAMPLE = `defineChartSpec({
   id: "btc-close-1d",
@@ -66,6 +66,20 @@ interface EngineRow {
   status: string;
 }
 
+type CapabilityStatus =
+  | "NATIVE_SUPPORTED"
+  | "WRAPPED"
+  | "PARTIAL"
+  | "MISSING"
+  | "NOT_IN_LIBRARY";
+
+interface CapabilityRow {
+  capability: string;
+  status: CapabilityStatus;
+  productPath: string;
+  boundary: string;
+}
+
 const ENGINE_ROWS: EngineRow[] = [
   {
     need: "General analytical charts",
@@ -75,7 +89,7 @@ const ENGINE_ROWS: EngineRow[] = [
   },
   {
     need: "Financial price charts",
-    engine: "Lightweight Charts 5.2",
+    engine: "Lightweight Charts 5.3",
     why: "Candles, volume, panes and crosshair are native. Apache-2.0 with a visible attribution notice.",
     status: "now",
   },
@@ -99,6 +113,52 @@ const ENGINE_ROWS: EngineRow[] = [
   },
 ];
 
+const CAPABILITY_ROWS: CapabilityRow[] = [
+  {
+    capability: "v5.3 series, panes, crosshair, time/price scales",
+    status: "NATIVE_SUPPORTED",
+    productPath: "FinancialChart · LightweightSurface · onReady",
+    boundary: "Native canvas behaviour stays native. The typed engine handle is the complete-API escape hatch.",
+  },
+  {
+    capability: "OHLC, close-only, volume and prepared indicator panes",
+    status: "WRAPPED",
+    productPath: "FinancialChart",
+    boundary: "Presentation only. Callers prepare indicators, ranges and financial semantics.",
+  },
+  {
+    capability: "Stable React API for every engine method",
+    status: "PARTIAL",
+    productPath: "FinancialChartController",
+    boundary: "Data updates, fit and the raw chart are covered; the remaining v5 API is typed through onReady.",
+  },
+  {
+    capability: "Trendline, rectangle, volume profile, heatmap, bands and alerts",
+    status: "MISSING",
+    productPath: "Not wrapped",
+    boundary: "Official plugin examples are upstream sources, not shipped Luc UI components.",
+  },
+  {
+    capability: "Drawing persistence, saved layouts and plugin toolbar",
+    status: "MISSING",
+    productPath: "Planned",
+    boundary: "Needs a product-owned document model, serialization and acceptance tests before claiming support.",
+  },
+  {
+    capability: "Sharpe, drawdown, factors, portfolio and backtest calculations",
+    status: "NOT_IN_LIBRARY",
+    productPath: "Consumer / quant service",
+    boundary: "Luc UI draws prepared values. It must never imply that it computes or validates trading strategies.",
+  },
+];
+
+function capabilityTone(status: CapabilityStatus) {
+  if (status === "NATIVE_SUPPORTED" || status === "WRAPPED") return "positive" as const;
+  if (status === "PARTIAL") return "warning" as const;
+  if (status === "MISSING") return "negative" as const;
+  return "outline" as const;
+}
+
 export default function ChartArchitecturePage() {
   const { tcs } = useI18n();
   return (
@@ -106,7 +166,7 @@ export default function ChartArchitecturePage() {
       <PageHeader
         eyebrow={tcs("Charts · Architecture")}
         title="How the chart system is put together"
-        lead="Two engines, one experience. The rendering engines are infrastructure: they draw pixels, and everything the reader actually perceives — tooltips, legends, ranges, annotations, synchronisation, fullscreen — is owned by Luc UI."
+        lead="Two engines, one interaction contract. Luc UI owns chart chrome, typed data preparation, synchronized cursor/range state and accessibility; the engines still own their native canvas gestures and rendering quality."
       />
 
       <Section title={tcs("Layers")} description={tcs("Nothing above the adapter layer knows which engine is drawing.")}>
@@ -156,6 +216,49 @@ export default function ChartArchitecturePage() {
         />
       </Section>
 
+      <Section
+        title={tcs("Lightweight Charts capability boundary")}
+        description={tcs(
+          "The matrix distinguishes what the engine provides natively, what Luc UI wraps, and what remains product or consumer work. Missing plugins are not described as supported.",
+        )}
+      >
+        <DataTable
+          caption={tcs("Lightweight Charts capability matrix")}
+          columns={[
+            {
+              key: "capability",
+              header: tcs("Capability"),
+              render: (row: CapabilityRow) => tcs(row.capability),
+            },
+            {
+              key: "status",
+              header: tcs("Status"),
+              render: (row: CapabilityRow) => (
+                <Badge size="sm" tone={capabilityTone(row.status)}>
+                  {row.status}
+                </Badge>
+              ),
+            },
+            {
+              key: "path",
+              header: tcs("Current path"),
+              render: (row: CapabilityRow) => <Code>{row.productPath}</Code>,
+            },
+            {
+              key: "boundary",
+              header: tcs("Boundary"),
+              render: (row: CapabilityRow) => tcs(row.boundary),
+            },
+          ]}
+          rows={CAPABILITY_ROWS}
+        />
+        <Text variant="caption" tone="muted" as="p">
+          {tcs(
+            "The developer record, future component plan and acceptance cases live in docs/FINANCIAL_CHARTS_CAPABILITY_MATRIX.md.",
+          )}
+        </Text>
+      </Section>
+
       <Section title={tcs("Escape hatch")} description={tcs("Raw engine configuration is available, and clearly marked as advanced.")}>
         <Demo layout="block" code={ESCAPE_HATCH}>
           <Text variant="caption" tone="muted" as="p">
@@ -179,17 +282,22 @@ export default function ChartArchitecturePage() {
         </div>
       </Section>
 
-      <Section title={tcs("What LUC owns")} description={tcs("If it appears on screen, it is ours.")}>
+      <Section
+        title={tcs("Runtime ownership")}
+        description={tcs(
+          "LUC owns the shared contract around the canvas; pan, zoom and crosshair tracking remain native to Lightweight Charts.",
+        )}
+      >
         <div className="grid gap-3 md:grid-cols-2">
           {[
-            "Tooltips — markup, typography, swatches, alignment, edge avoidance.",
-            "Legends — colour, label, visibility toggle, keyboard reachable.",
+            "Tooltips — frame-coalesced DOM, safe markup, typed values and edge avoidance.",
+            "Legends — colour, encoding samples, visibility toggle and keyboard access.",
             "Range controls — which ranges exist and what they mean.",
             "Annotations — reference lines, bands and event markers.",
             "Synchronisation — normalised cursor and range across engines.",
             "Fullscreen — a research view with real chrome.",
             "Loading, empty and error states — no engine is initialised for them.",
-            "Accessibility — a label, a description and keyboard-reachable controls.",
+            "Accessibility — labels, descriptions, focus, keyboard pan/zoom and reset.",
           ].map((item) => (
             <Panel key={item} className="gap-1.5 p-4">
               <Text variant="caption" tone="muted" as="p">

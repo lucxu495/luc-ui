@@ -38,6 +38,11 @@ const baselinePath = path.join(pkgDir, "bundle-baseline.json");
  */
 const TOLERANCE_RELATIVE = 0.08;
 const TOLERANCE_ABSOLUTE = 1024;
+// Absolute ceiling independent of baseline refresh: expanded financial APIs must
+// not grow unchecked after the audited 2026-11-15 financial-chart release wave.
+const HARD_CEILINGS = {
+  "financial-engine": { raw: 60 * 1024, gzip: 18 * 1024 },
+};
 const updateBaseline = process.env.LUC_UPDATE_BASELINE === "1";
 
 const scenarios = [
@@ -333,6 +338,19 @@ for (const result of results) {
     `  ${result.name.padEnd(12)} ${(result.raw / 1024).toFixed(1).padStart(7)} KB raw` +
       `  ${(result.gzip / 1024).toFixed(1).padStart(6)} KB gzip`,
   );
+}
+
+// Absolute release ceiling still applies even when LUC_UPDATE_BASELINE=1.
+for (const result of results) {
+  const ceiling = HARD_CEILINGS[result.name];
+  if (!ceiling) continue;
+  if (result.raw > ceiling.raw || result.gzip > ceiling.gzip) {
+    failures.push(
+      `${result.name} exceeded audited hard ceiling: ` +
+      `${(result.raw / 1024).toFixed(1)} / ${(result.gzip / 1024).toFixed(1)} KB ` +
+      `(max ${(ceiling.raw / 1024).toFixed(0)} raw / ${(ceiling.gzip / 1024).toFixed(0)} gzip KB)`,
+    );
+  }
 }
 
 // ---------------------------------------------------------------- baseline

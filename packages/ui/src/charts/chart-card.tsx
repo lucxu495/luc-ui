@@ -324,7 +324,13 @@ function toneToColor(tone?: string): string {
 }
 
 export function ChartToolbar({ className, ...props }: React.ComponentPropsWithRef<"div">) {
-  return <div data-slot="chart-toolbar" className={cn("flex items-center gap-1.5", className)} {...props} />;
+  return (
+    <div
+      data-slot="chart-toolbar"
+      className={cn("flex flex-wrap items-center justify-end gap-1.5", className)}
+      {...props}
+    />
+  );
 }
 
 export interface ChartTooltipSurfaceProps extends Omit<React.ComponentPropsWithRef<"div">, "title"> {

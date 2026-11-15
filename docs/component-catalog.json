@@ -742,6 +742,12 @@
           "source": "packages/ui/src/charts/components/workflow-charts.tsx"
         },
         {
+          "name": "BusinessDay",
+          "kind": "type",
+          "signature": "BusinessDay",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
           "name": "Button",
           "kind": "value",
           "signature": "({ className, variant, size, block, leadingIcon, trailingIcon, loading, loadingLabel, tactile, disabled, children, onClick, type, onPointerDown, onPointerMove, onPointerEnter, onPointerLeave, ref, ...props }: ButtonProps) => import(\"@types/react\").JSX.Element",
@@ -859,7 +865,7 @@
           "name": "Candle",
           "kind": "type",
           "signature": "Candle",
-          "source": "packages/ui/src/charts/financial/financial-chart.tsx"
+          "source": "packages/ui/src/charts/financial/financial-data.ts"
         },
         {
           "name": "CandleOverlay",
@@ -878,6 +884,12 @@
           "kind": "type",
           "signature": "CandlestickChartProps",
           "source": "packages/ui/src/charts/components/quantitative-charts.tsx"
+        },
+        {
+          "name": "CandlestickData",
+          "kind": "type",
+          "signature": "CandlestickData<HorzScaleItem>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
         },
         {
           "name": "Card",
@@ -1022,6 +1034,12 @@
           "kind": "type",
           "signature": "CategoryValue",
           "source": "packages/ui/src/charts/components/composition-charts.tsx"
+        },
+        {
+          "name": "catppuccinMochaChartTheme",
+          "kind": "value",
+          "signature": "ChartTheme",
+          "source": "packages/ui/src/charts/core/theme-tokens-catppuccin.ts"
         },
         {
           "name": "cell",
@@ -2224,6 +2242,12 @@
           "source": "packages/ui/src/utils/storage.ts"
         },
         {
+          "name": "CreatePriceLineOptions",
+          "kind": "type",
+          "signature": "CreatePriceLineOptions",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
           "name": "CrosshairPosition",
           "kind": "type",
           "signature": "CrosshairPosition",
@@ -2270,6 +2294,18 @@
           "kind": "type",
           "signature": "CurveDefinition",
           "source": "packages/ui/src/charts/components/curve-charts.tsx"
+        },
+        {
+          "name": "CustomData",
+          "kind": "type",
+          "signature": "CustomData<HorzScaleItem>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
+          "name": "CustomSeriesOptions",
+          "kind": "type",
+          "signature": "CustomSeriesOptions",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
         },
         {
           "name": "DARK_CHART_THEME_TOKEN_VALUES",
@@ -2528,6 +2564,12 @@
           "kind": "value",
           "signature": "<M extends ParamSpecMap>(search: string | URLSearchParams, specs: M) => ParamState<M>",
           "source": "packages/ui/src/url-state/params.ts"
+        },
+        {
+          "name": "DeepPartial",
+          "kind": "type",
+          "signature": "DeepPartial<T>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
         },
         {
           "name": "DEFAULT_AXIS_PADDING",
@@ -3354,7 +3396,13 @@
         {
           "name": "FinancialChart",
           "kind": "value",
-          "signature": "({ candles, volume, overlays, indicators, mode, range, priceFormat, volumeFormat, visibleOverlays, showVolume, syncGroup, priceScale, state, height, className, ariaLabel, ariaDescription, onReady, }: FinancialChartProps) => import(\"@types/react\").JSX.Element",
+          "signature": "(props: FinancialChartProps) => import(\"@types/react\").JSX.Element",
+          "source": "packages/ui/src/charts/financial/financial-chart.tsx"
+        },
+        {
+          "name": "FinancialChartController",
+          "kind": "type",
+          "signature": "FinancialChartController",
           "source": "packages/ui/src/charts/financial/financial-chart.tsx"
         },
         {
@@ -3364,10 +3412,16 @@
           "source": "packages/ui/src/charts/financial/financial-chart.tsx"
         },
         {
+          "name": "FinancialDataError",
+          "kind": "value",
+          "signature": "typeof FinancialDataError",
+          "source": "packages/ui/src/charts/financial/financial-data.ts"
+        },
+        {
           "name": "FinancialOverlay",
           "kind": "type",
           "signature": "FinancialOverlay",
-          "source": "packages/ui/src/charts/financial/financial-chart.tsx"
+          "source": "packages/ui/src/charts/financial/financial-data.ts"
         },
         {
           "name": "findActiveNavigationItem",
@@ -4126,6 +4180,12 @@
           "source": "packages/ui/src/components/icon.tsx"
         },
         {
+          "name": "ICustomSeriesPaneView",
+          "kind": "type",
+          "signature": "ICustomSeriesPaneView<HorzScaleItem, TData, TSeriesOptions>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
           "name": "ImageCompare",
           "kind": "value",
           "signature": "({ before, after, value, defaultValue, onValueChange, label, beforeLabel, afterLabel, aspect, className, ...props }: ImageCompareProps) => import(\"@types/react\").JSX.Element",
@@ -4153,13 +4213,13 @@
           "name": "IndicatorPane",
           "kind": "type",
           "signature": "IndicatorPane",
-          "source": "packages/ui/src/charts/financial/financial-chart.tsx"
+          "source": "packages/ui/src/charts/financial/financial-data.ts"
         },
         {
           "name": "IndicatorSeries",
           "kind": "type",
           "signature": "IndicatorSeries",
-          "source": "packages/ui/src/charts/financial/financial-chart.tsx"
+          "source": "packages/ui/src/charts/financial/financial-data.ts"
         },
         {
           "name": "initialsOf",
@@ -4348,10 +4408,40 @@
           "source": "packages/ui/src/motion/interactive-grid.tsx"
         },
         {
+          "name": "IPaneApi",
+          "kind": "type",
+          "signature": "IPaneApi<HorzScaleItem>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
+          "name": "IPanePrimitive",
+          "kind": "type",
+          "signature": "IPanePrimitive<HorzScaleItem>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
+          "name": "IPriceLine",
+          "kind": "type",
+          "signature": "IPriceLine",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
           "name": "isDateInRange",
           "kind": "value",
           "signature": "(value: DateValue, range: DateRange | null | undefined) => boolean",
           "source": "packages/ui/src/datetime/format.ts"
+        },
+        {
+          "name": "ISeriesApi",
+          "kind": "type",
+          "signature": "ISeriesApi<TSeriesType, HorzScaleItem, TData, TOptions, TPartialOptions>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
+          "name": "ISeriesPrimitive",
+          "kind": "type",
+          "signature": "ISeriesPrimitive<HorzScaleItem>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
         },
         {
           "name": "isFiniteNumber",
@@ -4549,19 +4639,61 @@
           "name": "LightweightController",
           "kind": "type",
           "signature": "LightweightController",
-          "source": "packages/ui/src/charts/adapters/lightweight/lightweight-surface.tsx"
+          "source": "packages/ui/src/charts/adapters/lightweight/chart-controller.ts"
+        },
+        {
+          "name": "LightweightMouseEvent",
+          "kind": "type",
+          "signature": "LightweightMouseEvent",
+          "source": "packages/ui/src/charts/adapters/lightweight/runtime.ts"
+        },
+        {
+          "name": "LightweightPane",
+          "kind": "type",
+          "signature": "LightweightCharts.IPaneApi<LightweightCharts.Time>",
+          "source": "packages/ui/src/charts/adapters/lightweight/runtime.ts"
+        },
+        {
+          "name": "LightweightPriceLine",
+          "kind": "type",
+          "signature": "LightweightCharts.IPriceLine",
+          "source": "packages/ui/src/charts/adapters/lightweight/runtime.ts"
+        },
+        {
+          "name": "LightweightSeries",
+          "kind": "type",
+          "signature": "LightweightCharts.ISeriesApi<keyof LightweightCharts.SeriesOptionsMap, LightweightCharts.Time, LightweightCharts.BarData<LightweightCharts.Time> | LightweightCharts.WhitespaceData<LightweightCharts.Time> | LightweightCharts.CandlestickData<LightweightCharts.Time> | LightweightCharts.AreaData<LightweightCharts.Time> ...",
+          "source": "packages/ui/src/charts/adapters/lightweight/runtime.ts"
+        },
+        {
+          "name": "LightweightSeriesData",
+          "kind": "type",
+          "signature": "LightweightSeriesData",
+          "source": "packages/ui/src/charts/adapters/lightweight/runtime.ts"
         },
         {
           "name": "LightweightSeriesKind",
           "kind": "type",
           "signature": "LightweightSeriesKind",
-          "source": "packages/ui/src/charts/adapters/lightweight/lightweight-surface.tsx"
+          "source": "packages/ui/src/charts/adapters/lightweight/runtime.ts"
         },
         {
           "name": "LightweightSurface",
           "kind": "value",
-          "signature": "({ build, syncGroup, resolvePrice, className, ariaLabel, ariaDescription, priceScale, priceFormatter, tickFormatter, onCrosshair, onReady, eager, }: LightweightSurfaceProps) => import(\"@types/react\").JSX.Element",
+          "signature": "({ build, syncGroup, resolvePrice, className, ariaLabel, ariaDescription, priceScale, priceFormatter, tickFormatter, onCrosshair, onReady, themeOverride, visibleRange, eager, }: LightweightSurfaceProps) => import(\"@types/react\").JSX.Element",
           "source": "packages/ui/src/charts/adapters/lightweight/lightweight-surface.tsx"
+        },
+        {
+          "name": "LightweightTime",
+          "kind": "type",
+          "signature": "LightweightCharts.Time",
+          "source": "packages/ui/src/charts/adapters/lightweight/runtime.ts"
+        },
+        {
+          "name": "LightweightUTCTimestamp",
+          "kind": "type",
+          "signature": "LightweightCharts.UTCTimestamp",
+          "source": "packages/ui/src/charts/adapters/lightweight/runtime.ts"
         },
         {
           "name": "LINEAR_SCALE_CAPABILITY",
@@ -4574,6 +4706,12 @@
           "kind": "value",
           "signature": "<TRow extends object = Record<string, unknown>>({ family, state, height, className, visibleSeries, ariaLabel, ariaDescription, onReady, onEvent, ...spec }: CartesianChartProps<TRow>) => import(\"@types/react\").JSX.Element",
           "source": "packages/ui/src/charts/components/cartesian-charts.tsx"
+        },
+        {
+          "name": "LineData",
+          "kind": "type",
+          "signature": "LineData<HorzScaleItem>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
         },
         {
           "name": "Link",
@@ -5080,6 +5218,12 @@
           "source": "packages/ui/src/motion/tokens.ts"
         },
         {
+          "name": "MouseEventParams",
+          "kind": "type",
+          "signature": "MouseEventParams<HorzScaleItem>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
           "name": "NativeSelect",
           "kind": "value",
           "signature": "({ className, size, invalid, options, placeholder, id, disabled, required, \"aria-describedby\": ariaDescribedBy, children, ...props }: NativeSelectProps) => import(\"@types/react\").JSX.Element",
@@ -5413,7 +5557,7 @@
           "name": "OverlayPoint",
           "kind": "type",
           "signature": "OverlayPoint",
-          "source": "packages/ui/src/charts/financial/financial-chart.tsx"
+          "source": "packages/ui/src/charts/financial/financial-data.ts"
         },
         {
           "name": "PageHeader",
@@ -5822,6 +5966,24 @@
           "kind": "type",
           "signature": "PressRippleRing",
           "source": "packages/ui/src/motion/press-ripple.tsx"
+        },
+        {
+          "name": "PriceLineOptions",
+          "kind": "type",
+          "signature": "PriceLineOptions",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
+          "name": "PriceSeriesData",
+          "kind": "type",
+          "signature": "PriceSeriesData",
+          "source": "packages/ui/src/charts/financial/financial-data.ts"
+        },
+        {
+          "name": "PriceSeriesPoint",
+          "kind": "type",
+          "signature": "PriceSeriesPoint",
+          "source": "packages/ui/src/charts/financial/financial-data.ts"
         },
         {
           "name": "ProductTour",
@@ -6748,10 +6910,52 @@
           "source": "packages/ui/src/charts/core/palette.ts"
         },
         {
+          "name": "SeriesDataItemTypeMap",
+          "kind": "type",
+          "signature": "SeriesDataItemTypeMap<HorzScaleItem>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
+          "name": "SeriesDefinition",
+          "kind": "type",
+          "signature": "SeriesDefinition<T>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
+          "name": "SeriesMarker",
+          "kind": "type",
+          "signature": "SeriesMarker<TimeType>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
+          "name": "SeriesMarkerPosition",
+          "kind": "type",
+          "signature": "SeriesMarkerPosition",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
+          "name": "SeriesMarkerShape",
+          "kind": "type",
+          "signature": "SeriesMarkerShape",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
+          "name": "SeriesOptionsMap",
+          "kind": "type",
+          "signature": "SeriesOptionsMap",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
           "name": "seriesPairs",
           "kind": "value",
           "signature": "(series: SeriesSpec, normalized: NormalizedTabular) => Array<[ChartXValue, number | null]>",
           "source": "packages/ui/src/charts/core/data.ts"
+        },
+        {
+          "name": "SeriesPartialOptionsMap",
+          "kind": "type",
+          "signature": "SeriesPartialOptionsMap",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
         },
         {
           "name": "seriesSlot",
@@ -6776,6 +6980,12 @@
           "kind": "type",
           "signature": "SeriesTone",
           "source": "packages/ui/src/charts/types.ts"
+        },
+        {
+          "name": "SeriesType",
+          "kind": "type",
+          "signature": "keyof SeriesOptionsMap",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
         },
         {
           "name": "seriesValues",
@@ -8452,6 +8662,12 @@
           "source": "packages/ui/src/workspace/use-workspace-layout.ts"
         },
         {
+          "name": "UTCTimestamp",
+          "kind": "type",
+          "signature": "UTCTimestamp",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
           "name": "VectorFieldChart",
           "kind": "value",
           "signature": "({ vectors, scale, xFormat, yFormat, title, description, state, height, className, ariaLabel, ariaDescription, onReady, onEvent, eager, }: VectorFieldChartProps) => import(\"@types/react\").JSX.Element",
@@ -8533,7 +8749,7 @@
           "name": "VolumePoint",
           "kind": "type",
           "signature": "VolumePoint",
-          "source": "packages/ui/src/charts/financial/financial-chart.tsx"
+          "source": "packages/ui/src/charts/financial/financial-data.ts"
         },
         {
           "name": "watchPlateGesture",
@@ -8564,6 +8780,12 @@
           "kind": "value",
           "signature": "250",
           "source": "packages/ui/src/charts/core/gesture.ts"
+        },
+        {
+          "name": "WhitespaceData",
+          "kind": "type",
+          "signature": "WhitespaceData<HorzScaleItem>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
         },
         {
           "name": "WindRoseChart",
@@ -9408,6 +9630,12 @@
           "source": "packages/ui/src/charts/components/workflow-charts.tsx"
         },
         {
+          "name": "BusinessDay",
+          "kind": "type",
+          "signature": "BusinessDay",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
           "name": "CalendarHeatmap",
           "kind": "value",
           "signature": "({ year, data, format, tone, title, description, state, height, className, ariaLabel, ariaDescription, onReady, onEvent, eager, }: CalendarHeatmapProps) => import(\"@types/react\").JSX.Element",
@@ -9441,7 +9669,7 @@
           "name": "Candle",
           "kind": "type",
           "signature": "Candle",
-          "source": "packages/ui/src/charts/financial/financial-chart.tsx"
+          "source": "packages/ui/src/charts/financial/financial-data.ts"
         },
         {
           "name": "CandleOverlay",
@@ -9462,6 +9690,12 @@
           "source": "packages/ui/src/charts/components/quantitative-charts.tsx"
         },
         {
+          "name": "CandlestickData",
+          "kind": "type",
+          "signature": "CandlestickData<HorzScaleItem>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
           "name": "CartesianChartProps",
           "kind": "type",
           "signature": "CartesianChartProps<TRow>",
@@ -9472,6 +9706,12 @@
           "kind": "type",
           "signature": "CategoryValue",
           "source": "packages/ui/src/charts/components/composition-charts.tsx"
+        },
+        {
+          "name": "catppuccinMochaChartTheme",
+          "kind": "value",
+          "signature": "ChartTheme",
+          "source": "packages/ui/src/charts/core/theme-tokens-catppuccin.ts"
         },
         {
           "name": "cell",
@@ -10206,6 +10446,12 @@
           "source": "packages/ui/src/charts/core/formatters.ts"
         },
         {
+          "name": "CreatePriceLineOptions",
+          "kind": "type",
+          "signature": "CreatePriceLineOptions",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
           "name": "CrosshairPosition",
           "kind": "type",
           "signature": "CrosshairPosition",
@@ -10230,6 +10476,18 @@
           "source": "packages/ui/src/charts/components/curve-charts.tsx"
         },
         {
+          "name": "CustomData",
+          "kind": "type",
+          "signature": "CustomData<HorzScaleItem>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
+          "name": "CustomSeriesOptions",
+          "kind": "type",
+          "signature": "CustomSeriesOptions",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
           "name": "DARK_CHART_THEME_TOKEN_VALUES",
           "kind": "value",
           "signature": "Record<\"--chart-grid\" | \"--chart-grid-strong\" | \"--chart-axis-line\" | \"--chart-axis-label\" | \"--chart-crosshair\" | \"--chart-crosshair-label-bg\" | \"--chart-crosshair-label-fg\" | \"--chart-selection\" | \"--chart-band\" | \"--chart-reference\" | \"--chart-marker\" | \"--chart-positive\" | \"--chart-negative\" | \"--chart-neutral\" ...",
@@ -10246,6 +10504,12 @@
           "kind": "value",
           "signature": "(group: string, id: string, declaration: RangeMemberDeclaration) => void",
           "source": "packages/ui/src/charts/core/range-group.ts"
+        },
+        {
+          "name": "DeepPartial",
+          "kind": "type",
+          "signature": "DeepPartial<T>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
         },
         {
           "name": "DEFAULT_AXIS_PADDING",
@@ -10598,7 +10862,13 @@
         {
           "name": "FinancialChart",
           "kind": "value",
-          "signature": "({ candles, volume, overlays, indicators, mode, range, priceFormat, volumeFormat, visibleOverlays, showVolume, syncGroup, priceScale, state, height, className, ariaLabel, ariaDescription, onReady, }: FinancialChartProps) => import(\"@types/react\").JSX.Element",
+          "signature": "(props: FinancialChartProps) => import(\"@types/react\").JSX.Element",
+          "source": "packages/ui/src/charts/financial/financial-chart.tsx"
+        },
+        {
+          "name": "FinancialChartController",
+          "kind": "type",
+          "signature": "FinancialChartController",
           "source": "packages/ui/src/charts/financial/financial-chart.tsx"
         },
         {
@@ -10608,10 +10878,16 @@
           "source": "packages/ui/src/charts/financial/financial-chart.tsx"
         },
         {
+          "name": "FinancialDataError",
+          "kind": "value",
+          "signature": "typeof FinancialDataError",
+          "source": "packages/ui/src/charts/financial/financial-data.ts"
+        },
+        {
           "name": "FinancialOverlay",
           "kind": "type",
           "signature": "FinancialOverlay",
-          "source": "packages/ui/src/charts/financial/financial-chart.tsx"
+          "source": "packages/ui/src/charts/financial/financial-data.ts"
         },
         {
           "name": "FlowCommonProps",
@@ -10914,22 +11190,58 @@
           "source": "packages/ui/src/charts/core/sizing.ts"
         },
         {
+          "name": "ICustomSeriesPaneView",
+          "kind": "type",
+          "signature": "ICustomSeriesPaneView<HorzScaleItem, TData, TSeriesOptions>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
           "name": "IndicatorPane",
           "kind": "type",
           "signature": "IndicatorPane",
-          "source": "packages/ui/src/charts/financial/financial-chart.tsx"
+          "source": "packages/ui/src/charts/financial/financial-data.ts"
         },
         {
           "name": "IndicatorSeries",
           "kind": "type",
           "signature": "IndicatorSeries",
-          "source": "packages/ui/src/charts/financial/financial-chart.tsx"
+          "source": "packages/ui/src/charts/financial/financial-data.ts"
         },
         {
           "name": "InspectorResizeLabels",
           "kind": "type",
           "signature": "InspectorResizeLabels",
           "source": "packages/ui/src/charts/components/fullscreen.tsx"
+        },
+        {
+          "name": "IPaneApi",
+          "kind": "type",
+          "signature": "IPaneApi<HorzScaleItem>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
+          "name": "IPanePrimitive",
+          "kind": "type",
+          "signature": "IPanePrimitive<HorzScaleItem>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
+          "name": "IPriceLine",
+          "kind": "type",
+          "signature": "IPriceLine",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
+          "name": "ISeriesApi",
+          "kind": "type",
+          "signature": "ISeriesApi<TSeriesType, HorzScaleItem, TData, TOptions, TPartialOptions>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
+          "name": "ISeriesPrimitive",
+          "kind": "type",
+          "signature": "ISeriesPrimitive<HorzScaleItem>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
         },
         {
           "name": "isFiniteNumber",
@@ -10977,19 +11289,61 @@
           "name": "LightweightController",
           "kind": "type",
           "signature": "LightweightController",
-          "source": "packages/ui/src/charts/adapters/lightweight/lightweight-surface.tsx"
+          "source": "packages/ui/src/charts/adapters/lightweight/chart-controller.ts"
+        },
+        {
+          "name": "LightweightMouseEvent",
+          "kind": "type",
+          "signature": "LightweightMouseEvent",
+          "source": "packages/ui/src/charts/adapters/lightweight/runtime.ts"
+        },
+        {
+          "name": "LightweightPane",
+          "kind": "type",
+          "signature": "LightweightCharts.IPaneApi<LightweightCharts.Time>",
+          "source": "packages/ui/src/charts/adapters/lightweight/runtime.ts"
+        },
+        {
+          "name": "LightweightPriceLine",
+          "kind": "type",
+          "signature": "LightweightCharts.IPriceLine",
+          "source": "packages/ui/src/charts/adapters/lightweight/runtime.ts"
+        },
+        {
+          "name": "LightweightSeries",
+          "kind": "type",
+          "signature": "LightweightCharts.ISeriesApi<keyof LightweightCharts.SeriesOptionsMap, LightweightCharts.Time, LightweightCharts.BarData<LightweightCharts.Time> | LightweightCharts.WhitespaceData<LightweightCharts.Time> | LightweightCharts.CandlestickData<LightweightCharts.Time> | LightweightCharts.AreaData<LightweightCharts.Time> ...",
+          "source": "packages/ui/src/charts/adapters/lightweight/runtime.ts"
+        },
+        {
+          "name": "LightweightSeriesData",
+          "kind": "type",
+          "signature": "LightweightSeriesData",
+          "source": "packages/ui/src/charts/adapters/lightweight/runtime.ts"
         },
         {
           "name": "LightweightSeriesKind",
           "kind": "type",
           "signature": "LightweightSeriesKind",
-          "source": "packages/ui/src/charts/adapters/lightweight/lightweight-surface.tsx"
+          "source": "packages/ui/src/charts/adapters/lightweight/runtime.ts"
         },
         {
           "name": "LightweightSurface",
           "kind": "value",
-          "signature": "({ build, syncGroup, resolvePrice, className, ariaLabel, ariaDescription, priceScale, priceFormatter, tickFormatter, onCrosshair, onReady, eager, }: LightweightSurfaceProps) => import(\"@types/react\").JSX.Element",
+          "signature": "({ build, syncGroup, resolvePrice, className, ariaLabel, ariaDescription, priceScale, priceFormatter, tickFormatter, onCrosshair, onReady, themeOverride, visibleRange, eager, }: LightweightSurfaceProps) => import(\"@types/react\").JSX.Element",
           "source": "packages/ui/src/charts/adapters/lightweight/lightweight-surface.tsx"
+        },
+        {
+          "name": "LightweightTime",
+          "kind": "type",
+          "signature": "LightweightCharts.Time",
+          "source": "packages/ui/src/charts/adapters/lightweight/runtime.ts"
+        },
+        {
+          "name": "LightweightUTCTimestamp",
+          "kind": "type",
+          "signature": "LightweightCharts.UTCTimestamp",
+          "source": "packages/ui/src/charts/adapters/lightweight/runtime.ts"
         },
         {
           "name": "LINEAR_SCALE_CAPABILITY",
@@ -11002,6 +11356,12 @@
           "kind": "value",
           "signature": "<TRow extends object = Record<string, unknown>>({ family, state, height, className, visibleSeries, ariaLabel, ariaDescription, onReady, onEvent, ...spec }: CartesianChartProps<TRow>) => import(\"@types/react\").JSX.Element",
           "source": "packages/ui/src/charts/components/cartesian-charts.tsx"
+        },
+        {
+          "name": "LineData",
+          "kind": "type",
+          "signature": "LineData<HorzScaleItem>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
         },
         {
           "name": "loadECharts",
@@ -11118,6 +11478,12 @@
           "source": "packages/ui/src/charts/components/sparkline.tsx"
         },
         {
+          "name": "MouseEventParams",
+          "kind": "type",
+          "signature": "MouseEventParams<HorzScaleItem>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
           "name": "nearestIndex",
           "kind": "value",
           "signature": "(x: readonly number[], target: number) => number",
@@ -11175,7 +11541,7 @@
           "name": "OverlayPoint",
           "kind": "type",
           "signature": "OverlayPoint",
-          "source": "packages/ui/src/charts/financial/financial-chart.tsx"
+          "source": "packages/ui/src/charts/financial/financial-data.ts"
         },
         {
           "name": "paletteColor",
@@ -11266,6 +11632,24 @@
           "kind": "type",
           "signature": "PrecisionRecallCurve",
           "source": "packages/ui/src/charts/components/diagnostic-charts.tsx"
+        },
+        {
+          "name": "PriceLineOptions",
+          "kind": "type",
+          "signature": "PriceLineOptions",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
+          "name": "PriceSeriesData",
+          "kind": "type",
+          "signature": "PriceSeriesData",
+          "source": "packages/ui/src/charts/financial/financial-data.ts"
+        },
+        {
+          "name": "PriceSeriesPoint",
+          "kind": "type",
+          "signature": "PriceSeriesPoint",
+          "source": "packages/ui/src/charts/financial/financial-data.ts"
         },
         {
           "name": "QqPlotChart",
@@ -11718,10 +12102,52 @@
           "source": "packages/ui/src/charts/core/palette.ts"
         },
         {
+          "name": "SeriesDataItemTypeMap",
+          "kind": "type",
+          "signature": "SeriesDataItemTypeMap<HorzScaleItem>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
+          "name": "SeriesDefinition",
+          "kind": "type",
+          "signature": "SeriesDefinition<T>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
+          "name": "SeriesMarker",
+          "kind": "type",
+          "signature": "SeriesMarker<TimeType>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
+          "name": "SeriesMarkerPosition",
+          "kind": "type",
+          "signature": "SeriesMarkerPosition",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
+          "name": "SeriesMarkerShape",
+          "kind": "type",
+          "signature": "SeriesMarkerShape",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
+          "name": "SeriesOptionsMap",
+          "kind": "type",
+          "signature": "SeriesOptionsMap",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
           "name": "seriesPairs",
           "kind": "value",
           "signature": "(series: SeriesSpec, normalized: NormalizedTabular) => Array<[ChartXValue, number | null]>",
           "source": "packages/ui/src/charts/core/data.ts"
+        },
+        {
+          "name": "SeriesPartialOptionsMap",
+          "kind": "type",
+          "signature": "SeriesPartialOptionsMap",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
         },
         {
           "name": "seriesSlot",
@@ -11746,6 +12172,12 @@
           "kind": "type",
           "signature": "SeriesTone",
           "source": "packages/ui/src/charts/types.ts"
+        },
+        {
+          "name": "SeriesType",
+          "kind": "type",
+          "signature": "keyof SeriesOptionsMap",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
         },
         {
           "name": "seriesValues",
@@ -12102,6 +12534,12 @@
           "source": "packages/ui/src/charts/components/chart.tsx"
         },
         {
+          "name": "UTCTimestamp",
+          "kind": "type",
+          "signature": "UTCTimestamp",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
+        },
+        {
           "name": "VectorFieldChart",
           "kind": "value",
           "signature": "({ vectors, scale, xFormat, yFormat, title, description, state, height, className, ariaLabel, ariaDescription, onReady, onEvent, eager, }: VectorFieldChartProps) => import(\"@types/react\").JSX.Element",
@@ -12171,7 +12609,7 @@
           "name": "VolumePoint",
           "kind": "type",
           "signature": "VolumePoint",
-          "source": "packages/ui/src/charts/financial/financial-chart.tsx"
+          "source": "packages/ui/src/charts/financial/financial-data.ts"
         },
         {
           "name": "watchPlateGesture",
@@ -12202,6 +12640,12 @@
           "kind": "value",
           "signature": "250",
           "source": "packages/ui/src/charts/core/gesture.ts"
+        },
+        {
+          "name": "WhitespaceData",
+          "kind": "type",
+          "signature": "WhitespaceData<HorzScaleItem>",
+          "source": "node_modules/.pnpm/lightweight-charts@5.3.0/node_modules/lightweight-charts/dist/typings.d.ts"
         },
         {
           "name": "WindRoseChart",
@@ -14399,12 +14843,18 @@
           "name": "Candle",
           "kind": "type",
           "signature": "Candle",
-          "source": "packages/ui/src/charts/financial/financial-chart.tsx"
+          "source": "packages/ui/src/charts/financial/financial-data.ts"
         },
         {
           "name": "FinancialChart",
           "kind": "value",
-          "signature": "({ candles, volume, overlays, indicators, mode, range, priceFormat, volumeFormat, visibleOverlays, showVolume, syncGroup, priceScale, state, height, className, ariaLabel, ariaDescription, onReady, }: FinancialChartProps) => import(\"@types/react\").JSX.Element",
+          "signature": "(props: FinancialChartProps) => import(\"@types/react\").JSX.Element",
+          "source": "packages/ui/src/charts/financial/financial-chart.tsx"
+        },
+        {
+          "name": "FinancialChartController",
+          "kind": "type",
+          "signature": "FinancialChartController",
           "source": "packages/ui/src/charts/financial/financial-chart.tsx"
         },
         {
@@ -14414,34 +14864,52 @@
           "source": "packages/ui/src/charts/financial/financial-chart.tsx"
         },
         {
+          "name": "FinancialDataError",
+          "kind": "value",
+          "signature": "typeof FinancialDataError",
+          "source": "packages/ui/src/charts/financial/financial-data.ts"
+        },
+        {
           "name": "FinancialOverlay",
           "kind": "type",
           "signature": "FinancialOverlay",
-          "source": "packages/ui/src/charts/financial/financial-chart.tsx"
+          "source": "packages/ui/src/charts/financial/financial-data.ts"
         },
         {
           "name": "IndicatorPane",
           "kind": "type",
           "signature": "IndicatorPane",
-          "source": "packages/ui/src/charts/financial/financial-chart.tsx"
+          "source": "packages/ui/src/charts/financial/financial-data.ts"
         },
         {
           "name": "IndicatorSeries",
           "kind": "type",
           "signature": "IndicatorSeries",
-          "source": "packages/ui/src/charts/financial/financial-chart.tsx"
+          "source": "packages/ui/src/charts/financial/financial-data.ts"
         },
         {
           "name": "OverlayPoint",
           "kind": "type",
           "signature": "OverlayPoint",
-          "source": "packages/ui/src/charts/financial/financial-chart.tsx"
+          "source": "packages/ui/src/charts/financial/financial-data.ts"
+        },
+        {
+          "name": "PriceSeriesData",
+          "kind": "type",
+          "signature": "PriceSeriesData",
+          "source": "packages/ui/src/charts/financial/financial-data.ts"
+        },
+        {
+          "name": "PriceSeriesPoint",
+          "kind": "type",
+          "signature": "PriceSeriesPoint",
+          "source": "packages/ui/src/charts/financial/financial-data.ts"
         },
         {
           "name": "VolumePoint",
           "kind": "type",
           "signature": "VolumePoint",
-          "source": "packages/ui/src/charts/financial/financial-chart.tsx"
+          "source": "packages/ui/src/charts/financial/financial-data.ts"
         }
       ]
     },

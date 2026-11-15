@@ -187,7 +187,7 @@ const AREAS: Record<NavAreaId, NavArea> = {
     description:
       "The charting surface — time series, distributions, statistics, finance, geospatial and science.",
     prefixes: ["/charts"],
-    sidebar: ["charts"],
+    sidebar: ["lightweight-charts", "charts"],
   },
   build: {
     id: "build",

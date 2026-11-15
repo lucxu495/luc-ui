@@ -23,7 +23,7 @@ accepted when it removes a class of bug we would otherwise own forever.
 | Browser QA | Playwright + axe-core | 1.63.0 / 4.13.0 | Puppeteer, headless Chrome CLI | Screenshots, real interaction, console-error capture and accessibility scans in one harness | dev only | dev only |
 | Positioning engine | Floating UI (transitively via Radix) | 1.7.x | popper.js, custom | Solved problem; consumed through Radix rather than directly | transitive | transitive |
 | General chart engine | Apache ECharts (modular) | 6.1.0 | Nivo, Unovis, Recharts, Chart.js, visx, G2, Plotly | Breadth from one API — line to heatmap to sankey to gauge — with good large-data behaviour, and a documented escape hatch. Apache-2.0 | yes | yes |
-| Financial chart engine | TradingView Lightweight Charts | 5.2.1 | ECharts candlestick, react-financial-charts, visx | Candles, volume, panes, price scales and crosshair are native; small API; very fast. Apache-2.0 + attribution notice (kept visible) | yes | yes |
+| Financial chart engine | TradingView Lightweight Charts | 5.3.0 | ECharts candlestick, react-financial-charts, visx | Candles, volume, panes, price scales and crosshair are native; small API; very fast. Apache-2.0 + attribution notice (kept visible) | yes | yes |
 | Sparklines | Own SVG components | — | ECharts, Lightweight Charts | 8–60 points per table row must not cost a chart instance each | yes | yes |
 | Chart synchronisation | Own normalised bus | — | ECharts `connect`, uPlot cursor sync | Cross-engine sync is the requirement; neither engine's native mechanism crosses engines | yes | yes |
 | Custom visualisation | visx + SVG | — | D3 directly, canvas | Composable primitives over D3 scales while staying in React. Nothing needed it in V0.2 | deferred | when needed |

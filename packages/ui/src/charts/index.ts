@@ -57,6 +57,7 @@ export {
   chartThemeFallback,
   lightChartTheme,
 } from "./core/theme-tokens-light";
+export { catppuccinMochaChartTheme } from "./core/theme-tokens-catppuccin";
 
 /* Engine escape hatches (advanced) */
 export {
@@ -70,7 +71,42 @@ export {
   toChartTime,
   fromChartTime,
   type LightweightChart,
+  type LightweightMouseEvent,
+  type LightweightPane,
+  type LightweightPriceLine,
+  type LightweightSeries,
+  type LightweightSeriesData,
+  type LightweightTime,
+  type LightweightUTCTimestamp,
 } from "./adapters/lightweight/runtime";
+/** Common official types for primitives, custom series and events. */
+export type {
+  BusinessDay,
+  CandlestickData,
+  CreatePriceLineOptions,
+  CustomData,
+  CustomSeriesOptions,
+  DeepPartial,
+  ICustomSeriesPaneView,
+  IPaneApi,
+  IPanePrimitive,
+  IPriceLine,
+  ISeriesApi,
+  ISeriesPrimitive,
+  LineData,
+  MouseEventParams,
+  PriceLineOptions,
+  SeriesDataItemTypeMap,
+  SeriesDefinition,
+  SeriesMarker,
+  SeriesMarkerPosition,
+  SeriesMarkerShape,
+  SeriesOptionsMap,
+  SeriesPartialOptionsMap,
+  SeriesType,
+  UTCTimestamp,
+  WhitespaceData,
+} from "lightweight-charts";
 export {
   LightweightSurface,
   type LightweightController,

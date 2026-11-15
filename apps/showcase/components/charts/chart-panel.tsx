@@ -19,12 +19,14 @@ import {
   SegmentedItem,
   cn,
   type ChartState,
+  type ChartLegendItem,
   type SeriesTone,
   type YScaleMode,
 } from "@luc/ui";
 import { useOptionalI18n } from "@/lib/i18n/provider";
 
-export interface DemoSeries {
+export interface DemoSeries
+  extends Pick<ChartLegendItem, "mark" | "line" | "weight" | "muted"> {
   id: string;
   label: string;
   tone?: SeriesTone;
@@ -56,11 +58,13 @@ export interface ChartPanelProps {
     allowed: readonly YScaleMode[];
     default?: YScaleMode;
   };
-  height?: number;
+  height?: number | string;
   /** Extra header controls, rendered before the range selector. */
   actions?: ReactNode;
   /** Show the ready/loading/empty/error simulator in the footer. */
   states?: boolean;
+  /** Treat an empty legend selection as the chart's empty state. */
+  emptyWhenNoSeries?: boolean;
   exportTarget?: () => unknown;
   exportFilename?: string;
   footer?: ReactNode;
@@ -90,6 +94,7 @@ export function ChartPanel({
   exportFilename,
   footer,
   className,
+  emptyWhenNoSeries = false,
   render,
 }: ChartPanelProps) {
   const i18n = useOptionalI18n();
@@ -103,6 +108,8 @@ export function ChartPanel({
   );
 
   const visibleSeries = series ? visible : undefined;
+  const effectiveState =
+    emptyWhenNoSeries && series && visible.length === 0 ? "empty" : chartState;
 
   const legend = series ? (
     <ChartLegend
@@ -139,19 +146,28 @@ export function ChartPanel({
           }
         />
         <ChartPlot className="px-1.5 pt-2 pb-1">
-          {chartState === "loading" ? (
+          {effectiveState === "loading" ? (
             <ChartSkeleton height="100%" />
-          ) : chartState === "empty" ? (
+          ) : effectiveState === "empty" ? (
             <ChartEmptyState
               title={tcs("No series selected")}
               description={tcs("Enable at least one series to render this chart.")}
               action={
-                <Button size="sm" variant="secondary" onClick={() => setChartState("ready")}>
+                <Button
+                  size="sm"
+                  variant="secondary"
+                  onClick={() => {
+                    setChartState("ready");
+                    if (series && visible.length === 0) {
+                      setVisible(series.map((item) => item.id));
+                    }
+                  }}
+                >
                   {tcs("Show series")}
                 </Button>
               }
             />
-          ) : chartState === "error" ? (
+          ) : effectiveState === "error" ? (
             <ChartErrorState
               title={tcs("Series unavailable")}
               description={tcs("The provider returned no rows for this window.")}
@@ -166,7 +182,7 @@ export function ChartPanel({
               {render({
                 range,
                 visibleSeries,
-                state: chartState,
+                state: effectiveState,
                 height: "100%",
                 fullscreen: false,
                 scaleMode,
@@ -207,6 +223,7 @@ export function ChartPanel({
           ranges={ranges}
           range={range}
           onRangeChange={setRange}
+          actions={actions}
           scale={
             scale && scale.allowed.length > 1
               ? { allowed: scale.allowed, value: scaleMode, onValueChange: setScaleMode }

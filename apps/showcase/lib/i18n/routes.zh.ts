@@ -461,6 +461,38 @@ export const routesZh: Record<string, RouteCopy> = {
     title: "研究型图表",
     lead: "这些是组合而不是新引擎：回撤是面积图，状态图是带参考带的 z-score，期限结构是曲线对比。每个数值到手时都是准备好的。",
   },
+  "/charts/lightweight/candles": {
+    title: "K 线与成交量",
+    lead: "OHLC、成交量、移动平均线与可控制的价格线。",
+  },
+  "/charts/lightweight/line": {
+    title: "收盘价折线",
+    lead: "仅使用收盘价数据，展示与其他面板共享的时间轴。",
+  },
+  "/charts/lightweight/area": {
+    title: "价格面积图",
+    lead: "从准备好的序列数据渲染原生面积图。",
+  },
+  "/charts/lightweight/comparison": {
+    title: "多序列对比",
+    lead: "投资组合与基准使用同一个时间轴并排对比。",
+  },
+  "/charts/lightweight/panes": {
+    title: "多面板指标",
+    lead: "价格、成交量与波动率面板在原生时间轴上同步。",
+  },
+  "/charts/lightweight/sharpe": {
+    title: "Rolling Sharpe 研究",
+    lead: "使用调用方预先计算好的模拟 Rolling Sharpe 指标，不在 UI 库中执行数学分析。",
+  },
+  "/charts/lightweight/plugins": {
+    title: "官方插件路线图",
+    lead: "已发布插件的原始清单与本项目的实现状态严格分离；未交付的插件不会出现假演示。",
+  },
+  "/charts/lightweight": {
+    title: "Lightweight Charts 示例库",
+    lead: "原生金融图表的独立交互示例。每个导航入口都对应已实现的 React 组件与真实 Canvas。",
+  },
   "/charts/financial": {
     title: "价格、成交量与分栏",
     lead: "LUC 适配器背后的 Lightweight Charts：K 线颜色、十字光标、分栏、叠加、区间与同步全部来自设计系统。调用方永远不直接调用 createChart，也永远拿不到引擎句柄——除非它明确要求。",
