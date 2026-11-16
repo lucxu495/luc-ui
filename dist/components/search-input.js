@@ -1,9 +1,9 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiSearchLine } from "../icons/animated.js";
 import { Input } from "./input.js";
 import { jsx } from "react/jsx-runtime";
 import { useRef, useState } from "react";
-import { RiSearchLine } from "@remixicon/react";
 //#region src/components/search-input.tsx
 /**
 * Search field with a clear affordance. The clear button is a real button so

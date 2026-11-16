@@ -1,10 +1,10 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiArrowRightSLine, RiMoreLine } from "../icons/animated.js";
 import { PopoverContent, PopoverRoot, PopoverTrigger } from "../components/popover.js";
 import { NavigationLink } from "./navigation-context.js";
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";
 import { Fragment as Fragment$1 } from "react";
-import { RiArrowRightSLine, RiMoreLine } from "@remixicon/react";
 //#region src/app-shell/breadcrumbs.tsx
 function Breadcrumb({ className, ...props }) {
 	return /* @__PURE__ */ jsx("nav", {

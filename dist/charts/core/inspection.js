@@ -1,13 +1,13 @@
 "use client";
 import { useControllableState } from "../../hooks/use-controllable-state.js";
 import { cn } from "../../utils/cn.js";
+import { RiPushpinFill, RiPushpinLine } from "../../icons/animated.js";
 import { IconButton } from "../../components/icon-button.js";
 import { createChartSyncBus } from "./sync.js";
 import { ChartSyncProvider, useChartSyncBus } from "./sync-context.js";
 import { useChartId } from "./use-chart-theme.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
-import { RiPushpinFill, RiPushpinLine } from "@remixicon/react";
 //#region src/charts/core/inspection.tsx
 function useChartInspection({ groupId, pinned: pinnedProp, defaultPinned = null, onPinnedChange }) {
 	const bus = useChartSyncBus();

@@ -1,9 +1,9 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiArrowLeftSLine, RiArrowRightSLine } from "../icons/animated.js";
 import { IconButton } from "./icon-button.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { Children, cloneElement, createContext, isValidElement, useCallback, useContext, useEffect, useId, useRef, useState } from "react";
-import { RiArrowLeftSLine, RiArrowRightSLine } from "@remixicon/react";
 //#region src/components/carousel.tsx
 const CarouselContext = createContext(null);
 function useCarouselContext(component) {

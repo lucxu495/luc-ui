@@ -15,7 +15,7 @@
  * (and plain anchors) can apply the recipe without pulling in client code.
  */
 export declare const buttonVariants: (props?: ({
-  variant?: "accent" | "outline" | "ghost" | "primary" | "secondary" | "danger" | null | undefined;
+  variant?: "outline" | "ghost" | "accent" | "primary" | "secondary" | "danger" | null | undefined;
   size?: "sm" | "md" | "lg" | null | undefined;
   block?: boolean | null | undefined;
 } & import("class-variance-authority/types").ClassProp) | undefined) => string;

@@ -1,6 +1,6 @@
 import { cn } from "./utils/cn.js";
+import { RiAlertLine, RiCheckboxCircleLine, RiCloseLine, RiErrorWarningLine, RiInformationLine } from "./icons/animated.js";
 import { jsx, jsxs } from "react/jsx-runtime";
-import { RiAlertLine, RiCheckboxCircleLine, RiCloseLine, RiErrorWarningLine, RiInformationLine } from "@remixicon/react";
 //#region src/components/alert.tsx
 const toneStyles = {
 	neutral: {

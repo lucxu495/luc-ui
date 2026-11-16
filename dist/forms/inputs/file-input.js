@@ -2,13 +2,13 @@
 import { useControllableState } from "../../hooks/use-controllable-state.js";
 import { cn } from "../../utils/cn.js";
 import { formatBytes } from "../../utils/format.js";
+import { RiCloseLine, RiFileLine, RiUploadCloud2Line } from "../../icons/animated.js";
 import { IconButton } from "../../components/icon-button.js";
 import { Button as Button$1 } from "../../components/button-base.js";
 import { useField } from "../../components/field.js";
 import { DropZone, FileTrigger } from "react-aria-components";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { useId } from "react";
-import { RiCloseLine, RiFileLine, RiUploadCloud2Line } from "@remixicon/react";
 //#region src/forms/inputs/file-input.tsx
 const REJECTION_MESSAGE = {
 	type: "Unsupported file type",

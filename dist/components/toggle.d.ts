@@ -17,7 +17,7 @@ import { VariantProps } from "class-variance-authority";
  * thumb and the selected Table row use.
  */
 export declare const toggleVariants: (props?: ({
-  variant?: "outline" | "default" | "soft" | null | undefined;
+  variant?: "default" | "outline" | "soft" | null | undefined;
   size?: "sm" | "md" | "lg" | null | undefined;
   block?: boolean | null | undefined;
 } & import("class-variance-authority/types").ClassProp) | undefined) => string;

@@ -1,9 +1,9 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiArrowDownSLine } from "../icons/animated.js";
 import { useField } from "./field.js";
 import { inputShellClass } from "./input.js";
 import { jsx, jsxs } from "react/jsx-runtime";
-import { RiArrowDownSLine } from "@remixicon/react";
 //#region src/components/native-select.tsx
 const sizeClass = {
 	sm: "h-control-sm rounded-sm px-2.5 text-label",

@@ -1,9 +1,9 @@
 "use client";
 import { cn } from "./utils/cn.js";
+import { RiArrowRightSLine, RiCheckLine } from "./icons/animated.js";
 import { MenuShortcut, menuContentClass, menuIndicatorClass, menuItemClass, menuLabelClass, menuRowChildren, menuSeparatorClass, withTrailing } from "./components/menu-shared.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { DropdownMenu as DropdownMenu$1 } from "radix-ui";
-import { RiArrowRightSLine, RiCheckLine } from "@remixicon/react";
 //#region src/components/dropdown-menu.tsx
 /**
 * LUC DropdownMenu — actions and options attached to a trigger.

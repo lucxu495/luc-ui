@@ -1,10 +1,10 @@
 "use client";
+import { RiDownloadLine, RiRestartLine } from "../../icons/animated.js";
 import { Button } from "../../components/button-base.js";
 import { Tooltip } from "../../components/tooltip.js";
 import { exportChartImage } from "../core/export.js";
 import { jsx } from "react/jsx-runtime";
 import { useState } from "react";
-import { RiDownloadLine, RiRestartLine } from "@remixicon/react";
 //#region src/charts/components/chart-toolbar.tsx
 /**
 * Image export. Disabled until the chart reports an instance, so a click can

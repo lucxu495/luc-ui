@@ -1,10 +1,10 @@
 "use client";
 import { useMediaQuery } from "../hooks/use-media-query.js";
 import { cn } from "../utils/cn.js";
+import { RiTableLine } from "../icons/animated.js";
 import { Button } from "../components/button-base.js";
 import { Sheet, SheetBody, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "../components/sheet.js";
 import { jsx, jsxs } from "react/jsx-runtime";
-import { RiTableLine } from "@remixicon/react";
 //#region src/data/data-details.tsx
 function DataDetails({ title, description, children, label = "Data", size = "xl", className, slot }) {
 	const narrow = useMediaQuery("(max-width: 767px)");

@@ -1,10 +1,10 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiArrowLeftSLine, RiArrowRightSLine, RiCloseLine } from "../icons/animated.js";
 import { IconButton } from "./icon-button.js";
 import { Button } from "./button-base.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
-import { RiArrowLeftSLine, RiArrowRightSLine, RiCloseLine } from "@remixicon/react";
 //#region src/components/guided-tour.tsx
 const CARD_WIDTH = 320;
 const GAP = 14;

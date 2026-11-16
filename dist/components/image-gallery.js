@@ -1,10 +1,10 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiArrowLeftSLine, RiArrowRightSLine, RiCloseLine, RiFullscreenLine, RiZoomInLine, RiZoomOutLine } from "../icons/animated.js";
 import { IconButton } from "./icon-button.js";
 import { DialogContent, DialogRoot, DialogTitle } from "./dialog.js";
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";
 import { useCallback, useId, useState } from "react";
-import { RiArrowLeftSLine, RiArrowRightSLine, RiCloseLine, RiFullscreenLine, RiZoomInLine, RiZoomOutLine } from "@remixicon/react";
 //#region src/components/image-gallery.tsx
 const columnClass = {
 	2: "grid-cols-2",

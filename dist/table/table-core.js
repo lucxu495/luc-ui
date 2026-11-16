@@ -1,11 +1,11 @@
 "use client";
 import { useControllableState } from "../hooks/use-controllable-state.js";
 import { cn } from "../utils/cn.js";
+import { RiArrowRightSLine } from "../icons/animated.js";
 import { Checkbox } from "../components/checkbox.js";
 import { dataTableFeatures } from "./types.js";
 import { jsx } from "react/jsx-runtime";
 import { useMemo } from "react";
-import { RiArrowRightSLine } from "@remixicon/react";
 import { useTable } from "@tanstack/react-table";
 //#region src/table/table-core.tsx
 function useDataTableCore({ columns, data, getRowId, sorting, defaultSorting, onSortingChange, columnFilters, defaultColumnFilters, onColumnFiltersChange, globalFilter, defaultGlobalFilter, onGlobalFilterChange, rowSelection, defaultRowSelection, onRowSelectionChange, columnVisibility, defaultColumnVisibility, onColumnVisibilityChange, columnPinning, defaultColumnPinning, onColumnPinningChange, expanded, defaultExpanded, onExpandedChange, pagination, defaultPagination, onPaginationChange, enableSorting = true, enableFiltering = true, enableGlobalFilter = true, enableRowSelection = false, enableExpansion = false, enableColumnVisibility = true, pageSize, manualPagination, manualSorting, manualFiltering, pageCount, rowCount }) {

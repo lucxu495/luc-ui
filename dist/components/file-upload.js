@@ -1,13 +1,13 @@
 "use client";
 import { cn } from "../utils/cn.js";
 import { formatBytes } from "../utils/format.js";
+import { RiAlertLine, RiCheckLine, RiCloseLine, RiFileLine, RiRefreshLine, RiUploadCloud2Line } from "../icons/animated.js";
 import { IconButton } from "./icon-button.js";
 import { Text } from "../typography.js";
 import { Button } from "./button-base.js";
 import { Progress } from "./progress.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { useCallback, useId, useRef, useState } from "react";
-import { RiAlertLine, RiCheckLine, RiCloseLine, RiFileLine, RiRefreshLine, RiUploadCloud2Line } from "@remixicon/react";
 //#region src/components/file-upload.tsx
 const STATUS_LABEL = {
 	queued: "Waiting",

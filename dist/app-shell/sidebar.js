@@ -2,14 +2,15 @@
 import { useControllableState } from "../hooks/use-controllable-state.js";
 import { usePersistentState } from "../hooks/use-persistent-state.js";
 import { cn } from "../utils/cn.js";
+import { RiArrowDownSLine, RiArrowRightSLine } from "../icons/animated.js";
 import { IconButton } from "../components/icon-button.js";
 import { Tooltip as Tooltip$1 } from "../components/tooltip.js";
 import { isNavigationItemActive, isNavigationItemCurrent } from "./navigation.js";
 import { NavigationLink, useNavigation } from "./navigation-context.js";
+import { SidebarStateMorphIcon } from "../icons/morph.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { Collapsible } from "radix-ui";
 import { createContext, useCallback, useContext, useEffect, useMemo } from "react";
-import { RiArrowDownSLine, RiArrowRightSLine, RiSidebarFoldLine, RiSidebarUnfoldLine } from "@remixicon/react";
 //#region src/app-shell/sidebar.tsx
 const SidebarContext = createContext(null);
 function useSidebar() {
@@ -416,7 +417,7 @@ function SidebarToggle({ className, label, ...props }) {
 		label: label ?? (collapsed ? "Expand sidebar" : "Collapse sidebar"),
 		onClick: toggleCollapsed,
 		className,
-		icon: collapsed ? /* @__PURE__ */ jsx(RiSidebarUnfoldLine, {}) : /* @__PURE__ */ jsx(RiSidebarFoldLine, {}),
+		icon: /* @__PURE__ */ jsx(SidebarStateMorphIcon, { collapsed }),
 		...props
 	});
 }

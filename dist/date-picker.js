@@ -2,6 +2,7 @@
 import { LocaleProvider } from "./providers/locale-provider.js";
 import { useControllableState } from "./hooks/use-controllable-state.js";
 import { cn } from "./utils/cn.js";
+import { RiArrowDownSLine, RiCalendarLine, RiCloseLine } from "./icons/animated.js";
 import { useField } from "./components/field.js";
 import { inputShellClass } from "./components/input.js";
 import { formatDateOnly, isSameCalendarDate } from "./datetime/format.js";
@@ -9,7 +10,6 @@ import { Calendar as Calendar$1, CalendarActionButton, CalendarFooter, RangeCale
 import { renderSegment } from "./datetime/segments.js";
 import { Button, DateField as DateField$1, DateInput, DatePicker as DatePicker$1, DateRangePicker as DateRangePicker$1, Dialog, Group, Popover } from "react-aria-components";
 import { jsx, jsxs } from "react/jsx-runtime";
-import { RiArrowDownSLine, RiCalendarLine, RiCloseLine } from "@remixicon/react";
 import { Time, getLocalTimeZone, toCalendarDate, toCalendarDateTime, toZoned, today } from "@internationalized/date";
 //#region src/datetime/date-picker.tsx
 const dateInputClass = "flex flex-1 items-center gap-0.5 overflow-hidden px-2.5";

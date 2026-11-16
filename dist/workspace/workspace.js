@@ -1,11 +1,11 @@
 "use client";
 import { useMediaQuery } from "../hooks/use-media-query.js";
 import { cn } from "../utils/cn.js";
+import { RiContractLine, RiExpandDiagonalLine, RiRefreshLine } from "../icons/animated.js";
 import { IconButton } from "../components/icon-button.js";
 import { useWorkspaceLayout } from "./use-workspace-layout.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { Children, createContext, isValidElement, useCallback, useContext, useId, useMemo, useState } from "react";
-import { RiContractLine, RiExpandDiagonalLine, RiRefreshLine } from "@remixicon/react";
 import { Group, Panel, Separator } from "react-resizable-panels";
 //#region src/workspace/workspace.tsx
 const WorkspaceContext = createContext({

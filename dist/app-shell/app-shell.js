@@ -1,12 +1,12 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiMenuLine } from "../icons/animated.js";
 import { IconButton } from "../components/icon-button.js";
 import { Sheet, SheetContent, SheetTitle } from "../components/sheet.js";
 import { NavigationProvider } from "./navigation-context.js";
 import { Sidebar, SidebarProvider, SidebarRail, useSidebar } from "./sidebar.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { useCallback } from "react";
-import { RiMenuLine } from "@remixicon/react";
 //#region src/app-shell/app-shell.tsx
 function AppShell({ children, sidebar, topbar, statusBar, mobileNav, mobileNavTitle = "Navigation", sidebarColumn = true, sidebarCollapsed, defaultSidebarCollapsed = false, onSidebarCollapsedChange, collapsibleSidebar = true, sidebarPersistKey, sidebarPersistVersion = 1, storage, sidebarShortcut = true, renderLink, pathname, onNavigate, density = "comfortable", height = "viewport", contentId = "luc-content", className }) {
 	return /* @__PURE__ */ jsx(SidebarProvider, {

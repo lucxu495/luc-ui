@@ -1,8 +1,8 @@
 "use client";
 import { useControllableState } from "../hooks/use-controllable-state.js";
 import { cn } from "../utils/cn.js";
+import { RiStarFill, RiStarLine } from "../icons/animated.js";
 import { jsx, jsxs } from "react/jsx-runtime";
-import { RiStarFill, RiStarLine } from "@remixicon/react";
 //#region src/components/rating.tsx
 const sizeClass = {
 	sm: "size-4",

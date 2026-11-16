@@ -1,9 +1,9 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiSearchLine } from "../icons/animated.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { Dialog } from "radix-ui";
 import { useCallback, useEffect, useState } from "react";
-import { RiSearchLine } from "@remixicon/react";
 import { Command as Command$1, CommandDialog as CmdkCommandDialog, useCommandState } from "cmdk";
 //#region src/components/command.tsx
 function Command({ className, label = "Command menu", loop = true, ...props }) {

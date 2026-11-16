@@ -1,11 +1,11 @@
 "use client";
 import { useControllableState } from "../../hooks/use-controllable-state.js";
 import { cn } from "../../utils/cn.js";
+import { RiCloseLine } from "../../icons/animated.js";
 import { useField } from "../../components/field.js";
 import { inputShellClass } from "../../components/input.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { useRef, useState } from "react";
-import { RiCloseLine } from "@remixicon/react";
 //#region src/forms/inputs/tag-input.tsx
 const sizeClass = {
 	sm: "min-h-control-sm rounded-sm px-1.5 py-1 text-label",

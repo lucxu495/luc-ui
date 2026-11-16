@@ -1,9 +1,9 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiArrowLeftDoubleLine, RiArrowLeftSLine, RiArrowRightDoubleLine, RiArrowRightSLine } from "../icons/animated.js";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/select.js";
 import { useDataTable } from "./context.js";
 import { jsx, jsxs } from "react/jsx-runtime";
-import { RiArrowLeftDoubleLine, RiArrowLeftSLine, RiArrowRightDoubleLine, RiArrowRightSLine } from "@remixicon/react";
 //#region src/table/data-table-pagination.tsx
 function PageButton({ label, disabled, onClick, children }) {
 	return /* @__PURE__ */ jsx("button", {

@@ -1,11 +1,11 @@
 "use client";
 import { useControllableState } from "../hooks/use-controllable-state.js";
 import { cn } from "../utils/cn.js";
+import { RiArrowLeftSLine, RiArrowRightSLine } from "../icons/animated.js";
 import { Text } from "../typography.js";
 import { Button } from "./button-base.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { useCallback, useId, useMemo, useState } from "react";
-import { RiArrowLeftSLine, RiArrowRightSLine } from "@remixicon/react";
 //#region src/components/transfer-list.tsx
 function TransferList({ items, value, defaultValue = [], onValueChange, sourceLabel = "Available", targetLabel = "Selected", height = 240, className, ...props }) {
 	const [chosen, setChosen] = useControllableState({

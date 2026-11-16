@@ -1,11 +1,11 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiCloseLine, RiExpandUpDownLine, RiLoader4Line, RiSearchLine } from "../icons/animated.js";
 import { mergeRefs } from "../utils/refs.js";
 import { useField } from "./field.js";
 import { controlIconSizeClass, inputAdornmentClass } from "./input.js";
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";
 import { useEffect, useId, useMemo, useRef, useState } from "react";
-import { RiCloseLine, RiExpandUpDownLine, RiLoader4Line, RiSearchLine } from "@remixicon/react";
 import { useCombobox } from "downshift";
 //#region src/components/combobox.tsx
 function defaultFilter(option, query) {

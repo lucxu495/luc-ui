@@ -1,6 +1,6 @@
 import { cn } from "../utils/cn.js";
+import { RiAlertLine, RiCheckboxCircleLine, RiCloseCircleLine, RiInboxLine, RiInformationLine } from "../icons/animated.js";
 import { jsx, jsxs } from "react/jsx-runtime";
-import { RiAlertLine, RiCheckboxCircleLine, RiCloseCircleLine, RiInboxLine, RiInformationLine } from "@remixicon/react";
 //#region src/components/result.tsx
 const statusStyles = {
 	success: {

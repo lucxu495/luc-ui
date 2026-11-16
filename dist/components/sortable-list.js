@@ -1,8 +1,8 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiDragMove2Line } from "../icons/animated.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { useCallback, useState } from "react";
-import { RiDragMove2Line } from "@remixicon/react";
 //#region src/components/sortable-list.tsx
 /** The polite live region both sortables narrate through. */
 function SortableAnnouncer({ message }) {

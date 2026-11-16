@@ -1,9 +1,9 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiArrowDownSLine } from "../icons/animated.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { Accordion, Collapsible } from "radix-ui";
 import { createContext, useContext } from "react";
-import { RiArrowDownSLine } from "@remixicon/react";
 //#region src/components/accordion.tsx
 /**
 * LUC Accordion — a stack of sections where one (or several) is open.

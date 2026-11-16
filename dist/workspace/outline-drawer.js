@@ -2,10 +2,10 @@
 import { useControllableState } from "../hooks/use-controllable-state.js";
 import { useReducedMotion } from "../hooks/use-reduced-motion.js";
 import { cn } from "../utils/cn.js";
+import { RiArrowLeftSLine, RiArrowRightSLine, RiListUnordered } from "../icons/animated.js";
 import { IconButton } from "../components/icon-button.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { useEffect, useRef } from "react";
-import { RiArrowLeftSLine, RiArrowRightSLine, RiListUnordered } from "@remixicon/react";
 //#region src/workspace/outline-drawer.tsx
 /** A plain left click on a link we may intercept; anything else is the browser's. */
 function isPlainLeftClick(event) {

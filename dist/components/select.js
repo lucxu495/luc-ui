@@ -1,11 +1,11 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiArrowDownSLine, RiArrowUpSLine, RiCheckLine, RiExpandUpDownLine } from "../icons/animated.js";
 import { useField } from "./field.js";
 import { inputAdornmentClass } from "./input.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { Select as Select$1 } from "radix-ui";
 import { createContext, useContext } from "react";
-import { RiArrowDownSLine, RiArrowUpSLine, RiCheckLine, RiExpandUpDownLine } from "@remixicon/react";
 //#region src/components/select.tsx
 /**
 * LUC Select — choosing one value from a *known, finite* option set.

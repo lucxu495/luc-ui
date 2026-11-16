@@ -1,9 +1,9 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiDragMove2Line } from "../icons/animated.js";
 import { SortableAnnouncer } from "./sortable-list.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { useId, useState } from "react";
-import { RiDragMove2Line } from "@remixicon/react";
 //#region src/components/kanban-board.tsx
 function KanbanBoard({ columns, onMove, label = "Board", disabled = false, className, ...props }) {
 	const [lifted, setLifted] = useState(null);

@@ -1,12 +1,12 @@
 "use client";
 import { useControllableState } from "../hooks/use-controllable-state.js";
 import { cn } from "../utils/cn.js";
+import { RiArrowLeftSLine, RiArrowRightSLine } from "../icons/animated.js";
 import { IconButton } from "../components/icon-button.js";
 import { Skeleton } from "../components/skeleton.js";
 import { WorkspacePane, WorkspacePaneHeader } from "./workspace.js";
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";
 import { useEffect } from "react";
-import { RiArrowLeftSLine, RiArrowRightSLine } from "@remixicon/react";
 import { usePanelRef } from "react-resizable-panels";
 //#region src/workspace/inspector.tsx
 function InspectorPane({ id, open: openProp, defaultOpen = true, onOpenChange, title = "Inspector", description, actions, footer, side = "end", minSize = "18rem", defaultSize = "22rem", className, children, ...props }) {

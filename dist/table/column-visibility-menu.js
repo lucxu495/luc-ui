@@ -1,10 +1,10 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiLayoutColumnLine } from "../icons/animated.js";
 import { Checkbox } from "../components/checkbox.js";
 import { PopoverContent, PopoverRoot, PopoverTrigger } from "../components/popover.js";
 import { useDataTable } from "./context.js";
 import { jsx, jsxs } from "react/jsx-runtime";
-import { RiLayoutColumnLine } from "@remixicon/react";
 //#region src/table/column-visibility-menu.tsx
 function ColumnVisibilityMenu({ label = "Columns", className }) {
 	const { table } = useDataTable();

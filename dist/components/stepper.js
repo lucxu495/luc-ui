@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiCheckLine } from "../icons/animated.js";
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";
-import { RiCheckLine } from "@remixicon/react";
 //#region src/components/stepper.tsx
 function Stepper({ className, steps, current, onStepSelect, orientation = "horizontal", showNumbers = false, ...props }) {
 	return /* @__PURE__ */ jsx("ol", {

@@ -1,12 +1,12 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiArrowLeftSLine, RiArrowRightSLine, RiCloseLine, RiPauseLine, RiPlayLine } from "../icons/animated.js";
 import { mergeRefs } from "../utils/refs.js";
 import { IconButton } from "../components/icon-button.js";
 import { Button } from "../components/button-base.js";
 import { positionTourBubble } from "./engine.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
-import { RiArrowLeftSLine, RiArrowRightSLine, RiCloseLine, RiPauseLine, RiPlayLine } from "@remixicon/react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 //#region src/product-tour/bubble.tsx
 function Countdown({ active, duration, resetKey, onElapsed, onSecondChange }) {

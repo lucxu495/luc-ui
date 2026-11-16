@@ -1,8 +1,8 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiAddLine, RiAlertLine, RiArrowDownSLine, RiArrowLeftLine, RiArrowRightLine, RiArrowUpLine, RiBellLine, RiCalendarLine, RiCheckLine, RiCloseLine, RiCodeLine, RiDeleteBinLine, RiDownloadLine, RiDraggable, RiErrorWarningLine, RiExternalLinkLine, RiEyeLine, RiEyeOffLine, RiFileCopyLine, RiFilter3Line, RiFullscreenLine, RiInformationLine, RiLineChartLine, RiLinkM, RiLockLine, RiMoonLine, RiMoreLine, RiPauseLine, RiPlayLine, RiRefreshLine, RiSearchLine, RiSettings3Line, RiSparklingLine, RiStarLine, RiSunLine, RiTableLine, RiTimeLine, RiUploadLine, RiUserLine } from "../icons/animated.js";
 import { jsx } from "react/jsx-runtime";
 import { createElement } from "react";
-import { RiAddLine, RiAlertLine, RiArrowDownSLine, RiArrowLeftLine, RiArrowRightLine, RiArrowUpLine, RiBellLine, RiCalendarLine, RiCheckLine, RiCloseLine, RiCodeLine, RiDeleteBinLine, RiDownloadLine, RiDraggable, RiErrorWarningLine, RiExternalLinkLine, RiEyeLine, RiEyeOffLine, RiFileCopyLine, RiFilter3Line, RiFullscreenLine, RiInformationLine, RiLineChartLine, RiLinkM, RiLockLine, RiMoonLine, RiMoreLine, RiPauseLine, RiPlayLine, RiRefreshLine, RiSearchLine, RiSettings3Line, RiSparklingLine, RiStarLine, RiSunLine, RiTableLine, RiTimeLine, RiUploadLine, RiUserLine } from "@remixicon/react";
 //#region src/components/icon.tsx
 const SIZE_CLASS = {
 	xs: "[&_svg]:size-3",
@@ -38,7 +38,7 @@ function Icon({ className, icon, name, size = "md", tone = "inherit", label, spi
 	});
 }
 /**
-* The glyphs the library draws with, addressable by name.
+* The animated glyphs the library draws with, addressable by name.
 *
 * Curated rather than generated on purpose. A set mirroring all of Remix Icon
 * would bloat every bundle that imports it and would be a copy of a package

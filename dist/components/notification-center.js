@@ -1,12 +1,12 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiBellLine, RiCheckDoubleLine, RiCloseLine } from "../icons/animated.js";
 import { IconButton } from "./icon-button.js";
 import { Text } from "../typography.js";
 import { Badge } from "./badge.js";
 import { PopoverContent, PopoverRoot, PopoverTrigger } from "./popover.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { useId, useMemo, useState } from "react";
-import { RiBellLine, RiCheckDoubleLine, RiCloseLine } from "@remixicon/react";
 //#region src/components/notification-center.tsx
 const toneDot = {
 	neutral: "bg-fg-muted",

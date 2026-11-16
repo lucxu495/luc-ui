@@ -1,9 +1,9 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiAddLine } from "../icons/animated.js";
 import { IconButton } from "./icon-button.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
-import { RiAddLine } from "@remixicon/react";
 //#region src/components/float-button.tsx
 /**
 * Corner placement, with the device's own inset respected.

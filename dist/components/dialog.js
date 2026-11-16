@@ -1,10 +1,10 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiCloseLine } from "../icons/animated.js";
 import { IconButton } from "./icon-button.js";
 import { useDialogFocusRestore } from "./dialog-focus.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { Dialog } from "radix-ui";
-import { RiCloseLine } from "@remixicon/react";
 //#region src/components/dialog.tsx
 const DialogRoot = Dialog.Root;
 const DialogTrigger = Dialog.Trigger;

@@ -1,11 +1,11 @@
 "use client";
 import { useReducedMotion } from "../hooks/use-reduced-motion.js";
 import { cn } from "../utils/cn.js";
+import { RiAlertLine, RiArrowRightSLine, RiCheckLine, RiLoaderLine, RiRobot2Line, RiSendPlaneLine, RiSparklingLine, RiStopCircleLine, RiToolsLine, RiUserLine } from "../icons/animated.js";
 import { IconButton } from "./icon-button.js";
 import { Text } from "../typography.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
-import { RiAlertLine, RiArrowRightSLine, RiCheckLine, RiLoaderLine, RiRobot2Line, RiSendPlaneLine, RiSparklingLine, RiStopCircleLine, RiToolsLine, RiUserLine } from "@remixicon/react";
 //#region src/components/ai.tsx
 function StreamingText({ text, streaming = false, speed = 60, caret = true, className, onComplete }) {
 	const reduced = useReducedMotion();

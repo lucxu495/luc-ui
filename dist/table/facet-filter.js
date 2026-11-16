@@ -1,12 +1,12 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiArrowDownSLine, RiFilter3Line } from "../icons/animated.js";
 import { Checkbox } from "../components/checkbox.js";
 import { PopoverContent, PopoverRoot, PopoverTrigger } from "../components/popover.js";
 import { SearchInput } from "../components/search-input.js";
 import { useDataTable } from "./context.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { useState } from "react";
-import { RiArrowDownSLine, RiFilter3Line } from "@remixicon/react";
 //#region src/table/facet-filter.tsx
 function FacetFilter({ columnId, label, formatValue, hideEmpty = true, searchable, className }) {
 	const { table } = useDataTable();

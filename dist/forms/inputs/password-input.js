@@ -1,10 +1,10 @@
 "use client";
 import { cn } from "../../utils/cn.js";
+import { RiEyeLine, RiEyeOffLine } from "../../icons/animated.js";
 import { IconButton } from "../../components/icon-button.js";
 import { Input } from "../../components/input.js";
 import { jsx } from "react/jsx-runtime";
 import { useState } from "react";
-import { RiEyeLine, RiEyeOffLine } from "@remixicon/react";
 //#region src/forms/inputs/password-input.tsx
 /**
 * A password field with a reveal toggle.

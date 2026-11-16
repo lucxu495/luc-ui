@@ -1,7 +1,7 @@
 "use client";
 import { useOptionalTheme } from "../providers/theme-provider.js";
+import { RiAlertFill, RiCheckboxCircleFill, RiErrorWarningFill, RiInformationFill, RiLoader4Line } from "../icons/animated.js";
 import { jsx } from "react/jsx-runtime";
-import { RiAlertFill, RiCheckboxCircleFill, RiErrorWarningFill, RiInformationFill, RiLoader4Line } from "@remixicon/react";
 import { Toaster as Toaster$1, toast } from "sonner";
 //#region src/components/toast.tsx
 /**

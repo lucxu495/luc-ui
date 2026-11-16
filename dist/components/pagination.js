@@ -1,8 +1,8 @@
 "use client";
 import { cn } from "../utils/cn.js";
 import { formatNumber } from "../utils/format.js";
+import { RiArrowLeftDoubleLine, RiArrowLeftSLine, RiArrowRightDoubleLine, RiArrowRightSLine, RiMoreLine } from "../icons/animated.js";
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";
-import { RiArrowLeftDoubleLine, RiArrowLeftSLine, RiArrowRightDoubleLine, RiArrowRightSLine, RiMoreLine } from "@remixicon/react";
 //#region src/components/pagination.tsx
 /** The page window. Pure, exported and unit-tested — it is the whole component. */
 function paginationWindow(page, pageCount, siblings = 1) {

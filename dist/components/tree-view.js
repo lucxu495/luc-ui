@@ -1,9 +1,9 @@
 "use client";
 import { useControllableState } from "../hooks/use-controllable-state.js";
 import { cn } from "../utils/cn.js";
+import { RiArrowRightSLine } from "../icons/animated.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { useCallback, useMemo, useRef, useState } from "react";
-import { RiArrowRightSLine } from "@remixicon/react";
 //#region src/components/tree-view.tsx
 function flatten(nodes, expanded, level = 1, parentId = null, out = []) {
 	const visible = [...nodes];

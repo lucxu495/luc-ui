@@ -1,9 +1,9 @@
 "use client";
 import { cn } from "./utils/cn.js";
+import { RiArrowRightSLine, RiCheckLine } from "./icons/animated.js";
 import { MenuShortcut, menuContentClass, menuIndicatorClass, menuItemClass, menuLabelClass, menuRowChildren, menuSeparatorClass, withTrailing } from "./components/menu-shared.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { ContextMenu as ContextMenu$1 } from "radix-ui";
-import { RiArrowRightSLine, RiCheckLine } from "@remixicon/react";
 //#region src/components/context-menu.tsx
 const ContextMenu = ContextMenu$1.Root;
 const ContextMenuTrigger = ContextMenu$1.Trigger;

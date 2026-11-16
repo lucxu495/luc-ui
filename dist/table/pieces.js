@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiArrowDownSLine, RiArrowUpDownLine, RiArrowUpSLine } from "../icons/animated.js";
 import { jsx, jsxs } from "react/jsx-runtime";
-import { RiArrowDownSLine, RiArrowUpDownLine, RiArrowUpSLine } from "@remixicon/react";
 import { flexRender } from "@tanstack/react-table";
 //#region src/table/pieces.tsx
 /**

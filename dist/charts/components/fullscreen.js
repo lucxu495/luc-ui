@@ -1,5 +1,6 @@
 "use client";
 import { cn } from "../../utils/cn.js";
+import { RiCloseLine } from "../../icons/animated.js";
 import { IconButton } from "../../components/icon-button.js";
 import { MorphingDialog, MorphingDialogClose, MorphingDialogContent, MorphingDialogDescription, MorphingDialogTitle, MorphingDialogTrigger } from "../../motion/morphing-dialog.js";
 import { FullscreenButton, RangeSelector, ScaleSelector } from "../chart-card.js";
@@ -7,7 +8,6 @@ import { ChartExportButton } from "./chart-toolbar.js";
 import { maxInspectorSize, openingInspectorSize, resizeInspector, storeInspectorSize } from "../core/inspector-size.js";
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { RiCloseLine } from "@remixicon/react";
 //#region src/charts/components/fullscreen.tsx
 /** How far one arrow key moves a handle, and how far Shift moves it. */
 const KEY_STEP = 16;

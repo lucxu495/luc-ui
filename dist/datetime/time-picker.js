@@ -1,6 +1,7 @@
 "use client";
 import { LocaleProvider } from "../providers/locale-provider.js";
 import { cn } from "../utils/cn.js";
+import { RiTimeLine } from "../icons/animated.js";
 import { useField } from "../components/field.js";
 import { inputShellClass } from "../components/input.js";
 import { PopoverContent, PopoverRoot, PopoverTrigger } from "../components/popover.js";
@@ -9,7 +10,6 @@ import { renderSegment } from "./segments.js";
 import { Button, DateInput, Group, TimeField } from "react-aria-components";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { useEffect, useRef, useState } from "react";
-import { RiTimeLine } from "@remixicon/react";
 import { Time, getLocalTimeZone, now } from "@internationalized/date";
 //#region src/datetime/time-picker.tsx
 const shellBySize = {
