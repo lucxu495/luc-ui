@@ -1,6 +1,7 @@
 "use client";
 
 import { RiSearchLine } from "../icons/animated";
+import { RiCloseLine } from "../icons/animated";
 import { useRef, useState } from "react";
 import { cn } from "../utils/cn";
 import { Input, type InputProps } from "./input";
@@ -96,9 +97,7 @@ export function SearchInput({
               "hover:bg-surface-interactive-hover hover:text-fg-primary luc-focus",
             )}
           >
-            <svg viewBox="0 0 16 16" className="size-3" aria-hidden="true">
-              <path d="M4.5 4.5l7 7m0-7l-7 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none" />
-            </svg>
+            <RiCloseLine aria-hidden="true" className="size-3" />
           </button>
         ) : null
       }

@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useId, type ReactNode } from "react";
+import { RiAlertLine, RiCheckboxCircleLine } from "../icons/animated";
 import { cn } from "../utils/cn";
 import { Spinner } from "./spinner";
 
@@ -162,11 +163,7 @@ export function Field({
         </div>
         {error ? (
           <p id={errorId} role="alert" className="flex items-start gap-1.5 text-caption text-fg-negative">
-            <svg viewBox="0 0 16 16" aria-hidden="true" className="mt-px size-3.5 shrink-0">
-              <circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" strokeWidth="1.4" />
-              <path d="M8 5.25v3.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-              <circle cx="8" cy="11" r="0.85" fill="currentColor" />
-            </svg>
+            <RiAlertLine aria-hidden="true" className="mt-px size-3.5 shrink-0" />
             {error}
           </p>
         ) : isBusy ? (
@@ -176,17 +173,7 @@ export function Field({
           </p>
         ) : success ? (
           <p id={statusId} className="flex items-start gap-1.5 text-caption text-fg-positive">
-            <svg viewBox="0 0 16 16" aria-hidden="true" className="mt-px size-3.5 shrink-0">
-              <circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" strokeWidth="1.4" />
-              <path
-                d="M5.4 8.2 7.1 9.9l3.5-3.9"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            <RiCheckboxCircleLine aria-hidden="true" className="mt-px size-3.5 shrink-0" />
             {success}
           </p>
         ) : description ? (

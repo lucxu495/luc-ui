@@ -1,6 +1,7 @@
 "use client";
 
 import { CalendarDate, type DateValue } from "@internationalized/date";
+import { RiArrowDownSLine } from "../icons/animated";
 import { useRef, useState, type KeyboardEvent, type ReactNode } from "react";
 import { IconButton } from "../components/icon-button";
 import { useControllableState } from "../hooks/use-controllable-state";
@@ -352,13 +353,6 @@ export function YearPicker({
 export function Chevron({ direction }: { direction: "left" | "right" | "down" }) {
   const rotation = direction === "left" ? 90 : direction === "right" ? -90 : 0;
   return (
-    <svg
-      viewBox="0 0 16 16"
-      aria-hidden="true"
-      style={{ transform: `rotate(${rotation}deg)` }}
-      className="size-3.5"
-    >
-      <path d="M4 6.5 8 10.5l4-4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-    </svg>
+    <RiArrowDownSLine aria-hidden="true" className="size-3.5" style={{ transform: `rotate(${rotation}deg)` }} />
   );
 }

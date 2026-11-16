@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
+import { RiAlertLine, RiFullscreenLine, RiLineChartLine } from "../icons/animated";
 import { cn } from "../utils/cn";
 import { Card, CardFooter } from "../components/card";
 import { Skeleton } from "../components/skeleton";
@@ -407,16 +408,7 @@ export function FullscreenButton({
         onClick={onClick}
         className={className}
         leadingIcon={
-          <svg viewBox="0 0 16 16" aria-hidden="true" className="size-3.5">
-            <path
-              d="M6 2.5H2.5V6M10 2.5h3.5V6M6 13.5H2.5V10M10 13.5h3.5V10"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <RiFullscreenLine aria-hidden="true" className="size-3.5" />
         }
       >
         <span className="sr-only">{label}</span>
@@ -510,16 +502,7 @@ export function ChartEmptyState(props: Omit<ChartStateProps, "tone">) {
       {...props}
       icon={
         props.icon ?? (
-          <svg viewBox="0 0 20 20" aria-hidden="true" className="size-5">
-            <path
-              d="M3 16.5V6.2M7.5 16.5V9.4M12 16.5v-4.6M16.5 16.5V4.2"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              opacity="0.5"
-            />
-          </svg>
+          <RiLineChartLine aria-hidden="true" className="size-5" />
         )
       }
     />
@@ -533,17 +516,7 @@ export function ChartErrorState(props: Omit<ChartStateProps, "tone">) {
       tone="negative"
       icon={
         props.icon ?? (
-          <svg viewBox="0 0 20 20" aria-hidden="true" className="size-5">
-            <path
-              d="M10 2.8 18.4 17H1.6z"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinejoin="round"
-            />
-            <path d="M10 7.6v3.8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            <circle cx="10" cy="14" r="0.9" fill="currentColor" />
-          </svg>
+          <RiAlertLine aria-hidden="true" className="size-5" />
         )
       }
     />

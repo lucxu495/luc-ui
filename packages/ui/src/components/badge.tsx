@@ -1,4 +1,5 @@
 import { cva, type VariantProps } from "class-variance-authority";
+import { RiCloseLine } from "../icons/animated";
 import { cn } from "../utils/cn";
 
 export const badgeVariants = cva(
@@ -85,15 +86,7 @@ export function Tag({ className, children, onRemove, removeLabel = "Remove", ...
            */
           className="luc-transition luc-hit grid size-4 place-items-center rounded-xs text-fg-muted hover:bg-surface-interactive-hover hover:text-fg-primary luc-focus"
         >
-          <svg viewBox="0 0 16 16" className="size-3" aria-hidden="true">
-            <path
-              d="M4.5 4.5l7 7m0-7l-7 7"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              fill="none"
-            />
-          </svg>
+          <RiCloseLine aria-hidden="true" className="size-3" />
         </button>
       ) : null}
     </span>

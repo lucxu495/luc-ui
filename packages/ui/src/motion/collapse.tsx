@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
+import { RiArrowDownSLine } from "../icons/animated";
 import { useId } from "react";
 import { cn } from "../utils/cn";
 import { useReducedMotion } from "../hooks/use-reduced-motion";
@@ -87,9 +88,7 @@ export function Collapse({
             animate={{ rotate: open ? 180 : 0 }}
             transition={reduced ? { duration: 0 } : { duration: duration.fast, ease: easing.standard }}
           >
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6">
-              <path d="M4 6.5 8 10.5l4-4" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
+            <RiArrowDownSLine aria-hidden="true" className="size-3.5" />
           </motion.span>
         </span>
       </button>

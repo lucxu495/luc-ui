@@ -1,6 +1,7 @@
 "use client";
 
 import { NumberField, Input as RacInput, Button as RacButton } from "react-aria-components";
+import { RiAddLine, RiMinusLine } from "../../icons/animated";
 import type { ReactNode } from "react";
 import { useField } from "../../components/field";
 import { inputShellClass, type ControlSize } from "../../components/input";
@@ -157,9 +158,7 @@ export function NumberInput({
       ) : null}
       {steppers ? (
         <RacButton slot="decrement" className={cn(stepperBtnClass, "border-r border-line-subtle")}>
-          <svg viewBox="0 0 16 16" aria-hidden="true">
-            <path d="M4 8h8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none" />
-          </svg>
+          <RiMinusLine aria-hidden="true" className="size-4" />
         </RacButton>
       ) : null}
       <RacInput
@@ -180,9 +179,7 @@ export function NumberInput({
       ) : null}
       {steppers ? (
         <RacButton slot="increment" className={cn(stepperBtnClass, "border-l border-line-subtle")}>
-          <svg viewBox="0 0 16 16" aria-hidden="true">
-            <path d="M8 4v8M4 8h8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none" />
-          </svg>
+          <RiAddLine aria-hidden="true" className="size-4" />
         </RacButton>
       ) : null}
       </NumberField>

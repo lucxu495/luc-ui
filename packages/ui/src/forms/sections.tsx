@@ -1,6 +1,7 @@
 "use client";
 
 import { Children, type ReactNode } from "react";
+import { RiAddLine, RiArrowDownLine, RiArrowUpLine, RiCloseLine } from "../icons/animated";
 import { IconButton } from "../components/icon-button";
 import { cn } from "../utils/cn";
 
@@ -112,9 +113,7 @@ export function FieldArray({
               "hover:bg-accent-soft",
             )}
           >
-            <svg viewBox="0 0 16 16" aria-hidden="true" className="size-3.5">
-              <path d="M8 3.5v9M3.5 8h9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none" />
-            </svg>
+            <RiAddLine aria-hidden="true" className="size-3.5" />
             {addLabel}
           </button>
         ) : null}
@@ -145,16 +144,7 @@ export function FieldArray({
                       disabled={index === 0}
                       onClick={() => onMove(index, index - 1)}
                       icon={
-                        <svg viewBox="0 0 16 16" aria-hidden="true" className="size-3.5">
-                          <path
-                            d="M8 12.5V4m0 0L4.5 7.5M8 4l3.5 3.5"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            fill="none"
-                          />
-                        </svg>
+                        <RiArrowUpLine aria-hidden="true" className="size-3.5" />
                       }
                     />
                     <IconButton
@@ -164,16 +154,7 @@ export function FieldArray({
                       disabled={index === count - 1}
                       onClick={() => onMove(index, index + 1)}
                       icon={
-                        <svg viewBox="0 0 16 16" aria-hidden="true" className="size-3.5">
-                          <path
-                            d="M8 3.5V12m0 0 3.5-3.5M8 12 4.5 8.5"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            fill="none"
-                          />
-                        </svg>
+                        <RiArrowDownLine aria-hidden="true" className="size-3.5" />
                       }
                     />
                   </>
@@ -185,15 +166,7 @@ export function FieldArray({
                     variant="ghost"
                     onClick={() => onRemove(index)}
                     icon={
-                      <svg viewBox="0 0 16 16" aria-hidden="true" className="size-3.5">
-                        <path
-                          d="M4.5 4.5l7 7m0-7l-7 7"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          fill="none"
-                        />
-                      </svg>
+                      <RiCloseLine aria-hidden="true" className="size-3.5" />
                     }
                   />
                 ) : null}

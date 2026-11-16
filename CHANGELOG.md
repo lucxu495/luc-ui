@@ -1,3 +1,9 @@
+## 1.4.1 — Finish UI chrome icon migration
+
+- Complete the icon system by replacing the last hand-authored generic SVG controls in badges, input/field status messages, form repetition controls, number steppers, collapse chevrons, year/month navigation, chart empty/error/fullscreen actions and checkbox state indicators with actual AnimateIcons components.
+- Preserve plot glyphs, chart traces, loader graphics, motion/beam effects, official branding and illustrations as non-icon graphics.
+- Retain existing public component APIs, status/accessibility wiring, keyboard interaction, and MorphIcons transitions from 1.4.0.
+
 ## 1.4.0 — AnimateIcons and MorphIcons UI glyph system
 
 - Migrated all 76 built-in Remix Icon UI glyph usages across 49 `@luc/ui` source components to 69 real, hover-animated `@animateicons/react` icons (deep module imports, no giant icon barrel).

@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useId, useRef, useState, type ReactNode } from "react";
+import { RiAlertLine } from "../icons/animated";
 import { Button, type ButtonProps } from "../components/button";
 import { cn } from "../utils/cn";
 
@@ -267,11 +268,7 @@ export function FormErrorSummary({
       {...props}
     >
       <p className="flex items-center gap-2 text-label font-medium text-fg-negative">
-        <svg viewBox="0 0 16 16" aria-hidden="true" className="size-4 shrink-0">
-          <circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" strokeWidth="1.4" />
-          <path d="M8 5.25v3.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-          <circle cx="8" cy="11" r="0.85" fill="currentColor" />
-        </svg>
+        <RiAlertLine aria-hidden="true" className="size-4 shrink-0" />
         {title}
       </p>
       {error ? <p className="text-fg-secondary">{error}</p> : null}
