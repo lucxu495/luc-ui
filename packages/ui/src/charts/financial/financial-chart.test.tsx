@@ -11,11 +11,15 @@ import {
 import { financialTooltipPosition } from "./tooltip-position";
 
 const surfaceCapture = vi.hoisted(() => ({
-  props: null as { build: (controller: LightweightController) => void } | null,
+  props: null as {
+    build: (controller: LightweightController) => void;
+    priceFormatter?: (value: number) => string;
+    tickFormatter?: (values: number[]) => string[];
+  } | null,
 }));
 
 vi.mock("../adapters/lightweight/lightweight-surface", () => ({
-  LightweightSurface: (props: { build: (controller: LightweightController) => void }) => {
+  LightweightSurface: (props: NonNullable<typeof surfaceCapture.props>) => {
     surfaceCapture.props = props;
     return null;
   },
@@ -142,6 +146,65 @@ describe("FinancialChart build/range ownership", () => {
         setSeriesData: expect.any(Function),
       }),
     );
+  });
+
+  it("keeps a dimensionless Sharpe Y axis and tooltip in sync without global BTC rounding", () => {
+    const { controller } = fakeController();
+    const dates = candles();
+    render(
+      <FinancialChart
+        series={[{
+          id: "btc-close", kind: "line",
+          data: dates.map((row) => ({ time: row.time, close: 64_500 + row.close })),
+        }]}
+        showVolume={false}
+        indicators={[{
+          id: "rolling-sharpe", label: "Rolling Sharpe · 365D",
+          referenceLines: [-1, 0, 1],
+          series: [{
+            id: "sharpe", kind: "line",
+            format: { kind: "number", decimals: 3 },
+            data: dates.map((row, index) => ({
+              time: row.time,
+              value: [-1.2344, -0.9876, 0.0254, 1.5436][index]!,
+            })),
+          }],
+        }]}
+      />,
+    );
+    // No chart-wide formatter can overwrite the two different Y-axis units.
+    expect(surfaceCapture.props?.priceFormatter).toBeUndefined();
+    expect(surfaceCapture.props?.tickFormatter).toBeUndefined();
+
+    surfaceCapture.props!.build(controller);
+    const calls = (controller.upsertSeries as ReturnType<typeof vi.fn>).mock.calls as
+      Array<[string, string, Record<string, unknown>, unknown[], number]>;
+    const price = calls.find((call) => call[0] === "price:btc-close");
+    const sharpe = calls.find((call) => call[0] === "indicator:rolling-sharpe:sharpe");
+    expect(price?.[4]).toBe(0);
+    expect(sharpe?.[4]).toBe(1);
+
+    type CustomFormat = {
+      type: "custom";
+      formatter: (value: number) => string;
+      tickmarksFormatter: (values: number[]) => string[];
+      minMove: number;
+    };
+    const priceFormat = price?.[2].priceFormat as CustomFormat;
+    const sharpeFormat = sharpe?.[2].priceFormat as CustomFormat;
+    expect(priceFormat.type).toBe("custom");
+    expect(priceFormat.formatter(64_500)).toBe("64.5K");
+    expect(sharpeFormat.type).toBe("custom");
+    expect(sharpeFormat.minMove).toBe(0.001);
+    expect(sharpeFormat.formatter(-1.2344)).toBe("-1.234");
+    expect(sharpeFormat.tickmarksFormatter([-1.2344, 0.0254, 1.5436]))
+      .toEqual(["-1.234", "0.025", "1.544"]);
+  });
+
+  it("keeps existing chart-wide compact ticks in single-pane charts", () => {
+    render(<FinancialChart candles={candles()} />);
+    expect(surfaceCapture.props?.priceFormatter).toEqual(expect.any(Function));
+    expect(surfaceCapture.props?.tickFormatter).toEqual(expect.any(Function));
   });
 
   it("rebuilds a series only when its pane changes and keeps reference-line objects in sync", () => {

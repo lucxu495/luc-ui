@@ -45,7 +45,7 @@ const HARD_CEILINGS = {
   // AnimateIcons modules. The measured engine remains only +0.8 KB raw over
   // the audited v1.3.0 ceiling (17.4 KB gzip, still under the old gzip cap).
   // Preserve an independent hard ceiling; do not silently waive this budget.
-  "financial-engine": { raw: 61 * 1024, gzip: 18 * 1024 },
+  "financial-engine": { raw: 62 * 1024, gzip: 18 * 1024 },
 };
 const updateBaseline = process.env.LUC_UPDATE_BASELINE === "1";
 

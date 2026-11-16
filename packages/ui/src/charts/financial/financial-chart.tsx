@@ -685,6 +685,16 @@ export function FinancialChart(props: FinancialChartProps) {
     [priceFormat],
   );
 
+  // IMPORTANT: these chart-level localization formatters are GLOBAL to
+  // every pane in Lightweight Charts. A BTC price formatter which rounds
+  // dimensionless Sharpe ticks to whole numbers would create misleading,
+  // repeated Y-axis labels while the tooltip correctly shows 3 decimals.
+  // Once separate indicator panes exist, use independent series-specific
+  // priceFormat formatters for BOTH price and indicator panes instead.
+  const usesIndependentAxis = (prepared?.indicators.some((pane) => pane.series.length > 0) ?? false);
+  const sharedPriceFormatter = usesIndependentAxis ? undefined : platePriceFormatter;
+  const sharedTickFormatter = usesIndependentAxis ? undefined : plateTickFormatter;
+
   const scaleSide: AxisSide = priceScale?.side ?? DEFAULT_Y_AXIS_SIDE;
   const scaleMode: YScaleMode = priceScale?.mode ?? "linear";
 
@@ -793,7 +803,17 @@ export function FinancialChart(props: FinancialChartProps) {
 
       const priceOptions = {
         priceScaleId: scaleSide,
-        priceFormat: { type: "price" as const, ...precision },
+        // Mixed-unit charts: BTC uses its own compact/currency formatter;
+        // Sharpe/RSI indicators use indicatorPriceFormat(source.format).
+        // Do NOT let a chart-wide BTC formatter round indicator ticks.
+        priceFormat: usesIndependentAxis
+          ? {
+              type: "custom" as const,
+              formatter: platePriceFormatter,
+              tickmarksFormatter: plateTickFormatter,
+              minMove: precision.minMove,
+            }
+          : { type: "price" as const, ...precision },
         priceLineVisible: showPriceLine,
         priceLineStyle: 2,
         priceLineColor: theme.reference,
@@ -965,6 +985,9 @@ export function FinancialChart(props: FinancialChartProps) {
       onControllerReadyRef,
       precision,
       prepared,
+      platePriceFormatter,
+      plateTickFormatter,
+      usesIndependentAxis,
       scaleSide,
       series,
       showVolume,
@@ -1122,8 +1145,8 @@ export function FinancialChart(props: FinancialChartProps) {
         syncGroup={syncGroup}
         resolvePrice={priceAt}
         priceScale={{ side: scaleSide, mode: scaleMode }}
-        priceFormatter={platePriceFormatter}
-        tickFormatter={plateTickFormatter}
+        priceFormatter={sharedPriceFormatter}
+        tickFormatter={sharedTickFormatter}
         themeOverride={themeOverride}
         visibleRange={controlledRange}
         ariaLabel={ariaLabel ?? "Price chart"}

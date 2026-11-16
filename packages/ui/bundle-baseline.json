@@ -23,43 +23,43 @@
     },
     "slider": {
       "raw": 7290,
-      "gzip": 2765
+      "gzip": 2766
     },
     "menus": {
       "raw": 2984,
-      "gzip": 1253
+      "gzip": 1254
     },
     "surfaces": {
       "raw": 9120,
-      "gzip": 2311
+      "gzip": 2312
     },
     "motion-spatial": {
       "raw": 6258,
-      "gzip": 2267
+      "gzip": 2268
     },
     "barrel": {
       "raw": 18213,
-      "gzip": 5220
+      "gzip": 5221
     },
     "components-v4": {
       "raw": 23213,
-      "gzip": 6256
+      "gzip": 6255
     },
     "charts-statistical": {
       "raw": 68770,
-      "gzip": 19821
+      "gzip": 19818
     },
     "charts-financial": {
       "raw": 67673,
-      "gzip": 19554
+      "gzip": 19553
     },
     "financial-engine": {
-      "raw": 62310,
-      "gzip": 17826
+      "raw": 62537,
+      "gzip": 17892
     },
     "forms-core": {
       "raw": 17727,
-      "gzip": 4892
+      "gzip": 4893
     },
     "data-table-only": {
       "raw": 25641,
@@ -67,7 +67,7 @@
     },
     "experiences": {
       "raw": 24912,
-      "gzip": 5927
+      "gzip": 5928
     }
   }
 }

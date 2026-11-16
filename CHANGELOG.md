@@ -1,3 +1,10 @@
+## 1.4.2 — Independent Y-axis formats for mixed-unit financial panes
+
+- Fix a mixed-unit FinancialChart (BTC Close + Rolling Sharpe) using one global tickmarks formatter across both panes. The BTC currency/compact formatter rounded Sharpe tick marks to integers even when the indicator tooltip showed three decimals.
+- When any independent indicator pane exists, configure price series and indicator series with their own priceFormat and tickmarksFormatter, instead of applying a single chart-level tick formatter.
+- Keep the existing compact BTC price scale, three-decimal dimensionless Sharpe axis/tooltip, and original chart-wide formatter for single-pane charts. No indicator mathematics or API data is modified.
+- Regression tests exercise two distinct price scales, negative and positive Sharpe readings and single-pane backward compatibility.
+
 ## 1.4.1 — Finish UI chrome icon migration
 
 - Complete the icon system by replacing the last hand-authored generic SVG controls in badges, input/field status messages, form repetition controls, number steppers, collapse chevrons, year/month navigation, chart empty/error/fullscreen actions and checkbox state indicators with actual AnimateIcons components.
