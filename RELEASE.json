@@ -1,17 +1,17 @@
 {
   "name": "@luc/ui",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "generator": "packages/ui/scripts/release-artifact.mjs",
   "source": {
     "repository": "https://github.com/lucxu495/luc-ui",
-    "commit": "6ea7ef446c49b8a1cc3b4ef2ff5356753e95d5e9",
+    "commit": "37118c8081737023bf6173f6f80c06252b4f895b",
     "path": "packages/ui",
     "note": "Generated from this commit by `pnpm --filter @luc/ui release:build`. Do not edit by hand."
   },
   "artifact": {
-    "tarball": "luc-ui-482a4680bcdfe6a0.tgz",
+    "tarball": "luc-ui-ec705e7b1fb59659.tgz",
     "files": 1151,
-    "manifestSha256": "21e97c6020d15f48d4dfdcb013ac070cd545a2cfc64898fe19a7c84ab87cccd2",
+    "manifestSha256": "10cf179ac2155c30187f9e123241e131f9d8be103f210b5dc67ee60091e35bc6",
     "reproducible": "JavaScript, CSS and package.json are byte-identical across builds; declaration union member order is not stable."
   }
 }

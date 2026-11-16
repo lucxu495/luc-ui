@@ -335,6 +335,9 @@ function FinancialChart(props) {
 	}), [volumeFormat]);
 	const platePriceFormatter = useCallback((value) => numericAxisFormatter(priceFormat)(value), [priceFormat]);
 	const plateTickFormatter = useCallback((values) => values.map((value) => numericAxisFormatter(priceFormat)(value)), [priceFormat]);
+	const usesIndependentAxis = prepared?.indicators.some((pane) => pane.series.length > 0) ?? false;
+	const sharedPriceFormatter = usesIndependentAxis ? void 0 : platePriceFormatter;
+	const sharedTickFormatter = usesIndependentAxis ? void 0 : plateTickFormatter;
 	const scaleSide = priceScale?.side ?? "right";
 	const scaleMode = priceScale?.mode ?? "linear";
 	const tooltipOverlays = useMemo(() => visibleSources.map((overlay) => ({
@@ -410,7 +413,12 @@ function FinancialChart(props) {
 		});
 		const priceOptions = {
 			priceScaleId: scaleSide,
-			priceFormat: {
+			priceFormat: usesIndependentAxis ? {
+				type: "custom",
+				formatter: platePriceFormatter,
+				tickmarksFormatter: plateTickFormatter,
+				minMove: precision.minMove
+			} : {
 				type: "price",
 				...precision
 			},
@@ -529,6 +537,9 @@ function FinancialChart(props) {
 		onControllerReadyRef,
 		precision,
 		prepared,
+		platePriceFormatter,
+		plateTickFormatter,
+		usesIndependentAxis,
 		scaleSide,
 		series,
 		showVolume,
@@ -648,8 +659,8 @@ function FinancialChart(props) {
 					side: scaleSide,
 					mode: scaleMode
 				},
-				priceFormatter: platePriceFormatter,
-				tickFormatter: plateTickFormatter,
+				priceFormatter: sharedPriceFormatter,
+				tickFormatter: sharedTickFormatter,
 				themeOverride,
 				visibleRange: controlledRange,
 				ariaLabel: ariaLabel ?? "Price chart",
