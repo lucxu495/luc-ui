@@ -1,6 +1,6 @@
 "use client";
 
-import { RiCheckLine } from "@remixicon/react";
+import { RiCheckLine } from "../icons/animated";
 import { cn } from "../utils/cn";
 
 /**

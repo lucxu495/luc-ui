@@ -7,7 +7,7 @@ import {
   TimeField as RacTimeField,
   type TimeFieldProps as RacTimeFieldProps,
 } from "react-aria-components";
-import { RiTimeLine } from "@remixicon/react";
+import { RiTimeLine } from "../icons/animated";
 import { Time, getLocalTimeZone, now } from "@internationalized/date";
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import { useField } from "../components/field";

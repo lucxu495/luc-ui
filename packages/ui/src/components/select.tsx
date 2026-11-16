@@ -1,7 +1,7 @@
 "use client";
 
 import { Select as RadixSelect } from "radix-ui";
-import { RiArrowDownSLine, RiArrowUpSLine, RiCheckLine, RiExpandUpDownLine } from "@remixicon/react";
+import { RiArrowDownSLine, RiArrowUpSLine, RiCheckLine, RiExpandUpDownLine } from "../icons/animated";
 import { createContext, useContext, type ReactNode } from "react";
 import { cn } from "../utils/cn";
 import { useField } from "./field";

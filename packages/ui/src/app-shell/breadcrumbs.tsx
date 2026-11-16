@@ -1,7 +1,7 @@
 "use client";
 
 import { Fragment } from "react";
-import { RiArrowRightSLine, RiMoreLine } from "@remixicon/react";
+import { RiArrowRightSLine, RiMoreLine } from "../icons/animated";
 import { cn } from "../utils/cn";
 import { PopoverContent, PopoverRoot, PopoverTrigger } from "../components/popover";
 import { NavigationLink } from "./navigation-context";

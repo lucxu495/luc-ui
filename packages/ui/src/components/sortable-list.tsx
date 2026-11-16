@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useState, type ReactNode } from "react";
-import { RiDragMove2Line } from "@remixicon/react";
+import { RiDragMove2Line } from "../icons/animated";
 import { cn } from "../utils/cn";
 
 /**

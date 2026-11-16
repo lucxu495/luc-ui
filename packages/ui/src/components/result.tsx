@@ -5,7 +5,7 @@ import {
   RiCloseCircleLine,
   RiInformationLine,
   RiInboxLine,
-} from "@remixicon/react";
+} from "../icons/animated";
 import { cn } from "../utils/cn";
 
 /**

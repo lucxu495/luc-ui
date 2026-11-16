@@ -2,7 +2,7 @@
 
 import { Command as CmdkCommand, CommandDialog as CmdkCommandDialog, useCommandState } from "cmdk";
 import { Dialog as RadixDialog } from "radix-ui";
-import { RiSearchLine } from "@remixicon/react";
+import { RiSearchLine } from "../icons/animated";
 import { useCallback, useEffect, useState, type ReactNode } from "react";
 import { cn } from "../utils/cn";
 

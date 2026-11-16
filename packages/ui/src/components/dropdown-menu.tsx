@@ -1,7 +1,7 @@
 "use client";
 
 import { DropdownMenu as RadixDropdownMenu } from "radix-ui";
-import { RiArrowRightSLine, RiCheckLine } from "@remixicon/react";
+import { RiArrowRightSLine, RiCheckLine } from "../icons/animated";
 import { cn } from "../utils/cn";
 import {
   MenuShortcut,

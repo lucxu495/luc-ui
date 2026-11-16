@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
-import { RiDownloadLine, RiRestartLine } from "@remixicon/react";
+import { RiDownloadLine, RiRestartLine } from "../../icons/animated";
 import { Button } from "../../components/button";
 import { Tooltip } from "../../components/tooltip";
 import { exportChartImage } from "../core/export";

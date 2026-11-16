@@ -6,7 +6,7 @@ import {
   RiArrowRightDoubleLine,
   RiArrowRightSLine,
   RiMoreLine,
-} from "@remixicon/react";
+} from "../icons/animated";
 import { cn } from "../utils/cn";
 import { formatNumber } from "../utils/format";
 

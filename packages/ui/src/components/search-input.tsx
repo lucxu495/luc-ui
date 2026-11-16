@@ -1,6 +1,6 @@
 "use client";
 
-import { RiSearchLine } from "@remixicon/react";
+import { RiSearchLine } from "../icons/animated";
 import { useRef, useState } from "react";
 import { cn } from "../utils/cn";
 import { Input, type InputProps } from "./input";

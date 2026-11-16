@@ -12,7 +12,7 @@ import {
   RiStopCircleLine,
   RiToolsLine,
   RiUserLine,
-} from "@remixicon/react";
+} from "../icons/animated";
 import { cn } from "../utils/cn";
 import { useReducedMotion } from "../hooks/use-reduced-motion";
 import { IconButton } from "./icon-button";

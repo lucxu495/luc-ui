@@ -1,7 +1,7 @@
 "use client";
 
 import { useCombobox } from "downshift";
-import { RiCloseLine, RiExpandUpDownLine, RiLoader4Line, RiSearchLine } from "@remixicon/react";
+import { RiCloseLine, RiExpandUpDownLine, RiLoader4Line, RiSearchLine } from "../icons/animated";
 import { useEffect, useId, useMemo, useRef, useState, type ReactNode } from "react";
 import { cn } from "../utils/cn";
 import { mergeRefs } from "../utils/refs";

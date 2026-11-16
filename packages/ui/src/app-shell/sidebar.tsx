@@ -4,9 +4,8 @@ import { Collapsible as RadixCollapsible } from "radix-ui";
 import {
   RiArrowDownSLine,
   RiArrowRightSLine,
-  RiSidebarFoldLine,
-  RiSidebarUnfoldLine,
-} from "@remixicon/react";
+} from "../icons/animated";
+import { SidebarStateMorphIcon } from "../icons/morph";
 import { createContext, useCallback, useContext, useEffect, useMemo, type ReactNode } from "react";
 import { useControllableState } from "../hooks/use-controllable-state";
 import { usePersistentState } from "../hooks/use-persistent-state";
@@ -698,7 +697,7 @@ export function SidebarToggle({
       label={label ?? (collapsed ? "Expand sidebar" : "Collapse sidebar")}
       onClick={toggleCollapsed}
       className={className}
-      icon={collapsed ? <RiSidebarUnfoldLine /> : <RiSidebarFoldLine />}
+      icon={<SidebarStateMorphIcon collapsed={collapsed} />}
       {...props}
     />
   );

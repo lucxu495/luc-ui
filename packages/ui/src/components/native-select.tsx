@@ -1,6 +1,6 @@
 "use client";
 
-import { RiArrowDownSLine } from "@remixicon/react";
+import { RiArrowDownSLine } from "../icons/animated";
 import { cn } from "../utils/cn";
 import { useField } from "./field";
 import { inputShellClass } from "./input";

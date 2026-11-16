@@ -12,7 +12,7 @@ import {
   RiCloseLine,
   RiPauseLine,
   RiPlayLine,
-} from "@remixicon/react";
+} from "../icons/animated";
 import { Button } from "../components/button-base";
 import { IconButton } from "../components/icon-button";
 import { cn } from "../utils/cn";

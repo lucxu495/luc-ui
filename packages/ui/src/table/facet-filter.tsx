@@ -1,6 +1,6 @@
 "use client";
 
-import { RiArrowDownSLine, RiFilter3Line } from "@remixicon/react";
+import { RiArrowDownSLine, RiFilter3Line } from "../icons/animated";
 import { useState } from "react";
 import { Checkbox } from "../components/checkbox";
 import { PopoverContent, PopoverRoot, PopoverTrigger } from "../components/popover";

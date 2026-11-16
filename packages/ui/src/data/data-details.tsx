@@ -1,6 +1,6 @@
 "use client";
 
-import { RiTableLine } from "@remixicon/react";
+import { RiTableLine } from "../icons/animated";
 import { Button } from "../components/button";
 import { Sheet, SheetBody, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "../components/sheet";
 import { useMediaQuery } from "../hooks/use-media-query";

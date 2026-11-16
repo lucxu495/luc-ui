@@ -2,7 +2,7 @@
 
 import { useEffect, type ReactNode } from "react";
 import { usePanelRef } from "react-resizable-panels";
-import { RiArrowLeftSLine, RiArrowRightSLine } from "@remixicon/react";
+import { RiArrowLeftSLine, RiArrowRightSLine } from "../icons/animated";
 import { cn } from "../utils/cn";
 import { useControllableState } from "../hooks/use-controllable-state";
 import { Skeleton } from "../components/skeleton";

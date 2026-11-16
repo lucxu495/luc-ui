@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useId, useMemo, useState, type ReactNode } from "react";
-import { RiArrowLeftSLine, RiArrowRightSLine } from "@remixicon/react";
+import { RiArrowLeftSLine, RiArrowRightSLine } from "../icons/animated";
 import { cn } from "../utils/cn";
 import { useControllableState } from "../hooks/use-controllable-state";
 import { Button } from "./button-base";

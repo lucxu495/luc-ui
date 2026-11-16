@@ -18,7 +18,7 @@ import {
   type Layout,
   type PanelImperativeHandle,
 } from "react-resizable-panels";
-import { RiContractLine, RiExpandDiagonalLine, RiRefreshLine } from "@remixicon/react";
+import { RiContractLine, RiExpandDiagonalLine, RiRefreshLine } from "../icons/animated";
 import { cn } from "../utils/cn";
 import { useMediaQuery } from "../hooks/use-media-query";
 import type { KeyValueStorage } from "../utils/storage";

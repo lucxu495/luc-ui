@@ -12,7 +12,7 @@ import {
   useState,
   cloneElement,
 } from "react";
-import { RiArrowLeftSLine, RiArrowRightSLine } from "@remixicon/react";
+import { RiArrowLeftSLine, RiArrowRightSLine } from "../icons/animated";
 import { cn } from "../utils/cn";
 import { IconButton } from "./icon-button";
 

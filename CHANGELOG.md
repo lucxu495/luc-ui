@@ -1,3 +1,11 @@
+## 1.4.0 — AnimateIcons and MorphIcons UI glyph system
+
+- Migrated all 76 built-in Remix Icon UI glyph usages across 49 `@luc/ui` source components to 69 real, hover-animated `@animateicons/react` icons (deep module imports, no giant icon barrel).
+- Reused the existing public glyph names / `Icon` API; retained legacy `icon={Ri…}` consumers as optional injectors, without shipping Remix glyphs in any built-in UI component.
+- Added a native MorphIcons transition for sidebar collapsed/expanded states; the host application uses MorphIcons for theme-state changes.
+- Added MIT dependencies `@animateicons/react`, `morphicons`, `lucide`. Data-chart SVGs, brand logos, and bespoke data visualizations remain illustrations/plots rather than UI glyphs and are not substituted.
+- New source and release artifacts are tagged separately; existing consumers pinned to 1.3.0 are unchanged.
+
 # Changelog
 
 All notable changes to `@luc/ui`. The foundation rounds (V0.1–V0.6) shipped as

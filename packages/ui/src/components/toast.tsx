@@ -6,7 +6,7 @@ import {
   RiErrorWarningFill,
   RiInformationFill,
   RiLoader4Line,
-} from "@remixicon/react";
+} from "../icons/animated";
 import { Toaster as SonnerToaster, toast, type ToasterProps } from "sonner";
 import { useOptionalTheme } from "../providers/theme-provider";
 

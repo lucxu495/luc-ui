@@ -5,7 +5,7 @@ import {
   RiCloseLine,
   RiErrorWarningLine,
   RiInformationLine,
-} from "@remixicon/react";
+} from "../icons/animated";
 import { cn } from "../utils/cn";
 
 /**

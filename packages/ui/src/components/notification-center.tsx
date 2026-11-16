@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, useMemo, useState, type ReactNode } from "react";
-import { RiBellLine, RiCheckDoubleLine, RiCloseLine } from "@remixicon/react";
+import { RiBellLine, RiCheckDoubleLine, RiCloseLine } from "../icons/animated";
 import { cn } from "../utils/cn";
 import { Badge } from "./badge";
 import { IconButton } from "./icon-button";

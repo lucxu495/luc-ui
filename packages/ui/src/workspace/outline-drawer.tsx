@@ -1,7 +1,7 @@
 "use client";
 
 import { type MouseEvent, type ReactNode, useEffect, useRef } from "react";
-import { RiArrowLeftSLine, RiArrowRightSLine, RiListUnordered } from "@remixicon/react";
+import { RiArrowLeftSLine, RiArrowRightSLine, RiListUnordered } from "../icons/animated";
 import { cn } from "../utils/cn";
 import { useControllableState } from "../hooks/use-controllable-state";
 import { useReducedMotion } from "../hooks/use-reduced-motion";

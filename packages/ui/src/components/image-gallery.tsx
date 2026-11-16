@@ -8,7 +8,7 @@ import {
   RiFullscreenLine,
   RiZoomInLine,
   RiZoomOutLine,
-} from "@remixicon/react";
+} from "../icons/animated";
 import { cn } from "../utils/cn";
 import { DialogContent, DialogRoot, DialogTitle } from "./dialog";
 import { IconButton } from "./icon-button";

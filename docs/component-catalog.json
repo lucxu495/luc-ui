@@ -4134,7 +4134,7 @@
         {
           "name": "IconGlyph",
           "kind": "type",
-          "signature": "RemixiconComponentType",
+          "signature": "IconGlyph",
           "source": "packages/ui/src/components/icon.tsx"
         },
         {

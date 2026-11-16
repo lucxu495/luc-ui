@@ -1,6 +1,6 @@
 "use client";
 
-import { RiCloseLine } from "@remixicon/react";
+import { RiCloseLine } from "../../icons/animated";
 import { useRef, useState, type KeyboardEvent } from "react";
 import { useField } from "../../components/field";
 import { inputShellClass, type ControlSize } from "../../components/input";

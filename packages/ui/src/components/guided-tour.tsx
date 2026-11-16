@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useId, useRef, useState, type ReactNode } from "react";
-import { RiArrowLeftSLine, RiArrowRightSLine, RiCloseLine } from "@remixicon/react";
+import { RiArrowLeftSLine, RiArrowRightSLine, RiCloseLine } from "../icons/animated";
 import { cn } from "../utils/cn";
 import { Button } from "./button-base";
 import { IconButton } from "./icon-button";

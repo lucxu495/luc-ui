@@ -5,7 +5,7 @@ import {
   RiArrowLeftSLine,
   RiArrowRightDoubleLine,
   RiArrowRightSLine,
-} from "@remixicon/react";
+} from "../icons/animated";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/select";
 import { cn } from "../utils/cn";
 import { useDataTable } from "./context";

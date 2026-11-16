@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useId, useRef, useState, type ReactNode } from "react";
-import { RiAlertLine, RiCheckLine, RiCloseLine, RiFileLine, RiRefreshLine, RiUploadCloud2Line } from "@remixicon/react";
+import { RiAlertLine, RiCheckLine, RiCloseLine, RiFileLine, RiRefreshLine, RiUploadCloud2Line } from "../icons/animated";
 import { cn } from "../utils/cn";
 import { formatBytes } from "../utils/format";
 import { Button } from "./button-base";

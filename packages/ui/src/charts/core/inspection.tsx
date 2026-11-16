@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { RiPushpinFill, RiPushpinLine } from "@remixicon/react";
+import { RiPushpinFill, RiPushpinLine } from "../../icons/animated";
 import { cn } from "../../utils/cn";
 import { useControllableState } from "../../hooks/use-controllable-state";
 import { IconButton } from "../../components/icon-button";

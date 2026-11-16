@@ -3,55 +3,55 @@
   "entries": {
     "button-only": {
       "raw": 11153,
-      "gzip": 3766
+      "gzip": 3765
     },
     "date-picker": {
-      "raw": 29538,
-      "gzip": 8680
+      "raw": 36979,
+      "gzip": 10194
     },
     "app-shell": {
-      "raw": 31669,
-      "gzip": 9380
+      "raw": 39106,
+      "gzip": 10907
     },
     "tradingview": {
       "raw": 53377,
       "gzip": 14134
     },
     "charts": {
-      "raw": 81010,
-      "gzip": 24251
+      "raw": 81294,
+      "gzip": 24372
     },
     "slider": {
       "raw": 7290,
-      "gzip": 2765
+      "gzip": 2764
     },
     "menus": {
-      "raw": 3011,
-      "gzip": 1266
+      "raw": 2984,
+      "gzip": 1253
     },
     "surfaces": {
-      "raw": 4706,
-      "gzip": 1642
+      "raw": 12053,
+      "gzip": 3187
     },
     "motion-spatial": {
       "raw": 6258,
-      "gzip": 2269
+      "gzip": 2268
     },
     "barrel": {
-      "raw": 14872,
-      "gzip": 4738
+      "raw": 14845,
+      "gzip": 4724
     },
     "components-v4": {
-      "raw": 18806,
-      "gzip": 5602
+      "raw": 26178,
+      "gzip": 7133
     },
     "charts-statistical": {
-      "raw": 64793,
-      "gzip": 19182
+      "raw": 65077,
+      "gzip": 19317
     },
     "charts-financial": {
-      "raw": 63695,
-      "gzip": 18915
+      "raw": 63981,
+      "gzip": 19054
     },
     "financial-engine": {
       "raw": 58625,
@@ -62,12 +62,12 @@
       "gzip": 4421
     },
     "data-table-only": {
-      "raw": 21815,
-      "gzip": 6692
+      "raw": 29227,
+      "gzip": 8239
     },
     "experiences": {
       "raw": 24912,
-      "gzip": 5929
+      "gzip": 5928
     }
   }
 }

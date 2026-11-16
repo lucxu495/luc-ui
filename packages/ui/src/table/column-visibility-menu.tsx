@@ -1,6 +1,6 @@
 "use client";
 
-import { RiLayoutColumnLine } from "@remixicon/react";
+import { RiLayoutColumnLine } from "../icons/animated";
 import { Checkbox } from "../components/checkbox";
 import { PopoverContent, PopoverRoot, PopoverTrigger } from "../components/popover";
 import { cn } from "../utils/cn";

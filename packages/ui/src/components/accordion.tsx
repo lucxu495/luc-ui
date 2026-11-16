@@ -2,7 +2,7 @@
 
 import { createContext, useContext } from "react";
 import { Accordion as RadixAccordion, Collapsible as RadixCollapsible } from "radix-ui";
-import { RiArrowDownSLine } from "@remixicon/react";
+import { RiArrowDownSLine } from "../icons/animated";
 import { cn } from "../utils/cn";
 
 /**

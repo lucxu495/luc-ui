@@ -11,7 +11,7 @@ import {
   MorphingDialogTrigger,
 } from "../../motion/morphing-dialog";
 import { IconButton } from "../../components/icon-button";
-import { RiCloseLine } from "@remixicon/react";
+import { RiCloseLine } from "../../icons/animated";
 import { FullscreenButton, RangeSelector } from "../chart-card";
 import { ScaleSelector } from "../chart-card";
 import type { YScaleMode } from "../core/axis";

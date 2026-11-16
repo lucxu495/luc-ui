@@ -1,6 +1,6 @@
 "use client";
 
-import { RiEyeLine, RiEyeOffLine } from "@remixicon/react";
+import { RiEyeLine, RiEyeOffLine } from "../../icons/animated";
 import { useState } from "react";
 import { IconButton } from "../../components/icon-button";
 import { Input, type InputProps } from "../../components/input";

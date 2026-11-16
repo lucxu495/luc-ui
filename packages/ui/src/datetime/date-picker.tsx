@@ -14,7 +14,7 @@ import {
   type DateRangePickerProps as RacDateRangePickerProps,
   type DateSegment as DateSegmentType,
 } from "react-aria-components";
-import { RiArrowDownSLine, RiCalendarLine, RiCloseLine } from "@remixicon/react";
+import { RiArrowDownSLine, RiCalendarLine, RiCloseLine } from "../icons/animated";
 import {
   Time,
   toCalendarDateTime,

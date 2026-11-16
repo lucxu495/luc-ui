@@ -1,7 +1,7 @@
 "use client";
 
 import { Dialog as RadixDialog } from "radix-ui";
-import { RiCloseLine } from "@remixicon/react";
+import { RiCloseLine } from "../icons/animated";
 import { cn } from "../utils/cn";
 import { useDialogFocusRestore } from "./dialog-focus";
 import { IconButton } from "./icon-button";

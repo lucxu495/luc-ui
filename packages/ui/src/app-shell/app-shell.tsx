@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, type ReactNode } from "react";
-import { RiMenuLine } from "@remixicon/react";
+import { RiMenuLine } from "../icons/animated";
 import { cn } from "../utils/cn";
 import type { KeyValueStorage } from "../utils/storage";
 import { IconButton } from "../components/icon-button";

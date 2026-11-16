@@ -1,7 +1,7 @@
 "use client";
 
 import { DropZone as RacDropZone, FileTrigger } from "react-aria-components";
-import { RiCloseLine, RiFileLine, RiUploadCloud2Line } from "@remixicon/react";
+import { RiCloseLine, RiFileLine, RiUploadCloud2Line } from "../../icons/animated";
 import { useId, type ReactNode } from "react";
 import { Button } from "../../components/button";
 import { useField } from "../../components/field";

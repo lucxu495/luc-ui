@@ -1,7 +1,8 @@
 "use client";
 
-import { createElement } from "react";
+import { createElement, type ComponentType } from "react";
 import type { RemixiconComponentType } from "@remixicon/react";
+import type { AnimatedIconComponentType } from "../icons/animated";
 import {
   RiAddLine,
   RiAlertLine,
@@ -42,50 +43,17 @@ import {
   RiTimeLine,
   RiUploadLine,
   RiUserLine,
-} from "@remixicon/react";
+} from "../icons/animated";
 import { cn } from "../utils/cn";
 
 /**
- * LUC Icon — the library's own icon surface.
- *
- * What existed before this file: forty-six source files inside `@luc/ui`
- * importing `@remixicon/react` directly, and no way for a consumer to draw an
- * icon at the library's size. That is a dependency with no public face. A
- * consumer who wanted an icon matching the ones beside it had two options and
- * both were wrong: install Remix Icon themselves and guess the sizes, or ship an
- * SVG that drifts from everything around it.
- *
- * Three parts, and the boundaries between them matter:
- *
- *  1. **The asset source stays Remix Icon.** Redrawing three thousand glyphs is
- *     not what a design system is for, and a hand-drawn subset would be worse
- *     than the set it replaced. `@luc/ui` already depends on it; this file makes
- *     that dependency *public* rather than hidden.
- *  2. **`Icon` is the wrapper.** It owns size, tone and accessibility — the
- *     three things a caller gets wrong when they use the glyph component
- *     directly, because Remix Icon's own `size` takes a raw pixel number and
- *     knows nothing about `--fg-muted`.
- *  3. **`iconSet` is a named set, with search.** The wrapper makes an icon
- *     addressable by component (`icon={RiPlayLine}`); the set makes the thirty-
- *     nine the library itself draws with addressable by *name* (`name="play"`),
- *     which is what a config, a stored record or a person typing into a search
- *     box needs. It is not a re-export of the whole package, and it says so.
- *
- * Accessibility is derived rather than delegated: an icon with a `label` is an
- * image with that name, and an icon without one is `aria-hidden`, because a
- * glyph sitting next to the word "Close" is decoration and announcing it twice
- * is worse than silence.
+ * Public LUC Icon wrapper. All built-in UI glyphs now use animated AnimateIcons
+ * via ../icons/animated; consumers with existing Remix glyphs may still inject
+ * them through the legacy icon={...} API to preserve backwards compatibility.
+ * The name-based 39-glyph catalog resolves animated glyphs only.
+ * This is a presentational surface; charts/plots and brand logos are not icons.
  */
-
-/**
- * The glyph type, re-exported from the asset source.
- *
- * Aliased rather than declared so it cannot drift from Remix Icon's real props,
- * and so a consumer writing their own component can check it against the same
- * type instead of guessing. A different icon set renders its own node: this API
- * says "Remix Icon" out loud rather than pretending to be icon-set agnostic.
- */
-export type IconGlyph = RemixiconComponentType;
+export type IconGlyph = AnimatedIconComponentType | RemixiconComponentType;
 
 export type IconSize = "xs" | "sm" | "md" | "lg" | "xl";
 export type IconTone =
@@ -173,7 +141,7 @@ export function Icon({ className, icon, name, size = "md", tone = "inherit", lab
         * output with the false positive gone, rather than a disabled rule that
         * would also hide the real thing.
         */}
-      {createElement(glyph)}
+      {createElement(glyph as ComponentType)}
     </span>
   );
 }
@@ -190,7 +158,7 @@ export interface IconEntry {
 }
 
 /**
- * The glyphs the library draws with, addressable by name.
+ * The animated glyphs the library draws with, addressable by name.
  *
  * Curated rather than generated on purpose. A set mirroring all of Remix Icon
  * would bloat every bundle that imports it and would be a copy of a package

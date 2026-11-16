@@ -1,6 +1,6 @@
 "use client";
 
-import { RiStarFill, RiStarLine } from "@remixicon/react";
+import { RiStarFill, RiStarLine } from "../icons/animated";
 import { cn } from "../utils/cn";
 import { useControllableState } from "../hooks/use-controllable-state";
 

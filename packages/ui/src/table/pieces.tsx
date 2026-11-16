@@ -1,7 +1,7 @@
 "use client";
 
 import { flexRender, type Column, type RowData } from "@tanstack/react-table";
-import { RiArrowDownSLine, RiArrowUpDownLine, RiArrowUpSLine } from "@remixicon/react";
+import { RiArrowDownSLine, RiArrowUpDownLine, RiArrowUpSLine } from "../icons/animated";
 import { cn } from "../utils/cn";
 import type { DataTableInstance } from "./context";
 import type { DataTableDensity, DataTableFeatureSet } from "./types";
