@@ -1,5 +1,6 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiCheckLine, RiMinusLine } from "../icons/animated.js";
 import { useField } from "./field.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { Checkbox } from "radix-ui";
@@ -17,27 +18,10 @@ function Checkbox$1({ className, label, description, invalid, id, disabled, ...p
 		children: /* @__PURE__ */ jsx(Checkbox.Indicator, {
 			forceMount: true,
 			className: "grid size-full place-items-center text-accent-on-accent",
-			children: /* @__PURE__ */ jsxs("svg", {
-				viewBox: "0 0 20 20",
-				fill: "none",
+			children: /* @__PURE__ */ jsxs("span", {
 				"aria-hidden": "true",
-				className: "size-full",
-				children: [/* @__PURE__ */ jsx("path", {
-					d: "M5.4 10.5l3 3L14.7 7.2",
-					stroke: "currentColor",
-					strokeWidth: "2.1",
-					strokeLinecap: "round",
-					strokeLinejoin: "round",
-					pathLength: 1,
-					className: cn("[stroke-dasharray:1] [stroke-dashoffset:1] opacity-0", "[transition:stroke-dashoffset_var(--motion-normal)_var(--ease-standard),opacity_var(--motion-fast)_var(--ease-standard)]", "group-data-[state=checked]/cb:[stroke-dashoffset:0] group-data-[state=checked]/cb:opacity-100")
-				}), /* @__PURE__ */ jsx("path", {
-					d: "M6 10h8",
-					stroke: "currentColor",
-					strokeWidth: "2.1",
-					strokeLinecap: "round",
-					pathLength: 1,
-					className: cn("[stroke-dasharray:1] [stroke-dashoffset:1] opacity-0", "[transition:stroke-dashoffset_var(--motion-fast)_var(--ease-standard),opacity_var(--motion-fast)_var(--ease-standard)]", "group-data-[state=indeterminate]/cb:[stroke-dashoffset:0] group-data-[state=indeterminate]/cb:opacity-100")
-				})]
+				className: "relative grid size-full place-items-center",
+				children: [/* @__PURE__ */ jsx(RiCheckLine, { className: "absolute size-[15px] opacity-0 transition-opacity duration-150 group-data-[state=checked]/cb:opacity-100" }), /* @__PURE__ */ jsx(RiMinusLine, { className: "absolute size-[15px] opacity-0 transition-opacity duration-150 group-data-[state=indeterminate]/cb:opacity-100" })]
 			})
 		})
 	});

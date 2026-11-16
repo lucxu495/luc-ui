@@ -1,4 +1,5 @@
 import { cn } from "../utils/cn.js";
+import { RiCloseLine } from "../icons/animated.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { cva } from "class-variance-authority";
 //#region src/components/badge.tsx
@@ -59,17 +60,9 @@ function Tag({ className, children, onRemove, removeLabel = "Remove", ...props }
 			"aria-label": `${removeLabel}: ${typeof children === "string" ? children : ""}`.trim(),
 			onClick: onRemove,
 			className: "luc-transition luc-hit grid size-4 place-items-center rounded-xs text-fg-muted hover:bg-surface-interactive-hover hover:text-fg-primary luc-focus",
-			children: /* @__PURE__ */ jsx("svg", {
-				viewBox: "0 0 16 16",
-				className: "size-3",
+			children: /* @__PURE__ */ jsx(RiCloseLine, {
 				"aria-hidden": "true",
-				children: /* @__PURE__ */ jsx("path", {
-					d: "M4.5 4.5l7 7m0-7l-7 7",
-					stroke: "currentColor",
-					strokeWidth: "1.5",
-					strokeLinecap: "round",
-					fill: "none"
-				})
+				className: "size-3"
 			})
 		}) : null]
 	});

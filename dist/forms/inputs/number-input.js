@@ -1,6 +1,7 @@
 "use client";
 import { LocaleProvider } from "../../providers/locale-provider.js";
 import { cn } from "../../utils/cn.js";
+import { RiAddLine, RiMinusLine } from "../../icons/animated.js";
 import { useField } from "../../components/field.js";
 import { inputShellClass } from "../../components/input.js";
 import { Button, Input, NumberField } from "react-aria-components";
@@ -60,16 +61,9 @@ function NumberInput({ value, defaultValue, onValueChange, onBlur, min, max, ste
 				steppers ? /* @__PURE__ */ jsx(Button, {
 					slot: "decrement",
 					className: cn(stepperBtnClass, "border-r border-line-subtle"),
-					children: /* @__PURE__ */ jsx("svg", {
-						viewBox: "0 0 16 16",
+					children: /* @__PURE__ */ jsx(RiMinusLine, {
 						"aria-hidden": "true",
-						children: /* @__PURE__ */ jsx("path", {
-							d: "M4 8h8",
-							stroke: "currentColor",
-							strokeWidth: "1.5",
-							strokeLinecap: "round",
-							fill: "none"
-						})
+						className: "size-4"
 					})
 				}) : null,
 				/* @__PURE__ */ jsx(Input, {
@@ -85,16 +79,9 @@ function NumberInput({ value, defaultValue, onValueChange, onBlur, min, max, ste
 				steppers ? /* @__PURE__ */ jsx(Button, {
 					slot: "increment",
 					className: cn(stepperBtnClass, "border-l border-line-subtle"),
-					children: /* @__PURE__ */ jsx("svg", {
-						viewBox: "0 0 16 16",
+					children: /* @__PURE__ */ jsx(RiAddLine, {
 						"aria-hidden": "true",
-						children: /* @__PURE__ */ jsx("path", {
-							d: "M8 4v8M4 8h8",
-							stroke: "currentColor",
-							strokeWidth: "1.5",
-							strokeLinecap: "round",
-							fill: "none"
-						})
+						className: "size-4"
 					})
 				}) : null
 			]

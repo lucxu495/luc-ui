@@ -1,5 +1,6 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiAlertLine } from "../icons/animated.js";
 import { Button } from "../components/button-base.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { createContext, useContext, useId, useRef, useState } from "react";
@@ -130,32 +131,9 @@ function FormErrorSummary({ className, always = false, title = "Please fix the f
 		children: [
 			/* @__PURE__ */ jsxs("p", {
 				className: "flex items-center gap-2 text-label font-medium text-fg-negative",
-				children: [/* @__PURE__ */ jsxs("svg", {
-					viewBox: "0 0 16 16",
+				children: [/* @__PURE__ */ jsx(RiAlertLine, {
 					"aria-hidden": "true",
-					className: "size-4 shrink-0",
-					children: [
-						/* @__PURE__ */ jsx("circle", {
-							cx: "8",
-							cy: "8",
-							r: "6.25",
-							fill: "none",
-							stroke: "currentColor",
-							strokeWidth: "1.4"
-						}),
-						/* @__PURE__ */ jsx("path", {
-							d: "M8 5.25v3.5",
-							stroke: "currentColor",
-							strokeWidth: "1.4",
-							strokeLinecap: "round"
-						}),
-						/* @__PURE__ */ jsx("circle", {
-							cx: "8",
-							cy: "11",
-							r: "0.85",
-							fill: "currentColor"
-						})
-					]
+					className: "size-4 shrink-0"
 				}), title]
 			}),
 			error ? /* @__PURE__ */ jsx("p", {

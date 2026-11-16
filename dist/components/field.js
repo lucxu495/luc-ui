@@ -1,5 +1,6 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiAlertLine, RiCheckboxCircleLine } from "../icons/animated.js";
 import { Spinner } from "./spinner.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { createContext, useContext, useId } from "react";
@@ -86,32 +87,9 @@ function Field({ children, id, label, description, error, validating = false, su
 					id: errorId,
 					role: "alert",
 					className: "flex items-start gap-1.5 text-caption text-fg-negative",
-					children: [/* @__PURE__ */ jsxs("svg", {
-						viewBox: "0 0 16 16",
+					children: [/* @__PURE__ */ jsx(RiAlertLine, {
 						"aria-hidden": "true",
-						className: "mt-px size-3.5 shrink-0",
-						children: [
-							/* @__PURE__ */ jsx("circle", {
-								cx: "8",
-								cy: "8",
-								r: "6.25",
-								fill: "none",
-								stroke: "currentColor",
-								strokeWidth: "1.4"
-							}),
-							/* @__PURE__ */ jsx("path", {
-								d: "M8 5.25v3.5",
-								stroke: "currentColor",
-								strokeWidth: "1.4",
-								strokeLinecap: "round"
-							}),
-							/* @__PURE__ */ jsx("circle", {
-								cx: "8",
-								cy: "11",
-								r: "0.85",
-								fill: "currentColor"
-							})
-						]
+						className: "mt-px size-3.5 shrink-0"
 					}), error]
 				}) : isBusy ? /* @__PURE__ */ jsxs("p", {
 					id: statusId,
@@ -124,25 +102,9 @@ function Field({ children, id, label, description, error, validating = false, su
 				}) : success ? /* @__PURE__ */ jsxs("p", {
 					id: statusId,
 					className: "flex items-start gap-1.5 text-caption text-fg-positive",
-					children: [/* @__PURE__ */ jsxs("svg", {
-						viewBox: "0 0 16 16",
+					children: [/* @__PURE__ */ jsx(RiCheckboxCircleLine, {
 						"aria-hidden": "true",
-						className: "mt-px size-3.5 shrink-0",
-						children: [/* @__PURE__ */ jsx("circle", {
-							cx: "8",
-							cy: "8",
-							r: "6.25",
-							fill: "none",
-							stroke: "currentColor",
-							strokeWidth: "1.4"
-						}), /* @__PURE__ */ jsx("path", {
-							d: "M5.4 8.2 7.1 9.9l3.5-3.9",
-							fill: "none",
-							stroke: "currentColor",
-							strokeWidth: "1.4",
-							strokeLinecap: "round",
-							strokeLinejoin: "round"
-						})]
+						className: "mt-px size-3.5 shrink-0"
 					}), success]
 				}) : description ? /* @__PURE__ */ jsx("p", {
 					id: descriptionId,

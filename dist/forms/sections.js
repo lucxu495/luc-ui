@@ -1,5 +1,6 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiAddLine, RiArrowDownLine, RiArrowUpLine, RiCloseLine } from "../icons/animated.js";
 import { IconButton } from "../components/icon-button.js";
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";
 import { Children } from "react";
@@ -63,17 +64,9 @@ function FieldArray({ legend, description, count, onAdd, onRemove, onMove, addLa
 				type: "button",
 				onClick: onAdd,
 				className: cn("inline-flex h-control-sm items-center gap-1.5 rounded-sm px-2.5 text-label font-medium", "text-fg-accent luc-transition luc-focus", "hover:bg-accent-soft"),
-				children: [/* @__PURE__ */ jsx("svg", {
-					viewBox: "0 0 16 16",
+				children: [/* @__PURE__ */ jsx(RiAddLine, {
 					"aria-hidden": "true",
-					className: "size-3.5",
-					children: /* @__PURE__ */ jsx("path", {
-						d: "M8 3.5v9M3.5 8h9",
-						stroke: "currentColor",
-						strokeWidth: "1.5",
-						strokeLinecap: "round",
-						fill: "none"
-					})
+					className: "size-3.5"
 				}), addLabel]
 			}) : null]
 		}), /* @__PURE__ */ jsx("ol", {
@@ -100,18 +93,9 @@ function FieldArray({ legend, description, count, onAdd, onRemove, onMove, addLa
 							variant: "ghost",
 							disabled: index === 0,
 							onClick: () => onMove(index, index - 1),
-							icon: /* @__PURE__ */ jsx("svg", {
-								viewBox: "0 0 16 16",
+							icon: /* @__PURE__ */ jsx(RiArrowUpLine, {
 								"aria-hidden": "true",
-								className: "size-3.5",
-								children: /* @__PURE__ */ jsx("path", {
-									d: "M8 12.5V4m0 0L4.5 7.5M8 4l3.5 3.5",
-									stroke: "currentColor",
-									strokeWidth: "1.5",
-									strokeLinecap: "round",
-									strokeLinejoin: "round",
-									fill: "none"
-								})
+								className: "size-3.5"
 							})
 						}), /* @__PURE__ */ jsx(IconButton, {
 							label: `Move row ${index + 1} down`,
@@ -119,35 +103,18 @@ function FieldArray({ legend, description, count, onAdd, onRemove, onMove, addLa
 							variant: "ghost",
 							disabled: index === count - 1,
 							onClick: () => onMove(index, index + 1),
-							icon: /* @__PURE__ */ jsx("svg", {
-								viewBox: "0 0 16 16",
+							icon: /* @__PURE__ */ jsx(RiArrowDownLine, {
 								"aria-hidden": "true",
-								className: "size-3.5",
-								children: /* @__PURE__ */ jsx("path", {
-									d: "M8 3.5V12m0 0 3.5-3.5M8 12 4.5 8.5",
-									stroke: "currentColor",
-									strokeWidth: "1.5",
-									strokeLinecap: "round",
-									strokeLinejoin: "round",
-									fill: "none"
-								})
+								className: "size-3.5"
 							})
 						})] }) : null, onRemove ? /* @__PURE__ */ jsx(IconButton, {
 							label: `Remove row ${index + 1}`,
 							size: "sm",
 							variant: "ghost",
 							onClick: () => onRemove(index),
-							icon: /* @__PURE__ */ jsx("svg", {
-								viewBox: "0 0 16 16",
+							icon: /* @__PURE__ */ jsx(RiCloseLine, {
 								"aria-hidden": "true",
-								className: "size-3.5",
-								children: /* @__PURE__ */ jsx("path", {
-									d: "M4.5 4.5l7 7m0-7l-7 7",
-									stroke: "currentColor",
-									strokeWidth: "1.5",
-									strokeLinecap: "round",
-									fill: "none"
-								})
+								className: "size-3.5"
 							})
 						}) : null]
 					}) : null

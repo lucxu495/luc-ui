@@ -1,6 +1,7 @@
 "use client";
 import { useReducedMotion as useReducedMotion$1 } from "../hooks/use-reduced-motion.js";
 import { cn } from "../utils/cn.js";
+import { RiArrowDownSLine } from "../icons/animated.js";
 import { duration, easing } from "./tokens.js";
 import { jsx, jsxs } from "react/jsx-runtime";
 import { useId } from "react";
@@ -39,18 +40,9 @@ function Collapse({ className, open, onOpenChange, title, description, aside, ch
 						duration: duration.fast,
 						ease: easing.standard
 					},
-					children: /* @__PURE__ */ jsx("svg", {
-						width: "14",
-						height: "14",
-						viewBox: "0 0 16 16",
-						fill: "none",
-						stroke: "currentColor",
-						strokeWidth: "1.6",
-						children: /* @__PURE__ */ jsx("path", {
-							d: "M4 6.5 8 10.5l4-4",
-							strokeLinecap: "round",
-							strokeLinejoin: "round"
-						})
+					children: /* @__PURE__ */ jsx(RiArrowDownSLine, {
+						"aria-hidden": "true",
+						className: "size-3.5"
 					})
 				})]
 			})]

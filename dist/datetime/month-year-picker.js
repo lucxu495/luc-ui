@@ -1,6 +1,7 @@
 "use client";
 import { useControllableState } from "../hooks/use-controllable-state.js";
 import { cn } from "../utils/cn.js";
+import { RiArrowDownSLine } from "../icons/animated.js";
 import { IconButton } from "../components/icon-button.js";
 import { formatMonthName, formatMonthYear } from "./format.js";
 import { jsx, jsxs } from "react/jsx-runtime";
@@ -237,19 +238,10 @@ function YearPicker({ value, onValueChange, pageStart, defaultPageStart, onPageS
 	});
 }
 function Chevron({ direction }) {
-	return /* @__PURE__ */ jsx("svg", {
-		viewBox: "0 0 16 16",
+	return /* @__PURE__ */ jsx(RiArrowDownSLine, {
 		"aria-hidden": "true",
-		style: { transform: `rotate(${direction === "left" ? 90 : direction === "right" ? -90 : 0}deg)` },
 		className: "size-3.5",
-		children: /* @__PURE__ */ jsx("path", {
-			d: "M4 6.5 8 10.5l4-4",
-			stroke: "currentColor",
-			strokeWidth: "1.6",
-			strokeLinecap: "round",
-			strokeLinejoin: "round",
-			fill: "none"
-		})
+		style: { transform: `rotate(${direction === "left" ? 90 : direction === "right" ? -90 : 0}deg)` }
 	});
 }
 //#endregion

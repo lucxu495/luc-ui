@@ -1,5 +1,6 @@
 "use client";
 import { cn } from "../utils/cn.js";
+import { RiAlertLine, RiFullscreenLine, RiLineChartLine } from "../icons/animated.js";
 import { Button } from "../components/button-base.js";
 import { Card, CardFooter } from "../components/card.js";
 import { SegmentedControl, SegmentedItem } from "../components/segmented-control.js";
@@ -244,18 +245,9 @@ function FullscreenButton({ onClick, className, label = "Toggle fullscreen", too
 			variant: "ghost",
 			onClick,
 			className,
-			leadingIcon: /* @__PURE__ */ jsx("svg", {
-				viewBox: "0 0 16 16",
+			leadingIcon: /* @__PURE__ */ jsx(RiFullscreenLine, {
 				"aria-hidden": "true",
-				className: "size-3.5",
-				children: /* @__PURE__ */ jsx("path", {
-					d: "M6 2.5H2.5V6M10 2.5h3.5V6M6 13.5H2.5V10M10 13.5h3.5V10",
-					fill: "none",
-					stroke: "currentColor",
-					strokeWidth: "1.4",
-					strokeLinecap: "round",
-					strokeLinejoin: "round"
-				})
+				className: "size-3.5"
 			}),
 			children: /* @__PURE__ */ jsx("span", {
 				className: "sr-only",
@@ -318,18 +310,9 @@ function ChartState({ title, description, action, icon, tone = "neutral", classN
 function ChartEmptyState(props) {
 	return /* @__PURE__ */ jsx(ChartState, {
 		...props,
-		icon: props.icon ?? /* @__PURE__ */ jsx("svg", {
-			viewBox: "0 0 20 20",
+		icon: props.icon ?? /* @__PURE__ */ jsx(RiLineChartLine, {
 			"aria-hidden": "true",
-			className: "size-5",
-			children: /* @__PURE__ */ jsx("path", {
-				d: "M3 16.5V6.2M7.5 16.5V9.4M12 16.5v-4.6M16.5 16.5V4.2",
-				fill: "none",
-				stroke: "currentColor",
-				strokeWidth: "1.5",
-				strokeLinecap: "round",
-				opacity: "0.5"
-			})
+			className: "size-5"
 		})
 	});
 }
@@ -337,31 +320,9 @@ function ChartErrorState(props) {
 	return /* @__PURE__ */ jsx(ChartState, {
 		...props,
 		tone: "negative",
-		icon: props.icon ?? /* @__PURE__ */ jsxs("svg", {
-			viewBox: "0 0 20 20",
+		icon: props.icon ?? /* @__PURE__ */ jsx(RiAlertLine, {
 			"aria-hidden": "true",
-			className: "size-5",
-			children: [
-				/* @__PURE__ */ jsx("path", {
-					d: "M10 2.8 18.4 17H1.6z",
-					fill: "none",
-					stroke: "currentColor",
-					strokeWidth: "1.5",
-					strokeLinejoin: "round"
-				}),
-				/* @__PURE__ */ jsx("path", {
-					d: "M10 7.6v3.8",
-					stroke: "currentColor",
-					strokeWidth: "1.5",
-					strokeLinecap: "round"
-				}),
-				/* @__PURE__ */ jsx("circle", {
-					cx: "10",
-					cy: "14",
-					r: "0.9",
-					fill: "currentColor"
-				})
-			]
+			className: "size-5"
 		})
 	});
 }
